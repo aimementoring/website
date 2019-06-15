@@ -1,0 +1,26 @@
+$black: #222;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+  nav > a {
+    display: inline-block;
+  }
+
+  nav a {
+    margin-bottom: 30px;
+
+    &.active {
+      color: $black;
+      text-decoration: none;
+    }
+
+    + a {
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid $black;
+    }
+  }
+}
