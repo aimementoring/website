@@ -18,7 +18,7 @@ class TalentHeader extends PureComponent {
       this.setState({
         showFirstHeader: (!nextProps.location.hash || nextProps.location.hash === '#undefined') && !nextProps.location.search,
         hash: this.props.location.hash ? this.props.location.hash.toLowerCase() : '',
-      })
+      });
     }
   }
 
@@ -41,8 +41,8 @@ class TalentHeader extends PureComponent {
               return (
                 <li className="inline-block relative" onClick={this.handleTalentItemClicked(item)} key={item}>
                   {`#${item.toLowerCase()}` === this.state.hash
-                    ? <a className="nav-btn active-item" href="#">{headerItem}</a>
-                    : <a className="nav-btn" href="#">{headerItem}</a>
+                    ? <button className="nav-btn active-item link-button">{headerItem}</button>
+                    : <button className="nav-btn link-button">{headerItem}</button>
                   }
                 </li>
               )

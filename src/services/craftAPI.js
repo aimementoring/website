@@ -1,4 +1,5 @@
 import crossFetch from 'cross-fetch';
+import { getFromStorage } from '../utils/localStorage';
 import handleError from '../utils/errorHandler';
 
 const API = process.env.REACT_APP_CRAFT_API;
@@ -18,3 +19,21 @@ export const getSeoTags = async (page, site) => {
       .catch(error => handleError(error, `${error} URL: ${url}`));
   }
 }
+
+async function getEntries(section) {
+  const loaded = getFromStorage(`${section}_entry`);
+  return new Promise((resolve, reject) => {
+    if (loaded) {
+      resolve(loaded);
+    } else {
+      const url = `${API}/api/${section}`;
+      return fetch(url)
+        .then(response => response.json())
+        .then(response => response || {})
+        .then(response => resolve(response))
+        .catch(error => reject(handleError(error, `${error} URL: ${url}`)));
+    }
+  });
+}
+
+export default getEntries;

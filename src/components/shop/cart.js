@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './cart.scss';
 
 class Cart extends Component {
   constructor(props) {
@@ -73,7 +74,7 @@ class Cart extends Component {
         <h3 className="regular flex f-14 c-black mb1">
           Shopping Cart
           {hasItems &&
-            <a className="ml-auto" onClick={this.empty} style={{ color: '#8621DF', textDecoration: 'none', cursor: 'pointer', }}>clear</a>
+            <button className="ml-auto link-button" onClick={this.empty} style={{ color: '#8621DF', textDecoration: 'none', cursor: 'pointer', }}>clear</button>
           }
         </h3>
         <p className="f-14 mb2 c-grey">{hasItems ? 'Your items.' : 'Empty.'}</p>
@@ -91,11 +92,11 @@ class Cart extends Component {
       <div className="fit">
         <div className="shopping-bar container px3 clearfix">
           <li className="inline-block relative right header-link--with-submenu">
-            <a to="#" className="nav-btn">
+            <button className="nav-btn link-button">
               <p>Shopping Cart</p>
               <span className="counter">{checkout.lineItems.length}</span>
               <img src={`${this.props.cdnUrl}/assets/images/shopping-cart.svg`} alt="" />
-            </a>
+            </button>
             <div className="submenu-wrapper">
               <div className="submenu-arrow" />
               <div> {cart} </div>

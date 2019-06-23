@@ -66,7 +66,16 @@ class HeroBannerHomepage extends Component {
                 <h1 className="f-20 lh-small c-white">
                   The 2019 Hoodie has landed
                 </h1>
-                <p><a href="https://shop.aimementoring.com/products/unity-and-kindness-hoodie" target="_blank" className="basic-btn bold bg-brand-primary c-white my3">Check it out</a></p>
+                <p>
+                  <a
+                    href="https://shop.aimementoring.com/products/unity-and-kindness-hoodie"
+                    target="_blank"
+                    className="basic-btn bold bg-brand-primary c-white my3"
+                    rel="noopener noreferrer"
+                  >
+                    Check it out
+                  </a>
+                </p>
               </div>
             </div>
           </div>
