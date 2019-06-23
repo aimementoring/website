@@ -36,4 +36,12 @@ async function getEntries(section) {
   });
 }
 
+export async function getGlobalVariables() {
+  const url = `${API}/api/global`;
+  return fetch(url)
+    .then(response => response.json())
+    .then(response => response)
+    .catch(error => handleError(error, `${error} URL: ${url}`));
+}
+
 export default getEntries;

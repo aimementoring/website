@@ -1,8 +1,8 @@
 import { appendOptions } from './domHelper';
 import request from './request';
 import bugsnagClient from './bugsnag';
+import countries from 'country-list';
 
-const countries = require('country-list')();
 
 const mainCountryNames = ['Australia', 'South Africa', 'Uganda', 'Nigeria', 'United States'];
 

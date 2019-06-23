@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import ReactFilestack from 'filestack-react';
 import PropTypes from 'prop-types';
 import UploadedFile from './UploadedFile';
 import handleError from '../../utils/errorHandler';
+
+let ReactFilestack;
 
 export default class FileUploader extends Component {
   static propTypes = {
@@ -18,6 +19,10 @@ export default class FileUploader extends Component {
     this.state = {
       uploadedFiles: [],
     };
+  }
+
+  componentDidMount() {
+    ReactFilestack = require('filestack-react');
   }
 
   onFileRemove = (index) => {
@@ -49,7 +54,6 @@ export default class FileUploader extends Component {
   render() {
     const { apiKey, buttonText, requiredFile } = this.props;
     const { uploadedFiles } = this.state;
-
 
     return (
       <React.Fragment>

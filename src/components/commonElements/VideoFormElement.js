@@ -29,10 +29,6 @@ export default class VideoFormElement extends PureComponent {
   render() {
     const {
       formElement: {
-        autoplay = autoplay !== undefined,
-        loop = loop !== undefined,
-        muted = muted !== undefined,
-        controls = controls !== undefined,
         name,
         mp4Video,
         webmVideo,
@@ -41,9 +37,13 @@ export default class VideoFormElement extends PureComponent {
       },
       index,
     } = this.props;
+    const autoplay = this.props.formElement.autoplay !== undefined;
+    const loop = this.props.formElement.loop !== undefined;
+    const muted = this.props.formElement.muted !== undefined;
+    const controls = this.props.formElement.controls !== undefined;
+
     const youtubeIframeLink = this.getYoutubeIframeLink(youtubeVideoLink);
     const vimeoIframeLink = this.getVimeoIframeLink(vimeoVideoLink);
-
 
     return (
       <div key={`${name}-${index}`} className="sm-col sm-col-12 md-col-12 my3">
@@ -55,11 +55,13 @@ export default class VideoFormElement extends PureComponent {
               muted={muted}
               controls={controls}
               playsinline
-              className="w100 matrix-video-friendly">
+              className="w100 matrix-video-friendly"
+            >
               <source src={mp4Video} type="video/mp4" />
               <source src={webmVideo} type="video/webm" />
             </video>
-          </div>}
+          </div>
+        }
         {youtubeVideoLink &&
           <iframe
             title="Youtube-video"
@@ -68,14 +70,18 @@ export default class VideoFormElement extends PureComponent {
             width="640"
             height="360"
             src={youtubeIframeLink}
-            frameBorder="0" />}
+            frameBorder="0"
+          />
+        }
         {vimeoVideoLink &&
           <iframe
             title="Vimeo-video"
             width="640"
             height="360"
             src={vimeoIframeLink}
-            frameBorder="0" />}
+            frameBorder="0"
+          />
+        }
       </div>
     );
   }

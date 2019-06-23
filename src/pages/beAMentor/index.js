@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import scrollToComponent from 'react-scroll-to-component';
 import UniversitySelector from '../../components/universitySelectorWithAutoComplete';
 import Select from '../../components/commonElements/ReactSelect';
 import Loading from '../../components/commonElements/Loading';
@@ -29,6 +28,7 @@ import {
 import { COUNTRY_CODES } from '../../utils/countryCodes';
 import './index.scss';
 
+let scrollToComponent;
 
 export default class BeAMentor extends PureComponent {
   constructor(props) {
@@ -61,7 +61,8 @@ export default class BeAMentor extends PureComponent {
   }
 
   componentDidMount() {
-    getAssetsBaseUrl().then(assetsUrl => this.setState({ assetsUrl }));
+    scrollToComponent = require('react-scroll-to-component');
+    this.setState({ assetsUrl: getAssetsBaseUrl() });
     getUniversities()
       .then((universities) => {
         const universityOptions = universities
@@ -162,7 +163,7 @@ export default class BeAMentor extends PureComponent {
   }
 
   scrollToHoodedHustle = () => {
-    scrollToComponent(this.sectionRefs.challenge, { offset: -110, align: 'top' });
+    scrollToComponent && scrollToComponent(this.sectionRefs.challenge, { offset: -110, align: 'top' });
   }
 
   getStylesForCountrySelection = () => {
@@ -640,7 +641,9 @@ export default class BeAMentor extends PureComponent {
                         <a
                           href="https://portal.aimementoring.com/mentors/apply"
                           target="_blank"
-                          className="submit">
+                          rel="noopener noreferrer"
+                          className="submit"
+                        >
                           Register
                         </a>
                       </div>

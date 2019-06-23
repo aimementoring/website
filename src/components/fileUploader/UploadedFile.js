@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'filestack-react';
 import PropTypes from 'prop-types';
 
 export default class UploadedFile extends Component {

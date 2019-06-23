@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, defineMessages } from 'react-intl';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
-import GoogleMapsLoader from 'google-maps';
-
 import handleError from '../../../utils/errorHandler';
 import './index.scss';
+
+let GoogleMapsLoader;
 
 const messages = defineMessages({
   searchPlaces: {
@@ -38,11 +38,16 @@ class LocationSearchInput extends PureComponent {
     showSuggestion: false,
   }
 
-  componentWillMount() {
+  loadGoogleMap = async () => {
+    GoogleMapsLoader = await require('google-maps');
     GoogleMapsLoader.KEY = this.props.googleMapsApiToken;
     GoogleMapsLoader.LIBRARIES = ['places'];
     GoogleMapsLoader.VERSION = '3.34';
     GoogleMapsLoader.load(google => this.setState({ google }));
+  }
+
+  componentDidMount() {
+    this.loadGoogleMap();
   }
 
   getAddressResults = geocode => {

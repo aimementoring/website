@@ -73,7 +73,9 @@ class BeAFriend extends PureComponent {
           <div className="matrix-general pt3">
             <div className="matrix-form mt3">
               <div className="my4">
-                <p className="mx-auto center text-wrap">We've <a href="https://mailchi.mp/aimementoring/sunday-kindness-1375593" target="_blank">left social media behind</a> and from now on, if you want to know about AIME, subscribe to our Sunday Kindness weekly email publication and our Saturday Swag Apparel publication. We’ll be committing our energy to doing both of these incredibly well, with time, thought, and sweating the questions and moments of joy that will both challenge and sustain us during the 21st century.</p>
+                <p className="mx-auto center text-wrap">
+                  We've <a href="https://mailchi.mp/aimementoring/sunday-kindness-1375593" target="_blank" rel="noopener noreferrer">left social media behind</a> and from now on, if you want to know about AIME, subscribe to our Sunday Kindness weekly email publication and our Saturday Swag Apparel publication. We’ll be committing our energy to doing both of these incredibly well, with time, thought, and sweating the questions and moments of joy that will both challenge and sustain us during the 21st century.
+                </p>
               </div>
               <div className="form-wrap mx-auto px3">
                 <form acceptCharset="UTF-8" action="https://formkeep.com/f/3a51eb20b3c7" method="POST" className="clearfix pt2">
@@ -101,6 +103,4 @@ class BeAFriend extends PureComponent {
   }
 }
 
-export default injectIntl(BeAFriend, {
-  withRef: true,
-});
+export default BeAFriend;

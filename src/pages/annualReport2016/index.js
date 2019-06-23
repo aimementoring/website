@@ -361,7 +361,16 @@ class AnnualReport extends PureComponent {
               </div>
               <hr className="my4" />
               <p>KPMG once again audited AIME’s accounts. Headline is, we got enough cash in to be able to deliver the program to more kids than ever before. Second headline is that over $6 Million worth of in-kind support was generated throughout 2016 - we are very proud of this. Click through below for the deets.</p>
-              <div className="w100 flex justify-center"><a target="_blank" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/pdf/AIME-2016-Financial-Report.pdf" className="submit my3">Sell All The Dollars and Cents</a></div>
+              <div className="w100 flex justify-center">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://d2ylaz7bdw65jx.cloudfront.net/assets/pdf/AIME-2016-Financial-Report.pdf"
+                  className="submit my3"
+                >
+                  Sell All The Dollars and Cents
+                </a>
+              </div>
               <p className="mt3">As we get set to charge the program around the globe we wanted to take you back in time to our 2010 Film, nice to see how much it’s coming to life.</p>
               <p>Thank you family.</p>
               <p>Keep walking with us,</p>
