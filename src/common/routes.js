@@ -57,6 +57,12 @@ export default [
     }),
   },
   {
+    path: '/story-experiment',
+    component: getAsyncComponent({
+      loader: () => import('../pages/storyExperiment'),
+    }),
+  },
+  {
     path: '/blog/:storySlug/',
     component: getAsyncComponent({
       loader: () => import('../pages/story'),

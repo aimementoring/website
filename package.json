@@ -15,7 +15,7 @@
     "@babel/runtime": "^7.4.5",
     "@bugsnag/js": "^6.3.1",
     "@bugsnag/plugin-react": "^6.2.0",
-    "aime-blueprint": "https://github.com/aimementoring/blueprint.git@feature/table-component",
+    "aime-blueprint": "file:/Applications/XAMPP/htdocs/aime/blueprint",
     "airtable": "^0.6.0",
     "auth0-lock": "^11.16.3",
     "babel-plugin-dynamic-import-node": "^2.2.0",
