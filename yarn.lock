@@ -1909,8 +1909,9 @@ aes-decrypter@3.0.0:
     global "^4.3.2"
     pkcs7 "^1.0.2"
 
-"aime-blueprint@file:../../../../htdocs/aime/blueprint":
+"aime-blueprint@git+https://github.com/aimementoring/blueprint.git":
   version "2.0.20"
+  resolved "git+https://github.com/aimementoring/blueprint.git#a52e2d8536afda55b02ff9f159edc53a5025ef7f"
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
