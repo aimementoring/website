@@ -25,20 +25,18 @@
 }
 
 .content {
-  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: 100%;
-  background-color: #3E69C3;
-  background-image: url(https://d2ylaz7bdw65jx.cloudfront.net/assets/images/banner/footer-banner@2x.jpg);
-  background-position: center center;
+  background: url(https://d2ylaz7bdw65jx.cloudfront.net/assets/images/banner/footer-banner@2x.jpg) no-repeat 0 0 #C4A8E0;
+
   background-size: 500px;
   animation: backgroundScroll 5s linear infinite;
 }
 
-h1 {
-  color: white;
-  font-weight: 400;
-  font-family: sans-serif;
-  margin: 0;
-  position: relative;
-  z-index: 2;
+.mainHeading {
+  text-align: center;
+  transform: rotate(-5deg)
 }
