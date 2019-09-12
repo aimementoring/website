@@ -4,8 +4,8 @@ export default [
   {
     path: '/coming-soon',
     component: getAsyncComponent({
-      loader: () => import('../pages/comingSoon'),
-    }),
+      loader: () => import('../pages/comingSoon')
+    })
   },
   {
     path: '/about',
@@ -53,8 +53,8 @@ export default [
   {
     path: '/reports',
     component: getAsyncComponent({
-      loader: () => import('../pages/reports'),
-    }),
+      loader: () => import('../pages/reports')
+    })
   },
   {
     path: '/blog/:storySlug/',
@@ -69,10 +69,34 @@ export default [
     })
   },
   {
+    path: '/founder',
+    component: getAsyncComponent({
+      loader: () => import('../pages/founder')
+    })
+  },
+  {
+    path: '/terms-of-service',
+    component: getAsyncComponent({
+      loader: () => import('../pages/termsOfService')
+    })
+  },
+  {
+    path: '/hooded-scholar',
+    component: getAsyncComponent({
+      loader: () => import('../pages/hoodedScholar')
+    })
+  },
+  {
     path: '/',
     exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/home')
     })
   }
+  // {
+  //   path: '/comming-soon',
+  //   component: getAsyncComponent({
+  //     loader: () => import('../pages/comingSoon'),
+  //   }),
+  // },
 ];
