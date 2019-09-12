@@ -59,8 +59,8 @@ export default [
   {
     path: '/reports',
     component: getAsyncComponent({
-      loader: () => import('../pages/reports'),
-    }),
+      loader: () => import('../pages/reports')
+    })
   },
   {
     path: '/blog/:storySlug/',
@@ -78,6 +78,12 @@ export default [
     path: '/faq',
     component: getAsyncComponent({
       loader: () => import('../pages/faq')
+    })
+  },
+  {
+    path: '/founder',
+    component: getAsyncComponent({
+      loader: () => import('../pages/founder')
     })
   },
   {
