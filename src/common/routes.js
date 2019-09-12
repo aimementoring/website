@@ -79,11 +79,17 @@ export default [
     component: getAsyncComponent({
       loader: () => import('../pages/pageDefault')
     })
-  }
+  },
   // {
   //   path: '/comming-soon',
   //   component: getAsyncComponent({
   //     loader: () => import('../pages/comingSoon'),
   //   }),
   // },
+  {
+    path: '/terms-of-service',
+    component: getAsyncComponent({
+      loader: () => import('../pages/termsOfService')
+    })
+  }
 ];
