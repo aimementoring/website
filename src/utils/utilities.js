@@ -15,3 +15,14 @@ export function getCountrySite() {
 export function setCountrySite(countryCode) {
   return setOnStorage('country_code_selected', countryCode);
 }
+
+// This function add the first character to upper case for every word and also change the words
+// division to spaces.
+// For example: if it receives "hoodie-day" it would return "Hoddie Day"
+export function firstCharacterToUpperCaseAndSpacesForDivision(theString, originalDivision) {
+  const arrayOfString = theString.split(originalDivision);
+  const arrayPascalCase = arrayOfString.map(
+    word => `${word[0].toUpperCase()}${word.substring(1, word.length)}`
+  );
+  return arrayPascalCase.join(' ');
+}
