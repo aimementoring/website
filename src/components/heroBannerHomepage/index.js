@@ -1,10 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import VideoButton from '../videoButton';
-import './index.scss';
+import { getAssetsBaseUrl } from '../../services/craftAPI';
+import "./index.css";
 
-class HeroBannerHomepage extends Component {
+export default class HeroBannerHomepage extends Component {
+  static propTypes = {
+    currentSite: PropTypes.string.isRequired,
+  };
+
+  state = {
+    assetsUrl: '',
+  }
+
+  componentDidMount() {
+    getAssetsBaseUrl().then(assetsUrl => this.setState({ assetsUrl }));
+  }
+
   renderUSA() {
     return (
       <div>
@@ -20,6 +33,7 @@ class HeroBannerHomepage extends Component {
                   </em>
                 </span>
               </h1>
+
               <div className="home-hero-sub-text">
                 <h1 className="f-20 mb2 lh-small c-white">
                   The Hooded Scholar
@@ -28,10 +42,13 @@ class HeroBannerHomepage extends Component {
                 <p className="f-16 light c-white">
                   For the first time ever, we’re offering the chance for 200 US College students to have the chance to become "The Hooded Scholar" and lead a mentoring movement out of their campus to lift kids out of inequality. Click the button to learn about and apply for the scholarship. If you are not a college student yourself scroll on down for other options.
                 </p>
+
+
               </div>
             </div>
             <div className="flex-column">
               <VideoButton video="https://player.vimeo.com/external/291824681.m3u8?s=72b6495e46fda3de6fe84bd1a158fed3c311716c" />
+
               <div className="mt1 pb4 pt2 flex items-center video-button rounded col-12">
                 <svg className="icon icon-play">
                   <use xlinkHref="#icon-play" />
@@ -45,38 +62,27 @@ class HeroBannerHomepage extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   renderAustralia() {
+    const { assetsUrl } = this.state;
     return (
       <div>
         <div className="hero-banner--homepage full-width-wrap">
           <div className="flex items-center">
             <div className="banner-wrapper flex-column">
-              <h1>
-                <span className="highlight-text">
-                  <em className="highlight-med">Carry </em><br />
-                  <em className="highlight-sml">the </em><br />
-                  <em className="highlight-lge">voice</em>
-                  {/* <span className="scratch-underline">&nbsp;</span> */}
-                </span>
-              </h1>
-              <div className="home-hero-sub-text center">
-                <h1 className="f-20 lh-small c-white">
-                  The 2019 Hoodie has landed
-                </h1>
-                <p>
-                  <a
-                    href="https://shop.aimementoring.com/products/unity-and-kindness-hoodie"
-                    target="_blank"
-                    className="basic-btn bold bg-brand-primary c-white my3"
-                    rel="noopener noreferrer"
-                  >
-                    Check it out
-                  </a>
-                </p>
+              <div className="banner-content-wrap">
+                <div className="img-wrap flex logo-nnc">
+                  <img src={`${assetsUrl}/assets/images/no-new-clothes/RECLAIMED_logo_white.png`} alt="Reclaimed" />
+                </div>
+                {/* <div className="home-hero-sub-text">
+                  <p>
+                    This <strong>Friday 13th September 2018</strong>, we're holding events in Sydney and Melbourne - <a target="_blank" href="https://mailchi.mp/aimementoring/press-release-no-new-clothes">details here</a> - to celebrate the release of <em>No New Clothes</em>, a capsule clothing collection that will not only empower disadvantaged kids but actively promote sustainability.
+                  </p>
+                </div> */}
               </div>
+              <a className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right" href="https://shop.aimementoring.com/" target="_blank">CHECK IT OUT</a>
             </div>
           </div>
         </div>
@@ -93,9 +99,3 @@ class HeroBannerHomepage extends Component {
     }
   }
 }
-
-HeroBannerHomepage.propTypes = {
-  currentSite: PropTypes.string.isRequired,
-};
-
-export default HeroBannerHomepage;
