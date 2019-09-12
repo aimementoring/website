@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import WatchTheVideoButton from '../../components/watchTheVideoButton';
+import styles from './comingSoon.module.scss';
 
 export default class ComingSoon extends PureComponent {
   render() {
@@ -36,7 +37,7 @@ export default class ComingSoon extends PureComponent {
                   </div>
                 </div>
 
-                <div className="sm-col-12 md-col-6 mb3 mx-auto featured-image">
+                <div className={`sm-col-12 md-col-6 mb3 mx-auto featured-image ${styles.marginTop}`}>
                   <div className="mx-auto">
                     <h1 className="f-20 mb3 lh-small c-white">This page is coming soon.</h1>
                     <p className="f-14 light c-white">

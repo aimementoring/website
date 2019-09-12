@@ -8,6 +8,12 @@ export default [
     }),
   },
   {
+    path: '/coming-soon',
+    component: getAsyncComponent({
+      loader: () => import('../pages/comingSoon'),
+    }),
+  },
+  {
     path: '/about',
     component: getAsyncComponent({
       loader: () => import('../pages/about'),
@@ -68,10 +74,4 @@ export default [
       loader: () => import('../pages/pageDefault'),
     }),
   },
-  // {
-  //   path: '/comming-soon',
-  //   component: getAsyncComponent({
-  //     loader: () => import('../pages/comingSoon'),
-  //   }),
-  // },
 ];
