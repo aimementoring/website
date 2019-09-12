@@ -100,6 +100,13 @@ export default [
     })
   },
   {
+    path: '/quizzes',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/quizzes')
+    })
+  },
+  {
     path: '/thanks',
     exact: true,
     component: getAsyncComponent({
