@@ -8,6 +8,12 @@ export default [
     })
   },
   {
+    path: '/coming-soon',
+    component: getAsyncComponent({
+      loader: () => import('../pages/comingSoon'),
+    }),
+  },
+  {
     path: '/about',
     component: getAsyncComponent({
       loader: () => import('../pages/about')
@@ -53,8 +59,8 @@ export default [
   {
     path: '/reports',
     component: getAsyncComponent({
-      loader: () => import('../pages/reports'),
-    }),
+      loader: () => import('../pages/reports')
+    })
   },
   {
     path: '/blog/:storySlug/',
@@ -75,6 +81,18 @@ export default [
     })
   },
   {
+    path: '/founder',
+    component: getAsyncComponent({
+      loader: () => import('../pages/founder')
+    })
+  },
+  {
+    path: '/terms-of-service',
+    component: getAsyncComponent({
+      loader: () => import('../pages/termsOfService')
+    })
+  },
+  {
     path: '/',
     component: getAsyncComponent({
       loader: () => import('../pages/pageDefault')
@@ -86,10 +104,5 @@ export default [
   //     loader: () => import('../pages/comingSoon'),
   //   }),
   // },
-  {
-    path: '/terms-of-service',
-    component: getAsyncComponent({
-      loader: () => import('../pages/termsOfService')
-    })
-  }
+
 ];
