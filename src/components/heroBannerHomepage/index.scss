@@ -1,14 +1,104 @@
-@import '../../styles/base/variables';
+@import './styles/base/variables';
 
 .hero-banner--homepage {
+
   .banner-wrapper {
-    background: url($cdnRoot + 'assets/images/hoodie_day/banner_1_notextv2.jpg') no-repeat 60% 100% #050301;
+    background: url($cdnRoot + 'assets/images/no-new-clothes/banner_1_notext.jpg') no-repeat top center #050301;
     height: 100vh;
-    background-size: cover;
+    background-size: auto 120%;
     background-attachment: fixed;
+    @media screen and (min-width: $md) {
+      background-size: cover;
+    }
     // Stop fixed on tablets & phones as it doesn't work
-    @media screen and (max-device-width: 1024px) {
+    @media screen and (max-device-width: 1024px){
       background-attachment: scroll;
+    }
+
+    .logo-nnc {
+      display: block;
+
+      @media screen and (min-width: $md) {
+        position: relative;
+      }
+
+      img {
+        height: auto;
+        width: auto;
+        display: block;
+      }
+    }
+
+    .hero-btn-btm-right {
+      // bottom: 5em;
+      margin: 6em auto;
+      position: absolute;
+      @media screen and (min-width: $md) {
+        margin: 4em auto;
+      }
+    }
+    
+    .pre-text {
+      font-family: 'PoppinsBold';
+      font-size: 1.5rem;
+      font-style: normal;
+      text-align: center;
+    }
+
+    .highlight-text {
+      font-family: 'PoppinsBold';
+      font-size: 5rem;
+      font-style: normal;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1.8;
+      transform: rotate(0);
+      padding: 0;
+    }
+
+    .banner-content-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      flex-direction: column;
+      margin-top: -4.5em;
+      width: 90%;
+
+      @media screen and (min-width: $md) {
+        margin-top: -17em;
+        width: 46em;
+      }
+    }
+
+    .home-hero-sub-text {
+      top: initial;
+      background-color: #9135f0a8;
+      padding: 0.5em;
+      box-sizing: border-box;
+      border-radius: 3px;
+      position: relative;
+      z-index: 20;
+      margin: -0.5em 0 0;
+
+      @media screen and (min-width: $md) {
+        width: 30rem;
+        margin: -3.5em 0.8em 0;
+      }
+
+      p {
+        font-family: "GT Pressura Mono", "Univers", Helvetica, Arial, sans-serif;
+        font-size: 0.9rem;
+        color: $white;
+
+        a {
+          font-weight: 900;
+          color: #FF9835;
+          
+          &:hover {
+            color: #E82A9E;
+          }
+        }
+      }
     }
   }
 
@@ -20,28 +110,20 @@
     @media screen and (min-width: $md) {
       margin-bottom: 0;
     }
+    
   }
-}
 
-.home-hero-sub-text {
-  position: relative;
-  top: 2rem;
-  width: 90%;
-  z-index: 20;
-
-  @media screen and (min-width: $md) {
-    width: 25rem;
-  }
 }
 
 .hero-banner--homepage-us {
+
   .banner-wrapper {
     background: url($cdnRoot + 'assets/images/banner/banner-us.jpg') no-repeat top center #050301;
     background-size: cover;
     background-attachment: fixed;
 
     // Stop fixed on tablets & phones as it doesn't work
-    @media screen and (max-device-width: 1024px) {
+    @media screen and (max-device-width: 1024px){
       background-attachment: scroll;
     }
 
@@ -52,6 +134,7 @@
       align-items: center;
       display: flex;
     }
+
   }
 
   .flex-column:first-child {
@@ -61,16 +144,17 @@
 
     @media screen and (min-width: $md) {
       padding-top: 0;
-      text-align: left;
+      text-align: left; 
       margin-bottom: 0;
       padding-right: 10%;
     }
+
   }
 
   .highlight-text {
-    line-height: 4.2rem;
-    font-size: calc(#{$base-font-size} + 3rem);
-    padding: 0;
+      line-height: 4.2rem;
+      font-size: calc(#{$base-font-size} + 3rem);
+      padding: 0;
 
     @media screen and (min-width: $sm) {
       line-height: 5.2rem;
@@ -93,6 +177,7 @@
     @media screen and (min-width: $md) {
       margin-bottom: 0;
     }
+    
   }
 
   .video-button .icon-play {
@@ -109,21 +194,5 @@
       top: 6rem;
     }
   }
-}
 
-.highlight-sml {
-  font-size: 0.7em;
-  text-shadow: 3px 3px 0 $fluro-blue;
-}
-
-.highlight-med {
-  font-size: 1.1em;
-  text-shadow: 3px 3px 0 $fluro-pink;
-}
-
-.highlight-lge {
-  font-size: 1.5em;
-  text-shadow: 3px 3px 0 $fluro-yellow;
-  left: 0.4em;
-  top: -0.1em;
 }
