@@ -10,8 +10,8 @@ export default [
   {
     path: '/coming-soon',
     component: getAsyncComponent({
-      loader: () => import('../pages/comingSoon'),
-    }),
+      loader: () => import('../pages/comingSoon')
+    })
   },
   {
     path: '/about',
@@ -99,16 +99,21 @@ export default [
     })
   },
   {
+    path: '/hooded-scholar',
+    component: getAsyncComponent({
+      loader: () => import('../pages/hoodedScholar')
+    })
+  },
+  {
     path: '/',
     component: getAsyncComponent({
       loader: () => import('../pages/pageDefault')
     })
-  },
+  }
   // {
   //   path: '/comming-soon',
   //   component: getAsyncComponent({
   //     loader: () => import('../pages/comingSoon'),
   //   }),
   // },
-
 ];
