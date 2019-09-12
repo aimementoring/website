@@ -7,8 +7,6 @@ import ScrollToTop from '../components/scrollToTop';
 import ErrorBoundary from '../components/errorBoundary';
 import Header from '../components/header';
 import Footer from '../components/footer';
-// import Logos from '../components/logos';
-import CartContainer from '../components/shop/cartContainer';
 
 import routes from '../common/routes';
 import Page404 from '../pages/page404';
@@ -52,7 +50,6 @@ class BasicLayout extends Component {
     return (
       <div>
         <ErrorBoundary>
-          <CartContainer />
           <Header location={location} history={history} />
           <main role="main">
             <div>
