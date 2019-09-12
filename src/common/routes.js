@@ -68,10 +68,10 @@ export default [
       loader: () => import('../pages/pageDefault'),
     }),
   },
-  {
-    path: '/comming-soon',
-    component: getAsyncComponent({
-      loader: () => import('../pages/commingSoon'),
-    }),
-  },
+  // {
+  //   path: '/comming-soon',
+  //   component: getAsyncComponent({
+  //     loader: () => import('../pages/comingSoon'),
+  //   }),
+  // },
 ];
