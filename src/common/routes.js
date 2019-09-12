@@ -2,12 +2,6 @@ import { getAsyncComponent } from '../utils/fileLoader';
 
 export default [
   {
-    path: '/home',
-    component: getAsyncComponent({
-      loader: () => import('../pages/home')
-    })
-  },
-  {
     path: '/coming-soon',
     component: getAsyncComponent({
       loader: () => import('../pages/comingSoon'),
@@ -69,12 +63,6 @@ export default [
     })
   },
   {
-    path: '/another',
-    component: getAsyncComponent({
-      loader: () => import('../pages/pageAnother')
-    })
-  },
-  {
     path: '/faq',
     component: getAsyncComponent({
       loader: () => import('../pages/faq')
@@ -82,8 +70,9 @@ export default [
   },
   {
     path: '/',
+    exact: true,
     component: getAsyncComponent({
-      loader: () => import('../pages/pageDefault')
+      loader: () => import('../pages/home')
     })
   }
 ];
