@@ -93,6 +93,12 @@ export default [
     })
   },
   {
+    path: '/contact',
+    component: getAsyncComponent({
+      loader: () => import('../pages/contact')
+    })
+  },
+  {
     path: '/impact',
     component: getAsyncComponent({
       loader: () => import('../pages/impact')

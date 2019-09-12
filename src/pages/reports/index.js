@@ -35,9 +35,9 @@ export default class Reports extends PureComponent {
       const active = category === categorySelected ? 'active' : '';
       return (
         <li className="block mr2" key={category}>
-          <a className={`filter-list ${active}`} onClick={this.handleCategoryChange(category)}>
+          <span className={`filter-list ${active}`} onClick={this.handleCategoryChange(category)}>
             {category}
-          </a>
+          </span>
         </li>
       );
     });
