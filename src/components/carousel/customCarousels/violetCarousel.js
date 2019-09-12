@@ -53,7 +53,7 @@ export default class VioletCarousel extends React.Component {
                   elements={elements}
                   settings={settings} />
                 <div className="center-align md-left-align py2 my1">
-                  <a href="/know-aime" className="b-white ghost-btn center" target="_blank">Tell me more</a>
+                  <a href="/know-aime" className="b-white ghost-btn center" target="_blank" rel="noopener noreferrer">Tell me more</a>
                 </div>
               </div>)
             :
@@ -71,6 +71,7 @@ export default class VioletCarousel extends React.Component {
                           <a
                             href={img.link}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="flex-center flex-wrap m1"
                             style={{ height: '224px' }}>
                             <img src={img.img} alt="" />
