@@ -365,7 +365,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 
     @supports (display: grid) {
       display: grid;
