@@ -51,6 +51,12 @@ export default [
     }),
   },
   {
+    path: '/reports',
+    component: getAsyncComponent({
+      loader: () => import('../pages/reports'),
+    }),
+  },
+  {
     path: '/blog/:storySlug/',
     component: getAsyncComponent({
       loader: () => import('../pages/story'),
