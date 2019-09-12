@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import scrollToComponent from 'react-scroll-to-component';
+//import scrollToComponent from 'react-scroll-to-component';
 import getEntries from '../../services/craftAPI';
 
 export default class FAQs extends PureComponent {
   static propTypes = {
     location: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
       categories: [],
-      faqsData: [],
+      faqsData: []
     };
     this.currentHash = '';
     this.sectionRefs = {};
@@ -33,7 +33,7 @@ export default class FAQs extends PureComponent {
       });
       this.setState({
         categories,
-        faqsData,
+        faqsData
       });
     });
   }
@@ -43,7 +43,7 @@ export default class FAQs extends PureComponent {
     const hash = location.hash.replace('#', '');
     if (this.sectionRefs[hash] && hash !== this.currentHash) {
       this.currentHash = hash;
-      scrollToComponent(this.sectionRefs[hash], { offset: -110, align: 'top' });
+      //scrollToComponent(this.sectionRefs[hash], { offset: -110, align: 'top' });
     }
   }
 
@@ -74,11 +74,16 @@ export default class FAQs extends PureComponent {
           <div
             key={this.getFormatedString(question.title)}
             // eslint-disable-next-line react/destructuring-assignment
-            className={`faq-item ${this.state[`${category}-${index}`] ? 'active' : ''}`}
+            className={`faq-item ${
+              this.state[`${category}-${index}`] ? 'active' : ''
+            }`}
             onClick={this.categoryClicked(`${category}-${index}`)}
           >
             <p className="question">{question.title}</p>
-            <div className="answer" dangerouslySetInnerHTML={{ __html: question.description }} />
+            <div
+              className="answer"
+              dangerouslySetInnerHTML={{ __html: question.description }}
+            />
           </div>
         ))}
       </div>
@@ -122,7 +127,9 @@ export default class FAQs extends PureComponent {
         <div className="wrap mx-auto px3">
           <div className="faq-wrapper flex pt1 md-pt4 lg-pt4 mt2">
             <div className="filter-list-container">
-              <h4 className="c-brand-primary py2 f-15 px2 border border-radius">Jump to</h4>
+              <h4 className="c-brand-primary py2 f-15 px2 border border-radius">
+                Jump to
+              </h4>
               <ul className="mr0 md-mr4 lg-mr4 mb4">
                 {categories.map(category => (
                   <li key={`${category}-faqs-li-element`} className="block">
@@ -140,14 +147,12 @@ export default class FAQs extends PureComponent {
             <div className="flex-grow">
               <div className="faq-intro mb3">
                 <p className="f-18">
-                  <strong>Yo</strong>
-, thank you for wanting to know about AIME. We’ll do our best
-                  to front foot some of the common questions. If we don’t nail them all, feel free
-                  to
-                  <Link to="/contact">ping us a note</Link>
-. Your questions help us refine our
-                  answers and we'll use them to update this space and help everyone to understand
-                  AIME as quickly as possible.
+                  <strong>Yo</strong>, thank you for wanting to know about AIME.
+                  We’ll do our best to front foot some of the common questions.
+                  If we don’t nail them all, feel free to
+                  <Link to="/contact">ping us a note</Link>. Your questions help
+                  us refine our answers and we'll use them to update this space
+                  and help everyone to understand AIME as quickly as possible.
                 </p>
               </div>
               {categories.map(category => {
