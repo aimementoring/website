@@ -7,6 +7,7 @@ import ScrollToTop from '../components/scrollToTop';
 import ErrorBoundary from '../components/errorBoundary';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Logos from '../components/logos';
 
 import routes from '../common/routes';
 import Page404 from '../pages/page404';
@@ -72,7 +73,7 @@ class BasicLayout extends Component {
             </ScrollToTop>
           </main>
           <Footer location={location} />
-          {/* <Logos /> */}
+          <Logos />
           <div id="aime-parent-video-box" />
         </ErrorBoundary>
       </div>
