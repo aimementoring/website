@@ -10,8 +10,8 @@ export default [
   {
     path: '/coming-soon',
     component: getAsyncComponent({
-      loader: () => import('../pages/comingSoon'),
-    }),
+      loader: () => import('../pages/comingSoon')
+    })
   },
   {
     path: '/about',
@@ -84,6 +84,12 @@ export default [
     path: '/founder',
     component: getAsyncComponent({
       loader: () => import('../pages/founder')
+    })
+  },
+  {
+    path: '/hooded-scholar',
+    component: getAsyncComponent({
+      loader: () => import('../pages/hoodedScholar')
     })
   },
   {
