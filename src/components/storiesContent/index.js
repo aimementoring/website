@@ -48,7 +48,7 @@ class StoriesContent extends PureComponent {
         <div className="grid stories-grid">
           {stories.map(entry => (
             <article key={`article-story-${entry.id}`} className="article-tile">
-              <a href="#" onClick={this.goToStory(entry.slug)} className="article-link">
+              <span onClick={this.goToStory(entry.slug)} className="article-link">
                 <div className="article-link">
                   {this.renderBannerImage(entry)}
                   <div key={`article-description-${entry.id}`} className="article-description">
@@ -62,7 +62,7 @@ class StoriesContent extends PureComponent {
                     <div className="article-tile-link basic-btn italic">Read more</div>
                   </div>
                 </div>
-              </a>
+              </span>
             </article>
           ))}
         </div>
