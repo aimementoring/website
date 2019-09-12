@@ -93,6 +93,20 @@ export default [
     })
   },
   {
+    path: '/eoi/:tableName',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/dynamicEOI')
+    })
+  },
+  {
+    path: '/thanks',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/thanksPage')
+    })
+  },
+  {
     path: '/contact',
     component: getAsyncComponent({
       loader: () => import('../pages/contact')
