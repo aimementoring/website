@@ -32,7 +32,7 @@ const defaultSettings = {
 
 export default class Carousel extends React.Component {
   static propTypes = {
-    type: PropTypes.oneOf(['global-mentors', 'ambassadors', 'live', 'aimeVideos', 'hero']),
+    type: PropTypes.oneOf(['global-mentors', 'ambassadors', 'live', 'aimeVideos', 'hero', 'testimonials']),
     children: PropTypes.array.isRequired,
     className: PropTypes.string,
     settings: PropTypes.object,

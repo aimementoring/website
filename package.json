@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "start:dev": "react-scripts start",
+    "start:server": "yarn build && yarn server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "yarn && yarn build && yarn server",
+    "start": "yarn server",
     "server": "NODE_ENV=production node server/bootstrap.js"
   },
   "dependencies": {

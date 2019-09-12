@@ -28,7 +28,7 @@ export default class Report extends PureComponent {
       report.bannerImageUrl && report.bannerImageUrl[0] ? report.bannerImageUrl[0].image : '';
     return (
       <article className="article-tile">
-        <a href={readMoreLink} className="article-link" target="_blank">
+        <a href={readMoreLink} className="article-link" target="_blank" rel="noopener noreferrer">
           <img className="rounded-top article-image" src={bannerImageUrl} alt="" />
           {/* {% for tag in report.reportTags.limit(2).all() %}
             <p className="featured-story--tag">{{tag.title}}</p>
@@ -36,7 +36,7 @@ export default class Report extends PureComponent {
           <div className="article-description">
             <h1 className="article-tile-title pt1">{report.title}</h1>
             <p className="article-tile-label">{report.previewText}</p>
-            <a href={readMoreLink} className="article-tile-link basic-btn italic" target="_blank">
+            <a href={readMoreLink} className="article-tile-link basic-btn italic" target="_blank" rel="noopener noreferrer">
               Read more
               {' '}
               <i className="material-icons">&#xE315;</i>
