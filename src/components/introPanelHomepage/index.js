@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
+import VideoButton from '../videoButton';
 import './index.scss';
 
 
@@ -21,31 +22,47 @@ export default class IntroPanelHomepage extends React.PureComponent {
     const { assetsUrl } = this.state;
 
     return (
-      <div className="full-width-wrap content-panel home-intro-panel">
-        <div className="scratch-overlay-wrapper top-scratch" />
-        <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
-          <div className="home-intro-panel--inner">
-            <div className="sm-col-12 sm-col-6 pr2">
-              <h1 className="intro-subheading mb3">
-                <span className="highlight-text highlight-text-straight highlight-text--second-panel c-black">
-                  <em className="c-brand-primary">
-                    Imagine this
-                  </em>
-                </span>
-              </h1>
-              <div className="intro-sub-text">
-                <p className="f-16 light c-black">
-                  Imagine a day when you heard from kids whom society had silenced. Imagine a day when you heard from a movement of youngsters rising up in classrooms across the world to defy the stereotypes that hold them back. Imagine a day when there was a seat at the world’s table for them to speak and be heard. <strong>Imagine AIME Hoodie Day, July 12th, 2019.</strong>
-                </p>
-                <p><Link to="/positions/recAGh59K1mJLt4Xl/Hoodie-Day-Apparel-Ambassador" className="basic-btn bold bg-brand-primary c-white my3">Find out how you can get involved</Link></p>
-              </div>
+      <div className="bg-darkest-purple full-width-wrap content-panel home-intro-panel">
+      <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
+        <div className="home-intro-panel--inner">
+          <div className="sm-col-12 sm-col-6 pr2">
+            <h1 className="intro-subheading mb3">
+              <span className="highlight-text highlight-text-straight highlight-text--second-panel">
+                <em>
+                  If not you… <br />
+                  then who?
+                </em>
+              </span>
+            </h1>
+            <div className="intro-sub-text">
+              <p className="f-16 light c-white">
+                Want to change the world? We're recruiting mentors across Australia, Uganda and South Africa <strong>RIGHT NOW!</strong>  That could be you! Join forces with AIME and together, we'll shape a brighter future and lift kids out of inequality. 
+                Click the button to learn more about becoming a mentor. And if you're in the USA or Nigeria, look out - we're coming for you real <em>real</em> soon. 
+              </p>
+              <p><Link to="/be-a-mentor" className="basic-btn bold bg-brand-primary c-white my3">Be a mentor</Link></p>
+
+
             </div>
-            <div className="sm-col-12 sm-col-6">
-              <img alt="" className="center mx-auto mt2" src={`${assetsUrl}/assets/images/hoodie_day/installation_art.png`} />
+          </div>
+          <div className="sm-col-12 sm-col-6">
+          
+            <div className="intro-video-wrap">
+              <VideoButton
+                video="https://player.vimeo.com/external/326229385.m3u8?s=ccd4312c26f7981d8bcac17bb0bfd10584cfc150" />
+              <div
+                className="video-banner flex block rounded mx-auto">
+
+                <div className="video-banner-overlay center">
+                  <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${assetsUrl}/assets/images/play-btn-white.svg`} />
+                  <h3>This could be you</h3>
+                  <p>Watch what it means to be an AIME Mentor</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     )
   }
 }

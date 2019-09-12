@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import VideoButton from '../videoButton';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
-import "./index.css";
+import "./index.scss";
 
 export default class HeroBannerHomepage extends Component {
   static propTypes = {
@@ -11,11 +11,7 @@ export default class HeroBannerHomepage extends Component {
   };
 
   state = {
-    assetsUrl: '',
-  }
-
-  componentDidMount() {
-    getAssetsBaseUrl().then(assetsUrl => this.setState({ assetsUrl }));
+    assetsUrl: getAssetsBaseUrl(),
   }
 
   renderUSA() {
