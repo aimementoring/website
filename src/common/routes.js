@@ -99,16 +99,16 @@ export default [
     })
   },
   {
+    path: '/impact',
+    component: getAsyncComponent({
+      loader: () => import('../pages/impact')
+    })
+  },
+  {
     path: '/',
     exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/home')
     })
   }
-  // {
-  //   path: '/comming-soon',
-  //   component: getAsyncComponent({
-  //     loader: () => import('../pages/comingSoon'),
-  //   }),
-  // },
 ];
