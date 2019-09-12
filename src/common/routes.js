@@ -20,12 +20,6 @@ export default [
     }),
   },
   {
-    path: '/attendance',
-    component: getAsyncComponent({
-      loader: () => import('../pages/attendance'),
-    }),
-  },
-  {
     path: '/be-a-friend',
     component: getAsyncComponent({
       loader: () => import('../pages/beAFriend'),
@@ -72,6 +66,12 @@ export default [
     path: '/',
     component: getAsyncComponent({
       loader: () => import('../pages/pageDefault'),
+    }),
+  },
+  {
+    path: '/comming-soon',
+    component: getAsyncComponent({
+      loader: () => import('../pages/commingSoon'),
     }),
   },
 ];
