@@ -93,6 +93,12 @@ export default [
     })
   },
   {
+    path: '/the-mentor',
+    component: getAsyncComponent({
+      loader: () => import('../pages/theMentor')
+    })
+  },
+  {
     path: '/',
     component: getAsyncComponent({
       loader: () => import('../pages/pageDefault')
