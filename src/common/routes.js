@@ -81,6 +81,12 @@ export default [
     })
   },
   {
+    path: '/the-mentor',
+    component: getAsyncComponent({
+      loader: () => import('../pages/theMentor')
+    })
+  },
+  {
     path: '/hooded-scholar',
     component: getAsyncComponent({
       loader: () => import('../pages/hoodedScholar')
@@ -98,6 +104,24 @@ export default [
     exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/thanksPage')
+    })
+  },
+  {
+    path: '/contact',
+    component: getAsyncComponent({
+      loader: () => import('../pages/contact')
+    })
+  },
+  {
+    path: '/know-aime',
+    component: getAsyncComponent({
+      loader: () => import('../pages/knowAime')
+    }),
+  },
+  {
+    path: '/impact',
+    component: getAsyncComponent({
+      loader: () => import('../pages/impact')
     })
   },
   {
