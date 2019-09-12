@@ -26,7 +26,7 @@ import {
   CloseIcon,
 } from '../symbolIcons';
 
-export default (
+const Logos = () => (
   <svg height="0" width="0" className="absolute">
     <defs>
       <SiteLogo />
@@ -56,3 +56,5 @@ export default (
     </defs>
   </svg>
 );
+
+export default Logos;

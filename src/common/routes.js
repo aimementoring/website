@@ -99,6 +99,12 @@ export default [
     })
   },
   {
+    path: '/ambassadors',
+    component: getAsyncComponent({
+      loader: () => import('../pages/ambassadors')
+    })
+  },
+  {
     path: '/know-aime',
     component: getAsyncComponent({
       loader: () => import('../pages/knowAime')
