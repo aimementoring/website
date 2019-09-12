@@ -25,3 +25,11 @@ export async function uploadHoodedScholarEOI(data) {
     }
   );
 }
+
+export async function uploadCustomEOI(data) {
+  return request(`${process.env.REACT_APP_PORTAL_API}/api/upload-custom-eoi`, {
+    method: 'POST',
+    body: data,
+    hasAuthorization: true,
+  });
+}
