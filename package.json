@@ -9,7 +9,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "yarn server",
-    "server": "NODE_ENV=production node server/bootstrap.js"
+    "server": "NODE_ENV=production node server/bootstrap.js",
+    "heroku-start": "node server/bootstrap.js"
   },
   "dependencies": {
     "@babel/register": "^7.4.4",
