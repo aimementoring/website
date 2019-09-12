@@ -87,16 +87,24 @@ export default [
     })
   },
   {
+    path: '/eoi/:tableName',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/dynamicEOI')
+    })
+  },
+  {
+    path: '/thanks',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/thanksPage')
+    })
+  },
+  {
     path: '/',
     exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/home')
     })
   }
-  // {
-  //   path: '/comming-soon',
-  //   component: getAsyncComponent({
-  //     loader: () => import('../pages/comingSoon'),
-  //   }),
-  // },
 ];
