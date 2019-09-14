@@ -22,7 +22,9 @@ const Quizzes = () => {
           </p>
         </div>
       </div>
-      <div id="random-quiz" style={{ minHeight: '600px;' }} />
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div id="random-quiz" style={{ minHeight: '600px;' }} />
+      </div>
     </section>
   );
 };
