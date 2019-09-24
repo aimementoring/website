@@ -10,23 +10,27 @@
     "eject": "react-scripts eject",
     "start": "yarn server",
     "server": "NODE_ENV=production node server/bootstrap.js",
-    "heroku-start": "node server/bootstrap.js"
+    "heroku-start": "node server/bootstrap.js",
+    "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
+    "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
+    "gimbal": "gimbal audit",
+    "run:lighthouse": "lighthouse-github-reporter -- --prId=<myId>"
   },
   "dependencies": {
-    "@babel/register": "^7.4.4",
-    "@babel/runtime": "^7.4.5",
-    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
     "@bugsnag/js": "^6.3.1",
     "@bugsnag/plugin-react": "^6.2.0",
     "aime-blueprint": "^2.1.3",
     "airtable": "^0.6.0",
     "auth0-lock": "^11.16.3",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
     "country-list": "^2.1.1",
@@ -38,6 +42,7 @@
     "google-maps": "^3.3.0",
     "ignore-styles": "^5.0.1",
     "js-search": "^1.4.2",
+    "lighthouse-gh-reporter": "^1.3.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
@@ -96,5 +101,8 @@
         }
       ]
     ]
+  },
+  "devDependencies": {
+    "lighthouse": "^5.4.0"
   }
 }
