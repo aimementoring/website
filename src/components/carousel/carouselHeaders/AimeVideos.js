@@ -1,14 +1,23 @@
 import React from 'react';
+import styles from './carouselHeaders.module.scss';
 
 const AimeVideos = ({ prev, next }) => (
-  <div className="border-none aimeVideos-buttons">
-    <button type="button" className="border-none" onClick={prev} style={{ color: "#ffffff", backgroundColor: "transparent", }}>
-      <svg className="icon icon-arrow-prev">
+  <div className={styles.carouselContainer}>
+    <button
+      type="button"
+      className={styles.whiteButton}
+      onClick={prev}
+    >
+      <svg className={styles.carouselPrev}>
         <use xlinkHref="#icon-arrow-prev" />
       </svg>
     </button>
-    <button type="button" className="border-none" style={{ color: "#ffffff", backgroundColor: "transparent", }} onClick={next}>
-      <svg className="icon icon-arrow-next">
+    <button
+      type="button"
+      className={styles.whiteButton}
+      onClick={next}
+    >
+      <svg className={styles.carouselNext}>
         <use xlinkHref="#icon-arrow-next" />
       </svg>
     </button>
