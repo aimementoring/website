@@ -72,13 +72,15 @@ export default class HeroBannerHomepage extends Component {
                 <div className="img-wrap flex logo-nnc">
                   <img src={`${assetsUrl}/assets/images/no-new-clothes/RECLAIMED_logo_white.png`} alt="Reclaimed" />
                 </div>
-                {/* <div className="home-hero-sub-text">
-                  <p>
-                    This <strong>Friday 13th September 2018</strong>, we're holding events in Sydney and Melbourne - <a target="_blank" href="https://mailchi.mp/aimementoring/press-release-no-new-clothes">details here</a> - to celebrate the release of <em>No New Clothes</em>, a capsule clothing collection that will not only empower disadvantaged kids but actively promote sustainability.
-                  </p>
-                </div> */}
               </div>
-              <a className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right" href="https://shop.aimementoring.com/" target="_blank">CHECK IT OUT</a>
+              <a
+                className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right"
+                href="https://shop.aimementoring.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CHECK IT OUT
+              </a>
             </div>
           </div>
         </div>
