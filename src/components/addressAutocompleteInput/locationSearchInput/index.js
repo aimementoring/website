@@ -1,56 +1,29 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, defineMessages } from 'react-intl';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 import handleError from '../../../utils/errorHandler';
-import './index.scss';
+import SearchInput from './searchInput';
 
 let GoogleMapsLoader;
 
-const messages = defineMessages({
-  searchPlaces: {
-    id: 'components.locationSearchInput.searchPlaces',
-    defaultMessage: 'Search Places ...',
-  },
-});
+const LocationSearchInput = ({ googleMapsApiToken, onAddressSelected, inputPlaceholder, classNameProp, defaultAddress }) => {
+  const [address, setAddress] = useState('');
+  const [google, setGoogle] = useState(false);
+  const [showSuggestion, setShowSuggestion] = useState(false);
 
-class LocationSearchInput extends PureComponent {
-  static propTypes = {
-    intl: PropTypes.shape({
-      formatMessage: PropTypes.func,
-    }).isRequired,
-    onAddressSelected: PropTypes.func,
-    inputPlaceholder: PropTypes.string,
-    defaultAddress: PropTypes.string,
-    classNameProp: PropTypes.string,
-    googleMapsApiToken: PropTypes.string,
-  };
-
-  static defaultProps = {
-    onAddressSelected: null,
-    inputPlaceholder: null,
-    defaultAddress: '',
-  };
-
-  state = {
-    address: '',
-    google: false,
-    showSuggestion: false,
-  }
-
-  loadGoogleMap = async () => {
+  const loadGoogleMap = async () => {
     GoogleMapsLoader = await require('google-maps');
-    GoogleMapsLoader.KEY = this.props.googleMapsApiToken;
+    GoogleMapsLoader.KEY = googleMapsApiToken;
     GoogleMapsLoader.LIBRARIES = ['places'];
     GoogleMapsLoader.VERSION = '3.34';
-    GoogleMapsLoader.load(google => this.setState({ google }));
-  }
+    GoogleMapsLoader.load(value => setGoogle(value));
+  };
 
-  componentDidMount() {
-    this.loadGoogleMap();
-  }
+  useEffect(() => {
+    loadGoogleMap();
+  });
 
-  getAddressResults = geocode => {
+  const getAddressResults = geocode => {
     return new Promise(resolve => {
       if (geocode && geocode.address_components && geocode.address_components.length) {
         const addressObject = geocode.address_components;
@@ -75,92 +48,67 @@ class LocationSearchInput extends PureComponent {
         resolve(null);
       }
     });
-  }
+  };
 
-  handleChange = address => {
-    this.setState({ address });
-  }
+  const handleChange = value => {
+    setAddress(value);
+  };
 
-  handleShowSuggestions = () => {
-    const { showSuggestion } = this.state;
-    this.setState({ showSuggestion: !showSuggestion })
-  }
+  const handleShowSuggestions = () => {
+    setShowSuggestion(!showSuggestion);
+  };
 
-  handleSelect = address => {
-    const { onAddressSelected } = this.props;
-    this.setState({ address });
-    geocodeByAddress(address)
-      .then(results => this.getAddressResults(results[0]))
+  const handleSelect = value => {
+    setAddress(value);
+    geocodeByAddress(value)
+      .then(results => getAddressResults(results[0]))
       .then(addressComponent => {
         if (onAddressSelected) onAddressSelected(addressComponent);
       })
       .catch(error => handleError(error, `Error ${error}`));
-  }
+  };
 
-  renderSearch = ({ getInputProps, suggestions, getSuggestionItemProps }) => {
-    const { intl: { formatMessage }, inputPlaceholder, classNameProp } = this.props;
-    const { showSuggestion } = this.state;
+  const renderSearch = ({ getInputProps, suggestions, getSuggestionItemProps }) => (
+    <SearchInput
+      getInputProps={getInputProps}
+      suggestions={suggestions}
+      getSuggestionItemProps={getSuggestionItemProps}
+      inputPlaceholder={inputPlaceholder}
+      classNameProp={classNameProp}
+      handleShowSuggestions={handleShowSuggestions}
+      showSuggestion={showSuggestion}
+    />
+  );
+
+  const value = address !== '' ? address : defaultAddress;
+
+  if (google) {
     return (
-      <div>
-        <input
-          {...getInputProps({
-            placeholder: inputPlaceholder || formatMessage(messages.searchPlaces),
-            className: classNameProp,
-            name: 'address',
-            onFocus: this.handleShowSuggestions,
-            onBlur: this.handleShowSuggestions,
-          })}
-        />
-
-        {showSuggestion &&
-        <div className="autocomplete-dropdown-container">
-          {suggestions.map(suggestion => {
-            const className = suggestion.active
-              ? 'suggestion-item suggestion-item--active'
-              : 'suggestion-item';
-            const style = suggestion.active
-              ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-              : { backgroundColor: '#ffffff', cursor: 'pointer' };
-            return (
-              <div
-                {...getSuggestionItemProps(suggestion, {
-                  className,
-                  style,
-                })}
-              >
-                <span className="suggestion-icon" />
-                <span>{suggestion.description}</span>
-              </div>
-            );
-          })}
-        </div>}
-
-      </div>
+      <PlacesAutocomplete
+        value={value}
+        onChange={handleChange}
+        onSelect={handleSelect}
+      >
+        {renderSearch}
+      </PlacesAutocomplete>
     );
+  } else {
+    return null;
   }
+};
 
-  render() {
-    const { address, google } = this.state;
-    const { defaultAddress } = this.props;
+LocationSearchInput.propTypes = {
+  onAddressSelected: PropTypes.func,
+  inputPlaceholder: PropTypes.string,
+  defaultAddress: PropTypes.string,
+  classNameProp: PropTypes.string,
+  googleMapsApiToken: PropTypes.string,
+};
 
-    const value = address !== '' ? address : defaultAddress;
+LocationSearchInput.defaultProps = {
+  onAddressSelected: null,
+  inputPlaceholder: null,
+  defaultAddress: '',
+};
 
-    if (google) {
-      return (
-        <PlacesAutocomplete
-          value={value}
-          onChange={this.handleChange}
-          onSelect={this.handleSelect}
-        >
-          {this.renderSearch}
-        </PlacesAutocomplete>
-      );
-    } else {
-      return null;
-    }
-  }
-}
-
-export default injectIntl(LocationSearchInput, {
-  withRef: true,
-});
+export default LocationSearchInput;

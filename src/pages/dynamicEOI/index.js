@@ -6,30 +6,28 @@ import { eoiData } from './data.js';
 import './dynamicEOI.scss';
 
 const DynamicEOI = ({ match, history }) => {
-  const [tableName, setTableName] = useState('');
+  const eoiPages = Object.keys(eoiData);
+  const [tableName, setTableName] = useState(firstCharacterToUpperCaseAndSpacesForDivision(match.params.tableName, '-'));
   const [title, setTitle] = useState('Expression of Interest!');
   const [subTitle, setSubTitle] = useState('Please complete your data');
   const [img, setImg] = useState('');
-  const eoiPages = Object.keys(eoiData);
+
+  const setContent = preTableName => {
+    const data = eoiData[preTableName];
+    if (data) {
+      if (data.title) setTitle(data.title);
+      if (data.subTitle) setSubTitle(data.subTitle);
+      if (data.img) setImg(data.img);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     const preTableName = match.params.tableName;
     const tableNameToSave = firstCharacterToUpperCaseAndSpacesForDivision(preTableName, '-');
     setTableName(tableNameToSave);
-    const data = eoiData[preTableName];
-    if (data) {
-      if (data.title) {
-        setTitle(data.title);
-      }
-      if (data.subTitle) {
-        setSubTitle(data.subTitle);
-      }
-      if (data.img) {
-        setImg(data.img);
-      }
-    }
-  }, [match]);
+    setContent(preTableName);
+  }, [match.params.tableName]);
 
   return (
     <div>
@@ -54,7 +52,6 @@ const DynamicEOI = ({ match, history }) => {
           </div>
         </div>
       </div>
-
       <div className="padding-custom-form">
         <HoodedScholarForm
           history={history}
