@@ -1,41 +1,42 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { getGlobalVariables } from '../../services/craftAPI';
 import LocationSearchInput from './locationSearchInput';
 
-export default class AddressAutocompleteInput extends PureComponent {
-  static propTypes = {
-    placeholder: PropTypes.string.isRequired,
-    onAddressSelected: PropTypes.func.isRequired,
-    classNameProp: PropTypes.string.isRequired,
-    defaultAddress: PropTypes.string,
-  };
+const AddressAutocompleteInput = ({ placeholder, onAddressSelected, classNameProp, defaultAddress }) => {
+  const [googleMapsApiToken, setGoogleMapsApiToken] = useState(null);
 
-  state = {
-    countries: [],
-  }
+  useEffect(() => {
+    getGlobalVariables().then(data => {
+      setGoogleMapsApiToken(data.googleMapsApiToken);
+    });
+  });
 
-  componentDidMount() {
-    getGlobalVariables().then(data => this.setState({ 
-      apiKey: data.filestackApiKey, 
-      googleMapsApiToken: data.googleMapsApiToken, 
-    }));
-  }
-
-  render() {
-    const { placeholder, onAddressSelected, classNameProp, defaultAddress } = this.props;
-    const { googleMapsApiToken } = this.state;
-
-    return (
-      <React.Fragment>
-        {googleMapsApiToken && 
+  return (
+    <React.Fragment>
+      {googleMapsApiToken && (
         <LocationSearchInput
-          defaultAddress={defaultAddress || ''}
+          defaultAddress={defaultAddress}
           inputPlaceholder={placeholder}
           onAddressSelected={onAddressSelected}
           googleMapsApiToken={googleMapsApiToken}
-          classNameProp={classNameProp} />}
-      </React.Fragment>
-    );
-  }
+          classNameProp={classNameProp}
+          
+        />
+      )}
+    </React.Fragment>
+  );
 }
+
+AddressAutocompleteInput.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  onAddressSelected: PropTypes.func.isRequired,
+  classNameProp: PropTypes.string.isRequired,
+  defaultAddress: PropTypes.string,
+};
+
+AddressAutocompleteInput.defaultProps = {
+  defaultAddress: '',
+};
+
+export default AddressAutocompleteInput;
