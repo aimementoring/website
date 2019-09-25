@@ -1,11 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
-import LiveHeader from './carouselHeaders/LiveHeader';
-import AimeVideos from './carouselHeaders/AimeVideos';
-import Testimonials from './carouselHeaders/Testimonials';
-import Wall from './carouselHeaders/Wall';
-import './index.scss';
+import LiveHeader from './carouselHeaders/liveHeader';
+import AimeVideos from './carouselHeaders/aimeVideos';
+import Testimonials from './carouselHeaders/testimonials';
+import Wall from './carouselHeaders/wall';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const defaultSettings = {
   dots: true,
@@ -30,44 +32,38 @@ const defaultSettings = {
   ],
 };
 
-export default class Carousel extends React.Component {
-  static propTypes = {
-    type: PropTypes.oneOf(['global-mentors', 'ambassadors', 'live', 'aimeVideos', 'hero', 'testimonials']),
-    children: PropTypes.array.isRequired,
-    className: PropTypes.string,
-    settings: PropTypes.object,
-  };
+const Carousel = ({
+  children, type, className, settings,
+}) => {
+  let slider;
+  const next = () => slider.slickNext();
+  const previous = () => slider.slickPrev();
+  const newSettings = { ...defaultSettings, ...settings };
 
-  static defaultProps = {
-    className: null,
-    type: 'hero',
-  };
+  return (
+    <div className={className || `${type}-carousel`}>
+      {type === 'live' && <LiveHeader prev={previous} next={next} />}
+      {type === 'aimeVideos' && <AimeVideos prev={previous} next={next} />}
+      {type === 'testimonials' && <Testimonials prev={previous} next={next} />}
+      {type === 'wall' && <Wall prev={previous} next={next} />}
+      <Slider {...newSettings} ref={c => (slider = c)}>
+        {children}
+      </Slider>
+    </div>
+  );
+};
 
+Carousel.propTypes = {
+  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero', 'testimonials']),
+  children: PropTypes.array.isRequired,
+  className: PropTypes.string,
+  settings: PropTypes.object,
+};
 
-  next = () => {
-    this.slider.slickNext();
-  }
+Carousel.defaultProps = {
+  className: null,
+  type: 'hero',
+  settings: {},
+};
 
-  previous = () => {
-    this.slider.slickPrev();
-  }
-
-  render() {
-    const { children, type, className, settings } = this.props;
-    const newSettings = { ...defaultSettings, ...settings }
-
-    return (
-      <div className={className || `${type}-carousel`}>
-        {/* The header is already present in the hompage */}
-        {/* {type === 'global-mentors' && <AmbassadorsHeader prev={this.previous} next={this.next} />}  */}
-        {type === 'live' && <LiveHeader prev={this.previous} next={this.next} />}
-        {type === 'aimeVideos' && <AimeVideos prev={this.previous} next={this.next} />}
-        {type === 'testimonials' && <Testimonials prev={this.previous} next={this.next} />}
-        {type === 'wall' && <Wall prev={this.previous} next={this.next} />}
-        <Slider {...newSettings} ref={c => (this.slider = c)}>
-          {children}
-        </Slider>
-      </div>
-    );
-  }
-}
+export default Carousel;

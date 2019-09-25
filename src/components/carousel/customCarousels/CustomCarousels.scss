@@ -1,6 +1,7 @@
-@import '../../../styles/base/variables';
+@import "../../../styles/base/variables";
 
 .aimeVideos {
+
   &-highlight-text {
     font-size: calc(#{$base-font-size} + 2rem);
     padding-bottom: 30px;
@@ -63,6 +64,7 @@
     @media screen and (max-width: $md) {
       left: -1.4rem;
     }
+
     @media screen and (max-width: $sm) {
       left: -0.5rem;
     }
@@ -74,12 +76,14 @@
     @media screen and (max-width: $md) {
       right: -1.4rem;
     }
+
     @media screen and (max-width: $sm) {
       right: -0.5rem;
     }
   }
 
   @media screen and (max-width: $md) {
+
     .xs-text-wrap {
       max-width: 100%;
     }
@@ -87,6 +91,7 @@
 }
 
 .wall {
+
   &-highlight-text {
     font-size: calc(#{$base-font-size} + 2rem);
     padding-bottom: 30px;
@@ -147,6 +152,7 @@
     @media screen and (max-width: $md) {
       left: -1.4rem;
     }
+
     @media screen and (max-width: $sm) {
       left: -0.5rem;
     }
@@ -158,12 +164,14 @@
     @media screen and (max-width: $md) {
       right: -1.4rem;
     }
+
     @media screen and (max-width: $sm) {
       right: -0.5rem;
     }
   }
 
   @media screen and (max-width: $md) {
+
     .xs-text-wrap {
       max-width: 100%;
     }
