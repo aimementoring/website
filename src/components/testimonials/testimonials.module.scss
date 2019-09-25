@@ -1,0 +1,118 @@
+@import "../../styles/base/variables";
+
+.testimonials {
+  background: linear-gradient(90deg,#c24bcb 0,#64249b);
+  display: block;
+}
+
+.titleContainer {
+  @media screen and (max-width: $sm) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 4rem;
+  }
+}
+
+.title {
+  text-align: center;
+  display: block;
+  padding-top: 2rem;
+  color: $black;
+  font-family: $feature-font-family;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-style: italic;
+
+  @media screen and (min-width: $lg) {
+    font-size: 2.8rem;
+  }
+
+  @media screen and (min-width: $md) {
+    font-size: 1.6rem;
+  }
+}
+
+.highlightText {
+  font-size: calc(#{$base-font-size} + 2rem);
+  padding-bottom: 30px;
+  transform: rotate(-5deg);
+  line-height: .9;
+  font-family: blackhawk_italicregular;
+  font-weight: 100;
+  display: block;
+  color: $white;
+  position: relative;
+  z-index: 1;
+  
+  @media screen and (min-width: $md) {
+    padding: 15px 87px 30px 35px;
+  }
+}
+
+.carouselContainer {
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: $md) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.carouselContent {
+  width: 100%;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sliderContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @media (min-width: $sm) {
+    width: 50%;
+  }
+}
+
+.paragraphWrapper {
+  padding: .5rem;
+
+  .paragraph {
+    margin-bottom: 20px;
+    color: $white;
+    line-height: 2;
+    font-size: 14px;
+  }
+
+  .signature {
+    margin-bottom: 20px;
+    color: $white;
+    font-size: 20px;
+    font-family: $signature-font-family;
+    margin-top: 1rem;
+  }
+}
