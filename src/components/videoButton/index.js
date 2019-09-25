@@ -12,18 +12,7 @@ const VideoBox = ({ children }) => (
   )
 );
 
-export default class VideoButton extends PureComponent {
-  static propTypes = {
-    sourceType: PropTypes.string,
-    video: PropTypes.string.isRequired,
-    fullScreen: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    sourceType: 'application/x-mpegURL',
-    fullScreen: false,
-  }
-
+class VideoButton extends PureComponent {
   state = {
     open: false,
     playing: false,
@@ -98,7 +87,6 @@ export default class VideoButton extends PureComponent {
   }
 
   render() {
-    const { video } = this.props;
     const { playing, loaded, showContainer } = this.state;
 
     return (
@@ -121,3 +109,16 @@ export default class VideoButton extends PureComponent {
     );
   }
 }
+
+VideoButton.propTypes = {
+  sourceType: PropTypes.string,
+  video: PropTypes.string.isRequired,
+  fullScreen: PropTypes.bool,
+};
+
+VideoButton.defaultProps = {
+  sourceType: 'application/x-mpegURL',
+  fullScreen: false,
+};
+
+export default VideoButton;

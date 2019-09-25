@@ -1,0 +1,178 @@
+@import "../../styles/base/variables";
+
+.fullWrapper {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.titleContainer {
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.bannerWrapper {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
+    #050301;
+  background-size: cover;
+  height: auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: $sm) {
+    height: 90vh;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  color: $white;
+  font-family: $feature-font-family;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-style: italic;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+
+  @media (min-width: $lg) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: $md) {
+    font-size: 1.6rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding-top: 4rem;
+  }
+
+  .highlightText {
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #31e9ff 0%,#dc0aff 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 5rem;
+    outline: none;
+    transform: rotate(-5deg);
+    font-family: blackhawk_italicregular;
+    font-weight: 100;
+    display: block;
+    color: $white;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $lg) {
+      font-size: 7rem;
+      line-height: 6.2rem;
+    }
+
+    @media (min-width: $md) {
+      font-size: 6rem;
+      line-height: 5.5rem;
+    }
+
+    @media (min-width: $sm) {
+      font-size: 5rem;
+    }
+  }
+}
+
+.videoButton {
+  padding-bottom: 1rem;
+  padding-top: .5rem;
+}
+
+.videoBanner {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.centeredImage {
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.textWrapper {
+  max-width: 600px;
+  padding: .5rem;
+
+  .paragraph {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: $white;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.linkContainer {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.grabACopy {
+  background-color: $brand-primary;
+  border-radius: 90px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $feature-font-family;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 2rem;
+  opacity: 1;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all .1s linear;
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+}
+
+.testimonialsContainer {
+  background: linear-gradient(90deg, #c24bcb 0%, #64249b 100%);
+  position: relative;
+}
+
+.overlay {
+  top: -70px;
+  clip-path: url(#svgScratchDivider);
+  position: absolute;
+  display: block;
+  z-index: 10;
+  width: 100%;
+  min-height: 150px;
+  background-color: $darkest-purple;
+}

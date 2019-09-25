@@ -1115,3 +1115,41 @@ export const stories = {
     },
   },
 };
+
+export const TESTIMONIALS = [
+  {
+    paragraph: `This book led me to redemption, redemption of my roots, my culture, my past,
+      my present and my future. This is now my favourite book, to me it’s not just a
+      book. It’s a reminder, telling me I am what I am and nothing or no one can
+      stand in my way and tell me I’m not.`,
+    signature: `- Hope Bradshaw-Wright`,
+  },
+  {
+    paragraph: `A riveting story with eloquent prose and brutal honesty. I can't wait to read the sequel.`,
+    signature: `- Patrick Orme (AIME Staffer)`,
+  },
+  {
+    paragraph: `The messages are very clear. Sometimes you have to get knocked down lower than
+      you’ve ever been, to stand up taller than you ever were before.`,
+    signature: `- Rhian Miller (AIME Mentor &amp; Centre Manager)`,
+  },
+  {
+    paragraph: `Just like AIME itself, ‘the Mentor’ is entrenched with human connection. Very
+      rarely do books find a way to draw you in and unlock your mind like this book.`,
+    signature: `- Emma Dunn (AIME Mentor Leader &amp; Program Assistant)`,
+  },
+  {
+    paragraph: `The book made me reflect on my own life especially as a young Indigenous man
+      who went to Uni to get the skills to change things for the people in my
+      community. The Mentor challenged me to be ambitious in my actions as well as
+      thoughts.`,
+    signature: `- Rhys Pearcy (AIME Mentor &amp; Program Manager)`,
+  },
+  {
+    paragraph: `Thank you for the work you have done in Australia and thank you for having the
+      courage to dream bigger and go global. Thank you for sharing your inspiring
+      story and continuing to take as many people as possible on such an important
+      journey.`,
+    signature: `- Emma Gallagher`,
+  },
+];
