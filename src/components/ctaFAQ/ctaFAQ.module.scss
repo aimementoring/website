@@ -1,0 +1,64 @@
+@import '../../styles/base/variables';
+
+.wrapper {
+  position: relative;
+  z-index: 15;
+  padding: 4rem;
+  background: $darkest-purple;
+
+  @media screen and (max-width: $md) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.ctaText {
+  font-family: $feature-font-family;
+  font-size: 18px;
+  position: relative;
+  top: -15px;
+}
+
+.ctaBtn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: $white;
+  background: linear-gradient(to right, rgba(26, 0, 36, 1) 0%, rgba(75, 0, 79, 1) 49%, rgba(24, 0, 34, 1) 100%);
+  border-image: linear-gradient(to right, $accent-blue 0%,#f000ff 100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  border-style: solid;
+  padding: 1em 0;
+  text-decoration: none;
+  font-weight: bold;
+
+  a {
+    padding: 2rem;
+    display: block;
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.arrowNext {
+  display: block;
+  fill: currentColor;
+  height: 45px;
+  margin: 0 auto;
+  position: relative;
+  stroke-width: 0;
+  stroke: currentColor;
+  top: 1px;
+  width: 45px;
+
+  @media screen and (min-width: 438px) {
+    left: 15px;
+    display: inline;
+  }
+}
