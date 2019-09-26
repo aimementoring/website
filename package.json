@@ -13,8 +13,9 @@
     "heroku-start": "node server/bootstrap.js",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
+    "lhbot": "lighthousebot --perf=96 --pwa=100",
     "gimbal": "gimbal audit",
-    "run:lighthouse": "lighthouse-github-reporter -- --prId=<myId>"
+    "lighthouse-gh": "lighthouse-github-reporter --prId=3"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
@@ -103,6 +104,28 @@
     ]
   },
   "devDependencies": {
-    "lighthouse": "^5.4.0"
+    "@modus/gimbal": "^1.2.3",
+    "lighthouse": "^5.4.0",
+    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git"
+  },
+  "config": {
+    "lighthouse-github-reporter": {
+      "urls": [
+        "http://localhost:3000",
+        "http://localhost:3000/stories"
+      ],
+      "apiUrl": "https://api.github.com",
+      "owner": "AIME",
+      "repository": "website-ssr-blueprint-poc",
+      "reporterUserName": "AIME",
+      "noiseLevel": "low",
+      "scoreThresholds": {
+        "performance": 95,
+        "pwa": 95,
+        "accessibility": 95,
+        "best-practices": 95,
+        "seo": 95
+      }
+    }
   }
 }
