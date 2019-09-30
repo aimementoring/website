@@ -10,7 +10,8 @@
     "eject": "react-scripts eject",
     "start": "yarn server",
     "server": "NODE_ENV=production node server/bootstrap.js",
-    "heroku-start": "node server/bootstrap.js"
+    "heroku-start": "node server/bootstrap.js",
+    "heroku-postbuild": "aws s3 sync build/ s3://aime-website/public"
   },
   "dependencies": {
     "@babel/register": "^7.4.4",
