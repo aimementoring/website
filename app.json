@@ -1,0 +1,78 @@
+{
+  "name": "website-v5",
+  "env": {
+    "REACT_APP_AIRTABLE_API_KEY": {
+      "required": true,
+      "value": "keyQwkepkcSrWl1du"
+    },
+    "REACT_APP_AIRTABLE_PROGRAM_BASE": {
+      "required": true,
+      "value": "appYBHhHUO92wVVmQ"
+    },
+    "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE":{
+      "required": true,
+      "value": "appiTNzrkMrckYbqk"
+    },
+    "REACT_APP_AIRTABLE_AIME_TV_BASE":{
+      "required": true,
+      "value": "appkXKunw3opaIC2r"
+    },
+    "REACT_APP_BUGSNAG_API_KEY": {
+      "required": true,
+      "value":"86d2b4e39996207965121833a890370d"
+    },
+    "REACT_APP_AUTH0_API_ID_STAFF" : {
+      "required": true,
+      "value": "0v3jAHNidyrI993aGH2kOIYfX1Ff8jCr"
+    },
+    "REACT_APP_AUTH0_API_ID_RECRUITMENT" : {
+      "required": true,
+      "value": "Po34fKQ4UmW1AEnIRJ0tPch51WNM5lWc"
+    },
+    "REACT_APP_AUTH0_URL" : {
+      "required": true,
+      "value": "aimementoring-staging.auth0.com"
+    },
+    "REACT_APP_CRAFT_API" : {
+      "required": true,
+      "value": "https://aimeweb-backend-staging.herokuapp.com"
+    },
+    "REACT_APP_FILE_UPLOADER_API_KEY" : {
+      "required": true,
+      "value": "AnpTaG2AITvSuOfoenIpKz"
+    },
+    "REACT_APP_BUGSNAG_KEY" : {
+      "required": true,
+      "value": "a7e1073d7f3c8f5381afb5e8e68487ac"
+    },
+    "REACT_APP_HOST_ENV" : {
+      "required": true,
+      "value": "staging"
+    },
+    "REACT_APP_PORTAL_API": {
+      "required": true,
+      "value": "https://aime-portal-api.herokuapp.com"
+    },
+    "REACT_APP_MENTOR_EOI_BASE_KEY": {
+      "required": true,
+      "value": "appfv6xbNhSMnOq1n"
+    },
+    "REACT_APP_PRO_IP_KEY": {
+      "required": true,
+      "value": "gXmk7M683Y6UBip"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/awscli.tgz"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
