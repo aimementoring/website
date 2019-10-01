@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { setMessage } from './store/appReducer';
 import Router from './router';
 
-import './App.scss'; // Test
+import './App.scss';
 
 class App extends Component {
   componentDidMount() {
