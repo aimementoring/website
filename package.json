@@ -14,8 +14,7 @@
     "postbuild": "aws s3 sync ./build/ s3://aime-website/public --acl public-read",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
-    "lhbot": "lighthousebot --perf=96 --pwa=100",
-    "gimbal": "gimbal audit",
+    "lhbot": "lighthousebot --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
     "lighthouse-gh": "lighthouse-github-reporter --prId=3"
   },
   "dependencies": {
@@ -104,7 +103,6 @@
     ]
   },
   "devDependencies": {
-    "@modus/gimbal": "^1.2.3",
     "lighthouse": "^5.4.0",
     "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git"
   },
