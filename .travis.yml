@@ -19,8 +19,6 @@ script:
 jobs:
   include:
   - stage: Peformance reporter
-    script: skip
-    if: type=pull_request
     env:
     - NODE_ENV=development
     deploy:
