@@ -2,10 +2,6 @@ sudo: false
 language: node_js
 node_js:
 - '10'
-before_install:
-  - pip install --user awscli
-  - mkdir -p ~/$TRAVIS_BUILD_NUMBER
-  - aws s3 sync s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER ~/$TRAVIS_BUILD_NUMBER
 install:
 - node -v
 before_script:
@@ -16,13 +12,13 @@ cache:
   yarn: true
 git:
   depth: 3
-script:
-- yarn build
-- yarn lint
-- yarn test
 jobs:
   include:
   - stage: Peformance reporter
+    script:
+    - yarn build
+    - yarn lint
+    - yarn test
     env:
     - NODE_ENV=development
     deploy:
@@ -36,3 +32,5 @@ jobs:
     - sleep 3
     - yarn run lhbot -- https://aimeweb-staging-pr-PULL_REQUEST_NUMBER.herokuapp.com/
     - yarn run lhbot -- https://aimeweb-production.herokuapp.com/
+    script:
+    - echo "skipping tests"
