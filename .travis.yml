@@ -30,7 +30,5 @@ jobs:
         repo: aimementoring/website-ssr-blueprint-poc
     after_success:
     - sleep 3
-    - yarn run lhbot -- https://aimeweb-staging-pr-PULL_REQUEST_NUMBER.herokuapp.com/
-    - yarn run lhbot -- https://aimeweb-production.herokuapp.com/
-    script:
-    - echo "skipping tests"
+    - yarn run lhbot https://aimeweb-staging-pr-PULL_REQUEST_NUMBER.herokuapp.com/
+    - yarn run lhbot https://aimeweb-production.herokuapp.com/
