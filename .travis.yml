@@ -1,0 +1,36 @@
+sudo: false
+language: node_js
+node_js:
+- '10'
+install:
+- node -v
+before_script:
+- yarn
+cache:
+  directories:
+  - node_modules
+  yarn: true
+git:
+  depth: 3
+script:
+- yarn build
+- yarn lint
+- yarn test
+jobs:
+  include:
+  - stage: Peformance reporter
+    script: skip
+    if: type=pull_request
+    env:
+    - NODE_ENV=development
+    deploy:
+      api_key: # travis encrypted heroku auth token
+        secure: oTX7jyZiWOEVTAD/+cuqGRIHL4YyMy/gw0BfPgpkyp3dsH8ygq2nBhanLbD3/WAOm1J/mH8y73kE/A9I8FBIMyMjPg6b3eyf3T7kbRWH/RFBRosau5I50+GvgOdQvmSPMtxPCRz2PLSyM1XvjF76tivvuQEyJacrmMjkRr+dT6AVELNuSO3FqUlmo2thVOR961SkEwLaKiIBm9yNJiJ5Hp0lTcAnz8H/PLvpoBdxy8irHCnkSO4Nq7h6iODkLeCsboHvi613u70UGE8bZVDWpAI7U0pG8FLa5avVUcNQ95Spu3C6FgCc0uFdJESzy03vHItw9VRxrw9UQ06aulD3Vv8+Eo3aUKeOFdNFQLRy6LTSwwI5w26+pJxpKREFih5iDhylJX6i1ib2aGDFK8I8euWGCn34TFFOPd+UKX1cXToz/Me4ludCjHMEuUM1a+wyjpZqK0+5diBFaPcLGxY2JTYcbHgkmX4nXrmRtoGrBhvM23RELFO1WD6QhWI2JCMhEDhhFvHa5Xzy3IBQ97eZ4btCKhRK1zuE1MAx31nBwsE+22dCzxHQCaWYlSJNCeaRhdfGunorBp2dul2FNruClaHFhnk1IMVsnm0B43EnszdHYKoMWGloEx5U54l8me9S4DNEH+IDgdX0wnY8nyLHJJo40oEv2n00AdfHxI2b+AA=
+      app: website-ssr-blueprint-poc
+      strategy: git
+      on:
+        repo: aimementoring/website-ssr-blueprint-poc
+    after_success:
+    - sleep 3
+    - yarn run lhbot -- https://aimeweb-staging-pr-PULL_REQUEST_NUMBER.herokuapp.com/
+    - yarn run lhbot -- https://aimeweb-production.herokuapp.com/
