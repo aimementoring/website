@@ -12,13 +12,14 @@ cache:
   yarn: true
 git:
   depth: 3
+script:
+- yarn build
+- yarn lint 
+- yarn test
 jobs:
   include:
   - stage: Peformance reporter
-    script:
-    - yarn build
-    - yarn lint
-    - yarn test
+    script: skip
     env:
     - NODE_ENV=development
     deploy:
@@ -29,6 +30,7 @@ jobs:
       on:
         repo: aimementoring/website-ssr-blueprint-poc
     after_success:
+    - yarn postbuild
     - sleep 3
     - yarn run lhbot https://aimeweb-staging-pr-PULL_REQUEST_NUMBER.herokuapp.com/
     - yarn run lhbot https://aimeweb-production.herokuapp.com/
