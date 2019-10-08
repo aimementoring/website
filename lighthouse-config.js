@@ -5,11 +5,11 @@ module.exports = {
   settings: {
     // The settings property controls various aspects of running Lighthouse such as CPU/network throttling and audit whitelisting/blacklisting.
     scores: {
-      performance: 90,
-      accessibility: 90,
-      "best-practices": 90,
-      seo: 80,
-      pwa: 50
+      performance: 95,
+      accessibility: 95,
+      "best-practices": 95,
+      seo: 95,
+      pwa: 95
     },
     onlyCategories: ["performance", "accessibility", "best-practices", "seo"],
     passes: [
