@@ -78,7 +78,7 @@ export default class HeroBannerHomepage extends Component {
                   </p>
                 </div> */}
               </div>
-              <a className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right" href="https://shop.aimementoring.com/" target="_blank">CHECK IT OUT</a>
+              <a className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right" href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer">CHECK IT OUT</a>
             </div>
           </div>
         </div>
