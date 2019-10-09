@@ -29,7 +29,7 @@ const DynamicEOI = ({ match, history }) => {
         setImg(data.img);
       }
     }
-  }, []);
+  }, [match]);
 
   return (
     <div>
