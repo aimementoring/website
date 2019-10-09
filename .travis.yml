@@ -14,9 +14,7 @@ git:
   depth: 3
 script:
 - yarn build
-#- yarn test
+- yarn test
 after_success:
   - sleep 3
   - yarn run lhbot https://website-ssr.herokuapp.com/
-  script:
-  - yarn postbuild
