@@ -107,6 +107,18 @@ export default [
     })
   },
   {
+    path: '/case-studies',
+    component: getAsyncComponent({
+      loader: () => import('../pages/caseStudies')
+    })
+  },
+  {
+    path: '/global-letter',
+    component: getAsyncComponent({
+      loader: () => import('../pages/globalLetter')
+    })
+  },
+  {
     path: '/thanks',
     exact: true,
     component: getAsyncComponent({
