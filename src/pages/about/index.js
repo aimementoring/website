@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import Title from 'aime-blueprint/lib/components/title';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
 import HeroBannerAbout from '../../components/heroBannerAbout';
 import styles from './about.module.scss';
@@ -29,10 +30,12 @@ const About = () => {
                 </h1>
               </div>
               <div className={styles.copy}>
-                <h3 className={styles.whiteTitleWithMargin}>
+                {/* <h3 className={styles.whiteTitleWithMargin}>
                   We are driven to unlock the limitless potential of children who have been left
                   behind
-                </h3>
+                </h3> */}
+                <Title type="mainTitle">We are driven to unlock the limitless potential of children who have been left
+                  behind</Title>
                 <p className={styles.whiteText}>
                   We do that by building mentoring bridges between universities and high schools,
                   between the powerful and the powerless, the haves and the have nots. We know that
@@ -117,6 +120,7 @@ const About = () => {
                 </h1>
               </div>
               <div className={styles.copy}>
+
                 <h3 className={styles.whiteTitleWithMargin}>We've got knowledge & tools to share</h3>
                 <p className={styles.whiteText}>
                   In 2018 we opened our model on demand to Universities from across the globe, with
