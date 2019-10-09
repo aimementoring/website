@@ -1283,6 +1283,27 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@loadable/babel-plugin@^5.10.3":
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.10.3.tgz#faadbe38036b29e449640c3974acececbaeb5739"
+  integrity sha512-Izo4QX526f/Czvdot1izg0DtA5DfJEW5RUN28/9wt+62It4xKhVv9l0NNcTEL39xJXj7lsE4k5Z6eCBSETpHmw==
+  dependencies:
+    "@babel/plugin-syntax-dynamic-import" "^7.2.0"
+
+"@loadable/server@^5.10.3":
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/@loadable/server/-/server-5.10.3.tgz#421e1af549d58d67a0a459cd4f2ae7bf20ab4bc6"
+  integrity sha512-rVwJdGhvzEPZSbMbU65C4TFao/CyF5wS4JeHd4dACjZKEQxlUD3m1IarwUKpdDdrum11J3Ug3PUJMFSlJ6pMSA==
+  dependencies:
+    lodash "^4.17.15"
+
+"@loadable/webpack-plugin@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/@loadable/webpack-plugin/-/webpack-plugin-5.7.1.tgz#9fe4b19c347eaa72f8ff366ae9a9d2b724f86124"
+  integrity sha512-tURNYwPUahbM4Miz/mwMD+PZGnMpknRukwt4RViVX6tYOt06a5U92xJTv7t54C4tHdtCIEOmDrqCo97sfIu4mg==
+  dependencies:
+    mkdirp "^0.5.1"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1836,10 +1857,10 @@ aes-decrypter@3.0.0:
     global "^4.3.2"
     pkcs7 "^1.0.2"
 
-aime-blueprint@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.3.tgz#7b1fa77f6ea12a2f8da3b75d25663271a7ec2793"
-  integrity sha512-QrJ05T7MzPIeLhnb0ywv3OGmdLyIROo1ZIV9ykE7TxHRUVAOsLwlhMqv1/LlFIi5A3T3MQHP4JuFmoR34jCEkA==
+aime-blueprint@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.6.tgz#174b59570be4abf3e5f994c553f1c791c7036cfd"
+  integrity sha512-2rF3A+RvscR+EDwhsFt3G/ocmsdS4ZheNRXKpLQcuhfzUn/6P9QpiS50AIXMetatac9k+2XJa8G02+0Zr/qwJw==
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
@@ -7325,7 +7346,7 @@ lodash@4.17.11:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
