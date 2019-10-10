@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
-import LiveHeader from './carouselHeaders/liveHeader';
-import AimeVideos from './carouselHeaders/aimeVideos';
-import Testimonials from './carouselHeaders/testimonials';
-import Wall from './carouselHeaders/wall';
+import LiveHeader from './carouselHeaders/LiveHeader';
+import AimeVideos from './carouselHeaders/AimeVideos';
+import Testimonials from './carouselHeaders/Testimonials';
+import Wall from './carouselHeaders/Wall';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
