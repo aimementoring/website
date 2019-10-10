@@ -113,6 +113,12 @@ export default [
     })
   },
   {
+    path: '/donate',
+    component: getAsyncComponent({
+      loader: () => import('../pages/donate')
+    })
+  },
+  {
     path: '/global-letter',
     component: getAsyncComponent({
       loader: () => import('../pages/globalLetter')
