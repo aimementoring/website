@@ -9,18 +9,16 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and lhbot-audit
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@1.1.0
+    - name: yarn, build, and lhbot-audit
       run: |
-        npm install
-        npm run build --if-present
-        npm run lhbot https://website-ssr.herokuapp.com/
+        yarn
+        yarn build --if-present
+        yarn lhbot https://website-ssr.herokuapp.com/
       env:
         CI: true
