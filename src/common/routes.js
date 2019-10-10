@@ -151,6 +151,12 @@ export default [
     }),
   },
   {
+    path: '/products/:productId',
+    component: getAsyncComponent({
+      loader: () => import('../pages/theMentorProducts')
+    }),
+  },
+  {
     path: '/global-letter',
     exact: true,
     component: getAsyncComponent({
