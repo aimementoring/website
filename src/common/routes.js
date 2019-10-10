@@ -1,5 +1,7 @@
 import { getAsyncComponent } from '../utils/fileLoader';
 
+const countryRegex = '/:countryId(au|za|us|ug)'; // Match one of the 4 site versions
+
 export default [
   {
     path: '/coming-soon',
@@ -108,18 +110,49 @@ export default [
   },
   {
     path: '/case-studies',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/caseStudies')
     })
   },
   {
     path: '/donate',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/donate')
     })
   },
   {
+    path: '/positions',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/positions')
+    })
+  },
+  {
+    path: `${countryRegex}/positions`,
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/positions')
+    }),
+  },
+  {
+    path: '/positions/:id/:jobCategory',
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/positionsEntry')
+    }),
+  },
+  {
+    path: `${countryRegex}/positions/:id/:jobCategory`,
+    exact: true,
+    component: getAsyncComponent({
+      loader: () => import('../pages/positionsEntry')
+    }),
+  },
+  {
     path: '/global-letter',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/globalLetter')
     })
@@ -133,24 +166,28 @@ export default [
   },
   {
     path: '/contact',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/contact')
     })
   },
   {
     path: '/ambassadors',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/ambassadors')
     })
   },
   {
     path: '/know-aime',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/knowAime')
     }),
   },
   {
     path: '/impact',
+    exact: true,
     component: getAsyncComponent({
       loader: () => import('../pages/impact')
     })

@@ -9867,6 +9867,17 @@ react-intl-tel-input@^7.0.1:
     react-style-proptype "^3.0.0"
     underscore.deferred "^0.4.0"
 
+react-intl-tel-input@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/react-intl-tel-input/-/react-intl-tel-input-7.0.2.tgz#f73b583265c1d5fee75552bf86f870f6c6d586ad"
+  integrity sha512-bQYoCxo830KL97VdDPg9u8lwMsYnUPU3gqQOhNfOPP7Vy/6yzLJiPEY4GU4G9cDwCZMj/gQKEFCfFHGnnO34PA==
+  dependencies:
+    classnames "^2.2.5"
+    libphonenumber-js-utils "^8.10.2"
+    prop-types "^15.6.1"
+    react-style-proptype "^3.0.0"
+    underscore.deferred "^0.4.0"
+
 react-intl@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.9.0.tgz#c97c5d17d4718f1575fdbd5a769f96018a3b1843"
