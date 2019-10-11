@@ -11,7 +11,7 @@
     "start": "yarn server",
     "server": "NODE_ENV=production node server/bootstrap.js",
     "heroku-start": "node server/bootstrap.js",
-    "heroku-postbuild": " yarn build && aws s3 sync ./build/ s3://aime-website/public --acl public-read",
+    "heroku-postbuild": "yarn build && aws s3 sync ./build/ s3://aime-website/public --acl public-read",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
     "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95"
