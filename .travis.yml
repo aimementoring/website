@@ -15,5 +15,5 @@ git:
 script:
   - yarn build
 after_success:
-  - sleep 5m
+  - sleep 4m
   - yarn run lhbot https://website-ssr.herokuapp.com/
