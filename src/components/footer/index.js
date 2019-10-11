@@ -49,7 +49,7 @@ class Footer extends PureComponent {
                         </li>
                         <li className="mb2">
                           <Link
-                            to="/contact"
+                            to="/faq"
                             className="c-white text-decoration-none">
                             Become a <strong>Partner</strong>
                           </Link>
@@ -109,7 +109,7 @@ class Footer extends PureComponent {
                         </li>
                         <li className="mb2">
                           <Link
-                            to="/contact"
+                            to="/faq"
                             className="c-white text-decoration-none">
                             Contact
                           </Link>

@@ -376,7 +376,7 @@ const Impact = () => {
                 </span>
               </h2>
               <Link
-                to="/contact"
+                to="/faq"
                 className="ghost-btn bg-brand-primary center mb2"
               >
                 <span className=" download-btn-text">Partner with us</span>

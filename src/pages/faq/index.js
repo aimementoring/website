@@ -48,7 +48,7 @@ export default class FAQs extends PureComponent {
       alignment: "right",
       horizontal_padding: 20,
       vertical_padding: 20,
-      background_color: "transparent"
+      background_color: "rgba(255,255,255, 0.7)"
       /*
         user information could be usful for portal
         name: "Jane Doe", // Full name
@@ -90,8 +90,9 @@ export default class FAQs extends PureComponent {
       }
     })();
     window.Intercom("onShow", () => { console.log("chat show!") });
-    window.Intercom('getVisitorId')
-    window.Intercom('onHide', () => { console.log("chat hide!") });
+    window.Intercom("show");
+    window.Intercom("getVisitorId");
+    window.Intercom("onHide", () => { console.log("chat hide!") });
   }
 
   componentDidUpdate() {
@@ -205,8 +206,8 @@ export default class FAQs extends PureComponent {
                 <p className="f-18">
                   <strong>Yo</strong>, thank you for wanting to know about AIME.
                   We’ll do our best to front foot some of the common questions.
-                  If we don’t nail them all, feel free to
-                  <Link to="/contact">ping us a note</Link>. Your questions help
+                  If we don’t nail them all, feel free to{" "}
+                  <Link to="/faq">ping us a note</Link>. Your questions help
                   us refine our answers and we'll use them to update this space
                   and help everyone to understand AIME as quickly as possible.
                 </p>

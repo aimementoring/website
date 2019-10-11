@@ -90,7 +90,7 @@ class Header extends PureComponent {
                   <ul className="list-reset">
                     {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
                     <li className="inline-block relative header-link--with-submenu">
-                      <Link className="nav-btn" to="/contact">Get in touch</Link>
+                      <Link className="nav-btn" to="/faq">Get in touch</Link>
                     </li>
                     <li className="inline-block">
                       <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
