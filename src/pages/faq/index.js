@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 //import scrollToComponent from 'react-scroll-to-component';
 import getEntries from '../../services/craftAPI';
 
-const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
-
 export default class FAQs extends PureComponent {
   static propTypes = {
     location: PropTypes.object.isRequired,
@@ -23,7 +21,6 @@ export default class FAQs extends PureComponent {
   }
 
   componentDidMount() {
-    this.intercomChat();
     const categories = ['General'];
     getEntries('faq').then(response => {
       const faqsData = response.data;
@@ -39,60 +36,6 @@ export default class FAQs extends PureComponent {
         faqsData
       });
     });
-  }
-
-  intercomChat = () => {
-    window.intercomSettings = {
-      app_id: APP_ID,
-      /*Styles*/
-      alignment: "right",
-      horizontal_padding: 20,
-      vertical_padding: 20,
-      background_color: "rgba(255,255,255, 0.7)"
-      /*
-        user information could be usful for portal
-        name: "Jane Doe", // Full name
-        email: "customer@example.com", // Email address
-        created_at: "1312182000" // Signup date as a Unix timestamp
-      */
-    };
-    (() => {
-      var w = window;
-      var ic = w.Intercom;
-      if (typeof ic === "function") {
-        ic("reattach_activator");
-        ic("update", w.intercomSettings);
-      } else {
-        var d = document;
-        var i = function() {
-          i.c(arguments);
-        };
-        i.q = [];
-        i.c = function(args) {
-          i.q.push(args);
-        };
-        w.Intercom = i;
-        var l = function() {
-          var s = d.createElement("script");
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = "https://widget.intercom.io/widget/" + APP_ID;
-          var x = d.getElementsByTagName("script")[0];
-          x.parentNode.insertBefore(s, x);
-        };
-        if (document.readyState === "complete") {
-          l();
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", l);
-        } else {
-          w.addEventListener("load", l, false);
-        }
-      }
-    })();
-    window.Intercom("onShow", () => { console.log("chat show!") });
-    window.Intercom("show");
-    window.Intercom("getVisitorId");
-    window.Intercom("onHide", () => { console.log("chat hide!") });
   }
 
   componentDidUpdate() {
@@ -159,6 +102,10 @@ export default class FAQs extends PureComponent {
     history.push(`#${hash}`);
   };
 
+  handleShowIntercom = () => {
+    window.Intercom("show");
+  }
+
   render() {
     const { categories } = this.state;
     return (
@@ -207,7 +154,7 @@ export default class FAQs extends PureComponent {
                   <strong>Yo</strong>, thank you for wanting to know about AIME.
                   We’ll do our best to front foot some of the common questions.
                   If we don’t nail them all, feel free to{" "}
-                  <Link to="/faq">ping us a note</Link>. Your questions help
+                  <a onClick={this.handleShowIntercom} href="#">ping us a note</a>. Your questions help
                   us refine our answers and we'll use them to update this space
                   and help everyone to understand AIME as quickly as possible.
                 </p>

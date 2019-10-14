@@ -9,6 +9,9 @@ import './index.scss';
 const currentYear = moment().year();
 
 class Footer extends PureComponent {
+  static propTypes = {
+    handleShowIntercom: PropTypes.func.isRequired,
+  };
   // Starts hack fix to avoid double rendering
   // https://github.com/facebook/react/issues/8017#issuecomment-256351955
   constructor(props) {
@@ -25,6 +28,10 @@ class Footer extends PureComponent {
       hasMounted: true,
       assetsUrl: getAssetsBaseUrl(),
     });
+  }
+
+  handleShowIntercom = () => {
+    this.props.handleShowIntercom();
   }
 
   render() {
@@ -101,18 +108,20 @@ class Footer extends PureComponent {
                           </Link>
                         </li>
                         <li className="mb2">
-                          <Link
-                            to="/faq"
-                            className="c-white text-decoration-none">
+                          <a
+                            className="c-white text-decoration-none"
+                            href="https://intercom.help/aime-faqs/en/"
+                          >
                             FAQs
-                          </Link>
+                          </a>
                         </li>
                         <li className="mb2">
-                          <Link
-                            to="/faq"
-                            className="c-white text-decoration-none">
+                          <a
+                            className="c-white text-decoration-none"
+                            href="#"
+                            onClick={this.handleShowIntercom}>
                             Contact
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </nav>

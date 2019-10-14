@@ -9,6 +9,10 @@ import MobileMenu from '../mobileMenu';
 import './index.scss';
 
 class Header extends PureComponent {
+  static propTypes = {
+    handleShowIntercom: PropTypes.func.isRequired,
+  };
+  
   state = {
     className: `header-transparent ${(this.props.location.pathname.indexOf('/hooded-scholar') > -1) && 'do-not-display'}`,
     assetsUrl: '',
@@ -36,6 +40,10 @@ class Header extends PureComponent {
 
   getBeAMentorLink = () => {
     return '/be-a-mentor';
+  }
+
+  handleShowIntercom = () => {
+    this.props.handleShowIntercom();
   }
 
   handleTalentItemClicked = (item) => {
@@ -90,7 +98,7 @@ class Header extends PureComponent {
                   <ul className="list-reset">
                     {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
                     <li className="inline-block relative header-link--with-submenu">
-                      <Link className="nav-btn" to="/faq">Get in touch</Link>
+                      <a className="nav-btn" onClick={this.handleShowIntercom} href="#">Get in touch</a>
                     </li>
                     <li className="inline-block">
                       <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
