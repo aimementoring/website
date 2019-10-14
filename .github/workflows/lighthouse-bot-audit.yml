@@ -1,0 +1,24 @@
+name: Lighthouse-bot audit
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@1.1.0
+    - name: yarn, build, and lhbot-audit
+      run: |
+        yarn
+        yarn build --if-present
+        yarn lhbot https://website-ssr.herokuapp.com/
+      env:
+        CI: true
