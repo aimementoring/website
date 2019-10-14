@@ -67,15 +67,15 @@
     },
     "AWS_ACCESS_KEY_ID": {
       "required": true,
-      "value": "g36n1wzq"
+      "value": "AKIAWFCM2CEJYRNPCNUG"
     },
     "AWS_DEFAULT_REGION": {
       "required": true,
-      "value": "g36n1wzq"
+      "value": "ap-southeast-2"
     },
     "AWS_SECRET_ACCESS_KEY": {
       "required": true,
-      "value": "g36n1wzq"
+      "value": "gDS9IaN67mbSXH2DJnoRFmq8yBjPuFSb+IwAv962"
     }
   },
   "formation": {
