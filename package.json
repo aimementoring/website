@@ -2,32 +2,73 @@
   "name": "website-ssr-blueprint-poc",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start:dev": "yarn && react-scripts start",
+    "start:server": "yarn && yarn build && yarn server",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "yarn server",
+    "server": "NODE_ENV=production node server/bootstrap.js",
+    "heroku-start": "node server/bootstrap.js",
+    "heroku-postbuild": "yarn build && aws s3 sync ./build/ s3://aime-website/public --acl public-read",
+    "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
+    "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
+    "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95"
+  },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
+    "@bugsnag/js": "^6.3.1",
+    "@bugsnag/plugin-react": "^6.2.0",
+    "aime-blueprint": "^2.1.3",
+    "airtable": "^0.6.0",
+    "auth0-lock": "^11.16.3",
     "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
+    "country-list": "^2.1.1",
+    "cross-fetch": "^3.0.4",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "file-loader": "^4.0.0",
+    "filestack-react": "^3.0.0",
+    "google-maps": "^3.3.0",
     "ignore-styles": "^5.0.1",
+    "js-search": "^1.4.2",
+    "moment": "^2.24.0",
     "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "rc-select": "^9.1.5",
+    "rc-table": "^6.6.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-html-parser": "^2.0.2",
+    "react-intl": "^2.9.0",
+    "react-intl-tel-input": "^7.0.1",
     "react-loadable": "^5.5.0",
+    "react-places-autocomplete": "^7.2.1",
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-scroll-to-component": "^1.0.2",
+    "react-select": "^3.0.4",
+    "react-slick": "^0.24.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "url-loader": "^2.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "NODE_ENV=production node server/bootstrap.js"
+    "shopify-buy": "^2.4.0",
+    "slick-carousel": "^1.8.1",
+    "url-loader": "^2.0.0",
+    "video.js": "7.0.5",
+    "videojs-contrib-hls": "5.14.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,5 +85,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "lighthouse": "^5.4.0",
+    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git"
   }
 }
