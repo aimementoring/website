@@ -60,6 +60,10 @@
     "REACT_APP_PRO_IP_KEY": {
       "required": true,
       "value": "gXmk7M683Y6UBip"
+    },
+    "REACT_APP_INTERCOM_APP_ID": {
+      "required": true,
+      "value": "g36n1wzq"
     }
   },
   "formation": {
@@ -69,7 +73,7 @@
   },
   "buildpacks": [
     {
-      "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/awscli.tgz"
+      "url": "heroku/python"
     },
     {
       "url": "heroku/nodejs"
