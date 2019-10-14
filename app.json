@@ -9,43 +9,43 @@
       "required": true,
       "value": "appYBHhHUO92wVVmQ"
     },
-    "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE":{
+    "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE": {
       "required": true,
       "value": "appiTNzrkMrckYbqk"
     },
-    "REACT_APP_AIRTABLE_AIME_TV_BASE":{
+    "REACT_APP_AIRTABLE_AIME_TV_BASE": {
       "required": true,
       "value": "appkXKunw3opaIC2r"
     },
     "REACT_APP_BUGSNAG_API_KEY": {
       "required": true,
-      "value":"86d2b4e39996207965121833a890370d"
+      "value": "86d2b4e39996207965121833a890370d"
     },
-    "REACT_APP_AUTH0_API_ID_STAFF" : {
+    "REACT_APP_AUTH0_API_ID_STAFF": {
       "required": true,
       "value": "0v3jAHNidyrI993aGH2kOIYfX1Ff8jCr"
     },
-    "REACT_APP_AUTH0_API_ID_RECRUITMENT" : {
+    "REACT_APP_AUTH0_API_ID_RECRUITMENT": {
       "required": true,
       "value": "Po34fKQ4UmW1AEnIRJ0tPch51WNM5lWc"
     },
-    "REACT_APP_AUTH0_URL" : {
+    "REACT_APP_AUTH0_URL": {
       "required": true,
       "value": "aimementoring-staging.auth0.com"
     },
-    "REACT_APP_CRAFT_API" : {
+    "REACT_APP_CRAFT_API": {
       "required": true,
       "value": "https://aimeweb-backend-staging.herokuapp.com"
     },
-    "REACT_APP_FILE_UPLOADER_API_KEY" : {
+    "REACT_APP_FILE_UPLOADER_API_KEY": {
       "required": true,
       "value": "AnpTaG2AITvSuOfoenIpKz"
     },
-    "REACT_APP_BUGSNAG_KEY" : {
+    "REACT_APP_BUGSNAG_KEY": {
       "required": true,
       "value": "a7e1073d7f3c8f5381afb5e8e68487ac"
     },
-    "REACT_APP_HOST_ENV" : {
+    "REACT_APP_HOST_ENV": {
       "required": true,
       "value": "staging"
     },
@@ -62,6 +62,18 @@
       "value": "gXmk7M683Y6UBip"
     },
     "REACT_APP_INTERCOM_APP_ID": {
+      "required": true,
+      "value": "g36n1wzq"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true,
+      "value": "g36n1wzq"
+    },
+    "AWS_DEFAULT_REGION": {
+      "required": true,
+      "value": "g36n1wzq"
+    },
+    "AWS_SECRET_ACCESS_KEY": {
       "required": true,
       "value": "g36n1wzq"
     }
