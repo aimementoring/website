@@ -16,4 +16,4 @@ script:
   - yarn build
 after_success:
   - sleep 4m
-  - yarn run lhbot https://website-ssr.herokuapp.com/
+  - yarn run lhbot https://website-ssr-pr-$TRAVIS_PULL_REQUEST.herokuapp.com/
