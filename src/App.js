@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { setMessage } from './store/appReducer';
 import Router from './router';
 
-import './App.scss'; //Test lighthouse bot comment on pr 
+import './App.scss'; //Test lighthouse bot comment automation on pr 
 
 class App extends Component {
   componentDidMount() {
