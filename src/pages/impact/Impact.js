@@ -8,6 +8,10 @@ import './Impact.scss';
 const Impact = () => {
   const assetsUrl = getAssetsBaseUrl();
 
+  const handleShowIntercom = () => {
+    window.Intercom("show");
+  }
+
   return (
     <React.Fragment>
       <div className="impact-page">
@@ -375,12 +379,12 @@ const Impact = () => {
                   Want to create change?
                 </span>
               </h2>
-              <Link
-                to="/faq"
+              <button
+                onClick={this.handleShowIntercom}
                 className="ghost-btn bg-brand-primary center mb2"
               >
                 <span className=" download-btn-text">Partner with us</span>
-              </Link>
+              </button>
             </div>
           </section>
         </div>

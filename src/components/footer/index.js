@@ -30,11 +30,8 @@ class Footer extends PureComponent {
     });
   }
 
-  handleShowIntercom = () => {
-    this.props.handleShowIntercom();
-  }
-
   render() {
+    const { handleShowIntercom } = this.props;
     const isTalentPage = (this.props.location.pathname.indexOf('/seatontheplane') > -1);
     return (
       <div>
@@ -116,12 +113,11 @@ class Footer extends PureComponent {
                           </a>
                         </li>
                         <li className="mb2">
-                          <a
-                            className="c-white text-decoration-none"
-                            href="#"
-                            onClick={this.handleShowIntercom}>
+                          <button
+                            className="c-white intercom-button text-decoration-none"
+                            onClick={handleShowIntercom}>
                             Contact
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </nav>

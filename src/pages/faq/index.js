@@ -154,7 +154,7 @@ export default class FAQs extends PureComponent {
                   <strong>Yo</strong>, thank you for wanting to know about AIME.
                   We’ll do our best to front foot some of the common questions.
                   If we don’t nail them all, feel free to{" "}
-                  <a onClick={this.handleShowIntercom} href="#">ping us a note</a>. Your questions help
+                  <button onClick={this.handleShowIntercom}>ping us a note</button>. Your questions help
                   us refine our answers and we'll use them to update this space
                   and help everyone to understand AIME as quickly as possible.
                 </p>

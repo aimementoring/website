@@ -42,10 +42,6 @@ class Header extends PureComponent {
     return '/be-a-mentor';
   }
 
-  handleShowIntercom = () => {
-    this.props.handleShowIntercom();
-  }
-
   handleTalentItemClicked = (item) => {
     const { history, location } = this.props;
     const hashtag = item.replace(' ', '').toLowerCase();
@@ -82,6 +78,7 @@ class Header extends PureComponent {
       className,
       isTalentPage,
     } = this.state;
+    const { handleShowIntercom } = this.props;
     return (
       <div>
         <header className={`${className} site-header`}>
@@ -98,7 +95,7 @@ class Header extends PureComponent {
                   <ul className="list-reset">
                     {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
                     <li className="inline-block relative header-link--with-submenu">
-                      <a className="nav-btn" onClick={this.handleShowIntercom} href="#">Get in touch</a>
+                      <button className="intercom-button-nav nav-btn" onClick={handleShowIntercom}>Get in touch</button>
                     </li>
                     <li className="inline-block">
                       <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>

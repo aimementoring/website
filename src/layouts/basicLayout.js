@@ -51,16 +51,16 @@ class BasicLayout extends Component {
   intercomChat = () => {
     window.intercomSettings = {
       app_id: APP_ID,
-      // change 'hide_default_launcher: true' if you want to remove the round chat icon in bottom right of screen
-      // then go to line 106 and uncomment.
-      hide_default_launcher: false,
+      // change 'hide_default_launcher: false' if you want to show the round chat icon in bottom right of screen
+      // then go to line 106 and comment that line.
+      hide_default_launcher: true,
       /*Styles*/
       alignment: "right",
       horizontal_padding: 20,
       vertical_padding: 20,
       background_color: "rgba(255,255,255, 0.7)"
       /*
-        user information could be usful for portal
+        user information could be usful with portal
         name: "Jane Doe", // Full name
         email: "customer@example.com", // Email address
         created_at: "1312182000" // Signup date as a Unix timestamp
@@ -103,7 +103,7 @@ class BasicLayout extends Component {
 
   handleShowIntercom = () => {
     window.Intercom("show");
-    // window.Intercom("update", { hide_default_launcher: false });
+    window.Intercom("update", { hide_default_launcher: false });
   }
 
   render() {
