@@ -1,208 +1,266 @@
-import { getAsyncComponent } from '../utils/fileLoader';
+// import { getAsyncComponent } from '../utils/fileLoader';
+import StoriesPage from '../pages/stories';
+import ReportsPage from '../pages/reports';
+import StoryPage from '../pages/story';
+import AboutPage from '../pages/about';
+import AnnualReportPage from '../pages/annualReport2016';
+import ComingSoonPage from '../pages/comingSoon';
+import DonatePage from '../pages/donate';
+import PositionsPage from '../pages/positions';
+import HomePage from '../pages/home';
+import BeAFriendPage from '../pages/beAFriend';
+import BeAMentorPage from '../pages/beAMentor';
+import FaqPage from '../pages/faq';
+import FounderPage from '../pages/founder';
+import TermsOfServicePage from '../pages/termsOfService';
+import TheMentorPage from '../pages/theMentor';
+import HoodedScholarPage from '../pages/hoodedScholar';
+import DynamicEOIPage from '../pages/dynamicEOI';
+import QuizzesPage from '../pages/quizzes';
+import CaseStudiesPage from '../pages/caseStudies';
+import PositionsEntryPage from '../pages/positionsEntry';
+import ThanksPage from '../pages/thanksPage';
+import TheMentorProductsPage from '../pages/theMentorProducts';
+import GlobalLetterPage from '../pages/globalLetter';
+import ContactPage from '../pages/contact';
+import AmbassadorsPage from '../pages/ambassadors';
+import KnowAimePage from '../pages/knowAime';
+import ImpactPage from '../pages/impact';
 
 const countryRegex = '/:countryId(au|za|us|ug)'; // Match one of the 4 site versions
 
 export default [
   {
     path: '/coming-soon',
-    component: getAsyncComponent({
-      loader: () => import('../pages/comingSoon')
-    })
+    component: ComingSoonPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/comingSoon')
+    // })
   },
   {
     path: '/about',
-    component: getAsyncComponent({
-      loader: () => import('../pages/about')
-    })
+    component: AboutPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/about')
+    // })
   },
   {
     path: '/reports/2016-annual-story',
-    component: getAsyncComponent({
-      loader: () => import('../pages/annualReport2016')
-    })
+    component: AnnualReportPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/annualReport2016')
+    // })
   },
   {
     path: '/be-a-friend',
-    component: getAsyncComponent({
-      loader: () => import('../pages/beAFriend')
-    })
+    component: BeAFriendPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/beAFriend')
+    // })
   },
   {
     path: '/be-a-mentor',
-    component: getAsyncComponent({
-      loader: () => import('../pages/beAMentor')
-    })
+    component: BeAMentorPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/beAMentor')
+    // })
   },
   {
     path: '/be-a-mentor/:universityId',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/beAMentor')
-    })
+    component: BeAMentorPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/beAMentor')
+    // })
   },
   {
     path: '/stories',
-    component: getAsyncComponent({
-      loader: () => import('../pages/stories')
-    })
+    component: StoriesPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/stories')
+    // })
   },
   {
     path: '/story/:storySlug/',
-    component: getAsyncComponent({
-      loader: () => import('../pages/story')
-    })
+    component: StoryPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/story')
+    // })
   },
   {
     path: '/reports',
-    component: getAsyncComponent({
-      loader: () => import('../pages/reports')
-    })
+    component: ReportsPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/reports')
+    // })
   },
   {
     path: '/blog/:storySlug/',
-    component: getAsyncComponent({
-      loader: () => import('../pages/story')
-    })
+    component: StoryPage,
+    // getAsyncComponent({
+    //   loader: () => import('../pages/story')
+    // })
   },
   {
     path: '/faq',
-    component: getAsyncComponent({
-      loader: () => import('../pages/faq')
-    })
+    component: FaqPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/faq')
+    // })
   },
   {
     path: '/founder',
-    component: getAsyncComponent({
-      loader: () => import('../pages/founder')
-    })
+    component: FounderPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/founder')
+    // })
   },
   {
     path: '/terms-of-service',
-    component: getAsyncComponent({
-      loader: () => import('../pages/termsOfService')
-    })
+    component: TermsOfServicePage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/termsOfService')
+    // })
   },
   {
     path: '/the-mentor',
-    component: getAsyncComponent({
-      loader: () => import('../pages/theMentor')
-    })
+    component: TheMentorPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/theMentor')
+    // })
   },
   {
     path: '/hooded-scholar',
-    component: getAsyncComponent({
-      loader: () => import('../pages/hoodedScholar')
-    })
+    component: HoodedScholarPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/hoodedScholar')
+    // })
   },
   {
     path: '/eoi/:tableName',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/dynamicEOI')
-    })
+    component: DynamicEOIPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/dynamicEOI')
+    // })
   },
   {
     path: '/quizzes',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/quizzes')
-    })
+    component: QuizzesPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/quizzes')
+    // })
   },
   {
     path: '/case-studies',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/caseStudies')
-    })
+    component: CaseStudiesPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/caseStudies')
+    // })
   },
   {
     path: '/donate',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/donate')
-    })
+    component: DonatePage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/donate')
+    // })
   },
   {
     path: '/positions',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/positions')
-    })
+    component: PositionsPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/positions')
+    // })
   },
   {
     path: `${countryRegex}/positions`,
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/positions')
-    }),
+    component: PositionsPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/positions')
+    // }),
   },
   {
     path: '/positions/:id/:jobCategory',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/positionsEntry')
-    }),
+    component: PositionsEntryPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/positionsEntry')
+    // }),
   },
   {
     path: `${countryRegex}/positions/:id/:jobCategory`,
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/positionsEntry')
-    }),
+    component: PositionsEntryPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/positionsEntry')
+    // }),
   },
   {
     path: '/products/:productId',
-    component: getAsyncComponent({
-      loader: () => import('../pages/theMentorProducts')
-    }),
+    component: TheMentorProductsPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/theMentorProducts')
+    // }),
   },
   {
     path: '/global-letter',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/globalLetter')
-    })
+    component: GlobalLetterPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/globalLetter')
+    // })
   },
   {
     path: '/thanks',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/thanksPage')
-    })
+    component: ThanksPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/thanksPage')
+    // })
   },
   {
     path: '/contact',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/contact')
-    })
+    component: ContactPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/contact')
+    // })
   },
   {
     path: '/ambassadors',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/ambassadors')
-    })
+    component: AmbassadorsPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/ambassadors')
+    // })
   },
   {
     path: '/know-aime',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/knowAime')
-    }),
+    component: KnowAimePage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/knowAime')
+    // }),
   },
   {
     path: '/impact',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/impact')
-    })
+    component: ImpactPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/impact')
+    // })
   },
   {
     path: '/',
     exact: true,
-    component: getAsyncComponent({
-      loader: () => import('../pages/home')
-    })
+    component: HomePage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/home')
+    // })
   }
 ];
