@@ -10,7 +10,7 @@ export const getAssetsBaseUrl = () =>
     : 'https://dbhff1axysj9i.cloudfront.net';
 
 export const getSeoTags = async (page, site) => {
-  if (page) {
+  if (page || page === '') {
     const url = `${API}/actions/seomatic/meta-container/all-meta-containers/?uri=${page}&siteId=${site}`;
     return crossFetch(url)
       .then(response => response.json())
