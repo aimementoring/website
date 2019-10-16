@@ -57,7 +57,7 @@ export async function getRaiselyToken() {
     } else {
       request(`${API}/login`, {
         method: 'POST',
-        body: JSON.stringify(LOGIN_ACCESS),
+        body: LOGIN_ACCESS,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json; charset=utf-8',
