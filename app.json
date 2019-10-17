@@ -92,6 +92,22 @@
     "PUBLIC_URL": {
       "required": true,
       "value": "http://aime-website.s3.amazonaws.com/public"
+    },
+    "REACT_APP_CONTENTFUL_SPACE_ID": {
+      "required": true,
+      "value": "iz0aikshgysc"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
+      "required": true,
+      "value": "redirectEntries"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY": {
+      "required": true,
+      "value": "3tMx2AccortPX9N15uGGgb"
+    },
+    "REACT_APP_CONTENTFUL_API_KEY": {
+      "required": true,
+      "value": "0cacfc910d0c5d6bce2c6cfedfa03bc050a1f2bddd42fa4e1a09fedf0c4959d3"
     }
   },
   "formation": {
