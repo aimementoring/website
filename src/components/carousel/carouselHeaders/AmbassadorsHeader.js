@@ -1,13 +1,24 @@
 import React from 'react';
+import styles from './carouselHeaders.module.scss';
 
 const AmbassadorHeader = ({ prev, next }) => (
-  <div className="border-none">
-    <p className="h3 inline" style={{ color: "#979797", }}>Global Mentors</p>
-    <button type="button" className="border-none" onClick={prev} style={{ color: "#979797", backgroundColor: "transparent", }}>
-      <img alt="arrow prev" src="/arrow-prev.svg" />
+  <div className={styles.carouselContainer}>
+    <p className={styles.carouselTitle}>
+      Global Mentors
+    </p>
+    <button
+      type="button"
+      className={styles.grayButton}
+      onClick={prev}
+    >
+      <img alt={styles.arrowPrev} src="/arrow-prev.svg" />
     </button>
-    <button type="button" className="border-none" style={{ color: "#979797", backgroundColor: "transparent", }} onClick={next}>
-      <img alt="arrow next" src="/arrow-next.svg" />
+    <button
+      type="button"
+      className={styles.grayButton}
+      onClick={next}
+    >
+      <img alt={styles.arrowNext} src="/arrow-next.svg" />
     </button>
   </div>
 );
