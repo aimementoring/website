@@ -4,9 +4,9 @@ import request from '../utils/request';
 const API = 'https://api.raisely.com/v3';
 
 const LOGIN_ACCESS = {
-  username: 'website@aimementoring.com',
-  password: '***REMOVED***',
-  organisationUuid: '7eafc9b2-404f-11e7-bc97-06facaa3db7b',
+  username: process.env.REACT_APP_RAISELY_USERNAME,
+  password: process.env.REACT_APP_RAISELY_PASSWORD,
+  organisationUuid: process.env.REACT_APP_RAISELY_ORGANISATIONUUID,
 };
 
 export const MAIN_CAMPAIGNS = {
@@ -57,7 +57,7 @@ export async function getRaiselyToken() {
     } else {
       request(`${API}/login`, {
         method: 'POST',
-        body: LOGIN_ACCESS,
+        body: JSON.stringify(LOGIN_ACCESS),
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json; charset=utf-8',
