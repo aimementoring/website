@@ -1,0 +1,182 @@
+@import "../../../styles/base/variables";
+
+.carouselContainer {
+  border: 0;
+  height: 1px;
+}
+
+.grayButton,
+.whiteButton {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.whiteButton {
+  color: $white;
+}
+
+.grayButton {
+  color: #979797;
+}
+
+.carouselNext,
+.carouselPrev {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  fill: currentColor;
+  font-size: 0;
+  height: 50px;
+  line-height: 0;
+  padding: 0;
+  position: absolute;
+  stroke-width: 0;
+  stroke: currentColor;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+
+  @media screen and (max-width: $md) {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.carouselPrev,
+.testimonialArrowPrev,
+.arrowPrev {
+  left: -3rem;
+
+  @media screen and (max-width: $md) {
+    left: -1.4rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    left: -0.5rem;
+  }
+}
+
+.carouselNext,
+.testimonialArrowNext,
+.arrowNext {
+  right: -3rem;
+
+  @media screen and (max-width: $md) {
+    right: -1.4rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    right: -0.5rem;
+  }
+}
+
+.arrowPrev,
+.arrowNext {
+  background-image: url($cdnRoot + "assets/images/white-circle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 100%;
+  bottom: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  fill: currentColor;
+  font-size: 3em;
+  height: 2em;
+  line-height: 2.2em;
+  margin: auto;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  stroke-width: 0;
+  stroke: currentColor;
+  text-align: center;
+  text-indent: 0.2em;
+  top: 0;
+  transition: opacity 0.4s ease;
+  width: 1.8em;
+  z-index: 99;
+  
+  @media screen and (min-width: $md) {
+    font-size: 3.6em;
+  }
+
+  &:before {
+    bottom: 20px;
+    content: 'Watch now';
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 500;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) translateY(100%);
+    width: 200px;
+  }
+}
+
+.carouselTitle {
+  color: #979797;
+  display: inline;
+  font-size: 1.25rem;
+}
+
+.purpleContainer {
+  background-color: $darkest-purple;
+  text-align: center;
+
+  h2, h3, p, span {
+    color: $white;
+  }
+}
+
+.leftContent {
+  margin-right: 1rem;
+}
+
+.rightContent {
+  margin-right: 1rem;
+}
+
+.aimeLive {
+  color: $white;
+  font-family: Poppins-BlackItalic;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -1.03px;
+  text-align: center;
+}
+
+.whiteArrow {
+  fill: $white;
+  width: 45px;
+  height: 41px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonialArrowPrev,
+.testimonialArrowNext {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  fill: currentColor;
+  font-size: 0;
+  height: 50px;
+  line-height: 0;
+  padding: 0;
+  position: absolute;
+  stroke-width: 0;
+  stroke: currentColor;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+
+  @media screen and (max-width: $md) {
+    width: 30px;
+    height: 30px;
+  }
+}
