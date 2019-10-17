@@ -1,5 +1,11 @@
 //Ambassadors & Case Studies
 .about-grid {
+  .grayOnHover {
+    &:hover img {
+      filter: grayscale(1);
+    }
+  }
+
   a {
     text-decoration: none;
     display: block;
