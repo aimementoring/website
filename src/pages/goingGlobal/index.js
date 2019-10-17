@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'qs';
+import Popup from './popup';
 import scrollToComponent from 'react-scroll-to-component';
 import ImaginationDeclarationForm from '../../components/eoiForm';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
@@ -230,7 +231,7 @@ class GoingGlobal extends PureComponent {
               <h2>Imagine what’s possible</h2>
             </div>
           </section>
-  
+          <Popup />
           <section
             className="centered-content dec-text-panel dec-text-panel-final"
             ref={el => { this.sectionRefs.pledge = el }}
