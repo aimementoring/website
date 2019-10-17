@@ -92,6 +92,10 @@
     "PUBLIC_URL": {
       "required": true,
       "value": "http://aime-website.s3.amazonaws.com/public"
+    },
+    "GENERATE_SOURCEMAP": {
+      "required": true,
+      "value": "false"
     }
   },
   "formation": {
