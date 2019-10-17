@@ -88,6 +88,10 @@
     "REACT_APP_RAISELY_ORGANISATIONUUID": {
       "required": true,
       "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
+    },
+    "PUBLIC_URL": {
+      "required": true,
+      "value": "http://aime-website.s3.amazonaws.com/public"
     }
   },
   "formation": {
