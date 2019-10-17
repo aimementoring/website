@@ -111,8 +111,12 @@ p.sml-terms {
         padding: 0;
     }
     p {
-        text-align: center;
-        margin-bottom: 2.5em;
+      font-family: $body-font-family;
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 2.5em;
+      line-height: 1.8;
     }
 }
 
@@ -166,7 +170,7 @@ p.sml-terms {
   }
 }
 
-.panel-think-differently {
+.flex-col {
     flex-direction: column;
 }
 

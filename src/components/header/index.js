@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import TalentHeader from './talentHeader';
+import GoingGlobalHeader from './goingGlobalHeader';
 import { HEADER_MENU_ITEMS } from '../../constants';
 import MenuItem from './menuItem';
 import Logo from './logo';
@@ -15,6 +16,7 @@ class Header extends PureComponent {
     countryOptions: [],
     isTalentPage: (this.props.location.pathname.indexOf('/seatontheplane') > -1),
     isStudentChapterPage: (this.props.location.pathname.indexOf('/hooded-scholar') > -1),
+    isGoingGlobal: (this.props.location.pathname.indexOf('/going-global') > -1),
   }
 
   componentDidMount() {
@@ -26,6 +28,7 @@ class Header extends PureComponent {
       this.setState({
         isTalentPage: (nextProps.location.pathname.indexOf('/seatontheplane') > -1),
         isStudentChapterPage: (nextProps.location.pathname.indexOf('/hooded-scholar') > -1),
+        isGoingGlobal: (nextProps.location.pathname.indexOf('/going-global') > -1),
       });
     }
   }
@@ -73,6 +76,7 @@ class Header extends PureComponent {
     const {
       className,
       isTalentPage,
+      isGoingGlobal
     } = this.state;
     return (
       <div>
@@ -81,7 +85,10 @@ class Header extends PureComponent {
             ? <TalentHeader
               location={this.props.location}
               handleTalentItemClicked={this.handleTalentItemClicked} />
-            : (
+
+            : isGoingGlobal ? (
+              <GoingGlobalHeader />
+            ) : (
               <div className="container clearfix p3 flex items-center">
                 <div className="sm-col align-middle flex">
                   <Logo />

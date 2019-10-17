@@ -216,3 +216,145 @@
 .student-header-container {
   min-height: 55px;
 }
+
+.navMenuLinks {
+  display: block;
+  margin-left: auto;
+
+  @media screen and (min-width: $lg) {
+    display: block;
+  }
+
+  @media (min-width: $sm) {
+    box-sizing: border-box;
+    float: right;
+  }
+
+  .list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .listItem {
+    display: inline-block;
+    position: relative;
+
+    &:hover .submenuWrapper {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .navBtn {
+    color: $white;
+    display: block;
+    font-family: $feature-font-family;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+
+    &.active {
+      border-bottom: 2px solid $white;
+      color: $brand-primary;
+      font-weight: 500;
+    }
+
+    &.activeItem {
+      color: #c700ff;
+    }
+  }
+}
+
+.navLink {
+  background: transparent;
+  background-color: #9135f0;
+  border-radius: 3px;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "PoppinsBold";
+  font-size: 0.8rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  margin: 0;
+  opacity: 1;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.1s linear;
+  vertical-align: baseline;
+
+  @media (min-width: $md) {
+    padding: 0.6em 1.7em;
+  }
+}
+
+.siteHeaderContainer {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  display: flex;
+  font-size: 100%;
+  margin: 0 auto;
+  max-width: 1300px;
+  outline: 0;
+  padding: 2rem;
+  vertical-align: baseline;
+}
+
+.siteHeader {
+  background-color: transparent;
+  display: block;
+  position: fixed;
+  top: 0;
+  transition: all 1s linear;
+  width: 100%;
+  z-index: 50;
+
+  .container {
+    padding: 2rem;
+  }
+
+  .navMicrosite .micrositeNavMsg {
+    transition: all 0.5s linear;
+    color: $black;
+  }
+}
+
+.logoLink {
+  display: flex;
+}
+
+.headerFilled {
+  background-color: $black;
+  border-bottom: 1px solid #f1f3f4;
+  display: block;
+  position: fixed;
+  top: 0;
+  transition: all 1s linear;
+  width: 100%;
+  z-index: 50;
+
+  .container,
+  .siteHeaderContainer {
+    padding: 0.4rem 1rem;
+    max-width: 100%;
+  }
+
+  .navMicrosite {
+    background-color: $white;
+  }
+
+  .iconAimeLogo {
+
+    @media screen and (min-width: $md) {
+      width: 60px;
+    }
+  }
+}

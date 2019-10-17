@@ -57,82 +57,7 @@ const GoingGlobal = ({ location, history }) => {
   return (
     <div>
       <div />
-      <div className="micro-site">
-        {/* <section
-          className="bg-white centered-content dec-text-panel">
-          <div className="mx-auto declaration-text-wrapper">
-            <p>To the Prime Minister &amp; Education Ministers across Australia, </p>
-            <p>In 1967, we asked to be counted. </p>
-            <p>In 2017, we asked for a voice and treaty. </p>
-            <p>Today, we ask you to imagine what’s possible. </p>
-            <p>The future of this country lies in all of our hands. </p>
-            <p>
-              We do not want to inherit a world that is in pain. We do not want to stare down huge
-              inequality feeling powerless to our fate. We do not want to be unarmed as we confront
-              some of the biggest problems faced by the human race, from rising sea levels, which
-              will lead to significant refugee challenges, to droughts and food shortages, and our
-              own challenges around a cycle of perpetuated disadvantaged.
-              {' '}
-            </p>
-            <p>It’s time to think differently.</p>
-            <p>
-              With 60,000 years of genius and imagination in our hearts and minds, we can be one of
-              the groups of people that transform the future of life on earth, for the good of us
-              all.
-              {' '}
-            </p>
-            <p>
-              We can design the solutions that lift islands up in the face of rising seas, we can
-              work on creative agricultural solutions that are in sync with our natural habitat, we
-              can re-engineer schooling, we can invent new jobs and technologies, and we can unite
-              around kindness.
-            </p>
-            <p>We are not the problem, we are the solution. </p>
-            <p>We don’t want to be boxed.</p>
-            <p>We don’t want ceilings.</p>
-            <p>We want freedom to be whatever a human mind can dream.</p>
-            <p>
-              When you think of an Aboriginal or Torres Strait Islander kid, or in fact, any kid,
-              imagine what’s possible. Don’t define us through the lens of disadvantage or label us
-              as limited.
-              {' '}
-            </p>
-            <p>Test us. </p>
-            <p>Expect the best of us. </p>
-            <p>Expect the unexpected. </p>
-            <p>
-              Expect us to continue carrying the custodianship of imagination, entrepreneurial
-              spirit and genius.
-              {' '}
-            </p>
-            <p>Expect us to be complex. </p>
-            <p>And then let us spread our wings, and soar higher than ever before. </p>
-            <p>
-              We call on you and the Education Ministers across the nation to establish an
-              imagination agenda for our Indigenous kids and, in fact, for all Australian children.
-              {' '}
-            </p>
-            <p>We urge you to give us the freedom to write a new story.</p>
-            <p>We want to show the world Aboriginal genius.</p>
-            <p>We want to show the nation Aboriginal leadership and imagination.</p>
-            <p>
-              Over the coming months we’ll be sharing the declaration with thousands of Indigenous
-              kids across our nation and together we’ll stand to say, “set an imagination agenda for
-              our classrooms, remove the limited thinking around our disadvantage, stop looking at
-              us as a problem to fix, set us free to be the solution and give us the stage to light
-              up the world.”
-            </p>
-            <p>
-              We want the Imagination agenda in every school in the nation, from early childhood
-              learning centres through to our most prominent universities.
-            </p>
-            <p>
-              To our Prime Minister &amp; Education Ministers, we call on you to meet with us and to
-              work on an imagination plan for our country’s education system, for all of us.
-            </p>
-            <p>We are not the problem, we are the solution.</p>
-          </div>
-        </section> */}
+      <div className="hoodedScholar micro-site">
 
         <div className="full-width-wrap" id="welcome">
           <div className="flex flex-wrap items-center">
@@ -147,7 +72,7 @@ const GoingGlobal = ({ location, history }) => {
                   </video>
 
                 </div>
-                <h1 className="page-header">It's time to think differently</h1>
+                <h1 className="page-header">Going Global</h1>
               </div>
             </div>
           </div>
@@ -155,26 +80,37 @@ const GoingGlobal = ({ location, history }) => {
 
         <section className="bg-white full-panel centered-content dec-text-panel">
           <div className="md-wrap mx-auto intro-text">   
-            <p>
-              On the 5th of August 2019, AIME gathered in remote Australia to facilitate a 
-              workshop on imagination with a group of Indigenous Australian kids. These kids 
-              are part of the oldest continuous culture on earth. From this collective thinking, 
-              a dream was created, for all children everywhere, being left behind: the <em>Imagination Declaration</em> was born. 
-            </p>
-            <p>
-              The Declaration has quickly evolved into a global message to all educators, resulting 
-              in pledges across the earth to enshrine imagination in the school system to unlock the 
-              power of disadvantaged kids everywhere. 
-            </p>
+            <p>For the last 3 years we have been on a huge adventure sharing AIME around the world. And now with everything we have learned we are looking to bunker down and capture the learnings of AIME Global with a 3 year research focused pilot, featuring programs marginalised youth in Uganda, South Africa, Nigeria, USA and Australia.</p>
+            <p>Our dream is to distill the philosophy, processes and products at the heart of AIME so we can share them with teachers, mentors and guides across the world looking to unlock the limitless potential of the kids being left behind.</p>
+            <p>Check out some of the case studies &amp; experiences from the last 3 years.</p>
+            
           </div>
         </section>
 
-        <section 
-          className="full-panel centered-content bg-marble-wrapper">
+
+
+        <section className="centered-content bg-white dec-text-panel" >
+          <div className="flex think-diff-wrapper">
+            <div>
+              <h5>2017</h5>
+              <h4>The Golden Ticket</h4>
+            </div>
+            <div>
+              <h5>2018</h5>
+              <h4>Going local to go global</h4>
+            </div>
+            <div>
+              <h5>2019</h5>
+              <h4>USA - The Hooded Hustle</h4>
+            </div>
+          </div>              
+        </section>
+
+        <section className="full-panel centered-content bg-marble-wrapper">
           <div className="flex bg-marble">
             {/* TODO: really don't want to have the image size inline on all the images but doing it for timesake now. will fix later */}
             <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="left eye" style={{ width: '250px' }} />
-            <h1>&bull; <br />The <br />Imagination <br />Declaration <br />&bull; </h1>
+            <h1>&bull; <br />keeping here in case we use 4 <br />Going <br />Global <br />&bull; </h1>
             <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="right eye" style={{ width: '250px' }} />
           </div>
         </section>
@@ -212,7 +148,7 @@ const GoingGlobal = ({ location, history }) => {
         </section>
 
         <section 
-          className="full-panel centered-content bg-white dec-text-panel panel-think-differently"
+          className="full-panel centered-content bg-white dec-text-panel flex-col"
           >
           <div className="md-wrap mx-auto">   
             <p>And then let us spread our wings, and soar higher than ever before.</p>
