@@ -1,0 +1,163 @@
+@import "../../styles/base/variables";
+
+.full-panel {
+  position: relative;
+  height: auto;
+  padding: 3em 2em;
+  box-sizing: border-box;
+
+  @media screen and (min-width: $md) {
+    padding: 0 2em;
+    height: 100vh;
+  }
+
+  &.bg-marble-wrapper {
+    align-items: stretch;
+    padding: 2em;
+  }
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  h2,
+  p {
+    text-align: center;
+  }
+}
+
+.micro-site {
+
+  p,
+  h3 {
+
+    &::selection {
+      color: $black;
+      background: #ffda15;
+    }
+  }
+
+  em,
+  h1,
+  h2,
+  h4,
+  td {
+
+    &::selection {
+      color: $white;
+      background: #e82a9e;
+    }
+  }
+
+  strong {
+
+    &::selection {
+      color: $white;
+      background: #1fb3ff;
+    }
+  }
+}
+
+.dec-text-panel {
+  padding: 4em 2em 0;
+
+  @media screen and (min-width: $md) {
+    padding: 0;
+  }
+
+  .intro-text {
+    padding: 4em 0 1em;
+    max-width: 43em;
+  }
+
+  p {
+    font-family: $body-font-family;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2.5em;
+    line-height: 1.8;
+  }
+}
+
+.bg-marble {
+  background:
+    url($cdnRoot+"assets/images/imagination_dec/BLUE-min@2x.jpg")
+    no-repeat top center / cover #66c3e7;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    padding: 2em 3em;
+    font-family: "PoppinsBold";
+    font-style: normal;
+    font-size: 2rem;
+    line-height: 1.2;
+
+    @media screen and (min-width: $md) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.declaration-text-wrapper {
+  padding: 4em 0 0;
+  max-width: 600px;
+
+  @media screen and (min-width: $md) {
+    padding: 13em 0 3em;
+  }
+}
+
+.sunset-gradient-text {
+  background: linear-gradient(45deg, #e82a9e, #ff9835);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-blue-gradient-text {
+  background: linear-gradient(45deg, #9135f0, #1fb3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-dec-form {
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    font-family: "PoppinsBold";
+    font-style: normal;
+    margin-bottom: 1.3em;
+
+    @media screen and (min-width: $md) {
+      font-size: 3.4rem;
+      margin-bottom: 0.8em;
+      line-height: 1.3;
+      max-width: 960px;
+    }
+  }
+}
+
+.section-dec-signatures {
+  background-color: rgba(145, 53, 240, 0.1);
+  padding: 4em 0;
+  margin: 2em;
+  max-width: $lg;
+
+  @media screen and (min-width: $md) {
+    padding: 6em 0;
+  }
+
+  @media screen and (min-width: $lg) {
+    margin: 2em auto;
+  }
+}

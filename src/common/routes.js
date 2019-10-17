@@ -15,6 +15,7 @@ import FounderPage from '../pages/founder';
 import TermsOfServicePage from '../pages/termsOfService';
 import TheMentorPage from '../pages/theMentor';
 import HoodedScholarPage from '../pages/hoodedScholar';
+import GoingGlobalPage from '../pages/goingGlobal';
 import DynamicEOIPage from '../pages/dynamicEOI';
 import QuizzesPage from '../pages/quizzes';
 import CaseStudiesPage from '../pages/caseStudies';
@@ -134,6 +135,13 @@ export default [
     component: HoodedScholarPage,
     // component: getAsyncComponent({
     //   loader: () => import('../pages/hoodedScholar')
+    // })
+  },
+  {
+    path: '/going-global',
+    component: GoingGlobalPage,
+    // component: getAsyncComponent({
+    //   loader: () => import('../pages/goingGlobal')
     // })
   },
   {
