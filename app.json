@@ -76,6 +76,18 @@
     "AWS_SECRET_ACCESS_KEY": {
       "required": true,
       "value": "***REMOVED***"
+    },
+    "REACT_APP_RAISELY_USERNAME": {
+      "required": true,
+      "value": "website@aimementoring.com"
+    },
+    "REACT_APP_RAISELY_PASSWORD": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_RAISELY_ORGANISATIONUUID": {
+      "required": true,
+      "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
     }
   },
   "formation": {
