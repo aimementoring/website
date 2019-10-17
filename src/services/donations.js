@@ -27,7 +27,6 @@ export async function getActiveCampaigns() {
     getRaiselyToken()
       .then(token => {
         request(url, { headers: { Authorization: `Bearer ${token}` } })
-          .then(response => response.json())
           .then(response => resolve(response.data))
           .catch(error => reject(error));
       })
