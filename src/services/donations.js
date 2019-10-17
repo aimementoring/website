@@ -40,7 +40,6 @@ export async function getCampaignDonations(campaign) {
   return new Promise((resolve, reject) => {
     getRaiselyToken().then(token => {
       request(url, { headers: { Authorization: `Bearer ${token}` } })
-        .then(response => response.json())
         .then(response => resolve(response.data))
         .catch(error => reject(error));
     });
@@ -54,15 +53,17 @@ export async function getRaiselyToken() {
     if (raiselyToken) {
       resolve(raiselyToken);
     } else {
-      request(`${API}/login`, {
-        method: 'POST',
-        body: JSON.stringify(LOGIN_ACCESS),
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json; charset=utf-8',
+      request(
+        `${API}/login`, 
+        {
+          method: 'POST',
+          body: LOGIN_ACCESS,
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json; charset=utf-8',
+          },
         },
-      })
-        .then(response => response.json())
+      )
         .then(jsonData => {
           const { token } = jsonData;
           setOnStorage('raisely_token', token);
