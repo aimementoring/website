@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 
 import { setMessage } from './store/appReducer';
 import Router from './router';
-import { getAll } from "./utils/getcontentful";
+import { getAllRedirectUrlEntries } from "./utils/getcontentful";
 
 import './App.scss';
 
@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getAll().then(redirects => {
+    getAllRedirectUrlEntries().then(redirects => {
       this.setState({
           data: redirects,
         });
