@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './logo';
 // import MyContext from '../../layouts/Context';
-import styles from './index.scss';
+// import styles from './index.scss';
 
 const GoingGlobalHeader = () => {
   //const { imaginationDeclarationNumber } = useContext(MyContext);
@@ -19,7 +19,7 @@ const GoingGlobalHeader = () => {
             {' '}
 People have pledged
           </span>
-          <Link to="/" className="navLink">
+          <Link to="/going-global#pledge" className="navLink">
             Pledge
           </Link>
         </nav>

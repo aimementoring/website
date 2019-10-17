@@ -48,6 +48,7 @@
     "node-sass": "^4.12.0",
     "precompress": "^5.1.0",
     "prop-types": "^15.7.2",
+    "qs": "^6.9.0",
     "rc-select": "^9.1.5",
     "rc-table": "^6.6.7",
     "react": "^16.8.6",
