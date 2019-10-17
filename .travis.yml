@@ -12,8 +12,6 @@ cache:
   yarn: true
 git:
   depth: 3
-env:
-  - GENERATE_SOURCEMAP=false
 script:
   - yarn build
 after_success:
