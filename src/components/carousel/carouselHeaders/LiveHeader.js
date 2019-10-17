@@ -1,17 +1,16 @@
 import React from 'react';
-import '../index.scss'
+import styles from './carouselHeaders.module.scss';
 
 const LiveHeader = ({ prev, next }) => (
-  <div className="bg-darkest-purple center">
-
-    <span className="mr2" onClick={prev}>
-      <svg className="icon icon-arrow-white">
+  <div className={styles.purpleContainer}>
+    <span className={styles.leftContent} onClick={prev}>
+      <svg className={styles.whiteArrow}>
         <use xlinkHref="#icon-arrow-prev" />
       </svg>
     </span>
-    <span className="aime-live-title bold c-white">AIME Live</span>
-    <span type="button" className="ml2" onClick={next}>
-      <svg className="icon icon-arrow-white">
+    <span className={styles.aimeLive}>AIME Live</span>
+    <span type="button" className={styles.rightContent} onClick={next}>
+      <svg className={styles.whiteArrow}>
         <use xlinkHref="#icon-arrow-next" />
       </svg>
     </span>
