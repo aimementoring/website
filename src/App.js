@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 
 import { setMessage } from './store/appReducer';
 import Router from './router';
-import { getAllRedirectUrlEntries } from "./utils/getcontentful";
+import { getAllRedirectUrlEntries } from "./services/getcontentful";
 
 import './App.scss';
 
