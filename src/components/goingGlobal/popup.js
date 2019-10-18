@@ -45,10 +45,8 @@ const Popup = () => {
 
   return (
   <>
-    <section>
-      <button type="button" onClick={buttonClicked(1)}>button 1</button>
-      <button type="button" onClick={buttonClicked(2)}>button 2</button>
-    </section>
+    <button type="button" onClick={buttonClicked(1)}>button 1</button>
+    <button type="button" onClick={buttonClicked(2)}>button 2</button>
     <Modal
       isOpen={showModal}
       onRequestClose={closeModal}

@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'qs';
-import Popup from './popup';
+import Popup from '../../components/goingGlobal/popup';
+import TabComponent from '../../components/goingGlobal/tabComponent';
 import scrollToComponent from 'react-scroll-to-component';
-import ImaginationDeclarationForm from '../../components/eoiForm';
+import EoiForm from '../../components/eoiForm';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
+import { uploadCustomEOI } from '../../services/portalApi';
 // import VideoButton from '../../components/videoButton';
 // import VioletVideoCarousel from '../../components/carousel/customCarousels/violetCarousel';
 // import { STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS } from '../../constants';
@@ -61,7 +63,7 @@ class GoingGlobal extends PureComponent {
     });
 
     if (overSection !== hash.replace('#', '').toLowerCase() && overSection !== undefined) {
-      history.push(`/imagination-declaration${search}#${overSection}`, { noScroll: true });
+      history.push(`/going-global${search}#${overSection}`, { noScroll: true });
     }
   }
 
@@ -70,6 +72,7 @@ class GoingGlobal extends PureComponent {
   }
 
   render() {
+    const tableName = 'Going Global';
     const { assetsUrl } = this.state;
     return (
       <div>
@@ -95,7 +98,9 @@ class GoingGlobal extends PureComponent {
             </div>
           </div>
   
-          <section className="bg-white full-panel centered-content dec-text-panel">
+          <section 
+            ref={el => { this.sectionRefs.section1 = el }}
+            className="bg-white full-panel centered-content dec-text-panel">
             <div className="md-wrap mx-auto intro-text">   
               <p>For the last 3 years we have been on a huge adventure sharing AIME around the world. And now with everything we have learned we are looking to bunker down and capture the learnings of AIME Global with a 3 year research focused pilot, featuring programs marginalised youth in Uganda, South Africa, Nigeria, USA and Australia.</p>
               <p>Our dream is to distill the philosophy, processes and products at the heart of AIME so we can share them with teachers, mentors and guides across the world looking to unlock the limitless potential of the kids being left behind.</p>
@@ -106,7 +111,9 @@ class GoingGlobal extends PureComponent {
   
   
   
-          <section className="centered-content bg-white dec-text-panel" >
+          <section 
+            className="centered-content bg-white dec-text-panel"
+            ref={el => { this.sectionRefs.section2 = el }}>
             <div className="flex think-diff-wrapper">
               <div>
                 <h5>2017</h5>
@@ -123,7 +130,9 @@ class GoingGlobal extends PureComponent {
             </div>              
           </section>
   
-          <section className="full-panel centered-content bg-marble-wrapper">
+          <section 
+            ref={el => { this.sectionRefs.section3 = el }}
+            className="full-panel centered-content bg-marble-wrapper">
             <div className="flex bg-marble">
               {/* TODO: really don't want to have the image size inline on all the images but doing it for timesake now. will fix later */}
               <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="left eye" style={{ width: '250px' }} />
@@ -133,6 +142,7 @@ class GoingGlobal extends PureComponent {
           </section>
   
           <section 
+            ref={el => { this.sectionRefs.section3 = el }}
             className="bg-white full-panel centered-content dec-text-panel">
             <div className="mx-auto declaration-text-wrapper">   
               <p>When you look at a student who has been labelled as disadvantaged, we ask you to challenge your thinking and instead, <em>imagine what’s possible</em>. </p>
@@ -148,7 +158,8 @@ class GoingGlobal extends PureComponent {
             </div>
           </section>
   
-          <section 
+          <section
+            ref={el => { this.sectionRefs.section4 = el }}
             className="full-panel centered-content layout-2col bg-yellow-gradient">
             <div className="col-wrap">
               <div className="col">
@@ -164,7 +175,8 @@ class GoingGlobal extends PureComponent {
             </div>
           </section>
   
-          <section 
+          <section
+            ref={el => { this.sectionRefs.section5 = el }}
             className="full-panel centered-content bg-white dec-text-panel flex-col"
             >
             <div className="md-wrap mx-auto">   
@@ -179,13 +191,16 @@ class GoingGlobal extends PureComponent {
             </div>              
           </section>
   
-          <section className="centered-content dec-text-panel dec-text-panel-mid dec-text-panel-final">
+          <section 
+            ref={el => { this.sectionRefs.section6 = el }}
+            className="centered-content dec-text-panel dec-text-panel-mid dec-text-panel-final">
             <div className="md-wrap mx-auto">   
               <h2 className="highlighted">We are not the problem; <br />we are the solution.</h2>
             </div>
           </section>
   
-          <section 
+          <section
+            ref={el => { this.sectionRefs.section7 = el }}
             className="full-panel centered-content bg-white dec-text-panel layout-3col col-wrap"
             >
             <div className="col layout-3col-images">
@@ -217,7 +232,8 @@ class GoingGlobal extends PureComponent {
             </div>                  
           </section>
         
-          <section 
+          <section
+            ref={el => { this.sectionRefs.section8 = el }}
             className="full-panel centered-content layout-fullimagetext"
             >
             <div className="fullimagetext-bg centered-content">
@@ -225,20 +241,34 @@ class GoingGlobal extends PureComponent {
             </div>
           </section>
   
-          <section 
+          <section
+            ref={el => { this.sectionRefs.section9 = el }}
             className="bg-white full-panel centered-content dec-text-panel dec-text-panel-final">
             <div className="md-wrap mx-auto">   
               <h2>Imagine what’s possible</h2>
             </div>
           </section>
-          <Popup />
+          <section
+            ref={el => { this.sectionRefs.section10 = el }}>
+            <Popup />
+          </section>
+          <section
+            ref={el => { this.sectionRefs.section11 = el }}>
+            <TabComponent />
+          </section>
           <section
             className="centered-content dec-text-panel dec-text-panel-final"
             ref={el => { this.sectionRefs.pledge = el }}
           >
-            <ImaginationDeclarationForm handleReloadData={this.handleReloadData} />
+            <EoiForm 
+              history={this.props.history}
+              uploadData={uploadCustomEOI}
+              tableName={tableName}
+              showBeAFriendCheckbox
+              handleReloadData={this.handleReloadData} />
           </section>
           <section
+            ref={el => { this.sectionRefs.section12 = el }}
             className="centered-content section-dec-signatures lg-wrap"
           >
             {/* <GoingGlobalList reloadData={reloadData} /> */}

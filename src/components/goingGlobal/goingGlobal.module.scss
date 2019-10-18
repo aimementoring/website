@@ -1,0 +1,20 @@
+.tabComponentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabDivContainer {
+   display: flex;
+   flex-direction: row;
+}
+
+.tab {
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 5px;
+  margin: 10px
+}
+
+.activeTab {
+  border: 5px solid red !important;
+}
