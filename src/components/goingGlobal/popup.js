@@ -42,7 +42,21 @@ const Popup = () => {
     <div className={styles.popUp}>
       <h4>2017</h4>
       <h1>The Golden Ticket</h1>
-      <p>With our goals and dreams we tend to shoot for the moon and even if we miss we land amongst the stars so we set our sights on offering AIME to any university student anywhere in the world. To get to them, we made a short film, COGS, with Oscar Award Winner Laurent Witz and M&amp;C Saatchi. The film was made to inspire 10 young people across the world to take on the chance to win a golden ticket to lead AIME in their country for 3 years. </p>
+      <p>With our goals and dreams we tend to shoot for the moon and even 
+        if we miss we land amongst the stars so we set our sights on offering AIME to any 
+        university student anywhere in the world. To get to them, we made a short film, 
+        COGS, with Oscar Award Winner Laurent Witz and M&amp;C Saatchi. The film was made 
+        to inspire 10 young people across the world to take on the chance to win a golden 
+        ticket to lead AIME in their country for 3 years. 
+      </p>
+      <div className={styles.iframeContainer}>
+        <iframe src='https://www.youtube.com/embed/E7wJTI-1dvQ'
+          frameBorder='0'
+          allow='autoplay; encrypted-media'
+          allowFullScreen
+          title='video'
+        />
+      </div>
     </div>
   );
 
