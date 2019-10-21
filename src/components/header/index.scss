@@ -47,16 +47,25 @@
 .header-filled {
   background-color: $black;
   transition: all 1s linear;
-  border-bottom: 1px solid #360263;
+  border-bottom: 1px solid $light-grey;
+  
+  .navMicrosite {
+    .icon-aime-logo {
+      color: red;
+    }
+  
+  }
 
   .icon-aime-logo {
     width: 60px;
+    color: $black;
   }
 
   .container {
     padding: .4rem 1rem;
     max-width: 100%;
   }
+
 }
 
 .submenu-wrapper {
