@@ -102,24 +102,60 @@
 
 
 .popUp {
-  box-sizing: border-box;;
-  text-align: center;
-  padding: 5em 2em;
-  max-width: 40em;
+  box-sizing: border-box;
   margin: 0 auto;
   height: 100%;
+  width: 100%;
+
+  .closeIcon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    float: right;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
+    text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
+    -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
+    font-feature-settings: 'liga';       // Support for IE.
+  }
+
+  .popContentWrapper {
+    text-align: center;
+    padding: 5em 2em;
+    max-width: 40em;
+    margin: 0 auto;
+  }
 
   h4, h1 {
     font-family: $body-font-family-bold;
     text-transform: uppercase;
     font-size: 3rem;
-    line-break: 3rem;
+    line-height: 1.5;
     font-weight: 900; 
     font-style: normal;
   }
 
+  .module2017 h4 {
+    color: $magenta;
+  }
+
+  .module2018 h4 {
+    color: $light-orange;
+  }
+
+  .module2019 h4 {
+    color: $green;
+  }
+
   h1 {
-    color: $brand-tertiary;
     margin: 0 0 1.5em;
   }
 
@@ -130,6 +166,24 @@
     font-weight: 400;
     margin: 0 0 3em;
 
+  }
+
+  .nextLink {
+    display: block;
+    font-family: $body-font-family-bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1em;
+    font-weight: 900; 
+    font-style: normal;
+    text-decoration: none;
+    color: $neonpuple;
+    margin-top: 2em;;
+    transition: $hoverTransition;
+
+    &:hover {
+      color: $neonpink;
+    }
   }
 }
 

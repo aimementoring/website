@@ -110,17 +110,30 @@ class GoingGlobal extends PureComponent {
               <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="left eye" style={{ width: '250px' }} />
               <h1>&bull; <br />keeping here in case we use 4 <br />Going <br />Global <br />&bull; </h1>
               <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="right eye" style={{ width: '250px' }} />
+              <p>Since 2005, AIME has achieved..</p>
             </div>
           </section>
   
           <section ref={el => { this.sectionRefs.results = el }} className={styles.resultsSection}>
-            <h2>Since 2005, AIME has achieved...</h2>
-            <div className={styles.resultImages}>
-              <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-              <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-              <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-              <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-              <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+            <div className={styles.panel}>
+              <h2>Mentee Progression Rates in Australia</h2>
+              <div className={styles.resultImages}>
+                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+              </div>
+            </div>
+            <div className={styles.panel}>
+              <h2>Percent of australian aime students who achieved year attainment and completed high school</h2>
+              <div className={styles.resultImages}>
+                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+              </div>
+            </div>
+            <div className={styles.panel}>
+              <h2><strong>22,987</strong> <br />volunteer mentor hours were donated in australia</h2>
+              <div className={styles.resultImages}>
+                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+              </div>
             </div>
           </section>
 

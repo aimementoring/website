@@ -176,14 +176,42 @@
 }
 
 .resultsSection {
-    background-color: pink;
+  .panel {
+    background-color: $neonpink;
     text-align: center;
     padding: 4em 0;
 
     h2 {
-        font-family: $body-font-family;     
-        font-weight: 900;
+      font-family: $body-font-family-bold;     
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 1.5rem;
+      line-height: 1em;
+      font-style: normal;
+      max-width: 30em;
+      margin: 1em auto 3em;
+  }
+
+    &:nth-child(2) {
+      background-color: $white;
+
+      h2 {
+        color: $black;
+      }
     }
+
+    &:nth-child(3) {
+      background-color: $light-orange;
+
+      h2 strong {
+        font-size: 5rem;
+        line-height: 1em;
+      }
+    }
+  }
+
+  
 }
 
 .pppWrapper {
