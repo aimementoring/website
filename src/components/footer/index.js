@@ -70,7 +70,7 @@ class Footer extends PureComponent {
                     <nav className="flex-auto mb3 footer-links--column">
                       <h4 className="c-white feature-font-family bold f-15 pb2">What Else?</h4>
                       <ul className="list-reset f-14">
-                        <li className="mb2"><a target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/" className="c-white text-decoration-none">Shop Apparel</a></li>}
+                        <li className="mb2"><a target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/" className="c-white text-decoration-none">Shop Apparel</a></li>
                         <li className="mb2">
                           <Link
                             to="/the-mentor"
@@ -105,12 +105,12 @@ class Footer extends PureComponent {
                           </Link>
                         </li>
                         <li className="mb2">
-                          <a
+                          <Link
                             className="c-white text-decoration-none"
-                            href="https://intercom.help/aime-faqs/en/"
+                            to="https://faqs.aimementoring.com"
                           >
                             FAQs
-                          </a>
+                          </Link>
                         </li>
                         <li className="mb2">
                           <button
