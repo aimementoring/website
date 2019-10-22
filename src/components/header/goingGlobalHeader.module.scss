@@ -4,8 +4,25 @@
   z-index: 50;
   top: 0;
   width: 100%;
-  position: fixed;
+  background-color: transparent;
+  transition: $hoverTransition;
+  // position: fixed;
 }
+
+:global(.header-filled) {
+  .navMicrositeWrapper {
+    background-color: $white;
+  }
+
+}
+
+
+.headerFilledYay {
+    border: 5px solid turquoise !important;
+    display: block;
+}
+
+  
 
 .navMicrosite {
   display: flex;

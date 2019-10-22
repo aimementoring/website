@@ -11,7 +11,7 @@ import './index.scss';
 
 class Header extends PureComponent {
   state = {
-    className: `header-transparent ${(this.props.location.pathname.indexOf('/hooded-scholar') > -1) && 'do-not-display'}`,
+    headerState: `header-transparent ${(this.props.location.pathname.indexOf('/hooded-scholar') > -1) && 'do-not-display'}`,
     assetsUrl: '',
     countryOptions: [],
     isTalentPage: (this.props.location.pathname.indexOf('/seatontheplane') > -1),
@@ -51,7 +51,7 @@ class Header extends PureComponent {
     const { isStudentChapterPage } = this.state;
     const newClass = window.scrollY === 0 ? `header-transparent ${isStudentChapterPage && 'do-not-display'}` : 'header-filled';
 
-    this.setState({ className: newClass });
+    this.setState({ headerState: newClass });
   }
 
   handleStudentChapterItemClicked = (item) => {
@@ -74,13 +74,13 @@ class Header extends PureComponent {
 
   render() {
     const {
-      className,
+      headerState,
       isTalentPage,
       isGoingGlobal
     } = this.state;
     return (
       <div>
-        <header className={`${className} site-header`}>
+        <header className={`${headerState} site-header`}>
           {isTalentPage
             ? <TalentHeader
               location={this.props.location}

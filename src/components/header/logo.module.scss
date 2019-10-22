@@ -1,0 +1,24 @@
+@import '../../styles/base/variables';
+
+
+.logoWrapper {
+  display: flex;
+}
+
+.iconAimeLogo {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  width: 120px;
+  height: 53px;
+  color: #fff;
+  transition: width 0.5s ease;
+}
+
+:global(.header-filled) {
+  .iconAimeLogo {
+    width: 60px;
+    color: $white;
+  }
+}
