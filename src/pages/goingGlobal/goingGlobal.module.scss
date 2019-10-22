@@ -2,8 +2,6 @@
 
 .heroPanelWrapper {
   position: relative;
-  max-width: 100%;
-  width: 100%;
   background: url($cdnRoot+"assets/images/imagination_dec/PURPLE_BACKGROUND-min.jpg") no-repeat top center / cover
     #f04cc4;
   background-size: cover;
@@ -11,27 +9,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em 0;
+  height: 15em;
+  margin: 8em 1.5em 1em;
+  box-sizing: border-box;
+  max-width: $micrositePageWidth;
 
   @media screen and (min-width: $md) {
-    height: 60vh;
+    height: 25em;
+    margin: 8.75em 5em;
+  }
+  @media screen and (min-width: 90em) {
+    margin: 8.75em auto;
   }
 }
 
 .pageHeroHeader {
   position: relative;
-  width: 80%;
-  font-family: "PoppinsBold";
+  text-transform: uppercase;
+  font-family: $body-font-family-bold;
+  font-weight: 900;
   color: $white;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1em;
   text-align: center;
-  padding: 1.8em 0;
 
   @media screen and (min-width: $md) {
-    font-size: 9rem;
-    padding: 0;
+    font-size: 3.5rem;
   }
 }
 
@@ -39,10 +43,10 @@
   margin: 0 auto;
 }
 
-.caseStudiesWrapper {
+.caseStudiesSection {
     margin: 0 auto;
     padding: 4em 0;
-    max-width: 60em;
+    max-width: $micrositePageWidth;
 }
 
 .centeredcontent {
@@ -107,7 +111,7 @@
   td {
     &::selection {
       color: $white;
-      background: #e82a9e;
+      background: $magenta;
     }
   }
   strong {
@@ -214,7 +218,7 @@
     .highlighted {
       display: inline-block;
       color: $white;
-      background: #e82a9e;
+      background: $magenta;
       margin-bottom: 0;
       font-size: 2.5rem;
     }
@@ -285,7 +289,7 @@
 }
 
 .sunset {
-  background: linear-gradient(45deg, #e82a9e, #ff9835);
+  background: linear-gradient(45deg, $magenta, #ff9835);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -408,7 +412,7 @@
         text-align: center;
         font-family: PoppinsBold;
         font-style: normal;
-        background: linear-gradient(45deg, #e82a9e, #ff9835);
+        background: linear-gradient(45deg, $magenta, #ff9835);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }

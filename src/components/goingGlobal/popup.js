@@ -62,7 +62,7 @@ const Popup = () => {
 
   const renderModule2 = () => (
     <>
-      <h4>2017</h4>
+      <h4>2018</h4>
       <h1>Going Local to go Global</h1>
       <p>Tensions were rising in Australia with some of our political leaders calling out "African Gangs" in Melbourne (hyperlink to media). We responded by reaching out and offering the model to African Australian leaders in Melbourne. </p>
       <p>We met Bem, who started the program. </p>
@@ -82,20 +82,23 @@ const Popup = () => {
 
   return (
   <>
-    <div className={styles.wrapper}>
-      <div className={styles.colWrapper}>
+    <div className={styles.caseStudiesWrapper}>
+      <div className={styles.caseStudy}>
         <h5>2017</h5>
-        <button className={styles.btn} type="button" onClick={buttonClicked(1)}>The Golden Ticket</button>
+        <p>The Golden Ticket</p>
+        <button className={styles.btn} type="button" onClick={buttonClicked(1)}>Read Case STudy</button>
 
       </div>
-      <div className={styles.colWrapper}>
+      <div className={styles.caseStudy}>
         <h5>2018</h5>
-        <button className={styles.btn} type="button" onClick={buttonClicked(2)}>Going Local to go Global</button>
+        <p>Going Local to go Global</p>
+        <button className={styles.btn} type="button" onClick={buttonClicked(2)}>Read Case STudy</button>
 
       </div>
-      <div className={styles.colWrapper}>
+      <div className={styles.caseStudy}>
         <h5>2019</h5>
-        <button className={styles.btn} type="button" onClick={buttonClicked(3)}>USA - The Hooded Hustle</button>
+        <p>USA - The Hooded Hustle</p>
+        <button className={styles.btn} type="button" onClick={buttonClicked(3)}>Read Case STudy</button>
 
       </div>
     </div>              

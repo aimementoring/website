@@ -2,7 +2,7 @@
 
 // popup styles
 
-.wrapper {
+.caseStudiesWrapper {
   display: flex;
   align-items: center;
   align-content: space-between;
@@ -16,19 +16,28 @@
     margin-bottom: 0;
   }
 
-  .colWrapper {
-    padding: 1em;
+  .caseStudy {
     text-align: center;
+    padding: 3em;
+    pointer-events: none;
+    transition: $hoverTransition;
 
     h5 {
       font-family: $body-font-family-bold;
-      color: $black;
       font-style: normal;
       font-size: 6rem;
+      line-height: 1em;
+    }
+
+    p {
+      font-family: $body-font-family;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 3em;
     }
 
     .btn {
-      background-color: $brand-primary;
+      background-color: $neonpuple;
       border-radius: 3px;
       border: none;
       color: #fff;
@@ -44,9 +53,53 @@
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.1s linear;
+      pointer-events: auto;
+    }
+
+    &:nth-child(1) {
+      border: 1px solid $magenta;
+
+      h5 {
+        color: $magenta;  
+      }
+
+      &:hover {
+        background-color: $magenta;
+      }
+    }
+
+    &:nth-child(2) {
+      border: 1px solid $light-orange;
+
+      h5 {
+        color: $light-orange;  
+      }
+
+      &:hover {
+        background-color: $light-orange;
+      }
+    }
+
+    &:nth-child(3) {
+      border: 1px solid $green;
+
+      h5 {
+        color: $green;  
+      }
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+
+    &:hover {
+      h5, p {
+        color: $white;
+      }
     }
   }
 }
+
 
 .popUp {
   box-sizing: border-box;;

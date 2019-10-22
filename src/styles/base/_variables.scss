@@ -37,6 +37,13 @@ $accent-blue:     #31e9ff;
 $accent-pink:     #dc0aff;
 $eggplant:        #380249;
 
+/* New new brand colours */
+$magenta:         #E82A9E;
+$light-orange:    #FF9835;
+$green:           #09CD7B;
+$neonpink:        #FF6187;
+$neonpuple:       #9135F0;
+
 /* Form element colours */
 $default-input-bg:       #fef6ff;
 $active-input-bg:        #fff;
@@ -82,6 +89,9 @@ $md: 52em;
 $lg: 64em;
 
 $hoverTransition: all 100ms linear;
+
+// Microsite Page Content Max Width
+$micrositePageWidth: 80em;
 
 // $cdnRoot: "http://192.168.33.10/" //Local Assets
 // $cdnRoot: "https://dbhff1axysj9i.cloudfront.net/" // Development Cloudfront

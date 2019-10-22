@@ -81,8 +81,10 @@ class GoingGlobal extends PureComponent {
         <div />
         <div className={styles.microSite}>
   
-          <section className={styles.heroPanelWrapper}>
+          <section className={styles.sectionWrapper}>
+            <div className={styles.heroPanelWrapper}>
               <h1 className={styles.pageHeroHeader}>Going Global</h1>
+            </div>
           </section>
   
           <section ref={el => { this.sectionRefs.intro = el }} className={styles.textPanel}>
@@ -91,7 +93,7 @@ class GoingGlobal extends PureComponent {
             <p>Check out some of the case studies &amp; experiences from the last 3 years.</p>
           </section>
 
-          <section ref={el => { this.sectionRefs.casestudies = el }} className={styles.caseStudiesWrapper}>
+          <section ref={el => { this.sectionRefs.casestudies = el }} className={styles.caseStudiesSection}>
             <Popup />     
           </section>
 
