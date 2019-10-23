@@ -13,19 +13,22 @@ const actionIndex = (req, res, next) => {
   
   store.dispatch(setAsyncMessage('Hi, I\'m from server!'))
     .then(() => {
-      getAllRedirectUrlEntries().then(response => { 
-        response.forEach((url) => {
-          router.get(url.fields.sourceUrl, (req, res, next) => {
-            if (url.fields.sourceUrl) {
-              res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-            }
-            next();
-          })
-        }); 
-      });
       serverRenderer(store)(req, res, next);
     });
 };
+
+getAllRedirectUrlEntries().then(response => { 
+  response.forEach((url) => {
+    router.get(url.fields.sourceUrl, (req, res, next) => {
+      if (url.fields.sourceUrl) {
+        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+      } else {
+        router.use('*', actionIndex);
+      }
+      next();
+    })
+  }); 
+});
 
 // root (/) should always serve our server rendered page
 router.use('^/$', actionIndex);
