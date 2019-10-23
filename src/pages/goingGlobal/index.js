@@ -99,112 +99,91 @@ class GoingGlobal extends PureComponent {
 
           <section className={styles.textPanel}>
             <p>Unfamiliar with AIME? Here’s the back story...</p>
-            <Link className={styles.btn} to="/story/the-backdrop-to-aime">The Backdrop to AIME</Link>
+            <Link className={styles.btn} to="/story/the-backdrop-to-aime" target="_blank">The Backdrop to AIME</Link>
+            <p>Since 2005, AIME has achieved..</p>
           </section>
   
-          <section 
+          {/* <section 
             ref={el => { this.sectionRefs.blah = el }}
             className={styles.bgmarblewrapper}>
             <div className={styles.bgmarble}>
-              {/* TODO: really don't want to have the image size inline on all the images but doing it for timesake now. will fix later */}
               <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="left eye" style={{ width: '250px' }} />
               <h1>&bull; <br />keeping here in case we use 4 <br />Going <br />Global <br />&bull; </h1>
               <img src={`${assetsUrl}/assets/images/imagination_dec/EYE-min@2x.gif`} alt="right eye" style={{ width: '250px' }} />
-              <p>Since 2005, AIME has achieved..</p>
             </div>
-          </section>
+          </section> */}
   
           <section ref={el => { this.sectionRefs.results = el }} className={styles.resultsSection}>
             <div className={styles.panel}>
               <h2>Mentee Progression Rates in Australia</h2>
               <div className={styles.resultImages}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+                <img src={`${assetsUrl}/assets/images/going-global/mentees79.png`} alt="Imagine" style={{ width: '500px' }} />
+                <img src={`${assetsUrl}/assets/images/going-global/mentees1012.png`} alt="Imagine" style={{ width: '500px' }} />
               </div>
             </div>
             <div className={styles.panel}>
               <h2>Percent of australian aime students who achieved year attainment and completed high school</h2>
               <div className={styles.resultImages}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
-                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+                <div>
+                  <img src={`${assetsUrl}/assets/images/going-global/transitionrate1.png`} alt="99% transition rate excluding students with no transition data" style={{ width: '500px' }} />
+                  <p>Based in the total number of students engaged. EXCLUDING students with no transition data available</p>
+                </div>
+                <div>
+                  <img src={`${assetsUrl}/assets/images/going-global/transitionrate2.png`} alt="79% transition rate including students with transition data" style={{ width: '500px' }} />
+                  <p>Based in the total number of students engaged. INCLUDING students with transition data available</p>
+                </div>
               </div>
             </div>
             <div className={styles.panel}>
               <h2><strong>22,987</strong> <br />volunteer mentor hours were donated in australia</h2>
               <div className={styles.resultImages}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/IMAGINE-min@2x.gif`} alt="Imagine" style={{ width: '500px' }} />
+                <div>
+                  <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="23000 volunteer hours" style={{ width: '500px' }} />
+                  <p>That’s the equivalent of over three years!</p>
+                </div>
               </div>
             </div>
           </section>
 
 
           <section ref={el => { this.sectionRefs.resources = el }} className={styles.pppWrapper}>
-            <h5>And through that, AIME has developed a set of philosophies, processes, and product that we’re proud of.</h5>
+            <h5>Through our experiences, AIME has developed a set of philosophies, processes, and product that we’re proud of.</h5>
             <TabComponent />
           </section>
-  
-          {/* <section
-            ref={el => { this.sectionRefs.section5 = el }}
-            className={styles.textPanel} >
-            <div className={styles.mdwrap}>   
-              <p>And then let us spread our wings, and soar higher than ever before.</p>
-              <p>We do not want to inherit a world that is in pain. We do not want to stare down huge inequality, feeling powerless to change our fate. We do not want to be unarmed as we face some of the biggest problems faced by the human race: rising sea levels which will lead to huge refugee challenges; droughts and food shortages; and our own challenges around a cycle of perpetuated disadvantaged. </p>
+
+          <section ref={el => { this.sectionRefs.resources = el }} className={styles.resourcesSection}>
+            <h3>View some of our resources:</h3>
+            <div className={styles.panel}>
+              <div>
+                <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="Harvard University" />
+              </div>
+              <div>
+                <h2>Harvard Case Study</h2>
+                <p>Impact of the Hoodie - the uniform and symbol of the kid who has been forgotten. A positive unifying mentor outfit.</p>
+                <Link className={styles.btn} to="/">View Case Study</Link>
+              </div>
             </div>
-  
-            <div className={styles.thinkdiffwrapper}>
-              <img src={`${assetsUrl}/assets/images/imagination_dec/BRAIN-min@2x.gif`} alt="Brain" style={{ width: '250px' }} className={styles.brainleft}/>
-              <h2 className={styles.thinkdiffheader}>It’s time to <br /><strong className={styles.sunset}>think differently.</strong></h2>
-              <img src={`${assetsUrl}/assets/images/imagination_dec/BRAIN-min@2x.gif`} alt="Brain" style={{ width: '250px' }} className={styles.brainright}/>
-            </div>              
+            <div className={styles.panel}>
+              <div>
+                <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="Harvard University" />
+              </div>
+              <div>
+                <h2>Cogs</h2>
+                <p>Impact of the Hoodie - the uniform and symbol of the kid who has been forgotten. A positive unifying mentor outfit.</p>
+                <Link className={styles.btn} to="/">Watch Cogs</Link>
+              </div>
+            </div>
+            <div className={styles.panel}>
+              <div>
+                <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="Harvard University" />
+              </div>
+              <div>
+                <h2>Letter to the universities</h2>
+                <p>Impact of the Hoodie - the uniform and symbol of the kid who has been forgotten. A positive unifying mentor outfit..</p>
+                <Link className={styles.btn} to="/">View Case Study</Link>
+              </div>
+            </div>
           </section>
-  
-          <section 
-            ref={el => { this.sectionRefs.section6 = el }}
-            className={styles.textPanelfinal}>
-            <div className={styles.mxauto}>   
-              <h2 className={styles.highlighted}>We are not the problem; <br />we are the solution.</h2>
-            </div>
-          </section>
-  
-          <section
-            ref={el => { this.sectionRefs.section7 = el }}
-            className={styles.layout3col} >
-            <div className={styles.layout3colimages}>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/COGS-min@2x.gif`} alt="Moving cogs" style={{ width: '300px' }} />
-              </div>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/left_garma-min@2x.jpg`} alt="Garma" style={{ width: '300px' }} />
-              </div>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/ATOM-min@2x.gif`} alt="ATOM" style={{ width: '300px' }} />
-              </div>
-            </div>
-            <div className={styles.layout3colcontent}>   
-              <p>We can work on creative agricultural solutions that are in sync with our natural habitat. We can re-engineer schooling. We can invent new jobs and technologies. And we can unite around kindness.</p>
-              <p>We call on all education leaders across the world to establish an imagination agenda for all children.</p>
-              <p><strong>We urge you to give us the freedom to write a new story.</strong></p>
-            </div>
-            <div className={styles.layout3colimages}>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/EARTH-min@2x.gif`} alt="Earth" style={{ width: '300px' }} />
-              </div>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/right_garma-min@2x.jpg`} alt="Garma" style={{ width: '300px' }} />
-              </div>
-              <div className={styles.imgwrap}>
-                <img src={`${assetsUrl}/assets/images/imagination_dec/SPEAK-min@2x.gif`} alt="Speaker" style={{ width: '300px' }} />
-              </div>
-            </div>                  
-          </section>
-        
-          <section
-            ref={el => { this.sectionRefs.section8 = el }}
-            className={styles.layoutfullimagetext} >
-            <div className={styles.centeredcontent}>
-              <h3>Set an imagination agenda for our classrooms. Remove the limited thinking around our disadvantage. Stop looking at us as a problem to fix; set us free to be the solution and give us the stage to light up the world.</h3>
-            </div>
-          </section> */}
 
           <section
             className={styles.eoiSection}

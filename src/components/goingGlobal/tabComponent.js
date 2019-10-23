@@ -27,16 +27,135 @@ const TabComponent = () => {
         </ul>
       </div>
       {activeTab === 'tab1' &&
-        <div>Philosophies Clicked</div>}
+        <div className={styles.gridWrapper} >
+          <div className={styles.mainGrid} >
+            <div className={styles.tile}>
+              <div>
+                <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
+                <div className={styles.videoThumb}
+                  style={{
+                    backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
+                    backgroundSize: 'cover',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    alt=""
+                    className="center mx-auto"
+                    style={{ width: '70px' }}
+                    src={`${assetsUrl}/assets/images/play-btn-white.svg`}
+                  />
+                </div>
+              </div>
+              <div className="">
+                <h3 className="tile-title">What's a Program Day?</h3>
+                <p className="tile-copy">
+                  An explanation of what a Program Day is and how they work.
+                  </p>
+              </div>
+            </div>
+            <div className={styles.tile}>
+              <div>
+                <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
+                <div className={styles.videoThumb}
+                  style={{
+                    backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
+                    backgroundSize: 'cover',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    alt=""
+                    className="center mx-auto"
+                    style={{ width: '70px' }}
+                    src={`${assetsUrl}/assets/images/play-btn-white.svg`}
+                  />
+                </div>
+              </div>
+              <div className="">
+                <h3 className="tile-title">What's a Program Day?</h3>
+                <p className="tile-copy">
+                  An explanation of what a Program Day is and how they work.
+                  </p>
+              </div>
+            </div>
+            <div className={styles.tile}>
+              <div>
+                <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
+                <div className={styles.videoThumb}
+                  style={{
+                    backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
+                    backgroundSize: 'cover',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    alt=""
+                    className="center mx-auto"
+                    style={{ width: '70px' }}
+                    src={`${assetsUrl}/assets/images/play-btn-white.svg`}
+                  />
+                </div>
+              </div>
+              <div className="">
+                <h3 className="tile-title">What's a Program Day?</h3>
+                <p className="tile-copy">
+                  An explanation of what a Program Day is and how they work.
+                  </p>
+              </div>
+            </div>
+            <div className={styles.tile}>
+              <div>
+                <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="boo" />
+              </div>
+              <div className="">
+                <h3 className="tile-title">What's a Program Day?</h3>
+                <p className="tile-copy">
+                  An explanation of what a Program Day is and how they work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
       {activeTab === 'tab2' &&
-        <div>Processes Clicked</div>}
+        <div className={styles.gridWrapper} >
+          <div className={styles.mainGrid} >
+            <div className={styles.tile}>
+              <div>
+                <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
+                <div className={styles.videoThumb}
+                  style={{
+                    backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
+                    backgroundSize: 'cover',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    alt=""
+                    className="center mx-auto"
+                    style={{ width: '70px' }}
+                    src={`${assetsUrl}/assets/images/play-btn-white.svg`}
+                  />
+                </div>
+              </div>
+              <div className="">
+                <h3 className="tile-title">What's a Program Day?</h3>
+                <p className="tile-copy">
+                  An explanation of what a Program Day is and how they work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
       {activeTab === 'tab3' &&
         <div className={styles.gridWrapper} >
           <div className={styles.mainGrid} >
             <div className={styles.tile}>
               <div>
                 <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
-                <div className={styles.videoThumb} 
+                <div className={styles.videoThumb}
                   style={{
                     backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
                     backgroundSize: 'cover',
@@ -62,10 +181,10 @@ const TabComponent = () => {
               <div className="">
                 <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
                 <div className={styles.videoThumb} style={{
-                    backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
-                    backgroundSize: 'cover',
-                    width: '100%',
-                  }}
+                  backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
+                  backgroundSize: 'cover',
+                  width: '100%',
+                }}
                 >
                   <img
                     alt=""
@@ -86,7 +205,7 @@ const TabComponent = () => {
               <div className="">
                 <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
                 <div
-                  className={styles.videoThumb} 
+                  className={styles.videoThumb}
                   style={{
                     backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
                     backgroundSize: 'cover',
@@ -112,7 +231,7 @@ const TabComponent = () => {
               <div className="">
                 <VideoButton video="https://player.vimeo.com/external/289201000.m3u8?s=8e2156e4c6126f23d949d8ee81f22d4a14e3e2f7" />
                 <div
-                  className={styles.videoThumb} 
+                  className={styles.videoThumb}
                   style={{
                     backgroundImage: `url('${assetsUrl}/assets/images/know-aime/program-day-thumb.jpg')`,
                     backgroundSize: 'cover',
@@ -138,7 +257,7 @@ const TabComponent = () => {
               <div className="">
                 <VideoButton video="https://player.vimeo.com/external/243212684.m3u8?s=741dd0153164d1d5ae369cc5540a35df7662eade" />
                 <div
-                  className={styles.videoThumb} 
+                  className={styles.videoThumb}
                   style={{
                     backgroundImage: `url('${assetsUrl}/assets/images/know-aime/programday.jpg')`,
                     backgroundSize: 'cover',

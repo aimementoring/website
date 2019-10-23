@@ -2,8 +2,7 @@
 
 .heroPanelWrapper {
   position: relative;
-  background: url($cdnRoot+"assets/images/imagination_dec/PURPLE_BACKGROUND-min.jpg") no-repeat top center / cover
-    #f04cc4;
+  background: url($cdnRoot+"assets/images/going-global/herobg.jpg") no-repeat top center / cover #f04cc4;
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -44,9 +43,9 @@
 }
 
 .caseStudiesSection {
-    margin: 0 auto;
-    padding: 4em 0;
-    max-width: $micrositePageWidth;
+  margin: 0 auto;
+  padding: 4em 0;
+  max-width: $micrositePageWidth;
 }
 
 .centeredcontent {
@@ -133,65 +132,53 @@
     line-height: 1.8;
     text-align: center;
     max-width: 40em;
-    margin: 0 auto 3em;
+    margin: 0 auto 2em;
 
     &:last-child {
-        margin: 0 auto;
+      margin: 0 auto;
     }
 
     a {
-        color: $brand-primary;
-        text-decoration: none;
-        transition: $hoverTransition;
-  
-        &:hover {
-          color: $brand-secondary;
-        }
+      color: $neonpurple;
+      text-decoration: none;
+      transition: $hoverTransition;
+
+      &:hover {
+        color: $brand-secondary;
+      }
     }
   }
 }
 
 .btn {
-    background-color: $brand-primary;
-    border-radius: 3px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: $feature-font-family-bold;
-    font-size: 0.9rem;
-    font-style: normal;
-    letter-spacing: 0.1em;
-    margin: 0;
-    opacity: 1;
-    padding: 0.8em 1.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: $hoverTransition;
+  background-color: $neonpurple;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $feature-font-family-bold;
+  font-size: 0.9rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  margin: 0 auto 6em;
+  opacity: 1;
+  padding: 0.8em 3em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $hoverTransition;
 
-    &:hover {
-        background-color: $brand-secondary;
-        color: $white;
-    }
+  &:hover {
+    background-color: $light-orange;
+    color: $white;
+  }
 }
 
 .resultsSection {
   .panel {
     background-color: $neonpink;
     text-align: center;
-    padding: 4em 0;
-
-    h2 {
-      font-family: $body-font-family-bold;     
-      font-weight: 900;
-      text-transform: uppercase;
-      color: $white;
-      font-size: 1.5rem;
-      line-height: 1em;
-      font-style: normal;
-      max-width: 30em;
-      margin: 1em auto 3em;
-  }
+    padding: 6em 0 3em;
 
     &:nth-child(2) {
       background-color: $white;
@@ -211,23 +198,122 @@
     }
   }
 
-  
+  h2 {
+    font-family: $body-font-family-bold;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 1em;
+    font-style: normal;
+    max-width: 30em;
+    margin: 1em auto;
+  }
+
+  .resultImages {
+    @media screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: $micrositePageWidth;
+      margin: 0 auto;
+    }
+  }
+
+  p {
+    font-family: $body-font-family;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 40em;
+    margin: 0 auto 2em; 
+    padding: 0 6em;
+    box-sizing: border-box;
+  }
 }
 
 .pppWrapper {
-    background-color: turquoise;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 4em 0;
+  padding: 6em 1.5em 3em;
   text-align: center;
 
+  @media screen and (min-width: $md) {
+    padding: 6em 0 3em;
+  }
+
   h5 {
-      font-family: $body-font-family;     
-      font-weight: 900;
+    font-family: $body-font-family;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 40em;
+    margin: 0 auto 2em; 
   }
 }
+
+.resourcesSection {
+  margin: 0 auto;
+  max-width: 60em;
+
+  h3 {
+    font-family: $body-font-family-bold;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $neonpurple;
+    font-size: 1.5rem;
+    line-height: 1em;
+    font-style: normal;
+    max-width: 30em;
+    margin: 1em auto 2em;
+    text-align: center;
+  }
+  
+  .panel {
+    padding: 0 1.5em;
+
+    @media screen and (min-width: $md) {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        h2, p {
+          text-align: right;
+        }
+
+        .btn {
+          float: right;
+        }
+      }
+    }
+
+    h2, p {
+      font-family: $body-font-family;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 1.8;
+      font-style: normal;
+      margin-bottom: 1.5em;
+    }
+    h2 {
+      font-weight: 900;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+
+
+
+
 
 .textPanelfinal {
   h2 {
@@ -420,38 +506,38 @@
 }
 
 .eoiSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 6em 0 3em;
+
+  .formWrapper {
+    text-align: center;
+    max-width: 50em;
     margin: 0 auto;
-    padding: 6em 0 3em;
-
-    .formWrapper {
-        text-align: center;
-        max-width: 50em;
-        margin: 0 auto;
-    }
-  
-    h1 {
-        font-size: 3.4rem;
-        margin-bottom: .8em;
-        line-height: 1.3;
-        max-width: 960px;
-        text-align: center;
-        font-family: PoppinsBold;
-        font-style: normal;
-        background: linear-gradient(45deg, $magenta, #ff9835);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    p {
-        font-family: $body-font-family;
-        font-size: 0.9rem;
-        font-weight: 400;
-        line-height: 1.8;
-        text-align: center;
-        max-width: 40em;
-        margin: 0 auto 3em;
-    }
   }
+
+  h1 {
+    font-size: 3.4rem;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+    max-width: 960px;
+    text-align: center;
+    font-family: PoppinsBold;
+    font-style: normal;
+    background: linear-gradient(45deg, $magenta, #ff9835);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-family: $body-font-family;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 40em;
+    margin: 0 auto 3em;
+  }
+}

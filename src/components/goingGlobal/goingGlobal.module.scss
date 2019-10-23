@@ -37,7 +37,7 @@
     }
 
     .btn {
-      background-color: $neonpuple;
+      background-color: $neonpurple;
       border-radius: 3px;
       border: none;
       color: #fff;
@@ -134,29 +134,35 @@
     margin: 0 auto;
   }
 
-  h4, h1 {
+  h1, h2, h3 {
     font-family: $body-font-family-bold;
     text-transform: uppercase;
     font-size: 3rem;
     line-height: 1.5;
     font-weight: 900; 
     font-style: normal;
+    margin: 0;
   }
 
-  .module2017 h4 {
+  .module2017 h2 {
     color: $magenta;
   }
 
-  .module2018 h4 {
+  .module2018 h2 {
     color: $light-orange;
   }
 
-  .module2019 h4 {
+  .module2019 h2 {
     color: $green;
   }
 
   h1 {
     margin: 0 0 1.5em;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 0 0 0.5em;
   }
 
   p {
@@ -168,6 +174,12 @@
 
   }
 
+  .popFooter {
+    border-top: 1px solid $neonpink;
+    width: 100%;
+    margin-top: 4em;
+  }
+
   .nextLink {
     display: block;
     font-family: $body-font-family-bold;
@@ -177,7 +189,7 @@
     font-weight: 900; 
     font-style: normal;
     text-decoration: none;
-    color: $neonpuple;
+    color: $neonpurple;
     margin-top: 2em;;
     transition: $hoverTransition;
 
@@ -189,6 +201,20 @@
 
 .iframeContainer {
   margin-bottom: 3em;
+
+  iframe {
+    @media screen and (min-width: $md) {
+    width: 100%;
+    min-height: 20em;
+    }
+  }
+}
+
+.imgTextLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
 }
 
 // tabComponent / grid styling
@@ -203,25 +229,35 @@
    flex-direction: row;
    justify-content: center;
    list-style: none;
-   margin: 1em 0 2em;
+   @media screen and (min-width: $md) {
+    margin: 1em 0 2em;
+   }
 }
 
 .tab {
   cursor: pointer;
-  padding: 1em;
   margin: 1em 0.5em;
   font-family: $body-font-family;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0.8em;
 
   &:hover, 
   &.activeTab {
     font-family: $body-font-family-bold;
     font-weight: 900;
-    color: $brand-tertiary;
+    color: $neonpink;
+  }
+
+  @media screen and (min-width: $md) {
+    font-size: 1.2rem;
   }
 }
 
 .gridWrapper {
-  padding: 1em;
+
+  padding: 1em 1.5em;
 }
 
 .mainGrid {
@@ -231,28 +267,50 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  max-width: $micrositePageWidth;
+  margin: 0 auto;
+  box-sizing: border-box;
 
-  @supports (display: grid) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
+  @media screen and (min-width: $md) {
+    padding: 0 5em;
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+      grid-gap: 1em;
+    }
   }
+  @media screen and (min-width: 90em) {
+    padding: 0 auto;
+  }
+
+  
 }
 
 .tile {
   display: block;
   flex: 1;
-  min-width: 300px;
+  min-width: 18em;
   -ms-flex-align: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 0.5rem;
-
+  text-align: left;
+  
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 16px;
-    padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    grid-gap: 1em;
+    margin-bottom: 2em;
+  }
+
+  h3, p {
+    font-family: $body-font-family-bold;
+    font-weight: 900;
+    font-size: 0.9rem;
+    font-style: normal;
+  }
+
+  p {
+    font-weight: 400;
   }
 }
 

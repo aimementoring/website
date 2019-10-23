@@ -10,15 +10,17 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-  width: 120px;
-  height: 53px;
+  width: 7.5em;
+  height: 3em;
   color: orange;
   transition: width 0.5s ease;
+  padding: 0.5em 0;
 }
 
 :global(.header-filled) {
   .iconAimeLogo {
-    width: 60px;
+    width: 3.75em;
     color: yellowgreen;
+    padding: 0;
   }
 }
