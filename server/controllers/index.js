@@ -38,6 +38,6 @@ router.use(express.static(
 ));
 
 // any other route should be handled by react-router, so serve the index page
-// router.use('*', actionIndex);
+router.use('*', actionIndex);
 
 export default router;
