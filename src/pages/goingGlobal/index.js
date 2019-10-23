@@ -69,6 +69,10 @@ class GoingGlobal extends PureComponent {
     }
   }
 
+  handleScrollAfterLastPopup = () => {
+    scrollToComponent(this.sectionRefs.results, { align: 'top' });
+  }
+
   handleReloadData = () => {
     this.setState(prevState => ({ reloadData: !prevState.reloadData }))
   }
@@ -94,7 +98,9 @@ class GoingGlobal extends PureComponent {
           </section>
 
           <section ref={el => { this.sectionRefs.casestudies = el }} className={styles.caseStudiesSection}>
-            <Popup />     
+            <Popup
+              scrollAfterLastPopup={this.handleScrollAfterLastPopup}
+            />     
           </section>
 
           <section className={styles.textPanel}>

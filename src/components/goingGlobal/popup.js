@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
 import styles from './goingGlobal.module.scss';
 
-const Popup = () => {
+const Popup = ({ scrollAfterLastPopup }) => {
   const assetsUrl = getAssetsBaseUrl();
   const [moduleClicked, setModuleClicked] = useState('');
   const [showModal, setModal] = useState(false);
-
+  const divContainer = useRef(null);
   const customStyles = {
     content: {
-      top: '20%',
-      left: '10%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-20%',
       width: '80%',
       height: '60%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      position: 'absolute',
     },
   };
 
@@ -33,9 +33,17 @@ const Popup = () => {
   }
 
   const buttonClicked = (nro) => () => {
+    closeModal();
+    if (divContainer && divContainer.current)
+      divContainer.current.scrollIntoView({block: 'start', behavior: 'auto'});
     console.log(nro);
     setModuleClicked(nro);
     openModal();
+  }
+
+  const handleFinishLastPopup = () => {
+    closeModal();
+    scrollAfterLastPopup();
   }
 
   const renderModule1 = () => (
@@ -73,8 +81,11 @@ const Popup = () => {
           />
         </div>
         <p>Message from Vhutali</p>
-        <div className={styles.popFooter}><a href="/" className={styles.nextLink}>CHECK OUT 2018 -></a></div>
-
+        <div className={styles.popFooter}>
+          <span className={styles.nextLink} onClick={buttonClicked(2)}>
+            CHECK OUT 2018 ->
+          </span>
+        </div>
       </div>
     </>
   );
@@ -122,8 +133,11 @@ const Popup = () => {
             title='video'
           />
         </div>
-        <div className={styles.popFooter}><a href="/" className={styles.nextLink}>CHECK OUT 2019 -></a></div>
-
+        <div className={styles.popFooter}>
+          <span className={styles.nextLink} onClick={buttonClicked(3)}>
+            CHECK OUT 2019 ->
+          </span>
+        </div>
       </div>
     </>
   );
@@ -140,7 +154,11 @@ const Popup = () => {
         <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="Harvard University" />
         <img src={`${assetsUrl}/assets/images/going-global/volunteerhrs.png`} alt="Harvard University" />
         <p>And now we are at the back end of partnership conversations with 10+ US universities to look to secure a focused group that will join the Global Pilot for the next 3 years.</p>
-        <div className={styles.popFooter}><a href="/" className={styles.nextLink}>CHECK OUT WHAT WE’VE ACCOMPLISHED</a></div>
+        <div className={styles.popFooter}>
+          <span className={styles.nextLink} onClick={handleFinishLastPopup}>
+            CHECK OUT WHAT WE’VE ACCOMPLISHED
+          </span>
+        </div>
       </div>
     </>
   );
@@ -163,8 +181,9 @@ const Popup = () => {
         <div className={styles.caseStudy}>
           <h5>2019</h5>
           <p>USA - The Hooded Hustle</p>
-          <button className={styles.btn} type="button" onClick={buttonClicked(3)}>Read Case STudy</button>
-
+          <button className={styles.btn} type="button" onClick={buttonClicked(3)}>
+            Read Case STudy
+          </button>
         </div>
       </div>
       <Modal
@@ -172,7 +191,7 @@ const Popup = () => {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <div className={styles.popUp}>
+        <div className={styles.popUp} ref={divContainer}>
           <i className={styles.closeIcon} onClick={closeModal}>close</i>
           <div className={styles.popContentWrapper}>
             {moduleClicked === 1 && renderModule1()}
@@ -183,6 +202,10 @@ const Popup = () => {
       </Modal>
     </>
   )
+}
+
+Popup.propTypes = {
+  scrollAfterLastPopup: PropTypes.func,
 }
 
 export default Popup;
