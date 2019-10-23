@@ -13,7 +13,6 @@
     "server": "NODE_ENV=production node server/bootstrap.js",
     "serveronwindows": "SET NODE_ENV=production & node server/bootstrap.js",
     "heroku-start": "node server/bootstrap.js",
-    "heroku-postbuild": "yarn build && yarn compress && yarn remove-gz-extension && yarn aws-sync",
     "compress": "yarn compress:js && yarn compress:css",
     "compress:js": "gzip -r ./build/static/js",
     "compress:css": "gzip -r ./build/static/css",
