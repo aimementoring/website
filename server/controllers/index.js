@@ -20,11 +20,9 @@ const actionIndex = (req, res, next) => {
 getAllRedirectUrlEntries().then(response => { 
   response.forEach((url) => {
     router.get(url.fields.sourceUrl, (req, res, next) => {
-      if (url.fields.sourceUrl) {
-        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-      }
+      res.redirect(url.fields.redirectType, url.fields.destinationUrl);
       next();
-    })
+    });
   }); 
 });
 

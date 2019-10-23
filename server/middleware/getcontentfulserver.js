@@ -1,4 +1,5 @@
 import * as contentful from "contentful";
+import bugsnagClient from '../../src/utils/bugsnag';
 
 const {
   REACT_APP_CONTENTFUL_SPACE_ID,
@@ -21,7 +22,10 @@ const fetchContentfulEntries = () => {
     })
     .then(response => response.items)
     .catch(error => {
-      alert("There was an issue fetching your content from Contentful ", error);
+      bugsnagClient.notify(
+        new Error(`There was an issue fetching content from Contentful ${error}`),
+        { context: error }
+      );
     });
 };
 
