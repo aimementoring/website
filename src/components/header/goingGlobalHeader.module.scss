@@ -48,6 +48,11 @@
       a {
         color: $black;
         text-decoration: none;
+        transition: $hoverTransition;
+
+        &:hover {
+          color: $light-orange;
+        }
       }
     }
   }
@@ -91,5 +96,10 @@
 
   @media (min-width: $md) {
     padding: 0.6em 1.7em;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $light-orange;
   }
 }

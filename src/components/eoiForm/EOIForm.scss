@@ -1,3 +1,33 @@
+@import '../../styles/base/variables';
+
 .custom-form-input-container {
   z-index: 1;
+}
+
+//TODO: I'll set this up with CSS modules with more time tomorrow
+.form-light {
+  .custom-form-input-container {
+    .input, select {
+      border: 1px solid #E3E5E5;
+
+      &:focus {
+        border-color: $neonpurple;
+      }
+
+      &::placeholder {
+        color: $neonpurple;
+      }
+    }
+  }
+  .input, select {
+    border: 1px solid #E3E5E5;
+
+    &:focus {
+      border-color: $neonpurple;
+    }
+
+    &::placeholder {
+      color: $neonpurple;
+    }
+  }
 }
