@@ -27,14 +27,15 @@ getAllRedirectUrlEntries().then(response => {
     })
   }); 
 });
+
+// root (/) should always serve our server rendered page
+router.use('^/$', actionIndex);
+
 // other static resources should just be served as they are
 router.use(express.static(
   path.resolve(__dirname, '..', '..', 'build'),
   { maxAge: '30d' },
 ));
-
-// root (/) should always serve our server rendered page
-router.use('^/$', actionIndex);
 
 // any other route should be handled by react-router, so serve the index page
 // router.use('*', actionIndex);
