@@ -105,12 +105,12 @@ class Footer extends PureComponent {
                           </Link>
                         </li>
                         <li className="mb2">
-                          <Link
+                          <a
                             className="c-white text-decoration-none"
-                            to="https://faqs.aimementoring.com"
+                            href="https://faqs.aimementoring.com"
                           >
                             FAQs
-                          </Link>
+                          </a>
                         </li>
                         <li className="mb2">
                           <button

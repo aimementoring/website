@@ -102,7 +102,7 @@ class BasicLayout extends Component {
   }
 
   handleShowIntercom = () => {
-    window.Intercom("show");
+    window.Intercom("showNewMessage");
     window.Intercom("update", { hide_default_launcher: false });
   }
 
