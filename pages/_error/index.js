@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react'
-import { Helmet } from 'react-helmet'
-import Router from 'next/router'
-import Anchor from '../../components/common/link'
-import bugsnagClient from '../../utils/bugsnag'
-import './index.scss'
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import Router from 'next/router';
+import Anchor from '../../components/common/link';
+import bugsnagClient from '../../utils/bugsnag';
+import './index.scss';
 
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ErrorPage = () => {
   useEffect(() => {
     bugsnagClient.notify(new Error('Page not found (404)'), {
-      beforeSend: report => {
+      beforeSend: (report) => {
+        /* eslint no-param-reassign: "off" */
         report.severity = 'info';
         report.groupingHash = Router.pathname;
         if (typeof window !== 'undefined') {
           report.metaData = {
             request: { referer: document.referrer },
-          }
+          };
         }
+        /* eslint no-param-reassign: "error" */
       },
-    })
-  })
+    });
+  });
 
   return (
     <div>
@@ -37,7 +39,8 @@ const ErrorPage = () => {
                 <span className="pre-text">Uh </span>
                 <span className="highlight-text">
                   <em>
-                    OH<br />
+                    OH
+                    <br />
                   </em>
                 </span>
               </h1>
@@ -48,7 +51,7 @@ const ErrorPage = () => {
           <div className="justify-center items-center sm-flex">
             <div>
               <p className="f-30 feature-font-family regular">
-                Oops, this wasn't meant to happen.
+                {'Oops, this wasn\'t meant to happen.'}
               </p>
               <p className="f-14 light pt2">
                 Sorry for any inconvenience.
@@ -63,6 +66,6 @@ const ErrorPage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ErrorPage
+export default ErrorPage;

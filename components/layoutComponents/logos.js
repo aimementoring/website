@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   SiteLogo,
   WobblePath,
@@ -24,7 +24,7 @@ import {
   PlayFilled,
   EmailIcon,
   CloseIcon,
-} from './symbolIcons'
+} from './symbolIcons';
 
 const Logos = () => (
   <svg height="0" width="0" className="absolute">
@@ -55,6 +55,6 @@ const Logos = () => (
       <CloseIcon />
     </defs>
   </svg>
-)
+);
 
-export default Logos
+export default Logos;
