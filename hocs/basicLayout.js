@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'next/router';
-import SeoMetadata from '../components/layoutComponents/seoMetaData'
-import ErrorBoundary from '../components/common/errorBoundary'
-import Header from '../components/layoutComponents/header'
-import Footer from '../components/layoutComponents/footer'
-import Logos from '../components/layoutComponents/logos'
-import { getSeoTags } from '../services/craftAPI'
+import PropTypes from 'prop-types';
+import SeoMetadata from '../components/layoutComponents/seoMetaData';
+import ErrorBoundary from '../components/common/errorBoundary';
+import Header from '../components/layoutComponents/header';
+import Footer from '../components/layoutComponents/footer';
+import Logos from '../components/layoutComponents/logos';
+import { getSeoTags } from '../services/craftAPI';
 import './basicLayout.scss';
 
-const withLayout = WrappedComponent => {
+const withLayout = (WrappedComponent) => {
   const BasicLayout = ({ router, children }) => {
-    const [seo, setSeo] = useState({})
+    const [seo, setSeo] = useState({});
 
-    useEffect(() => {
-      addSeoAndRedirects()
-    }, [router])
-
-    useEffect(() => {
-      window.scrollTo(0, 0)
-    }, [router.pathname])
-    
     const addSeoAndRedirects = () => {
       const { pathname } = router;
-      getSeoTags(pathname.split('/')[1].length > 1 ? pathname : '').then(seo => setSeo(seo));
-    }
-  
+      getSeoTags(pathname.split('/')[1].length > 1 ? pathname : '').then(
+        (seoTags) => { setSeo(seoTags); },
+      );
+    };
+
+    useEffect(() => {
+      addSeoAndRedirects();
+    }, [router]);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [router.pathname]);
+
     return (
       <div>
         <ErrorBoundary>
@@ -39,9 +42,23 @@ const withLayout = WrappedComponent => {
           <div id="aime-parent-video-box" />
         </ErrorBoundary>
       </div>
-    )
-  }
-  return withRouter(BasicLayout)
-}
+    );
+  };
 
-export default withLayout
+  BasicLayout.propTypes = {
+    router: PropTypes.shape({
+      pathname: PropTypes.string,
+      asPath: PropTypes.string,
+      query: PropTypes.shape({}),
+    }).isRequired,
+    children: PropTypes.node,
+  };
+
+  BasicLayout.defaultProps = {
+    children: null,
+  };
+
+  return withRouter(BasicLayout);
+};
+
+export default withLayout;
