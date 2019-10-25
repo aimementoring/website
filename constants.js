@@ -13,7 +13,7 @@ export const AUTH0_RECRUITMENT_CONFIG = {
   languageDictionary: {
     title: 'AIME Recruitment Log In',
   },
-}
+};
 
 export const AUTH0_STAFF_CONFIG = {
   auth: {
@@ -30,7 +30,7 @@ export const AUTH0_STAFF_CONFIG = {
   languageDictionary: {
     title: 'AIME Staff Log In',
   },
-}
+};
 
 export const BLOG_MATRIX_AVAILABLE_ELEMENTS = [
   'paragraph',
@@ -42,7 +42,7 @@ export const BLOG_MATRIX_AVAILABLE_ELEMENTS = [
   'mp4Video',
   'button',
   'iframeHeight',
-]
+];
 
 export const GENERAL_MATRIX_AVAILABLE_ELEMENTS = [
   'paragraph',
@@ -54,7 +54,7 @@ export const GENERAL_MATRIX_AVAILABLE_ELEMENTS = [
   'video',
   'button',
   'signature',
-]
+];
 
 export const FORM_MATRIX_AVAILABLE_ELEMENTS = [
   'input',
@@ -76,7 +76,7 @@ export const FORM_MATRIX_AVAILABLE_ELEMENTS = [
   'addressField',
   'submit',
   'video',
-]
+];
 
 export const HEADER_MENU_ITEMS = [
   {
@@ -122,7 +122,7 @@ export const HEADER_MENU_ITEMS = [
       },
     ],
   },
-]
+];
 
 export const CTA_AU_HOMEPAGE = [
   {
@@ -149,7 +149,7 @@ export const CTA_AU_HOMEPAGE = [
     button: 'Explore our Impact',
     description: 'Not another smiley faced program',
   },
-]
+];
 
 export const CTA_US_HOMEPAGE = [
   {
@@ -177,13 +177,13 @@ export const CTA_US_HOMEPAGE = [
     button: 'Contact',
     description: 'If you wanna know more reach out and we\'ll do our best to answer your questions',
   },
-]
+];
 
 export const TALENT_HEADER_MENU_ITEMS = [
   'Welcome',
   'Deets',
   'Vids',
-]
+];
 
 export const STUDENT_CHAPTER_QUESTIONS_FORM = [
   'Do you know which demographic of kids you want to mentor and have a case ready as to what inequality they are facing educationally?',
@@ -192,7 +192,7 @@ export const STUDENT_CHAPTER_QUESTIONS_FORM = [
   'Can you commit 1 year of your life to this?',
   'Can you get yourself to LA with a valid Passport and Aus Tourist Visa by 2/19?',
   'Do you believe we can make magic?',
-]
+];
 
 export const ANNUAL_2016_REPORT_YEARS = [
   {
@@ -368,7 +368,7 @@ export const ANNUAL_2016_REPORT_YEARS = [
     <p>The AIME Research Partnership created a central repository of all AIME Research Partnership publications in the website: <a href="https://aimeresearchpartnership.wordpress.com/" target="_blank">aimeresearchpartnership.wordpress.com</a>. All publications are listed under the publications tab, with links to full-text for most items listed.</p>
     `,
   },
-]
+];
 
 export const STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS = [
   {
@@ -399,7 +399,7 @@ export const STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS = [
     title: 'What\'s a Tutor Squad?',
     description: 'An explanation of what a Tutor Squad is and how they work',
   },
-]
+];
 
 export const STUDENT_CHAPTER_SECOND_VIDEO_CAROUSEL_ELEMENTS = [
   {
@@ -430,7 +430,7 @@ export const STUDENT_CHAPTER_SECOND_VIDEO_CAROUSEL_ELEMENTS = [
     title: 'Working with Universities',
     description: '',
   },
-]
+];
 
 export const COUNTRIES_WHERE_AIME_ACCEPT_JOBS = [
   'AU',
@@ -439,12 +439,12 @@ export const COUNTRIES_WHERE_AIME_ACCEPT_JOBS = [
   'US',
   'ZA',
   'US',
-]
+];
 
 export const COUNTRIES_WITH_AIME_COMING_SOON = [
   'RW',
   'ZW',
-]
+];
 
 export const stories = {
   data: [
@@ -459,15 +459,15 @@ export const stories = {
       postDate: {
         date: '2018-11-04 15:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 25%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Isaiah_181104_044831.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Isaiah_181104_044831.jpg',
+        },
+      ],
     },
     {
       title: 'I have a passion for people & kindness 😜',
@@ -480,15 +480,15 @@ export const stories = {
       postDate: {
         date: '2018-10-27 20:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Lamarr_181027_090409.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Lamarr_181027_090409.jpg',
+        },
+      ],
     },
     {
       title: 'Trekking a kindness trail 🚙',
@@ -501,15 +501,15 @@ export const stories = {
       postDate: {
         date: '2018-10-21 10:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 25%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Shauny-1.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Shauny-1.jpg',
+        },
+      ],
     },
     {
       title: 'A different future 👣',
@@ -522,15 +522,15 @@ export const stories = {
       postDate: {
         date: '2018-10-04 16:01:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Bashir.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Bashir.jpg',
+        },
+      ],
     },
     {
       title: 'A full extension of kindness ☺️🌱',
@@ -543,15 +543,15 @@ export const stories = {
       postDate: {
         date: '2018-09-29 22:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/MELATIWIJSEN-by-Sharon-Angelia-0486.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/MELATIWIJSEN-by-Sharon-Angelia-0486.jpg',
+        },
+      ],
     },
     {
       title: 'Kindness in action 😉',
@@ -564,15 +564,15 @@ export const stories = {
       postDate: {
         date: '2018-09-22 03:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 0%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/H.-Murchison-•-Bio-Photo.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/H.-Murchison-•-Bio-Photo.jpg',
+        },
+      ],
     },
     {
       title: 'Stitched with kindness 😊',
@@ -585,15 +585,15 @@ export const stories = {
       postDate: {
         date: '2018-09-16 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Munjed.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Munjed.jpg',
+        },
+      ],
     },
     {
       title: 'Entitled to make a positive change ✊🏾🌷',
@@ -606,15 +606,15 @@ export const stories = {
       postDate: {
         date: '2018-09-09 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 25%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Mercy-Profile.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Mercy-Profile.jpg',
+        },
+      ],
     },
     {
       title: 'A smile is the BEST gift 😄',
@@ -627,15 +627,15 @@ export const stories = {
       postDate: {
         date: '2018-09-02 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Esther.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Esther.jpg',
+        },
+      ],
     },
     {
       title: 'AIME at Parliament House 🏠',
@@ -648,15 +648,15 @@ export const stories = {
       postDate: {
         date: '2018-08-26 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/AIME-in-the-house.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/AIME-in-the-house.png',
+        },
+      ],
     },
     {
       title: 'Leaving tracks ♿⚡',
@@ -669,15 +669,15 @@ export const stories = {
       postDate: {
         date: '2018-08-19 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 53%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Marcos-Abel.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Marcos-Abel.jpg',
+        },
+      ],
     },
     {
       title: 'Kindness has no limits ✈️',
@@ -690,15 +690,15 @@ export const stories = {
       postDate: {
         date: '2018-08-12 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Maya-Ghazal.-Pilot-in-training.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Maya-Ghazal.-Pilot-in-training.jpg',
+        },
+      ],
     },
     {
       title: 'The power of kindness  ✊🏾✨',
@@ -711,15 +711,15 @@ export const stories = {
       postDate: {
         date: '2018-08-05 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 35%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Khali-Head-Shot.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Khali-Head-Shot.jpg',
+        },
+      ],
     },
     {
       title: 'AIME’s FIRST African Australian Program Day 💪🏾🔥',
@@ -732,15 +732,15 @@ export const stories = {
       postDate: {
         date: '2018-07-29 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 25%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/0O3A6534.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/0O3A6534.jpg',
+        },
+      ],
     },
     {
       title: 'When strength met hope 🤘🏾🌷',
@@ -753,15 +753,15 @@ export const stories = {
       postDate: {
         date: '2018-07-22 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 15%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/When-strength-met-hope.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/When-strength-met-hope.jpg',
+        },
+      ],
     },
     {
       title: 'Kindness from a classroom in Brazil 📚',
@@ -774,15 +774,15 @@ export const stories = {
       postDate: {
         date: '2018-07-15 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 21%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-07-09-at-12.11.45-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-07-09-at-12.11.45-PM.png',
+        },
+      ],
     },
     {
       title: 'Because of her, we can 💃🏾',
@@ -795,15 +795,15 @@ export const stories = {
       postDate: {
         date: '2018-07-08 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-07-03-at-12.07.43-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-07-03-at-12.07.43-PM.png',
+        },
+      ],
     },
     {
       title: 'Tales of an adventuring soul 🌍❤️',
@@ -816,15 +816,15 @@ export const stories = {
       postDate: {
         date: '2018-07-01 18:30:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-25-at-10.22.14-AM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-25-at-10.22.14-AM.png',
+        },
+      ],
     },
     {
       title: 'Changing the world one brushstroke at a time. 🎨',
@@ -837,15 +837,15 @@ export const stories = {
       postDate: {
         date: '2018-06-24 10:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/DSC_7204.JPG'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/DSC_7204.JPG',
+        },
+      ],
     },
     {
       title: 'I believe in looking past perceptions & fearlessly shining positivity 🦁',
@@ -858,15 +858,15 @@ export const stories = {
       postDate: {
         date: '2018-06-17 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/IMG_3014.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/IMG_3014.jpg',
+        },
+      ],
     },
     {
       title: 'Be kind to each other, Darlings 😘',
@@ -879,15 +879,15 @@ export const stories = {
       postDate: {
         date: '2018-06-10 15:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 20%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-07-at-4.37.55-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-07-at-4.37.55-PM.png',
+        },
+      ],
     },
     {
       title: 'There is kindness in trust 💫',
@@ -900,15 +900,15 @@ export const stories = {
       postDate: {
         date: '2018-06-03 16:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-3.47.35-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-3.47.35-PM.png',
+        },
+      ],
     },
     {
       title: 'I believe in kindness and free coffee 😜',
@@ -921,15 +921,15 @@ export const stories = {
       postDate: {
         date: '2018-05-20 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: true,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-4.11.45-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-4.11.45-PM.png',
+        },
+      ],
     },
     {
       title: 'Wherever there is a human being, there is an opportunity for kindness 💃🏻',
@@ -942,15 +942,15 @@ export const stories = {
       postDate: {
         date: '2018-05-13 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '0% 80%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-4.51.20-PM.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-4.51.20-PM.png',
+        },
+      ],
     },
     {
       title: 'What happens when kindness spreads like wildflowers? 🌸',
@@ -963,15 +963,15 @@ export const stories = {
       postDate: {
         date: '2018-05-06 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-7.11.01-PM_180628_094509.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Screen-Shot-2018-06-28-at-7.11.01-PM_180628_094509.png',
+        },
+      ],
     },
     {
       title: 'Making the invisible visible 🙌🏾🌻',
@@ -984,15 +984,15 @@ export const stories = {
       postDate: {
         date: '2018-03-25 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Sunday-copy.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Sunday-copy.png',
+        },
+      ],
     },
     {
       title: 'Mentoring, key to a fairer world 🔑',
@@ -1005,15 +1005,15 @@ export const stories = {
       postDate: {
         date: '2018-03-18 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: '25%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Kabir-2.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Kabir-2.jpg',
+        },
+      ],
     },
     {
       title: 'Forgiveness liberates the soul 🌿',
@@ -1026,15 +1026,15 @@ export const stories = {
       postDate: {
         date: '2018-03-11 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Sunday-copy-4.png'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Sunday-copy-4.png',
+        },
+      ],
     },
     {
       title: 'Trust & human kindness. The fundamental currencies. 🙏🏾🦄',
@@ -1047,15 +1047,15 @@ export const stories = {
       postDate: {
         date: '2018-03-05 14:16:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: true,
       bannerBackgroundPosition: '0% 30%',
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/untitled-4.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/untitled-4.jpg',
+        },
+      ],
     },
     {
       title: 'Apparel Pop Up Stores for Hottest 100',
@@ -1068,15 +1068,15 @@ export const stories = {
       postDate: {
         date: '2018-01-24 09:58:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Apparel-Hats.jpg'
-        }
-      ]
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/Apparel-Hats.jpg',
+        },
+      ],
     },
     {
       title: 'The Backdrop to AIME',
@@ -1089,16 +1089,16 @@ export const stories = {
       postDate: {
         date: '2017-02-26 00:00:00.000000',
         timezone_type: 3,
-        timezone: 'Australia/Sydney'
+        timezone: 'Australia/Sydney',
       },
       isFeatured: false,
       bannerBackgroundPosition: null,
       bannerImage: [
         {
-          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/28454321836_c40058e602_k.jpg'
-        }
-      ]
-    }
+          image: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/28454321836_c40058e602_k.jpg',
+        },
+      ],
+    },
   ],
   meta: {
     pagination: {
@@ -1110,7 +1110,7 @@ export const stories = {
       links: [],
     },
   },
-}
+};
 
 export const TESTIMONIALS = [
   {
@@ -1118,34 +1118,34 @@ export const TESTIMONIALS = [
       my present and my future. This is now my favourite book, to me it’s not just a
       book. It’s a reminder, telling me I am what I am and nothing or no one can
       stand in my way and tell me I’m not.`,
-    signature: `- Hope Bradshaw-Wright`,
+    signature: '- Hope Bradshaw-Wright',
   },
   {
-    paragraph: `A riveting story with eloquent prose and brutal honesty. I can't wait to read the sequel.`,
-    signature: `- Patrick Orme (AIME Staffer)`,
+    paragraph: 'A riveting story with eloquent prose and brutal honesty. I can\'t wait to read the sequel.',
+    signature: '- Patrick Orme (AIME Staffer)',
   },
   {
     paragraph: `The messages are very clear. Sometimes you have to get knocked down lower than
       you’ve ever been, to stand up taller than you ever were before.`,
-    signature: `- Rhian Miller (AIME Mentor &amp; Centre Manager)`,
+    signature: '- Rhian Miller (AIME Mentor &amp; Centre Manager)',
   },
   {
     paragraph: `Just like AIME itself, ‘the Mentor’ is entrenched with human connection. Very
       rarely do books find a way to draw you in and unlock your mind like this book.`,
-    signature: `- Emma Dunn (AIME Mentor Leader &amp; Program Assistant)`,
+    signature: '- Emma Dunn (AIME Mentor Leader &amp; Program Assistant)',
   },
   {
     paragraph: `The book made me reflect on my own life especially as a young Indigenous man
       who went to Uni to get the skills to change things for the people in my
       community. The Mentor challenged me to be ambitious in my actions as well as
       thoughts.`,
-    signature: `- Rhys Pearcy (AIME Mentor &amp; Program Manager)`,
+    signature: '- Rhys Pearcy (AIME Mentor &amp; Program Manager)',
   },
   {
     paragraph: `Thank you for the work you have done in Australia and thank you for having the
       courage to dream bigger and go global. Thank you for sharing your inspiring
       story and continuing to take as many people as possible on such an important
       journey.`,
-    signature: `- Emma Gallagher`,
+    signature: '- Emma Gallagher',
   },
-]
+];

@@ -11,27 +11,27 @@ const monthNames = [
   'October',
   'November',
   'December',
-]
+];
 
-const addOrdinalSuffixToNumber = number => {
-  const ordinalArray = ['th', 'st', 'nd', 'rd']
-  const v = number % 100
-  return `${number}${ordinalArray[(v - 20) % 10] || ordinalArray[v] || ordinalArray[0]}`
-}
+const addOrdinalSuffixToNumber = (number) => {
+  const ordinalArray = ['th', 'st', 'nd', 'rd'];
+  const v = number % 100;
+  return `${number}${ordinalArray[(v - 20) % 10] || ordinalArray[v] || ordinalArray[0]}`;
+};
 
-const getDay = date => addOrdinalSuffixToNumber(date.getDate())
+const getDay = (date) => addOrdinalSuffixToNumber(date.getDate());
 
-export const getFormattedDate = jobDate => {
-  if (!jobDate) return
-  const date = new Date(jobDate)
+export const getFormattedDate = (jobDate) => {
+  if (!jobDate) return null;
+  const date = new Date(jobDate);
   if (date) {
-    return `${monthNames[date.getMonth()]} ${getDay(date)}, ${date.getFullYear()} `
+    return `${monthNames[date.getMonth()]} ${getDay(date)}, ${date.getFullYear()} `;
   }
-  return jobDate
-}
+  return jobDate;
+};
 
-export const formatJobs = jobs => (
+export const formatJobs = (jobs) => (
   jobs
-    .filter(job => !!job.name)
-    .map(job => ({ ...job, expire: getFormattedDate(job.expire) }))
-)
+    .filter((job) => !!job.name)
+    .map((job) => ({ ...job, expire: getFormattedDate(job.expire) }))
+);
