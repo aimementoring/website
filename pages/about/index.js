@@ -1,14 +1,14 @@
-import React from 'react'
-import classNames from 'classnames'
-import Title from 'aime-blueprint/lib/components/title'
-import Anchor from '../../components/common/link'
-import HeroBannerAbout from '../../components/heroBannerAbout'
-import withLayout from '../../hocs/basicLayout'
-import styles from './about.module.scss'
+import React from 'react';
+import classNames from 'classnames';
+import Title from 'aime-blueprint/lib/components/title';
+import Anchor from '../../components/common/link';
+import HeroBannerAbout from '../../components/heroBannerAbout';
+import withLayout from '../../hocs/basicLayout';
+import styles from './about.module.scss';
 
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const About = () => (
-  <React.Fragment>
+  <>
     <div className={styles.aboutContainer}>
       <HeroBannerAbout />
       <div className={styles.aboutWrapper}>
@@ -28,8 +28,11 @@ const About = () => (
               </h1>
             </div>
             <div className={styles.copy}>
-              <Title type="mainTitle">We are driven to unlock the limitless potential of children who have been left
-                behind</Title>
+              <Title type="mainTitle">
+We are driven to unlock the limitless potential of children who have been left
+                behind
+
+              </Title>
               <p className={styles.whiteText}>
                 We do that by building mentoring bridges between universities and high schools,
                 between the powerful and the powerless, the haves and the have nots. We know that
@@ -88,9 +91,9 @@ const About = () => (
             <div className={styles.copy}>
               <h3 className={styles.whiteTitleWithMargin}>Not another smiley faced program</h3>
               <p className={styles.whiteText}>
-                We turn up. Turn up. Turn up. We've been at it since 2005 and we're only just
+                {`We turn up. Turn up. Turn up. We've been at it since 2005 and we're only just
                 getting started! AIME benefits mentees, mentors and the entire community we work
-                in. Don't take our word for it, check out the evidence.
+                in. Don't take our word for it, check out the evidence.`}
               </p>
               <Anchor to="/impact" className={styles.linkButton}>
                 Read more
@@ -115,7 +118,9 @@ const About = () => (
             </div>
             <div className={styles.copy}>
 
-              <h3 className={styles.whiteTitleWithMargin}>We've got knowledge & tools to share</h3>
+              <h3 className={styles.whiteTitleWithMargin}>
+                {'We\'ve got knowledge & tools to share'}
+              </h3>
               <p className={styles.whiteText}>
                 In 2018 we opened our model on demand to Universities from across the globe, with
                 plans to be operational in 10+ different countries in 2020. Checkout our knowledge
@@ -176,7 +181,9 @@ const About = () => (
               </h1>
             </div>
             <div className={styles.copy}>
-              <h3 className={styles.whiteTitleWithMargin}>AIME makes the greatest hoodie on earth</h3>
+              <h3 className={styles.whiteTitleWithMargin}>
+                AIME makes the greatest hoodie on earth
+              </h3>
               <p className={styles.whiteText}>
                 We are doing our best to make the most meaningful hoodie on the planet, check out
                 the range designed and inspired by kids to change the world. Our shop currently
@@ -204,7 +211,7 @@ const About = () => (
         </section>
       </div>
     </div>
-  </React.Fragment>
-)
+  </>
+);
 
-export default withLayout(About)
+export default withLayout(About);
