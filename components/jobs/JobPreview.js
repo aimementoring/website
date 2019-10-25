@@ -1,7 +1,7 @@
 import React from 'react';
-import PropType from 'prop-types'
-import Anchor from '../common/link'
-import compact from 'lodash/compact'
+import PropType from 'prop-types';
+import compact from 'lodash/compact';
+import Anchor from '../common/link';
 
 const JobPreview = ({
   name,
@@ -15,44 +15,44 @@ const JobPreview = ({
   expire,
   state,
 }) => {
-  const nameAsLink = name.replace(/ /g, '-')
-  const location = compact([city, state, country].map(item => item.trim())).join(', ')
-  const details = []
+  const nameAsLink = name.replace(/ /g, '-');
+  const location = compact([city, state, country].map((item) => item.trim())).join(', ');
+  const details = [];
 
   if (location) {
     details.push(
       <p key={location} className="inline-block">
         {location}
-      </p>
-    )
+      </p>,
+    );
   }
   if (term.length) {
     details.push(
       <p key={name} className="inline-block px1">
         -
-      </p>
-    )
+      </p>,
+    );
   }
   if (term) {
     details.push(
       <p key={term} className="inline-block">
         {term}
-      </p>
-    )
+      </p>,
+    );
   }
   if (salaryRange) {
     details.push(
       <p key={`${name}--`} className="inline-block px1">
         -
-      </p>
-    )
+      </p>,
+    );
   }
   if (salaryRange) {
     details.push(
       <p key={salaryRange} className="inline-block">
         {salaryRange}
-      </p>
-    )
+      </p>,
+    );
   }
 
   return (
@@ -76,14 +76,14 @@ const JobPreview = ({
         </div>
       </Anchor>
     </div>
-  )
-}
+  );
+};
 
 JobPreview.defaultProps = {
   term: undefined,
   salaryRange: undefined,
   expire: null,
-}
+};
 
 JobPreview.propTypes = {
   id: PropType.string.isRequired,
@@ -96,6 +96,6 @@ JobPreview.propTypes = {
   term: PropType.string,
   salaryRange: PropType.string,
   cdnUrl: PropType.string.isRequired,
-}
+};
 
-export default JobPreview
+export default JobPreview;
