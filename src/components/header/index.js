@@ -81,36 +81,38 @@ class Header extends PureComponent {
     return (
       <div>
         <header className={`${headerState} site-header`}>
-          {isTalentPage
-            ? <TalentHeader
-              location={this.props.location}
-              handleTalentItemClicked={this.handleTalentItemClicked} />
+          <div>
+            {isTalentPage
+              ? <TalentHeader
+                location={this.props.location}
+                handleTalentItemClicked={this.handleTalentItemClicked} />
 
-            : isGoingGlobal ? (
-              <GoingGlobalHeader />
-            ) : (
-              <div className="container clearfix p3 flex items-center">
-                <div className="sm-col align-middle flex">
-                  <Logo />
+              : isGoingGlobal ? (
+                <GoingGlobalHeader />
+              ) : (
+                <div className="container clearfix p3 flex items-center">
+                  <div className="sm-col align-middle flex">
+                    <Logo />
+                  </div>
+                  <nav id="nav" className="nav menu-links sm-col-right ml-auto">
+                    <ul className="list-reset">
+                      {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
+                      <li className="inline-block relative header-link--with-submenu">
+                        <Link className="nav-btn" to="/contact">Get in touch</Link>
+                      </li>
+                      <li className="inline-block">
+                        <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
+                      </li>
+                      <li className="inline-block">
+                        <Link className="nav-btn" to="/donate">Donate</Link>
+                      </li>
+                    </ul>
+                  </nav>
+                  <MobileMenu />
                 </div>
-                <nav id="nav" className="nav menu-links sm-col-right ml-auto">
-                  <ul className="list-reset">
-                    {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
-                    <li className="inline-block relative header-link--with-submenu">
-                      <Link className="nav-btn" to="/contact">Get in touch</Link>
-                    </li>
-                    <li className="inline-block">
-                      <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
-                    </li>
-                    <li className="inline-block">
-                      <Link className="nav-btn" to="/donate">Donate</Link>
-                    </li>
-                  </ul>
-                </nav>
-                <MobileMenu />
-              </div>
-            )
-          }
+              )
+            }
+          </div>
         </header>
       </div>
     );
