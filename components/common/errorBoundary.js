@@ -1,27 +1,29 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Anchor from '../common/link'
-import bugsnagClient from '../../utils/bugsnag'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Anchor from './link';
+import bugsnagClient from '../../utils/bugsnag';
 
 class ErrorBoundary extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       hasError: false,
-    }
+    };
   }
 
   static getDerivedStateFromError() {
-    return { hasError: true }
+    return { hasError: true };
   }
 
   componentDidCatch(error, info) {
-    this.setState({ hasError: true })
-    bugsnagClient.notify(error, { context: info })
+    this.setState({ hasError: true });
+    bugsnagClient.notify(error, { context: info });
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    const { children } = this.props;
+    if (hasError) {
       return (
         <div>
           <div className="full-width-wrap bg-darkest-purple">
@@ -32,7 +34,8 @@ class ErrorBoundary extends Component {
                     <span className="pre-text">Uh </span>
                     <span className="highlight-text">
                       <em>
-                        OH<br />
+                        OH
+                        <br />
                       </em>
                     </span>
                   </h1>
@@ -43,10 +46,12 @@ class ErrorBoundary extends Component {
               <div className="justify-center items-center sm-flex">
                 <div>
                   <p className="f-30 feature-font-family regular c-white">
-                    Oops, this wasn't meant to happen.
+                    {'Oops, this wasn\'t meant to happen.'}
                   </p>
                   <p className="f-14 light pt2 c-white">
-                    Sorry for any inconvenience. If you're seeing this often, please <Anchor to="/contact"> contact us </Anchor>
+                    {'Sorry for any inconvenience. If you\'re seeing this often, please'}
+                    {' '}
+                    <Anchor to="/contact"> contact us </Anchor>
                   </p>
                   <Anchor to="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
                 </div>
@@ -54,14 +59,14 @@ class ErrorBoundary extends Component {
             </div>
           </div>
         </div>
-      )
+      );
     }
-    return this.props.children
+    return children;
   }
 }
 
 ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default ErrorBoundary
+export default ErrorBoundary;

@@ -1,14 +1,14 @@
-import React from 'react'
-import HeroBannerHomepage from '../../components/heroBannerHomepage'
-import IntroPanelHomepage from '../../components/introPanelHomepage'
-import CtaGrid from '../../components/ctaGrid'
-import CtaFAQ from '../../components/ctaFAQ'
-import FooterBanner from '../../components/footerBanner'
+import React from 'react';
+import HeroBannerHomepage from '../../components/heroBannerHomepage';
+import IntroPanelHomepage from '../../components/introPanelHomepage';
+import CtaGrid from '../../components/ctaGrid';
+import CtaFAQ from '../../components/ctaFAQ';
+import FooterBanner from '../../components/footerBanner';
 
-import withLayout from '../../hocs/basicLayout'
-import { CTA_AU_HOMEPAGE } from '../../constants'
+import withLayout from '../../hocs/basicLayout';
+import { CTA_AU_HOMEPAGE } from '../../constants';
 
-import './home.scss'
+import './home.scss';
 
 const Home = () => (
   <>
@@ -18,6 +18,6 @@ const Home = () => (
     <CtaFAQ />
     <FooterBanner />
   </>
-)
+);
 
-export default withLayout(Home)
+export default withLayout(Home);
