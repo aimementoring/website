@@ -1,5 +1,5 @@
-import React from 'react'
-import Anchor from '../../common/link'
+import React from 'react';
+import Anchor from '../../common/link';
 
 const Logo = () => (
   <Anchor className="flex" to="/">
@@ -7,6 +7,6 @@ const Logo = () => (
       <use xlinkHref="#icon-aime-logo" />
     </svg>
   </Anchor>
-)
+);
 
-export default Logo
+export default Logo;
