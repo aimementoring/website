@@ -1,8 +1,8 @@
-import React from 'react'
-import './index.scss'
+import React from 'react';
+import './index.scss';
 
 const HeroBannerAbout = () => (
-  <React.Fragment>
+  <>
     <div className="hero-banner--about full-width-wrap">
       <div className="flex flex-wrap items-center">
         <div className="banner-wrapper">
@@ -21,12 +21,16 @@ const HeroBannerAbout = () => (
                 <span className="scratch-underline">&nbsp;</span>
               </em>
             </span>
-            <span className="post-text right right-align"><span className="pr3">between universities</span><br /><span>and schools</span></span>
+            <span className="post-text right right-align">
+              <span className="pr3">between universities</span>
+              <br />
+              <span>and schools</span>
+            </span>
           </h1>
         </div>
       </div>
     </div>
-  </React.Fragment>
-)
+  </>
+);
 
-export default HeroBannerAbout
+export default HeroBannerAbout;
