@@ -1,5 +1,5 @@
-import React from 'react'
-import './index.scss'
+import React from 'react';
+import './index.scss';
 
 const FooterBanner = () => (
   <div className="footer-banner full-width-wrap">
@@ -18,6 +18,6 @@ const FooterBanner = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default FooterBanner
+export default FooterBanner;
