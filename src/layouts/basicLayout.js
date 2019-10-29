@@ -12,8 +12,7 @@ import Logos from '../components/logos';
 import routes from '../common/routes';
 import Page404 from '../pages/page404';
 import { getSeoTags } from '../services/craftAPI';
-
-const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
+import IntercomChat from '../components/intercom';
 
 class BasicLayout extends Component {
   // Starts hack fix to avoid double rendering
@@ -24,13 +23,11 @@ class BasicLayout extends Component {
     this.state = {
       seo: {},
       hasMounted: false,
-      showIntercom: false,
     };
     this.addSeoAndRedirects();
   }
 
   componentDidMount() {
-    this.intercomChat();
     this.setState({ hasMounted: true });
   }
 
@@ -47,63 +44,10 @@ class BasicLayout extends Component {
     // in a future we should call getAvailableSites function from services/craftAPI
     getSeoTags(seoPath, 1).then(seo => this.setState({ seo }));
   }
-
-  intercomChat = () => {
-    window.intercomSettings = {
-      app_id: APP_ID,
-      // change 'hide_default_launcher: false' if you want to show the round chat icon in bottom right of screen
-      // then go to line 106 and comment that line.
-      hide_default_launcher: true,
-      /*Styles*/
-      alignment: "right",
-      horizontal_padding: 20,
-      vertical_padding: 20,
-      background_color: "rgba(255,255,255, 0.7)"
-      /*
-        user information could be usful with portal
-        name: "Jane Doe", // Full name
-        email: "customer@example.com", // Email address
-        created_at: "1312182000" // Signup date as a Unix timestamp
-      */
-    };
-    (() => {
-      var w = window;
-      var ic = w.Intercom;
-      if (typeof ic === "function") {
-        ic("reattach_activator");
-        ic("update", w.intercomSettings);
-      } else {
-        var d = document;
-        var i = function() {
-          i.c(arguments);
-        };
-        i.q = [];
-        i.c = function(args) {
-          i.q.push(args);
-        };
-        w.Intercom = i;
-        var l = function() {
-          var s = d.createElement("script");
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = "https://widget.intercom.io/widget/" + APP_ID;
-          var x = d.getElementsByTagName("script")[0];
-          x.parentNode.insertBefore(s, x);
-        };
-        if (document.readyState === "complete") {
-          l();
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", l);
-        } else {
-          w.addEventListener("load", l, false);
-        }
-      }
-    })();
-  }
-
+  
   handleShowIntercom = () => {
     window.Intercom("showNewMessage");
-    window.Intercom("update", { hide_default_launcher: false });
+    // window.Intercom("update", { hide_default_launcher: false });
   }
 
   render() {
@@ -113,7 +57,7 @@ class BasicLayout extends Component {
     return (
       <div>
         <ErrorBoundary>
-          <Header location={location} history={history} handleShowIntercom={this.handleShowIntercom} />
+          <Header location={location} history={history} />
           <main role="main">
             <div>
               {seo &&
@@ -133,6 +77,7 @@ class BasicLayout extends Component {
                 <Route component={Page404} />
               </Switch>
             </ScrollToTop>
+            <IntercomChat />
           </main>
           <Footer location={location} handleShowIntercom={this.handleShowIntercom} />
           <Logos />

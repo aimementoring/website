@@ -8,11 +8,7 @@ import Logo from './logo';
 import MobileMenu from '../mobileMenu';
 import './index.scss';
 
-class Header extends PureComponent {
-  static propTypes = {
-    handleShowIntercom: PropTypes.func.isRequired,
-  };
-  
+class Header extends PureComponent { 
   state = {
     className: `header-transparent ${(this.props.location.pathname.indexOf('/hooded-scholar') > -1) && 'do-not-display'}`,
     assetsUrl: '',
@@ -78,7 +74,6 @@ class Header extends PureComponent {
       className,
       isTalentPage,
     } = this.state;
-    const { handleShowIntercom } = this.props;
     return (
       <div>
         <header className={`${className} site-header`}>
@@ -95,7 +90,7 @@ class Header extends PureComponent {
                   <ul className="list-reset">
                     {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, "-")} {...item} />)}
                     <li className="inline-block relative header-link--with-submenu">
-                      <button className="intercom-button-nav nav-btn" onClick={handleShowIntercom}>Get in touch</button>
+                      <div className="intercom-button-nav nav-btn">Get in touch</div>
                     </li>
                     <li className="inline-block">
                       <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
