@@ -1,6 +1,6 @@
-require("dotenv").config();
-const withSass = require("@zeit/next-sass");
-const withCSS = require("@zeit/next-css");
+require('dotenv').config();
+const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS(
   withSass({
@@ -11,7 +11,7 @@ module.exports = withCSS(
     sassLoaderOptions: {},
     cssLoaderOptions: {
       importLoaders: 1,
-      localIdentName: "[local]"
+      localIdentName: '[local]',
     },
     env: {
       REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
@@ -27,7 +27,7 @@ module.exports = withCSS(
       REACT_APP_DONATE_PASSWORD: process.env.REACT_APP_DONATE_PASSWORD,
       REACT_APP_DONATE_ORGANISATION_UUID:
         process.env.REACT_APP_DONATE_ORGANISATION_UUID,
-      REACT_APP_PORTAL_API: process.env.REACT_APP_PORTAL_API
-    }
-  })
+      REACT_APP_PORTAL_API: process.env.REACT_APP_PORTAL_API,
+    },
+  }),
 );
