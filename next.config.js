@@ -1,7 +1,8 @@
 require('dotenv').config();
 const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
 
-module.exports = withSass({
+module.exports = withCSS(withSass({
   webpack(config) {
     return config;
   },
@@ -21,5 +22,6 @@ module.exports = withSass({
       process.env.REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE,
     REACT_APP_AIRTABLE_API_KEY: process.env.REACT_APP_AIRTABLE_API_KEY,
     REACT_APP_PRO_IP_KEY: process.env.REACT_APP_PRO_IP_KEY,
+    REACT_APP_PORTAL_API: process.env.REACT_APP_PORTAL_API,
   },
-});
+}));
