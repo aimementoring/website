@@ -52,11 +52,13 @@ class Footer extends PureComponent {
                           </Link>
                         </li>
                         <li className="mb2">
-                          <Link
-                            to="/faq"
+                          <a
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            href="https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved"
                             className="c-white text-decoration-none">
                             Become a <strong>Partner</strong>
-                          </Link>
+                          </a>
                         </li>
                         <li className="mb2">
                           <Link
