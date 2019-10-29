@@ -1,0 +1,23 @@
+/* Colour */
+/* CMYK campaign colours */
+/* New brand colours */
+/* Form element colours */
+/*Hover colours*/
+/* Typography */
+/* Border Radius */
+/* Scratch Underlines on Headings */
+/* Breakpoint Size */
+#react-donations-index .donation-bg_shape {
+  background: url(https://d2ylaz7bdw65jx.cloudfront.net/assets/images/banner/global@2x-min.jpg) no-repeat top center #0D0012;
+  background-size: cover;
+  background-attachment: fixed; }
+  @media screen and (max-device-width: 1024px) {
+    #react-donations-index .donation-bg_shape {
+      background-attachment: scroll; } }
+
+#react-donations-index .donate-button {
+  background-color: #C700FF;
+  z-index: 3; }
+
+#react-donations-index .testimonials {
+  min-height: 480px; }
