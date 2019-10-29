@@ -1,31 +1,31 @@
-import React, { useEffect } from 'react'
-import Jobs from '../../components/jobs'
-import VideoButton from '../../components/videoButton'
-import withLayout from '../../hocs/basicLayout'
-import { checkCountryParams } from '../../utils/utilities'
-import './positions.scss'
+import React, { useEffect } from 'react';
+import Jobs from '../../components/jobs';
+import VideoButton from '../../components/videoButton';
+import withLayout from '../../hocs/basicLayout';
+import { checkCountryParams } from '../../utils/utilities';
+import './positions.scss';
 
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
-const Positions = props => {
-  const currentSite = checkCountryParams(props)
+const Positions = (props) => {
+  const currentSite = checkCountryParams(props);
 
   useEffect(() => {
-    const tabs = document.querySelectorAll('.js-job-tabs .job-tabs--link')
-    const tabContents = document.querySelectorAll('.js-job-tabs-contents > div')
+    const tabs = document.querySelectorAll('.js-job-tabs .job-tabs--link');
+    const tabContents = document.querySelectorAll('.js-job-tabs-contents > div');
     tabs.forEach((tab, index) => {
-      tab.addEventListener('click', e => {
-        e.preventDefault()
-        tabs.forEach(t => t.classList.remove('active'))
-        tab.classList.add('active')
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        tabs.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
 
-        tabContents.forEach(t => t.classList.remove('active'))
+        tabContents.forEach((t) => t.classList.remove('active'));
         if (tabContents[index]) {
-          tabContents[index].classList.add('active')
+          tabContents[index].classList.add('active');
         }
-      })
-    })
-  })
+      });
+    });
+  });
 
   return (
     <div className="positions">
@@ -64,8 +64,8 @@ const Positions = props => {
                 <div className="mb2">
                   <h1 className="inline-block lh-base mb1">Experience like no other.</h1>
                   <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">
-                    A chance to lead, to learn and to be pushed to achieve limits you didn't even
-                    know you had.
+                    {`A chance to lead, to learn and to be pushed to achieve limits you didn't even
+                    know you had.`}
                   </p>
                 </div>
               </div>
@@ -200,10 +200,10 @@ const Positions = props => {
                           Transparent interaction
                         </h3>
                         <p className="body-font-family">
-                          All full time staff are on Slack and get to interact with the CEO on a
+                          {`All full time staff are on Slack and get to interact with the CEO on a
                           daily basis, and together we gather each Friday for FAM (Friday Arvo
                           Meeting), with our team from across the globe to reflect on what we've
-                          acheived and learned.
+                          acheived and learned.`}
                         </p>
                       </div>
                       <div className="flex flex-column col-12 pr0 pb3 md-pb4 lg-pb4 border-box sm-col-6 sm-pr3 md-col-3 lg-col-3 md-pr3 lg-pr3">
@@ -221,10 +221,10 @@ const Positions = props => {
                           Learning and Development
                         </h3>
                         <p className="body-font-family">
-                          Global Festival of Mentoring, the world's premiere mentoring training
+                          {`Global Festival of Mentoring, the world's premiere mentoring training
                           program, annually. Chance to attend AIME’s Gala Ball. Book Club. We
                           facilitate internal mentoring programs and recruitment of external
-                          mentors.
+                          mentors.`}
                         </p>
                       </div>
                       <div className="flex flex-column col-12 pr0 pb3 md-pb4 lg-pb4 border-box sm-col-6 md-col-3 lg-col-3 md-pr3 lg-pr3">
@@ -387,8 +387,8 @@ const Positions = props => {
                 src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
               />
               <p className="video-text">
-                AIME ain't the place to come for the big bucks. We aren't here for the money. We are
-                here to change the planet, yesterday.
+                {`AIME ain't the place to come for the big bucks. We aren't here for the money. We are
+                here to change the planet, yesterday.`}
               </p>
             </div>
           </div>
@@ -398,7 +398,7 @@ const Positions = props => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default withLayout(Positions)
+export default withLayout(Positions);
