@@ -96,6 +96,10 @@
     "GENERATE_SOURCEMAP": {
       "required": true,
       "value": "false"
+    },
+    "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": {
+      "required": true,
+      "value": "rec8N1DIykET8T9SF"
     }
   },
   "formation": {
