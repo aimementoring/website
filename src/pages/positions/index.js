@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
 import Jobs from '../../components/jobs';
@@ -9,6 +9,8 @@ import './Positions.scss';
 const Positions = props => {
   const assetsUrl = getAssetsBaseUrl();
   const currentSite = checkCountryParams(props);
+  const [isRedirect, setIsRedirect] = useState(props);
+  const [jobTitle, setJobTitle] = useState(props);
 
   useEffect(() => {
     const tabs = document.querySelectorAll('.js-job-tabs .job-tabs--link');
@@ -26,6 +28,25 @@ const Positions = props => {
       });
     });
   });
+
+  useEffect(() => {
+    setIsRedirect(props.location.state && props.location.state.redirected);
+    setJobTitle(props.location.state && props.location.state.redirectJobTitle);
+  }, [props])
+
+  const getCurrentUrl = () => {
+    const currentURL = window.location.pathname.split('/')[1];
+    return `/${currentURL}`;
+  }
+
+  const currentUrl = getCurrentUrl();
+  if (currentUrl === '/positions') {
+    window.history.pushState(null, '', `${currentUrl}`);
+  }
+
+  const handleRedirectHide = () => {
+    setIsRedirect(false);
+  }
 
   return (
     <div className="positions">
@@ -401,7 +422,15 @@ const Positions = props => {
         </div>
 
         <div className="wrap mx-auto px3">
-          {currentSite && <Jobs cdnUrl={assetsUrl} currentSite={currentSite} />}
+        {!!currentSite && (
+          <Jobs
+            cdnUrl={assetsUrl}
+            jobTitle={jobTitle}
+            isRedirect={isRedirect}
+            currentSite={currentSite}
+            handleRedirectHide={handleRedirectHide}
+          />
+          )}
         </div>
       </section>
     </div>

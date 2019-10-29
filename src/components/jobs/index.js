@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropType from 'prop-types';
 import { Link } from 'react-router-dom';
 import compact from 'lodash/compact';
@@ -10,6 +10,7 @@ import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/ReactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
+import PositionsRedirectMessage from '../positionsRedirectMessage';
 
 class Jobs extends Component {
   constructor(props) {
@@ -30,10 +31,34 @@ class Jobs extends Component {
         country => COUNTRIES_WHERE_AIME_ACCEPT_JOBS.indexOf(country.value) !== -1
       ),
     ];
+    this.pitchYourselfRef = createRef();
   }
 
   componentDidMount() {
     this.fetchPositions();
+  }
+
+  componentDidUpdate() {
+    const { jobsLoaded } = this.state;
+    const { isRedirect } = this.props;
+    if (isRedirect) {
+      if (jobsLoaded) {
+        this.handleAutoScroll();
+      }
+    }
+  }
+
+  handleAutoScroll = () => {
+    const { jobsLoaded } = this.state;
+    const testOffset = document.body.getBoundingClientRect();
+    const offSetTop = Math.abs(testOffset.top);
+    const myRef = jobsLoaded && this.pitchYourselfRef.current
+      ? this.pitchYourselfRef.current.offsetTop : 0;
+    const redirectContainer = myRef;
+
+    if (offSetTop === 0 && myRef) {
+      window.scrollTo(0, redirectContainer);
+    }
   }
 
   handleCountryChange = (propertyName, propertyValue) => {
@@ -136,7 +161,12 @@ class Jobs extends Component {
   };
 
   render() {
-    const { cdnUrl } = this.props;
+    const { 
+      cdnUrl,
+      isRedirect,
+      jobTitle,
+      handleRedirectHide,
+     } = this.props;
     const {
       jobs, currentFilter, jobsLoaded, filtersType, countries, countrySelected,
     } = this.state;
@@ -199,6 +229,14 @@ class Jobs extends Component {
               </div>
             </div>
             <div className="job-grid mb4 grid">
+              {isRedirect ? (
+                <PositionsRedirectMessage
+                  jobTitle={jobTitle}
+                  filteredJobs={filteredJobs}
+                  handleRedirectHide={handleRedirectHide}
+                />
+              ) : null}
+              <div ref={this.pitchYourselfRef} />
               {filteredJobs.map(job => (
                 <JobPreview key={job.id} cdnUrl={cdnUrl} {...job} />
               ))}
@@ -223,6 +261,9 @@ class Jobs extends Component {
 Jobs.PropType = {
   cdnUrl: PropType.string.isRequired,
   currentSite: PropType.string.isRequired,
+  isRedirect: PropType.bool.isRequired,
+  jobTitle: PropType.string.isRequired,
+  handleRedirectHide: PropType.func.isRequired,
 };
 
 export default Jobs;

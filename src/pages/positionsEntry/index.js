@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import compact from 'lodash/compact';
 import kebabCase from 'lodash/kebabCase';
 import IntlTelInput from 'react-intl-tel-input';
@@ -20,12 +20,14 @@ import UniversitySelector from '../../components/universitySelector';
 
 import './PositionsEntry.scss';
 
+const { REACT_APP_PITCH_YOURSELF_TO_AIME_ID } = process.env
+
 export default class PositionsEntry extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      id: props.location.pathname.split('/')[2],
+      id: props.match.params.id,
       currentSite: '',
       showForm: false,
       positionExpired: false,
@@ -39,11 +41,14 @@ export default class PositionsEntry extends PureComponent {
       countryAddress: '',
       locationError: false,
       displayError: null,
+      isLoading: true,
+      redirected: false,
+      redirectJobTitle: props.match.params.jobCategory.replace(/\W+/g, ' '),
     };
   }
 
   componentDidMount() {
-    const { id } = this.state;
+    const { id, redirectJobTitle } = this.state;
     let countryId = getCountrySite();
     if (!countryId) countryId = 'global';
     findJob(id, countryId)
@@ -55,6 +60,7 @@ export default class PositionsEntry extends PureComponent {
           {
             job,
             location,
+            isLoading: false,
           },
           () => {
             this.createJobPacks(job);
@@ -62,7 +68,13 @@ export default class PositionsEntry extends PureComponent {
         );
       })
       .catch(error => {
-        this.setState({ displayError: error });
+        this.setState({
+          displayError: error,
+          redirected: true,
+          isLoading: false,
+          redirectJobTitle: redirectJobTitle.replace(/\b([a-z])/g, string =>
+            string.toUpperCase()),
+        });
         handleError(error, error);
       });
   }
@@ -219,6 +231,9 @@ export default class PositionsEntry extends PureComponent {
       streetNumber,
       countryAddress,
       displayError,
+      isLoading,
+      redirected,
+      redirectJobTitle,
     } = this.state;
     let embedVideoId = job.embedVideo;
 
@@ -243,6 +258,13 @@ export default class PositionsEntry extends PureComponent {
         </div>
       </div>
     );
+    if (isLoading) {
+      return (
+        <div id="positions-entry">
+          <div className="job-description md-wrap mx-auto px3 pb3 pt3 js-job-application" />
+        </div>
+      )
+    }
     if (!displayError) {
       return (
         <div id="positions-entry">
@@ -255,7 +277,7 @@ export default class PositionsEntry extends PureComponent {
             <h1 className="lh-smaller sm-text-wrap py2 c-black" style={{ display: 'block' }}>
               Hello, are you the
               <span className="c-purple js-job-name">
-                {job.name && ` ${job.name.replace('-', '')} `}
+              {job && job.id === REACT_APP_PITCH_YOURSELF_TO_AIME_ID ? ' Person ' : job.name && ` ${job.name.replace('-', '')} `}
               </span>
               we're looking for?
             </h1>
@@ -617,16 +639,18 @@ Back to Opportunity List
       );
     }
     return (
-      <div id="positions-entry">
-        {header}
-        <div className="wrap mx-auto p3">
-          <h1>Oops! Looks like there's an error with our applications.</h1>
-        </div>
-      </div>
+      <Redirect to={{
+        pathname: '/positions',
+        state: {
+          redirected,
+          redirectJobTitle,
+        },
+      }}
+      />
     );
   }
 }
 
 PositionsEntry.propTypes = {
-  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
 };
