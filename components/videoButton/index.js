@@ -50,7 +50,7 @@ const VideoButton = ({ sourceType, video, fullScreen }) => {
 
   const setupPlayer = () => {
     if (!player) {
-      parent = wrapper.parentNode;
+      parent = wrapper.current.parentNode;
       if (parent) {
         parent.addEventListener('click', clickAction);
       }
