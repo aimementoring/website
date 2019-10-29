@@ -3,7 +3,7 @@ import express from 'express';
 import serverRenderer from '../middleware/renderer';
 import configureStore from '../../src/store/configureStore';
 import { setAsyncMessage } from '../../src/store/appReducer';
-import { getAllRedirectUrlEntries } from '../middleware/getcontentfulserver';
+import { fetchContentfulEntries } from '../middleware/getcontentfulserver';
 
 const router = express.Router();
 const path = require('path');
@@ -17,7 +17,7 @@ const actionIndex = (req, res, next) => {
     });
 };
 
-getAllRedirectUrlEntries().then(response => { 
+fetchContentfulEntries().then((response = []) => { 
   response.forEach((url) => {
     router.get(url.fields.sourceUrl, (req, res, next) => {
       res.redirect(url.fields.redirectType, url.fields.destinationUrl);

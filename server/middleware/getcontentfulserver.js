@@ -14,7 +14,7 @@ const client = contentful.createClient({
   accessToken: REACT_APP_CONTENTFUL_API_KEY
 });
 
-const fetchContentfulEntries = () => {
+export const fetchContentfulEntries = () => {
   return client
     .getEntries({
       content_type: REACT_APP_CONTENTFUL_CONTENT_TYPE,
@@ -27,12 +27,4 @@ const fetchContentfulEntries = () => {
         { context: error }
       );
     });
-};
-
-export const getAllRedirectUrlEntries = () => {
-  return fetchContentfulEntries().then(response => {
-    const data = response;
-
-    return data;
-  });
 };
