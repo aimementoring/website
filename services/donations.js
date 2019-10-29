@@ -4,12 +4,10 @@ import request from '../utils/request';
 const API = 'https://api.raisely.com/v3';
 
 const LOGIN_ACCESS = {
-  username: 'website@aimementoring.com',
-  password: '***REMOVED***',
-  organisationUuid: '7eafc9b2-404f-11e7-bc97-06facaa3db7b',
+  username: process.env.REACT_APP_DONATE_USERNAME,
+  password: process.env.REACT_APP_DONATE_PASSWORD,
+  organisationUuid: process.env.REACT_APP_DONATE_ORGANISATION_UUID,
 };
-
-// process.env.REACT_APP_ASSETS_URL
 
 export const MAIN_CAMPAIGNS = {
   'raisely-pk-055e06ff62d772e4212f2a046b6d43fc': 'aimedonations',
