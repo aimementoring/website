@@ -1,10 +1,10 @@
-import { airtableFetchRecords, airtableFetchRecord } from '../utils/airtableLoader'
+import { airtableFetchRecords, airtableFetchRecord } from '../utils/airtableLoader';
 
 const config = {
   baseName: process.env.REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE,
   table: 'Positions',
   gridView: 'Main View',
-  recordBuilder: record => ({
+  recordBuilder: (record) => ({
     id: record.id,
     requiredExperience: record.get('Required Experience'),
     name: record.get('Name'),
@@ -26,37 +26,36 @@ const config = {
     displayCampusSelect: record.get('University Campus?'),
     salaryRange: record.get('Salary Range'),
   }),
-}
+};
 
 const sitesConfig = {
-  baseName: "app0cOinHqPnUCxv8",
+  baseName: 'app0cOinHqPnUCxv8',
   table: 'Sites',
   gridView: 'Grid view',
-  recordBuilder: record => (
+  recordBuilder: (record) => (
     {
       text: record.get('Name'),
       value: record.get('Name'),
     }),
-}
+};
 
-export const loadPositions = async (filter, fields) => 
-  airtableFetchRecords(config, filter, fields)
+export const loadPositions = async (filter, fields) => airtableFetchRecords(config, filter, fields);
 
 export const findJob = async (id, currentSite) => {
-  const configPosition = config
-  const job = await airtableFetchRecord(configPosition, id)
-  const today = new Date()
+  const configPosition = config;
+  const job = await airtableFetchRecord(configPosition, id);
+  const today = new Date();
 
-  if (job.expire && job.expire < today) throw new Error('This position is expired')
+  if (job.expire && job.expire < today) throw new Error('This position is expired');
 
-  if (today < job.publish) throw new Error('This position is not available')
+  if (today < job.publish) throw new Error('This position is not available');
 
-  if (!job.availableIn.find(site => site === currentSite.toLowerCase())) {
-    throw new Error('This position is not available in this location')
+  if (!job.availableIn.find((site) => site === currentSite.toLowerCase())) {
+    throw new Error('This position is not available in this location');
   }
+  return job;
+};
 
-  return job
-}
-
-export const loadUniversities = async () =>
-  airtableFetchRecords(sitesConfig).then(options => options)
+export const loadUniversities = async () => {
+  airtableFetchRecords(sitesConfig).then((options) => options);
+};
