@@ -1,6 +1,8 @@
 {
   "editor.tabSize": 2,
   "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
+  "prettier-eslint.eslintIntegration": true,
   "editor.minimap.maxColumn": 100
 }
