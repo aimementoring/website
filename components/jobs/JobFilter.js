@@ -1,11 +1,11 @@
-import React from 'react'
-import PropType from 'prop-types'
+import React from 'react';
+import PropType from 'prop-types';
 
 const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
-  const filterJobs = type => () => {
-    if (!type) filterBy(undefined)
-    return filterBy(type)
-  }
+  const filterJobs = (type) => () => {
+    if (!type) filterBy(undefined);
+    return filterBy(type);
+  };
 
   return (
     <div className="job-grid filter-list-container pt2 pb3">
@@ -15,16 +15,20 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
           <span
             className={`filter-list cursor ${!currentFilter ? 'active' : ''}`}
             onClick={filterJobs(undefined)}
+            onKeyPress={filterJobs(undefined)}
+            role="presentation"
           >
             All
           </span>
         </li>
-        {filtersType.map(type => (
+        {filtersType.map((type) => (
           <li className="block mr1" key={type}>
             {!!type && (
               <span
                 className={`filter-list cursor ${currentFilter === type ? 'active' : ''}`}
                 onClick={filterJobs(type)}
+                onKeyPress={filterJobs(type)}
+                role="presentation"
               >
                 {type}
               </span>
@@ -33,17 +37,17 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 JobFilter.propTypes = {
   currentFilter: PropType.string,
   filterBy: PropType.func.isRequired,
-  filtersType: PropType.array.isRequired,
-}
+  filtersType: PropType.arrayOf(PropType.string).isRequired,
+};
 
 JobFilter.defaultProps = {
   currentFilter: null,
-}
+};
 
-export default JobFilter
+export default JobFilter;

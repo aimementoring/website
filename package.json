@@ -9,11 +9,13 @@
     "heroku-start": "NODE_ENV=production node server.js -p $PORT",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
-    "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95"
+    "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
+    "precommit": "eslint ."
   },
   "dependencies": {
     "@bugsnag/js": "^6.4.3",
     "@bugsnag/plugin-react": "^6.4.0",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "aime-blueprint": "^2.1.7",
     "airtable": "^0.7.1",
@@ -27,6 +29,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "mux.js": "^5.5.1",
     "next": "9.1.1",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
@@ -36,11 +39,23 @@
     "react-dom": "16.11.0",
     "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
+    "react-intl-tel-input": "^7.1.0",
+    "react-scroll-to-component": "^1.0.2",
     "react-select": "^3.0.8",
-    "video.js": "7.0.5",
-    "videojs-contrib-hls": "5.14.1"
+    "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1",
+    "video.js": "^7.6.5",
+    "videojs-contrib-hls": "^5.15.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.0.9",
     "lighthouse": "^5.4.0",
     "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git"
   }

@@ -1,6 +1,6 @@
-import React from 'react'
-import Anchor from '../common/link'
-import styles from './ctaFAQ.module.scss'
+import React from 'react';
+import Anchor from '../common/link';
+import styles from './ctaFAQ.module.scss';
 
 const CtaFAQ = () => (
   <div className={styles.wrapper}>
@@ -11,6 +11,6 @@ const CtaFAQ = () => (
       </svg>
     </Anchor>
   </div>
-)
+);
 
-export default CtaFAQ
+export default CtaFAQ;
