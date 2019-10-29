@@ -28,10 +28,9 @@ class Donate extends PureComponent {
       .then(campaigns => {
         const mains = Object.keys(MAIN_CAMPAIGNS);
         let pickedCampaign = '';
-        // if (history.location && history.location.search) {
-        //   const query = queryString.parse(history.location.search.replace('?', ''));
-        //   pickedCampaign = query.campaign;
-        // }
+        if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
+          pickedCampaign = Router.query.campaign;
+        }
         const filteredCampaigns = campaigns.filter(item => mains.indexOf(item.uuid) > -1);
         this.setState({
           campaigns: filteredCampaigns,
