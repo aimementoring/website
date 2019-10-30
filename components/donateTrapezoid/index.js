@@ -10,15 +10,16 @@ const Trapezoid = ({ selectedCampaign, campaigns, onCampaignChange }) => {
     const {
       profile: { description },
     } = selectedCampaign;
-    return description
-      ? description.length > 600
+    if (description) {
+      return description.length > 600
         ? `${description.substring(0, 600)}...`
-        : description
-      : 'No description for this campaign';
+        : description;
+    }
+    return 'No description for this campaign';
   };
 
-  const handleCampaignChange = selectedCampaignName => {
-    const campaignSelected = campaigns.find(campaign => campaign.name === selectedCampaignName);
+  const handleCampaignChange = (selectedCampaignName) => {
+    const campaignSelected = campaigns.find((campaign) => campaign.name === selectedCampaignName);
     if (onCampaignChange) onCampaignChange(campaignSelected);
   };
 
@@ -37,7 +38,7 @@ const Trapezoid = ({ selectedCampaign, campaigns, onCampaignChange }) => {
                 onChange={handleCampaignChange}
                 defaultValue={selectedCampaign.name}
               >
-                {campaigns.map(campaign => (
+                {campaigns.map((campaign) => (
                   <Option
                     key={`donation-select-${campaign.name}`}
                     value={campaign.name}
@@ -80,8 +81,14 @@ const Trapezoid = ({ selectedCampaign, campaigns, onCampaignChange }) => {
 };
 
 Trapezoid.propTypes = {
-  campaigns: PropTypes.array,
-  selectedCampaign: PropTypes.object,
+  campaigns: PropTypes.arrayOf(PropTypes.shape({})),
+  selectedCampaign: PropTypes.shape({
+    profile: PropTypes.string,
+    description: PropTypes.string,
+    name: PropTypes.string,
+    total: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    goal: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
   onCampaignChange: PropTypes.func,
 };
 
