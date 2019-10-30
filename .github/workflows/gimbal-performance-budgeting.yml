@@ -29,4 +29,4 @@ jobs:
       - name: Performance Budgeting Regression Testing
         uses: ModusCreateOrg/gimbal/action@master
         env:
-          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_PERFORMANCE }}
+          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
