@@ -19,49 +19,7 @@ export const MAIN_CAMPAIGNS = {
   // '59ecfd60-d4a7-11e7-92bf-4b3a42fa5335': 'aimehottest-100',
 };
 
-export async function getActiveCampaigns() {
-  const url = `${API}/campaigns?status=ACTIVE&mode=LIVE`;
-  // const url = `${API}/campaigns`;
-
-  return new Promise((resolve, reject) => {
-    getRaiselyToken()
-      .then(token => {
-        request(url, { headers: { Authorization: `Bearer ${token}` } })
-          .then(response => {
-            console.log({ responseGetActiveCampaigns: response });
-            resolve(response.data)
-          })
-          .catch(error => {
-            console.log({ errorInRequestInsideGetRaiselyToken: error })
-            reject(error)
-          });
-      })
-      .catch(error => {
-        console.log({ errorInGetRaiselyToken: error })
-        reject(error);
-      });
-  });
-}
-
-export async function getCampaignDonations(campaign) {
-  const url = `${API}/donations?campaign=${campaign}`;
-
-  return new Promise((resolve, reject) => {
-    getRaiselyToken().then(token => {
-      request(url, { headers: { Authorization: `Bearer ${token}` } })
-        .then(response => {
-          console.log({ responseInGetCampaignDonations: response })
-          resolve(response.data)
-        })
-        .catch(error => {
-          console.log({ errorInGetCampaignDonations: error })
-          reject(error)
-        });
-    });
-  });
-}
-
-export async function getRaiselyToken() {
+export const getRaiselyToken = async () => {
   const raiselyToken = getFromStorage('raisely_token');
 
   return new Promise((resolve, reject) => {
@@ -76,16 +34,41 @@ export async function getRaiselyToken() {
           'Content-Type': 'application/json; charset=utf-8',
         },
       })
-        .then(jsonData => {
+        .then((jsonData) => {
           const { token } = jsonData;
           setOnStorage('raisely_token', token);
           resolve(token);
         })
-        .catch(error => {
+        .catch((error) => {
+          /* eslint no-param-reassign: "off" */
           error.message = `Getting Raisely token: ${error.message}`;
-          console.log({ error });
           reject(error);
+          /* eslint no-param-reassign: "error" */
         });
     }
   });
+};
+
+export async function getActiveCampaigns() {
+  const url = `${API}/campaigns?status=ACTIVE&mode=LIVE`;
+
+  return new Promise((resolve, reject) => {
+    getRaiselyToken().then((token) => {
+      request(url, { headers: { Authorization: `Bearer ${token}` } })
+        .then((response) => resolve(response.data))
+        .catch((error) => reject(error));
+    }).catch((error) => reject(error));
+  });
 }
+
+export const getCampaignDonations = async (campaign) => {
+  const url = `${API}/donations?campaign=${campaign}`;
+
+  return new Promise((resolve, reject) => {
+    getRaiselyToken().then((token) => {
+      request(url, { headers: { Authorization: `Bearer ${token}` } })
+        .then((response) => resolve(response.data))
+        .catch((error) => reject(error));
+    });
+  });
+};
