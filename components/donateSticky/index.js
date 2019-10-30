@@ -7,8 +7,8 @@ const Sticky = ({
   const [stickyClass, setStickyClass] = useState('no-sticky');
 
   useEffect(() => {
-    const setInitialHeights = elements => {
-      [].forEach.call(elements, sticky => {
+    const setInitialHeights = (elements) => {
+      [].forEach.call(elements, (sticky) => {
         sticky.setAttribute('data-sticky-initial', sticky.getBoundingClientRect().top);
       });
     };
@@ -20,16 +20,16 @@ const Sticky = ({
       const top = document.documentElement.scrollTop || document.body.scrollTop;
       const bottom = document.documentElement.scrollHeight || document.body.scrollHeight;
 
-      [].forEach.call(stickies, sticky => {
+      [].forEach.call(stickies, (sticky) => {
         const stickyInitial = parseInt(sticky.getAttribute('data-sticky-initial'), 10);
         const stickyEnter = parseInt(sticky.getAttribute('data-sticky-enter'), 10) || stickyInitial;
         const stickyExit = parseInt(sticky.getAttribute('data-sticky-exit'), 10) || bottom;
-        const newClass =
-          top >= stickyEnter && top <= stickyExit
-            ? 'sticky'
-            : top >= stickyExit
-              ? 'no-sticky-bottom'
-              : 'no-sticky';
+        let newClass = '';
+        if (top >= stickyEnter && top <= stickyExit) {
+          newClass = 'sticky';
+        } else {
+          newClass = top >= stickyExit ? 'no-sticky-bottom' : 'no-sticky';
+        }
         setStickyClass(newClass);
       });
     });
