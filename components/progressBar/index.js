@@ -4,10 +4,13 @@ import { PropTypes } from 'prop-types';
 const ProgressBar = ({
   color, value, min, max, offset, tooltipId,
 }) => {
-  const getPercentage = val => {
+  const getPercentage = (val) => {
     const scale = max - min;
     const calculatedValue = ((val - min) / scale) * 100;
-    return calculatedValue < 0 ? 0 : calculatedValue > 100 ? 100 : calculatedValue;
+    if (calculatedValue < 0) {
+      return 0;
+    }
+    return calculatedValue > 100 ? 100 : calculatedValue;
   };
 
   const hasTooltip = tooltipId && tooltipId.length > 0;
@@ -26,6 +29,7 @@ const ProgressBar = ({
       aria-valuenow={value}
       aria-valuemin={min}
       aria-valuemax={max}
+      aria-label="progress"
       data-tip
       data-for={hasTooltip && tooltipId}
       style={progressStyle}
