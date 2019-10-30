@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
-import Router from 'next/router'
-import withLayout from '../../hocs/basicLayout'
-import Anchor from '../../components/common/link'
-import queryString from 'qs';
+import Router from 'next/router';
+import withLayout from '../../hocs/basicLayout';
+import Anchor from '../../components/common/link';
 import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../services/donations';
 import Trapezoid from '../../components/donateTrapezoid';
 import RaiselyModal from '../../components/raiselyModal';
@@ -23,27 +22,26 @@ class Donate extends PureComponent {
   }
 
   componentDidMount() {
-    const { history } = this.props;
     getActiveCampaigns()
-      .then(campaigns => {
+      .then((campaigns) => {
         const mains = Object.keys(MAIN_CAMPAIGNS);
         let pickedCampaign = '';
         if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
           pickedCampaign = Router.query.campaign;
         }
-        const filteredCampaigns = campaigns.filter(item => mains.indexOf(item.uuid) > -1);
+        const filteredCampaigns = campaigns.filter((item) => mains.indexOf(item.uuid) > -1);
         this.setState({
           campaigns: filteredCampaigns,
           selectedCampaign:
-            campaigns.find(item => item.path === pickedCampaign) ||
-            filteredCampaigns.find(item => item.path === 'aimedonations'),
+            campaigns.find((item) => item.path === pickedCampaign)
+            || filteredCampaigns.find((item) => item.path === 'aimedonations'),
         });
       })
-      .catch(error =>
+      .catch((error) => {
         bugsnagClient.notify(
-          new Error(`Error getting the active campaigns in donation page: ${error}`)
-        )
-      );
+          new Error(`Error getting the active campaigns in donation page: ${error}`),
+        );
+      });
   }
 
   componentDidUpdate() {
@@ -52,7 +50,7 @@ class Donate extends PureComponent {
 
     window.addEventListener('resize', this.updateDimensions);
     if (document.getElementById('__next')) {
-      document.getElementById('__next').onclick = e => {
+      document.getElementById('__next').onclick = (e) => {
         if (e.target !== document.getElementsByClassName('raisely-iframe') && showCustomPopup) {
           this.onCloseCustomPopup(e);
         }
@@ -60,11 +58,10 @@ class Donate extends PureComponent {
     }
   }
 
-  onOpenCustomPopup = e => {
+  onOpenCustomPopup = (e) => {
     e.preventDefault();
     const { selectedCampaign } = this.state;
     const raiselyModal = document.getElementsByClassName('raisely-modal')[0];
-    console.log({ raiselyModal });
     const raiselyIFrame = document
       .getElementsByClassName('raisely-iframe')[0]
       .getElementsByTagName('iframe')[0];
@@ -84,15 +81,12 @@ class Donate extends PureComponent {
     }
   };
 
-  onCloseCustomPopup = e => {
+  onCloseCustomPopup = (e) => {
     e.preventDefault();
     const raiselyModal = document.getElementsByClassName('raisely-modal')[0];
-    console.log({ raiselyModal });
     const raiselyIFrame = document
       .getElementsByClassName('raisely-iframe')[0]
       .getElementsByTagName('iframe')[0];
-
-    console.log({ raiselyIFrame });
 
     if (raiselyModal && raiselyIFrame) {
       raiselyModal.style.removeProperty('opacity');
@@ -102,36 +96,34 @@ class Donate extends PureComponent {
     }
   };
 
-  getDonationData = assetsUrl => {
-    return {
-      shop: {
-        shopApparelLink: 'https://shop.aimementoring.com',
-        actionArrow: `${assetsUrl}/assets/images/actions-arrow.svg`,
-        jumper: `${assetsUrl}/assets/images/jumper.png`,
-        shopApparel:
-          '100% of the profit from every item sold goes toward supporting our goal to reach more and more marginalised kids around the world.',
-      },
-      mentor: {
-        becomeAMentorLink: '/be-a-mentor',
-        actionArrow: `${assetsUrl}/assets/images/actions-arrow.svg`,
-        girl: `${assetsUrl}/assets/images/girl.png`,
-        becomeAMentor:
-          'This year, alongside Australia, university volunteers will be stepping up to be mentors in the first AIME programs to be delivered in Uganda and South Africa with more countries to follow soon.',
-      },
-    };
-  };
+  getDonationData = (assetsUrl) => ({
+    shop: {
+      shopApparelLink: 'https://shop.aimementoring.com',
+      actionArrow: `${assetsUrl}/assets/images/actions-arrow.svg`,
+      jumper: `${assetsUrl}/assets/images/jumper.png`,
+      shopApparel:
+        '100% of the profit from every item sold goes toward supporting our goal to reach more and more marginalised kids around the world.',
+    },
+    mentor: {
+      becomeAMentorLink: '/be-a-mentor',
+      actionArrow: `${assetsUrl}/assets/images/actions-arrow.svg`,
+      girl: `${assetsUrl}/assets/images/girl.png`,
+      becomeAMentor:
+        'This year, alongside Australia, university volunteers will be stepping up to be mentors in the first AIME programs to be delivered in Uganda and South Africa with more countries to follow soon.',
+    },
+  });
 
-  getStickyHeight = () => {
-    return (
-      (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) *
-      0.8
-    );
-  };
+  getStickyHeight = () => (
+    (window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight
+    ) * 0.8
+  );
 
   getHeight = () => {
     const { firstLoad } = this.state;
     const divSelected = document.getElementsByClassName('selected-campaign-donations-container');
-    console.log({ divSelected });
+
     if (divSelected.length) {
       const height = document.getElementsByClassName('selected-campaign-donations-container')[0]
         .clientHeight;
@@ -145,24 +137,22 @@ class Donate extends PureComponent {
     this.setState({ divHeight: this.getHeight() });
   };
 
-  handleCampaignChange = selectedCampaign => {
+  handleCampaignChange = (selectedCampaign) => {
     this.setState({ selectedCampaign }, () => {
-      getCampaignDonations(selectedCampaign.uuid).then(donations => {
+      getCampaignDonations(selectedCampaign.uuid).then((donations) => {
         const testimonials = donations
           .filter(
-            donation => !donation.anonymous && donation.firstName !== '' && donation.message !== ''
+            (donation) => !donation.anonymous && donation.firstName !== '' && donation.message !== '',
           )
           .slice(0, 3)
-          .map(donation => {
-            return {
-              id: donation.uuid,
-              firstName: donation.firstName,
-              lastName: donation.lastName,
-              message: donation.message,
-              amount: donation.public.currency_symbol + donation.public.donation_amount,
-              type: 'AIME Friend',
-            };
-          });
+          .map((donation) => ({
+            id: donation.uuid,
+            firstName: donation.firstName,
+            lastName: donation.lastName,
+            message: donation.message,
+            amount: donation.public.currency_symbol + donation.public.donation_amount,
+            type: 'AIME Friend',
+          }));
 
         this.setState({
           testimonials,
@@ -173,14 +163,16 @@ class Donate extends PureComponent {
   };
 
   render() {
-      const {
-      campaigns, selectedCampaign, testimonials, divHeight,
+    const {
+      campaigns,
+      selectedCampaign,
+      testimonials,
+      divHeight,
     } = this.state;
 
     const iframeUrl = `https://${
       selectedCampaign ? selectedCampaign.path : 'wannachangetheworld'
     }.raisely.com/embed/`;
-    console.log({ selectedCampaign });
     /* eslint-disable react/no-danger */
     return (
       <div>
@@ -222,7 +214,7 @@ class Donate extends PureComponent {
                               <h2 className="clearfix feature-font-family f-24 c-black w100 wrap">
                                 What people are saying
                               </h2>
-                              {testimonials.map(donation => (
+                              {testimonials.map((donation) => (
                                 <div className="clearfix w100 flex flex-wrap my2" key={donation.id}>
                                   <div className="c-black f-20 wrap w50 signature-font-family">{`${donation.firstName} ${donation.lastName}`}</div>
                                   <div className="c-black f-10 bold wrap w50 c-purple">{`${donation.amount}`}</div>
@@ -262,9 +254,9 @@ class Donate extends PureComponent {
                             <div className="item-contents">
                               <h3>Become a Mentor</h3>
                               <div className="sub-item-details show-on-hover">
-                                <p>Want to change the world? It's time to walk the talk!</p>
+                                <p>{'Want to change the world? It\'s time to walk the talk!'}</p>
                                 <Anchor className="basic-btn" to="/be-a-mentor">
-                                  Let's change the world
+                                  {'Let\'s change the world'}
                                 </Anchor>
                               </div>
                             </div>
