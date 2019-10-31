@@ -17,7 +17,7 @@ import FileUploader from '../../components/fileUploader';
 import AddressAutocompleteInput from '../../components/addressAutocompleteInput';
 import CountrySelector from '../../components/countrySelector';
 import UniversitySelector from '../../components/universitySelector';
-
+import { capitaliseFirstCharacter, removeSpecialCharacters } from '../../utils/utilities';
 import './PositionsEntry.scss';
 
 const { REACT_APP_PITCH_YOURSELF_TO_AIME_ID } = process.env
@@ -27,7 +27,7 @@ export default class PositionsEntry extends PureComponent {
     super(props);
 
     this.state = {
-      id: props.match.params.id,
+      id: typeof props.match !== 'undefined' && props.match.params.id,
       currentSite: '',
       showForm: false,
       positionExpired: false,
@@ -43,7 +43,12 @@ export default class PositionsEntry extends PureComponent {
       displayError: null,
       isLoading: true,
       redirected: false,
-      redirectJobTitle: props.match.params.jobCategory.replace(/\W+/g, ' '),
+      redirectJobTitle: typeof props.match !== 'undefined' && 
+      (!props.match.params.jobCategory ||
+        0 === props.match.params.jobCategory.length || 
+        props.match.params.jobCategory.trim()
+      ) ?
+      removeSpecialCharacters(props.match.params.jobCategory, ' ') : '',
     };
   }
 
@@ -72,8 +77,7 @@ export default class PositionsEntry extends PureComponent {
           displayError: error,
           redirected: true,
           isLoading: false,
-          redirectJobTitle: redirectJobTitle.replace(/\b([a-z])/g, string =>
-            string.toUpperCase()),
+          redirectJobTitle: capitaliseFirstCharacter(redirectJobTitle),
         });
         handleError(error, error);
       });

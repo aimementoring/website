@@ -12,27 +12,12 @@ export default class PositionsRedirectMessage extends PureComponent {
     handleRedirectHide: PropTypes.func.isRequired,
   };
 
-  state = {
-    checkJobId: false,
-  };
-
-  componentDidMount() {
-    this.jobIdCheck();
-  }
-
-  jobIdCheck = () => {
-    const { filteredJobs } = this.props;
-    const checkJobId = filteredJobs.some(
-      job => job.id === REACT_APP_PITCH_YOURSELF_TO_AIME_ID
-    );
-    this.setState({
-      checkJobId,
-    });
-  };
-
   render() {
-    const { checkJobId } = this.state;
-    const { jobTitle, handleRedirectHide } = this.props;
+    const { jobTitle, handleRedirectHide, filteredJobs } = this.props;
+
+    const checkJobId = filteredJobs.some(job => {
+      return job.id === REACT_APP_PITCH_YOURSELF_TO_AIME_ID;
+    });
 
     return (
       <div className="redirect-container">

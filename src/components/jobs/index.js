@@ -31,7 +31,7 @@ class Jobs extends Component {
         country => COUNTRIES_WHERE_AIME_ACCEPT_JOBS.indexOf(country.value) !== -1
       ),
     ];
-    this.pitchYourselfRef = createRef();
+    this.redirectRef = createRef();
   }
 
   componentDidMount() {
@@ -41,23 +41,17 @@ class Jobs extends Component {
   componentDidUpdate() {
     const { jobsLoaded } = this.state;
     const { isRedirect } = this.props;
-    if (isRedirect) {
-      if (jobsLoaded) {
-        this.handleAutoScroll();
-      }
+
+    if (isRedirect && jobsLoaded) {
+      this.handleAutoScroll();
     }
   }
 
   handleAutoScroll = () => {
     const { jobsLoaded } = this.state;
-    const testOffset = document.body.getBoundingClientRect();
-    const offSetTop = Math.abs(testOffset.top);
-    const myRef = jobsLoaded && this.pitchYourselfRef.current
-      ? this.pitchYourselfRef.current.offsetTop : 0;
-    const redirectContainer = myRef;
 
-    if (offSetTop === 0 && myRef) {
-      window.scrollTo(0, redirectContainer);
+    if (jobsLoaded && this.redirectRef.current) {
+      window.scrollTo(0, this.redirectRef.current.offsetTop);
     }
   }
 
@@ -229,14 +223,14 @@ class Jobs extends Component {
               </div>
             </div>
             <div className="job-grid mb4 grid">
-              {isRedirect ? (
+              {isRedirect &&
                 <PositionsRedirectMessage
                   jobTitle={jobTitle}
                   filteredJobs={filteredJobs}
                   handleRedirectHide={handleRedirectHide}
                 />
-              ) : null}
-              <div ref={this.pitchYourselfRef} />
+              }
+              <div ref={this.redirectRef} />
               {filteredJobs.map(job => (
                 <JobPreview key={job.id} cdnUrl={cdnUrl} {...job} />
               ))}
@@ -261,9 +255,12 @@ class Jobs extends Component {
 Jobs.PropType = {
   cdnUrl: PropType.string.isRequired,
   currentSite: PropType.string.isRequired,
-  isRedirect: PropType.bool.isRequired,
   jobTitle: PropType.string.isRequired,
-  handleRedirectHide: PropType.func.isRequired,
+};
+
+Jobs.defaultProps = {
+  handleRedirectHide: () => {},
+  isRedirect: false,
 };
 
 export default Jobs;

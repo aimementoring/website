@@ -35,12 +35,14 @@ const Positions = props => {
   }, [props])
 
   const getCurrentUrl = () => {
-    const currentURL = window.location.pathname.split('/')[1];
-    return `/${currentURL}`;
+    if (typeof window !== 'undefined') { 
+      const currentURL = window.location.pathname.split('/')[1];
+      return `/${currentURL}`;
+    }
   }
 
   const currentUrl = getCurrentUrl();
-  if (currentUrl === '/positions') {
+  if (currentUrl === '/positions' && typeof window !== 'undefined') {
     window.history.pushState(null, '', `${currentUrl}`);
   }
 
