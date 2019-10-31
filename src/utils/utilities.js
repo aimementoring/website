@@ -34,3 +34,49 @@ export function sortArrayOfObjectByField(arrayToSort, field, order = 'desc') {
   );
   return sortedArray;
 }
+
+// capitalises first character of each word
+export function capitaliseFirstCharacter(stringValue) {
+  return stringValue.replace(/\b([a-z\s])/g, string => string.toUpperCase());
+}
+
+// capitalizes entire word
+export function capitaliseString(stringValue, replaceValue) {
+  if (replaceValue) {
+    return stringValue.replace(/\b([a-z\s]+)/g, replaceValue.toUpperCase());
+  } else {
+    return stringValue.replace(/\b([a-z]*)/g, string => string.toUpperCase());
+  }
+}
+
+// removes special characters on standard en-us keyboard config
+export function removeSpecialCharacters(stringValue, replaceValue) {
+  if (replaceValue) {
+    // eslint-disable-next-line
+    return stringValue.replace(/[$&+,:;=?@#|'<>.^*()%!-._\\\/`~\[\]\{\}0-9]+/g, replaceValue);
+  } else {
+    // eslint-disable-next-line
+    return stringValue.replace(/[$&+,:;=?@#|'<>.^*()%!-._\\\/`~\[\]\{\}0-9]*/g, '');
+  }
+}
+
+// removes all numbers in a string
+export function removeNumbers(stringValue, replaceValue) {
+  if (replaceValue) {
+    return stringValue.replace(/[0-9\s]+/g, replaceValue);
+  } else {
+    return stringValue.replace(/[0-9]*/g, '');
+  }
+
+}
+
+// returns only the number in a string removing letters and special characters
+export function getOnlyNumbers(stringValue, replaceValue) {
+  if (replaceValue) {
+    // eslint-disable-next-line
+    return stringValue.replace(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-._\\\/`~\[\]\{\}]+/g, replaceValue);
+  } else {
+    // eslint-disable-next-line
+    return stringValue.replace(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-._\\\/`~\[\]\{\}]*/g, '');
+  }
+}
