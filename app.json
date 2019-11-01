@@ -89,9 +89,21 @@
       "required": true,
       "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
     },
-    "PUBLIC_URL": {
+    "REACT_APP_CONTENTFUL_SPACE_ID": {
       "required": true,
-      "value": "http://aime-website.s3.amazonaws.com/public"
+      "value": "iz0aikshgysc"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
+      "required": true,
+      "value": "redirectEntries"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY": {
+      "required": true,
+      "value": "3tMx2AccortPX9N15uGGgb"
+    },
+    "REACT_APP_CONTENTFUL_API_KEY": {
+      "required": true,
+      "value": "***REMOVED***"
     },
     "GENERATE_SOURCEMAP": {
       "required": true,
