@@ -3,18 +3,28 @@ import express from 'express';
 import serverRenderer from '../middleware/renderer';
 import configureStore from '../../src/store/configureStore';
 import { setAsyncMessage } from '../../src/store/appReducer';
+import { fetchContentfulEntries } from '../middleware/getcontentfulserver';
 
 const router = express.Router();
 const path = require('path');
 
 const actionIndex = (req, res, next) => {
   const store = configureStore();
-
+  
   store.dispatch(setAsyncMessage('Hi, I\'m from server!'))
     .then(() => {
       serverRenderer(store)(req, res, next);
     });
 };
+
+fetchContentfulEntries().then((response = []) => { 
+  response.forEach((url) => {
+    router.get(url.fields.sourceUrl, (req, res, next) => {
+      res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+      next();
+    });
+  }); 
+});
 
 // root (/) should always serve our server rendered page
 router.use('^/$', actionIndex);
@@ -26,6 +36,6 @@ router.use(express.static(
 ));
 
 // any other route should be handled by react-router, so serve the index page
-router.use('*', actionIndex);
+// router.use('*', actionIndex);
 
 export default router;
