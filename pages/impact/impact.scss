@@ -3,7 +3,6 @@
 //Page specific layout styles
 
 .impact-page {
-
   .hero-panel {
     overflow: hidden;
 
@@ -31,13 +30,11 @@
   // TODO: create variables for all the diff banner image urls in the variables file
 
   .section-background-image {
-    background:
-      url($cdnRoot+"assets/images/banner/Default@2x-min.jpg")
+    background: url($cdnRoot+"assets/images/banner/Default@2x-min.jpg")
       no-repeat top center / cover #050301;
 
     &-purple-smoke {
-      background:
-        url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
+      background: url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
         no-repeat top center / cover #050301;
     }
   }
@@ -169,8 +166,7 @@
   .download-btn-text:after {
     content: "";
     display: block;
-    background:
-      url($cdnRoot+"assets/images/Download.svg") no-repeat center
+    background: url($cdnRoot+"assets/images/Download.svg") no-repeat center
       center;
     width: 20px;
     height: 20px;
@@ -235,14 +231,12 @@
   }
 
   @media (min-aspect-ratio: 16/9) {
-
     #bgVideo {
       height: 100%;
     }
   }
 
   @media (max-aspect-ratio: 16/9) {
-
     #bgVideo {
       min-width: 100%;
       min-height: 100%;
@@ -251,10 +245,8 @@
   }
 
   @media (max-width: $sm) {
-
     .bgVideo-container {
-      background:
-        url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
+      background: url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
         no-repeat top center / cover #050301;
     }
 
@@ -338,8 +330,7 @@
   .download-btn-text::after {
     content: "";
     display: block;
-    background:
-      url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat
+    background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat
       center center;
     width: 20px;
     height: 20px;
