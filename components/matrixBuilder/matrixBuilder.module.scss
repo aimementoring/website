@@ -1,0 +1,56 @@
+@import "../../styles/base/variables";
+
+.authorName {
+  font-family: $signature-font-family;
+  font-size: 24px;
+}
+
+.authorTitle {
+  font-size: 14px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+
+  &::after,
+  &::before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.postElementLink {
+  background-color: $brand-primary;
+  border-radius: $border-radius-button;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $feature-font-family;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 100ms linear;
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+
+  &:hover {
+    background-color: $brand-secondary;
+    color: $white;
+  }
+}
