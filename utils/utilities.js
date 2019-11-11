@@ -1,3 +1,5 @@
+export const isClientSide = () => typeof window !== 'undefined';
+
 export const checkCountryParams = (props) => (
   props.match && props.match.isExact && props.match.params
     && props.match.params.countryId
@@ -22,3 +24,11 @@ export const sortArrayOfObjectByField = (arrayToSort, field, order = 'desc') => 
 };
 
 export const getUcFirst = (value) => `${value[0].toUpperCase()}${value.slice(1)}`;
+
+export const firstCharacterToUpperCaseAndSpacesForDivision = (theString, originalDivision) => {
+  const arrayOfString = theString.split(originalDivision);
+  const arrayPascalCase = arrayOfString.map(
+    (word) => `${word[0].toUpperCase()}${word.substring(1, word.length)}`,
+  );
+  return arrayPascalCase.join(' ');
+};
