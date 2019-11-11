@@ -7,6 +7,7 @@ import withLayout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const About = () => (
   <>
     <div className={styles.aboutContainer}>
