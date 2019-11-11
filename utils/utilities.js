@@ -20,3 +20,5 @@ export const sortArrayOfObjectByField = (arrayToSort, field, order = 'desc') => 
   );
   return sortedArray;
 };
+
+export const getUcFirst = (value) => `${value[0].toUpperCase()}${value.slice(1)}`;
