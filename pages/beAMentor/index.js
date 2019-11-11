@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
 import Loading from 'aime-blueprint/lib/components/loading';
 import withLayout from '../../hocs/basicLayout';
+import scrollToComponent from '../../utils/scrollToComponent';
 // import PhoneInput from '../../components/commonElements/PhoneInput';
 
 import { uploadMentorEOI, getUniversities } from '../../services/portalApi';
@@ -132,7 +133,7 @@ const BeAMentor = () => {
   });
 
   const scrollToHoodedHustle = () => {
-    sectionRefs.challenge.scrollIntoView({ block: 'top' });
+    scrollToComponent(sectionRefs.challenge);
   };
 
   const handleScrollToHoodedHustle = (locationHash) => {
