@@ -4,7 +4,7 @@ import { Components } from 'aime-blueprint';
 import { getUcFirst } from '../../utils/utilities';
 import Header from '../commonElements/header';
 import VideoFormElement from '../commonElements/videoFormElement';
-// import UploadFormElement from '../commonElements/uploadFormElement';
+import UploadFormElement from '../commonElements/uploadFormElement';
 import AddressAutocompleteInput from '../addressAutocompleteInput';
 import UniversitySelector from '../universitySelector';
 import { FORM_MATRIX_AVAILABLE_ELEMENTS } from '../../constants';
@@ -287,8 +287,7 @@ class FormMatrix extends PureComponent {
   );
 
   renderUploadField = (formElement, index) => (
-    // <UploadFormElement
-    <div
+    <UploadFormElement
       formElement={formElement}
       index={index}
       key={`upload-${index}-blog-matrix`}
