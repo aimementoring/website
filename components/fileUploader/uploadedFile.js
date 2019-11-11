@@ -1,23 +1,28 @@
-import React from 'react';
-import 'filestack-react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const UploadedFile = ({
   file, inputName, index, onDelete,
-}) => (
-  <>
-    <input className="document-item--button-reset" type="file" />
-    <span
-      className="c-grey f-14 ml2"
-      onClick={() => onDelete(index)}
-      onKeyPress={() => onDelete(index)}
-      role="presentation"
-    >
-      {file.filename}
-    </span>
-    <input type="hidden" name={`${inputName}[]`} value={file.url} />
-  </>
-);
+}) => {
+  useEffect(() => {
+    // eslint-disable-next-line global-require
+    require('filestack-react');
+  });
+  return (
+    <>
+      <input className="document-item--button-reset" type="file" />
+      <span
+        className="c-grey f-14 ml2"
+        onClick={() => onDelete(index)}
+        onKeyPress={() => onDelete(index)}
+        role="presentation"
+      >
+        {file.filename}
+      </span>
+      <input type="hidden" name={`${inputName}[]`} value={file.url} />
+    </>
+  );
+};
 
 UploadedFile.propTypes = {
   file: PropTypes.shape({
