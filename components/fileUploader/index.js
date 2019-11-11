@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ReactFilestack from 'filestack-react';
+import React, { useState, useEffect } from 'react';
+// import ReactFilestack from 'filestack-react';
 import PropTypes from 'prop-types';
 import UploadedFile from './uploadedFile';
 import handleError from '../../utils/errorHandler';
@@ -8,10 +8,21 @@ const hiddenStyle = {
   opacity: 0,
 };
 
+let ReactFilestack;
+
 const FileUploader = ({
   apiKey, buttonText, requiredFile, inputName,
 }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  const fetchFileStackLibrary = async () => {
+    // eslint-disable-next-line global-require
+    ReactFilestack = await require('filestack-react');
+  };
+
+  useEffect(() => {
+    fetchFileStackLibrary();
+  });
 
   const onFileRemove = (index) => setUploadedFiles(uploadedFiles.filter((_, i) => i !== index));
 
