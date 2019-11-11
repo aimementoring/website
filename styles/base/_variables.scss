@@ -1,51 +1,66 @@
 /* Colour */
 
-$brand-primary:     #7603db;
-$brand-secondary:   #c700ff;
-$brand-tertiary:    #da0dff;
-$blue-medium:       #669dc1;
-$blue-light:        #e5eef4;
-$yellow:            #f8b049;
-$yellow-light:      #fbd7a4;
-$peach:             #ffada3;
-$lilac:             #f9ebff;
-$lavender:          #9da1b4;
-$lavender-light:    #dde0f1;
-$black:             #000;
-$grey:              #666;
-$medium-grey:       #a3a3a3;
-$light-grey:        #e8e8e8;
-$white:             #fff;
-$orange:            #ff7663;
-$pink:              #d51dff;
-$lavender-grey:     #b1a9c1;
+$brand-primary: #7603db;
+$brand-secondary: #c700ff;
+$brand-tertiary: #da0dff;
+
+$blue-medium: #669dc1;
+$blue-light: #e5eef4;
+$yellow: #f8b049;
+$yellow-light: #fbd7a4;
+$peach: #ffada3;
+$orange: #ffb800;
+$lilac: #f9ebff;
+$lavender: #9da1b4;
+$lavender-light: #dde0f1;
+$black: #000;
+$grey: #666;
+$medium-grey: #a3a3a3;
+$light-grey: #e8e8e8;
+$white: #fff;
+$pink: #d51dff;
+$lavender-grey: #b1a9c1;
 
 /* CMYK campaign colours */
-$cmyk-pink:         #e9178c;
-$cmyk-blue:         #1eafec;
-$cmyk-yellow:       #fef035;
+$cmyk-pink: #e9178c;
+$cmyk-blue: #1eafec;
+$cmyk-yellow: #fef035;
 
-$fluro-pink:         #f0c;
-$fluro-blue:         #00deff;
-$fluro-yellow:       #ffea00;
+$fluro-pink: #f0c;
+$fluro-blue: #00deff;
+$fluro-yellow: #ffea00;
 
 /* New brand colours */
-$darkest-purple:  #0d0012;
-$black:           #000;
-$accent-purple:   #8621df;
-$accent-blue:     #31e9ff;
-$accent-pink:     #dc0aff;
-$eggplant:        #380249;
+$darkest-purple: #0d0012;
+$black: #000;
+$accent-purple: #8621df;
+$accent-blue: #31e9ff;
+$accent-pink: #dc0aff;
+$eggplant: #380249;
+$vibrant-purple: #9d60ec;
+
+/* New new brand colours [face palm] */
+$magenta: #e82a9e;
+$light-orange: #ff9835;
+$light-blue: #22bfe1;
+$green: #09cd7b;
+$neonpink: #ff6187;
+$neonpurple: #9135f0;
+$babypink: #ffa3ea;
+
+$color-primary: $neonpurple;
+
+// 9135F0
 
 /* Form element colours */
-$default-input-bg:       #fef6ff;
-$active-input-bg:        #fff;
-$default-input-border:   #550d94;
-$active-input-border:    #9013fe;
-$placeholder-text:       unquote('#410048c4');
+$default-input-bg: #fef6ff;
+$active-input-bg: #fff;
+$default-input-border: #550d94;
+$active-input-border: #9013fe;
+$placeholder-text: unquote("#410048c4");
 
-$loading-black:        rgba(0, 0, 0, 0.3);
-$translucent-black:    rgba(0, 0, 0, 0.65);
+$loading-black: rgba(0, 0, 0, 0.3);
+$translucent-black: rgba(0, 0, 0, 0.65);
 
 /* Hover colours */
 $yellow-hover: #f49814;
@@ -53,24 +68,34 @@ $brand-primary-hover: $brand-secondary;
 $aime-shop-color-counter: #f1be59;
 
 /* Typography */
-$feature-font-family: 'Poppins', Helvetica, Arial, sans-serif;
-$primary-font-family: 'Univers', Helvetica, Arial, sans-serif;
-$serif-font-family:   Georgia, "Times New Roman", Times, serif;
-$icon-font-family:    'Material Icons';
-$signature-font-family:    'Indie Flower', Helvetica, Arial, sans-serif;
+$feature-font-family: "Poppins", Helvetica, Arial, sans-serif;
+
+$feature-font-family-bold: "PoppinsBold", Helvetica, Arial, sans-serif;
+
+$feature-font-black-italic: "PoppinsBlackItalic", Helvetica, Arial, sans-serif;
+$body-font-family: "GT Pressura Mono", "Univers", Helvetica, Arial, sans-serif;
+$body-font-family-bold: "GT Pressura Mono Bold", "Univers", Helvetica, Arial,
+  sans-serif;
+$primary-font-family: "Univers", Helvetica, Arial, sans-serif;
+$serif-font-family: Georgia, "Times New Roman", Times, serif;
+$icon-font-family: "Material Icons";
+$signature-font-family: "Indie Flower", Helvetica, Arial, sans-serif;
 $base-font-size: 1rem;
 $highlight-text-font-size: 3.5rem;
 
+// Microsite Page Content Max Width
+$micrositePageWidth: 80em;
+
 /* Border Radius */
-$border-radius:         6px;  // Forms
-$border-radius-large:   20px; // Feature Buttons
-$border-radius-button:  90px; // Buttons
+$border-radius: 6px; // Forms
+$border-radius-large: 20px; // Feature Buttons
+$border-radius-button: 90px; // Buttons
 
 /* Scratch Underlines on Headings */
-$scratch-ul-top:		56px;
-$scratch-ul-left:		-20px;
-$scratch-ul-padding-lr:	20px;
-$scratch-ul-height:		15px;
+$scratch-ul-top: 56px;
+$scratch-ul-left: -20px;
+$scratch-ul-padding-lr: 20px;
+$scratch-ul-height: 15px;
 
 /* Breakpoint Size */
 $sm: 40em;
@@ -80,5 +105,11 @@ $lg: 64em;
 $hoverTransition: all 100ms linear;
 
 // $cdnRoot: "http://192.168.33.10/" //Local Assets
-// $cdnRoot: "https://dbhff1axysj9i.cloudfront.net/" // Development Cloudfront
+// $cdnRoot: "https://aime-website-staging.s3.amazonaws.com/" // Development Cloudfront
 $cdnRoot: "https://aime-website.s3.amazonaws.com/"; //Production Cloudfront
+
+%svgIcon {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
