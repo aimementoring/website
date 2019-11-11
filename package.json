@@ -45,8 +45,8 @@
     "react-select": "^3.0.8",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1",
-    "video.js": "^7.6.5",
-    "videojs-contrib-hls": "^5.15.0"
+    "video.js": "7.0.5",
+    "videojs-contrib-hls": "5.14.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
