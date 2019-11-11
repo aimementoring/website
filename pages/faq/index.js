@@ -4,6 +4,7 @@ import withLayout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import { getEntries } from '../../services/craftAPI';
 import { isClientSide } from '../../utils/utilities';
+import scrollToComponent from '../../utils/scrollToComponent';
 
 class FAQs extends PureComponent {
   constructor(props) {
@@ -42,7 +43,7 @@ class FAQs extends PureComponent {
     }
     if (hash && this.sectionRefs[hash] && hash !== this.currentHash) {
       this.currentHash = hash;
-      this.sectionRefs[hash].scrollIntoView(true, { block: 'start', inline: 'nearest' });
+      scrollToComponent(this.sectionRefs[hash]);
     }
   }
 
@@ -100,7 +101,7 @@ class FAQs extends PureComponent {
 
       if (hash && this.sectionRefs[hash] && hash !== this.currentHash) {
         this.currentHash = hash;
-        this.sectionRefs[hash].scrollIntoView(true);
+        scrollToComponent(this.sectionRefs[hash]);
       }
     }
   };
