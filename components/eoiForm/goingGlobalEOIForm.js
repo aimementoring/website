@@ -190,6 +190,7 @@ export default class EOIForm extends PureComponent {
           value={university}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           type="text"
@@ -199,6 +200,7 @@ export default class EOIForm extends PureComponent {
           value={position}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           placeholder="First Name"
@@ -208,6 +210,7 @@ export default class EOIForm extends PureComponent {
           elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
           value={firstName}
           onChangeFunction={this.handleFieldChange}
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           type="text"
@@ -217,6 +220,7 @@ export default class EOIForm extends PureComponent {
           value={lastName}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           type="email"
@@ -226,6 +230,7 @@ export default class EOIForm extends PureComponent {
           value={email}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <div>
           {(countryDetected || countrySelected) && (
@@ -238,6 +243,7 @@ export default class EOIForm extends PureComponent {
                 value={phone}
                 defaultCountry={countryDetected}
                 currentSite={currentSite}
+                theme={process.env.REACT_APP_THEME}
               />
             </div>
           )}
@@ -249,12 +255,13 @@ export default class EOIForm extends PureComponent {
           name="message"
           value={message}
           onChangeFunction={this.handleFieldChange}
+          theme={process.env.REACT_APP_THEME}
         />
         <div className="sm-col sm-col-12 md-col-12 center-align md-left-align py2 my1">
           <input onClick={this.submitData} type="submit" className="submit" value="REGISTER" />
         </div>
         <div>
-          <Loading loading={loading} />
+          <Loading loading={loading} theme={process.env.REACT_APP_THEME} />
         </div>
       </form>
     );

@@ -94,6 +94,7 @@ const BeAMentorForm = ({
               color="#DA0DFF"
               options={countryGroupOptions}
               styles={STYLES_FOR_COUNTRY_SELECTION}
+              theme={process.env.REACT_APP_THEME}
             />
           </h4>
         </div>
