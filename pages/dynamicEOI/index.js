@@ -6,7 +6,7 @@ import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../
 import eoiData from './data';
 import './DynamicEOI.scss';
 
-const DynamicEOI = ({ match, history }) => {
+const DynamicEOI = ({ table }) => {
   const [tableName, setTableName] = useState('');
   const [title, setTitle] = useState('Expression of Interest!');
   const [subTitle, setSubTitle] = useState('Please complete your data');
@@ -16,8 +16,8 @@ const DynamicEOI = ({ match, history }) => {
   const setDefaultTable = () => {
     if (isClient) {
       window.scrollTo(0, 0);
-      if (match && match.params && match.params.tableName) {
-        const preTableName = match.params.tableName;
+      if (table) {
+        const preTableName = table;
         const tableNameToSave = firstCharacterToUpperCaseAndSpacesForDivision(preTableName, '-');
         setTableName(tableNameToSave);
         const data = eoiData[preTableName];
@@ -70,7 +70,6 @@ const DynamicEOI = ({ match, history }) => {
 
       <div className="padding-custom-form">
         <HoodedScholarForm
-          history={history}
           uploadData={uploadCustomEOI}
           tableName={tableName}
           showBeAFriendCheckbox
@@ -80,13 +79,16 @@ const DynamicEOI = ({ match, history }) => {
   );
 };
 
+DynamicEOI.getInitialProps = async ({ query }) => ({
+  tableName: query.tableName,
+});
+
 DynamicEOI.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      tableName: PropTypes.string,
-    }),
-  }).isRequired,
-  history: PropTypes.shape({}).isRequired,
+  table: PropTypes.string,
+};
+
+DynamicEOI.defaultProps = {
+  table: null,
 };
 
 export default DynamicEOI;
