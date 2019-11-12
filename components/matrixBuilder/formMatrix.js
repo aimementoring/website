@@ -44,6 +44,7 @@ class FormMatrix extends PureComponent {
         key={`${formElement.name}-${index}-form`}
         elementClassName={`sm-col o7-r o7-b sm-col-${width} md-col-${width}`}
         onChange={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -65,6 +66,7 @@ class FormMatrix extends PureComponent {
           currentSite={currentSite}
           defaultCountry={values.countryDetected}
           value={values[formElement.name]}
+          theme={process.env.REACT_APP_THEME}
         />
       );
     }
@@ -83,6 +85,7 @@ class FormMatrix extends PureComponent {
         classNames="input"
         onChangeFunction={handleCountryChange}
         value={values.countrySelectorValue}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -97,6 +100,7 @@ class FormMatrix extends PureComponent {
         elementClassName={`sm-col o7-r o7-b sm-col-${width} md-col-${width} select`}
         onChangeFunction={handleFieldChange}
         placeholder={block.placeholder || 'What country do you live in?'}
+        theme={process.env.REACT_APP_THEME}
         {...block}
       />
     );
@@ -112,6 +116,7 @@ class FormMatrix extends PureComponent {
         key={`${formElement.name}-${index}-form`}
         elementClassName={`sm-col o7-r o7-b sm-col-${width}} md-col-${width}`}
         onChange={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -119,15 +124,17 @@ class FormMatrix extends PureComponent {
   renderCheckbox = (formElement, index) => {
     const block = formElement.content;
     const { values, handleFieldChange } = this.props;
+
     return (
       <Checkbox
         key={`${index}-custom-checkbox`}
         elementClassName={`sm-col sm-col-12 md-col-12 f-14 pt2 flex items-center ${block.checkboxColor.value}`}
         onChangeFunction={handleFieldChange}
-        labeltext={block.label}
-        inputName={block.inputName}
+        placeholder={block.label}
+        name={block.inputName}
         customId={block.inputName}
         value={values[block.inputName]}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -140,13 +147,14 @@ class FormMatrix extends PureComponent {
         key={`${index}-become-a-friend`}
         elementClassName="sm-col sm-col-12 md-col-12 f-14 py2 flex items-center custom-checkbox--yellow"
         onChangeFunction={handleFieldChange}
-        labeltext={
+        placeholder={
           block.text
           || 'Become an AIME Friend. Receive updates about AIME and help us tackle inequality.'
         }
-        inputName="be-an-aime-friend"
+        name="be-an-aime-friend"
         customId="aime-friend"
         value={values['be-an-aime-friend']}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -162,6 +170,7 @@ class FormMatrix extends PureComponent {
         classNames="input"
         onChangeFunction={handleFieldChange}
         containerClassNames={`sm-col o7-r o7-b sm-col-${width} md-col-${width} select`}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -185,6 +194,7 @@ class FormMatrix extends PureComponent {
           { value: 'Twitter', label: 'Twitter' },
           { value: 'AIME Email', label: 'AIME Email' },
         ]}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -202,6 +212,7 @@ class FormMatrix extends PureComponent {
         options={block.options}
         name={block.name}
         key={`${index}-select-input-form`}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -225,6 +236,7 @@ class FormMatrix extends PureComponent {
         key={`${formElement.name}-${index}`}
         elementClassName="sm-col sm-col-12 mt1"
         paragraphText={block.text}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
@@ -236,6 +248,7 @@ class FormMatrix extends PureComponent {
         key={`${formElement.name}-${index}`}
         elementClassName="sm-col sm-col-12 mt3 mb1 f-14"
         paragraphText={block.text}
+        theme={process.env.REACT_APP_THEME}
       />
     );
   };
