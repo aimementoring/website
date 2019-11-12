@@ -1718,7 +1718,7 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-aime-blueprint@^2.1.10:
+aime-blueprint@^2.1.9:
   version "2.1.10"
   resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.10.tgz#f301034eddad1f03b1c197321765986b7679099d"
   integrity sha512-qUl6yVvRPPZZPyy9yHixnWj/HGBLj+xdl8pPttzTqbkxZBKtJXV4z+i8Y46VTo9RrmvxPuRxh6/7tapVeexqlA==

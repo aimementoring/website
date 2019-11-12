@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
+import Router from 'next/router';
 import { Components } from 'aime-blueprint';
 import { detectCountry, getAllCountries } from '../../utils/country';
 import COUNTRY_CODES from '../../utils/countryCodes';
@@ -128,7 +129,7 @@ export default class EOIForm extends PureComponent {
       return;
     }
     e.preventDefault();
-    const { tableName, uploadData, history } = this.props;
+    const { tableName, uploadData } = this.props;
     const {
       countrySelected,
       howDidYouHear,
@@ -153,13 +154,15 @@ export default class EOIForm extends PureComponent {
       uploadData(objectToSend).then((response) => {
         this.setState({ loading: false });
         if (response.data === 'OK') {
-          history.push({
+          Router.push({
             pathname: '/thanks',
-            messages: {
-              thankMessage: `
-                Yeah! Thanks for filling out our little form!
-                Your local AIME people will make contact with you really soon
-                `,
+            query: {
+              messages: {
+                thankMessage: `
+                  Yeah! Thanks for filling out our little form!
+                  Your local AIME people will make contact with you really soon
+                  `,
+              },
             },
           });
           return;
@@ -198,6 +201,7 @@ export default class EOIForm extends PureComponent {
           elementClassName="sm-col o7-r o7-b sm-col-6 md-col-6 custom-form-input-container"
           value={firstName}
           onChangeFunction={this.handleFieldChange}
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           type="text"
@@ -207,6 +211,7 @@ export default class EOIForm extends PureComponent {
           value={lastName}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <Input
           type="email"
@@ -216,6 +221,7 @@ export default class EOIForm extends PureComponent {
           value={email}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <div>
           {(countryDetected || countrySelected) && (
@@ -228,6 +234,7 @@ export default class EOIForm extends PureComponent {
                 value={phone}
                 defaultCountry={countryDetected}
                 currentSite={currentSite}
+                theme={process.env.REACT_APP_THEME}
               />
             </div>
           )}
@@ -247,6 +254,7 @@ export default class EOIForm extends PureComponent {
               color="#DA0DFF"
               styles={this.getStylesForCountrySelection()}
               options={countries}
+              theme={process.env.REACT_APP_THEME}
             />
           )}
         </div>
@@ -271,6 +279,7 @@ export default class EOIForm extends PureComponent {
               { value: 'From a friend', label: 'From a friend' },
               { value: 'Other', label: 'Other' },
             ]}
+            theme={process.env.REACT_APP_THEME}
           />
         </div>
         <Input
@@ -281,6 +290,7 @@ export default class EOIForm extends PureComponent {
           value={universityCampus}
           onChangeFunction={this.handleFieldChange}
           required
+          theme={process.env.REACT_APP_THEME}
         />
         <div>
           {showOtherSourceConditional && (
@@ -291,6 +301,7 @@ export default class EOIForm extends PureComponent {
               name="howDidYouHearOther"
               value={howDidYouHearOther}
               onChangeFunction={this.handleFieldChange}
+              theme={process.env.REACT_APP_THEME}
             />
           )}
         </div>
@@ -299,11 +310,13 @@ export default class EOIForm extends PureComponent {
             <Checkbox
               elementClassName="sm-col sm-col-12 md-col-12 f-14 py2 flex
               items-center custom-checkbox--yellow"
-              labeltext="Become an AIME Friend. Receive updates about AIME and help us tackle inequality"
-              inputName="beAnAimeFriend"
+              placeholder="Become an AIME Friend. Receive updates about AIME and help us tackle inequality"
+              customId="beAnAimeFriend"
+              name="beAnAimeFriend"
               color="black"
               value={beAnAimeFriend}
               onChangeFunction={this.handleFieldChange}
+              theme={process.env.REACT_APP_THEME}
             />
           )}
         </div>
@@ -311,7 +324,7 @@ export default class EOIForm extends PureComponent {
           <input onClick={this.submitData} type="submit" className="submit" value="SIGN ME UP" />
         </div>
         <div>
-          <Loading loading={loading} />
+          <Loading loading={loading} theme={process.env.REACT_APP_THEME} />
         </div>
       </form>
     );
@@ -319,9 +332,6 @@ export default class EOIForm extends PureComponent {
 }
 
 EOIForm.propTypes = {
-  history: PropType.shape({
-    push: PropType.func,
-  }).isRequired,
   uploadData: PropType.func.isRequired,
   tableName: PropType.string,
   showBeAFriendCheckbox: PropType.bool,
