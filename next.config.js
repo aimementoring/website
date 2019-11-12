@@ -28,6 +28,7 @@ module.exports = withCSS(
       REACT_APP_DONATE_ORGANISATION_UUID:
         process.env.REACT_APP_DONATE_ORGANISATION_UUID,
       REACT_APP_PORTAL_API: process.env.REACT_APP_PORTAL_API,
+      REACT_APP_THEME: process.env.REACT_APP_THEME,
     },
   }),
 );
