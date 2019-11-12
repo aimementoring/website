@@ -308,7 +308,7 @@ const BeAMentor = () => {
           </div>
         </div>
       </section>
-      <Loading loading={state.loading} />
+      <Loading loading={state.loading} theme={process.env.REACT_APP_THEME} />
       <UniversityLinks options={state.universityOptions} />
     </div>
   );
