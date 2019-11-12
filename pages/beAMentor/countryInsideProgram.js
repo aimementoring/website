@@ -34,6 +34,7 @@ const CountryInsideProgram = ({ handleReturningMentorChange, returningMentor }) 
       name="returningMentor"
       options={radioButtonsOptions}
       value={returningMentor ? 'returningMentor' : 'notReturningMentor'}
+      theme={process.env.REACT_APP_THEME}
     />
   </div>
 );
