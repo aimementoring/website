@@ -29,10 +29,9 @@ const About = () => (
               </h1>
             </div>
             <div className={styles.copy}>
-              <Title type="mainTitle">
-We are driven to unlock the limitless potential of children who have been left
-                behind
-
+              <Title type="mainTitle" theme={process.env.REACT_APP_THEME}>
+                {`We are driven to unlock the limitless potential of children who have been left
+                behind`}
               </Title>
               <p className={styles.whiteText}>
                 We do that by building mentoring bridges between universities and high schools,
