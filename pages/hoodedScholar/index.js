@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import VideoButton from '../../components/videoButton';
 import HoodedScholarForm from '../../components/eoiForm';
@@ -34,7 +34,7 @@ class HoodedScholar extends PureComponent {
 
   render() {
     return (
-      <div>
+      <Layout>
         <div className="hoodedScholar">
           <div className="bg-darkest-purple">
             <div className="full-width-wrap" id="welcome">
@@ -225,9 +225,9 @@ and
             />
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
 
-export default withLayout(HoodedScholar);
+export default HoodedScholar;

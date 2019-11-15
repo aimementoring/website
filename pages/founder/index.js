@@ -1,10 +1,10 @@
 import React from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const Founder = () => (
-  <>
+  <Layout>
     <div className="hero-banner--default hero-banner--founder full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
@@ -214,7 +214,7 @@ const Founder = () => (
         </ul>
       </div>
     </article>
-  </>
+  </Layout>
 );
 
-export default withLayout(Founder);
+export default Founder;

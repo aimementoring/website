@@ -1,3 +1,5 @@
+import { getFromStorage } from './localStorage';
+
 export const isClientSide = () => typeof window !== 'undefined';
 
 export const checkCountryParams = (props) => (
@@ -6,6 +8,10 @@ export const checkCountryParams = (props) => (
     ? props.match.params.countryId
     : 'global'
 );
+
+export function getCountrySite() {
+  return getFromStorage('country_code_selected');
+}
 
 export const sortArrayOfObjectByField = (arrayToSort, field, order = 'desc') => {
   const orderValue = order === 'desc' ? 1 : -1;
