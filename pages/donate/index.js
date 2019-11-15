@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import Router from 'next/router';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
@@ -22,26 +23,20 @@ class Donate extends PureComponent {
   }
 
   componentDidMount() {
-    getActiveCampaigns()
-      .then((campaigns) => {
-        const mains = Object.keys(MAIN_CAMPAIGNS);
-        let pickedCampaign = '';
-        if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
-          pickedCampaign = Router.query.campaign;
-        }
-        const filteredCampaigns = campaigns.filter((item) => mains.indexOf(item.uuid) > -1);
-        this.setState({
-          campaigns: filteredCampaigns,
-          selectedCampaign:
-            campaigns.find((item) => item.path === pickedCampaign)
-            || filteredCampaigns.find((item) => item.path === 'aimedonations'),
-        });
-      })
-      .catch((error) => {
-        bugsnagClient.notify(
-          new Error(`Error getting the active campaigns in donation page: ${error}`),
-        );
-      });
+    const { campaigns } = this.props;
+
+    const mains = Object.keys(MAIN_CAMPAIGNS);
+    let pickedCampaign = '';
+    if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
+      pickedCampaign = Router.query.campaign;
+    }
+    const filteredCampaigns = campaigns.filter((item) => mains.indexOf(item.uuid) > -1);
+    this.setState({
+      campaigns: filteredCampaigns,
+      selectedCampaign:
+        campaigns.find((item) => item.path === pickedCampaign)
+        || filteredCampaigns.find((item) => item.path === 'aimedonations'),
+    });
   }
 
   componentDidUpdate() {
@@ -284,5 +279,25 @@ class Donate extends PureComponent {
     /* eslint-enable react/no-danger */
   }
 }
+
+Donate.getInitialProps = async () => {
+  let campaigns = [];
+  try {
+    campaigns = await getActiveCampaigns();
+  } catch (error) {
+    bugsnagClient.notify(
+      new Error(`Error getting the active campaigns in donation page: ${error}`),
+    );
+  }
+  return { campaigns };
+};
+
+Donate.propTypes = {
+  campaigns: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+Donate.defaultProps = {
+  campaigns: [],
+};
 
 export default Donate;
