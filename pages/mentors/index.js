@@ -1,10 +1,10 @@
 import React from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import MentorBox from './mentorBox';
 import MENTORS_LIST from './mentorsList';
 
 const Mentors = () => (
-  <>
+  <Layout>
     <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
@@ -41,7 +41,7 @@ Mentors
         </div>
       </div>
     </section>
-  </>
+  </Layout>
 );
 
-export default withLayout(Mentors);
+export default Mentors;

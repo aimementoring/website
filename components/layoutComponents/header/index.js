@@ -39,7 +39,7 @@ const Header = ({ location }) => {
       if (typeof window !== 'undefined') window.removeEventListener('scroll', handleScroll);
     };
     return cleanup;
-  });
+  }, []);
 
   useEffect(() => {
     setState({
