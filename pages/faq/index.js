@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Router from 'next/router';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import { getEntries } from '../../services/craftAPI';
 import { isClientSide } from '../../utils/utilities';
@@ -109,7 +109,7 @@ class FAQs extends PureComponent {
   render() {
     const { categories } = this.state;
     return (
-      <>
+      <Layout>
         <div className="hero-banner--default full-width-wrap">
           <div className="flex flex-wrap items-center full-height">
             <div className="banner-wrapper subpage-banner center">
@@ -163,9 +163,9 @@ class FAQs extends PureComponent {
             </div>
           </div>
         </div>
-      </>
+      </Layout>
     );
   }
 }
 
-export default withLayout(FAQs);
+export default FAQs;
