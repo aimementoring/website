@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ANNUAL_2016_REPORT_YEARS } from '../../constants';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import './annualReport.scss';
 
 const AnnualReport = () => {
@@ -14,7 +14,7 @@ const AnnualReport = () => {
   };
 
   return (
-    <>
+    <Layout>
       <div className="hero-banner--default hero-banner--founder full-width-wrap">
         <div className="flex flex-wrap items-center full-height">
           <div className="banner-wrapper">
@@ -823,8 +823,8 @@ sessions within these schools across the year,
           </article>
         </div>
       </article>
-    </>
+    </Layout>
   );
 };
 
-export default withLayout(AnnualReport);
+export default AnnualReport;
