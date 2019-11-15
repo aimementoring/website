@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
+import Router from 'next/router';
 import { Components } from 'aime-blueprint';
 import { detectCountry, getAllCountries } from '../../utils/country';
 import COUNTRY_CODES from '../../utils/countryCodes';
@@ -128,7 +129,7 @@ export default class EOIForm extends PureComponent {
       return;
     }
     e.preventDefault();
-    const { tableName, uploadData, history } = this.props;
+    const { tableName, uploadData } = this.props;
     const {
       countryNameSelected,
       phoneCountrySelected,
@@ -146,15 +147,14 @@ export default class EOIForm extends PureComponent {
       uploadData(objectToSend).then((response) => {
         this.setState({ loading: false });
         if (response.data === 'OK') {
-          history.push({
+          Router.push({
             pathname: '/thanks',
-            messages: {
-              thankMessage: `
-                Yeah! Thank you for registering your interest.
+            query: {
+              messages:
+                `Yeah! Thank you for registering your interest.
                 Check your inbox for next steps, including guidance on the
                 application process, noting that the deadline for submission
                 is 29th of November 5 PM AEST.
-
                 `,
             },
           });
@@ -269,9 +269,6 @@ export default class EOIForm extends PureComponent {
 }
 
 EOIForm.propTypes = {
-  history: PropType.shape({
-    push: PropType.func,
-  }).isRequired,
   uploadData: PropType.func.isRequired,
   tableName: PropType.string,
   backgroundColor: PropType.string,

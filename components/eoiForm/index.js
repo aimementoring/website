@@ -157,12 +157,10 @@ export default class EOIForm extends PureComponent {
           Router.push({
             pathname: '/thanks',
             query: {
-              messages: {
-                thankMessage: `
+              messages: `
                   Yeah! Thanks for filling out our little form!
                   Your local AIME people will make contact with you really soon
                   `,
-              },
             },
           });
           return;
