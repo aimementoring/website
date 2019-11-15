@@ -1,9 +1,9 @@
 import React from 'react';
 import Anchor from '../../components/common/link';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 
 const GlobalLetter = () => (
-  <>
+  <Layout>
     <div className="hero-banner--default full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper subpage-banner center">
@@ -235,7 +235,7 @@ Around the World
         </ul>
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(GlobalLetter);
+export default GlobalLetter;
