@@ -1,11 +1,11 @@
 import React from 'react';
 import VideoButton from '../../components/videoButton';
 import Testimonials from '../../components/testimonials';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import './theMentor.scss';
 
 const TheMentor = () => (
-  <>
+  <Layout>
     <div className="theMentor">
       <div className="full-width-wrap">
         <div className="flex flex-wrap items-center">
@@ -55,7 +55,7 @@ const TheMentor = () => (
         <Testimonials />
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(TheMentor);
+export default TheMentor;
