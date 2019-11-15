@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import HoodedScholarForm from '../../components/eoiForm';
+import Layout from '../../hocs/basicLayout';
 import { uploadCustomEOI } from '../../services/portalApi';
 import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../utils/utilities';
 import eoiData from './data';
@@ -45,7 +46,7 @@ const DynamicEOI = ({ table }) => {
   }, [isClient]);
 
   return (
-    <div>
+    <Layout>
       <div
         className="hero-banner--default hero-banner--jobs full-width-wrap"
         style={img ? { backgroundImage: `url(${img})` } : {}}
@@ -75,7 +76,7 @@ const DynamicEOI = ({ table }) => {
           showBeAFriendCheckbox
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 
