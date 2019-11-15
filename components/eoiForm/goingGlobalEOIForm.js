@@ -135,7 +135,7 @@ export default class EOIForm extends PureComponent {
       phoneCountrySelected,
     } = this.state;
 
-    this.setState({ submitClicked: true, loading: true }, () => {
+    this.setState({ submitClicked: true, loading: true }, async () => {
       const objectToSend = {
         ...this.state,
         tableName,
@@ -144,24 +144,23 @@ export default class EOIForm extends PureComponent {
       if (!phoneCountrySelected) {
         objectToSend.phoneCountrySelected = this.handlePhoneCountrySelected();
       }
-      uploadData(objectToSend).then((response) => {
-        this.setState({ loading: false });
-        if (response.data === 'OK') {
-          Router.push({
-            pathname: '/thanks',
-            query: {
-              messages:
-                `Yeah! Thank you for registering your interest.
-                Check your inbox for next steps, including guidance on the
-                application process, noting that the deadline for submission
-                is 29th of November 5 PM AEST.
-                `,
-            },
-          });
-          return;
-        }
-        throw new Error('Error saving the EOI');
-      });
+      const response = await uploadData(objectToSend);
+      this.setState({ loading: false });
+      if (response.data === 'OK') {
+        Router.push({
+          pathname: '/thanks',
+          query: {
+            messages:
+              `Yeah! Thank you for registering your interest.
+              Check your inbox for next steps, including guidance on the
+              application process, noting that the deadline for submission
+              is 29th of November 5 PM AEST.
+              `,
+          },
+        });
+        return;
+      }
+      throw new Error('Error saving the EOI');
     });
   };
 
