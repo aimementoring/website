@@ -142,7 +142,7 @@ export default class EOIForm extends PureComponent {
       return;
     }
 
-    this.setState({ submitClicked: true, loading: true }, () => {
+    this.setState({ submitClicked: true, loading: true }, async () => {
       const objectToSend = {
         ...this.state,
         tableName,
@@ -151,22 +151,21 @@ export default class EOIForm extends PureComponent {
       if (!phoneCountrySelected) {
         objectToSend.phoneCountrySelected = this.handlePhoneCountrySelected();
       }
-      uploadData(objectToSend).then((response) => {
-        this.setState({ loading: false });
-        if (response.data === 'OK') {
-          Router.push({
-            pathname: '/thanks',
-            query: {
-              messages: `
-                  Yeah! Thanks for filling out our little form!
-                  Your local AIME people will make contact with you really soon
-                  `,
-            },
-          });
-          return;
-        }
-        throw new Error('Error saving the EOI');
-      });
+      const response = await uploadData(objectToSend);
+      this.setState({ loading: false });
+      if (response.data === 'OK') {
+        Router.push({
+          pathname: '/thanks',
+          query: {
+            messages: `
+                Yeah! Thanks for filling out our little form!
+                Your local AIME people will make contact with you really soon
+                `,
+          },
+        });
+        return;
+      }
+      throw new Error('Error saving the EOI');
     });
   };
 
