@@ -1,13 +1,13 @@
 import React from 'react';
 import Anchor from '../../components/common/link';
 import VideoButton from '../../components/videoButton';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import './impact.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const Impact = () => (
-  <>
+  <Layout>
     <div className="impact-page">
       <div className="">
         <div className="full-width-wrap">
@@ -344,7 +344,7 @@ const Impact = () => (
         </section>
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(Impact);
+export default Impact;

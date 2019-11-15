@@ -1,10 +1,10 @@
 import React from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import CaseStudyBox from './caseStudyBox';
 import CASE_STUDIES from './caseStudiesList';
 
 const CaseStudies = () => (
-  <>
+  <Layout>
     <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
@@ -64,7 +64,7 @@ const CaseStudies = () => (
         </div>
       </div>
     </section>
-  </>
+  </Layout>
 );
 
-export default withLayout(CaseStudies);
+export default CaseStudies;
