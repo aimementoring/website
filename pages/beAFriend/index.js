@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { getEntries } from '../../services/craftAPI';
 import MatrixBuilder from '../../components/matrixBuilder';
 import bugsnagClient from '../../utils/bugsnag';
 import Layout from '../../hocs/basicLayout';
 
-const BeAFriend = () => {
-  const [formElements, setFormElements] = useState([]);
+const BeAFriend = ({ entries }) => {
+  const [formElements, setFormElements] = useState(entries);
   const [countrySelected, setCountrySelected] = useState('');
   const [state, setState] = useState({});
-
-  useEffect(() => {
-    if (!formElements.length) {
-      getEntries('/beAFriend').then((entries) => setFormElements(entries.formBuilder));
-    }
-  }, []);
 
   const handleCountryChange = () => (e) => {
     if (e.target.name === 'country-name') {
@@ -111,6 +106,19 @@ const BeAFriend = () => {
       </div>
     </Layout>
   );
+};
+
+BeAFriend.getInitialProps = async () => {
+  const entries = await getEntries('/beAFriend');
+  return { entries: entries.formBuilder };
+};
+
+BeAFriend.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+BeAFriend.defaultProps = {
+  entries: [],
 };
 
 export default BeAFriend;
