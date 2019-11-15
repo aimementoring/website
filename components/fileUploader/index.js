@@ -22,7 +22,7 @@ const FileUploader = ({
 
   useEffect(() => {
     fetchFileStackLibrary();
-  });
+  }, []);
 
   const onFileRemove = (index) => setUploadedFiles(uploadedFiles.filter((_, i) => i !== index));
 
