@@ -7,7 +7,7 @@ const UploadedFile = ({
   useEffect(() => {
     // eslint-disable-next-line global-require
     require('filestack-react');
-  });
+  }, []);
   return (
     <>
       <input className="document-item--button-reset" type="file" />

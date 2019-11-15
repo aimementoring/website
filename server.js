@@ -34,10 +34,10 @@ app.prepare().then(() => {
   });
 
   // Positions
-  server.get('/positions/:id/:jobCategory', (req, res) => {
+  server.get('/positions/:positionId/:jobCategory', (req, res) => {
     const pagePath = '/positionsEntry';
     const queryParams = {
-      id: req.params.id,
+      positionId: req.params.positionId,
       jobCategory: req.params.jobCategory,
     };
     return ssrCache({

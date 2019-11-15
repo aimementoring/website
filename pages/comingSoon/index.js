@@ -1,9 +1,9 @@
 import React from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import WatchTheVideoButton from '../../components/watchTheVideoButton';
 
 const ComingSoon = () => (
-  <>
+  <Layout>
     <div className="holding-page">
       <div className="hero-banner--default full-width-wrap">
         <div className="flex flex-wrap items-center full-height">
@@ -45,7 +45,7 @@ const ComingSoon = () => (
         </div>
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(ComingSoon);
+export default ComingSoon;
