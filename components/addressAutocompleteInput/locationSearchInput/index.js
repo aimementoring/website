@@ -70,15 +70,16 @@ class LocationSearchInput extends PureComponent {
     this.setState({ showSuggestion: !showSuggestion });
   };
 
-  handleSelect = (address) => {
+  handleSelect = async (address) => {
     const { onAddressSelected } = this.props;
     this.setState({ address });
-    geocodeByAddress(address)
-      .then((results) => this.getAddressResults(results[0]))
-      .then((addressComponent) => {
-        if (onAddressSelected) onAddressSelected(addressComponent);
-      })
-      .catch((error) => handleError(error, `Error ${error}`));
+    try {
+      const results = await geocodeByAddress(address);
+      const addressComponent = await this.getAddressResults(results[0]);
+      if (onAddressSelected) onAddressSelected(addressComponent);
+    } catch (error) {
+      handleError(error, `Error ${error}`);
+    }
   };
 
   renderSearch = ({ getInputProps, suggestions, getSuggestionItemProps }) => {
