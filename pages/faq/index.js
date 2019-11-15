@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Router from 'next/router';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
@@ -6,65 +7,37 @@ import { getEntries } from '../../services/craftAPI';
 import { isClientSide } from '../../utils/utilities';
 import scrollToComponent from '../../utils/scrollToComponent';
 
-class FAQs extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: [],
-      faqsData: [],
-    };
-    this.currentHash = '';
-    this.sectionRefs = {};
-  }
+const FAQs = ({ faqsData, categories }) => {
+  const [state, setState] = useState({});
+  const sectionRefs = {};
 
-  componentDidMount() {
+  useEffect(() => {
     window.scrollTo(0, 0);
-    const categories = ['General'];
-    getEntries('faq').then((response) => {
-      const faqsData = response.data;
-      faqsData.forEach((faqsElement) => {
-        faqsElement.categories.forEach((category) => {
-          if (categories.indexOf(category) === -1) {
-            categories.push(category);
-          }
-        });
-      });
-      this.setState({
-        categories,
-        faqsData,
-      });
-    });
-  }
+  }, []);
 
-  componentDidUpdate() {
-    let hash = '';
-    if (isClientSide()) {
-      hash = window.location.hash.replace('#', '');
-    }
-    if (hash && this.sectionRefs[hash] && hash !== this.currentHash) {
-      this.currentHash = hash;
-      scrollToComponent(this.sectionRefs[hash]);
-    }
+  let hash = '';
+  if (isClientSide()) {
+    hash = window.location.hash.replace('#', '');
   }
+  useEffect(() => {
+    if (hash && sectionRefs[hash]) {
+      scrollToComponent(sectionRefs[hash]);
+    }
+  }, [hash]);
 
-  getFormatedString = (stringToFormat) => {
-    const str = stringToFormat.toLowerCase();
-    const find = ' ';
-    const find2 = '/';
-    const replaceRegEx = new RegExp(find, 'g');
-    const replaceRegEx2 = new RegExp(find2, 'g');
-    return str.replace(replaceRegEx, '-').replace(replaceRegEx2, '-');
+  const getFormatedString = (stringToFormat) => stringToFormat.toLowerCase().replace(/[ /]/g, '-');
+
+  const categoryClicked = (category) => () => {
+    setState({ ...state, [category]: state[category] !== true });
   };
 
-  /* eslint-disable react/no-danger */
-  getAllFaqsFromCategory = (category) => {
-    const { faqsData } = this.state;
+  const getAllFaqsFromCategory = (category) => {
     const faqs = faqsData.filter((faq) => faq.categories.indexOf(category) > -1);
     return (
       <div
         key={`${category}-question-container`}
         ref={(el) => {
-          this.sectionRefs[this.getFormatedString(category)] = el;
+          sectionRefs[getFormatedString(category)] = el;
         }}
       >
         <h4 id="general" className="c-brand-primary py2 f-15">
@@ -72,100 +45,120 @@ class FAQs extends PureComponent {
         </h4>
         {faqs.map((question, index) => (
           <div
-            key={this.getFormatedString(question.title)}
-            // eslint-disable-next-line react/destructuring-assignment
-            className={`faq-item ${this.state[`${category}-${index}`] ? 'active' : ''}`}
-            onClick={this.categoryClicked(`${category}-${index}`)}
-            onKeyPress={this.categoryClicked(`${category}-${index}`)}
+            key={getFormatedString(question.title)}
+            className={`faq-item ${state[`${category}-${index}`] ? 'active' : ''}`}
+            onClick={categoryClicked(`${category}-${index}`)}
+            onKeyPress={categoryClicked(`${category}-${index}`)}
             role="presentation"
           >
             <p className="question">{question.title}</p>
+            {/* eslint-disable react/no-danger */}
             <div className="answer" dangerouslySetInnerHTML={{ __html: question.description }} />
+            {/* eslint-enable react/no-danger */}
           </div>
         ))}
       </div>
     );
   };
-  /* eslint-enable react/no-danger */
 
-  categoryClicked = (category) => () => {
-    this.setState((prevState) => ({ [category]: prevState[category] !== true }));
-  };
-
-  scrollToCategory = (category) => (e) => {
+  const scrollToCategory = (category) => (e) => {
     e.preventDefault();
     if (isClientSide()) {
-      const hash = this.getFormatedString(category);
+      const newHash = getFormatedString(category);
       const path = Router.asPath.split('#')[0];
-      Router.push(`${path}#${hash}`, `${path}#${hash}`, { shallow: true });
+      Router.push(`${path}#${newHash}`, `${path}#${newHash}`, { shallow: true });
 
-      if (hash && this.sectionRefs[hash] && hash !== this.currentHash) {
-        this.currentHash = hash;
-        scrollToComponent(this.sectionRefs[hash]);
+      if (newHash && sectionRefs[newHash] && newHash !== hash) {
+        hash = newHash;
+        scrollToComponent(sectionRefs[newHash]);
       }
     }
   };
 
-  render() {
-    const { categories } = this.state;
-    return (
-      <Layout>
-        <div className="hero-banner--default full-width-wrap">
-          <div className="flex flex-wrap items-center full-height">
-            <div className="banner-wrapper subpage-banner center">
-              <h1>
-                <span className="pre-text">{'We\'re here to help answer some'}</span>
-                <span className="highlight-text">
-                  <em>
-                    FAQs
-                    <br />
-                  </em>
-                </span>
-                <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
-                  &nbsp;
-                </span>
-              </h1>
-            </div>
+  return (
+    <Layout>
+      <div className="hero-banner--default full-width-wrap">
+        <div className="flex flex-wrap items-center full-height">
+          <div className="banner-wrapper subpage-banner center">
+            <h1>
+              <span className="pre-text">{'We\'re here to help answer some'}</span>
+              <span className="highlight-text">
+                <em>
+                  FAQs
+                  <br />
+                </em>
+              </span>
+              <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
+                &nbsp;
+              </span>
+            </h1>
           </div>
         </div>
-        <div className="wrap mx-auto px3">
-          <div className="faq-wrapper flex pt1 md-pt4 lg-pt4 mt2">
-            <div className="filter-list-container">
-              <h4 className="c-brand-primary py2 f-15 px2 border border-radius">Jump to</h4>
-              <ul className="mr0 md-mr4 lg-mr4 mb4">
-                {categories.map((category) => (
-                  <li key={`${category}-faqs-li-element`} className="block">
-                    <Anchor
-                      className="filter-list"
-                      to={`#${category}`}
-                      onClick={this.scrollToCategory(category)}
-                    >
-                      {category}
-                    </Anchor>
-                  </li>
-                ))}
-              </ul>
+      </div>
+      <div className="wrap mx-auto px3">
+        <div className="faq-wrapper flex pt1 md-pt4 lg-pt4 mt2">
+          <div className="filter-list-container">
+            <h4 className="c-brand-primary py2 f-15 px2 border border-radius">Jump to</h4>
+            <ul className="mr0 md-mr4 lg-mr4 mb4">
+              {categories.map((category) => (
+                <li key={`${category}-faqs-li-element`} className="block">
+                  <Anchor
+                    className="filter-list"
+                    to={`#${category}`}
+                    onClick={scrollToCategory(category)}
+                  >
+                    {category}
+                  </Anchor>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex-grow">
+            <div className="faq-intro mb3">
+              <p className="f-18">
+                <strong>Yo</strong>
+                {`, thank you for wanting to know about AIME. We’ll do our best
+                to front foot some of the common questions. If we don’t nail them all, feel free
+                to `}
+                <Anchor to="/contact">ping us a note</Anchor>
+                {`. Your questions help us refine our
+                answers and we'll use them to update this space and help everyone to understand
+                AIME as quickly as possible.`}
+              </p>
             </div>
-            <div className="flex-grow">
-              <div className="faq-intro mb3">
-                <p className="f-18">
-                  <strong>Yo</strong>
-                  {`, thank you for wanting to know about AIME. We’ll do our best
-                  to front foot some of the common questions. If we don’t nail them all, feel free
-                  to `}
-                  <Anchor to="/contact">ping us a note</Anchor>
-                  {`. Your questions help us refine our
-                  answers and we'll use them to update this space and help everyone to understand
-                  AIME as quickly as possible.`}
-                </p>
-              </div>
-              {categories.map((category) => this.getAllFaqsFromCategory(category))}
-            </div>
+            {categories.map((category) => getAllFaqsFromCategory(category))}
           </div>
         </div>
-      </Layout>
-    );
-  }
-}
+      </div>
+    </Layout>
+  );
+};
+
+FAQs.getInitialProps = async () => {
+  const categories = ['General'];
+  const response = await getEntries('faq');
+  const faqsData = response.data;
+  faqsData.forEach((faqsElement) => {
+    faqsElement.categories.forEach((category) => {
+      if (categories.indexOf(category) === -1) {
+        categories.push(category);
+      }
+    });
+  });
+  return { categories, faqsData };
+};
+
+FAQs.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  faqsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      categories: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
+};
+
+FAQs.defaultProps = {
+  faqsData: [],
+};
 
 export default FAQs;
