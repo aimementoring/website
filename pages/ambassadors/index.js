@@ -1,10 +1,10 @@
 import React from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import AmbassadorBox from './ambassadorBox';
 import AMBASSADORS_LIST from './ambassadorsList';
 
 const Ambassadors = () => (
-  <>
+  <Layout>
     <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
@@ -39,7 +39,7 @@ const Ambassadors = () => (
         </div>
       </div>
     </section>
-  </>
+  </Layout>
 );
 
-export default withLayout(Ambassadors);
+export default Ambassadors;

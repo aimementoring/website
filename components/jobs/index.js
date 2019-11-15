@@ -64,7 +64,7 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
 
   useEffect(() => {
     fetchPositions();
-  });
+  }, []);
 
   const handleCountryChange = (propertyName, propertyValue) => {
     setState({

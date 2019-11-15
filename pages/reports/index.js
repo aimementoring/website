@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { getEntries } from '../../services/craftAPI';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import Report from '../../components/report';
 
 class Reports extends PureComponent {
@@ -79,7 +79,7 @@ class Reports extends PureComponent {
   render() {
     const { reportsToShow } = this.state;
     return (
-      <>
+      <Layout>
         <div className="hero-banner--default hero-banner--impact full-width-wrap">
           <div className="flex flex-wrap items-center full-height">
             <div className="banner-wrapper">
@@ -109,9 +109,9 @@ class Reports extends PureComponent {
             </div>
           )}
         </section>
-      </>
+      </Layout>
     );
   }
 }
 
-export default withLayout(Reports);
+export default Reports;
