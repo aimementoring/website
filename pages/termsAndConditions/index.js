@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import { getEntries } from '../../services/craftAPI';
 
 const TermsAndConditions = () => {
@@ -14,10 +14,10 @@ const TermsAndConditions = () => {
 
   useEffect(() => {
     fetchTermsAndConditions();
-  });
+  }, []);
 
   return (
-    <>
+    <Layout>
       <div style={{ height: '117px', backgroundColor: 'black' }} />
       <div className="matrix-general">
         <div className="wrap-md mb0 md-mb3 lg-mb3 clearfix">
@@ -29,8 +29,8 @@ const TermsAndConditions = () => {
           <div dangerouslySetInnerHTML={{ __html: paragraph }} />
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
-export default withLayout(TermsAndConditions);
+export default TermsAndConditions;
