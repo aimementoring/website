@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getEntries } from '../../services/craftAPI';
 import MatrixBuilder from '../../components/matrixBuilder';
 import bugsnagClient from '../../utils/bugsnag';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 
 const BeAFriend = () => {
   const [formElements, setFormElements] = useState([]);
@@ -13,7 +13,7 @@ const BeAFriend = () => {
     if (!formElements.length) {
       getEntries('/beAFriend').then((entries) => setFormElements(entries.formBuilder));
     }
-  });
+  }, []);
 
   const handleCountryChange = () => (e) => {
     if (e.target.name === 'country-name') {
@@ -36,7 +36,7 @@ const BeAFriend = () => {
   };
 
   return (
-    <>
+    <Layout>
       <div className="matrix-general">
         <div className="hero-banner--hssignup full-width-wrap">
           <div className="flex flex-wrap items-center full-height">
@@ -109,8 +109,8 @@ const BeAFriend = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
-export default withLayout(BeAFriend);
+export default BeAFriend;
