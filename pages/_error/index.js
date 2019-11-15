@@ -22,7 +22,7 @@ const ErrorPage = () => {
         /* eslint no-param-reassign: "error" */
       },
     });
-  });
+  }, []);
 
   return (
     <div>
