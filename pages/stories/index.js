@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import StoriesContent from '../../components/storiesContent';
 import Carousel from '../../components/carousel';
@@ -18,17 +18,19 @@ const Stories = () => {
 
   useEffect(() => {
     fetchStories();
-  });
+  }, []);
 
   return (
-    <div className={styles.carouselContainer}>
-      {entries.length && (
-        <>
-          <StoriesCarousel entries={entries} />
-          <StoriesContent stories={entries} />
-        </>
-      )}
-    </div>
+    <Layout>
+      <div className={styles.carouselContainer}>
+        {entries.length && (
+          <>
+            <StoriesCarousel entries={entries} />
+            <StoriesContent stories={entries} />
+          </>
+        )}
+      </div>
+    </Layout>
   );
 };
 
@@ -83,4 +85,4 @@ StoriesCarousel.propTypes = {
   })).isRequired,
 };
 
-export default withLayout(Stories);
+export default Stories;

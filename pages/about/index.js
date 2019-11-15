@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import Anchor from '../../components/common/link';
 import HeroBannerAbout from '../../components/heroBannerAbout';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const About = () => (
-  <>
+  <Layout>
     <div className={styles.aboutContainer}>
       <HeroBannerAbout />
       <div className={styles.aboutWrapper}>
@@ -211,7 +211,7 @@ const About = () => (
         </section>
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(About);
+export default About;
