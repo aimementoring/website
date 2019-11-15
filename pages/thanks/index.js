@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
@@ -6,10 +7,10 @@ import './thanksPage.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
-const ThanksPage = ({ messages }) => {
+const ThanksPage = ({ query }) => {
   let message = 'Your message has been succesfully submitted and we will get back to you as soon as we can!';
-  if (messages && messages.thankMessage) {
-    message = messages.thankMessage;
+  if (query && query.messages) {
+    message = query.messages;
   }
   return (
     <Layout>
@@ -37,15 +38,11 @@ const ThanksPage = ({ messages }) => {
   );
 };
 
-ThanksPage.getInitialProps = async ({ query }) => ({
-  messages: query.messages,
-});
-
 
 ThanksPage.propTypes = {
-  messages: PropTypes.shape({
-    thankMessage: PropTypes.string,
+  query: PropTypes.shape({
+    messages: PropTypes.string,
   }).isRequired,
 };
 
-export default ThanksPage;
+export default withRouter(ThanksPage);
