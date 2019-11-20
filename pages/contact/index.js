@@ -1,10 +1,12 @@
 import React from 'react';
-import ContactBanner from './contactBanner';
-import SupportCentre from './supportCentre';
-import ContactForm from './contactForm';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 
 import styles from './contact.module.scss';
+
+const ContactBanner = dynamic(() => import(/* webpackChunkName: 'ContactBanner' */ '../../components/contact/contactBanner'));
+const SupportCentre = dynamic(() => import(/* webpackChunkName: 'SupportCentre' */ '../../components/contact/supportCentre'));
+const ContactForm = dynamic(() => import(/* webpackChunkName: 'ContactForm' */ '../../components/contact/contactForm'));
 
 const Contact = () => (
   <Layout>
