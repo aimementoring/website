@@ -44,6 +44,8 @@ const MobileMenu = () => {
         <ul className="overflow-scroll list-reset pl3 pb3 pt2 flex flex-column items-start flex-auto">
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               className="text-decoration-none f-18 feature-font-family c-white active"
               onClick={handleMenu(false)}
               to="/"
@@ -53,6 +55,8 @@ const MobileMenu = () => {
           </li>
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               className="text-decoration-none f-18 feature-font-family c-white"
               onClick={handleMenu(false)}
               to="/about"
@@ -62,6 +66,8 @@ const MobileMenu = () => {
           </li>
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               className="text-decoration-none f-18 feature-font-family c-white"
               onClick={handleMenu(false)}
               to="/stories"
@@ -71,6 +77,8 @@ const MobileMenu = () => {
           </li>
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               className="text-decoration-none f-18 feature-font-family c-white"
               onClick={handleMenu(false)}
               to="/be-a-mentor"
@@ -80,6 +88,8 @@ const MobileMenu = () => {
           </li>
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               className="text-decoration-none f-18 feature-font-family c-white"
               onClick={handleMenu(false)}
               to="/contact"
@@ -89,6 +99,8 @@ const MobileMenu = () => {
           </li>
           <li className="py2">
             <Anchor
+              prefetch
+              withData
               to="/donate"
               onClick={handleMenu(false)}
               className="text-decoration-none f-18 feature-font-family c-white toggleRaiselyModal"
