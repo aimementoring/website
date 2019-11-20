@@ -26,7 +26,7 @@ const Anchor = ({
   to, as, className, children, ...props
 }) => (
   <DataPrefetchLink href={to} as={as}>
-    <a aria-label={to} className={className} {...props}>{children}</a>
+    <a aria-label={as} className={className} {...props}>{children}</a>
   </DataPrefetchLink>
 );
 
