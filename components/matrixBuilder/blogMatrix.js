@@ -119,6 +119,7 @@ class BlogMatrix extends PureComponent {
             border: '0',
             'align-self': align,
           }}
+          aria-label={postElement.label}
         >
           {postElement.label}
         </a>
