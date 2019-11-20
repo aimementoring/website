@@ -1,8 +1,10 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-import VideoButton from '../../components/videoButton';
 import Layout from '../../hocs/basicLayout';
 import './impact.scss';
+
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 

@@ -36,7 +36,17 @@ const IntroPanelHomepage = () => (
               {' '}
               soon.
             </p>
-            <p><Anchor prefetch withData to="/be-a-mentor" className="basic-btn bold bg-brand-primary c-white my3">Be a mentor</Anchor></p>
+            <p>
+              <Anchor
+                prefetch
+                withData
+                to="/beAMentor"
+                as="/be-a-mentor"
+                className="basic-btn bold bg-brand-primary c-white my3"
+              >
+                Be a mentor
+              </Anchor>
+            </p>
           </div>
         </div>
         <div className="sm-col-12 sm-col-6">
