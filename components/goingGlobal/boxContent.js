@@ -13,7 +13,7 @@ const BoxContent = ({
   >
     <h5>{title}</h5>
     <p>{description}</p>
-    <button className={styles.btn} type="button" onClick={onClick(index)}>
+    <button className={styles.btn} type="button" onClick={onClick(index)} aria-label="read case study">
       Read Case Study
     </button>
   </div>
