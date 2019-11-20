@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import Title from 'aime-blueprint/lib/components/title';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-import HeroBannerAbout from '../../components/heroBannerAbout';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
+
+const Title = dynamic(() => import(/* webpackChunkName 'Title' */ 'aime-blueprint/lib/components/title'));
+const HeroBannerAbout = dynamic(() => import(/* webpackChunkName 'HeroBannerAbout' */ '../../components/heroBannerAbout'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
