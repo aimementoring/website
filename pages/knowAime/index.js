@@ -320,7 +320,7 @@ const KnowAime = () => (
               </div>
               <div className="tile">
                 <div className="">
-                  <a target="_blank" href="https://www.youtube.com/embed/Mt5RxdQRFR4" rel="noopener noreferrer">
+                  <a target="_blank" href="https://www.youtube.com/embed/Mt5RxdQRFR4" rel="noopener noreferrer" aria-label="australian-story">
                     <div
                       className="flex items-center video-button rounded"
                       style={{
@@ -330,7 +330,7 @@ const KnowAime = () => (
                       }}
                     >
                       <img
-                        alt=""
+                        alt="play-white"
                         className="center mx-auto"
                         style={{ width: '70px' }}
                         src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
@@ -615,7 +615,7 @@ const KnowAime = () => (
             </div>
             <div className="tile">
               <div className="">
-                <a href="https://shop.aimementoring.com/collections/best-books-eva/products/the-mentor">
+                <a href="https://shop.aimementoring.com/collections/best-books-eva/products/the-mentor" aria-label="the-mentor">
                   <div
                     className="flex image-button items-center rounded"
                     style={{
@@ -625,7 +625,7 @@ const KnowAime = () => (
                     }}
                   >
                     <img
-                      alt=""
+                      alt="shopping-cart"
                       className="center mx-auto"
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/shopping-cart.svg`}
@@ -643,7 +643,7 @@ const KnowAime = () => (
             </div>
             <div className="tile">
               <div className="">
-                <a href="https://shop.aimementoring.com/products/mentoring-the-key-to-a-fairer-world">
+                <a href="https://shop.aimementoring.com/products/mentoring-the-key-to-a-fairer-world" aria-label="mentoring-the-key-to-a-fairer-world">
                   <div
                     className="flex image-button items-center rounded"
                     style={{
@@ -653,7 +653,7 @@ const KnowAime = () => (
                     }}
                   >
                     <img
-                      alt=""
+                      alt="shopping-cart"
                       className="center mx-auto"
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/shopping-cart.svg`}
@@ -703,6 +703,7 @@ const KnowAime = () => (
                   href="https://www.dropbox.com/s/a1keneym7p32k7y/AJIE_PUBLISHED-no_shame_at_aime.pdf?dl=0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="no shame at aime"
                 >
                   <div
                     className="flex image-button items-center rounded"
@@ -713,7 +714,7 @@ const KnowAime = () => (
                     }}
                   >
                     <img
-                      alt=""
+                      alt="download"
                       className="center mx-auto"
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/Download.svg`}
@@ -735,6 +736,7 @@ const KnowAime = () => (
                   href="https://www.dropbox.com/s/2flcrg5q7i57bhb/AIME%20Mentoring-A%20Solution%20for%20Educational%20Inequality%20%20.pdf?dl=0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Aime Mentoring a solution for education Inequality"
                 >
                   <div
                     className="flex image-button items-center rounded"
@@ -745,7 +747,7 @@ const KnowAime = () => (
                     }}
                   >
                     <img
-                      alt=""
+                      alt="download"
                       className="center mx-auto"
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/Download.svg`}
