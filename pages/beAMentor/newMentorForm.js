@@ -116,7 +116,7 @@ const NewMentorForm = ({
         />
       </div>
       <div className="center sm-col sm-col-12 md-col-12 pr1 pb1 mt4">
-        <button type="submit" className="submit" onClick={submitData}>
+        <button type="submit" className="submit" onClick={submitData} aria-label="submit form">
           Submit
         </button>
       </div>
