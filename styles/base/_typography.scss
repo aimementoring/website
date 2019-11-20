@@ -4,6 +4,7 @@
   src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd.otf');
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Light.otf');
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Bold.otf');
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 
 // TODO: Can't we just have one reference to Poppins and then bring in various weights?
@@ -29,6 +32,7 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Light.ttf');
   font-style: normal;
   font-weight: 100;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,13 +40,15 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Medium.ttf');
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
+  src: local(), url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
@@ -50,6 +56,7 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BlackItalic.ttf');
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
 }
 
 @font-face {
@@ -57,6 +64,7 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Bold.ttf');
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
@@ -64,6 +72,7 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BoldItalic.ttf');
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
@@ -72,6 +81,7 @@
          url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 // Material Icons
@@ -85,6 +95,7 @@
     url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
     url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.woff') format('woff'),
     url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 // Indie Flower
@@ -93,6 +104,7 @@
   src: url($cdnRoot + 'assets/fonts/indie-flower/IndieFlower.ttf');
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 
 .material-icons {
