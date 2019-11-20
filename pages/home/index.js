@@ -1,13 +1,14 @@
 import React from 'react';
-import HeroBannerHomepage from '../../components/heroBannerHomepage';
-import IntroPanelHomepage from '../../components/introPanelHomepage';
-import CtaGrid from '../../components/ctaGrid';
-import CtaFAQ from '../../components/ctaFAQ';
-import FooterBanner from '../../components/footerBanner';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
-
 import './home.scss';
+
+const HeroBannerHomepage = dynamic(() => import(/* webpackChunkName 'HeroBannerHomepage' */ '../../components/heroBannerHomepage'));
+const IntroPanelHomepage = dynamic(() => import(/* webpackChunkName 'IntroPanelHomepage' */ '../../components/introPanelHomepage'));
+const CtaGrid = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ctaGrid'));
+const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
+const FooterBanner = dynamic(() => import(/* webpackChunkName 'FooterBanner' */ '../../components/footerBanner'));
 
 const Home = () => (
   <Layout>
