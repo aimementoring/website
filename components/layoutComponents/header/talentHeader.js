@@ -41,9 +41,13 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
                   onKeyPress={handleTalentItemAction(item)}
                   role="presentation"
                 >
-                  {`#${item.toLowerCase()}` === hash
-                    ? <button type="button" className="nav-btn active-item link-button">{headerItem}</button>
-                    : <button type="button" className="nav-btn link-button">{headerItem}</button>}
+                  <button
+                    type="button"
+                    className={classNames('nav-btn link-button', { 'active-item': `#${item.toLowerCase()}` === hash })}
+                    aria-label={headerItem}
+                  >
+                    {headerItem}
+                  </button>
                 </li>
               );
             })}
