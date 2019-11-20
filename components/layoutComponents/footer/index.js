@@ -6,7 +6,7 @@ import './index.scss';
 
 const currentYear = moment().year();
 
-const Footer = ({ location }) => {
+const Footer = ({ location, handleShowIntercom }) => {
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   return (
     <div>
@@ -21,6 +21,8 @@ const Footer = ({ location }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/be-a-mentor"
                           className="c-white text-decoration-none"
                         >
@@ -30,17 +32,22 @@ const Footer = ({ location }) => {
                         </Anchor>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/contact"
+                        <a
+                          href="https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Become a partner"
                           className="c-white text-decoration-none"
                         >
                           Become a
                           {' '}
                           <strong>Partner</strong>
-                        </Anchor>
+                        </a>
                       </li>
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/donate"
                           className="toggleRaiselyModal c-white text-decoration-none"
                         >
@@ -64,6 +71,8 @@ const Footer = ({ location }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/the-mentor"
                           className="c-white text-decoration-none"
                         >
@@ -72,6 +81,8 @@ const Footer = ({ location }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/about"
                           className="c-white text-decoration-none"
                         >
@@ -80,6 +91,8 @@ const Footer = ({ location }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/jack-manning-bancroft"
                           className="c-white text-decoration-none"
                         >
@@ -93,6 +106,8 @@ const Footer = ({ location }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
+                          prefetch
+                          withData
                           to="/positions"
                           className="c-white text-decoration-none"
                         >
@@ -100,20 +115,24 @@ const Footer = ({ location }) => {
                         </Anchor>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/faq"
+                        <a
+                          href="https://faqs.aimementoring.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="faqs"
                           className="c-white text-decoration-none"
                         >
                           FAQs
-                        </Anchor>
+                        </a>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/contact"
-                          className="c-white text-decoration-none"
+                        <button
+                          className="c-white intercom-button text-decoration-none"
+                          onClick={handleShowIntercom}
+                          type="button"
                         >
                           Contact
-                        </Anchor>
+                        </button>
                       </li>
                     </ul>
                   </nav>
@@ -143,6 +162,8 @@ const Footer = ({ location }) => {
                 <ul className="list-reset flex flex-column lg-flex-row">
                   <li className="flex">
                     <Anchor
+                      prefetch
+                      withData
                       to="/terms-of-service"
                       className="footer-text mr3"
                     >
@@ -167,6 +188,7 @@ Footer.propTypes = {
     hash: PropTypes.string,
     pathname: PropTypes.string,
   }).isRequired,
+  handleShowIntercom: PropTypes.func.isRequired,
 };
 
 export default Footer;

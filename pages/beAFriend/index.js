@@ -62,6 +62,7 @@ const BeAFriend = ({ entries }) => {
                   href="https://mailchi.mp/aimementoring/sunday-kindness-1375593"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Left social media mehind"
                 >
                   left social media behind
                 </a>
