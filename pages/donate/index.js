@@ -239,6 +239,7 @@ class Donate extends PureComponent {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     href="https://shop.aimementoring.com/"
+                                    aria-label="Buy a hoodie"
                                   >
                                     Buy a Hoodie
                                   </a>
