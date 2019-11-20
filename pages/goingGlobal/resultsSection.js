@@ -86,6 +86,7 @@ const Results = ({ setReference }) => (
             href="https://drive.google.com/file/d/1ZPLB205lOaVmwh7NXkMgXcMpc4dmnBIe/view"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Read the full 2018 report"
           >
             Read the full 2018 report
           </a>
