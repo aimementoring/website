@@ -64,9 +64,13 @@ const TalentMobileMenu = ({ handleTalentItemClicked, hash }) => {
                 role="presentation"
                 key={item}
               >
-                {hash === `#${item.toLowerCase()}`
-                  ? <Anchor className="text-decoration-none f-18 feature-font-family c-white active" to="/">{headerItem}</Anchor>
-                  : <Anchor className="text-decoration-none f-18 feature-font-family c-white" to="/">{headerItem}</Anchor>}
+                <Anchor
+                  className={classNames('text-decoration-none f-18 feature-font-family c-white', { active: hash === `#${item.toLowerCase()}` })}
+                  to="/home"
+                  as="/"
+                >
+                  {headerItem}
+                </Anchor>
               </li>
             );
           })}
@@ -76,9 +80,13 @@ const TalentMobileMenu = ({ handleTalentItemClicked, hash }) => {
             onKeyPress={handleTalentItemSelected('register')}
             role="presentation"
           >
-            {hash === '#register'
-              ? <Anchor className="text-decoration-none f-18 feature-font-family c-white active" to="/">Register</Anchor>
-              : <Anchor className="text-decoration-none f-18 feature-font-family c-white" to="/">Register</Anchor>}
+            <Anchor
+              className={classNames('text-decoration-none f-18 feature-font-family c-white', { active: hash === '#register' })}
+              to="/home"
+              as="/"
+            >
+              Register
+            </Anchor>
           </li>
         </ul>
       </nav>
