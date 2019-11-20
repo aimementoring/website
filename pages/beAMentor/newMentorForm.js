@@ -26,7 +26,7 @@ const NewMentorForm = ({
   handlePhoneCountrySelected,
 }) => (
   <div className="mt2">
-    {universities.length > 1 && (
+    {universities && universities.length > 1 && (
       <div>
         <UniversitySelector
           placeholder="Start typing to search for university/college"
@@ -44,7 +44,7 @@ const NewMentorForm = ({
         />
       </div>
     )}
-    {(universityIsOutsideAIME || universities.length === 1) && (
+    {(universityIsOutsideAIME || (universities && universities.length === 1)) && (
       <div>
         <Input
           type="text"
