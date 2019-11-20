@@ -100,6 +100,10 @@
     "GENERATE_SOURCEMAP": {
       "required": true,
       "value": "false"
+    },
+    "REACT_APP_CANONICAL_HOST": {
+      "required": true,
+      "value": "https://aimementoring.com"
     }
   },
   "formation": {

@@ -796,6 +796,7 @@ sessions within these schools across the year,
                 href="https://d2ylaz7bdw65jx.cloudfront.net/assets/pdf/AIME-2016-Financial-Report.pdf"
                 className="submit my3"
                 rel="noopener noreferrer"
+                aria-label="Sell All The Dollars and Cents"
               >
                 Sell All The Dollars and Cents
               </a>
