@@ -24,7 +24,15 @@ const StudentChapterHeader = ({ location }) => {
         {location.pathname.indexOf('/fam-details') === -1 && (
           <div className="countDown-container countDown-container-inline">
             <li className="inline-block">
-              <Anchor prefetch withData className="donate-nav-btn register-nav-btn" to="/hooded-scholar#register">SIGN ME UP</Anchor>
+              <Anchor
+                prefetch
+                withData
+                className="donate-nav-btn register-nav-btn"
+                to="/hoodedScholar"
+                as="/hooded-scholar#register"
+              >
+                SIGN ME UP
+              </Anchor>
             </li>
           </div>
         )}
