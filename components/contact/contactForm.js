@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getEntries } from '../../services/craftAPI';
 import { detectCountry } from '../../utils/country';
 import bugsnagClient from '../../utils/bugsnag';
-import MatrixBuilder from '../../components/matrixBuilder';
+import MatrixBuilder from '../matrixBuilder';
 
 import styles from './contact.module.scss';
 
