@@ -37,6 +37,7 @@ const ReturningMentor = () => (
         target="_blank"
         rel="noopener noreferrer"
         className="submit"
+        aria-label="register"
       >
         Register
       </a>
