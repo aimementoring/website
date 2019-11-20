@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../hocs/basicLayout';
-import MentorBox from './mentorBox';
-import MENTORS_LIST from './mentorsList';
+import MentorBox from '../../components/mentorBox';
+import MENTORS_LIST from '../../constants/mentorsList';
 
 const Mentors = () => (
   <Layout>
