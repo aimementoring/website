@@ -1,14 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import Router from 'next/router';
 import Jobs from '../../components/jobs';
 import VideoButton from '../../components/videoButton';
 import Layout from '../../hocs/basicLayout';
-import { checkCountryParams } from '../../utils/utilities';
+import { checkCountryParams, isClientSide } from '../../utils/utilities';
 import './positions.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
-const Positions = (props) => {
+const Positions = ({ redirected, redirectJobTitle, ...props }) => {
   const currentSite = checkCountryParams(props);
+  const [isRedirect, setIsRedirect] = useState(redirected);
+  const [jobTitle, setJobTitle] = useState(redirectJobTitle);
+
+  const isClient = isClientSide();
 
   useEffect(() => {
     const tabs = document.querySelectorAll('.js-job-tabs .job-tabs--link');
@@ -26,6 +32,16 @@ const Positions = (props) => {
       });
     });
   }, []);
+
+  useEffect(() => {
+    setIsRedirect(redirected);
+    setJobTitle(redirectJobTitle);
+  }, [isClient, redirected, redirectJobTitle]);
+
+  const currentUrl = typeof window !== 'undefined' ? `/${Router.pathname.split('/')[1]}` : null;
+  if (typeof window !== 'undefined' && currentUrl === '/positions') {
+    Router.push(currentUrl);
+  }
 
   return (
     <Layout>
@@ -399,12 +415,36 @@ const Positions = (props) => {
             </div>
           </div>
           <div className="wrap mx-auto px3">
-            {currentSite && <Jobs cdnUrl={ASSETS_URL} currentSite={currentSite} />}
+            {!!currentSite && (
+              <Jobs
+                cdnUrl={ASSETS_URL}
+                currentSite={currentSite}
+                jobTitle={jobTitle}
+                isRedirect={isRedirect}
+                handleRedirectHide={() => setIsRedirect(false)}
+              />
+            )}
           </div>
         </section>
       </div>
     </Layout>
   );
+};
+
+Positions.getInitialProps = async ({ query }) => ({
+  redirected: query.redirected,
+  redirectJobTitle: query.redirectJobTitle,
+});
+
+
+Positions.propTypes = {
+  redirected: PropTypes.bool,
+  redirectJobTitle: PropTypes.string,
+};
+
+Positions.defaultProps = {
+  redirected: false,
+  redirectJobTitle: '',
 };
 
 export default Positions;
