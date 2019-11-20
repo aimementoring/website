@@ -48,7 +48,8 @@ const MobileMenu = () => {
               withData
               className="text-decoration-none f-18 feature-font-family c-white active"
               onClick={handleMenu(false)}
-              to="/"
+              to="/home"
+              as="/"
             >
               Home
             </Anchor>
@@ -81,7 +82,8 @@ const MobileMenu = () => {
               withData
               className="text-decoration-none f-18 feature-font-family c-white"
               onClick={handleMenu(false)}
-              to="/be-a-mentor"
+              to="/beAMentor"
+              as="/be-a-mentor"
             >
               Mentor
             </Anchor>
