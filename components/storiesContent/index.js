@@ -32,7 +32,11 @@ class StoriesContent extends PureComponent {
         <div className={styles.storiesGrid}>
           {stories && stories.length && stories.map((entry) => (
             <article key={`article-story-${entry.id}`} className={styles.articleTile}>
-              <Anchor to={`/story/${entry.slug}`} className={styles.articleLink}>
+              <Anchor
+                to="/story/[storySlug]"
+                as={`/story/${entry.slug}`}
+                className={styles.articleLink}
+              >
                 <div>
                   <BannerImage image={entry.bannerImage[0]} />
                   <div
