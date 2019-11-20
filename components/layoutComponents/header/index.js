@@ -71,13 +71,21 @@ const Header = ({ location }) => {
               <ul className="list-reset">
                 {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, '-')} {...item} />)}
                 <li className="inline-block relative header-link--with-submenu">
-                  <Anchor className="nav-btn" to="/contact">Get in touch</Anchor>
+                  <div className="intercom-button-nav nav-btn">Get in touch</div>
                 </li>
                 <li className="inline-block">
-                  <a className="nav-btn" target="_blank" rel="noopener noreferrer" href="https://shop.aimementoring.com/">Shop</a>
+                  <a
+                    aria-label="shop"
+                    className="nav-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://shop.aimementoring.com/"
+                  >
+                    Shop
+                  </a>
                 </li>
                 <li className="inline-block">
-                  <Anchor className="nav-btn" to="/donate">Donate</Anchor>
+                  <Anchor prefetch withData className="nav-btn" to="/donate">Donate</Anchor>
                 </li>
               </ul>
             </nav>
