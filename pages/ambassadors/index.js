@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../hocs/basicLayout';
-import AmbassadorBox from './ambassadorBox';
-import AMBASSADORS_LIST from './ambassadorsList';
+import AmbassadorBox from '../../components/ambassadorBox';
+import AMBASSADORS_LIST from '../../constants/ambassadorsList';
 
 const Ambassadors = () => (
   <Layout>

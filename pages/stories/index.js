@@ -5,7 +5,7 @@ import Anchor from '../../components/common/link';
 import StoriesContent from '../../components/storiesContent';
 import Carousel from '../../components/carousel';
 import { getEntries } from '../../services/craftAPI';
-import storiesList from './storiesList';
+import storiesList from '../../constants/storiesList';
 import styles from './stories.module.scss';
 
 const Stories = () => {
