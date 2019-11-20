@@ -10,7 +10,7 @@ const MenuItem = ({
   const firstHref = links.length && links[0].href ? links[0].href : BE_A_MENTOR_LINK;
   return (
     <li className="inline-block relative header-link--with-submenu" key={`${title}-key`}>
-      <Anchor className="nav-btn" to={firstHref}>{title}</Anchor>
+      <Anchor prefetch withData className="nav-btn" to={firstHref}>{title}</Anchor>
       <div className="submenu-wrapper">
         <div className="submenu-arrow" />
         <div className="flex flex-column pt3 pb2 px3">
@@ -19,6 +19,8 @@ const MenuItem = ({
         </div>
         {links.map((link) => (
           <Anchor
+            prefetch
+            withData
             key={link.href ? link.href : BE_A_MENTOR_LINK}
             to={link.href ? link.href : BE_A_MENTOR_LINK}
             className="c-brand-primary f-14 header-dropdown-button"

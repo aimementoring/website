@@ -6,6 +6,10 @@ import './impact.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
+const handleShowIntercom = () => {
+  window.Intercom('show');
+};
+
 const Impact = () => (
   <Layout>
     <div className="impact-page">
@@ -337,9 +341,13 @@ const Impact = () => (
             <h2 className="center">
               <span className="f-24 feature-font-family">Want to create change?</span>
             </h2>
-            <Anchor to="/contact" className="ghost-btn bg-brand-primary center mb2">
+            <button
+              type="button"
+              onClick={handleShowIntercom}
+              className="ghost-btn bg-brand-primary center mb2"
+            >
               <span className=" download-btn-text">Partner with us</span>
-            </Anchor>
+            </button>
           </div>
         </section>
       </div>
