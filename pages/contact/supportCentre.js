@@ -1,5 +1,4 @@
 import React from 'react';
-import Anchor from '../../components/common/link';
 
 import styles from './contact.module.scss';
 
@@ -28,9 +27,15 @@ We are here to help you.
           </svg>
           {' '}
           &nbsp;&nbsp;
-          <Anchor to="/faq" className={styles.link}>
+          <a
+            to="https://faqs.aimementoring.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+            aria-label="Frequently asked questions"
+          >
             Frequently Asked Questions
-          </Anchor>
+          </a>
         </li>
       </ul>
     </div>
