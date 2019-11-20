@@ -74,7 +74,7 @@ const Impact = () => (
                 It’s a
                 {' '}
                 <span className="text-highlight purple">
-                  <a href="#panel4"> proven model</a>
+                  <a href="#panel4" aria-label="proven model"> proven model</a>
                 </span>
                 {' '}
                 to end inequality and bring the powerful and powerless together, cost-effectively
@@ -178,7 +178,10 @@ const Impact = () => (
             <div className="main-grid">
               <div className="tile">
                 <div className="">
-                  <a href="https://www.dropbox.com/s/1uxaohjfrtaled7/Economic%20Evaluation%20of%20AIME%20Mentoring%20by%20KPMG.pdf?dl=0">
+                  <a
+                    href="https://www.dropbox.com/s/1uxaohjfrtaled7/Economic%20Evaluation%20of%20AIME%20Mentoring%20by%20KPMG.pdf?dl=0"
+                    aria-label="Economic evaluation"
+                  >
                     <div
                       className="flex items-center video-button rounded"
                       style={{
@@ -207,7 +210,7 @@ const Impact = () => (
               </div>
               <div className="tile">
                 <div className="">
-                  <a href="global-letter" target="_blank">
+                  <a href="global-letter" target="_blank" aria-label="global letter">
                     <div
                       className="flex items-center video-button rounded"
                       style={{
@@ -235,7 +238,10 @@ const Impact = () => (
               </div>
               <div className="tile">
                 <div className="">
-                  <a href="https://www.dropbox.com/s/2flcrg5q7i57bhb/AIME%20Mentoring-A%20Solution%20for%20Educational%20Inequality%20%20.pdf?dl=0">
+                  <a
+                    href="https://www.dropbox.com/s/2flcrg5q7i57bhb/AIME%20Mentoring-A%20Solution%20for%20Educational%20Inequality%20%20.pdf?dl=0"
+                    aria-label="AIME Mentoring solution for education inequality"
+                  >
                     <div
                       className="flex items-center video-button rounded"
                       style={{
@@ -265,7 +271,7 @@ const Impact = () => (
               </div>
               <div className="tile">
                 <div className="">
-                  <a href="https://aimementoring.com/reports/2016-annual-story">
+                  <a href="https://aimementoring.com/reports/2016-annual-story" aria-label="2016 annual story">
                     <div
                       className="flex items-center video-button rounded"
                       style={{
@@ -304,21 +310,23 @@ const Impact = () => (
                   <hr className="sidebarTitle-hr gradient-purple" />
                 </div>
                 <div className="buttons-container pt2">
-                  <a
-                    href="/jack-manning-bancroft"
+                  <Anchor
+                    to="/founder"
+                    as="/jack-manning-bancroft"
                     className="ghost-btn bg-brand-primary c-white mb2"
+                    aria-label="jack manning bancroft"
                   >
                     <span className=" download-btn-text">Meet our Founder & CEO</span>
-                  </a>
-                  <a href="/about" className="ghost-btn bg-brand-primary c-white mb2">
+                  </Anchor>
+                  <Anchor to="/about" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">Learn more about AIME</span>
-                  </a>
-                  <a href="/case-studies" className="ghost-btn bg-brand-primary c-white mb2">
+                  </Anchor>
+                  <Anchor to="/caseStudies" as="/case-studies" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">AIME Classroom</span>
-                  </a>
-                  <a href="/global-letter" className="ghost-btn bg-brand-primary c-white mb2">
+                  </Anchor>
+                  <Anchor to="/globalLetter" as="/global-letter" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">Global Letter</span>
-                  </a>
+                  </Anchor>
                 </div>
               </div>
               <div className="baseGrid main-content">
@@ -347,6 +355,7 @@ const Impact = () => (
               type="button"
               onClick={handleShowIntercom}
               className="ghost-btn bg-brand-primary center mb2"
+              aria-label="partner with us"
             >
               <span className=" download-btn-text">Partner with us</span>
             </button>

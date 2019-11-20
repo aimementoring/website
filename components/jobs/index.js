@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
 import compact from 'lodash/compact';
 import Anchor from '../common/link';
@@ -10,8 +10,11 @@ import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
+import PositionsRedirectMessage from '../positionsRedirectMessage';
 
-const Jobs = ({ backgroundColor, cdnUrl }) => {
+const Jobs = ({
+  backgroundColor, cdnUrl, isRedirect, handleRedirectHide, jobTitle,
+}) => {
   const [state, setState] = useState({
     jobs: [],
     filtersType: {},
@@ -25,6 +28,8 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
       (country) => COUNTRIES_WHERE_AIME_ACCEPT_JOBS.indexOf(country.value) !== -1,
     ),
   });
+
+  const redirectRef = useRef(null);
 
   const buildFilter = () => {
     const isExpiredIfExpire = "IF({Expire}='', TRUE(), IS_AFTER({Expire}, NOW()))";
@@ -65,6 +70,18 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
   useEffect(() => {
     fetchPositions();
   }, []);
+
+  const handleAutoScroll = () => {
+    if (state.jobsLoaded && redirectRef.current) {
+      window.scrollTo(0, redirectRef.current.offsetTop);
+    }
+  };
+
+  useEffect(() => {
+    if (isRedirect && state.jobsLoaded) {
+      handleAutoScroll();
+    }
+  }, [state.jobsLoaded, isRedirect]);
 
   const handleCountryChange = (propertyName, propertyValue) => {
     setState({
@@ -186,6 +203,13 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
             </div>
           </div>
           <div className="job-grid mb4 grid">
+            {isRedirect && (
+              <PositionsRedirectMessage
+                jobTitle={jobTitle}
+                filteredJobs={filteredJobs}
+                handleRedirectHide={handleRedirectHide}
+              />
+            )}
             {filteredJobs.map((job) => (
               <JobPreview key={job.id} cdnUrl={cdnUrl} {...job} />
             ))}
@@ -209,10 +233,15 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
 Jobs.propTypes = {
   cdnUrl: PropType.string.isRequired,
   backgroundColor: PropType.string,
+  isRedirect: PropType.bool,
+  handleRedirectHide: PropType.func,
+  jobTitle: PropType.string.isRequired,
 };
 
 Jobs.defaultProps = {
   backgroundColor: '#FFF',
+  isRedirect: false,
+  handleRedirectHide: () => {},
 };
 
 export default Jobs;
