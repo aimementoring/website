@@ -269,7 +269,7 @@ class Donate extends PureComponent {
                 <Sticky enter="350" exit={`${divHeight}`}>
                   <iframe title="donations" src={iframeUrl} width="316" />
                 </Sticky>
-                <button type="button" className="donate-button" onClick={this.onOpenCustomPopup}>
+                <button type="button" className="donate-button" onClick={this.onOpenCustomPopup} aria-label="donate">
                   DONATE
                 </button>
               </div>
