@@ -66,6 +66,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                           rel="noopener noreferrer"
                           href="https://shop.aimementoring.com/"
                           className="c-white text-decoration-none"
+                          aria-label="shop apparel"
                         >
                           Shop Apparel
                         </a>
@@ -133,6 +134,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                           className="c-white intercom-button text-decoration-none"
                           onClick={handleShowIntercom}
                           type="button"
+                          aria-label="contact"
                         >
                           Contact
                         </button>
