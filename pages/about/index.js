@@ -196,6 +196,7 @@ const About = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkButton}
+                aria-label="shop apparel"
               >
                 Shop Apparel
               </a>
