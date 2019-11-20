@@ -6,7 +6,7 @@
   },
   "editor.formatOnSave": false,
   "editor.minimap.maxColumn": 100,
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   "eslint.alwaysShowStatus": true,
   "eslint.packageManager": "yarn"
 }
