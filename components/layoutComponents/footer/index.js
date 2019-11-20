@@ -23,7 +23,8 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <Anchor
                           prefetch
                           withData
-                          to="/be-a-mentor"
+                          to="/beAMentor"
+                          as="/be-a-mentor"
                           className="c-white text-decoration-none"
                         >
                           Become a
@@ -73,7 +74,8 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <Anchor
                           prefetch
                           withData
-                          to="/the-mentor"
+                          to="/theMentor"
+                          as="/the-mentor"
                           className="c-white text-decoration-none"
                         >
                           Read the book
@@ -93,7 +95,8 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <Anchor
                           prefetch
                           withData
-                          to="/jack-manning-bancroft"
+                          to="/founder"
+                          as="/jack-manning-bancroft"
                           className="c-white text-decoration-none"
                         >
                           Founder &amp; CEO
@@ -146,7 +149,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <input type="hidden" name="utf8" value="✓" />
                         <input type="hidden" name="submissionmessage" value="footernewslettersubscription" />
                         <input id="subscribe" className="input p2 f-16 light w100" type="email" placeholder="Enter your email" name="email" required />
-                        <button type="submit" className="footer-links--input-button" aria-label="submit" />
+                        <button type="submit" className="footer-links--input-button" aria-label="Submit form" />
                       </form>
                     </div>
                   </div>
@@ -164,7 +167,8 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <Anchor
                       prefetch
                       withData
-                      to="/terms-of-service"
+                      to="/termsOfService"
+                      as="/terms-of-service"
                       className="footer-text mr3"
                     >
                         Terms of Service
