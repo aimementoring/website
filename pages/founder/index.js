@@ -110,6 +110,7 @@ const Founder = () => (
               href="https://shop.aimementoring.com/collections/random/products/the-mentor/"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="The mentor"
             >
               The Mentor
             </a>
@@ -121,6 +122,7 @@ const Founder = () => (
               href="https://shop.aimementoring.com/collections/random/products/book-the-eagle-inside/"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="The Eagle Inside"
             >
               The Eagle Inside
             </a>
@@ -143,7 +145,7 @@ const Founder = () => (
           <li>The Drum - Monday May 1, 2017</li>
           <li>The Drum - Friday March 24, 2017</li>
           <li>
-            <a href="https://youtu.be/Mt5RxdQRFR4" target="_blank" rel="noreferrer noopener">
+            <a href="https://youtu.be/Mt5RxdQRFR4" target="_blank" rel="noreferrer noopener" aria-label="Australian Story">
               Australian Story (30-minute life story piece), 2012
             </a>
           </li>
@@ -159,6 +161,7 @@ const Founder = () => (
               href={`${ASSETS_URL}/assets/pdf/Jack-Manning-Bancroft’s-indigenous-program-to-go-international.pdf`}
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="The Australian, 2016"
             >
               The Australian, 2016 - Jack Manning Bancroft&apos;s indigenous program to go
               international (PDF)
@@ -169,6 +172,7 @@ const Founder = () => (
               href={`${ASSETS_URL}/assets/pdf/Top-banker-Ian-Narev-funds-novel-Indigenous-succession-plan-_-afr.pdf`}
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Australian Financial Review, 2015"
             >
               Australian Financial Review, 2015 - Top banker Ian Narev funds novel Indigenous
               succession plan (PDF)
@@ -179,6 +183,7 @@ const Founder = () => (
               href="http://www.smh.com.au/comment/we-wont-close-the-gap-well-smash-it-20150212-13dpa8.html"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Sydnet Morning Herald, 2015"
             >
               Sydney Morning Herald, 2015 - We won&apos;t close the gap, we&apos;ll smash it
             </a>
@@ -188,6 +193,7 @@ const Founder = () => (
               href="http://www.dailytelegraph.com.au/news/nsw/aime-founder-jack-manning-bancroft-launches-campaign-for-first-indigenous-prime-minister/news-story/9595babc53591b29fdf953416dd6c62d"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="The Daily Telegraph, 2013"
             >
               The Daily Telegraph, 2013 - AIME founder Jack Manning Bancroft launches campaign for
               first indigenous prime minister
@@ -198,6 +204,7 @@ const Founder = () => (
               href="http://www.smh.com.au/national/a-persuasive-push-all-the-way-to-university-20090802-e5vd.html"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Sydnet Morning Herald, 2009"
             >
               Sydney Morning Herald, 2009 - A persuasive push all the way to university
             </a>
@@ -207,6 +214,7 @@ const Founder = () => (
               href="http://www.smh.com.au/news/national/the-power-of-oneonone/2008/09/21/1221935450306.html"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label="Sydney Morning Herald, 2008"
             >
               Sydney Morning Herald, 2008 - The power of one-on-one
             </a>
