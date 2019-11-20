@@ -347,6 +347,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                     href="/"
                     target="_blank"
                     className="bold c-grey feature-font-family text-decoration-none flex mb2 mr4 truncate"
+                    aria-label="File download"
                   >
                     <i className="material-icons mr2">file_download</i>
                     <span className="js-job-packs-filename truncate">
