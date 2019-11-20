@@ -8,7 +8,12 @@ import kebabCase from 'lodash/kebabCase';
 
 import Layout from '../../hocs/basicLayout';
 import bugsnagClient from '../../utils/bugsnag';
-import { getCountrySite, isClientSide } from '../../utils/utilities';
+import {
+  capitaliseFirstCharacter,
+  removeSpecialCharacters,
+  getCountrySite,
+  isClientSide,
+} from '../../utils/utilities';
 import handleError from '../../utils/errorHandler';
 import { getFormattedDate } from '../../utils/positions';
 import { findJob } from '../../services/positions';
@@ -43,7 +48,9 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
     displayError: null,
     isLoading: true,
     redirected: false,
-    redirectJobTitle: jobCategory.replace(/\W+/g, ' '),
+    redirectJobTitle: jobCategory && jobCategory.length && jobCategory.trim()
+      ? removeSpecialCharacters(jobCategory)
+      : '',
   });
 
   const isClient = isClientSide();
@@ -127,7 +134,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
           displayError: error,
           redirected: true,
           isLoading: false,
-          redirectJobTitle: redirectJobTitle.replace(/\b([a-z])/g, (string) => string.toUpperCase()),
+          redirectJobTitle: capitaliseFirstCharacter(redirectJobTitle),
         });
         handleError(error, error);
       });
@@ -368,6 +375,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                   type="button"
                   onClick={showApplicationForm}
                   className="basic-btn border-none submit bold bg-purple c-white regular js-non-unavailable-position"
+                  aria-label="apply now"
                 >
                   Apply now
                 </button>
