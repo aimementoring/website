@@ -15,6 +15,10 @@ const FAQs = ({ faqsData, categories }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleShowIntercom = () => {
+    window.Intercom('show');
+  };
+
   let hash = '';
   if (isClientSide()) {
     hash = window.location.hash.replace('#', '');
@@ -120,7 +124,7 @@ const FAQs = ({ faqsData, categories }) => {
                 {`, thank you for wanting to know about AIME. We’ll do our best
                 to front foot some of the common questions. If we don’t nail them all, feel free
                 to `}
-                <Anchor to="/contact">ping us a note</Anchor>
+                <button onClick={handleShowIntercom} type="button">ping us a note</button>
                 {`. Your questions help us refine our
                 answers and we'll use them to update this space and help everyone to understand
                 AIME as quickly as possible.`}
