@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
-import StoriesContent from '../../components/storiesContent';
-import Carousel from '../../components/carousel';
 import { getEntries } from '../../services/craftAPI';
 import storiesList from '../../constants/storiesList';
 import styles from './stories.module.scss';
+
+const StoriesContent = dynamic(() => import(/* webpackChunkName 'StoriesContent' */ '../../components/storiesContent'));
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../../components/carousel'));
 
 const Stories = () => {
   const [entries, setEntries] = useState(storiesList.data);
