@@ -672,7 +672,7 @@ const KnowAime = () => (
             </div>
             <div className="tile">
               <div className="">
-                <Anchor to="/global-letter">
+                <Anchor to="/globalLetter" as="/global-letter">
                   <div
                     className="flex image-button items-center rounded"
                     style={{
