@@ -4,7 +4,7 @@ import HoodedScholarForm from '../../components/eoiForm';
 import Layout from '../../hocs/basicLayout';
 import { uploadCustomEOI } from '../../services/portalApi';
 import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../utils/utilities';
-import eoiData from './data';
+import eoiData from '../../constants/dynamicEOI';
 import './DynamicEOI.scss';
 
 const DynamicEOI = ({ table }) => {
