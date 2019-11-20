@@ -7,6 +7,7 @@ const AimeVideos = ({ prev, next }) => (
       type="button"
       className="border-none"
       onClick={prev}
+      aria-label="previous"
       style={{ color: '#ffffff', backgroundColor: 'transparent' }}
     >
       <svg className="icon icon-arrow-prev">
@@ -17,6 +18,7 @@ const AimeVideos = ({ prev, next }) => (
       type="button"
       className="border-none"
       style={{ color: '#ffffff', backgroundColor: 'transparent' }}
+      aria-label="next"
       onClick={next}
     >
       <svg className="icon icon-arrow-next">
