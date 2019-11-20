@@ -25,7 +25,7 @@ const HeroBannerHomepageUSA = () => (
               The Hooded Scholar
             </h1>
             <p>
-              <Anchor prefetch withData to="/hooded-scholar" className="basic-btn c-white bg-transparent border mt2 mb3">
+              <Anchor prefetch withData to="/hoodedScholar" as="/hooded-scholar" className="basic-btn c-white bg-transparent border mt2 mb3">
                 Apply
               </Anchor>
             </p>
