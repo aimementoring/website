@@ -57,7 +57,7 @@ const JobPreview = ({
 
   return (
     <div className="homepage-main-actions mb2">
-      <Anchor to={`/positions/${id}/${nameAsLink}`} className="homepage-main-actions--inner">
+      <Anchor prefetch withData to={`/positions/${id}/${nameAsLink}`} className="homepage-main-actions--inner">
         <div className="relative m3">
           <h4 className="feature-font-family regular f-15">{name}</h4>
           <div className="block pt1 f-14 light c-brand-primary">{details}</div>

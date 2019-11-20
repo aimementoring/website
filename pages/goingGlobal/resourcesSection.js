@@ -29,6 +29,7 @@ const Resources = ({ setReference }) => (
           <a
             className={styles.btn}
             href="mailto:research@aimementoring.com?subject=Request Harvard Case Study&body=Hello Parul and Faye, I would like to read the Harvard Case Study about AIME. Thank you!"
+            aria-label="Request case study"
           >
             Request Case Study
           </a>
@@ -67,6 +68,7 @@ const Resources = ({ setReference }) => (
             href="https://player.vimeo.com/external/220543875.hd.mp4?s=918ff965aedae605c201a7f92045fad57cd582ca&profile_id=119"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Watch Cogs"
           >
             Watch Cogs
           </a>
