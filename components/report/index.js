@@ -25,7 +25,7 @@ class Report extends PureComponent {
       : '';
     return (
       <article className="article-tile">
-        <a href={readMoreLink} className="article-link" target="_blank" rel="noopener noreferrer">
+        <a aria-label="banner-image" href={readMoreLink} className="article-link" target="_blank" rel="noopener noreferrer">
           <img className="rounded-top article-image" src={bannerImageUrl} alt="" />
           {/* {% for tag in report.reportTags.limit(2).all() %}
             <p className="featured-story--tag">{{tag.title}}</p>
@@ -38,6 +38,7 @@ class Report extends PureComponent {
               className="article-tile-link basic-btn italic"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="read more"
             >
               Read more
               {' '}
