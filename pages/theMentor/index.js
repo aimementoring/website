@@ -42,6 +42,7 @@ const TheMentor = () => (
                   target="_blank"
                   href="/products/the-mentor"
                   className="basic-btn bold bg-brand-primary c-white mt3"
+                  aria-label="Grab a copy"
                 >
                   Grab a copy
                 </a>
