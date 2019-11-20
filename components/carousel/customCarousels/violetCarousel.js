@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Anchor from '../../common/link';
 import VideoCarousel from './videoCarousel';
 import Carousel from '../index';
 import './customCarousels.scss';
@@ -20,9 +21,15 @@ const VioletCarousel = ({
         <div>
           <VideoCarousel title={title} elements={elements} settings={settings} />
           <div className="center-align md-left-align py2 my1">
-            <a href="/know-aime" aria-label="know-aime" className="b-white ghost-btn center" target="_blank">
+            <Anchor
+              to="/knowAime"
+              as="/know-aime"
+              aria-label="know-aime"
+              className="b-white ghost-btn center"
+              target="_blank"
+            >
               Tell me more
-            </a>
+            </Anchor>
           </div>
         </div>
       ) : (

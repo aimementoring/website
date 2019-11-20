@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from '../../common/link';
 
-const BE_A_MENTOR_LINK = '/be-a-mentor';
+const BE_A_MENTOR_TO = '/beAMentor';
+const BE_A_MENTOR_AS = '/be-a-mentor';
 
 const MenuItem = ({
   title, subTitle, description, links,
 }) => {
-  const firstHref = links.length && links[0].href ? links[0].href : BE_A_MENTOR_LINK;
+  const firstHref = links.length && links[0].href ? links[0].href : BE_A_MENTOR_TO;
+  const firstHrefAs = links.length && links[0].href ? links[0].href : BE_A_MENTOR_AS;
   return (
     <li className="inline-block relative header-link--with-submenu" key={`${title}-key`}>
-      <Anchor prefetch withData className="nav-btn" to={firstHref}>{title}</Anchor>
+      <Anchor prefetch withData className="nav-btn" to={firstHref} as={firstHrefAs}>{title}</Anchor>
       <div className="submenu-wrapper">
         <div className="submenu-arrow" />
         <div className="flex flex-column pt3 pb2 px3">
@@ -21,8 +23,9 @@ const MenuItem = ({
           <Anchor
             prefetch
             withData
-            key={link.href ? link.href : BE_A_MENTOR_LINK}
-            to={link.href ? link.href : BE_A_MENTOR_LINK}
+            key={link.href ? link.href : BE_A_MENTOR_TO}
+            to={link.href ? link.href : BE_A_MENTOR_TO}
+            as={link.href ? link.href : BE_A_MENTOR_AS}
             className="c-brand-primary f-14 header-dropdown-button"
           >
             {link.linkText}
