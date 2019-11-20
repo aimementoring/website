@@ -197,7 +197,7 @@ const Jobs = ({ backgroundColor, cdnUrl }) => {
           <span className="line bg-brand-tertiary mb3 mt1" />
           <p className="pb1 md-pb3 lg-pb3">
             Sorry, there are no positions available at the moment. You can
-            <Anchor prefetch withData to="/be-a-friend">sign up to be an AIME Friend</Anchor>
+            <Anchor prefetch withData to="/beAFriend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
             {'though and receive updates about everything that\'s happening.'}
           </p>
         </div>
