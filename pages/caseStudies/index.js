@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../hocs/basicLayout';
-import CaseStudyBox from './caseStudyBox';
-import CASE_STUDIES from './caseStudiesList';
+import CaseStudyBox from '../../components/caseStudyBox';
+import CASE_STUDIES from '../../constants/caseStudiesList';
 
 const CaseStudies = () => (
   <Layout>
