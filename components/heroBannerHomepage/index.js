@@ -25,7 +25,7 @@ const HeroBannerHomepageUSA = () => (
               The Hooded Scholar
             </h1>
             <p>
-              <Anchor to="/hooded-scholar" className="basic-btn c-white bg-transparent border mt2 mb3">
+              <Anchor prefetch withData to="/hooded-scholar" className="basic-btn c-white bg-transparent border mt2 mb3">
                 Apply
               </Anchor>
             </p>
@@ -70,6 +70,7 @@ const HeroBannerHomepageAustralia = () => (
           <a
             className="basic-btn bold bg-brand-primary c-white hero-btn-btm-right"
             href="https://shop.aimementoring.com/"
+            aria-label="check it out"
             target="_blank"
             rel="noopener noreferrer"
           >

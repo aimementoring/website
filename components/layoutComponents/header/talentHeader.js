@@ -49,6 +49,8 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
             })}
             <li className="inline-block">
               <Anchor
+                prefetch
+                withData
                 className="donate-nav-btn register-nav-btn"
                 to="/seatontheplane#register"
                 onClick={handleTalentItemAction('register')}
