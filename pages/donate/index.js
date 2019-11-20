@@ -1,14 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../services/donations';
-import Trapezoid from '../../components/donateTrapezoid';
-import RaiselyModal from '../../components/raiselyModal';
-import Sticky from '../../components/donateSticky';
 import bugsnagClient from '../../utils/bugsnag';
 import './donate.scss';
+
+const Trapezoid = dynamic(() => import(/* webpackChunkName 'Trapezoid' */ '../../components/donateTrapezoid'));
+const RaiselyModal = dynamic(() => import(/* webpackChunkName 'RaiselyModal' */ '../../components/raiselyModal'));
+const Sticky = dynamic(() => import(/* webpackChunkName 'Sticky' */ '../../components/donateSticky'));
 
 class Donate extends PureComponent {
   constructor(props) {
