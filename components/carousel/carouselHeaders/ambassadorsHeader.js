@@ -10,6 +10,7 @@ const AmbassadorHeader = ({ prev, next }) => (
       type="button"
       className="border-none"
       onClick={prev}
+      aria-label="previous"
       style={{ color: '#979797', backgroundColor: 'transparent' }}
     >
       <img alt="arrow prev" src="/arrow-prev.svg" />
@@ -18,6 +19,7 @@ const AmbassadorHeader = ({ prev, next }) => (
       type="button"
       className="border-none"
       style={{ color: '#979797', backgroundColor: 'transparent' }}
+      aria-label="next"
       onClick={next}
     >
       <img alt="arrow next" src="/arrow-next.svg" />
