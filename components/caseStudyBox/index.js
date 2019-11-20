@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import VideoButton from '../../components/videoButton';
+import VideoButton from '../videoButton';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
