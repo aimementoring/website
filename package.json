@@ -14,8 +14,12 @@
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
     "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
+    "gimbal-audit": "gimbal audit --config ./.gimbalrc.yml",
     "precommit": "lint-staged",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@bugsnag/js": "^6.4.3",
@@ -61,7 +65,12 @@
     "videojs-contrib-hls": "5.14.1"
   },
   "devDependencies": {
+    "@modus/gimbal": "^1.2.6",
+    "@modus/gimbal-plugin-axe": "^1.2.6",
+    "@modus/gimbal-plugin-last-value": "^1.2.6",
+    "@modus/gimbal-plugin-sqlite": "^1.2.6",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
