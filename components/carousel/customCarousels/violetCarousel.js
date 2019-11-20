@@ -20,7 +20,7 @@ const VioletCarousel = ({
         <div>
           <VideoCarousel title={title} elements={elements} settings={settings} />
           <div className="center-align md-left-align py2 my1">
-            <a href="/know-aime" className="b-white ghost-btn center" target="_blank">
+            <a href="/know-aime" aria-label="know-aime" className="b-white ghost-btn center" target="_blank">
               Tell me more
             </a>
           </div>
@@ -40,11 +40,12 @@ const VioletCarousel = ({
                     <a
                       href={img.link}
                       target="_blank"
+                      aria-label="carousel-image"
                       rel="noopener noreferrer"
                       className="flex-center flex-wrap m1"
                       style={{ height: '224px' }}
                     >
-                      <img src={img.img} alt="" />
+                      <img src={img.img} alt="carousel" />
                     </a>
                   </div>
                 ))}
