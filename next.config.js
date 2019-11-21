@@ -31,7 +31,6 @@ module.exports = withOffline(
           process.env.REACT_APP_DONATE_ORGANISATION_UUID,
         REACT_APP_PORTAL_API: process.env.REACT_APP_PORTAL_API,
         REACT_APP_THEME: process.env.REACT_APP_THEME,
-        REACT_APP_CANONICAL_HOST: process.env.REACT_APP_CANONICAL_HOST,
         REACT_APP_INTERCOM_APP_ID: process.env.REACT_APP_INTERCOM_APP_ID,
         AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
         AWS_DEFAULT_REGION: process.env.AWS_DEFAULT_REGION,

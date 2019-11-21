@@ -1,8 +1,10 @@
 import React from 'react';
-import VideoButton from '../../components/videoButton';
-import Testimonials from '../../components/testimonials';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import './theMentor.scss';
+
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
+const Testimonials = dynamic(() => import(/* webpackChunkName 'Testimonials' */ '../../components/testimonials'));
 
 const TheMentor = () => (
   <Layout>
