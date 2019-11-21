@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import Logo from './logo';
 import TalentMobileMenu from '../mobileMenu/talentMobileMenu';
 import Anchor from '../../common/link';
-import { TALENT_HEADER_MENU_ITEMS } from '../../../constants';
-import './index.scss';
+// import { TALENT_HEADER_MENU_ITEMS } from '../../../constants';
+import styles from './header.module.scss';
 
 const TalentHeader = ({ location, handleTalentItemClicked }) => {
   const [showFirstHeader, setShowFirstHeader] = useState(!location.hash && !location.search);
@@ -19,44 +19,45 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
     handleTalentItemClicked(item);
   };
 
-  const firstHeaderClasses = classNames({ isHidden: !showFirstHeader });
-  const secondHeaderClasses = classNames({ isHidden: showFirstHeader });
   const hash = location.hash ? location.hash.toLowerCase() : '';
   return (
-    <div className="talent-header-box">
-      <div className={`flex flex-column items-center py2 ${firstHeaderClasses}`} />
-      <div className={`container clearfix flex items-center ${secondHeaderClasses}`}>
-        <div className="sm-col align-middle flex">
+    <div className={styles.talentHeaderBox}>
+      <div className={classNames(styles.firstHeader, { [styles.isHidden]: !showFirstHeader })} />
+      <div className={classNames(styles.secondHeader, { [styles.isHidden]: showFirstHeader })}>
+        <div className={styles.logoContainer}>
           <Logo />
         </div>
-        <nav id="nav-talent" className="nav-talent nav menu-links sm-col-right ml-auto">
-          <ul className="list-reset">
-            {TALENT_HEADER_MENU_ITEMS.map((headerItem) => {
+        <nav id="nav-talent" className={classNames(styles.navMenuLinks, styles.navTalent)}>
+          <ul className={styles.list}>
+            {/* {TALENT_HEADER_MENU_ITEMS.map((headerItem) => {
               const item = headerItem.replace(' ', '');
               return (
                 <li
-                  className="inline-block relative"
+                  className={styles.listItem}
                   onClick={handleTalentItemAction(item)}
-                  key={item}
                   onKeyPress={handleTalentItemAction(item)}
                   role="presentation"
+                  key={item}
                 >
-                  <button
-                    type="button"
-                    className={classNames('nav-btn link-button', { 'active-item': `#${item.toLowerCase()}` === hash })}
-                    aria-label={headerItem}
-                  >
-                    {headerItem}
-                  </button>
+                  {`#${item.toLowerCase()}` === hash ? (
+                    <a className={classNames(styles.navBtn, styles.activeItem)} href="#">
+                      {headerItem}
+                    </a>
+                  ) : (
+                    <a className={styles.navBtn} href="#">
+                      {headerItem}
+                    </a>
+                  )}
                 </li>
               );
-            })}
-            <li className="inline-block">
+            })} */}
+            <li className={styles.inlineListItem}>
               <Anchor
                 prefetch
                 withData
-                className="donate-nav-btn register-nav-btn"
-                to="/seatontheplane#register"
+                className={styles.donateBtn}
+                to="/seatontheplane"
+                as="/seatontheplane#register"
                 onClick={handleTalentItemAction('register')}
               >
                 Register
@@ -64,10 +65,7 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
             </li>
           </ul>
         </nav>
-        <TalentMobileMenu
-          handleTalentItemClicked={handleTalentItemClicked}
-          hash={hash}
-        />
+        <TalentMobileMenu handleTalentItemClicked={handleTalentItemClicked} hash={hash} />
       </div>
     </div>
   );
@@ -77,7 +75,6 @@ TalentHeader.propTypes = {
   location: PropTypes.shape({
     hash: PropTypes.string,
     search: PropTypes.string,
-    pathname: PropTypes.string,
   }).isRequired,
   handleTalentItemClicked: PropTypes.func.isRequired,
 };
