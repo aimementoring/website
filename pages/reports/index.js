@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
+import dynamic from 'next/dynamic';
 import { getEntries } from '../../services/craftAPI';
 import Layout from '../../hocs/basicLayout';
-import Report from '../../components/report';
+
+const Report = dynamic(() => import(/* webpackChunkName 'Report' */ '../../components/report'));
 
 class Reports extends PureComponent {
   constructor(props) {
