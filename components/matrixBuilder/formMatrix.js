@@ -1,23 +1,21 @@
-import React, { PureComponent } from 'react';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
-import { getUcFirst } from '../../utils/utilities';
-import Header from '../commonElements/header';
-import VideoFormElement from '../commonElements/videoFormElement';
-import UploadFormElement from '../commonElements/uploadFormElement';
-import AddressAutocompleteInput from '../addressAutocompleteInput';
-import UniversitySelector from '../universitySelector';
+import React, { PureComponent } from 'react';
 import { FORM_MATRIX_AVAILABLE_ELEMENTS } from '../../constants';
+import { getUcFirst } from '../../utils/utilities';
 
-const {
-  Input,
-  Select,
-  Textarea,
-  Checkbox,
-  CountrySelector,
-  Paragraph,
-  PhoneInput,
-} = Components;
+const Input = dynamic(() => import(/* webpackChunkName 'Input' */ 'aime-blueprint/lib/components/input'));
+const Select = dynamic(() => import(/* webpackChunkName 'Select' */ 'aime-blueprint/lib/components/select'));
+const Textarea = dynamic(() => import(/* webpackChunkName 'Textarea' */ 'aime-blueprint/lib/components/textarea'));
+const Checkbox = dynamic(() => import(/* webpackChunkName 'Checkbox' */ 'aime-blueprint/lib/components/checkbox'));
+const CountrySelector = dynamic(() => import(/* webpackChunkName 'CountrySelector' */ 'aime-blueprint/lib/components/countrySelector'));
+const Paragraph = dynamic(() => import(/* webpackChunkName 'Paragraph' */ 'aime-blueprint/lib/components/paragraph'));
+const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
+const Header = dynamic(() => import(/* webpackChunkName 'Header' */ '../commonElements/header'));
+const VideoFormElement = dynamic(() => import(/* webpackChunkName 'VideoFormElement' */ '../commonElements/videoFormElement'));
+const UploadFormElement = dynamic(() => import(/* webpackChunkName 'UploadFormElement' */ '../commonElements/uploadFormElement'));
+const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../addressAutocompleteInput'));
+const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../universitySelector'));
 
 class FormMatrix extends PureComponent {
   getMatrix = () => {

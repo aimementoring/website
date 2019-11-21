@@ -1,10 +1,12 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
-import MenuItem from './menuItem';
-import Logo from './logo';
-import MobileMenu from '../mobileMenu';
 import styles from './header.module.scss';
+
+const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
+const MenuItem = dynamic(() => import(/* webpackChunkName 'MenuItem' */ './menuItem'));
+const MobileMenu = dynamic(() => import(/* webpackChunkName 'MobileMenu' */ '../mobileMenu'));
 
 const StandardHeader = () => (
   <div>
