@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-import EoiForm from '../../components/eoiForm/goingGlobalEOIForm';
 import { uploadCustomEOI } from '../../services/portalApi';
-
 import styles from './goingGlobal.module.scss';
+
+const EoiForm = dynamic(() => import(/* webpackChunkName 'EoiForm' */ '../../components/eoiForm/goingGlobalEOIForm'));
 
 const TABLE_NAME = 'Going Global';
 
