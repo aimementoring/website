@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import LinksComponent from './linksComponent';
+import dynamic from 'next/dynamic';
 import './index.scss';
+
+const LinksComponent = dynamic(() => import(/* webpackChunkName 'LinksComponent' */ './linksComponent'));
 
 const MENU_LINKS = {
   'going-global': [
