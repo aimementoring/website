@@ -1,13 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect } from 'react';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
 
-class IntercomChat extends PureComponent {
-  componentDidMount() {
-    this.intercomChat();
-  }
-
-  intercomChat = () => {
+const IntercomChat = () => {
+  const intercomChat = () => {
     (() => {
       const w = window;
       const ic = w.Intercom;
@@ -54,11 +50,11 @@ class IntercomChat extends PureComponent {
     });
   };
 
-  render() {
-    return (
-      <span />
-    );
-  }
-}
+  useEffect(() => {
+    intercomChat();
+  }, []);
+
+  return <span />;
+};
 
 export default IntercomChat;
