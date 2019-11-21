@@ -1,7 +1,9 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
-import CaseStudyBox from '../../components/caseStudyBox';
 import CASE_STUDIES from '../../constants/caseStudiesList';
+
+const CaseStudyBox = dynamic(() => import(/* webpackChunkName 'CaseStudyBox' */ '../../components/caseStudyBox'));
 
 const CaseStudies = () => (
   <Layout>
