@@ -1,7 +1,9 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
-import AmbassadorBox from '../../components/ambassadorBox';
 import AMBASSADORS_LIST from '../../constants/ambassadorsList';
+
+const AmbassadorBox = dynamic(() => import(/* webpackChunkName 'AmbassadorBox' */ '../../components/ambassadorBox'));
 
 const Ambassadors = () => (
   <Layout>

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import TalentHeader from './talentHeader';
-import GoingGlobalHeader from './goingGlobalHeader';
-import ImaginationDeclarationHeader from './imaginationDeclarationHeader';
-import StandardHeader from './standardHeader';
 import { isClientSide } from '../../../utils/utilities';
 import styles from './header.module.scss';
+
+const TalentHeader = dynamic(() => import(/* webpackChunkName 'TalentHeader' */ './talentHeader'));
+const GoingGlobalHeader = dynamic(() => import(/* webpackChunkName 'GoingGlobalHeader' */ './goingGlobalHeader'));
+const ImaginationDeclarationHeader = dynamic(() => import(/* webpackChunkName 'ImaginationDeclarationHeader' */ './imaginationDeclarationHeader'));
+const StandardHeader = dynamic(() => import(/* webpackChunkName 'StandardHeader' */ './standardHeader'));
 
 const getHeaderComponent = (pathname) => {
   let component = 'default';
