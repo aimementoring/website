@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Carousel from '../index';
-import VideoButton from '../../videoButton';
+import dynamic from 'next/dynamic';
 import { getAssetsBaseUrl } from '../../../services/craftAPI';
 import './customCarousels.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../videoButton'));
 
 const AimeVideos = ({ settings, elements, title }) => {
   const assetsUrl = getAssetsBaseUrl();

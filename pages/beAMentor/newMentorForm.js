@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from 'aime-blueprint/lib/components/checkbox';
-import Input from 'aime-blueprint/lib/components/input';
-import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
-import UniversitySelector from '../../components/universitySelectorWithAutoComplete';
+import dynamic from 'next/dynamic';
 import './beAMentor.scss';
+
+const Checkbox = dynamic(() => import(/* webpackChunkName 'Checkbox' */ 'aime-blueprint/lib/components/checkbox'));
+const Input = dynamic(() => import(/* webpackChunkName 'Input' */ 'aime-blueprint/lib/components/input'));
+const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
+const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../../components/universitySelectorWithAutoComplete'));
 
 const NewMentorForm = ({
   universities,
