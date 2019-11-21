@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 // import ReactFilestack from 'filestack-react';
 import PropTypes from 'prop-types';
-import UploadedFile from './uploadedFile';
+import dynamic from 'next/dynamic';
 import handleError from '../../utils/errorHandler';
+
+const UploadedFile = dynamic(() => import(/* webpackChunkName 'UploadedFile' */ './uploadedFile'));
 
 const hiddenStyle = {
   opacity: 0,

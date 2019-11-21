@@ -1,9 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
-import CtaFAQ from '../../components/ctaFAQ';
-import VideoButton from '../../components/videoButton';
 import './knowAime.scss';
+
+const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 

@@ -1,7 +1,9 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
-import MentorBox from '../../components/mentorBox';
 import MENTORS_LIST from '../../constants/mentorsList';
+
+const MentorBox = dynamic(() => import(/* webpackChunkName 'MentorBox' */ '../../components/mentorBox'));
 
 const Mentors = () => (
   <Layout>
