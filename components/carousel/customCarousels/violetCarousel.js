@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
-import VideoCarousel from './videoCarousel';
-import Carousel from '../index';
 import './customCarousels.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
+const VideoCarousel = dynamic(() => import(/* webpackChunkName 'VideoCarousel' */ './videoCarousel'));
 
 const VioletCarousel = ({
   type,

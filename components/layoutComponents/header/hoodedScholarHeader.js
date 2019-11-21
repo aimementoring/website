@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Anchor from '../../common/link';
-import Logo from './logo';
 import styles from './header.module.scss';
+
+const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
 
 const HoodedScholarHeader = ({ location }) => {
   const [showFirstHeader, setShowFirstHeader] = useState(!location.hash && !location.search);

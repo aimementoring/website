@@ -1,6 +1,8 @@
 import React from 'react';
-import Carousel from '../carousel';
+import dynamic from 'next/dynamic';
 import './testimonials.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../carousel'));
 
 const Testimonials = () => {
   const customCarouselValues = {
