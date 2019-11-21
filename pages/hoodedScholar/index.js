@@ -1,13 +1,15 @@
 import React, { PureComponent } from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
-import VideoButton from '../../components/videoButton';
-import HoodedScholarForm from '../../components/eoiForm';
-import VioletVideoCarousel from '../../components/carousel/customCarousels/violetCarousel';
 import { STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS } from '../../constants';
 import { uploadHoodedScholarEOI } from '../../services/portalApi';
 import { isClientSide } from '../../utils/utilities';
 import './hoodedScholar.scss';
+
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
+const HoodedScholarForm = dynamic(() => import(/* webpackChunkName 'HoodedScholarForm' */ '../../components/eoiForm'));
+const VioletVideoCarousel = dynamic(() => import(/* webpackChunkName 'VioletVideoCarousel' */ '../../components/carousel/customCarousels/violetCarousel'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
