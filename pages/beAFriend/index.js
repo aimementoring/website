@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import { getEntries } from '../../services/craftAPI';
-import MatrixBuilder from '../../components/matrixBuilder';
 import bugsnagClient from '../../utils/bugsnag';
 import Layout from '../../hocs/basicLayout';
+
+const MatrixBuilder = dynamic(() => import(/* webpackChunkName 'MatrixBuilder' */ '../../components/matrixBuilder'));
 
 const BeAFriend = ({ entries }) => {
   const [formElements, setFormElements] = useState(entries);
