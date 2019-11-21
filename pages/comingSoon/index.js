@@ -1,6 +1,8 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
-import WatchTheVideoButton from '../../components/watchTheVideoButton';
+
+const WatchTheVideoButton = dynamic(() => import(/* webpackChunkName 'WatchTheVideoButton' */ '../../components/watchTheVideoButton'));
 
 const ComingSoon = () => (
   <Layout>
