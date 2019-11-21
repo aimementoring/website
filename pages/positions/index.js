@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
-import Jobs from '../../components/jobs';
-import VideoButton from '../../components/videoButton';
+import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import { checkCountryParams, isClientSide } from '../../utils/utilities';
 import './positions.scss';
+
+const Jobs = dynamic(() => import(/* webpackChunkName 'Jobs' */ '../../components/jobs'));
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButtons' */ '../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
