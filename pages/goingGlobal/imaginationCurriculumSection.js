@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TabComponent from '../../components/goingGlobal/tabComponent';
+import dynamic from 'next/dynamic';
 import styles from './goingGlobal.module.scss';
+
+const TabComponent = dynamic(() => import(/* webpackChunkName 'TabComponent' */ '../../components/goingGlobal/tabComponent'));
 
 const ImaginationCurriculum = ({ setReference }) => (
   <section

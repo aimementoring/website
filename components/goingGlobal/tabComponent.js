@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
-import VideoButton from '../videoButton';
 import styles from './goingGlobal.module.scss';
+
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
 
 const TabComponent = () => {
   const assetsUrl = getAssetsBaseUrl();
