@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
-import compact from 'lodash/compact';
+import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
-import JobFilter from './JobFilter';
-import JobPreview from './JobPreview';
 import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
-import PositionsRedirectMessage from '../positionsRedirectMessage';
+
+const compact = dynamic(() => import(/* webpackChunkName 'compact' */ 'lodash/compact'));
+const JobFilter = dynamic(() => import(/* webpackChunkName 'JobFilter' */ './JobFilter'));
+const JobPreview = dynamic(() => import(/* webpackChunkName 'JobPreview' */ './JobPreview'));
+const PositionsRedirectMessage = dynamic(() => import(/* webpackChunkName 'PositionsRedirectMessage' */ '../positionsRedirectMessage'));
 
 const Jobs = ({
   backgroundColor, cdnUrl, isRedirect, handleRedirectHide, jobTitle,
