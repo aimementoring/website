@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import UtilityFuncs from '../utilityFuncs';
 import FileUploader from '../fileUploader';
+import { isClientSide } from '../../utils/utilities';
 
 const UploadFormElement = ({ index, formElement }) => {
-  const isDynamicRender = typeof window !== 'undefined';
+  const isDynamicRender = isClientSide();
   useEffect(() => {
     if (isDynamicRender) {
       UtilityFuncs.loadComponent('.upload-field', FileUploader);

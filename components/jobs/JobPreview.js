@@ -1,7 +1,9 @@
 import React from 'react';
 import PropType from 'prop-types';
-import compact from 'lodash/compact';
+import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
+
+const compact = dynamic(() => import(/* webpackChunkName 'compact' */ 'lodash/compact'));
 
 const JobPreview = ({
   name,
