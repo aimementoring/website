@@ -4,6 +4,7 @@ import moment from 'moment';
 import Anchor from '../../common/link';
 import './index.scss';
 
+
 const currentYear = moment().year();
 
 const Footer = ({ location, handleShowIntercom }) => {
