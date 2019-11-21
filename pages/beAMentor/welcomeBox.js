@@ -1,7 +1,8 @@
 import React from 'react';
-import VideoButton from '../../components/videoButton';
+import dynamic from 'next/dynamic';
 import './beAMentor.scss';
 
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const WelcomeBox = () => (

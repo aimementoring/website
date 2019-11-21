@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import classNames from 'classnames';
-import Logo from './logo';
-import TalentMobileMenu from '../mobileMenu/talentMobileMenu';
 import Anchor from '../../common/link';
 // import { TALENT_HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
+
+const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
+const TalentMobileMenu = dynamic(() => import(/* webpackChunkName 'TalentMobileMenu' */ '../mobileMenu/talentMobileMenu'));
 
 const TalentHeader = ({ location, handleTalentItemClicked }) => {
   const [showFirstHeader, setShowFirstHeader] = useState(!location.hash && !location.search);
