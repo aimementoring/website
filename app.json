@@ -113,10 +113,6 @@
       "required": true,
       "value": "false"
     },
-    "REACT_APP_CANONICAL_HOST": {
-      "required": true,
-      "value": "https://aimementoring.com"
-    },
     "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": {
       "required": true,
       "value": "rec8N1DIykET8T9SF"

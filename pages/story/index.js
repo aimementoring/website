@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
 import { getEntries } from '../../services/craftAPI';
-import MatrixBuilder from '../../components/matrixBuilder';
 import { isClientSide } from '../../utils/utilities';
-
 import styles from './story.module.scss';
+
+const MatrixBuilder = dynamic(() => import(/* webpackChunkName 'MatrixBuilder' */ '../../components/matrixBuilder'));
 
 const Story = ({ storySlug, entries }) => {
   const isClient = isClientSide();

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-import Popup from '../../components/goingGlobal/popup';
 import styles from './goingGlobal.module.scss';
+
+const Popup = dynamic(() => import(/* webpackChunkName 'Popup' */ '../../components/goingGlobal/popup'));
 
 const CaseStudies = ({ setReference, handleScrollAfterLastPopup }) => (
   <>
