@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BlogMatrix from './blogMatrix';
-import GeneralMatrix from './generalMatrix';
-import FormMatrix from './formMatrix';
+import dynamic from 'next/dynamic';
+
+const BlogMatrix = dynamic(() => import(/* webpackChunkName 'BlogMatrix' */ './blogMatrix'));
+const GeneralMatrix = dynamic(() => import(/* webpackChunkName 'GeneralMatrix' */ './generalMatrix'));
+const FormMatrix = dynamic(() => import(/* webpackChunkName 'FormMatrix' */ './formMatrix'));
 
 const MatrixMap = {
   blog: BlogMatrix,
