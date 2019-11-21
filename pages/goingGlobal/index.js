@@ -3,17 +3,19 @@ import React, {
   useEffect,
 } from 'react';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { isClientSide } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
-import Intro from './introSection';
-import CaseStudies from './caseStudiesSection';
-import Results from './resultsSection';
-import ImaginationCurriculum from './imaginationCurriculumSection';
-import Resources from './resourcesSection';
-import Register from './registerSection';
-import Message from './messageSection';
 import styles from './goingGlobal.module.scss';
+
+const Intro = dynamic(() => import(/* webpackChunkName 'Intro' */ './introSection'));
+const CaseStudies = dynamic(() => import(/* webpackChunkName 'CaseStudies' */ './caseStudiesSection'));
+const Results = dynamic(() => import(/* webpackChunkName 'Results' */ './resultsSection'));
+const ImaginationCurriculum = dynamic(() => import(/* webpackChunkName 'ImaginationCurriculum' */ './imaginationCurriculumSection'));
+const Resources = dynamic(() => import(/* webpackChunkName 'Resources' */ './resourcesSection'));
+const Register = dynamic(() => import(/* webpackChunkName 'Register' */ './registerSection'));
+const Message = dynamic(() => import(/* webpackChunkName 'Message' */ './messageSection'));
 
 const GoingGlobal = () => {
   const [reloadData, setReloadData] = useState(false);
