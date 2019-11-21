@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
-import Logo from './logo';
 import MyContext from '../../../layouts/context';
 import styles from './header.module.scss';
+
+const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
 
 const ImaginationDeclarationHeader = () => {
   const { imaginationDeclarationNumber } = useContext(MyContext);
