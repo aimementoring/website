@@ -1,18 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropType from 'prop-types';
 import Router from 'next/router';
-import { Components } from 'aime-blueprint';
+import dynamic from 'next/dynamic';
 import { detectCountry, getAllCountries } from '../../utils/country';
 import COUNTRY_CODES from '../../utils/countryCodes';
 import './EOIForm.scss';
 
-const {
-  Input,
-  PhoneInput,
-  Select,
-  Checkbox,
-  Loading,
-} = Components;
+const Input = dynamic(() => import(/* webpackChunkName 'Input' */ 'aime-blueprint/lib/components/input'));
+const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
+const Select = dynamic(() => import(/* webpackChunkName 'Select' */ 'aime-blueprint/lib/components/select'));
+const Checkbox = dynamic(() => import(/* webpackChunkName 'Checkbox' */ 'aime-blueprint/lib/components/checkbox'));
+const Loading = dynamic(() => import(/* webpackChunkName 'Loading' */ 'aime-blueprint/lib/components/loading'));
 
 export default class EOIForm extends PureComponent {
   constructor(props) {
