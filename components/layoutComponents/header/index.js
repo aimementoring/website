@@ -3,50 +3,67 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import TalentHeader from './talentHeader';
-import MenuItem from './menuItem';
-import Logo from './logo';
-import MobileMenu from '../mobileMenu';
-import Anchor from '../../common/link';
-import { HEADER_MENU_ITEMS } from '../../../constants';
-import './index.scss';
+import GoingGlobalHeader from './goingGlobalHeader';
+import ImaginationDeclarationHeader from './imaginationDeclarationHeader';
+import StandardHeader from './standardHeader';
+import { isClientSide } from '../../../utils/utilities';
+import styles from './header.module.scss';
+
+const getHeaderComponent = (pathname) => {
+  let component = 'default';
+  if (pathname.indexOf('/seatontheplane') > -1) {
+    component = 'talent';
+  } else if (pathname.indexOf('/imagination-declaration') > -1 || pathname.indexOf('/imaginationDeclaration') > -1) {
+    component = 'imaginationDeclaration';
+  } else if (pathname.indexOf('/going-global') > -1 || pathname.indexOf('/goingGlobal') > -1) {
+    component = 'goingGlobal';
+  } else if (pathname.indexOf('/hooded-scholar') > -1 || pathname.indexOf('/hoodedScholar') > -1) {
+    component = null;
+  }
+  return component;
+};
+
+const HEADERS_MAP = {
+  default: StandardHeader,
+  talent: TalentHeader,
+  imaginationDeclaration: ImaginationDeclarationHeader,
+  goingGlobal: GoingGlobalHeader,
+};
 
 const Header = ({ location }) => {
-  const [state, setState] = useState({
-    assetsUrl: '',
-    countryOptions: [],
-    className: classNames('header-transparent', {
-      'do-not-display': location.pathname.indexOf('/hooded-scholar') > -1,
-    }),
-    isTalentPage: location.pathname.indexOf('/seatontheplane') > -1,
-    isStudentChapterPage: location.pathname.indexOf('/hooded-scholar') > -1,
-  });
+  const [headerClass, setHeaderClass] = useState(classNames(styles.headerTransparent, {
+    [styles.doNotDisplay]: location.pathname.indexOf('/hooded-scholar') > -1,
+  }));
+  const [headerComponent, setHeaderComponent] = useState(getHeaderComponent(location.pathname));
 
   const handleScroll = () => {
-    setState({
-      ...state,
-      className: classNames({
-        'header-transparent': window.scrollY === 0,
-        'header-filled': window.scrollY > 0,
-        'do-not-display': window.scrollY === 0 && state.isStudentChapterPage,
-      }),
-    });
+    setHeaderClass(classNames({
+      [styles.headerTransparent]: window.scrollY === 0,
+      [styles.doNotDisplay]: window.scrollY === 0 && headerComponent === null,
+      [styles.headerFilled]: window.scrollY > 0,
+      [styles.micrositeHeader]: headerComponent !== StandardHeader,
+    }));
   };
 
+  const isClient = isClientSide();
   useEffect(() => {
-    if (typeof window !== 'undefined') window.addEventListener('scroll', handleScroll);
-
+    if (isClient) window.addEventListener('scroll', handleScroll);
     const cleanup = () => {
-      if (typeof window !== 'undefined') window.removeEventListener('scroll', handleScroll);
+      if (isClient) window.removeEventListener('scroll', handleScroll);
     };
     return cleanup;
   }, []);
 
   useEffect(() => {
-    setState({
-      ...state,
-      isTalentPage: location.pathname.indexOf('/seatontheplane') > -1,
-      isStudentChapterPage: location.pathname.indexOf('/hooded-scholar') > -1,
-    });
+    if (isClient) window.addEventListener('scroll', handleScroll);
+    const cleanup = () => {
+      if (isClient) window.removeEventListener('scroll', handleScroll);
+    };
+    return cleanup;
+  }, [isClient]);
+
+  useEffect(() => {
+    setHeaderComponent(getHeaderComponent(location.pathname));
   }, [location.pathname]);
 
   const handleTalentItemClicked = (item) => {
@@ -54,43 +71,15 @@ const Header = ({ location }) => {
     Router.push(`/seatontheplane${location.search}#${hashtag}`);
   };
 
+  const HeaderComponent = headerComponent ? HEADERS_MAP[headerComponent] : null;
   return (
     <div>
-      <header className={`${state.className} site-header`}>
-        {state.isTalentPage ? (
-          <TalentHeader
+      <header className={headerClass}>
+        {headerComponent && (
+          <HeaderComponent
             location={location}
             handleTalentItemClicked={handleTalentItemClicked}
           />
-        ) : (
-          <div className="container clearfix p3 flex items-center">
-            <div className="sm-col align-middle flex">
-              <Logo />
-            </div>
-            <nav id="nav" className="nav menu-links sm-col-right ml-auto">
-              <ul className="list-reset">
-                {HEADER_MENU_ITEMS.map((item) => <MenuItem key={item.title.replace(/\s/g, '-')} {...item} />)}
-                <li className="inline-block relative header-link--with-submenu">
-                  <div className="intercom-button-nav nav-btn">Get in touch</div>
-                </li>
-                <li className="inline-block">
-                  <a
-                    aria-label="shop"
-                    className="nav-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://shop.aimementoring.com/"
-                  >
-                    Shop
-                  </a>
-                </li>
-                <li className="inline-block">
-                  <Anchor prefetch withData className="nav-btn" to="/donate">Donate</Anchor>
-                </li>
-              </ul>
-            </nav>
-            <MobileMenu />
-          </div>
         )}
       </header>
     </div>
