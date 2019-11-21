@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
-import Picture from '../picture';
 import styles from './storiesContent.module.scss';
+
+const Picture = dynamic(() => import(/* webpackChunkName 'Picture' */ '../picture'));
 
 class StoriesContent extends PureComponent {
   getPostDate = (postDateEntry) => {

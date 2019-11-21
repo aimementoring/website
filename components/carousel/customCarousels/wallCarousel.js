@@ -1,6 +1,8 @@
 import React from 'react';
-import Carousel from '../index';
+import dynamic from 'next/dynamic';
 import './customCarousels.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
 
 const Wall = () => {
   const customCarouselValues = {
