@@ -14,7 +14,6 @@ const MenuItem = ({
   return (
     <li className={styles.listItem} key={`${title}-key`}>
       <Anchor
-        prefetch
         withData
         className={styles.navBtn}
         to={firstHref}
@@ -30,7 +29,6 @@ const MenuItem = ({
         </div>
         {links.map((link) => (
           <Anchor
-            prefetch
             withData
             key={link.href ? link.href : BE_A_MENTOR_TO}
             to={link.href ? link.href : BE_A_MENTOR_TO}
