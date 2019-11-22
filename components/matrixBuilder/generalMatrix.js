@@ -97,7 +97,6 @@ class GeneralMatrix extends PureComponent {
     return (
       <div className="wrap-md w100 clearfix">
         <Anchor
-          withData
           to={block.buttonUrl}
           className={`${block.backgroundColor} ${block.align} basic-btn bold my2`}
           style={{ border: '0' }}
@@ -209,7 +208,6 @@ class GeneralMatrix extends PureComponent {
       <div key={formElement.name} className="wrap w100 clearfix">
         <div className={`${unHideClass} left hide"`}>
           <Anchor
-            withData
             to={block.previousButtonUrl}
             className="block px2 left c-grey bold px2 feature-font-family"
           >
@@ -218,7 +216,6 @@ class GeneralMatrix extends PureComponent {
         </div>
         <div className={`${unHideClass} right hide`}>
           <Anchor
-            withData
             to={block.nextButtonUrl}
             className="block px2 right c-grey bold px2 feature-font-family"
           >
