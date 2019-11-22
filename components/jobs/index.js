@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
 import dynamic from 'next/dynamic';
+import compact from 'lodash/compact';
 import Anchor from '../common/link';
 import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
@@ -9,7 +10,6 @@ import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
 
-const compact = dynamic(() => import(/* webpackChunkName 'compact' */ 'lodash/compact'));
 const JobFilter = dynamic(() => import(/* webpackChunkName 'JobFilter' */ './JobFilter'));
 const JobPreview = dynamic(() => import(/* webpackChunkName 'JobPreview' */ './JobPreview'));
 const PositionsRedirectMessage = dynamic(() => import(/* webpackChunkName 'PositionsRedirectMessage' */ '../positionsRedirectMessage'));
@@ -223,7 +223,7 @@ const Jobs = ({
           <span className="line bg-brand-tertiary mb3 mt1" />
           <p className="pb1 md-pb3 lg-pb3">
             Sorry, there are no positions available at the moment. You can
-            <Anchor prefetch withData to="/beAFriend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
+            <Anchor withData to="/beAFriend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
             {'though and receive updates about everything that\'s happening.'}
           </p>
         </div>
