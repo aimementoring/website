@@ -58,7 +58,6 @@ const JobPreview = ({
   return (
     <div className="homepage-main-actions mb2">
       <Anchor
-        withData
         to="/positions/[positionId]/[jobCategory]"
         as={`/positions/${id}/${nameAsLink}`}
         className="homepage-main-actions--inner"
