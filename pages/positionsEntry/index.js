@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
+import compact from 'lodash/compact';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import bugsnagClient from '../../utils/bugsnag';
@@ -19,7 +20,6 @@ import './positionsEntry.scss';
 
 const CountrySelector = dynamic(() => import(/* webpackChunkName 'CountrySelector' */ 'aime-blueprint/lib/components/countrySelector'));
 const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
-const compact = dynamic(() => import(/* webpackChunkName 'compact' */ 'lodash/compact'));
 const kebabCase = dynamic(() => import(/* webpackChunkName 'kebabCase' */ 'lodash/kebabCase'));
 const FileUploader = dynamic(() => import(/* webpackChunkName 'FileUploader' */ '../../components/fileUploader'));
 const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../../components/addressAutocompleteInput'));

@@ -5,7 +5,7 @@ import Anchor from '../../common/link';
 import styles from './header.module.scss';
 
 const Logo = ({ isStandard }) => (
-  <Anchor prefetch withData className={styles.logoLink} to="/home" as="/">
+  <Anchor withData className={styles.logoLink} to="/home" as="/">
     <svg className={classNames(styles.iconAimeLogo, {
       [styles.standardLogo]: isStandard,
       [styles.microSiteLogo]: !isStandard,

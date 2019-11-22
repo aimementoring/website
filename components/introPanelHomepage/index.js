@@ -40,7 +40,6 @@ const IntroPanelHomepage = () => (
             </p>
             <p>
               <Anchor
-                prefetch
                 withData
                 to="/beAMentor"
                 as="/be-a-mentor"
