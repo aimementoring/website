@@ -40,7 +40,6 @@ const IntroPanelHomepage = () => (
             </p>
             <p>
               <Anchor
-                withData
                 to="/beAMentor"
                 as="/be-a-mentor"
                 className="basic-btn bold bg-brand-primary c-white my3"
