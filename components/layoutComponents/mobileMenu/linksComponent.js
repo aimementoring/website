@@ -9,7 +9,6 @@ const LinksComponent = ({ links, onClick, active }) => (
       {links.map((link) => (
         <li key={link.title} className="py2">
           <Anchor
-            withData
             className={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'} 
               ${active === link.title ? 'active' : ''}`}
             onClick={onClick(link.title)}
