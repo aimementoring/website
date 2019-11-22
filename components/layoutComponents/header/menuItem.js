@@ -14,7 +14,6 @@ const MenuItem = ({
   return (
     <li className={styles.listItem} key={`${title}-key`}>
       <Anchor
-        withData
         className={styles.navBtn}
         to={firstHref}
         as={firstHrefAs}
@@ -29,7 +28,6 @@ const MenuItem = ({
         </div>
         {links.map((link) => (
           <Anchor
-            withData
             key={link.href ? link.href : BE_A_MENTOR_TO}
             to={link.href ? link.href : BE_A_MENTOR_TO}
             as={link.href ? link.href : BE_A_MENTOR_AS}
