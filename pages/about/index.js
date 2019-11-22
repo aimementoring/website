@@ -5,7 +5,6 @@ import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
-const Title = dynamic(() => import(/* webpackChunkName 'Title' */ 'aime-blueprint/lib/components/title'));
 const HeroBannerAbout = dynamic(() => import(/* webpackChunkName 'HeroBannerAbout' */ '../../components/heroBannerAbout'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -31,10 +30,10 @@ const About = () => (
               </h1>
             </div>
             <div className={styles.copy}>
-              <Title type="mainTitle" theme={process.env.REACT_APP_THEME}>
+              <h3 className={styles.whiteTitleWithMargin}>
                 {`We are driven to unlock the limitless potential of children who have been left
                 behind`}
-              </Title>
+              </h3>
               <p className={styles.whiteText}>
                 We do that by building mentoring bridges between universities and high schools,
                 between the powerful and the powerless, the haves and the have nots. We know that
