@@ -22,7 +22,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/beAMentor"
                           as="/be-a-mentor"
                           className="c-white text-decoration-none"
@@ -47,7 +46,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/donate"
                           className="toggleRaiselyModal c-white text-decoration-none"
                         >
@@ -72,7 +70,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/theMentor"
                           as="/the-mentor"
                           className="c-white text-decoration-none"
@@ -82,7 +79,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/about"
                           className="c-white text-decoration-none"
                         >
@@ -91,7 +87,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/founder"
                           as="/jack-manning-bancroft"
                           className="c-white text-decoration-none"
@@ -106,7 +101,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
-                          withData
                           to="/positions"
                           className="c-white text-decoration-none"
                         >
@@ -162,7 +156,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                 <ul className="list-reset flex flex-column lg-flex-row">
                   <li className="flex">
                     <Anchor
-                      withData
                       to="/termsOfService"
                       as="/terms-of-service"
                       className="footer-text mr3"
