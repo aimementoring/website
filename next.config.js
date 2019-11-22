@@ -14,6 +14,7 @@ module.exports = withOffline(
       cssLoaderOptions: {
         importLoaders: 1,
         localIdentName: '[local]',
+        // localIdentName: '[local]___[hash:base64:5]',
       },
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
