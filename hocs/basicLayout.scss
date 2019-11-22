@@ -47,7 +47,7 @@ body {
   }
 
   nav a {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
 
     &.active {
       color: $black;
@@ -55,7 +55,7 @@ body {
     }
 
     + a {
-      margin-left: 10px;
+      // margin-left: 10px;
       padding-left: 10px;
       border-left: 1px solid $black;
     }
