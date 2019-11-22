@@ -37,9 +37,9 @@ app.prepare().then(() => {
   server.get('/', (req, res) => ssrCache({ req, res, pagePath: '/' }));
 
   // Positions
-  server.get('/:country/positions', (req, res) => {
+  server.get('/:countryId/positions', (req, res) => {
     const pagePath = '/positions';
-    const queryParams = { country: req.params.country };
+    const queryParams = { countryId: req.params.countryId };
     return ssrCache({
       req, res, pagePath, queryParams,
     });
@@ -58,12 +58,12 @@ app.prepare().then(() => {
   });
 
   // Positions
-  server.get('/:country/positions/:id/:jobCategory', (req, res) => {
+  server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
     const pagePath = '/positionsEntry';
     const queryParams = {
       id: req.params.id,
       jobCategory: req.params.jobCategory,
-      country: req.params.country,
+      countryId: req.params.countryId,
     };
     return ssrCache({
       req, res, pagePath, queryParams,
