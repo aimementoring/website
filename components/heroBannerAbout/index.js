@@ -1,36 +1,34 @@
 import React from 'react';
-import './index.scss';
+import styles from './heroBannerAbout.module.scss';
 
 const HeroBannerAbout = () => (
-  <>
-    <div className="hero-banner--about full-width-wrap">
-      <div className="flex flex-wrap items-center">
-        <div className="banner-wrapper">
-          <h1>
-            <span className="pre-text">We build</span>
-            <span className="highlight-text m3">
-              <em>
-                Mentoring
-                <br />
-                <span className="scratch-underline">&nbsp;</span>
-              </em>
+  <div className={styles.heroBannerAbout}>
+    <div className={styles.heroBannerAboutContent}>
+      <div className={styles.bannerWrapper}>
+        <h1>
+          <span className={styles.preText}>We build</span>
+          <span className={styles.highlightText}>
+            <em>
+              Mentoring
               <br />
-              <em>
-                Bridges
-                <br />
-                <span className="scratch-underline">&nbsp;</span>
-              </em>
-            </span>
-            <span className="post-text right right-align">
-              <span className="pr3">between universities</span>
+              <span className={styles.scratchUnderline}>&nbsp;</span>
+            </em>
+            <br />
+            <em>
+              Bridges
               <br />
-              <span>and schools</span>
-            </span>
-          </h1>
-        </div>
+              <span className={styles.scratchUnderline}>&nbsp;</span>
+            </em>
+          </span>
+          <span className={styles.postText}>
+            <span className={styles.subText}>between universities</span>
+            <br />
+            <span>and schools</span>
+          </span>
+        </h1>
       </div>
     </div>
-  </>
+  </div>
 );
 
 export default HeroBannerAbout;
