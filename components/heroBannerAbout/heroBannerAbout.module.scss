@@ -1,0 +1,91 @@
+@import "../../styles/base/variables";
+
+@import "../../styles/baseClasses/scratchUnderline";
+
+.heroBannerAbout {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+
+  .heroBannerAboutContent {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bannerWrapper {
+    align-items: center;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url($cdnRoot+"assets/images/about/banner-about.jpg") no-repeat center
+      center #050301;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    height: 93vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-device-width: 1024px) {
+      background-attachment: scroll;
+    }
+  }
+}
+
+.preText {
+  display: block;
+  font-style: italic;
+  font-weight: 900;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$base-font-size} + 0.6rem);
+  }
+}
+
+.postText {
+  float: right;
+  font-style: italic;
+  font-weight: 900;
+  position: relative;
+  text-align: right;
+  z-index: 2;
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$base-font-size} + 0.6rem);
+  }
+
+  .subText {
+    padding-right: 2rem;
+  }
+}
+
+.highlightText {
+  color: $white;
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  font-family: "blackhawk_italicregular";
+  font-size: $highlight-text-font-size;
+  font-weight: 100;
+  line-height: 1.9rem;
+  margin: 2rem;
+  position: relative;
+  transform: rotate(-3deg);
+  z-index: 1;
+
+  @media all and(min-width: $md) {
+    font-size: calc(#{$highlight-text-font-size} + 3rem);
+    line-height: 3.5rem;
+    padding: 15px 87px 30px 35px;
+  }
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$highlight-text-font-size} + 4.5rem);
+    line-height: 4.2rem;
+  }
+}
