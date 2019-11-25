@@ -54,8 +54,8 @@ export const capitaliseString = (stringValue, replaceValue) => (
 // removes special characters on standard en-us keyboard config
 export const removeSpecialCharacters = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[$&+,:;=?@#|'<>.^*()%!-._\\/`~[]{}0-9]+/g, replaceValue)
-    : stringValue.replace(/[$&+,:;=?@#|'<>.^*()%!-._\\/`~[]{}0-9]*/g, '')
+    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}0-9]+/g, replaceValue)
+    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}0-9]*/g, '')
 );
 
 // removes all numbers in a string
@@ -66,6 +66,6 @@ export const removeNumbers = (stringValue, replaceValue) => (
 // returns only the number in a string removing letters and special characters
 export const getOnlyNumbers = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-._\\/`~[]{}]+/g, replaceValue)
-    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-._\\/`~[]{}]*/g, '')
+    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}]+/g, replaceValue)
+    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}]*/g, '')
 );
