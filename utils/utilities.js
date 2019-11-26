@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+import moment from 'moment';
 import { getFromStorage } from './localStorage';
 
 export const isClientSide = () => typeof window !== 'undefined';
@@ -54,8 +56,8 @@ export const capitaliseString = (stringValue, replaceValue) => (
 // removes special characters on standard en-us keyboard config
 export const removeSpecialCharacters = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}0-9]+/g, replaceValue)
-    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}0-9]*/g, '')
+    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}0-9]+/g, replaceValue)
+    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}0-9]*/g, '')
 );
 
 // removes all numbers in a string
@@ -66,6 +68,20 @@ export const removeNumbers = (stringValue, replaceValue) => (
 // returns only the number in a string removing letters and special characters
 export const getOnlyNumbers = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}]+/g, replaceValue)
-    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[]{}]*/g, '')
+    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}]+/g, replaceValue)
+    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}]*/g, '')
 );
+
+// replace whitespace with any character or no space
+export const replaceWhiteSpace = (stringValue, replaceValue) => (
+  replaceValue
+    ? stringValue.replace(/[\s]/g, replaceValue)
+    : stringValue.replace(/[\s]+/g, '')
+);
+
+export const formatDate = (publishDate) => {
+  const splitDateTime = publishDate.slice(0, -1).split('T');
+  const dateComponent = splitDateTime[0];
+  const datePublished = moment(dateComponent);
+  return datePublished.format('D.M.YYYY');
+};
