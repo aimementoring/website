@@ -3,28 +3,26 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
-// import { getEntries } from '../../services/craftAPI';
 import contentfulServer from '../../api/contentfulServer';
-// import storiesList from '../../constants/storiesList';
 import { removeSpecialCharacters, replaceWhiteSpace } from '../../utils/utilities';
 import styles from './storiesTwo.module.scss';
 
-const StoriesContentTwo = dynamic(() => import('../../components/storiesContentTwo'));
+const StoriesContentTwo = dynamic(() => import(/* webpackChunkName 'StoriesContentTwo' */ '../../components/storiesContentTwo'));
 const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../../components/carousel'));
 
 const StoriesTwo = () => {
   // const [error, setError] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [entries, setEntries] = useState([]); // storiesList.data
 
   const getContentful = () => {
     contentfulServer().then((response = []) => {
       if (!response || response === 'undefined') {
       // setError(true);
-      // setIsLoading(false);
+        setIsLoading(false);
       } else {
       // setError(false);
-      // setIsLoading(false);
+        setIsLoading(false);
         setEntries(response);
       }
     });
@@ -34,11 +32,8 @@ const StoriesTwo = () => {
     getContentful();
   }, []);
 
-  // console.log("TCL: Stories -> entries", entries);
   const storyCarousel = entries.length && (
     entries.slice(0, 3).map((entry) => {
-      // eslint-disable-next-line no-console
-      console.log('TCL: StoriesTwo -> entry', entry);
       const title = removeSpecialCharacters(entry.fields.title);
       const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
       const bannerImage = entry.fields.banner.fields.visualMedia.fields.file.url;
@@ -60,6 +55,7 @@ const StoriesTwo = () => {
     entries.map((entry) => {
       const title = removeSpecialCharacters(entry.fields.title);
       const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
+      const creatorName = entry.fields.contentCreator.fields.authorName;
       const bannerContent = entry.fields.banner && entry.fields.banner;
       return (
         <StoriesContentTwo
@@ -67,44 +63,51 @@ const StoriesTwo = () => {
           id={entry.sys.id}
           title={title}
           slugTitle={slugTitle}
-          bannerContent={bannerContent}
+          contentCreator={creatorName}
+          bannerContent={bannerContent.fields}
           publishDate={entry.fields.publishDate}
           contentCards={entry.fields.contentCards}
           contentPreview={entry.fields.contentPreview}
-          contentCreator={entry.fields.contentCreator.fields.authorName}
         />
       );
     }));
 
   return (
     <Layout>
-      <div className={styles.carouselContainer}>
-        {entries.length && (
-          <>
-            <div className={styles.carousel}>
-              <Carousel>
-                {storyCarousel}
-              </Carousel>
-            </div>
-            <aside className={styles.refineSearch}>
-              <div className={styles.refineSection}>
-                <h2 className={styles.storiesTitle}>
-                  {'Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!'}
-                </h2>
-                <span className={styles.line} />
-                <div className={styles.mobilePanel}>
-                  <p className={styles.storiesParagraph}>
-                    {`AIME has been delivering kindness through mentoring for 14 years.
-                Each year we release a Book of Kindness with tales of human generosity.
-                Here are some of those stories of hope, positivity and change...`}
-                  </p>
+      {isLoading
+        ? null : (
+          <div className={styles.carouselContainer}>
+            {entries.length && (
+              <>
+                <div className={styles.carousel}>
+                  <Carousel>
+                    {storyCarousel}
+                  </Carousel>
                 </div>
-              </div>
-            </aside>
-            {storyContent}
-          </>
+                <aside className={styles.refineSearch}>
+                  <div className={styles.refineSection}>
+                    <h2 className={styles.storiesTitle}>
+                      {'Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!'}
+                    </h2>
+                    <span className={styles.line} />
+                    <div className={styles.mobilePanel}>
+                      <p className={styles.storiesParagraph}>
+                        {`AIME has been delivering kindness through mentoring for 14 years.
+                          Each year we release a Book of Kindness with tales of human generosity.
+                          Here are some of those stories of hope, positivity and change...`}
+                      </p>
+                    </div>
+                  </div>
+                </aside>
+                <div className={styles.storiesContainer}>
+                  <div className={styles.storiesGrid}>
+                    {storyContent}
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         )}
-      </div>
     </Layout>
   );
 };
@@ -139,10 +142,10 @@ const StoriesCarousel = (props) => {
           >
             <p className={styles.tag}>Featured</p>
             <h1 className={styles.title}>{title}</h1>
-            {contentPreview && contentPreview.fields.previewCopy
+            {contentPreview && contentPreview.previewCopy
               ? (
                 <p className={styles.productTitle}>
-                  {`${contentPreview.fields.previewCopy.slice(0, 230)}...`}
+                  {`${contentPreview.previewCopy.slice(0, 230)}...`}
                 </p>
               )
               : contentCards.slice(0, 1).map((card) => (
@@ -151,7 +154,11 @@ const StoriesCarousel = (props) => {
                           && (`${card.fields.contentCopy.slice(0, 99)} …`)}
                 </p>
               ))}
-            <Anchor to={`/storyTwo/${slugTitle}`} className={styles.carouselLink}>
+            <Anchor
+              to={`/storyTwo?slug=${slugTitle}`}
+              as={`/storyTwo/${slugTitle}`}
+              className={styles.carouselLink}
+            >
               Read More
             </Anchor>
           </div>
@@ -189,7 +196,7 @@ StoriesCarousel.propTypes = {
 
     })),
   })).isRequired,
-  contentPreview: PropTypes.arrayOf(PropTypes.shape({
+  contentPreview: PropTypes.shape({
     Type: PropTypes.string,
     previewCopy: PropTypes.string,
     displayType: PropTypes.string,
@@ -211,7 +218,7 @@ StoriesCarousel.propTypes = {
     visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
 
     })),
-  })),
+  }),
 };
 
 StoriesCarousel.defaultProps = {

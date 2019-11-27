@@ -11,22 +11,6 @@
   }
 }
 
-.storiesContainer {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding-bottom: 4rem;
-  padding-top: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.storiesGrid {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  display: grid;
-  grid-gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .articleTile {
   border-color: $light-grey;
   border-radius: $border-radius;

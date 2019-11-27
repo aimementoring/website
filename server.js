@@ -91,20 +91,11 @@ app.prepare().then(() => {
   });
 
   // StoryTwo
-  server.get('/storyTwo/:slugTitle', (req, res) => {
+  server.get('/storyTwo/:slug', (req, res) => {
     const pagePath = '/storyTwo';
     const queryParams = {
-      slugTitle: req.params.slugTitle,
+      slug: req.params.slug,
     };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
-
-  // StoryTwo
-  server.get('/blog/:slugTitle', (req, res) => {
-    const pagePath = '/storyTwo';
-    const queryParams = { slugTitle: req.params.slugTitle };
     return ssrCache({
       req, res, pagePath, queryParams,
     });

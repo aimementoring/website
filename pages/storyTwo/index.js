@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useEffect } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 // import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-// import contentfulServer from '../../api/contentfulServer';
-import { isClientSide, formatDate } from '../../utils/utilities';
+import contentfulServer from '../../api/contentfulServer';
+import {
+  formatDate,
+  removeSpecialCharacters,
+  replaceWhiteSpace,
+} from '../../utils/utilities';
 import styles from './storyTwo.module.scss';
 
 /*
@@ -14,149 +18,130 @@ import styles from './storyTwo.module.scss';
 */
 
 const StoryTwo = (props) => {
-  const {
-    title,
-    slugTitle,
-    bannerContent,
-    publishDate,
-    contentCards,
-    // contentCreator,
-  } = props;
-  const isClient = isClientSide();
-  const datePublished = formatDate(publishDate);
-  const bannerImage = bannerContent.fields.visualMedia.fields.file.url;
-  // eslint-disable-next-line no-console
-  console.log('TCL: StoryTwo -> title', title);
-  useEffect(() => {
-    if (isClient && Router.pathname.split('/')[1] === 'blog') {
-      Router.push(`/storyTwo/${slugTitle}`);
-    }
-  }, [isClient]);
-
-  const bannerStyles = {
-    backgroundPosition: '0% 25%',
-    backgroundImage:
-      bannerImage && bannerImage
-        ? `url(https:${bannerImage})`
-        : '',
-    maxWidth: '100%',
-  };
-
-  const storyContent = contentCards
-    && contentCards.map((card) => {
-      // eslint-disable-next-line no-console
-      console.log('TCL: StoryTwo -> card', card);
-      const image = card.fields.visualMedia && card.fields.visualMedia.fields.file.url;
-      const displayType = card.fields.displayType && card.fields.displayType;
-      const video = card.fields.videoMedia && card.fields.videoMedia.fields.embeddedVideoUrl;
-      const storyBody = card.fields.contentCopy && card.fields.contentCopy;
-
-      return (
-        <div key={card.sys.id}>
-          {card.fields.videoMedia
-          && card.fields.Type.toLowerCase() === 'video' ? (<Video video={video} title={title} />
-            ) : (
-              card.fields.Type.toLowerCase() === 'visual media' && (
-                <Picture
-                  image={image}
-                  title={title}
-                  displayType={displayType}
-                  thumbnail={false}
-                />
-              )
-            )}
-          <div
-            key={`article-description-${card.sys.id}`}
-            className="articleDescription"
-          >
-            <p className="articleTileLabel">{storyBody}</p>
-          </div>
-        </div>
-      );
-    });
+  const { content } = props;
+  const router = useRouter();
 
   return (
-    <div>
-      <div>
-        {bannerContent && (
-          <div className={styles.bannerInStory} style={bannerStyles} />
-        )}
-        <div>
-          {contentCards && (
-            <div className={styles.entriesContainer}>
-              <article className={styles.blogPost}>
-                <h1 className={styles.blogPostTitle}>{title}</h1>
-                <div>
-                  {publishDate && (
-                    <span className={styles.blogPostTimestamp}>
-                      {`Posted ${datePublished}`}
-                    </span>
-                  )}
-                </div>
-                <article className={styles.blogPostArticle} />
-                <div>
-                  {storyContent}
-                </div>
-                <Anchor to="/storiesTwo" className={styles.articleTileLink}>
-                  <i className={styles.materialIcons}>keyboard_backspace</i>
-                  {' '}
-                  Back to Stories
-                </Anchor>
-              </article>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+    <>
+      {
+        content && content.map((entry) => {
+          const bannerImage = entry.fields.banner
+          && entry.fields.banner.fields.visualMedia.fields.file.url;
+
+          const bannerStyles = {
+            backgroundPosition: '0% 25%',
+            backgroundImage: bannerImage && `url(https:${bannerImage})`,
+            maxWidth: '100%',
+          };
+
+          const title = removeSpecialCharacters(entry.fields.title);
+          const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
+
+          return (
+            <Fragment key={entry.sys.id}>
+              {(() => {
+                switch (router.query.slug) {
+                case slugTitle:
+                  return (
+                    <div>
+                      <div>
+                        <div className={styles.bannerInStory} style={bannerStyles} />
+                        <div>
+                          <div className={styles.entriesContainer}>
+                            <article className={styles.blogPost}>
+                              <h1 className={styles.blogPostTitle}>{entry.fields.title}</h1>
+                              <div>
+                                <span className={styles.blogPostTimestamp}>
+                                  {`Posted ${formatDate(entry.fields.publishDate)}`}
+                                </span>
+                              </div>
+                              <article className={styles.blogPostArticle} />
+                              <div>
+                                <ContentCard contentCards={entry.fields.contentCards} />
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                default:
+                  return null; // this should be a fall back component
+                }
+              })()}
+            </Fragment>
+          );
+        })
+      }
+      <Anchor to="/storiesTwo" className={styles.articleTileLink}>
+        <i className={styles.materialIcons}>keyboard_backspace</i>
+        {' '}
+        Back to Stories
+      </Anchor>
+    </>
   );
 };
-/*
-StoryTwo.getInitialProps = async () => {
-  const client = contentfulServer();
-  const content = await client.then((response) => response.map((entry) => entry));
-  const entries = await Promise.all(content);
 
-  // eslint-disable-next-line no-console
-  console.log(entries);
-  return {
-    title: entries.fields.title,
-    slugTitle: entries.fields.title,
-    bannerContent: entries.fields.bannerContent,
-    publishDate: entries.fields.publishDate,
-    contentCards: entries.fields.contentCards,
-  };
+StoryTwo.getInitialProps = async (/* { query } */) => {
+  const client = contentfulServer();
+  const content = await client.then((response) => response);
+
+  return { content };
 };
-*/
+
 StoryTwo.propTypes = {
-  title: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string,
-  publishDate: PropTypes.string,
-  /* contentCreator: PropTypes.string, */
-  bannerContent: PropTypes.arrayOf(PropTypes.shape({
-    displayType: PropTypes.string,
-    heading: PropTypes.arrayOf(PropTypes.shape({
-      headingText: PropTypes.string,
-      type: PropTypes.string,
-    })),
-    visualMedia: PropTypes.arrayOf(PropTypes.shape({
-      description: PropTypes.string,
-      fileName: PropTypes.string,
+  content: PropTypes.arrayOf(PropTypes.shape({
+    fields: PropTypes.shape({
       title: PropTypes.string,
-      file: PropTypes.arrayOf(PropTypes.shape({
-        contentType: PropTypes.string,
-        details: PropTypes.arrayOf(PropTypes.shape({
-          size: PropTypes.number,
-          image: PropTypes.arrayOf(PropTypes.shape({
-            height: PropTypes.number,
-            width: PropTypes.number,
-          })),
-        })),
-        fileName: PropTypes.string,
-        url: PropTypes.string.isRequired,
-        title: PropTypes.string,
-      })),
-    })),
+      contentType: PropTypes.string,
+      contentTag: PropTypes.object,
+      banner: PropTypes.object,
+      contentCreator: PropTypes.object,
+      publishDate: PropTypes.string,
+      contentCards: PropTypes.array,
+    }),
   })).isRequired,
+};
+
+const ContentCard = (props) => {
+  const { contentCards } = props;
+
+  return (
+    <>
+      {contentCards
+          && contentCards.map((card) => {
+            const image = card.fields.visualMedia && card.fields.visualMedia.fields.file.url;
+            const displayType = card.fields.displayType && card.fields.displayType;
+            const video = card.fields.videoMedia && card.fields.videoMedia.fields.embeddedVideoUrl;
+            const storyBody = card.fields.contentCopy && card.fields.contentCopy;
+            return (
+              <div key={card.sys.id}>
+                {card.fields.videoMedia
+              && card.fields.Type.toLowerCase() === 'video' ? (<Video video={video} title="abcd" />
+                  ) : (
+                    card.fields.Type.toLowerCase() === 'visual media' && (
+                      <Picture
+                        image={image}
+                        title="abcd"
+                        displayType={displayType}
+                        thumbnail={false}
+                      />
+                    )
+                  )}
+                <div
+                  key={`article-description-${card.sys.id}`}
+                  className="articleDescription"
+                >
+                  <p className="articleTileLabel">{storyBody}</p>
+                </div>
+              </div>
+            );
+          })}
+    </>
+  );
+};
+
+ContentCard.propTypes = {
   contentCards: PropTypes.arrayOf(PropTypes.shape({
     Type: PropTypes.string,
     contentCopy: PropTypes.string,
@@ -181,14 +166,6 @@ StoryTwo.propTypes = {
     })),
   })).isRequired,
 };
-
-StoryTwo.defaultProps = {
-  slugTitle: '',
-  publishDate: '',
-  /* contentCreator: '', */
-};
-
-export default StoryTwo;
 
 const Video = (props) => {
   const { video, title } = props;
@@ -311,3 +288,5 @@ Picture.propTypes = {
   thumbnail: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+export default StoryTwo;
