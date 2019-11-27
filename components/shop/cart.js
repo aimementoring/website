@@ -44,7 +44,7 @@ const Cart = ({ checkout, client }) => {
   };
 
   const getDefaultImage = (item) => {
-    const attr = item.customAttributes.find(({ key }) => key === 'image');
+    const attr = item.customAttributes.find(({ attribute }) => attribute === 'image');
     return attr && attr.value;
   };
 
