@@ -57,6 +57,7 @@ const StoriesTwo = () => {
       const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
       const creatorName = entry.fields.contentCreator.fields.authorName;
       const bannerContent = entry.fields.banner && entry.fields.banner;
+      const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
         <StoriesContentTwo
           key={entry.sys.id}
@@ -67,7 +68,7 @@ const StoriesTwo = () => {
           bannerContent={bannerContent.fields}
           publishDate={entry.fields.publishDate}
           contentCards={entry.fields.contentCards}
-          contentPreview={entry.fields.contentPreview}
+          contentPreview={contentPreview}
         />
       );
     }));
@@ -151,7 +152,7 @@ const StoriesCarousel = (props) => {
               : contentCards.slice(0, 1).map((card) => (
                 <p className={styles.productTitle} key={card.sys.id}>
                   {card.fields.contentCopy
-                          && (`${card.fields.contentCopy.slice(0, 99)} …`)}
+                          && (`${card.fields.contentCopy.slice(0, 240)} …`)}
                 </p>
               ))}
             <Anchor

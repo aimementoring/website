@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 // import Router, { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import contentfulServer from '../../api/contentfulServer';
@@ -11,8 +11,11 @@ import {
   replaceWhiteSpace,
 } from '../../utils/utilities';
 import styles from './storyTwo.module.scss';
+import ContentCard from '../../components/contentCard';
 
-const ContentCard = dynamic(() => import(/* webpackChunkName 'ContentCard' */ '../../components/contactCard'));
+// const ContentCard = dynamic(() =>
+// import(/* webpackChunkName 'ContentCard' */ '../../components/contentCard'));
+// dynamic load is only loading the .js as stated in docs not sure if this is useful here.
 
 const StoryTwo = (props) => {
   const { content, slug } = props;
