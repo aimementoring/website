@@ -86,7 +86,6 @@ StoryTwo.getInitialProps = async ({ query }) => {
 };
 
 StoryTwo.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   slug: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.shape({
     fields: PropTypes.shape({
