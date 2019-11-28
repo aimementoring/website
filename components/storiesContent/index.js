@@ -89,7 +89,13 @@ const BannerImage = ({ image }) => (
 );
 
 BannerImage.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    image: PropTypes.string,
+    placeholder: PropTypes.string,
+    srcset: PropTypes.string,
+    title: PropTypes.string,
+    webp: PropTypes.shape({}),
+  }).isRequired,
 };
 
 export default StoriesContent;

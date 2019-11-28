@@ -74,6 +74,15 @@ const VideoFormElement = ({ index, formElement }) => {
           frameBorder="0"
         />
       )}
+      {name.toLowerCase() === 'google photos' && ( // this is a temp solution
+        <iframe
+          title="Google-photos-video"
+          width="640"
+          height="360"
+          src={mp4Video}
+          frameBorder="0"
+        />
+      )}
     </div>
   );
 };
