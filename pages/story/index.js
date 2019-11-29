@@ -53,16 +53,17 @@ const Story = ({ storySlug, entries }) => {
                     </span>
                   )}
                 </div>
-                <article className={styles.blogPostArticle} />
-                <div>
-                  {entries.post && <MatrixBuilder formData={entries.post} matrixType="blog" />}
-                </div>
+                <article className={styles.blogPostArticle}>
+                  <div>
+                    {entries.post && <MatrixBuilder formData={entries.post} matrixType="blog" />}
+                  </div>
 
-                <Anchor to="/stories" className={styles.articleTileLink}>
-                  <i className={styles.materialIcons}>keyboard_backspace</i>
-                  {' '}
-                  Back to Stories
-                </Anchor>
+                  <Anchor to="/stories" className={styles.articleTileLink}>
+                    <i className={styles.materialIcons}>keyboard_backspace</i>
+                    {' '}
+                    Back to Stories
+                  </Anchor>
+                </article>
               </article>
             </div>
           )}
