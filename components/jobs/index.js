@@ -175,7 +175,7 @@ const Jobs = ({
                   life's energy into it!`}
               </p>
             ) : (
-              <p>
+              <p className="lh-base">
                 {`
                       We are here to sprint the marathon, think of your time at AIME as 
                       the hardest, fastest, longest sprint of your life. If you do 3 
