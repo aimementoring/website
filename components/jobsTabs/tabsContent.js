@@ -13,7 +13,7 @@ const TabsContent = ({ countryId, active }) => (
       <div className="flex items-start col-12 sm-col-6">
         <div className="mb2">
           <h1 className="inline-block lh-base mb1">Experience like no other.</h1>
-          <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">
+          <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1 lh-base">
             {`A chance to lead, to learn and to be pushed to achieve limits you didn't even
             know you had.`}
           </p>
@@ -206,7 +206,7 @@ const TabsContent = ({ countryId, active }) => (
       <div className="flex items-start w100">
         <div className="mb2 w100">
           <h1 className="inline-block lh-base mb1">Salary Guide.</h1>
-          <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">
+          <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1 lh-base">
             This salary table should help guide current and prospective staff around
             whether this value package lines up with your respective expectations and
             desires. Please note this table is a guide only and more specific information
@@ -310,7 +310,7 @@ const TabsContent = ({ countryId, active }) => (
             </div>
           </div>
           <p className="f-15 light c-grey block pt1">Note:</p>
-          <ul className="f-15 light c-grey block pl3">
+          <ul className="f-15 light c-grey block pl3 lh-base">
             <li className="mb1">
               Numbers above are in thousands. It is a range from which AIME sets it
               salaries. For example, we may open up a role seeking varied levels of
