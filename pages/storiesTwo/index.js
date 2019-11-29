@@ -34,16 +34,16 @@ const StoriesTwo = () => {
 
   const storyCarousel = entries.length && (
     entries.slice(0, 3).map((entry) => {
-      const title = removeSpecialCharacters(entry.fields.title);
-      const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
+      const slugTitle = removeSpecialCharacters(entry.fields.title);
+      const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const bannerImage = entry.fields.banner.fields.visualMedia.fields.file.url;
       return (
         <StoriesCarousel
           key={entry.sys.id}
           id={entry.sys.id}
-          title={title}
-          slugTitle={slugTitle}
+          slugTitle={slug}
           bannerImage={bannerImage}
+          title={entry.fields.title}
           contentPreview={entry.fields.contentPreview}
           contentCards={entry.fields.contentCards}
         />
@@ -53,8 +53,8 @@ const StoriesTwo = () => {
 
   const storyContent = entries.length && (
     entries.map((entry) => {
-      const title = removeSpecialCharacters(entry.fields.title);
-      const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
+      const slugTitle = removeSpecialCharacters(entry.fields.title);
+      const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const creatorName = entry.fields.contentCreator.fields.authorName;
       const bannerContent = entry.fields.banner && entry.fields.banner;
       const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
@@ -62,13 +62,13 @@ const StoriesTwo = () => {
         <StoriesContentTwo
           key={entry.sys.id}
           id={entry.sys.id}
-          title={title}
-          slugTitle={slugTitle}
+          slugTitle={slug}
+          title={entry.fields.title}
           contentCreator={creatorName}
+          contentPreview={contentPreview}
           bannerContent={bannerContent.fields}
           publishDate={entry.fields.publishDate}
           contentCards={entry.fields.contentCards}
-          contentPreview={contentPreview}
         />
       );
     }));

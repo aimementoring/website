@@ -13,31 +13,29 @@ const ContentCard = (props) => {
     <>
       {contentCards
         && contentCards.map((card) => {
-          const image = card.fields.visualMedia && card.fields.visualMedia.fields.file.url;
-          const title = card.fields.visualMedia && card.fields.visualMedia.fields.title;
-          const isGif = card.fields.visualMedia
-            && card.fields.visualMedia.fields.file.fileName
-              .toLowerCase()
-              .indexOf('.gif') > -1;
-          const video = card.fields.videoMedia
-            && card.fields.videoMedia.fields.embeddedVideoUrl;
-          const videoPlatform = card.fields.videoMedia && card.fields.videoMedia.fields.platform;
+          const hasMedia = card.fields.visualMedia;
+          const image = hasMedia && hasMedia.fields.file.url;
+          const title = hasMedia && hasMedia.fields.title;
+          const isGif = hasMedia && hasMedia.fields.file.fileName.toLowerCase().indexOf('.gif') > -1;
+          const hasVideo = card.fields.videoMedia;
+          const video = hasMedia && hasMedia.fields.embeddedVideoUrl;
+          const videoPlatform = hasMedia && hasMedia.fields.platform;
           const storyBody = card.fields.contentCopy && card.fields.contentCopy;
 
           return (
             <Fragment key={card.sys.id}>
-              {card.fields.videoMedia
-              && card.fields.Type.toLowerCase() === 'video' ? (<VideoFormElement formElement={{ mp4Video: video, name: videoPlatform }} />
-                ) : (
-                  card.fields.Type.toLowerCase() === 'visual media' && (
-                    <Picture
-                      image={{
-                        image: `https:${image}${isGif ? '' : '?fm=jpg&fl=progressive'}`,
-                        title,
-                      }}
-                    />
-                  )
-                )}
+              {hasVideo ? (
+                <VideoFormElement formElement={{ mp4Video: video, name: videoPlatform }} />
+              ) : (
+                hasMedia && (
+                  <Picture
+                    image={{
+                      image: `https:${image}${isGif ? '' : '?fm=jpg&fl=progressive'}`,
+                      title,
+                    }}
+                  />
+                )
+              )}
               <div className="articleDescription">
                 <p className="articleTileLabel">{storyBody}</p>
               </div>
@@ -75,11 +73,3 @@ ContentCard.propTypes = {
 };
 
 export default ContentCard;
-
-/*
-<>
-  {(() => {
-    switch (slug) {
-    case 'inline':
-      return (<div />)}})}</>
-      */
