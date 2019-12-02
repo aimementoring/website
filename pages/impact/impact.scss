@@ -422,3 +422,8 @@
 .gradient-purple {
   background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
 }
+
+.text-highlight.purple a {
+  text-decoration: none;
+  color: $white;
+}
