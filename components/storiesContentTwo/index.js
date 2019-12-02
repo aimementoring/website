@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { formatDate } from '../../utils/utilities';
@@ -7,70 +7,75 @@ import styles from './storiesContentTwo.module.scss';
 
 const Picture = dynamic(() => import(/* webpackChunkName 'Picture' */ '../picture'));
 
-class StoriesContentTwo extends PureComponent {
-  render() {
-    const {
-      id,
-      title,
-      slugTitle,
-      bannerContent,
-      publishDate,
-      contentCards,
-      contentCreator,
-      contentPreview,
-    } = this.props;
+const StoriesContentTwo = (props) => {
+  const {
+    id,
+    title,
+    slugTitle,
+    bannerContent,
+    publishDate,
+    contentCards,
+    contentCreator,
+    contentPreview,
+  } = props;
 
-    const datePublished = formatDate(publishDate, 'short');
-    const bannerImage = bannerContent.visualMedia.fields.file.url;
+  // The extra paramenter "short" for the formatDate function,
+  // is because the date format on story page is different to date format on the grid of stories.
+  const datePublished = formatDate(publishDate, 'short');
+  const bannerImage = bannerContent.visualMedia.fields.file.url;
 
-    return (
-      <>
-        <Anchor
-          to={`/storyTwo?slug=${slugTitle}`}
-          as={`/storyTwo/${slugTitle}`}
-          className={styles.articleLink}
-        >
-          <article key={`article-story-${id}`} className={styles.articleTile}>
-            <div>
-              <BannerImage
-                image={{ image: `https:${bannerImage}?fm=jpg&fl=progressive`, title }}
-              />
-              <div
-                key={`article-description-${id}`}
-                className={styles.articleDescription}
-              >
-                <h1 className="article-tile-title">{title}</h1>
-                <p className="article-tile-tagline">
-                  <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
-                    {datePublished}
-                  </span>
-                  <span key={`c-light-grey-span-${id}`} className={styles.slash}>
+  // Maybe we can prefecth data here? for each story.
+  return (
+    <>
+      <Anchor
+        to={`/storyTwo?slug=${slugTitle}`}
+        as={`/storyTwo/${slugTitle}`}
+        className={styles.articleLink}
+      >
+        <article key={`article-story-${id}`} className={styles.articleTile}>
+          <div>
+            <Picture
+              className={styles.bannerImage}
+              thumbnail
+              image={{
+                image: `https:${bannerImage}?fm=webp`,
+                title,
+                thumbnail: `https:${bannerImage}?fm=webp&q=50`,
+              }}
+            />
+            <div
+              key={`article-description-${id}`}
+              className={styles.articleDescription}
+            >
+              <h1 className="article-tile-title">{title}</h1>
+              <p className="article-tile-tagline">
+                <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
+                  {datePublished}
+                </span>
+                <span key={`c-light-grey-span-${id}`} className={styles.slash}>
                         /
-                  </span>
-                  <span key={`px1-span-${id}`} className={styles.author}>
-                    {`By ${contentCreator}`}
-                  </span>
-                </p>
+                </span>
+                <span key={`px1-span-${id}`} className={styles.author}>
+                  {`By ${contentCreator}`}
+                </span>
+              </p>
 
-                <p className={styles.articleTileLabel}>
-                  {contentPreview && contentPreview.previewCopy ? (
-                    `${contentPreview.previewCopy.slice(0, 230)}...`
-                  )
-                    : contentCards.slice(0, 1).map((card) => (
-                      card.fields.contentCopy
-                        && (`${card.fields.contentCopy.slice(0, 99)} …`)))}
-                </p>
-                <div className={styles.articleTileLink}>Read more</div>
-
-              </div>
-
+              <p className={styles.articleTileLabel}>
+                {contentPreview && contentPreview.previewCopy ? (
+                  `${contentPreview.previewCopy.slice(0, 230)}...`
+                )
+                  : contentCards.slice(0, 1).map((card) => (
+                    card.fields.contentCopy
+                        && (`${card.fields.contentCopy.slice(0, 230)} …`)))}
+              </p>
+              <div className={styles.articleTileLink}>Read more</div>
             </div>
-          </article>
-        </Anchor>
-      </>
-    );
-  }
-}
+          </div>
+        </article>
+      </Anchor>
+    </>
+  );
+};
 
 StoriesContentTwo.propTypes = {
   id: PropTypes.string.isRequired,
@@ -157,19 +162,16 @@ StoriesContentTwo.defaultProps = {
   contentCreator: '',
   contentPreview: null,
 };
+/*
+  see line 40:
+  I hardcoded the image object "Picture" Component expects,
+  this is because the contentful return object is quiet different,
+  to the craft object and what the Picture componentns expects.
+  (we can make adjustments to contetnful if needed).
 
-const BannerImage = ({ image }) => (
-  <Picture className={styles.bannerImage} image={image} thumbnail />
-);
-
-BannerImage.propTypes = {
-  image: PropTypes.shape({
-    webp: PropTypes.shape({}),
-    placeholder: PropTypes.string,
-    title: PropTypes.string,
-    srcset: PropTypes.string,
-    image: PropTypes.string,
-  }).isRequired,
-};
+  It is also possible to manipulate the images with Contentful image api  to return
+  webp, jpg and png. https://www.contentful.com/developers/docs/references/images-api/#/reference/changing-formats/image-format
+  I did this based on the PropTypes for the Picture Component.
+*/
 
 export default StoriesContentTwo;

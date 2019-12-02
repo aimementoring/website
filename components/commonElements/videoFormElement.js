@@ -74,7 +74,13 @@ const VideoFormElement = ({ index, formElement }) => {
           frameBorder="0"
         />
       )}
-      {name.toLowerCase() === 'google photos' && ( // this is a temp solution
+      {name.toLowerCase() === 'google photos' && (
+        /*
+          this is a temp solution.
+          Just adding this as the video in the test comes from google photos.
+          I am unsure at this stage if there will be any other video platforms
+          added for video content.
+       */
         <iframe
           title="Google-photos-video"
           width="640"

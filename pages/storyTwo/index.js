@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-// import Router, { useRouter } from 'next/router';
-// import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import contentfulServer from '../../api/contentfulServer';
@@ -13,9 +11,16 @@ import {
 import styles from './storyTwo.module.scss';
 import ContentCard from '../../components/contentCard';
 
-// const ContentCard = dynamic(() =>
-// import(/* webpackChunkName 'ContentCard' */ '../../components/contentCard'));
-// dynamic load is only loading the .js as stated in docs not sure if this is useful here.
+// Not sure if the file/html is too large for nextjs 472kb?
+
+// this (route/page "storyTwo") needs to be redirected to storiesTwo is directly visited,
+// this could be done client side, not sure if that will affect SEO?
+
+/*
+  I think this page is good for dynamic routes and could be useful for stories.
+  1: https://nextjs.org/blog/next-9#dynamic-route-segments
+  2: https://github.com/zeit/next-learn-demo/tree/master/6-fetching-data
+*/
 
 const StoryTwo = (props) => {
   const { content, slug } = props;
@@ -27,15 +32,17 @@ const StoryTwo = (props) => {
           const bannerImage = entry.fields.banner
           && entry.fields.banner.fields.visualMedia.fields.file.url;
 
+          // Not sure how to make this faster other than removing it from css background.
           const bannerStyles = {
             backgroundPosition: '0% 25%',
-            backgroundImage: bannerImage && `url(https:${bannerImage})`,
+            backgroundImage: bannerImage && `url(https:${bannerImage}?fm=webp)`,
             maxWidth: '100%',
           };
 
+          // transforming title into story pathname of url.
           const title = removeSpecialCharacters(entry.fields.title);
           const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
-
+          //
           return (
             <Fragment key={entry.sys.id}>
               {(() => {
@@ -65,7 +72,11 @@ const StoryTwo = (props) => {
                     </div>
                   );
                 default:
-                  return null; // this should be a fall back component
+                  /*
+                    This does not have to be "switch" just easier to read whats happening.
+                    This should be a fall back default component, redirect, 404
+                  */
+                  return null;
                 }
               })()}
             </Fragment>
@@ -102,7 +113,5 @@ StoryTwo.propTypes = {
     }),
   })).isRequired,
 };
-
-export const config = { amp: 'hybrid' };
 
 export default StoryTwo;

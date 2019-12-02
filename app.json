@@ -97,11 +97,11 @@
       "required": true,
       "value": "iz0aikshgysc"
     },
-    "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": {
       "required": true,
       "value": "redirectEntries"
     },
-    "REACT_APP_CONTENTFUL_ENTRY_KEY": {
+    "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": {
       "required": true,
       "value": "3tMx2AccortPX9N15uGGgb"
     },
@@ -121,6 +121,18 @@
       "required": true,
       "value": "iz0aikshgysc"
     }
+  },
+  "REACT_APP_CONTENTFUL_API_ENVIRONMENT": {
+    "required": true,
+    "value": "staging"
+  },
+  "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": {
+    "required": true,
+    "value": "post"
+  },
+  "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": {
+    "required": true,
+    "value": "4wvkVrYF22PE8mNSRRPin4"
   },
   "formation": {
     "web": {
