@@ -13,11 +13,8 @@
 
 .storiesContainer {
   max-width: 1300px;
-  margin: 0 auto;
-  padding-bottom: 4rem;
-  padding-top: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin: 1em auto;
+  padding: 0 2em 4rem;
 }
 
 .refineSearch {
@@ -135,7 +132,8 @@
 }
 
 .articleTileLabel {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 300;
   color: $grey;
 }
