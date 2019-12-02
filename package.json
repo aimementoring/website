@@ -2,6 +2,9 @@
   "name": "website-next-v2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
