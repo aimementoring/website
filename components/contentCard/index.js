@@ -32,8 +32,8 @@ const ContentCard = (props) => {
                 <Picture
                   image={{
                     title,
-                    thumbnail: `https:${image}?fm=webp&q=50`,
-                    image: isGif ? `https:${image}` : `https:${image}?fm=webp`,
+                    thumbnail: `https:${image}?q=50`,
+                    image: isGif ? `https:${image}` : `https:${image}`,
                   }}
                 />
               )}

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 import moment from 'moment';
 import { getFromStorage } from './localStorage';
 
@@ -56,8 +55,8 @@ export const capitaliseString = (stringValue, replaceValue) => (
 // removes special characters on standard en-us keyboard config
 export const removeSpecialCharacters = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}0-9]+/g, replaceValue)
-    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}0-9]*/g, '')
+    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}0-9]+/g, replaceValue)
+    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}0-9]*/g, '')
 );
 
 // removes all numbers in a string
@@ -68,8 +67,8 @@ export const removeNumbers = (stringValue, replaceValue) => (
 // returns only the number in a string removing letters and special characters
 export const getOnlyNumbers = (stringValue, replaceValue) => (
   replaceValue
-    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}]+/g, replaceValue)
-    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\\/`~\[\]\{\}]*/g, '')
+    ? stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}]+/g, replaceValue)
+    : stringValue.replace(/[a-zA-Z$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}]*/g, '')
 );
 
 // replace whitespace with any character or no space
@@ -79,17 +78,14 @@ export const replaceWhiteSpace = (stringValue, replaceValue) => (
     : stringValue.replace(/[\s]+/g, '')
 );
 
-export const formatDate = (publishDate, format) => {
+export const formatDate = (publishDate, format = 'D.M.YYYY') => {
   const splitDateTime = publishDate.slice(0, -1).split('T');
   const dateComponent = splitDateTime[0];
   const datePublished = moment(dateComponent);
 
-  switch (format) {
-  case 'short':
-    return datePublished.format('D.M.YY');
-  case 'long':
-    return datePublished.format('Do MMMM YYYY');
-  default:
-    return datePublished.format('D.M.YYYY');
-  }
+  const DATE_FORMATS = {
+    short: 'D.M.YY',
+    long: 'Do MMMM YYYY',
+  };
+  return datePublished.format(DATE_FORMATS[format] || format);
 };

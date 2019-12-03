@@ -19,12 +19,9 @@ const StoriesContentTwo = (props) => {
     contentPreview,
   } = props;
 
-  // The extra paramenter "short" for the formatDate function,
-  // is because the date format on story page is different to date format on the grid of stories.
   const datePublished = formatDate(publishDate, 'short');
   const bannerImage = bannerContent.visualMedia.fields.file.url;
 
-  // Maybe we can prefecth data here? for each story.
   return (
     <>
       <Anchor

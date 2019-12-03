@@ -42,7 +42,7 @@ const StoriesCarousel = (props) => {
                   {`${contentPreview.previewCopy.slice(0, 230)}...`}
                 </p>
               )
-              : contentCards.slice(0, 1).map((card) => (
+              : contentCards && contentCards.slice(0, 1).map((card) => (
                 <p className={styles.productTitle} key={card.sys.id}>
                   {card.fields.contentCopy
                           && (`${card.fields.contentCopy.slice(0, 240)} …`)}
