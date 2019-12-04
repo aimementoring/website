@@ -6,14 +6,15 @@
     }
   }
 
-  a {
+  a,
+  .anchor {
     text-decoration: none;
     display: block;
     opacity: 1;
 
     .watch-me {
       width: 100%;
-      background-color: rgba(0,0,0,.8);
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
     &:hover .watch-prompt {
@@ -33,7 +34,7 @@
       color: white;
       font-family: $feature-font-family;
       font-size: 20px;
-      transition: .2s ease all;
+      transition: 0.2s ease all;
       @media screen and (max-width: $lg) {
         left: 33%;
       }
@@ -55,7 +56,7 @@
     line-height: 1.5rem;
     margin: 1rem 2rem;
   }
-  
+
   h4 {
     font-size: 18px;
     text-align: center;
@@ -63,15 +64,14 @@
   }
 
   .campaign-grid--title {
-    @extend
-    .signature-font-family,
-    .f-18;
+    @extend .signature-font-family, .f-18;
   }
 }
 
 //CEO
 .ceo {
-  li, p {
+  li,
+  p {
     @extend .lh-large;
   }
 
@@ -81,7 +81,6 @@
   }
 }
 
-
 // The Mentor
 
 .testimonial-slider {
@@ -89,7 +88,6 @@
     margin: 0;
   }
 }
-
 
 // The Mentor {
 // .homepage-main-actions--illustration img {
@@ -102,63 +100,78 @@
 
 .endorsement-wrap {
   .video-button:hover .video-text {
-    span {color: $peach}
+    span {
+      color: $peach;
+    }
   }
   .video-play-button {
     width: 80px;
     cursor: pointer;
   }
   .video-text {
-    @extend
-    .relative,
-    .pl3,
-    .text-wrap,
-    .left-align,
-    .bold,
-    .f-24,
-    .feature-font-family,
-    .c-white;
+    @extend .relative,
+      .pl3,
+      .text-wrap,
+      .left-align,
+      .bold,
+      .f-24,
+      .feature-font-family,
+      .c-white;
   }
 
-  .hero { display: none; }
+  .hero {
+    display: none;
+  }
   .endorsement-container {
-    @extend
-    .my2,
-    .flex,
-    .flex-wrap,
-    .items-center;
+    @extend .my2, .flex, .flex-wrap, .items-center;
 
     img {
-      @extend
-      .w85,
-      .right;
+      @extend .w85, .right;
     }
 
     @media screen and (max-width: $lg) {
       margin: 5rem 0;
       text-align: center;
 
-      .text-wrap  {
-        max-width: 80%; margin: 0 auto;
+      .text-wrap {
+        max-width: 80%;
+        margin: 0 auto;
         @media screen and (max-width: $sm) {
           max-width: 100%;
         }
       }
 
-      div         { min-width: 100%; }
-      .line       { display: none; }
-      img         { display: none; }
-      .md-col-6   { width:100%; }
+      div {
+        min-width: 100%;
+      }
+      .line {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+      .md-col-6 {
+        width: 100%;
+      }
     }
   }
   @media screen and (max-width: $md) {
-    .hero       { display: block; }
-    .squiggle   { display: none; }
-    .video-text { display: none;}
-
+    .hero {
+      display: block;
+    }
+    .squiggle {
+      display: none;
+    }
+    .video-text {
+      display: none;
+    }
   }
-  .endorsement-container:nth-child(even) img { float:right; }
-  .endorsement-container:nth-child(odd) img { float:left; }
+  .endorsement-container:nth-child(even) img {
+    float: right;
+  }
+  .endorsement-container:nth-child(odd) img {
+    float: left;
+  }
 }
 
 .banner.endorsement-wrap {
@@ -169,12 +182,10 @@
   }
 }
 
-
-
 /*** New About page styles ***/
 .section-about {
   width: 100%;
-  padding-top:50px;
+  padding-top: 50px;
 
   .section-about__column {
     flex: 1;
@@ -183,18 +194,16 @@
     justify-content: center;
     flex-direction: column;
     padding: 0 2rem 1rem;
-   
-    
+
     .section-about__copy {
       font-size: 0.9rem;
       line-height: 1.3rem;
-      @media screen and (min-width: 767px) { 
-        padding:0 50px 50px;
+      @media screen and (min-width: 767px) {
+        padding: 0 50px 50px;
       }
-      @media screen and (min-width: $md) { 
-        padding:0 0 4rem;
+      @media screen and (min-width: $md) {
+        padding: 0 0 4rem;
       }
-      
     }
 
     img {
@@ -202,19 +211,16 @@
       object-fit: contain;
     }
 
-    @media screen and (min-width: $md) { 
+    @media screen and (min-width: $md) {
       padding: 1rem;
     }
   }
 
-
-  @media screen and (min-width: $md) { 
-
+  @media screen and (min-width: $md) {
     display: flex;
 
-    &:nth-child(n+2) {
+    &:nth-child(n + 2) {
       margin-top: -7rem;
-
     }
 
     &:nth-child(odd) {
@@ -229,10 +235,9 @@
         left: 0%;
         .highlight-text {
           left: -7%;
-          padding-bottom:3rem;
+          padding-bottom: 3rem;
         }
       }
-
     }
 
     &:nth-child(even) {
@@ -240,7 +245,7 @@
         align-items: flex-end;
         .section-about__copy {
           text-align: right;
-          .basic-btn{
+          .basic-btn {
             float: right;
           }
         }
@@ -249,11 +254,9 @@
         right: 0%;
         .highlight-text {
           right: -7%;
-          padding-bottom:3rem;
+          padding-bottom: 3rem;
         }
       }
-      
-      
     }
 
     &:nth-child(1) {
@@ -261,35 +264,29 @@
         justify-content: flex-start;
       }
       .section-about__title-lockup {
-        top:20px;
+        top: 20px;
         left: -2%;
         margin-bottom: 0;
-        .highlight-text{
+        .highlight-text {
           padding-bottom: 0;
         }
       }
       .section-about__copy {
-        padding:40px 0;
+        padding: 40px 0;
         h3 {
           position: relative;
           left: 0%;
         }
       }
     }
-
   }
 
-  @media screen and (min-width: $lg) { 
-
-    &:nth-child(n+2) {
+  @media screen and (min-width: $lg) {
+    &:nth-child(n + 2) {
       margin-top: -10rem;
     }
-
   }
-
 }
-
-
 
 /*** Not sure if these should go in typography styles ***/
 .section-about__title-lockup {
@@ -297,19 +294,18 @@
 
   .highlight-text {
     transform: rotate(-5deg);
-    width:100%;
+    width: 100%;
   }
 
   .post-text {
     top: -1.5rem;
 
-    @media screen and (min-width: $md) { 
+    @media screen and (min-width: $md) {
       top: -3.5rem;
     }
   }
 
-
-  @media screen and (min-width: $md) { 
+  @media screen and (min-width: $md) {
     position: relative;
     top: 7%;
   }
