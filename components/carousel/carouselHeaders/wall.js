@@ -7,6 +7,7 @@ const Wall = ({ prev, next }) => (
       type="button"
       className="border-none"
       onClick={prev}
+      aria-label="previous"
       style={{ color: '#ffffff', backgroundColor: 'transparent' }}
     >
       <svg className="icon icon-arrow-prev">
@@ -16,6 +17,7 @@ const Wall = ({ prev, next }) => (
     <button
       type="button"
       className="border-none"
+      aria-label="next"
       style={{ color: '#ffffff', backgroundColor: 'transparent' }}
       onClick={next}
     >
