@@ -1,0 +1,13 @@
+@import "../../styles/base/variables";
+
+.contactSection {
+  padding-top: 2rem;
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
+}
+
+.contactSectionWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
-import Loading from 'aime-blueprint/lib/components/loading';
-import withLayout from '../../hocs/basicLayout';
-// import PhoneInput from '../../components/commonElements/PhoneInput';
-
+import dynamic from 'next/dynamic';
+import Layout from '../../hocs/basicLayout';
+import scrollToComponent from '../../utils/scrollToComponent';
 import { uploadMentorEOI, getUniversities } from '../../services/portalApi';
 import bugsnagClient from '../../utils/bugsnag';
 import { getAllCountries, detectCountry } from '../../utils/country';
@@ -12,13 +11,14 @@ import {
   getDataOfUniversity,
 } from '../../utils/expresionOfInterest';
 import COUNTRY_CODES from '../../utils/countryCodes';
-import UniversityLinks from './universityLinks';
-import BeAMentorForm from './beAMentorForm';
-import WelcomeBox from './welcomeBox';
-import HeroBanner from './heroBanner';
-import YearHeader from './yearHeader';
-
 import './beAMentor.scss';
+
+const Loading = dynamic(() => import(/* webpackChunkName 'Loading' */ 'aime-blueprint/lib/components/loading'));
+const UniversityLinks = dynamic(() => import(/* webpackChunkName 'UniversityLinks' */ './universityLinks'));
+const BeAMentorForm = dynamic(() => import(/* webpackChunkName 'BeAMentorForm' */ './beAMentorForm'));
+const WelcomeBox = dynamic(() => import(/* webpackChunkName 'WelcomeBox' */ './welcomeBox'));
+const HeroBanner = dynamic(() => import(/* webpackChunkName 'HeroBanner' */ './heroBanner'));
+const YearHeader = dynamic(() => import(/* webpackChunkName 'YearHeader' */ './yearHeader'));
 
 const BeAMentor = () => {
   const [state, setState] = useState({
@@ -129,10 +129,10 @@ const BeAMentor = () => {
 
   useEffect(() => {
     fetchUniversities();
-  });
+  }, []);
 
   const scrollToHoodedHustle = () => {
-    sectionRefs.challenge.scrollIntoView({ block: 'top' });
+    scrollToComponent(sectionRefs.challenge);
   };
 
   const handleScrollToHoodedHustle = (locationHash) => {
@@ -289,28 +289,30 @@ const BeAMentor = () => {
   };
 
   return (
-    <div className="be-a-mentor--box">
-      <HeroBanner />
-      <section className="full-width-wrap">
-        <div className="scratch-overlay-wrapper top-scratch bg-white" />
-        <div className="lg-wrap mx-auto">
-          <div className="eoi-intro-section">
-            <YearHeader />
-            <WelcomeBox />
-            <BeAMentorForm
-              handleFieldChange={handleFieldChange}
-              handleReturningMentorChange={handleReturningMentorChange}
-              submitData={submitData}
-              countrySelectedIsInsideAIMEProgram={countrySelectedIsInsideAIMEProgram}
-              {...state}
-            />
+    <Layout>
+      <div className="be-a-mentor--box">
+        <HeroBanner />
+        <section className="full-width-wrap">
+          <div className="scratch-overlay-wrapper top-scratch bg-white" />
+          <div className="lg-wrap mx-auto">
+            <div className="eoi-intro-section">
+              <YearHeader />
+              <WelcomeBox />
+              <BeAMentorForm
+                handleFieldChange={handleFieldChange}
+                handleReturningMentorChange={handleReturningMentorChange}
+                submitData={submitData}
+                countrySelectedIsInsideAIMEProgram={countrySelectedIsInsideAIMEProgram}
+                {...state}
+              />
+            </div>
           </div>
-        </div>
-      </section>
-      <Loading loading={state.loading} />
-      <UniversityLinks options={state.universityOptions} />
-    </div>
+        </section>
+        <Loading loading={state.loading} theme={process.env.REACT_APP_THEME} />
+        <UniversityLinks options={state.universityOptions} />
+      </div>
+    </Layout>
   );
 };
 
-export default withLayout(BeAMentor);
+export default BeAMentor;
