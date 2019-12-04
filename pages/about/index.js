@@ -1,14 +1,16 @@
 import React from 'react';
 import classNames from 'classnames';
-import Title from 'aime-blueprint/lib/components/title';
+import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
-import HeroBannerAbout from '../../components/heroBannerAbout';
-import withLayout from '../../hocs/basicLayout';
+import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
+const HeroBannerAbout = dynamic(() => import(/* webpackChunkName 'HeroBannerAbout' */ '../../components/heroBannerAbout'));
+
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const About = () => (
-  <>
+  <Layout>
     <div className={styles.aboutContainer}>
       <HeroBannerAbout />
       <div className={styles.aboutWrapper}>
@@ -28,11 +30,10 @@ const About = () => (
               </h1>
             </div>
             <div className={styles.copy}>
-              <Title type="mainTitle">
-We are driven to unlock the limitless potential of children who have been left
-                behind
-
-              </Title>
+              <h3 className={styles.whiteTitleWithMargin}>
+                {`We are driven to unlock the limitless potential of children who have been left
+                behind`}
+              </h3>
               <p className={styles.whiteText}>
                 We do that by building mentoring bridges between universities and high schools,
                 between the powerful and the powerless, the haves and the have nots. We know that
@@ -196,6 +197,7 @@ We are driven to unlock the limitless potential of children who have been left
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkButton}
+                aria-label="shop apparel"
               >
                 Shop Apparel
               </a>
@@ -211,7 +213,7 @@ We are driven to unlock the limitless potential of children who have been left
         </section>
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(About);
+export default About;
