@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=10.16"
+    "node": "=10.16"
   },
   "scripts": {
     "dev": "node server.js",
