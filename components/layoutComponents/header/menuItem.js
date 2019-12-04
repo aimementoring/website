@@ -9,8 +9,8 @@ const BE_A_MENTOR_AS = '/be-a-mentor';
 const MenuItem = ({
   title, subTitle, description, links,
 }) => {
-  const firstHref = links.length && links[0].href ? links[0].href : BE_A_MENTOR_TO;
-  const firstHrefAs = links.length && links[0].href ? links[0].href : BE_A_MENTOR_AS;
+  const firstHref = links.length && links[0].to ? links[0].to : BE_A_MENTOR_TO;
+  const firstHrefAs = links.length && links[0].as ? links[0].as : BE_A_MENTOR_AS;
   return (
     <li className={styles.listItem} key={`${title}-key`}>
       <Anchor
@@ -28,9 +28,9 @@ const MenuItem = ({
         </div>
         {links.map((link) => (
           <Anchor
-            key={link.href ? link.href : BE_A_MENTOR_TO}
-            to={link.href ? link.href : BE_A_MENTOR_TO}
-            as={link.href ? link.href : BE_A_MENTOR_AS}
+            key={link.to ? link.to : BE_A_MENTOR_TO}
+            to={link.to ? link.to : BE_A_MENTOR_TO}
+            as={link.as ? link.as : BE_A_MENTOR_AS}
             className={styles.submenuLink}
           >
             {link.linkText}
@@ -45,7 +45,10 @@ MenuItem.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(PropTypes.shape({ href: PropTypes.string })).isRequired,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    to: PropTypes.string,
+    as: PropTypes.string,
+  })).isRequired,
 };
 
 export default MenuItem;
