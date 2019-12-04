@@ -1,10 +1,12 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
-import { getAssetsBaseUrl } from '../../services/craftAPI';
-import VideoButton from '../videoButton';
 import './index.scss';
 
-const assetsUrl = getAssetsBaseUrl();
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const IntroPanelHomepage = () => (
   <div className="bg-darkest-purple full-width-wrap content-panel home-intro-panel">
     <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
@@ -36,7 +38,15 @@ const IntroPanelHomepage = () => (
               {' '}
               soon.
             </p>
-            <p><Anchor to="/be-a-mentor" className="basic-btn bold bg-brand-primary c-white my3">Be a mentor</Anchor></p>
+            <p>
+              <Anchor
+                to="/beAMentor"
+                as="/be-a-mentor"
+                className="basic-btn bold bg-brand-primary c-white my3"
+              >
+                Be a mentor
+              </Anchor>
+            </p>
           </div>
         </div>
         <div className="sm-col-12 sm-col-6">
@@ -46,7 +56,7 @@ const IntroPanelHomepage = () => (
             />
             <div className="video-banner flex block rounded mx-auto">
               <div className="video-banner-overlay center">
-                <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${assetsUrl}/assets/images/play-btn-white.svg`} />
+                <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
                 <h3>This could be you</h3>
                 <p>Watch what it means to be an AIME Mentor</p>
               </div>

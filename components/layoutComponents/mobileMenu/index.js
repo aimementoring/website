@@ -1,13 +1,42 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import Anchor from '../../common/link';
+import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import './index.scss';
 
-const MobileMenu = () => {
-  const [showNavMenu, setShowNavMenu] = useState(false);
+const LinksComponent = dynamic(() => import(/* webpackChunkName 'LinksComponent' */ './linksComponent'));
 
-  const handleMenu = (newValue) => () => {
-    setShowNavMenu(newValue);
+const MENU_LINKS = {
+  'going-global': [
+    { url: '/going-global#intro', title: 'Intro' },
+    { url: '/going-global#casestudies', title: 'Case Studies' },
+    { url: '/going-global#results', title: 'Results' },
+    { url: '/going-global#philosophies', title: 'Philosohiies' },
+    { url: '/going-global#resources', title: 'Resources' },
+    { url: '/going-global#enquire', title: 'Enquire', class: 'c-purple' },
+  ],
+  default: [
+    { url: '/', title: 'Home' },
+    { url: '/about', title: 'About' },
+    { url: '/stories', title: 'Stories' },
+    { url: '/be-a-mentor', title: 'Be a Mentor' },
+    { url: '/positions', title: 'Positions' },
+    { url: '/contact', title: 'Contact' },
+    { url: '/donate', title: 'Donate' },
+  ],
+};
+
+const MobileMenu = ({ type, logoIsWhite }) => {
+  const [showNavMenu, setShowNavMenu] = useState(false);
+  const [actvieMenuOption, setActvieMenuOption] = useState(() => (
+    type === 'going-global'
+      ? 'Intro'
+      : 'Home'
+  ));
+
+  const handleLinkClicked = (linkClicked) => () => {
+    setShowNavMenu(false);
+    setActvieMenuOption(linkClicked);
   };
 
   const mobileHeaderClasses = classNames({
@@ -15,91 +44,60 @@ const MobileMenu = () => {
     active: showNavMenu,
   });
 
+  const customColorClass = {
+    'c-white': logoIsWhite,
+    'c-black': !logoIsWhite,
+    'material-icons': true,
+    cursor: true,
+  };
+
   return (
     <>
       <div className="sm-col-right ml-auto flex mobile-menu">
         <i
           id="mobileMenu"
-          className="material-icons cursor mobile-menu-icon"
-          onClick={handleMenu(true)}
-          onKeyPress={handleMenu(true)}
+          className={classNames('mobile-menu-icon', customColorClass)}
+          onClick={() => setShowNavMenu(true)}
+          onKeyPress={() => setShowNavMenu(true)}
           role="presentation"
         >
           menu
         </i>
       </div>
       <nav id="mobileHeader" className={mobileHeaderClasses}>
-        <div className="flex justify-between items-center pt2 px3 pb0 sm-col-12" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+        <div
+          className="flex justify-between items-center pt2 px3 pb0 sm-col-12"
+          style={{ flexDirection: 'column', alignItems: 'flex-start' }}
+        >
           <div className="flex flex-column items-start" />
           <i
             id="mobileMenuClose"
-            className="mobileMenuClose material-icons c-white cursor icon-close"
-            onClick={handleMenu(false)}
-            onKeyPress={handleMenu(false)}
+            className={classNames('mobileMenuClose icon-close', customColorClass)}
+            onClick={() => setShowNavMenu(false)}
+            onKeyPress={() => setShowNavMenu(false)}
             role="presentation"
           >
             close
           </i>
         </div>
-        <ul className="overflow-scroll list-reset pl3 pb3 pt2 flex flex-column items-start flex-auto">
-          <li className="py2">
-            <Anchor
-              className="text-decoration-none f-18 feature-font-family c-white active"
-              onClick={handleMenu(false)}
-              to="/"
-            >
-              Home
-            </Anchor>
-          </li>
-          <li className="py2">
-            <Anchor
-              className="text-decoration-none f-18 feature-font-family c-white"
-              onClick={handleMenu(false)}
-              to="/about"
-            >
-              About
-            </Anchor>
-          </li>
-          <li className="py2">
-            <Anchor
-              className="text-decoration-none f-18 feature-font-family c-white"
-              onClick={handleMenu(false)}
-              to="/stories"
-            >
-              Stories
-            </Anchor>
-          </li>
-          <li className="py2">
-            <Anchor
-              className="text-decoration-none f-18 feature-font-family c-white"
-              onClick={handleMenu(false)}
-              to="/be-a-mentor"
-            >
-              Mentor
-            </Anchor>
-          </li>
-          <li className="py2">
-            <Anchor
-              className="text-decoration-none f-18 feature-font-family c-white"
-              onClick={handleMenu(false)}
-              to="/contact"
-            >
-              Contact
-            </Anchor>
-          </li>
-          <li className="py2">
-            <Anchor
-              to="/donate"
-              onClick={handleMenu(false)}
-              className="text-decoration-none f-18 feature-font-family c-white toggleRaiselyModal"
-            >
-              Donate
-            </Anchor>
-          </li>
-        </ul>
+        <LinksComponent
+          links={MENU_LINKS[type] || MENU_LINKS.default}
+          onClick={handleLinkClicked}
+          active={actvieMenuOption}
+        />
       </nav>
     </>
   );
+};
+
+MobileMenu.propTypes = {
+  type: PropTypes.string,
+  logoIsWhite: PropTypes.bool,
+};
+
+MobileMenu.defaultProps = {
+  type: 'default',
+  logoIsWhite: true,
 };
 
 export default MobileMenu;
