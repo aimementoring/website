@@ -4,7 +4,7 @@
 1. Open the folder `cd website`
 1. Install dependencies `yarn`
 1. Run the project in development mode `yarn dev`
-1. If you want to test the project in build mode you need to run `yarn build && yarn start`
+1. If you want to test the project in build mode (similar to production mode) you need to run `yarn build && yarn start`
 
 # How to create a new page
 
@@ -68,3 +68,30 @@ The main idea with that is:
 1. Refactors and design changes are faster and easier.
 1. First render is faster because we load content asynchronously so we don't need to have the full page when we are navigating.
 1. It is easier to add and update styles with css modules because files are smaller.
+
+# AWS Command line
+
+If you want to test aws s3 command locally, you need first to install aws command, following next instructions:
+```shell
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+```
+
+or you can install it with python, based on [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+```shell
+# Install pip3 if you don't have it yet
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+# Install aws cli
+pip3 install awscli --upgrade --user
+```
+
+After that, on any case, verify command is correctly installed:
+```shell
+pip3 install awscli --upgrade --user
+```
+
+Now follow next steps:
+1. From root folder of this project, run `cp -R .aws ~/.awd` to save credentials in our computer
+1. Execute `sync:aws:next:staging` or any other command on aws to check if it works
