@@ -35,8 +35,7 @@ sup {
   height: 3px;
   border-radius: 3px;
   transition: .2s ease all;
-  @media screen and(max-width: $sm) {
-  }
+  margin-top: 1em;
 }
 
 .sm-line {

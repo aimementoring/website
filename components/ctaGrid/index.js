@@ -18,12 +18,12 @@ const CtaGrid = ({ elements }) => (
               <div className="sub-item-details show-on-hover">
                 {cta.link.indexOf('http') !== -1
                   ? (
-                    <a className="basic-btn" href={cta.link} rel="noopener noreferrer" target="_blank">
+                    <a aria-label="cta" className="basic-btn" href={cta.link} rel="noopener noreferrer" target="_blank">
                       {cta.button}
                     </a>
                   )
                   : (
-                    <a className="basic-btn" href={cta.link}>
+                    <a className="basic-btn" aria-label="cta-link" href={cta.link}>
                       {cta.button}
                     </a>
                   )}
