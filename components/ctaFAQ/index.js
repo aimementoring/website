@@ -1,15 +1,20 @@
 import React from 'react';
-import Anchor from '../common/link';
 import styles from './ctaFAQ.module.scss';
 
 const CtaFAQ = () => (
   <div className={styles.wrapper}>
-    <Anchor to="/faq" className={styles.ctaBtn}>
+    <a
+      href="https://faqs.aimementoring.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.ctaBtn}
+      aria-label="FAQs"
+    >
       <span className={styles.ctaText}>Got questions? Check out our FAQs</span>
       <svg className={styles.arrowNext}>
         <use xlinkHref="#icon-arrow-next" />
       </svg>
-    </Anchor>
+    </a>
   </div>
 );
 
