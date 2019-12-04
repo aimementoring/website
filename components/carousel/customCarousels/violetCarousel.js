@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import VideoCarousel from './videoCarousel';
-import Carousel from '../index';
+import dynamic from 'next/dynamic';
+import Anchor from '../../common/link';
 import './customCarousels.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
+const VideoCarousel = dynamic(() => import(/* webpackChunkName 'VideoCarousel' */ './videoCarousel'));
 
 const VioletCarousel = ({
   type,
@@ -20,9 +23,15 @@ const VioletCarousel = ({
         <div>
           <VideoCarousel title={title} elements={elements} settings={settings} />
           <div className="center-align md-left-align py2 my1">
-            <a href="/know-aime" className="b-white ghost-btn center" target="_blank">
+            <Anchor
+              to="/knowAime"
+              as="/know-aime"
+              aria-label="know-aime"
+              className="b-white ghost-btn center"
+              target="_blank"
+            >
               Tell me more
-            </a>
+            </Anchor>
           </div>
         </div>
       ) : (
@@ -40,11 +49,12 @@ const VioletCarousel = ({
                     <a
                       href={img.link}
                       target="_blank"
+                      aria-label="carousel-image"
                       rel="noopener noreferrer"
                       className="flex-center flex-wrap m1"
                       style={{ height: '224px' }}
                     >
-                      <img src={img.img} alt="" />
+                      <img src={img.img} alt="carousel" />
                     </a>
                   </div>
                 ))}
