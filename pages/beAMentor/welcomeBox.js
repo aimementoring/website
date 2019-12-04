@@ -1,7 +1,8 @@
 import React from 'react';
-import VideoButton from '../../components/videoButton';
+import dynamic from 'next/dynamic';
 import './beAMentor.scss';
 
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const WelcomeBox = () => (
@@ -32,7 +33,7 @@ const WelcomeBox = () => (
         <strong>
           {'If it\'s not going to be you then who? If it\'s not going to be now then when?'}
         </strong>
-        Express your interest now, applications are open!
+        &nbsp; Express your interest now, applications are open!
       </p>
     </div>
     <div className="video-wrapper welcome-video">
