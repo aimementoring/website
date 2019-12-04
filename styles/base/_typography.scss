@@ -1,3 +1,33 @@
+// GT Pressura Mono
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-webfont.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Italic";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-italic-webfont.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Bold";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-webfont.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Bold Italic";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
 // Univers
 @font-face {
   font-family: 'Univers';
@@ -40,7 +70,7 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
+  src: local(), url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
   font-style: normal;
   font-weight: 400;
 }
@@ -72,6 +102,7 @@
          url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
 }
 
 // Material Icons

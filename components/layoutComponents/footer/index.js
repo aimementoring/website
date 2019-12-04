@@ -4,9 +4,10 @@ import moment from 'moment';
 import Anchor from '../../common/link';
 import './index.scss';
 
+
 const currentYear = moment().year();
 
-const Footer = ({ location }) => {
+const Footer = ({ location, handleShowIntercom }) => {
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   return (
     <div>
@@ -21,7 +22,8 @@ const Footer = ({ location }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
-                          to="/be-a-mentor"
+                          to="/beAMentor"
+                          as="/be-a-mentor"
                           className="c-white text-decoration-none"
                         >
                           Become a
@@ -30,14 +32,17 @@ const Footer = ({ location }) => {
                         </Anchor>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/contact"
+                        <a
+                          href="https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Become a partner"
                           className="c-white text-decoration-none"
                         >
                           Become a
                           {' '}
                           <strong>Partner</strong>
-                        </Anchor>
+                        </a>
                       </li>
                       <li className="mb2">
                         <Anchor
@@ -58,13 +63,15 @@ const Footer = ({ location }) => {
                           rel="noopener noreferrer"
                           href="https://shop.aimementoring.com/"
                           className="c-white text-decoration-none"
+                          aria-label="shop apparel"
                         >
                           Shop Apparel
                         </a>
                       </li>
                       <li className="mb2">
                         <Anchor
-                          to="/the-mentor"
+                          to="/theMentor"
+                          as="/the-mentor"
                           className="c-white text-decoration-none"
                         >
                           Read the book
@@ -80,7 +87,8 @@ const Footer = ({ location }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          to="/jack-manning-bancroft"
+                          to="/founder"
+                          as="/jack-manning-bancroft"
                           className="c-white text-decoration-none"
                         >
                           Founder &amp; CEO
@@ -100,20 +108,25 @@ const Footer = ({ location }) => {
                         </Anchor>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/faq"
+                        <a
+                          href="https://faqs.aimementoring.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="faqs"
                           className="c-white text-decoration-none"
                         >
                           FAQs
-                        </Anchor>
+                        </a>
                       </li>
                       <li className="mb2">
-                        <Anchor
-                          to="/contact"
-                          className="c-white text-decoration-none"
+                        <button
+                          className="c-white intercom-button text-decoration-none"
+                          onClick={handleShowIntercom}
+                          type="button"
+                          aria-label="contact"
                         >
                           Contact
-                        </Anchor>
+                        </button>
                       </li>
                     </ul>
                   </nav>
@@ -127,7 +140,7 @@ const Footer = ({ location }) => {
                         <input type="hidden" name="utf8" value="✓" />
                         <input type="hidden" name="submissionmessage" value="footernewslettersubscription" />
                         <input id="subscribe" className="input p2 f-16 light w100" type="email" placeholder="Enter your email" name="email" required />
-                        <button type="submit" className="footer-links--input-button" aria-label="submit" />
+                        <button type="submit" className="footer-links--input-button" aria-label="Submit form" />
                       </form>
                     </div>
                   </div>
@@ -143,7 +156,8 @@ const Footer = ({ location }) => {
                 <ul className="list-reset flex flex-column lg-flex-row">
                   <li className="flex">
                     <Anchor
-                      to="/terms-of-service"
+                      to="/termsOfService"
+                      as="/terms-of-service"
                       className="footer-text mr3"
                     >
                         Terms of Service
@@ -167,6 +181,7 @@ Footer.propTypes = {
     hash: PropTypes.string,
     pathname: PropTypes.string,
   }).isRequired,
+  handleShowIntercom: PropTypes.func.isRequired,
 };
 
 export default Footer;

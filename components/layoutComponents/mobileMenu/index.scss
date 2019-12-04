@@ -1,12 +1,16 @@
-@import '../../../styles/base/variables';
+@import "../../../styles/base/variables";
 
 .mobile-menu {
-  @media screen and (min-width: $lg) {
+
+  @media screen and (min-width: $md) {
     display: none;
+
+    &.flex {
+      display: none;
+    }
   }
 
   .mobile-menu-icon {
-    color: #fff;
     display: block;
 
     @media screen and (min-width: $lg) {
@@ -31,7 +35,8 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: ease-in .2s all;
+  transition: ease-in 0.2s all;
+  z-index: 99;
 
   &.active {
     transform: translateY(0);
@@ -40,7 +45,8 @@
     pointer-events: auto;
   }
 
-  a, span {
+  a,
+  span {
     font-family: $feature-font-family;
     font-style: italic;
     font-weight: 900;
@@ -48,7 +54,7 @@
     cursor: pointer;
 
     &.active {
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid $white;
     }
   }
 
@@ -58,7 +64,7 @@
 
   .icon-add {
     background-color: $brand-primary;
-    color: #fff;
+    color: $white;
     border-radius: 15px;
     margin-left: 5px;
     font-size: 18px;
@@ -68,7 +74,7 @@
   }
 
   .icon-close {
-    color: #fff;
+    color: $white;
     border-radius: 15px;
     margin-left: 5px;
     font-size: 20px;
@@ -78,24 +84,10 @@
 
   .btn-change {
     background-color: $brand-primary;
-    color: #fff;
+    color: $white;
     border-radius: 15px;
     padding: 2px 10px;
     cursor: pointer;
-  }
-}
-
-.mobile-about--list-wrapper {
-  max-height: 1px;
-  visibility: hidden;
-  opacity: 0;
-  transition: ease .5s max-height, ease-in .2s opacity;
-
-  &.active {
-    max-height: 9999px;
-    visibility: visible;
-    opacity: 1;
-    transition: ease .5s max-height, ease-in .2s opacity;
   }
 }
 
@@ -103,21 +95,43 @@
   max-height: 9999px;
   visibility: visible;
   opacity: 1;
-  transition: ease .5s max-height, ease-in .2s opacity;
+  transition: ease 0.5s max-height, ease-in 0.2s opacity;
+}
+
+.mobile-about--list-wrapper {
+  max-height: 1px;
+  visibility: hidden;
+  opacity: 0;
+  transition: ease 0.5s max-height, ease-in 0.2s opacity;
+
+  &.active {
+    max-height: 9999px;
+    visibility: visible;
+    opacity: 1;
+    transition: ease 0.5s max-height, ease-in 0.2s opacity;
+  }
 }
 
 .mobile-region--wrapper {
   max-height: 1px;
   visibility: hidden;
   opacity: 0;
-  transition: ease .5s max-height, ease-in .2s opacity;
+  transition: ease 0.5s max-height, ease-in 0.2s opacity;
 }
 
 .mobile-region--wrapper.active {
   max-height: 999px;
   visibility: visible;
   opacity: 1;
-  transition: ease .5s max-height, ease-in .2s opacity;
-  background-color: black;
+  transition: ease 0.5s max-height, ease-in 0.2s opacity;
+  background-color: $black;
   z-index: 100;
+}
+
+.c-black {
+  color: $black;
+}
+
+.c-purple {
+  color: $neonpurple;
 }
