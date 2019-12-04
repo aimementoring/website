@@ -1,6 +1,8 @@
 import React from 'react';
-import Carousel from '../index';
+import dynamic from 'next/dynamic';
 import './customCarousels.scss';
+
+const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
 
 const Wall = () => {
   const customCarouselValues = {
@@ -343,7 +345,7 @@ const Wall = () => {
                       The AIME Research Partnership created a central repository of all AIME
                       Research Partnership publications in the website:
                       {' '}
-                      <a href="https://aimeresearchpartnership.wordpress.com/" target="_blank" rel="noopener noreferrer">
+                      <a aria-label="partnership" href="https://aimeresearchpartnership.wordpress.com/" target="_blank" rel="noopener noreferrer">
                         aimeresearchpartnership.wordpress.com
                       </a>
                       . All publications are listed under the publications tab, with links to
