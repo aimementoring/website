@@ -85,19 +85,23 @@ export const HEADER_MENU_ITEMS = [
     description: 'Who we are and why we do what we do.',
     links: [
       {
-        href: '/about',
+        to: '/about',
+        as: '/about',
         linkText: 'Overview',
       },
       {
-        href: '/know-aime',
+        to: '/knowAime',
+        as: '/know-aime',
         linkText: 'Get to know AIME',
       },
       {
-        href: '/impact',
+        to: '/impact',
+        as: '/impact',
         linkText: 'Our Impact',
       },
       {
-        href: '/jack-manning-bancroft',
+        to: '/founder',
+        as: '/jack-manning-bancroft',
         linkText: 'CEO & Founder',
       },
     ],
@@ -107,7 +111,8 @@ export const HEADER_MENU_ITEMS = [
     description: 'Stories are how we understand and interact with the world around us',
     links: [
       {
-        href: '/stories',
+        to: '/stories',
+        as: '/stories',
         linkText: 'See our stories',
       },
     ],
@@ -117,7 +122,8 @@ export const HEADER_MENU_ITEMS = [
     description: 'Want to change the world? Come mentor with us.',
     links: [
       {
-        href: '',
+        to: '',
+        as: '',
         linkText: 'Let\'s change the world',
       },
     ],
