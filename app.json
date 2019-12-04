@@ -93,10 +93,6 @@
       "required": true,
       "value": "purple"
     },
-    "PUBLIC_URL": {
-      "required": true,
-      "value": "iz0aikshgysc"
-    },
     "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
       "required": true,
       "value": "redirectEntries"
