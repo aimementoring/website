@@ -19,6 +19,32 @@
     font-weight: 500;
     color: $brand-primary;
     border-bottom: 2px solid #fff;
+  }  
+}
+
+.intercom-button-nav {
+  border: none;
+  color: $white;
+  cursor: pointer;
+  background: transparent;
+
+  &:hover {
+    color: $brand-secondary;
+  }
+}
+
+.intercom-button {
+  padding: 0;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 300;
+  font-weight: bold;
+  font-family: sans-serif;
+  background: transparent;
+  &:hover{
+    color: $brand-secondary;
   }
 }
 

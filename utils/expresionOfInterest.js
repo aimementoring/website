@@ -7,7 +7,7 @@ export const getCountriesAccordingToAimeProgram = (universitiesLoaded) => {
     value: country.code,
     label: country.name,
   }));
-  const countriesWithAimeProgram = getCountriesFromUniversities(universitiesLoaded);
+  const countriesWithAimeProgram = getCountriesFromUniversities(universitiesLoaded).filter((country) => country !== '');
 
   // Setting countries with AIME program in the first positions of the array
   countries.sort((a, b) => {
