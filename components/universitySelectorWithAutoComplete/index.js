@@ -54,7 +54,7 @@ const UniversitySelector = ({
 
   return (
     <div>
-      {universityOptions && universityOptions.length && (
+      {universityOptions && universityOptions.length > 0 && (
         <Select
           name={name}
           placeholder={placeholder}

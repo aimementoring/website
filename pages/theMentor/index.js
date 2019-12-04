@@ -1,11 +1,13 @@
 import React from 'react';
-import VideoButton from '../../components/videoButton';
-import Testimonials from '../../components/testimonials';
-import withLayout from '../../hocs/basicLayout';
+import dynamic from 'next/dynamic';
+import Layout from '../../hocs/basicLayout';
 import './theMentor.scss';
 
+const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
+const Testimonials = dynamic(() => import(/* webpackChunkName 'Testimonials' */ '../../components/testimonials'));
+
 const TheMentor = () => (
-  <>
+  <Layout>
     <div className="theMentor">
       <div className="full-width-wrap">
         <div className="flex flex-wrap items-center">
@@ -42,6 +44,7 @@ const TheMentor = () => (
                   target="_blank"
                   href="/products/the-mentor"
                   className="basic-btn bold bg-brand-primary c-white mt3"
+                  aria-label="Grab a copy"
                 >
                   Grab a copy
                 </a>
@@ -55,7 +58,7 @@ const TheMentor = () => (
         <Testimonials />
       </div>
     </div>
-  </>
+  </Layout>
 );
 
-export default withLayout(TheMentor);
+export default TheMentor;

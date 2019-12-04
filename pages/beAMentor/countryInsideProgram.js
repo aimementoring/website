@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RadioButton from 'aime-blueprint/lib/components/radioButton';
+import dynamic from 'next/dynamic';
 import './beAMentor.scss';
+
+const RadioButton = dynamic(() => import(/* webpackChunkName 'RadioButton' */ 'aime-blueprint/lib/components/radioButton'));
 
 const radioButtonsOptions = [
   {
@@ -34,6 +36,8 @@ const CountryInsideProgram = ({ handleReturningMentorChange, returningMentor }) 
       name="returningMentor"
       options={radioButtonsOptions}
       value={returningMentor ? 'returningMentor' : 'notReturningMentor'}
+      theme={process.env.REACT_APP_THEME}
+      radiuButtonClass="radio-buttons-space"
     />
   </div>
 );
