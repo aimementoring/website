@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from 'aime-blueprint/lib/components/checkbox';
-import UniversitySelector from '../../components/universitySelectorWithAutoComplete';
-import Input from '../../components/commonElements/input';
+import dynamic from 'next/dynamic';
 import './beAMentor.scss';
+
+const Checkbox = dynamic(() => import(/* webpackChunkName 'Checkbox' */ 'aime-blueprint/lib/components/checkbox'));
+const Input = dynamic(() => import(/* webpackChunkName 'Input' */ 'aime-blueprint/lib/components/input'));
+const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
+const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../../components/universitySelectorWithAutoComplete'));
 
 const NewMentorForm = ({
   universities,
@@ -20,12 +23,12 @@ const NewMentorForm = ({
   email,
   countryDetected,
   aimeFriend,
-  // phone,
-  // currentSite,
-  // handlePhoneCountrySelected,
+  phone,
+  currentSite,
+  handlePhoneCountrySelected,
 }) => (
   <div className="mt2">
-    {universities.length > 1 && (
+    {universities && universities.length > 1 && (
       <div>
         <UniversitySelector
           placeholder="Start typing to search for university/college"
@@ -39,10 +42,11 @@ const NewMentorForm = ({
           backgroundColor="#FFFF"
           borderColor="#FFFF"
           country={countrySelected}
+          theme={process.env.REACT_APP_THEME}
         />
       </div>
     )}
-    {(universityIsOutsideAIME || universities.length === 1) && (
+    {(universityIsOutsideAIME || (universities && universities.length === 1)) && (
       <div>
         <Input
           type="text"
@@ -51,6 +55,7 @@ const NewMentorForm = ({
           name="universityOutsideAIME"
           value={universityOutsideAIME}
           onChangeFunction={handleFieldChange}
+          theme={process.env.REACT_APP_THEME}
         />
       </div>
     )}
@@ -62,6 +67,7 @@ const NewMentorForm = ({
       value={firstName}
       onChangeFunction={handleFieldChange}
       required
+      theme={process.env.REACT_APP_THEME}
     />
     <Input
       type="text"
@@ -71,6 +77,7 @@ const NewMentorForm = ({
       value={lastName}
       onChangeFunction={handleFieldChange}
       required
+      theme={process.env.REACT_APP_THEME}
     />
     <Input
       type="text"
@@ -80,11 +87,12 @@ const NewMentorForm = ({
       value={email}
       onChangeFunction={handleFieldChange}
       required
+      theme={process.env.REACT_APP_THEME}
     />
     <div>
       {(countryDetected || countrySelected) && (
         <div>
-          {/* <PhoneInput
+          <PhoneInput
             elementClassName="sm-col sm-col-6 md-col-6 o7-b"
             onChangeFunction={handleFieldChange}
             onCountrySelected={handlePhoneCountrySelected}
@@ -92,7 +100,8 @@ const NewMentorForm = ({
             value={phone}
             defaultCountry={countryDetected}
             currentSite={currentSite}
-          /> */}
+            theme={process.env.REACT_APP_THEME}
+          />
         </div>
       )}
     </div>
@@ -100,15 +109,17 @@ const NewMentorForm = ({
       <div className="col-12 flex">
         <Checkbox
           elementClassName="sm-col sm-col-12 md-col-12 f-14 pt2 flex items-center custom-checkbox custom-checkbox--default"
+          className="mt2"
           onChangeFunction={handleFieldChange}
           placeholder="Become an AIME Friend. Receive updates about AIME and help us tackle inequality."
           name="aimeFriend"
           customId="aimeFriend"
           value={!!aimeFriend}
+          theme={process.env.REACT_APP_THEME}
         />
       </div>
       <div className="center sm-col sm-col-12 md-col-12 pr1 pb1 mt4">
-        <button type="submit" className="submit" onClick={submitData}>
+        <button type="submit" className="submit" onClick={submitData} aria-label="submit form">
           Submit
         </button>
       </div>
@@ -131,6 +142,9 @@ NewMentorForm.propTypes = {
   email: PropTypes.string,
   countryDetected: PropTypes.string,
   aimeFriend: PropTypes.bool,
+  phone: PropTypes.string,
+  currentSite: PropTypes.string.isRequired,
+  handlePhoneCountrySelected: PropTypes.func,
 };
 
 NewMentorForm.defaultProps = {
@@ -147,6 +161,8 @@ NewMentorForm.defaultProps = {
   email: null,
   countryDetected: null,
   aimeFriend: false,
+  phone: null,
+  handlePhoneCountrySelected: () => {},
 };
 
 export default NewMentorForm;
