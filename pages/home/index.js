@@ -1,22 +1,34 @@
-import React from 'react';
-import HeroBannerHomepage from '../../components/heroBannerHomepage';
-import IntroPanelHomepage from '../../components/introPanelHomepage';
-import CtaGrid from '../../components/ctaGrid';
-import CtaFAQ from '../../components/ctaFAQ';
-import FooterBanner from '../../components/footerBanner';
-import withLayout from '../../hocs/basicLayout';
+import React, { useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
-
+import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import './home.scss';
 
-const Home = () => (
-  <>
-    <HeroBannerHomepage currentSite="au" />
-    <IntroPanelHomepage />
-    <CtaGrid elements={CTA_AU_HOMEPAGE} />
-    <CtaFAQ />
-    <FooterBanner />
-  </>
-);
+const HeroBannerHomepage = dynamic(() => import(/* webpackChunkName 'HeroBannerHomepage' */ '../../components/heroBannerHomepage'));
+const IntroPanelHomepage = dynamic(() => import(/* webpackChunkName 'IntroPanelHomepage' */ '../../components/introPanelHomepage'));
+const CtaGrid = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ctaGrid'));
+const Ambassadors = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ambassadors'));
+const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
+const FooterBanner = dynamic(() => import(/* webpackChunkName 'FooterBanner' */ '../../components/footerBanner'));
 
-export default withLayout(Home);
+const Home = () => {
+  useEffect(() => {
+    if (!getFromStorage('home_first_visit')) {
+      setOnStorage('home_first_visit', true);
+    }
+  }, []);
+
+  return (
+    <Layout>
+      <HeroBannerHomepage currentSite="au" />
+      <IntroPanelHomepage />
+      <CtaGrid elements={CTA_AU_HOMEPAGE} />
+      <Ambassadors />
+      <CtaFAQ />
+      <FooterBanner />
+    </Layout>
+  );
+};
+
+export default Home;
