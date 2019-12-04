@@ -10,6 +10,7 @@ const UniversityLinks = ({ options }) => (
           <a
             href={`/be-a-mentor/${university.reportingName}`}
             key={`${university.reportingName}-${university.value}`}
+            aria-label="u"
           >
             u
           </a>
