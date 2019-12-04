@@ -6,59 +6,60 @@ import ErrorBoundary from '../components/common/errorBoundary';
 import Header from '../components/layoutComponents/header';
 import Footer from '../components/layoutComponents/footer';
 import Logos from '../components/layoutComponents/logos';
+import IntercomChat from '../components/intercom';
 import { getSeoTags } from '../services/craftAPI';
 import './basicLayout.scss';
 
-const withLayout = (WrappedComponent) => {
-  const BasicLayout = ({ router, children }) => {
-    const [seo, setSeo] = useState({});
+const Layout = ({ router, children }) => {
+  const [seo, setSeo] = useState({});
 
-    const addSeoAndRedirects = () => {
-      const { pathname } = router;
-      getSeoTags(pathname.split('/')[1].length > 1 ? pathname : '').then(
-        (seoTags) => { setSeo(seoTags); },
-      );
-    };
-
-    useEffect(() => {
-      addSeoAndRedirects();
-    }, [router]);
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [router.pathname]);
-
-    return (
-      <div>
-        <ErrorBoundary>
-          <Header location={router} />
-          <main role="main">
-            <SeoMetadata seo={seo} />
-            {children}
-          </main>
-          <WrappedComponent />
-          <Footer location={router} />
-          <Logos />
-          <div id="aime-parent-video-box" />
-        </ErrorBoundary>
-      </div>
+  const addSeoAndRedirects = () => {
+    const { pathname } = router;
+    getSeoTags(pathname.split('/')[1].length > 1 ? pathname : '').then(
+      (seoTags) => { setSeo(seoTags); },
     );
   };
 
-  BasicLayout.propTypes = {
-    router: PropTypes.shape({
-      pathname: PropTypes.string,
-      asPath: PropTypes.string,
-      query: PropTypes.shape({}),
-    }).isRequired,
-    children: PropTypes.node,
+  const handleShowIntercom = () => {
+    window.Intercom('showNewMessage');
   };
 
-  BasicLayout.defaultProps = {
-    children: null,
-  };
+  useEffect(() => {
+    addSeoAndRedirects();
+  }, [router]);
 
-  return withRouter(BasicLayout);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [router.pathname]);
+
+  return (
+    <div>
+      <ErrorBoundary>
+        <Header location={router} />
+        <main role="main">
+          <SeoMetadata seo={seo} />
+          {children}
+          <IntercomChat />
+        </main>
+        <Footer location={router} handleShowIntercom={handleShowIntercom} />
+        <Logos />
+        <div id="aime-parent-video-box" />
+      </ErrorBoundary>
+    </div>
+  );
 };
 
-export default withLayout;
+Layout.propTypes = {
+  router: PropTypes.shape({
+    pathname: PropTypes.string,
+    asPath: PropTypes.string,
+    query: PropTypes.shape({}),
+  }).isRequired,
+  children: PropTypes.node,
+};
+
+Layout.defaultProps = {
+  children: null,
+};
+
+export default withRouter(Layout);

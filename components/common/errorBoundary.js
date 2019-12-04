@@ -53,7 +53,7 @@ class ErrorBoundary extends Component {
                     {' '}
                     <Anchor to="/contact"> contact us </Anchor>
                   </p>
-                  <Anchor to="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
+                  <Anchor to="/home" as="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
                 </div>
               </div>
             </div>

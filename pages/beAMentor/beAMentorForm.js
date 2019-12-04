@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'aime-blueprint/lib/components/select';
-import ReturningMentor from './returningMentor';
-import NewMentorForm from './newMentorForm';
-import CountryInsideProgram from './countryInsideProgram';
-import CountryOutsideProgram from './countryOutsideProgram';
+import dynamic from 'next/dynamic';
 import { getCountryGroupOptions } from '../../utils/expresionOfInterest';
 import './beAMentor.scss';
+
+const Select = dynamic(() => import(/* webpackChunkName 'Select' */ 'aime-blueprint/lib/components/select'));
+const ReturningMentor = dynamic(() => import(/* webpackChunkName 'ReturningMentor' */ './returningMentor'));
+const NewMentorForm = dynamic(() => import(/* webpackChunkName 'NewMentorForm' */ './newMentorForm'));
+const CountryInsideProgram = dynamic(() => import(/* webpackChunkName 'CountryInsideProgram' */ './countryInsideProgram'));
+const CountryOutsideProgram = dynamic(() => import(/* webpackChunkName 'CountryOutsideProgram' */ './countryOutsideProgram'));
 
 const STYLES_FOR_COUNTRY_SELECTION = {
   control: {
@@ -94,6 +96,7 @@ const BeAMentorForm = ({
               color="#DA0DFF"
               options={countryGroupOptions}
               styles={STYLES_FOR_COUNTRY_SELECTION}
+              theme={process.env.REACT_APP_THEME}
             />
           </h4>
         </div>
