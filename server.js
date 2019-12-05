@@ -94,7 +94,8 @@ app.prepare().then(() => {
 
   // StoryTwo
   server.get('/storyTwo/:slug', (req, res) => {
-    const pagePath = '/storyTwo';
+    const pagePath = '/storyTwo/[slug]';
+
     const queryParams = {
       slug: req.params.slug,
     };

@@ -159,16 +159,5 @@ StoriesContentTwo.defaultProps = {
   contentCreator: '',
   contentPreview: null,
 };
-/*
-  see line 40:
-  I hardcoded the image object "Picture" Component expects,
-  this is because the contentful return object is quiet different,
-  to the craft object and what the Picture componentns expects.
-  (we can make adjustments to contetnful if needed).
-
-  It is also possible to manipulate the images with Contentful image api  to return
-  webp, jpg and png. https://www.contentful.com/developers/docs/references/images-api/#/reference/changing-formats/image-format
-  I did this based on the PropTypes for the Picture Component.
-*/
 
 export default StoriesContentTwo;
