@@ -95,3 +95,7 @@ pip3 install awscli --upgrade --user
 Now follow next steps:
 1. From root folder of this project, run `cp -R .aws ~/.awd` to save credentials in our computer
 1. Execute `sync:aws:next:staging` or any other command on aws to check if it works
+
+# IMPORTANT ON STAGING AND MASTER
+
+1. Don't forget to add **PUBLIC_URL** in environment variables on Heroku for Staging and Production, because are uploading next static folder there to improve the performance, and it is important to load those files from the CDN instead of loading them locally.
