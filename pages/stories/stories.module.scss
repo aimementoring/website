@@ -4,7 +4,7 @@
   min-height: 800px;
 }
 
-.carousel {
+.storyCarousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,6 +131,7 @@
       color: $white;
       line-height: 1.125;
       margin-bottom: 2rem;
+      font-style: normal;
     }
 
     .productTitle {
