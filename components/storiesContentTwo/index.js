@@ -5,7 +5,7 @@ import { formatDate } from '../../utils/utilities';
 import Anchor from '../common/link';
 import styles from './storiesContentTwo.module.scss';
 
-const Picture = dynamic(() => import(/* webpackChunkName 'Picture' */ '../picture'));
+const Picture = dynamic(() => import('../picture'));
 
 const StoriesContentTwo = (props) => {
   const {
@@ -35,9 +35,9 @@ const StoriesContentTwo = (props) => {
               className={styles.bannerImage}
               thumbnail
               image={{
-                image: `https:${bannerImage}?fm=webp`,
+                image: `https:${bannerImage}`,
                 title,
-                thumbnail: `https:${bannerImage}?fm=webp&q=50`,
+                thumbnail: `https:${bannerImage}`,
               }}
             />
             <div

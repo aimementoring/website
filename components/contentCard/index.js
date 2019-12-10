@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 
-const Picture = dynamic(() => import(/* webpackChunkName 'Picture' */ '../picture'));
-const VideoFormElement = dynamic(() => import(/* webpackChunkName 'VideoFormElement' */ '../commonElements/videoFormElement'));
+const Picture = dynamic(() => import('../picture'));
+const VideoFormElement = dynamic(() => import('../commonElements/videoFormElement'));
 
 const ContentCard = (props) => {
   const { contentCards } = props;
@@ -16,7 +16,6 @@ const ContentCard = (props) => {
         const isVideo = card.fields.videoMedia;
         const image = isImage && isImage.fields.file.url;
         const title = isImage && isImage.fields.title;
-        const isGif = isImage && isImage.fields.file.fileName.toLowerCase().indexOf('.gif') > -1;
         const video = isVideo && isVideo.fields.embeddedVideoUrl;
         const videoPlatform = isVideo && isVideo.fields.platform;
         const storyBody = card.fields.contentCopy && card.fields.contentCopy;
@@ -25,7 +24,7 @@ const ContentCard = (props) => {
           <Fragment key={card.sys.id}>
             {isVideo ? (
               <VideoFormElement
-                formElement={{ mp4Video: video, name: videoPlatform }}
+                formElement={{ videoUrl: video, name: videoPlatform, autoplay: true }}
               />
             )
               : isImage && (
@@ -33,7 +32,7 @@ const ContentCard = (props) => {
                   image={{
                     title,
                     thumbnail: `https:${image}?q=50`,
-                    image: isGif ? `https:${image}` : `https:${image}`,
+                    image: `https:${image}`,
                   }}
                 />
               )}

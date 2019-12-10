@@ -23,7 +23,7 @@ const StoriesCarousel = (props) => {
       <div
         className={styles.heroBannerStories}
         style={{
-          backgroundImage: `url(https:${bannerImage}?fm=jpg&fl=progressive)`,
+          backgroundImage: `url(https:${bannerImage})`,
         }}
       >
         <div

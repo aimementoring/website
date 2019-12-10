@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
 import contentfulServer from '../../api/contentfulServer';
-import { removeSpecialCharacters, replaceWhiteSpace } from '../../utils/utilities';
+import {
+  removeSpecialCharacters,
+  replaceWhiteSpace,
+  sortDates,
+} from '../../utils/utilities';
 import styles from './storiesTwo.module.scss';
 
 import StoriesCarousel from '../../components/storiesCarousel';
@@ -13,8 +17,14 @@ const StoriesTwo = (props) => {
   const { entries } = props;
   const isLoading = !entries;
 
+  const filteredDate = sortDates(entries);
+  const filteredStoryContent = entries.filter((entry) => (
+    entry.fields.publishDate.indexOf(filteredDate) === -1
+      || !filteredDate
+  ));
+
   const storyCarousel = !isLoading && (
-    entries.slice(0, 3).map((entry) => {
+    filteredDate.slice(0, 3).map((entry) => {
       const slugTitle = removeSpecialCharacters(entry.fields.title && entry.fields.title);
       const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const bannerImage = entry.fields.banner
@@ -35,7 +45,7 @@ const StoriesTwo = (props) => {
   );
 
   const storyContent = !isLoading && (
-    entries.map((entry) => {
+    filteredStoryContent.map((entry) => {
       const slugTitle = removeSpecialCharacters(entry.fields.title);
       const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const creatorName = entry.fields.contentCreator.fields.authorName;

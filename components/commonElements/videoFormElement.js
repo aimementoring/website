@@ -23,38 +23,54 @@ const VideoFormElement = ({ index, formElement }) => {
 
   const {
     name,
-    mp4Video,
-    webmVideo,
-    youtubeVideoLink,
-    vimeoVideoLink,
+    videoUrl,
   } = formElement;
   const autoplay = formElement.autoplay !== undefined;
   const loop = formElement.loop !== undefined;
   const muted = formElement.muted !== undefined;
   const controls = formElement.controls !== undefined;
 
-  const youtubeIframeLink = getYoutubeIframeLink(youtubeVideoLink);
-  const vimeoIframeLink = getVimeoIframeLink(vimeoVideoLink);
+  const isMp4 = videoUrl.indexOf('.mp4') > -1;
+  const isWebM = videoUrl.indexOf('.webm') > -1;
+  const isVimeo = videoUrl.indexOf('//vimeo') > -1 && videoUrl;
+  const isYouTube = videoUrl.indexOf('.youtube') > -1 && videoUrl;
+  const youtubeIframeLink = getYoutubeIframeLink(isYouTube);
+  const vimeoIframeLink = getVimeoIframeLink(isVimeo);
 
+  // sm-col sm-col-12 md-col-12 = outer most div
+  // my3 matrix-video-friendly hide-the-line fill-space = container div of video element
+  // className="w100 matrix-video-friendly" = video element
   return (
-    <div key={`${name}-${index}`} className="sm-col sm-col-12 md-col-12 my3">
-      {mp4Video && webmVideo && (
-        <div className="matrix-video-friendly hide-the-line fill-space">
+    <div key={`${name}-${index}`} className="video-container">
+      {isMp4 && (
+        <div>
           <video
             autoPlay={autoplay}
             loop={loop}
             muted={muted}
             controls={controls}
-            playsinline
-            className="w100 matrix-video-friendly"
+            playsinline="true"
           >
             <track kind="captions" />
-            <source src={mp4Video} type="video/mp4" />
-            <source src={webmVideo} type="video/webm" />
+            <source src={videoUrl} type="video/mp4" />
           </video>
         </div>
       )}
-      {youtubeVideoLink && (
+      {isWebM && (
+        <div>
+          <video
+            autoPlay={autoplay}
+            loop={loop}
+            muted={muted}
+            controls={controls}
+            playsinline="true"
+          >
+            <track kind="captions" />
+            <source src={videoUrl} type="video/webm" />
+          </video>
+        </div>
+      )}
+      {youtubeIframeLink && (
         <iframe
           title="Youtube-video"
           id="ytplayer"
@@ -65,27 +81,12 @@ const VideoFormElement = ({ index, formElement }) => {
           frameBorder="0"
         />
       )}
-      {vimeoVideoLink && (
+      {vimeoIframeLink && (
         <iframe
           title="Vimeo-video"
           width="640"
           height="360"
           src={vimeoIframeLink}
-          frameBorder="0"
-        />
-      )}
-      {name.toLowerCase() === 'google photos' && (
-        /*
-          this is a temp solution.
-          Just adding this as the video in the test comes from google photos.
-          I am unsure at this stage if there will be any other video platforms
-          added for video content.
-       */
-        <iframe
-          title="Google-photos-video"
-          width="640"
-          height="360"
-          src={mp4Video}
           frameBorder="0"
         />
       )}
@@ -95,15 +96,12 @@ const VideoFormElement = ({ index, formElement }) => {
 
 VideoFormElement.propTypes = {
   formElement: PropTypes.shape({
+    videoUrl: PropTypes.string,
+    name: PropTypes.string,
     autoplay: PropTypes.bool,
     loop: PropTypes.bool,
     muted: PropTypes.bool,
     controls: PropTypes.bool,
-    name: PropTypes.string,
-    mp4Video: PropTypes.string,
-    webmVideo: PropTypes.string,
-    youtubeVideoLink: PropTypes.string,
-    vimeoVideoLink: PropTypes.string,
   }).isRequired,
   index: PropTypes.number,
 };

@@ -89,3 +89,11 @@ export const formatDate = (publishDate, format = 'D.M.YYYY') => {
   };
   return datePublished.format(DATE_FORMATS[format] || format);
 };
+
+export const sortDates = (dates) => {
+  const sortedDatesArray = dates.sort((a, b) => (
+    moment(b.fields.publishDate).format('YYYYMMDD') - moment(a.fields.publishDate).format('YYYYMMDD')
+  ));
+
+  return sortedDatesArray;
+};
