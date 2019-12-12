@@ -24,7 +24,7 @@ const StoriesTwo = (props) => {
   ));
 
   const storyCarousel = !isLoading && (
-    filteredDate.slice(0, 3).map((entry) => {
+    filteredStoryContent.slice(0, 3).map((entry) => {
       const slugTitle = removeSpecialCharacters(entry.fields.title && entry.fields.title);
       const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const bannerImage = entry.fields.banner
