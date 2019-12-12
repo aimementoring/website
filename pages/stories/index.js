@@ -37,7 +37,7 @@ const Stories = () => {
 };
 
 const StoriesCarousel = ({ entries }) => (
-  <div className={styles.carousel}>
+  <div className={styles.storyCarousel}>
     <Carousel>
       {entries.slice(0, 3).map((carrouselElement) => (
         <div
