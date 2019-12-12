@@ -4,7 +4,7 @@
 1. Open the folder `cd website`
 1. Install dependencies `yarn`
 1. Run the project in development mode `yarn dev`
-1. If you want to test the project in build mode you need to run `yarn build && yarn start`
+1. If you want to test the project in build mode (similar to production mode) you need to run `yarn build && yarn start`
 
 # How to create a new page
 
