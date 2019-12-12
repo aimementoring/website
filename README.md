@@ -68,3 +68,43 @@ The main idea with that is:
 1. Refactors and design changes are faster and easier.
 1. First render is faster because we load content asynchronously so we don't need to have the full page when we are navigating.
 1. It is easier to add and update styles with css modules because files are smaller.
+
+# AWS Command line
+
+If you want to test aws s3 command locally, you need first to install aws command, following next instructions:
+```shell
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+```
+
+or you can install it with python, based on [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+```shell
+# Install pip3 if you don't have it yet
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+# Install aws cli
+pip3 install awscli --upgrade --user
+```
+
+After installation is finished, verify the installation has completed correctly with the following command:
+```shell
+pip3 install awscli --upgrade --user
+```
+
+Now follow next steps:
+1. From root folder of this project, run `cp -R .aws ~/.awd` to save credentials in our computer
+1. `aws configure list` to see what credentials you have defined in your computer. Expected output should look like this:
+    ```
+    Name Value Type Location
+    ---- ----- ---- --------
+    profile <not set> None None
+    access_key ****************CNUG shared-credentials-file
+    secret_key ****************v962 shared-credentials-file
+    region ap-southeast-2 config-file ~/.aws/config
+    ```
+1. Execute `sync:aws:next:staging` or any other command on aws to check if it works
+
+# IMPORTANT ON STAGING AND MASTER
+
+1. Don't forget to add **PUBLIC_URL** in environment variables on Heroku for Staging and Production, because are uploading next static folder there to improve the performance, and it is important to load those files from the CDN instead of loading them locally.
