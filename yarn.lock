@@ -1874,10 +1874,10 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-aime-blueprint@^2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.10.tgz#f301034eddad1f03b1c197321765986b7679099d"
-  integrity sha512-qUl6yVvRPPZZPyy9yHixnWj/HGBLj+xdl8pPttzTqbkxZBKtJXV4z+i8Y46VTo9RrmvxPuRxh6/7tapVeexqlA==
+aime-blueprint@^2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.14.tgz#115b732a962d4d90f1dbe9d47d689f0cf16788b4"
+  integrity sha512-jTsoY8ck3WzMcQTo/nRyxibeEbCtO7XXegBKp+2chiqv8N0O4zPu1WzYhVCoQ2C/LvPtHuW1+6YBTsVDiSCyMw==
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
