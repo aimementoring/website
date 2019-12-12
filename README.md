@@ -87,13 +87,22 @@ python3 get-pip.py --user
 pip3 install awscli --upgrade --user
 ```
 
-After that, on any case, verify command is correctly installed:
+After installation is finished, verify the installation has completed correctly with the following command:
 ```shell
 pip3 install awscli --upgrade --user
 ```
 
 Now follow next steps:
 1. From root folder of this project, run `cp -R .aws ~/.awd` to save credentials in our computer
+1. `aws configure list` to see what credentials you have defined in your computer. Expected output should look like this:
+    ```
+    Name Value Type Location
+    ---- ----- ---- --------
+    profile <not set> None None
+    access_key ****************CNUG shared-credentials-file
+    secret_key ****************v962 shared-credentials-file
+    region ap-southeast-2 config-file ~/.aws/config
+    ```
 1. Execute `sync:aws:next:staging` or any other command on aws to check if it works
 
 # IMPORTANT ON STAGING AND MASTER
