@@ -156,7 +156,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                 <ul className="list-reset flex flex-column lg-flex-row">
                   <li className="flex">
                     <Anchor
-                      to="/termsOfService"
+                      to="/termsAndConditions"
                       as="/terms-of-service"
                       className="footer-text mr3"
                     >
