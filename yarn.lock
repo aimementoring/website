@@ -1874,10 +1874,10 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-aime-blueprint@^2.1.10:
-  version "2.1.10"
-  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.10.tgz#f301034eddad1f03b1c197321765986b7679099d"
-  integrity sha512-qUl6yVvRPPZZPyy9yHixnWj/HGBLj+xdl8pPttzTqbkxZBKtJXV4z+i8Y46VTo9RrmvxPuRxh6/7tapVeexqlA==
+aime-blueprint@^2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.1.14.tgz#115b732a962d4d90f1dbe9d47d689f0cf16788b4"
+  integrity sha512-jTsoY8ck3WzMcQTo/nRyxibeEbCtO7XXegBKp+2chiqv8N0O4zPu1WzYhVCoQ2C/LvPtHuW1+6YBTsVDiSCyMw==
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
@@ -11900,6 +11900,11 @@ shell-quote@1.7.2, shell-quote@^1.6.1:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+
+shopify-buy@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/shopify-buy/-/shopify-buy-2.8.1.tgz#f9de681d36a7b61eaeb22aff5305b8aa2174cc99"
+  integrity sha512-dO2CkcSqUFrZQQzcOGT3rQQPvAsWi8ADPgBYD/Te1HN+KPsO7gTlBCy3G7+RdHvD+iO9BAVjobWUbOkcQGBoKg==
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
