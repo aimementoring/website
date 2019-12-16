@@ -155,7 +155,8 @@ const About = () => (
                 challenging est world orders, making magic, fueling imaginative fire.
               </p>
               <Anchor
-                to="/jack-manning-bancroft"
+                to="/founder"
+                as="/jack-manning-bancroft"
                 className={styles.linkButton}
               >
                 Read about our founder

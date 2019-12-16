@@ -55,8 +55,6 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
             })} */}
             <li className={styles.inlineListItem}>
               <Anchor
-                prefetch
-                withData
                 className={styles.donateBtn}
                 to="/seatontheplane"
                 as="/seatontheplane#register"
