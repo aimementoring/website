@@ -51,7 +51,7 @@ class ErrorBoundary extends Component {
                   <p className="f-14 light pt2 c-white">
                     {'Sorry for any inconvenience. If you\'re seeing this often, please'}
                     {' '}
-                    <Anchor prefetch withData to="/contact"> contact us </Anchor>
+                    <Anchor to="/contact"> contact us </Anchor>
                   </p>
                   <Anchor to="/home" as="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
                 </div>
