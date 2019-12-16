@@ -3,7 +3,7 @@ const cacheableResponse = require('cacheable-response');
 const express = require('express');
 const next = require('next');
 const compression = require('compression');
-// const fetchContentfulEntries = require('./api/contentfulServer');
+const fetchContentfulEntries = require('./api/contentfulServer');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -25,21 +25,12 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  // fetchContentfulEntries().then((response = []) => {
-  //   response.forEach((url) => {
-  //     server.get(url.fields.sourceUrl, (_req, res, nextCall) => {
-  //       res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-  //       nextCall();
-  //     });
-  //   });
-  // });
-
   server.get('/', (req, res) => ssrCache({ req, res, pagePath: '/' }));
 
   // Positions
-  server.get('/:country/positions', (req, res) => {
+  server.get('/:countryId/positions', (req, res) => {
     const pagePath = '/positions';
-    const queryParams = { country: req.params.country };
+    const queryParams = { countryId: req.params.countryId };
     return ssrCache({
       req, res, pagePath, queryParams,
     });
@@ -58,12 +49,12 @@ app.prepare().then(() => {
   });
 
   // Positions
-  server.get('/:country/positions/:id/:jobCategory', (req, res) => {
+  server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
     const pagePath = '/positionsEntry';
     const queryParams = {
       id: req.params.id,
       jobCategory: req.params.jobCategory,
-      country: req.params.country,
+      countryId: req.params.countryId,
     };
     return ssrCache({
       req, res, pagePath, queryParams,
@@ -228,11 +219,20 @@ app.prepare().then(() => {
     });
   });
 
-  server.get('*', (req, res) => handle(req, res));
+  fetchContentfulEntries().then((response = []) => {
+    for (let i = 0; i < response.length; i += 1) {
+      const url = response[i];
+      server.get(url.fields.sourceUrl, (_req, res) => {
+        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+      });
+    }
 
-  server.listen(port, (err) => {
-    if (err) throw err;
-    // eslint-disable-next-line no-console
-    console.log(`> Ready on http://localhost:${port}`);
+    server.get('*', (req, res) => handle(req, res));
+
+    server.listen(port, (err) => {
+      if (err) throw err;
+      // eslint-disable-next-line no-console
+      console.log(`> Ready on http://localhost:${port}`);
+    });
   });
 });
