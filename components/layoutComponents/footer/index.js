@@ -22,8 +22,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/beAMentor"
                           as="/be-a-mentor"
                           className="c-white text-decoration-none"
@@ -48,8 +46,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/donate"
                           className="toggleRaiselyModal c-white text-decoration-none"
                         >
@@ -74,8 +70,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/theMentor"
                           as="/the-mentor"
                           className="c-white text-decoration-none"
@@ -85,8 +79,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/about"
                           className="c-white text-decoration-none"
                         >
@@ -95,8 +87,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                       </li>
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/founder"
                           as="/jack-manning-bancroft"
                           className="c-white text-decoration-none"
@@ -111,8 +101,6 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
-                          prefetch
-                          withData
                           to="/positions"
                           className="c-white text-decoration-none"
                         >
@@ -168,9 +156,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                 <ul className="list-reset flex flex-column lg-flex-row">
                   <li className="flex">
                     <Anchor
-                      prefetch
-                      withData
-                      to="/termsOfService"
+                      to="/termsAndConditions"
                       as="/terms-of-service"
                       className="footer-text mr3"
                     >
