@@ -2,13 +2,6 @@ import { getFromStorage } from './localStorage';
 
 export const isClientSide = () => typeof window !== 'undefined';
 
-export const checkCountryParams = (props) => (
-  props.match && props.match.isExact && props.match.params
-    && props.match.params.countryId
-    ? props.match.params.countryId
-    : 'global'
-);
-
 export function getCountrySite() {
   return getFromStorage('country_code_selected');
 }
