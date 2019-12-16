@@ -105,8 +105,8 @@ $lg: 64em;
 $hoverTransition: all 100ms linear;
 
 // $cdnRoot: "http://192.168.33.10/" //Local Assets
-// $cdnRoot: "https://aime-website-staging.s3.amazonaws.com/" // Development Cloudfront
-$cdnRoot: "https://aime-website.s3.amazonaws.com/"; //Production Cloudfront
+// $cdnRoot: "https://d37ywnsk1vrgvq.cloudfront.net/" // Development Cloudfront
+$cdnRoot: "https://d3kott46cqreik.cloudfront.net/"; //Production Cloudfront
 
 %svgIcon {
   stroke-width: 0;
