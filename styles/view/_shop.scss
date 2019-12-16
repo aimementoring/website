@@ -323,10 +323,12 @@ select.sort {
 }
 
 .shop-details-wrapper {
+  position: relative;
 
   .shop-details {
 
-    label {
+    label,
+    .label {
       @extend
       .f-12,
       .c-grey,

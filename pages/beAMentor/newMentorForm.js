@@ -109,6 +109,7 @@ const NewMentorForm = ({
       <div className="col-12 flex">
         <Checkbox
           elementClassName="sm-col sm-col-12 md-col-12 f-14 pt2 flex items-center custom-checkbox custom-checkbox--default"
+          className="mt2"
           onChangeFunction={handleFieldChange}
           placeholder="Become an AIME Friend. Receive updates about AIME and help us tackle inequality."
           name="aimeFriend"
