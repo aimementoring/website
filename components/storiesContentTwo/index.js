@@ -20,7 +20,7 @@ const StoriesContentTwo = (props) => {
   } = props;
 
   const datePublished = formatDate(publishDate, 'short');
-  const bannerImage = bannerContent.visualMedia.fields.file.url;
+  const bannerImage = bannerContent.visualMedia && bannerContent.visualMedia.fields.file.url;
 
   return (
     <>

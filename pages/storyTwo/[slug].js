@@ -20,6 +20,7 @@ const StoryTwo = (props) => {
       {
         content && content.map((entry) => {
           const bannerImage = entry.fields.banner
+          && entry.fields.banner.fields.visualMedia
           && entry.fields.banner.fields.visualMedia.fields.file.url;
           /*
            TODO: these params for styling,
