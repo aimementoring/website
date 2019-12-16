@@ -1,9 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
-import dynamic from 'next/dynamic';
+import compact from 'lodash/compact';
 import Anchor from '../common/link';
-
-const compact = dynamic(() => import(/* webpackChunkName 'compact' */ 'lodash/compact'));
 
 const JobPreview = ({
   name,
@@ -60,8 +58,6 @@ const JobPreview = ({
   return (
     <div className="homepage-main-actions mb2">
       <Anchor
-        prefetch
-        withData
         to="/positions/[positionId]/[jobCategory]"
         as={`/positions/${id}/${nameAsLink}`}
         className="homepage-main-actions--inner"

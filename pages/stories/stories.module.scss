@@ -4,7 +4,7 @@
   min-height: 800px;
 }
 
-.carousel {
+.storyCarousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,12 +131,14 @@
       color: $white;
       line-height: 1.125;
       margin-bottom: 2rem;
+      font-style: normal;
     }
 
     .productTitle {
       color: $white;
       font-family: $primary-font-family;
-      font-size: 14px;
+      font-size: 0.8rem;
+      line-height: 1.5;
       font-weight: 400;
       margin-top: 0.5rem;
     }
