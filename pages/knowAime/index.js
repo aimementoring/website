@@ -60,10 +60,10 @@ const KnowAime = () => (
             times, we adapt and evolve constantly. Can you keep up?
           </p>
           <div className="buttons-container pt4">
-            <Anchor to="/the-mentor/" className="ghost-btn bg-brand-primary c-white mb2">
+            <Anchor to="/theMentor" as="/the-mentor" className="ghost-btn bg-brand-primary c-white mb2">
               <span className=" download-btn-text">Read &quot;The Mentor&quot;</span>
             </Anchor>
-            <Anchor to="/jack-manning-bancroft" className="ghost-btn bg-brand-primary c-white mb2">
+            <Anchor to="/founder" as="/jack-manning-bancroft" className="ghost-btn bg-brand-primary c-white mb2">
               <span className=" download-btn-text">Meet Jack</span>
             </Anchor>
             <Anchor to="/impact" className="ghost-btn bg-brand-primary c-white mb2">
