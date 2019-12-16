@@ -25,7 +25,7 @@ const GoingGlobalHeader = () => {
   }, [isClient]);
 
   return (
-    <div className={`${headerState}`}>
+    <div className={headerState}>
       <div className={styles.navMicrositeWrapper}>
         <div className={styles.navMicrosite}>
           <div className={styles.logoContainer}>
@@ -33,19 +33,19 @@ const GoingGlobalHeader = () => {
           </div>
           <nav id="nav-microsite" className={styles.navMenuLinks}>
             <ul>
-              <li>
+              <li className={styles.goingGlobalMenuItem}>
                 <Anchor to="/going-global" as="/going-global#intro">Intro</Anchor>
               </li>
-              <li>
+              <li className={styles.goingGlobalMenuItem}>
                 <Anchor to="/going-global" as="/going-global#casestudies">Case Studies</Anchor>
               </li>
-              <li>
+              <li className={styles.goingGlobalMenuItem}>
                 <Anchor to="/going-global" as="/going-global#results">Results</Anchor>
               </li>
-              <li>
+              <li className={styles.goingGlobalMenuItem}>
                 <Anchor to="/going-global" as="/going-global#philosophies">Imagination Curriculum</Anchor>
               </li>
-              <li>
+              <li className={styles.goingGlobalMenuItem}>
                 <Anchor to="/going-global" as="/going-global#resources">Resources</Anchor>
               </li>
             </ul>
