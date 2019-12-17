@@ -37,6 +37,7 @@ const CountryInsideProgram = ({ handleReturningMentorChange, returningMentor }) 
       options={radioButtonsOptions}
       value={returningMentor ? 'returningMentor' : 'notReturningMentor'}
       theme={process.env.REACT_APP_THEME}
+      radiuButtonClass="radio-buttons-space"
     />
   </div>
 );

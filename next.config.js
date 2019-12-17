@@ -14,6 +14,7 @@ module.exports = withOffline(
       cssLoaderOptions: {
         importLoaders: 1,
         localIdentName: '[local]',
+        // localIdentName: '[name]__[local]___[hash:base64:5]',
       },
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
@@ -49,6 +50,9 @@ module.exports = withOffline(
           process.env.REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS,
         REACT_APP_CONTENTFUL_MANAGEMENT_AUTHORIZATION_TOKEN:
           process.env.REACT_APP_CONTENTFUL_MANAGEMENT_AUTHORIZATION_TOKEN,
+        REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN:
+          process.env.REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN,
+        REACT_APP_SHOPIFY_DOMAIN: process.env.REACT_APP_SHOPIFY_DOMAIN,
       },
       target: 'serverless',
       transformManifest: (manifest) => ['/'].concat(manifest),

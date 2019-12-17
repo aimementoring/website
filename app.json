@@ -93,11 +93,7 @@
       "required": true,
       "value": "purple"
     },
-    "PUBLIC_URL": {
-      "required": true,
-      "value": "iz0aikshgysc"
-    },
-    "GENERATE_SOURCEMAP": {
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
       "required": true,
       "value": "false"
     },
@@ -140,6 +136,10 @@
     "REACT_APP_CONTENTFUL_MANAGEMENT_AUTHORIZATION_TOKEN": {
       "required": true,
       "value": "CFPAT-tBUgQ_v0sLp-jQJCmJ-sHFNw29PYe7Y1AUbdGAc1Jb8"
+    },
+    "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": {
+      "required": true,
+      "value": "560dd7f8110349a17d6e96c46d02a0ce"
     }
   },
   "formation": {
