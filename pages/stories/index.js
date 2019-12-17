@@ -63,7 +63,11 @@ const StoriesCarousel = ({ entries }) => (
                 {carrouselElement.previewText && (
                   <p className={styles.productTitle}>{`${carrouselElement.previewText}…`}</p>
                 )}
-                <Anchor to={`/story/${carrouselElement.slug}`} className={styles.carouselLink}>
+                <Anchor
+                  to={`/story?storySlug=${carrouselElement.slug}`}
+                  as={`/story/${carrouselElement.slug}`}
+                  className={styles.carouselLink}
+                >
                   Read More
                 </Anchor>
               </div>
@@ -77,7 +81,7 @@ const StoriesCarousel = ({ entries }) => (
 
 StoriesCarousel.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     slug: PropTypes.string,
     bannerImage: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.string,
