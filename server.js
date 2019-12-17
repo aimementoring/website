@@ -15,12 +15,9 @@ const ssrCache = cacheableResponse({
   ttl: 1000 * 60 * 60, // 1hour
   get: async ({
     req, res, pagePath, queryParams,
-  }) => {
-    console.log({ pagePath, queryParams });
-    return {
-      data: await app.renderToHTML(req, res, pagePath, queryParams),
-    };
-  },
+  }) => ({
+    data: await app.renderToHTML(req, res, pagePath, queryParams),
+  }),
   send: ({ data, res }) => res.send(data),
 });
 
@@ -70,7 +67,6 @@ app.prepare().then(() => {
     const queryParams = {
       storySlug: req.params.storySlug,
     };
-    console.log({ queryParams });
     return ssrCache({
       req, res, pagePath, queryParams,
     });
