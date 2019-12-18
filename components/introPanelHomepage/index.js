@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { Components } from 'aime-blueprint';
 import Anchor from '../common/link';
 import './index.scss';
 
@@ -7,21 +8,20 @@ const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '.
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
+const {
+  Title,
+  // Paragraph,
+} = Components;
+
 const IntroPanelHomepage = () => (
-  <div className="bg-darkest-purple full-width-wrap content-panel home-intro-panel">
+  <div className="full-width-wrap content-panel home-intro-panel">
     <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
       <div className="home-intro-panel--inner">
         <div className="sm-col-12 sm-col-6 pr2">
-          <h1 className="intro-subheading mb3">
-            <span className="highlight-text highlight-text-straight highlight-text--second-panel">
-              <em>
-                If not you…
-                {' '}
-                <br />
-                then who?
-              </em>
-            </span>
-          </h1>
+          <Title type="headingLockup">
+            If not you...
+            <strong>Then who?</strong>
+          </Title>
           <div className="intro-sub-text">
             <p className="f-16 light c-white">
               {'Want to change the world? We\'re recruiting mentors across Australia, Uganda and South Africa'}
