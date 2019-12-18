@@ -1,9 +1,8 @@
 @import '../../styles/base/variables';
 
 .footer-banner {
-  border: 15px solid orange;
   .banner-wrapper {
-    background: url($cdnRoot + 'assets/images/banner/footer-banner@2x.jpg') no-repeat top center / cover $darkest-purple;
+    background: url($cdnRoot + 'assets/images/banner/bg-imagination@2x.jpg') no-repeat top center / cover $darkest-purple;
     height: 520px;
     background-blend-mode: screen;
   }
