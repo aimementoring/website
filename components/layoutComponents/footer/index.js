@@ -12,19 +12,19 @@ const Footer = ({ location, handleShowIntercom }) => {
   return (
     <div>
       {!isTalentPage && (
-        <footer className="bg-black" role="contentinfo">
-          <div className="footer-links fit relative pt4 pb2 lg-pb4 bg-black">
+        <footer className="footer" role="contentinfo">
+          <div className="footer-links fit relative pt4 pb2 lg-pb4">
             <div className="flex mx-auto wrap px3 mt4">
               <div className="w100 flex justify-between flex-column lg-flex-row">
                 <div className="flex flex-auto flex-wrap">
                   <nav className="flex-auto mb3 footer-links--column">
-                    <h4 className="c-white feature-font-family bold f-15 pb2">Pitch In</h4>
+                    <h4 className="feature-font-family bold f-15 pb2">Pitch In</h4>
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
                           to="/beAMentor"
                           as="/be-a-mentor"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           Become a
                           {' '}
@@ -37,7 +37,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Become a partner"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           Become a
                           {' '}
@@ -47,7 +47,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                       <li className="mb2">
                         <Anchor
                           to="/donate"
-                          className="toggleRaiselyModal c-white text-decoration-none"
+                          className="toggleRaiselyModal text-decoration-none"
                         >
                             Make a Donation
                         </Anchor>
@@ -55,14 +55,14 @@ const Footer = ({ location, handleShowIntercom }) => {
                     </ul>
                   </nav>
                   <nav className="flex-auto mb3 footer-links--column">
-                    <h4 className="c-white feature-font-family bold f-15 pb2">What Else?</h4>
+                    <h4 className="feature-font-family bold f-15 pb2">What Else?</h4>
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <a
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://shop.aimementoring.com/"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                           aria-label="shop apparel"
                         >
                           Shop Apparel
@@ -72,7 +72,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <Anchor
                           to="/theMentor"
                           as="/the-mentor"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           Read the book
                         </Anchor>
@@ -80,7 +80,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                       <li className="mb2">
                         <Anchor
                           to="/about"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           About AIME
                         </Anchor>
@@ -89,7 +89,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                         <Anchor
                           to="/founder"
                           as="/jack-manning-bancroft"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           Founder &amp; CEO
                         </Anchor>
@@ -97,12 +97,12 @@ const Footer = ({ location, handleShowIntercom }) => {
                     </ul>
                   </nav>
                   <nav className="flex-auto mb3 footer-links--column">
-                    <h4 className="c-white feature-font-family bold f-15 pb2">Go Further</h4>
+                    <h4 className="feature-font-family bold f-15 pb2">Go Further</h4>
                     <ul className="list-reset f-14">
                       <li className="mb2">
                         <Anchor
                           to="/positions"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           <span>Work with AIME</span>
                         </Anchor>
@@ -113,14 +113,14 @@ const Footer = ({ location, handleShowIntercom }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="faqs"
-                          className="c-white text-decoration-none"
+                          className="text-decoration-none"
                         >
                           FAQs
                         </a>
                       </li>
                       <li className="mb2">
                         <button
-                          className="c-white intercom-button text-decoration-none"
+                          className="intercom-button text-decoration-none"
                           onClick={handleShowIntercom}
                           type="button"
                           aria-label="contact"
@@ -134,8 +134,8 @@ const Footer = ({ location, handleShowIntercom }) => {
                 <div className="flex flex-auto justify-start lg-justify-end">
                   <div className="flex flex-column w100" style={{ maxWidth: '350px' }}>
                     <div className="flex-auto mb3">
-                      <h4 className="c-white feature-font-family bold f-15 pb2">Become an AIME friend</h4>
-                      <p className="f-14 pb2 c-white">Subscribe to our newsletter</p>
+                      <h4 className="feature-font-family bold f-15 pb2">Become an AIME friend</h4>
+                      <p className="f-14 pb2">Subscribe to our newsletter</p>
                       <form acceptCharset="UTF-8" action="https://formkeep.com/f/0f2fe2a1cd09" method="POST" className="footer-links--input">
                         <input type="hidden" name="utf8" value="✓" />
                         <input type="hidden" name="submissionmessage" value="footernewslettersubscription" />
