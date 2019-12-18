@@ -14,7 +14,7 @@
 .bannerWrapper {
   background:
     url($cdnRoot+"assets/images/no-new-clothes/noedit_banner.jpg")
-    no-repeat top center #050301;
+    no-repeat top center $white;
   align-items: center;
   background-attachment: fixed;
   background-size: auto 120%;
