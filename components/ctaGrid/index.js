@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import { Components } from 'aime-blueprint';
+import styles from './index.scss';
+
+const {
+  Title,
+  // Paragraph,
+  Button,
+} = Components;
 
 const CtaGrid = ({ elements }) => (
   <div className="full-width-wrap">
@@ -8,24 +15,23 @@ const CtaGrid = ({ elements }) => (
       {elements.map((cta, index) => (
         <div key={`${cta.title}-${cta.description}`} className={`item center-contents item-${index + 1}`}>
           <div className="item-contents">
-            <h3>
+            <Title className={styles.ctaLockup} type="headingLockup">
               {cta.title}
-            </h3>
+            </Title>
             <div className="sub-item-details show-on-hover">
-              <p>
-                {cta.description}
-              </p>
+              {/* <Paragraph text={cta.description} /> */}
+              <p>{cta.description}</p>
               <div className="sub-item-details show-on-hover">
                 {cta.link.indexOf('http') !== -1
                   ? (
-                    <a aria-label="cta" className="basic-btn" href={cta.link} rel="noopener noreferrer" target="_blank">
+                    <Button aria-label="cta" type="link" url={cta.link}>
                       {cta.button}
-                    </a>
+                    </Button>
                   )
                   : (
-                    <a className="basic-btn" aria-label="cta-link" href={cta.link}>
+                    <Button aria-label="cta-link" type="link" url={cta.link}>
                       {cta.button}
-                    </a>
+                    </Button>
                   )}
               </div>
             </div>
