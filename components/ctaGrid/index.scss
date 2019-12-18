@@ -14,16 +14,30 @@
     flex-wrap: nowrap;
     flex-grow: 1;
     max-width: 100%;
-    height: 360px;
-    background: #7603db;
-    background-color: #0d0012;
+    background-color: $purple;
     text-align: center;
     background-size: cover;
     background-position: center;
     color: #fff;
+    margin: 0.65em;
+    padding: 2em;
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
     @media all and(min-width: $md) {
-      height: 600px;
+      height: 30em;
+    }
+
+    &:nth-child(2) {
+      background-color: $pink;
+    }
+    &:nth-child(3) {
+      background-color: $green;
+    }
+    &:nth-child(4) {
+      background-color: $cyan;
     }
 
     .item-contents {
@@ -72,21 +86,32 @@
   .item-4 {
     background-image: url($cdnRoot + 'assets/images/homepage-grid/background-aimetv@2x.jpg');
   }
+
+  .ctaLockup {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    color: $white;
+    padding: 0 0.5em;
+    line-height: 1em;
+  }
+
 }
 
 .show-on-hover {
-  visibility: visible;
+  display: block;
 
   @media all and(min-width: $md) {
-    visibility: hidden;
+    display: none;
   }
 }
 
 .cta-container .item:hover .show-on-hover {
-  visibility: visible;
+  display: block;
 }
 
 .cta-container .item:hover {
-  background-color: rgba(118, 3, 219, 0.8);
-  background-blend-mode: lighten;
+  // background-color: rgba(118, 3, 219, 0.8);
+  // background-blend-mode: lighten;
+  opacity: 0.5;
 }
