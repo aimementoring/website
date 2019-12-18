@@ -116,6 +116,10 @@
     "REACT_APP_CONTENTFUL_SPACE_ID": {
       "required": true,
       "value": "iz0aikshgysc"
+    },
+    "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": {
+      "required": true,
+      "value": "560dd7f8110349a17d6e96c46d02a0ce"
     }
   },
   "formation": {

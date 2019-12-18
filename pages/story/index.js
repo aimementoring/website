@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
+import Layout from '../../hocs/basicLayout';
 import { getEntries } from '../../services/craftAPI';
 import { isClientSide } from '../../utils/utilities';
 import styles from './story.module.scss';
@@ -34,41 +35,44 @@ const Story = ({ storySlug, entries }) => {
   if (entries && entries.postDate) postDate = new Date(entries.postDate.date.replace(/\s/, 'T'));
 
   return (
-    <div>
+    <Layout>
       <div>
-        {entries && entries.bannerImage && (
-          <div className={styles.bannerInStory} style={bannerStyles} />
-        )}
         <div>
-          {entries && (
-            <div className={styles.entriesContainer}>
-              <article className={styles.blogPost}>
-                <h1 className={styles.blogPostTitle}>{entries.title}</h1>
-                <div>
-                  {postDate && (
-                    <span className={styles.blogPostTimestamp}>
-                      {`Posted ${postDate.toLocaleString('en-us', {
-                        month: 'long',
-                      })} ${postDate.getDate()}, ${postDate.getFullYear()}`}
-                    </span>
-                  )}
-                </div>
-                <article className={styles.blogPostArticle} />
-                <div>
-                  {entries.post && <MatrixBuilder formData={entries.post} matrixType="blog" />}
-                </div>
-
-                <Anchor to="/stories" className={styles.articleTileLink}>
-                  <i className={styles.materialIcons}>keyboard_backspace</i>
-                  {' '}
-                  Back to Stories
-                </Anchor>
-              </article>
-            </div>
+          {entries && entries.bannerImage && (
+            <div className={styles.bannerInStory} style={bannerStyles} />
           )}
+          <div>
+            {entries && (
+              <div className={styles.entriesContainer}>
+                <article className={styles.blogPost}>
+                  <h1 className={styles.blogPostTitle}>{entries.title}</h1>
+                  <div>
+                    {postDate && (
+                      <span className={styles.blogPostTimestamp}>
+                        {`Posted ${postDate.toLocaleString('en-us', {
+                          month: 'long',
+                        })} ${postDate.getDate()}, ${postDate.getFullYear()}`}
+                      </span>
+                    )}
+                  </div>
+                  <article className={styles.blogPostArticle}>
+                    <div>
+                      {entries.post && <MatrixBuilder formData={entries.post} matrixType="blog" />}
+                    </div>
+
+                    <Anchor to="/stories" className={styles.articleTileLink}>
+                      <i className={styles.materialIcons}>keyboard_backspace</i>
+                      {' '}
+                      Back to Stories
+                    </Anchor>
+                  </article>
+                </article>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
