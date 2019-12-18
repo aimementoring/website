@@ -21,7 +21,7 @@
     color: #fff;
     margin: 0.65em;
     padding: 2em;
-    
+    background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-purple@2x.jpg');
     justify-content: center;
     align-items: center;
     display: flex;
@@ -32,12 +32,16 @@
 
     &:nth-child(2) {
       background-color: $pink;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-pink@2x.jpg');
+      background-position: left;
     }
     &:nth-child(3) {
       background-color: $green;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-shop@2x.jpg');
     }
     &:nth-child(4) {
       background-color: $cyan;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-cyan@2x.jpg');
     }
 
     .item-contents {
@@ -70,23 +74,6 @@
     }
   }
 
-  .item-1 {
-    background-image: url($cdnRoot + 'assets/images/homepage-grid/background-whoweare@2x.jpg');
-  }
-
-  .item-2 {
-    background-image: url($cdnRoot + 'assets/images/homepage-grid/background-shophoodies@2x.jpg');
-    background-position: left;
-  }
-
-  .item-3 {
-    background-image: url($cdnRoot + 'assets/images/homepage-grid/background-becomeamentor@2x.jpg');
-  }
-
-  .item-4 {
-    background-image: url($cdnRoot + 'assets/images/homepage-grid/background-aimetv@2x.jpg');
-  }
-
   .ctaLockup {
     font-style: normal;
     font-weight: normal;
@@ -111,7 +98,7 @@
 }
 
 .cta-container .item:hover {
-  // background-color: rgba(118, 3, 219, 0.8);
-  // background-blend-mode: lighten;
-  opacity: 0.5;
+  background-color: rgba(118, 3, 219, 0.8);
+  background-blend-mode: lighten;
+  // opacity: 0.5;
 }
