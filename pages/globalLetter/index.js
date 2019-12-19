@@ -2,6 +2,16 @@ import React from 'react';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
+const styling = [];
+for (let i = 0; i < 3; i += 1) { // For to get rid of the
+  styling.push({
+    backgroundImage:
+      `url('${ASSETS_URL}/resources/global-letter-${i}.jpg')`,
+    backgroundPosition: '0% 25%',
+  });
+}
 const GlobalLetter = () => (
   <Layout>
     <div className="hero-banner--default full-width-wrap">
@@ -15,7 +25,7 @@ const GlobalLetter = () => (
                 {' '}
                 <br />
                 {' '}
-Around the World
+                Around the World
               </em>
             </span>
             <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
@@ -38,11 +48,7 @@ Around the World
       <div
         className="about-banner video-button  overlay-dark"
         data-video=""
-        style={{
-          backgroundImage:
-            "url('https://dbhff1axysj9i.cloudfront.net/resources/global-letter-1.jpg')",
-          backgroundPosition: '0% 25%',
-        }}
+        style={styling[0]}
       >
         <p className="destroy-p">
           We’ve found a solution to ending inequality for the most disadvantaged kids.
@@ -74,13 +80,9 @@ Around the World
 
       {/* <!-- H1 (also page title) --> */}
       <div
-        className="about-banner video-button  overlay-dark"
+        className="about-banner video-button overlay-dark"
         data-video=""
-        style={{
-          backgroundImage:
-            "url('https://dbhff1axysj9i.cloudfront.net/resources/global-letter-2.jpg')",
-          backgroundPosition: '0% 25%',
-        }}
+        style={styling[1]}
       >
         <p className="destroy-p">And from that moment, things started to change.</p>
       </div>
@@ -117,11 +119,7 @@ Around the World
       <div
         className="about-banner video-button  overlay-dark"
         data-video=""
-        style={{
-          backgroundImage:
-            "url('https://dbhff1axysj9i.cloudfront.net/resources/global-letter-3.jpg')",
-          backgroundPosition: '0% 25%',
-        }}
+        style={styling[2]}
       >
         <p className="destroy-p">Today we share our secret with you.</p>
       </div>
