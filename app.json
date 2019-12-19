@@ -5,6 +5,10 @@
       "required": true,
       "value": "keyQwkepkcSrWl1du"
     },
+    "REACT_APP_ASSETS_URL":{
+      "required": true,
+      "value": "https://d2cl4o0mkg71rr.cloudfront.net/website"
+    },
     "REACT_APP_AIRTABLE_PROGRAM_BASE": {
       "required": true,
       "value": "appYBHhHUO92wVVmQ"
