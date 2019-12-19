@@ -18,7 +18,7 @@
     text-align: center;
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: $white;
     margin: 0.65em;
     padding: 2em;
     background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-purple@2x.jpg');
@@ -56,6 +56,10 @@
       font-family: $feature-font-family;
       font-weight: 900;
       font-style: italic;
+    }
+
+    p {
+      color: $white;
     }
 
     .basic-btn {

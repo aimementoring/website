@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './index.scss';
 
 const {
   Title,
-  // Paragraph,
   Button,
 } = Components;
 
@@ -19,17 +19,16 @@ const CtaGrid = ({ elements }) => (
               {cta.title}
             </Title>
             <div className="sub-item-details show-on-hover">
-              {/* <Paragraph text={cta.description} /> */}
-              <p>{cta.description}</p>
+              <Paragraph text={cta.description} />
               <div className="sub-item-details show-on-hover">
                 {cta.link.indexOf('http') !== -1
                   ? (
-                    <Button aria-label="cta" type="link" url={cta.link}>
+                    <Button theme="rainbow" aria-label="cta" type="link" url={cta.link}>
                       {cta.button}
                     </Button>
                   )
                   : (
-                    <Button aria-label="cta-link" type="link" url={cta.link}>
+                    <Button theme="rainbow" aria-label="cta-link" type="link" url={cta.link}>
                       {cta.button}
                     </Button>
                   )}
