@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 
@@ -12,22 +13,21 @@ const ContentCard = (props) => {
     <>
       {contentCards
       && contentCards.map((card) => {
-        const isImage = card.fields.visualMedia;
-        const isVideo = card.fields.videoMedia;
-        const image = isImage && isImage.fields.file.url;
-        const title = isImage && isImage.fields.title;
-        const video = isVideo && isVideo.fields.embeddedVideoUrl;
-        const videoPlatform = isVideo && isVideo.fields.platform;
+        const isMedia = card.fields.visualMedia && card.fields.visualMedia;
+        const image = isMedia && isMedia.fields.file.url;
+        const title = isMedia && isMedia.fields.title;
+        const video = isMedia && isMedia.fields.embeddedVideoUrl;
+        const videoPlatform = isMedia && isMedia.fields.platform;
         const storyBody = card.fields.contentCopy && card.fields.contentCopy;
 
         return (
           <Fragment key={card.sys.id}>
-            {isVideo ? (
+            {isMedia ? (
               <VideoFormElement
                 formElement={{ videoUrl: video, name: videoPlatform, autoplay: true }}
               />
             )
-              : isImage && (
+              : isMedia && (
                 <Picture
                   image={{
                     title,
@@ -37,7 +37,11 @@ const ContentCard = (props) => {
                 />
               )}
             <div className="articleDescription">
-              <p className="articleTileLabel">{storyBody}</p>
+              <p>
+                <ReactMarkdown>
+                  {storyBody}
+                </ReactMarkdown>
+              </p>
             </div>
           </Fragment>
         );

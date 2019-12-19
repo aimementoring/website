@@ -28,6 +28,8 @@ const StoriesTwo = (props) => {
       const slugTitle = removeSpecialCharacters(entry.fields.title && entry.fields.title);
       const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const bannerImage = entry.fields.banner
+        && entry.fields.banner.fields.visualMedia
+        && entry.fields.banner.fields.visualMedia.fields
         && entry.fields.banner.fields.visualMedia.fields.file.url;
 
       return (
@@ -69,29 +71,29 @@ const StoriesTwo = (props) => {
   return (
     <Layout>
       {isLoading
-        ? <div className={styles.storiesContainer} /> : (
+        ? <div /> : (
           <div className={styles.carouselContainer}>
             <div className={styles.carousel}>
               <Carousel>
                 {storyCarousel}
               </Carousel>
             </div>
-            <aside className={styles.refineSearch}>
-              <div className={styles.refineSection}>
-                <h2 className={styles.storiesTitle}>
-                  {'Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!'}
-                </h2>
-                <span className={styles.line} />
-                <div className={styles.mobilePanel}>
-                  <p className={styles.storiesParagraph}>
-                    {`AIME has been delivering kindness through mentoring for 14 years.
+            <div className={styles.storiesContainer}>
+              <aside className={styles.refineSearch}>
+                <div className={styles.refineSection}>
+                  <h2 className={styles.storiesTitle}>
+                    {'Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!'}
+                  </h2>
+                  <span className={styles.line} />
+                  <div className={styles.mobilePanel}>
+                    <p className={styles.storiesParagraph}>
+                      {`AIME has been delivering kindness through mentoring for 14 years.
                           Each year we release a Book of Kindness with tales of human generosity.
                           Here are some of those stories of hope, positivity and change...`}
-                  </p>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </aside>
-            <div className={styles.storiesContainer}>
+              </aside>
               <div className={styles.storiesGrid}>
                 {storyContent}
               </div>
@@ -107,6 +109,10 @@ StoriesTwo.getInitialProps = async () => {
   const entries = await client.then((response) => response);
 
   return { entries };
+};
+
+StoriesTwo.defaultProps = {
+  entries: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 StoriesTwo.propTypes = {
@@ -190,7 +196,7 @@ StoriesTwo.propTypes = {
         id: PropTypes.string,
       }),
     })),
-  })).isRequired,
+  })),
 };
 
 export default StoriesTwo;

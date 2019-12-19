@@ -72,7 +72,7 @@ export const replaceWhiteSpace = (stringValue, replaceValue) => (
 );
 
 export const formatDate = (publishDate, format = 'D.M.YYYY') => {
-  const splitDateTime = publishDate.slice(0, -1).split('T');
+  const splitDateTime = publishDate.split('T');
   const dateComponent = splitDateTime[0];
   const datePublished = moment(dateComponent);
 

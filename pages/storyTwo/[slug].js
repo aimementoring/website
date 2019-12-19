@@ -20,6 +20,7 @@ const StoryTwo = (props) => {
       {
         content && content.map((entry) => {
           const bannerImage = entry.fields.banner
+          && entry.fields.banner
           && entry.fields.banner.fields.visualMedia
           && entry.fields.banner.fields.visualMedia.fields.file.url;
           /*
@@ -56,7 +57,17 @@ const StoryTwo = (props) => {
                           <article className={styles.blogPostArticle} />
                           <div>
                             <ContentCard contentCards={entry.fields.contentCards} />
+                            <strong>
+                              {entry.fields.contentCreator.fields.authorName}
+                              <div />
+                              {formatDate(entry.fields.publishDate, 'long')}
+                            </strong>
                           </div>
+                          <Anchor to="/storiesTwo" className={styles.articleTileLink}>
+                            <i className={styles.materialIcons}>keyboard_backspace</i>
+                            {' '}
+                            Back to Stories
+                          </Anchor>
                         </article>
                       </div>
                     </div>
@@ -67,11 +78,6 @@ const StoryTwo = (props) => {
           );
         })
       }
-      <Anchor to="/storiesTwo" className={styles.articleTileLink}>
-        <i className={styles.materialIcons}>keyboard_backspace</i>
-        {' '}
-        Back to Stories
-      </Anchor>
     </Layout>
   );
 };

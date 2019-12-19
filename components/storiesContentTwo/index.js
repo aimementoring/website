@@ -20,58 +20,64 @@ const StoriesContentTwo = (props) => {
   } = props;
 
   const datePublished = formatDate(publishDate, 'short');
-  const bannerImage = bannerContent.visualMedia && bannerContent.visualMedia.fields.file.url;
+  const bannerImage = bannerContent.visualMedia
+  && bannerContent.visualMedia.fields
+  && bannerContent.visualMedia.fields.file.url;
 
   return (
-    <>
+    <article key={`article-story-${id}`} className={styles.articleTile}>
       <Anchor
         to={`/storyTwo?slug=${slugTitle}`}
         as={`/storyTwo/${slugTitle}`}
         className={styles.articleLink}
       >
-        <article key={`article-story-${id}`} className={styles.articleTile}>
-          <div>
-            <Picture
-              className={styles.bannerImage}
-              thumbnail
-              image={{
-                image: `https:${bannerImage}`,
-                title,
-                thumbnail: `https:${bannerImage}`,
-              }}
-            />
-            <div
-              key={`article-description-${id}`}
-              className={styles.articleDescription}
-            >
-              <h1 className="article-tile-title">{title}</h1>
-              <p className="article-tile-tagline">
-                <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
-                  {datePublished}
-                </span>
-                <span key={`c-light-grey-span-${id}`} className={styles.slash}>
+        <div>
+          <Picture
+            className={styles.bannerImage}
+            thumbnail
+            image={{
+              image: `https:${bannerImage}`,
+              title,
+              thumbnail: `https:${bannerImage}`,
+            }}
+          />
+          <div
+            key={`article-description-${id}`}
+            className={styles.articleDescription}
+          >
+            <h1 className="article-tile-title">{title}</h1>
+            <p className="article-tile-tagline">
+              <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
+                {datePublished}
+              </span>
+              <span key={`c-light-grey-span-${id}`} className={styles.slash}>
                         /
-                </span>
-                <span key={`px1-span-${id}`} className={styles.author}>
-                  {`By ${contentCreator}`}
-                </span>
-              </p>
+              </span>
+              <span key={`px1-span-${id}`} className={styles.author}>
+                {`By ${contentCreator}`}
+              </span>
+            </p>
 
-              <p className={styles.articleTileLabel}>
-                {contentPreview && contentPreview.previewCopy ? (
-                  `${contentPreview.previewCopy.slice(0, 230)}...`
-                )
-                  : contentCards.slice(0, 1).map((card) => (
-                    card.fields.contentCopy
-                        && (`${card.fields.contentCopy.slice(0, 230)} …`)))}
-              </p>
-              <div className={styles.articleTileLink}>Read more</div>
-            </div>
+            <p className={styles.articleTileLabel}>
+              {contentPreview && contentPreview.previewCopy ? (
+                `${contentPreview.previewCopy.slice(0, 230)}...`
+              )
+                : contentCards && contentCards.slice(0, 1).map((card) => (
+                  card.fields.contentCopy
+                    && (
+                      `${card.fields.contentCopy.slice(0, 230).replace(/_/g, '')}...`
+                    )))}
+            </p>
+            <div className={styles.articleTileLink}>Read more</div>
           </div>
-        </article>
+        </div>
       </Anchor>
-    </>
+    </article>
   );
+};
+
+StoriesContentTwo.defaultProps = {
+  contentCards: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 StoriesContentTwo.propTypes = {
@@ -129,7 +135,7 @@ StoriesContentTwo.propTypes = {
     visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
 
     })),
-  })).isRequired,
+  })),
   contentPreview: PropTypes.shape({
     Type: PropTypes.string,
     previewCopy: PropTypes.string,

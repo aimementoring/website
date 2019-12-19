@@ -17,7 +17,6 @@ const StoriesCarousel = (props) => {
 
   return (
     <div
-      key={`carousel-element-container-${id}`}
       className={slugTitle}
     >
       <div
@@ -45,7 +44,7 @@ const StoriesCarousel = (props) => {
               : contentCards && contentCards.slice(0, 1).map((card) => (
                 <p className={styles.productTitle} key={card.sys.id}>
                   {card.fields.contentCopy
-                          && (`${card.fields.contentCopy.slice(0, 240)} …`)}
+                      && (`${card.fields.contentCopy.slice(0, 240).replace(/_/g, '')} …`)}
                 </p>
               ))}
             <Anchor
@@ -62,11 +61,16 @@ const StoriesCarousel = (props) => {
   );
 };
 
+StoriesCarousel.defaultProps = {
+  contentCards: PropTypes.arrayOf(PropTypes.shape({})),
+  bannerImage: '',
+};
+
 StoriesCarousel.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
-  bannerImage: PropTypes.string.isRequired,
+  bannerImage: PropTypes.string,
   contentCards: PropTypes.arrayOf(PropTypes.shape({
     Type: PropTypes.string,
     contentCopy: PropTypes.string,
@@ -87,9 +91,8 @@ StoriesCarousel.propTypes = {
       }),
     }),
     visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
-
     })),
-  })).isRequired,
+  })),
   contentPreview: PropTypes.shape({
     Type: PropTypes.string,
     previewCopy: PropTypes.string,

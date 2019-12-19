@@ -11,6 +11,27 @@
   }
 }
 
+.storiesTitle {
+  font-weight: 400;
+  font-size: 24px;
+  color: $black;
+  font-family: $feature-font-family;
+}
+
+.storiesParagraph {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.storiesGrid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
+  grid-gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .articleTile {
   border-color: $light-grey;
   border-radius: $border-radius;
@@ -51,7 +72,8 @@
 }
 
 .articleTileLabel {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 300;
   color: $grey;
 }
