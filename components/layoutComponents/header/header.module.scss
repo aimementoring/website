@@ -319,6 +319,10 @@
   }
 }
 
+.headerFilled .navBtn {
+  color: $black;
+}
+
 .navLink {
   background: transparent;
   background-color: #9135f0;
@@ -374,7 +378,7 @@
 }
 
 .headerFilled {
-  background-color: $black;
+  background-color: $white;
   border-bottom: 1px solid $light-grey;
   display: block;
   position: fixed;
@@ -390,6 +394,7 @@
   }
 
   .iconAimeLogo {
+    color: $black;
     @media screen and (min-width: $md) {
       width: 60px;
     }
