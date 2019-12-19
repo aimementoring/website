@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../common/link';
 import './index.scss';
 
@@ -23,6 +24,7 @@ const IntroPanelHomepage = () => (
             <strong>Then who?</strong>
           </Title>
           <div className="intro-sub-text">
+            <Paragraph text="Booboobooobooo!" />
             <p className="f-16 light c-white">
               {'Want to change the world? We\'re recruiting mentors across Australia, Uganda and South Africa'}
               {' '}
