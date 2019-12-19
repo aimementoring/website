@@ -2,7 +2,6 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import Anchor from '../common/link';
 import './index.scss';
 
 const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
@@ -11,7 +10,7 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const {
   Title,
-  // Paragraph,
+  Button,
 } = Components;
 
 const IntroPanelHomepage = () => (
@@ -24,31 +23,18 @@ const IntroPanelHomepage = () => (
             <strong>Then who?</strong>
           </Title>
           <div className="intro-sub-text">
-            <Paragraph text="Booboobooobooo!" />
-            <p className="f-16 light c-white">
-              {'Want to change the world? We\'re recruiting mentors across Australia, Uganda and South Africa'}
-              {' '}
-              <strong>RIGHT NOW!</strong>
-              {' '}
-              {`That could be you! Join forces with AIME and together, we'll shape a brighter
-              future and lift kids out of inequality.
-              Click the button to learn more about becoming a mentor.
-              And if you're in the USA or Nigeria, look out - we're coming for you real
-              `}
-              {' '}
-              <em>real</em>
-              {' '}
-              soon.
-            </p>
-            <p>
-              <Anchor
-                to="/beAMentor"
-                as="/be-a-mentor"
-                className="basic-btn bold bg-brand-primary c-white my3"
-              >
-                Be a mentor
-              </Anchor>
-            </p>
+            <Paragraph>
+              Want to change the world? We&apos;re recruiting mentors
+              across Australia, Uganda and South Africa
+              <mark>RIGHT NOW!</mark>
+              That could be you! Join forces with AIME and together, we&apos;ll shape
+              a brighter future and lift kids out of inequality. Click the button
+              to learn more about becoming a mentor. And if you&apos;re in the USA or
+              Nigeria, look out - we&apos;re coming for you real real soon.
+            </Paragraph>
+            <Button theme="rainbow" aria-label="cta" type="link" url="/beAMentor">
+              Be a mentor
+            </Button>
           </div>
         </div>
         <div className="sm-col-12 sm-col-6">
