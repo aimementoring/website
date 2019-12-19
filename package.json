@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=10.16.x"
+    "node": "v12.x"
   },
   "scripts": {
     "dev": "node server.js",
@@ -12,8 +12,8 @@
     "export": "next build && next export",
     "heroku-start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "yarn build",
-    "sync:aws:next:staging": "aws s3 sync ./next s3://aimementoring-staging/public/.next --acl public-read --delete",
-    "sync:aws:next:master": "aws s3 sync ./next s3://aimementoring/public/.next --acl public-read --delete",
+    "sync:aws:next:staging": "aws s3 sync ./next s3://aime-website/public/staging/.next --acl public-read --delete",
+    "sync:aws:next:master": "aws s3 sync ./next s3://aime-website/public/master/.next --acl public-read --delete",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
     "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
@@ -85,6 +85,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^3.0.9",
     "lighthouse": "^5.4.0",
+    "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
     "lint-staged": "^10.0.0-1"
   },
   "lint-staged": {
