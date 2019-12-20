@@ -63,6 +63,18 @@ const StoryTwo = (props) => {
                               {formatDate(entry.fields.publishDate, 'long')}
                             </strong>
                           </div>
+                          {entry.fields.title.indexOf('Great Barrier Reef') > -1
+                            && (
+                              <a
+                                href="http://chng.it/wC7k4Rhb9p"
+                                className={styles.articleTileLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                              CLICK HERE AND HELP THE GREAT BARRIER REEF BECOME AN AUSSIE CITIZEN
+                              </a>
+                            )}
+                          <br />
                           <Anchor to="/storiesTwo" className={styles.articleTileLink}>
                             <i className={styles.materialIcons}>keyboard_backspace</i>
                             {' '}
