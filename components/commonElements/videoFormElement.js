@@ -30,10 +30,10 @@ const VideoFormElement = ({ index, formElement }) => {
   const muted = formElement.muted !== undefined;
   const controls = formElement.controls !== undefined;
 
-  const isMp4 = videoUrl.indexOf('.mp4') > -1;
-  const isWebM = videoUrl.indexOf('.webm') > -1;
-  const isVimeo = videoUrl.indexOf('//vimeo') > -1 && videoUrl;
-  const isYouTube = videoUrl.indexOf('.youtube') > -1 && videoUrl;
+  const isMp4 = videoUrl !== undefined && videoUrl.indexOf('.mp4') > -1;
+  const isWebM = videoUrl !== undefined && videoUrl.indexOf('.webm') > -1;
+  const isVimeo = videoUrl !== undefined && videoUrl.indexOf('//vimeo') > -1 && videoUrl;
+  const isYouTube = videoUrl !== undefined && videoUrl.indexOf('.youtube') > -1 && videoUrl;
   const youtubeIframeLink = getYoutubeIframeLink(isYouTube);
   const vimeoIframeLink = getVimeoIframeLink(isVimeo);
 

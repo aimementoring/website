@@ -65,7 +65,7 @@ const StoriesContentTwo = (props) => {
                 : contentCards && contentCards.slice(0, 1).map((card) => (
                   card.fields.contentCopy
                     && (
-                      `${card.fields.contentCopy.slice(0, 230).replace(/_/g, '')}...`
+                      `${card.fields.contentCopy.slice(0, 230).replace(/[*_>]*/g, '')}...`
                     )))}
             </p>
             <div className={styles.articleTileLink}>Read more</div>

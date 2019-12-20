@@ -44,7 +44,7 @@ const StoriesCarousel = (props) => {
               : contentCards && contentCards.slice(0, 1).map((card) => (
                 <p className={styles.productTitle} key={card.sys.id}>
                   {card.fields.contentCopy
-                      && (`${card.fields.contentCopy.slice(0, 240).replace(/_/g, '')} …`)}
+                      && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
                 </p>
               ))}
             <Anchor
