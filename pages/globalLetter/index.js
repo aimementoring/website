@@ -5,7 +5,7 @@ import Layout from '../../hocs/basicLayout';
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const styling = [];
-for (let i = 0; i < 3; i += 1) { // For to get rid of the
+for (let i = 0; i < 3; i += 1) { // To get rid of the hardoced S3 bucket that was previously
   styling.push({
     backgroundImage:
       `url('${ASSETS_URL}/resources/global-letter-${i}.jpg')`,
