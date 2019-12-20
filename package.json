@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "v12.x"
+    "node": "12.x"
   },
   "scripts": {
     "dev": "node server.js",
