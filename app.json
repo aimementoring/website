@@ -51,7 +51,7 @@
     },
     "REACT_APP_HOST_ENV": {
       "required": true,
-      "value": "staging"
+      "value": "development"
     },
     "REACT_APP_PORTAL_API": {
       "required": true,
