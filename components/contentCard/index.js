@@ -17,6 +17,7 @@ const ContentCard = (props) => {
         const isVideo = card.fields.videoMedia && card.fields.videoMedia;
         const image = isImage && isImage.fields.file.url;
         const title = isImage && isImage.fields.title;
+        const imageCaption = isImage && isImage.fields.description;
         const video = isVideo && isVideo.fields && isVideo.fields.embeddedVideoUrl;
         const videoPlatform = isVideo && isVideo.fields.platform;
         const storyBody = card.fields.contentCopy && card.fields.contentCopy;
@@ -29,13 +30,16 @@ const ContentCard = (props) => {
               />
             )
               : isImage && (
-                <Picture
-                  image={{
-                    title,
-                    thumbnail: `https:${image}?q=50`,
-                    image: `https:${image}`,
-                  }}
-                />
+                <>
+                  <Picture
+                    image={{
+                      title,
+                      thumbnail: `https:${image}?q=50`,
+                      image: `https:${image}`,
+                    }}
+                  />
+                  {imageCaption && <div className="figcaption">{imageCaption}</div>}
+                </>
               )}
             <div className="articleDescription">
               <p>

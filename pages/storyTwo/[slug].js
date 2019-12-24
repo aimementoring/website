@@ -36,7 +36,9 @@ const StoryTwo = (props) => {
 
           const title = removeSpecialCharacters(entry.fields.title && entry.fields.title);
           const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
-
+          const author = entry.fields.contentCreator
+            && entry.fields.contentCreator.fields.authorName;
+          const signature = entry.fields.signature && entry.fields.signature;
           return (
             <Fragment key={entry.sys.id}>
               {slug === slugTitle && (
@@ -57,11 +59,16 @@ const StoryTwo = (props) => {
                           <article className={styles.blogPostArticle} />
                           <div>
                             <ContentCard contentCards={entry.fields.contentCards} />
-                            <strong>
-                              {entry.fields.contentCreator.fields.authorName}
-                              <div />
-                              {formatDate(entry.fields.publishDate, 'long')}
-                            </strong>
+                            {signature ? signature
+                              && <div className={styles.signature}>{signature}</div>
+                              : author
+                            && (
+                              <strong>
+                                {author}
+                                <div />
+                                {formatDate(entry.fields.publishDate, 'long')}
+                              </strong>
+                            )}
                           </div>
                           {entry.fields.title.indexOf('Great Barrier Reef') > -1
                             && (
@@ -72,6 +79,17 @@ const StoryTwo = (props) => {
                                 rel="noopener noreferrer"
                               >
                               CLICK HERE AND HELP THE GREAT BARRIER REEF BECOME AN AUSSIE CITIZEN
+                              </a>
+                            )}
+                          {entry.fields.title.indexOf('The power of poetry:') > -1
+                            && (
+                              <a
+                                href="https://shop.aimementoring.com/products/unity-and-kindness-hoodie?utm_source=AIME+Friends&utm_campaign=516899eac3-EMAIL_CAMPAIGN_2019_06_14_02_41&utm_medium=email&utm_term=0_30964260b5-516899eac3-&mc_cid=516899eac3&mc_eid=[UNIQID]"
+                                className={styles.articleTileLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                              Order Now
                               </a>
                             )}
                           <br />
@@ -112,6 +130,7 @@ StoryTwo.propTypes = {
       contentCreator: PropTypes.object,
       publishDate: PropTypes.string,
       contentCards: PropTypes.array,
+      signature: PropTypes.string,
     }),
   })).isRequired,
 };

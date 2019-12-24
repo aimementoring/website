@@ -161,6 +161,10 @@
       font-size: 14px;
     }
 
+    .signature {
+      font-family: $signature-font-family;
+    }
+
     @media screen and (min-width: $lg) {
 
       p {
