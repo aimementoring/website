@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
@@ -39,6 +40,9 @@ const StoryTwo = (props) => {
           const author = entry.fields.contentCreator
             && entry.fields.contentCreator.fields.authorName;
           const signature = entry.fields.signature && entry.fields.signature;
+          const hasPostScriptContent = entry.fields.postScriptMessage
+            && entry.fields.postScriptMessage.fields.contentCopy;
+
           return (
             <Fragment key={entry.sys.id}>
               {slug === slugTitle && (
@@ -92,6 +96,14 @@ const StoryTwo = (props) => {
                               Order Now
                               </a>
                             )}
+                          {hasPostScriptContent
+                          && (
+                            <div className="articleDescription">
+                              <ReactMarkdown>
+                                {hasPostScriptContent}
+                              </ReactMarkdown>
+                            </div>
+                          )}
                           <br />
                           <Anchor to="/storiesTwo" className={styles.articleTileLink}>
                             <i className={styles.materialIcons}>keyboard_backspace</i>

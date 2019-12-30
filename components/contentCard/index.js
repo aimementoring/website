@@ -42,11 +42,9 @@ const ContentCard = (props) => {
                 </>
               )}
             <div className="articleDescription">
-              <p>
-                <ReactMarkdown>
-                  {storyBody}
-                </ReactMarkdown>
-              </p>
+              <ReactMarkdown>
+                {storyBody}
+              </ReactMarkdown>
             </div>
           </Fragment>
         );
