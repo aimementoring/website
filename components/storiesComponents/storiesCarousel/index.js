@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Anchor from '../common/link';
+import Anchor from '../../common/link';
 import styles from './storiesCarousel.module.scss';
 
 // This could be in blueprint, not sure?

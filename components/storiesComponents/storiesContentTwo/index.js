@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { formatDate } from '../../utils/utilities';
-import Anchor from '../common/link';
+import { formatDate } from '../../../utils/utilities';
+import Anchor from '../../common/link';
 import styles from './storiesContentTwo.module.scss';
 
-const Picture = dynamic(() => import('../picture'));
+const Picture = dynamic(() => import('../../picture'));
 
 const StoriesContentTwo = (props) => {
   const {

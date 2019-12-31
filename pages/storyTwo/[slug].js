@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
@@ -10,7 +10,8 @@ import {
   replaceWhiteSpace,
 } from '../../utils/utilities';
 import styles from './storyTwo.module.scss';
-import ContentCard from '../../components/contentCard';
+
+const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
 // this (route/page "storyTwo") needs to be redirected to storiesTwo is directly visited,
 const StoryTwo = (props) => {
@@ -29,7 +30,6 @@ const StoryTwo = (props) => {
            might need to be added to contentful as overrides for these.
           */
           const bannerStyles = {
-          // Not sure how to make this faster other than removing it from css background.
             backgroundPosition: '0% 25%',
             backgroundImage: bannerImage && `url(https:${bannerImage})`,
             maxWidth: '100%',
@@ -42,6 +42,8 @@ const StoryTwo = (props) => {
           const signature = entry.fields.signature && entry.fields.signature;
           const hasPostScriptContent = entry.fields.postScriptMessage
             && entry.fields.postScriptMessage.fields.contentCopy;
+          const buttonProps = entry.fields.callToActionButton
+            && entry.fields.callToActionButton;
 
           return (
             <Fragment key={entry.sys.id}>
@@ -61,50 +63,14 @@ const StoryTwo = (props) => {
                             </span>
                           </div>
                           <article className={styles.blogPostArticle} />
-                          <div>
-                            <ContentCard contentCards={entry.fields.contentCards} />
-                            {signature ? signature
-                              && <div className={styles.signature}>{signature}</div>
-                              : author
-                            && (
-                              <strong>
-                                {author}
-                                <div />
-                                {formatDate(entry.fields.publishDate, 'long')}
-                              </strong>
-                            )}
-                          </div>
-                          {entry.fields.title.indexOf('Great Barrier Reef') > -1
-                            && (
-                              <a
-                                href="http://chng.it/wC7k4Rhb9p"
-                                className={styles.articleTileLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                              CLICK HERE AND HELP THE GREAT BARRIER REEF BECOME AN AUSSIE CITIZEN
-                              </a>
-                            )}
-                          {entry.fields.title.indexOf('The power of poetry:') > -1
-                            && (
-                              <a
-                                href="https://shop.aimementoring.com/products/unity-and-kindness-hoodie?utm_source=AIME+Friends&utm_campaign=516899eac3-EMAIL_CAMPAIGN_2019_06_14_02_41&utm_medium=email&utm_term=0_30964260b5-516899eac3-&mc_cid=516899eac3&mc_eid=[UNIQID]"
-                                className={styles.articleTileLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                              Order Now
-                              </a>
-                            )}
-                          {hasPostScriptContent
-                          && (
-                            <div className="articleDescription">
-                              <ReactMarkdown>
-                                {hasPostScriptContent}
-                              </ReactMarkdown>
-                            </div>
-                          )}
-                          <br />
+                          <ContentCard
+                            author={author}
+                            signature={signature}
+                            publishDate={entry.fields.publishDate}
+                            contentCards={entry.fields.contentCards}
+                            hasPostScriptContent={hasPostScriptContent}
+                            buttonProps={buttonProps}
+                          />
                           <Anchor to="/storiesTwo" className={styles.articleTileLink}>
                             <i className={styles.materialIcons}>keyboard_backspace</i>
                             {' '}

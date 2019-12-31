@@ -7,11 +7,12 @@ import {
   replaceWhiteSpace,
   sortDates,
 } from '../../utils/utilities';
-import styles from './storiesTwo.module.scss';
 
-import StoriesCarousel from '../../components/storiesCarousel';
-import StoriesContentTwo from '../../components/storiesContentTwo';
+import StoriesCarousel from '../../components/storiesComponents/storiesCarousel';
+import StoriesContentTwo from '../../components/storiesComponents/storiesContentTwo';
 import Carousel from '../../components/carousel';
+
+import styles from './storiesTwo.module.scss';
 
 const StoriesTwo = (props) => {
   const { entries } = props;
