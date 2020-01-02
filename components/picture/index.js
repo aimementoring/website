@@ -69,7 +69,7 @@ ImageWithSrcSet.propTypes = {
   }).isRequired,
   className: PropTypes.string,
   imageStyle: PropTypes.shape({}),
-  thumbnail: PropTypes.string,
+  thumbnail: PropTypes.bool,
 };
 
 ImageWithSrcSet.defaultProps = {
@@ -85,7 +85,7 @@ Picture.propTypes = {
     placeholder: PropTypes.string,
     url: PropTypes.string,
     srcset: PropTypes.string,
-    webp: PropTypes.array,
+    webp: PropTypes.shape(),
     title: PropTypes.string,
   }),
   thumbnail: PropTypes.bool,
