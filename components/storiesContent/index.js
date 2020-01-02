@@ -35,7 +35,7 @@ class StoriesContent extends PureComponent {
           {stories && stories.length && stories.map((entry) => (
             <article key={`article-story-${entry.id}`} className={styles.articleTile}>
               <Anchor
-                to="/story/[storySlug]"
+                to={`/story?storySlug=${entry.slug}`}
                 as={`/story/${entry.slug}`}
                 className={styles.articleLink}
               >
@@ -72,13 +72,25 @@ class StoriesContent extends PureComponent {
   }
 }
 
+const ImagePropType = PropTypes.shape({
+  webp: PropTypes.shape({}),
+  placeholder: PropTypes.string,
+  title: PropTypes.string,
+  srcset: PropTypes.string,
+  image: PropTypes.string,
+});
+
 StoriesContent.propTypes = {
   stories: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     slug: PropTypes.string,
-    bannerImage: PropTypes.arrayOf(PropTypes.shape({})),
+    bannerImage: PropTypes.arrayOf(ImagePropType),
     title: PropTypes.string,
-    postDate: PropTypes.string,
+    postDate: PropTypes.shape({
+      date: PropTypes.string,
+      timezone_type: PropTypes.number,
+      timezone: PropTypes.string,
+    }),
     authorName: PropTypes.string,
     previewText: PropTypes.string,
   })).isRequired,
@@ -89,7 +101,7 @@ const BannerImage = ({ image }) => (
 );
 
 BannerImage.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: ImagePropType.isRequired,
 };
 
 export default StoriesContent;
