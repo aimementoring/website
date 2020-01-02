@@ -76,10 +76,11 @@ const Story = ({ storySlug, entries }) => {
   );
 };
 
-Story.getInitialProps = async ({ query }) => {
-  const entries = await getEntries(`stories/${query.storySlug}.json`);
+Story.getInitialProps = async ({ query, asPath, pathname }) => {
+  const storySlug = query.storySlug || asPath.replace(`${pathname}/`, '');
+  const entries = await getEntries(`stories/${storySlug}.json`);
   return {
-    storySlug: query.storySlug,
+    storySlug,
     entries,
   };
 };
