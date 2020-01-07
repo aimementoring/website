@@ -87,7 +87,7 @@ ContentCard.propTypes = {
       label: PropTypes.string,
       externalUrl: PropTypes.string,
     }),
-  ).isRequired,
+  ),
   hasPostScriptContent: PropTypes.string,
   publishDate: PropTypes.string.isRequired,
   contentCards: PropTypes.arrayOf(
@@ -118,6 +118,7 @@ ContentCard.propTypes = {
 ContentCard.defaultProps = {
   author: '',
   signature: '',
+  buttonProps: null,
   hasPostScriptContent: '',
 };
 
