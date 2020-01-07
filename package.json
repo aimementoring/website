@@ -22,7 +22,12 @@
     "lint": "eslint .",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "cli-login": "contentful login --management-token",
+    "cli-logout": "contentful logout",
+    "cli-migrate": "contentful space migration --environment-id 'staging'",
+    "cli-space-id": "contentful space use --space-id",
+    "cli-set-env": "contentful space environment use --environment-id"
   },
   "dependencies": {
     "@bugsnag/js": "^6.4.3",
@@ -59,6 +64,7 @@
     "react-helmet": "^5.2.1",
     "react-html-parser": "^2.0.2",
     "react-intl-tel-input": "^7.1.0",
+    "react-markdown": "^4.2.2",
     "react-modal": "^3.11.1",
     "react-places-autocomplete": "^7.2.1",
     "react-scroll-to-component": "^1.0.2",
