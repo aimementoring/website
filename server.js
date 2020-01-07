@@ -3,7 +3,7 @@ const cacheableResponse = require('cacheable-response');
 const express = require('express');
 const next = require('next');
 const compression = require('compression');
-const fetchContentfulEntries = require('./api/contentfulServer');
+// const fetchContentfulEntries = require('./api/contentfulServer');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -76,6 +76,18 @@ app.prepare().then(() => {
   server.get('/blog/:storySlug', (req, res) => {
     const pagePath = '/story';
     const queryParams = { storySlug: req.params.storySlug };
+    return ssrCache({
+      req, res, pagePath, queryParams,
+    });
+  });
+
+  // StoryTwo
+  server.get('/storyTwo/:slug', (req, res) => {
+    const pagePath = '/storyTwo/[slug]';
+
+    const queryParams = {
+      slug: req.params.slug,
+    };
     return ssrCache({
       req, res, pagePath, queryParams,
     });
@@ -218,21 +230,21 @@ app.prepare().then(() => {
       req, res, pagePath, queryParams,
     });
   });
+  // comment this out as redirects are in master and stories are in staging on contentful.
+  // fetchContentfulEntries().then((response = []) => {
+  //   for (let i = 0; i < response.length; i += 1) {
+  //     const url = response[i];
+  //     server.get(url.fields.sourceUrl, (_req, res) => {
+  //       res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+  //     });
+  //   }
 
-  fetchContentfulEntries().then((response = []) => {
-    for (let i = 0; i < response.length; i += 1) {
-      const url = response[i];
-      server.get(url.fields.sourceUrl, (_req, res) => {
-        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-      });
-    }
+  server.get('*', (req, res) => handle(req, res));
 
-    server.get('*', (req, res) => handle(req, res));
-
-    server.listen(port, (err) => {
-      if (err) throw err;
-      // eslint-disable-next-line no-console
-      console.log(`> Ready on http://localhost:${port}`);
-    });
+  server.listen(port, (err) => {
+    if (err) throw err;
+    // eslint-disable-next-line no-console
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
+// });
