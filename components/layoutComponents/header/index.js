@@ -32,7 +32,7 @@ const HEADERS_MAP = {
   goingGlobal: GoingGlobalHeader,
 };
 
-const Header = ({ location }) => {
+const Header = ({ location, handleShowIntercom }) => {
   const [headerClass, setHeaderClass] = useState(classNames(styles.headerTransparent, {
     [styles.doNotDisplay]: location.pathname.indexOf('/hooded-scholar') > -1,
   }));
@@ -80,6 +80,7 @@ const Header = ({ location }) => {
         {headerComponent && (
           <HeaderComponent
             location={location}
+            handleShowIntercom={handleShowIntercom}
             handleTalentItemClicked={handleTalentItemClicked}
           />
         )}
@@ -94,6 +95,7 @@ Header.propTypes = {
     search: PropTypes.string,
     pathname: PropTypes.string,
   }).isRequired,
+  handleShowIntercom: PropTypes.func.isRequired,
 };
 
 export default Header;
