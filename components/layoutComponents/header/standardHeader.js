@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
@@ -8,7 +9,7 @@ const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
 const MenuItem = dynamic(() => import(/* webpackChunkName 'MenuItem' */ './menuItem'));
 const MobileMenu = dynamic(() => import(/* webpackChunkName 'MobileMenu' */ '../mobileMenu'));
 
-const StandardHeader = () => (
+const StandardHeader = ({ handleShowIntercom }) => (
   <div>
     <Anchor className={styles.navHiring} to="/positions">
       We are hiring!
@@ -28,9 +29,9 @@ const StandardHeader = () => (
             </Anchor>
           </li>
           <li className={styles.listItem}>
-            <Anchor className={styles.navBtn} to="/contact">
+            <button type="button" className="intercom-button-nav nav-btn" onClick={handleShowIntercom}>
               Get in touch
-            </Anchor>
+            </button>
           </li>
           <li className={styles.inlineListItem}>
             <a
@@ -53,5 +54,9 @@ const StandardHeader = () => (
     </div>
   </div>
 );
+
+StandardHeader.propTypes = {
+  handleShowIntercom: PropTypes.func.isRequired,
+};
 
 export default StandardHeader;
