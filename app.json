@@ -99,18 +99,6 @@
     },
     "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
       "required": true,
-      "value": "redirectEntries"
-    },
-    "REACT_APP_CONTENTFUL_ENTRY_KEY": {
-      "required": true,
-      "value": "3tMx2AccortPX9N15uGGgb"
-    },
-    "REACT_APP_CONTENTFUL_API_KEY": {
-      "required": true,
-      "value": "***REMOVED***"
-    },
-    "GENERATE_SOURCEMAP": {
-      "required": true,
       "value": "false"
     },
     "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": {
@@ -120,6 +108,38 @@
     "REACT_APP_CONTENTFUL_SPACE_ID": {
       "required": true,
       "value": "iz0aikshgysc"
+    },
+    "REACT_APP_CONTENTFUL_API_ENVIRONMENT": {
+      "required": true,
+      "value": "staging"
+    },
+    "REACT_APP_CONTENTFUL_API_KEY_MASTER": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_CONTENTFUL_API_KEY_STAGING": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": {
+      "required": true,
+      "value": "post"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": {
+      "required": true,
+      "value": "4wvkVrYF22PE8mNSRRPin4"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": {
+      "required": true,
+      "value": "redirectEntries"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": {
+      "required": true,
+      "value": "3tMx2AccortPX9N15uGGgb"
+    },
+    "REACT_APP_CONTENTFUL_MANAGEMENT_AUTHORIZATION_TOKEN": {
+      "required": true,
+      "value": "***REMOVED***"
     },
     "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": {
       "required": true,
