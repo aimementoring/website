@@ -32,3 +32,5 @@ performance-artifacts/**
 #Gimbal items
 gimbal-artifacts/**
 gimbal.db
+
+.history
