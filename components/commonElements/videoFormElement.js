@@ -34,8 +34,10 @@ const VideoFormElement = ({ index, formElement }) => {
   const isWebM = videoUrl !== undefined && videoUrl.indexOf('.webm') > -1;
   const isVimeo = videoUrl !== undefined && videoUrl.indexOf('//vimeo') > -1 && videoUrl;
   const isYouTube = videoUrl !== undefined && videoUrl.indexOf('.youtube') > -1 && videoUrl;
-  const youtubeIframeLink = getYoutubeIframeLink(isYouTube);
-  const vimeoIframeLink = getVimeoIframeLink(isVimeo);
+
+  const youtubeIframeLink = isYouTube && getYoutubeIframeLink(isYouTube);
+  const vimeoIframeLink = isVimeo && getVimeoIframeLink(isVimeo);
+
 
   // sm-col sm-col-12 md-col-12 = outer most div
   // my3 matrix-video-friendly hide-the-line fill-space = container div of video element
