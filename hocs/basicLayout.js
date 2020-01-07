@@ -35,7 +35,7 @@ const Layout = ({ router, children }) => {
   return (
     <div>
       <ErrorBoundary>
-        <Header location={router} />
+        <Header location={router} handleShowIntercom={handleShowIntercom} />
         <main role="main">
           <SeoMetadata seo={seo} />
           {children}
