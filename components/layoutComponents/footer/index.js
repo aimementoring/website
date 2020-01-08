@@ -92,24 +92,22 @@ const Footer = ({ location, handleShowIntercom }) => {
             </div>
           </div>
           {/* Footer Copyright Section */}
-          <div className="px3 py3 lg-py1 bg-black">
-            <div className="container lg-px0 pt1 lg-pt0 flex flex-column lg-flex-row justify-between f-12">
-              <span className="footer-text mb2">{`${currentYear} © AIME`}</span>
-              <div className="">
-                <ul className="list-reset flex flex-column lg-flex-row">
-                  <li className="flex">
-                    <Anchor
-                      to="/termsAndConditions"
-                      as="/terms-of-service"
-                      className="footer-text mr3"
-                    >
-                        Terms of Service
-                    </Anchor>
-                  </li>
-                  <li className="flex footer-text mr3">ABN 31 081 797 652</li>
-                  <li className="flex footer-text">ICN 7040</li>
-                </ul>
-              </div>
+          <div className={styles.footerCopyrightContainer}>
+            <div className={styles.footerCopyrightWrapper}>
+              <span className={styles.copyrightText}>{`${currentYear} © AIME`}</span>
+              <ul className={styles.footerList}>
+                <li className={styles.footerListItem}>
+                  <Anchor
+                    to="/termsAndConditions"
+                    as="/terms-of-service"
+                    className={styles.footerLink}
+                  >
+                      Terms of Service
+                  </Anchor>
+                </li>
+                <li className={styles.footerListItem}>ABN 31 081 797 652</li>
+                <li className={styles.footerListItem}>ICN 7040</li>
+              </ul>
             </div>
           </div>
         </footer>
