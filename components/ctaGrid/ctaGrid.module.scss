@@ -1,6 +1,13 @@
 @import '../../styles/base/variables';
 
-.cta-container {
+.ctaGridContainer {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.ctaWrapper {
+  display: flex;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
@@ -10,7 +17,7 @@
     flex-wrap: nowrap;
   }
 
-  .item {
+  .ctaItem {
     flex-wrap: nowrap;
     flex-grow: 1;
     max-width: 100%;
@@ -30,26 +37,66 @@
       height: 30em;
     }
 
+    .itemContentImage {
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo1.png');
+      margin-bottom: 2rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 100px;
+    }
+
+    &:hover {
+      background-color: rgba(118, 3, 219, 0.8);
+      background-blend-mode: lighten;
+      // opacity: 0.5;
+
+      .subItemDetails {
+        display: block;
+      }
+
+      .itemContentImage {
+        display: none;
+      }
+    }
+
     &:nth-child(2) {
       background-color: $pink;
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-pink@2x.jpg');
       background-position: left;
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo2.png');
+      }
     }
     &:nth-child(3) {
       background-color: $green;
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-shop@2x.jpg');
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo3.png');
+      }
     }
     &:nth-child(4) {
       background-color: $cyan;
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-cyan@2x.jpg');
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo4.png');
+      }
     }
 
-    .item-contents {
+    .itemContents {
       max-width: 260px;
     }
 
-    .sub-item-details {
+    .subItemDetails {
       margin-top: 25px;
+      display: block;
+
+      @media all and(min-width: $md) {
+        display: none;
+      }
     }
 
     h3 {
@@ -86,23 +133,4 @@
     padding: 0 0.5em;
     line-height: 1em;
   }
-
-}
-
-.show-on-hover {
-  display: block;
-
-  @media all and(min-width: $md) {
-    display: none;
-  }
-}
-
-.cta-container .item:hover .show-on-hover {
-  display: block;
-}
-
-.cta-container .item:hover {
-  background-color: rgba(118, 3, 219, 0.8);
-  background-blend-mode: lighten;
-  // opacity: 0.5;
 }
