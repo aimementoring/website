@@ -15,11 +15,11 @@
       border: 1px solid #e3e5e5;
 
       &:focus {
-        border-color: $neonpurple;
+        border-color: $purple;
       }
 
       &::placeholder {
-        color: $neonpurple;
+        color: $purple;
       }
     }
   }
@@ -29,11 +29,11 @@
     border: 1px solid #e3e5e5;
 
     &:focus {
-      border-color: $neonpurple;
+      border-color: $purple;
     }
 
     &::placeholder {
-      color: $neonpurple;
+      color: $purple;
     }
   }
   .submit {
@@ -56,7 +56,7 @@
     pointer-events: auto;
 
     &:hover {
-      background-color: $light-blue;
+      background-color: $cyan;
     }
   }
 }
