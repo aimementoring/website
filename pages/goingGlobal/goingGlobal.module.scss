@@ -141,7 +141,7 @@
     }
 
     a {
-      color: $neonpurple;
+      color: $purple;
       text-decoration: none;
       transition: $hoverTransition;
 
@@ -184,14 +184,14 @@
   transition: $hoverTransition;
 
   &:hover {
-    background-color: $light-orange;
+    background-color: $orange;
     color: $white;
   }
 }
 
 .resultsSection {
   .panel {
-    background-color: $neonpink;
+    background-color: $watermelon;
     text-align: center;
     padding: 6em 0 3em;
 
@@ -204,7 +204,7 @@
     }
 
     &:nth-child(3) {
-      background-color: $light-orange;
+      background-color: $orange;
 
       h2 strong {
         font-size: 5rem;
@@ -456,7 +456,7 @@
 
     li {
       padding: 2em;
-      border: 1px solid $neonpink;
+      border: 1px solid $watermelon;
       flex: 1 0;
       min-width: 10em;
       margin: 0.5em;
@@ -473,10 +473,10 @@
       border-color: $magenta;
     }
     li:nth-child(3) {
-      border-color: $light-orange;
+      border-color: $orange;
     }
     li:nth-child(4) {
-      border-color: $neonpurple;
+      border-color: $purple;
     }
     li:nth-child(5) {
       border-color: #24D1F6;
@@ -497,12 +497,12 @@
     text-align: center;
     font-family: PoppinsBold;
     font-style: normal;
-    background: linear-gradient(45deg, $magenta, $light-orange);
+    background: linear-gradient(45deg, $magenta, $orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
     &.greenGradient {
-      background: linear-gradient(45deg, $light-blue, $green);
+      background: linear-gradient(45deg, $cyan, $green);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 1.5em;
@@ -513,7 +513,7 @@
     font-family: $body-font-family;
     font-weight: 900;
     text-transform: uppercase;
-    color: $neonpink;
+    color: $watermelon;
     font-size: 2rem;
     line-height: 1em;
     font-style: normal;
