@@ -38,4 +38,67 @@
     min-height: 0;
     flex-wrap: wrap;
   }
+
+}
+.footerCopyrightContainer {
+  background-color: $black;
+  padding: 2rem;
+
+  @media screen and (min-width: $lg) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .footerCopyrightWrapper {
+    font-size: 12px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    padding-top: 0.5rem;
+    
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+  }
+
+  .copyrightText {
+    color: $white;
+    font-family: 'GT Pressura Mono';
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+  }
+
+  .footerList {
+    flex-direction: column;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+    }
+  }
+
+  .footerListItem {
+    display: flex;
+    font-family: 'GT Pressura Mono';
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    color: $white;
+    margin-right: 2rem;
+
+    .footerLink {
+      color: $white;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

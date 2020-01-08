@@ -1,0 +1,46 @@
+@import '../../styles/base/variables';
+
+.footerBannerContainer {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  .footerBannerWrapper {
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .bannerWrapper {
+    background: url($cdnRoot + 'assets/images/banner/bg-imagination@2x.jpg') no-repeat top center / cover $darkest-purple;
+    height: 520px;
+    background-blend-mode: screen;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // @todo remove when it is imported from blueprint
+  .headingLockup {
+    position: relative;
+    transform: rotate(0);
+    font-size: 2.5rem;
+    line-height: 1.4em;
+    letter-spacing: -0.1em;
+    font-style: normal;
+    font-family: 'Luna Emu', 'Poppins Black', 'Arial Black', 'sans serif';
+
+    strong {
+      position: relative;
+      transform: rotate(-7deg);
+      font-size: 5rem;
+      clear: both;
+      display: block;
+      top: -0.4em;
+      left: -0.5em;
+    }
+  }
+}
+
