@@ -91,53 +91,37 @@
       margin: 0 0 0 80px;
     }
 
-    .preText {
+    .ambassadorsPreText {
+      font-family: 'Luna Emu';
+      font-weight: normal;
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+      text-align: center;
       position: relative;
       z-index: 2;
-      font-style: italic;
-      font-weight: 900;
       padding-left: 0;
       margin-left: -70px;
+      color: #FFA235;
 
       @media all and(min-width: $md) {
         margin-left: 0;
         padding-left: -10px;
       }
-
-      @media all and(min-width: $lg) {
-        font-size: calc(#{$base-font-size} + 0.6rem);
-      }
     }
 
-    .gradientText {
-      background: linear-gradient(135deg, $accent-blue 0%, $accent-pink 100%);
-      color: $white;
+    .ambassadorsText {
+      font-family: 'Luna Emu';
+      font-size: 5.25rem;
+      line-height: 3.25rem;
+      text-align: center;
+      color: #9135F0;
+      transform: rotate(-7.02deg);
       display: block;
-      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      font-family: "blackhawk_italicregular";
-      font-size: 5.2rem;
-      font-weight: 100;
-      line-height: 6.2rem;
-      margin: -20px 0 0 -30px;
+      margin: -30px 0 40px -30px;
       outline: none;
       padding: 10px 30px 30px;
       position: relative;
-      transform: rotate(-9deg);
       z-index: 1;
-
-      @media all and(min-width: $md) {
-        font-size: 6.2rem;
-        line-height: 3.5rem;
-        margin-top: -30px;
-        padding: 15px 87px 30px 35px;
-      }
-
-      @media all and(min-width: $lg) {
-        font-size: calc(#{$highlight-text-font-size} + 4.5rem);
-        line-height: 4.2rem;
-      }
     }
   }
 
