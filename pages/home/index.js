@@ -9,7 +9,7 @@ const HeroBannerHomepage = dynamic(() => import(/* webpackChunkName 'HeroBannerH
 const IntroPanelHomepage = dynamic(() => import(/* webpackChunkName 'IntroPanelHomepage' */ '../../components/introPanelHomepage'));
 const CtaGrid = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ambassadors'));
-const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
+// const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
 const FooterBanner = dynamic(() => import(/* webpackChunkName 'FooterBanner' */ '../../components/footerBanner'));
 
 const Home = () => {
@@ -25,7 +25,7 @@ const Home = () => {
       <IntroPanelHomepage />
       <CtaGrid elements={CTA_AU_HOMEPAGE} />
       <Ambassadors />
-      <CtaFAQ />
+      {/* <CtaFAQ /> */}
       <FooterBanner />
     </Layout>
   );
