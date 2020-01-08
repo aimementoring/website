@@ -1,26 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import styles from './index.scss';
-
-const {
-  Title,
-  Button,
-} = Components;
+import styles from './ctaGrid.module.scss';
 
 const CtaGrid = ({ elements }) => (
-  <div className="full-width-wrap">
-    <div className="cta-container flex">
-      {elements.map((cta, index) => (
-        <div key={`${cta.title}-${cta.description}`} className={`item center-contents item-${index + 1}`}>
-          <div className="item-contents">
+  <div className={styles.ctaGridContainer}>
+    <div className={styles.ctaWrapper}>
+      {elements.map((cta) => (
+        <div key={`${cta.title}-${cta.description}`} className={styles.ctaItem}>
+          <div className={styles.itemContents}>
+            <div className={styles.itemContentImage} />
             <Title className={styles.ctaLockup} type="headingLockup">
               {cta.title}
             </Title>
-            <div className="sub-item-details show-on-hover">
+            <div className={styles.subItemDetails}>
               <Paragraph text={cta.description} />
-              <div className="sub-item-details show-on-hover">
+              <div className={styles.subItemDetails}>
                 {cta.link.indexOf('http') !== -1
                   ? (
                     <Button theme="rainbow" aria-label="cta" type="link" url={cta.link}>
