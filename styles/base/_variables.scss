@@ -1,6 +1,6 @@
 /* Colour */
 
-$brand-primary: #7603db;
+$brand-primary: #FF6187;
 $brand-secondary: #c700ff;
 $brand-tertiary: #da0dff;
 
@@ -86,7 +86,7 @@ $micrositePageWidth: 80em;
 /* Border Radius */
 $border-radius: 6px; // Forms
 $border-radius-large: 20px; // Feature Buttons
-$border-radius-button: 90px; // Buttons
+$border-radius-button: 3px; // Buttons
 
 /* Scratch Underlines on Headings */
 $scratch-ul-top: 56px;
@@ -101,7 +101,7 @@ $lg: 64em;
 
 $hoverTransition: all 100ms linear;
 
-$cdnRoot: "https://dbhff1axysj9i.cloudfront.net/"; //Production Cloudfront
+$cdnRoot: "https://d3kott46cqreik.cloudfront.net/"; //Production Cloudfront
 
 %svgIcon {
   stroke-width: 0;
