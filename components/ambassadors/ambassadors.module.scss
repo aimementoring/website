@@ -8,6 +8,7 @@
 
 .paragraph {
   font-size: 14px;
+  color: $black;
 }
 
 .linkButton {
@@ -42,7 +43,7 @@
 }
 
 .mentorsSection {
-  background-color: $darkest-purple;
+  background-color: $white;
   padding: 60px 0 0;
   position: relative;
   max-width: 100%;
@@ -220,7 +221,7 @@
   }
 
   .mentorContent {
-    border: 30px solid #0d0012;
+    border: 30px solid $white;
     box-shadow: inset 0 0 0 2px $white;
     padding: 120px 30px 60px;
     position: relative;
@@ -263,7 +264,7 @@
       }
 
       .titleContainer {
-        color: $white;
+        color: $black;
         font-size: 14px;
 
         @media all and(min-width: $md) {
@@ -290,7 +291,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background-color: $darkest-purple;
+  background-color: $white;
   position: relative;
 
   @media all and(min-width: $md) {
