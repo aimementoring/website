@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
+import FooterNewsletter from '../../footerNewsletter';
 import styles from './footer.module.scss';
 
 const Footer = ({ location, handleShowIntercom }) => {
@@ -86,20 +87,7 @@ const Footer = ({ location, handleShowIntercom }) => {
                     <NavList {...footerList} key={footerList.title} />
                   ))}
                 </div>
-                <div className="flex flex-auto justify-start lg-justify-end">
-                  <div className="flex flex-column w100" style={{ maxWidth: '350px' }}>
-                    <div className="flex-auto mb3">
-                      <h4 className="c-white feature-font-family bold f-15 pb2">Become an AIME friend</h4>
-                      <p className="f-14 pb2 c-white">Subscribe to our newsletter</p>
-                      <form acceptCharset="UTF-8" action="https://formkeep.com/f/0f2fe2a1cd09" method="POST" className="footer-links--input">
-                        <input type="hidden" name="utf8" value="✓" />
-                        <input type="hidden" name="submissionmessage" value="footernewslettersubscription" />
-                        <input id="subscribe" className="input p2 f-16 light w100" type="email" placeholder="Enter your email" name="email" required />
-                        <button type="submit" className="footer-links--input-button" aria-label="Submit form" />
-                      </form>
-                    </div>
-                  </div>
-                </div>
+                <FooterNewsletter />
               </div>
             </div>
           </div>
