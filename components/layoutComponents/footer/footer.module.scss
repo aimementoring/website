@@ -1,0 +1,41 @@
+@import '../../../styles/base/variables';
+
+.footerContainer {
+  max-width: 100%;
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+
+  @media screen and (min-width: $lg) {
+    padding-bottom: 4rem;
+  }
+
+  .footerWrapper {
+    display: flex;
+    margin: 0 auto; 
+    max-width: 1120px; 
+    overflow: visible;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 4rem;
+  }
+
+  .footerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media screen  and (min-width: $lg) {
+      flex-direction: row;
+    }
+  }
+
+  .linksContainer {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    flex-wrap: wrap;
+  }
+}
