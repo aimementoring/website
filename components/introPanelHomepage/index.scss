@@ -1,10 +1,6 @@
 @import '../../styles/base/variables';
 
 .home-intro-panel {
-  background: url($cdnRoot + 'assets/images/banner/bg_black_scratch.jpg') no-repeat top center / cover #050301;
-  .scratch-overlay-wrapper {
-    background: $darkest-purple;
-  }
 
   .highlight-text.highlight-text--second-panel {
     font-size: 5rem;
