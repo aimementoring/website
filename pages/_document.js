@@ -10,11 +10,6 @@ const bodyStyles = {
   fontSize: '16px',
 };
 
-const tagManagerStyle = {
-  display: 'none',
-  visibility: 'hidden',
-};
-
 export default class CustomDocument extends Document {
   render() {
     return (
@@ -35,16 +30,6 @@ export default class CustomDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body style={bodyStyles}>
-          <noscript>
-            <iframe
-              title="ga"
-              src="https://www.googletagmanager.com/ns.html?id=GTM-NK5SFHW"
-              height="0"
-              width="0"
-              style={tagManagerStyle}
-            />
-          </noscript>
-
           <Main />
           <NextScript />
         </body>
