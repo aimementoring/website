@@ -40,7 +40,7 @@ const StoryTwo = (props) => {
           const author = entry.fields.contentCreator
             && entry.fields.contentCreator.fields.authorName;
           const signature = entry.fields.signature && entry.fields.signature;
-          const hasPostScriptContent = entry.fields.postScriptMessage
+          const postScriptContent = entry.fields.postScriptMessage
             && entry.fields.postScriptMessage;
           const buttonProps = entry.fields.callToActionButton
             && entry.fields.callToActionButton;
@@ -68,7 +68,7 @@ const StoryTwo = (props) => {
                             signature={signature}
                             publishDate={entry.fields.publishDate}
                             contentCards={entry.fields.contentCards}
-                            hasPostScriptContent={hasPostScriptContent}
+                            postScriptContent={postScriptContent}
                             buttonProps={buttonProps}
                           />
                           <Anchor to="/storiesTwo" className={styles.articleTileLink}>

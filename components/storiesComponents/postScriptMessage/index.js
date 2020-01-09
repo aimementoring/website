@@ -2,17 +2,17 @@ import React, { Fragment } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
+import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
-const VideoFormElement = dynamic(() => import('../../commonElements/videoFormElement'));
 
 const PostScriptMessage = (props) => {
   const {
-    hasPostScriptContent,
+    postScriptContent,
   } = props;
 
-  const content = hasPostScriptContent
-  && hasPostScriptContent.map((ps) => {
+  const content = postScriptContent
+  && postScriptContent.map((ps) => {
     const isImage = ps.fields.visualMedia && ps.fields.visualMedia;
     const isVideo = ps.fields.videoMedia && ps.fields.videoMedia;
     const image = isImage && isImage.fields.file.url;
@@ -56,7 +56,7 @@ const PostScriptMessage = (props) => {
 };
 
 PostScriptMessage.propTypes = {
-  hasPostScriptContent: PropTypes.arrayOf(
+  postScriptContent: PropTypes.arrayOf(
     PropTypes.shape({
       Type: PropTypes.string,
       contentCopy: PropTypes.string,
@@ -82,7 +82,7 @@ PostScriptMessage.propTypes = {
 };
 
 PostScriptMessage.defaultProps = {
-  hasPostScriptContent: null,
+  postScriptContent: null,
 };
 
 export default PostScriptMessage;

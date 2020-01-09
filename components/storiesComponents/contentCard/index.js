@@ -5,15 +5,15 @@ import dynamic from 'next/dynamic';
 import {
   formatDate,
 } from '../../../utils/utilities';
+import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
-const VideoFormElement = dynamic(() => import('../../commonElements/videoFormElement'));
 const CallToActionButton = dynamic(() => import('../callToActionButton'));
 const PostScriptMessage = dynamic(() => import('../postScriptMessage'));
 
 const ContentCard = (props) => {
   const {
-    author, signature, contentCards, buttonProps, hasPostScriptContent, publishDate,
+    author, signature, contentCards, buttonProps, postScriptContent, publishDate,
   } = props;
 
   const content = contentCards
@@ -71,8 +71,8 @@ const ContentCard = (props) => {
           buttonProps={buttonProps}
         />
       )}
-      {hasPostScriptContent && (
-        <PostScriptMessage hasPostScriptContent={hasPostScriptContent} />
+      {postScriptContent && (
+        <PostScriptMessage postScriptContent={postScriptContent} />
       )}
     </div>
   );
@@ -87,7 +87,7 @@ ContentCard.propTypes = {
       externalUrl: PropTypes.string,
     }),
   ),
-  hasPostScriptContent: PropTypes.arrayOf(
+  postScriptContent: PropTypes.arrayOf(
     PropTypes.shape({
       Type: PropTypes.string,
       contentCopy: PropTypes.string,
@@ -140,7 +140,7 @@ ContentCard.defaultProps = {
   author: '',
   signature: '',
   buttonProps: null,
-  hasPostScriptContent: null,
+  postScriptContent: null,
 };
 
 export default ContentCard;
