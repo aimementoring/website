@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /*
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.css
+Allow: /*.js
+Allow: /*.JPG
+
+// I am not sure of the robots.txt setup so this is a placeholder.
+// robots.txt easter egg goes here!
