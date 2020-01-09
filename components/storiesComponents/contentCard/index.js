@@ -9,6 +9,7 @@ import {
 const Picture = dynamic(() => import('../../picture'));
 const VideoFormElement = dynamic(() => import('../../commonElements/videoFormElement'));
 const CallToActionButton = dynamic(() => import('../callToActionButton'));
+const PostScriptMessage = dynamic(() => import('../postScriptMessage'));
 
 const ContentCard = (props) => {
   const {
@@ -71,9 +72,7 @@ const ContentCard = (props) => {
         />
       )}
       {hasPostScriptContent && (
-        <ReactMarkdown>
-          {hasPostScriptContent}
-        </ReactMarkdown>
+        <PostScriptMessage hasPostScriptContent={hasPostScriptContent} />
       )}
     </div>
   );
@@ -88,7 +87,29 @@ ContentCard.propTypes = {
       externalUrl: PropTypes.string,
     }),
   ),
-  hasPostScriptContent: PropTypes.string,
+  hasPostScriptContent: PropTypes.arrayOf(
+    PropTypes.shape({
+      Type: PropTypes.string,
+      contentCopy: PropTypes.string,
+      displayType: PropTypes.string,
+      visualMedia: PropTypes.shape({
+        file: PropTypes.shape({
+          contentType: PropTypes.string,
+          fileName: PropTypes.string,
+          url: PropTypes.string,
+          title: PropTypes.string,
+          details: PropTypes.shape({
+            size: PropTypes.number,
+            image: PropTypes.shape({
+              height: PropTypes.number,
+              width: PropTypes.number,
+            }),
+          }),
+        }),
+      }),
+      visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+  ),
   publishDate: PropTypes.string.isRequired,
   contentCards: PropTypes.arrayOf(
     PropTypes.shape({
@@ -119,7 +140,7 @@ ContentCard.defaultProps = {
   author: '',
   signature: '',
   buttonProps: null,
-  hasPostScriptContent: '',
+  hasPostScriptContent: null,
 };
 
 export default ContentCard;

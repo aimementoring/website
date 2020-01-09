@@ -41,7 +41,7 @@ const StoryTwo = (props) => {
             && entry.fields.contentCreator.fields.authorName;
           const signature = entry.fields.signature && entry.fields.signature;
           const hasPostScriptContent = entry.fields.postScriptMessage
-            && entry.fields.postScriptMessage.fields.contentCopy;
+            && entry.fields.postScriptMessage;
           const buttonProps = entry.fields.callToActionButton
             && entry.fields.callToActionButton;
 
@@ -109,6 +109,7 @@ StoryTwo.propTypes = {
       publishDate: PropTypes.string,
       contentCards: PropTypes.array,
       signature: PropTypes.string,
+      postScriptMessage: PropTypes.array,
     }),
   })).isRequired,
 };
