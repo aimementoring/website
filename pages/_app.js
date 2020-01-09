@@ -3,7 +3,7 @@ import App from 'next/app';
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {
-  gtmId: 'GTM-NK5SFHW',
+  gtmId: process.env.REACT_APP_GOOGLE_TAG_MANAGER,
   // auth: '',// Optional, see GTM => Admin => Environments, useful when using staging environment
   // preview: 'env-2' // Optional
 };
