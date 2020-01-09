@@ -63,8 +63,8 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
     <div className={styles.mentorContent}>
       <div className={styles.mentorContentWrapper}>
         <div className={styles.titleContainer}>
-          <Title type="h4Title">{title}</Title>
-          <Paragraph>Ambassador</Paragraph>
+          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>{title}</Title>
+          <Paragraph theme={process.env.REACT_APP_THEME}>Ambassador</Paragraph>
           <Paragraph theme={process.env.REACT_APP_THEME}>
             {paragraph}
           </Paragraph>
