@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
+import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import Title from 'aime-blueprint/lib/components/title';
 import Anchor from '../common/link';
 import styles from './ambassadors.module.scss';
 
 const Carousel = dynamic(() => import('../carousel'));
+
+const {
+  Title,
+  Button,
+} = Components;
 
 const CAROUSEL_SLIDES = [
   {
@@ -63,26 +68,14 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
     <div className={styles.mentorContent}>
       <div className={styles.mentorContentWrapper}>
         <div className={styles.titleContainer}>
-          {/* <Title type="h2Title" className={styles.ambassadorName}>Patrick J. Adams</Title>
-          <Title type="h5Title">Ambassador</Title>
-          <Paragraph>
-            Beyond my family, no people have helped shape my life, my career and my view
-            of the world more than the mentors I have been lucky enough to work, play and
-            live with. I’m so excited to have found AIME and to do everything I can to
-            serve the cause of mentorship all over the world.
-          </Paragraph>
-          <Button theme="rainbow" aria-label="cta" type="link" url="/ambassadors">
-            See more ambassadors
-          </Button>
-          */}
           <Title type="h2Title" theme={process.env.REACT_APP_THEME} className={styles.ambassadorName}>{title}</Title>
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Ambassador</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>
             {paragraph}
           </Paragraph>
-          <Anchor to="/ambassadors" className={styles.linkButton}>
+          <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/ambassadors">
             See more ambassadors
-          </Anchor>
+          </Button>
         </div>
       </div>
     </div>
