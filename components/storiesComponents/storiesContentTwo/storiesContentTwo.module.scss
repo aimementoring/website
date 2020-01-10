@@ -5,7 +5,7 @@
   width: 100%;
 
   @supports (object-fit: cover) {
-    height: 20vh;
+    height: 169px;
     object-fit: cover;
     object-position: top;
   }
@@ -56,6 +56,14 @@
 
 .articleDescription {
   padding: 0.5rem 2rem 1.5rem 2rem;
+  
+  h5{
+  color:$black;
+  &:hover {
+    color: $purple;
+    }
+  }
+
 }
 
 .postDate {
@@ -79,26 +87,9 @@
 }
 
 .articleTileLink {
-  background-color: $brand-primary;
-  border-radius: $border-radius-button;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $feature-font-family;
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.004em;
-  margin-top: 2rem;
-  padding: 0.4rem 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 100ms linear;
-
-  &:hover {
-    background-color: $brand-secondary;
-    color: $white;
-  }
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 600;
 
   @media screen and (min-width: $lg) {
     padding: 1rem 2.5rem;
