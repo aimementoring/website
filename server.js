@@ -81,7 +81,7 @@ app.prepare().then(() => {
     });
   });
 
-  // StoryTwo
+  // StoryTwo Testing Auto Deploy
   server.get('/storyTwo/:slug', (req, res) => {
     const pagePath = '/storyTwo';
 
