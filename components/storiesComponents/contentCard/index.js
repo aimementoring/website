@@ -5,14 +5,15 @@ import dynamic from 'next/dynamic';
 import {
   formatDate,
 } from '../../../utils/utilities';
+import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
-const VideoFormElement = dynamic(() => import('../../commonElements/videoFormElement'));
 const CallToActionButton = dynamic(() => import('../callToActionButton'));
+const PostScriptMessage = dynamic(() => import('../postScriptMessage'));
 
 const ContentCard = (props) => {
   const {
-    author, signature, contentCards, buttonProps, hasPostScriptContent, publishDate,
+    author, signature, contentCards, buttonProps, postScriptContent, publishDate,
   } = props;
 
   const content = contentCards
@@ -70,10 +71,8 @@ const ContentCard = (props) => {
           buttonProps={buttonProps}
         />
       )}
-      {hasPostScriptContent && (
-        <ReactMarkdown>
-          {hasPostScriptContent}
-        </ReactMarkdown>
+      {postScriptContent && (
+        <PostScriptMessage postScriptContent={postScriptContent} />
       )}
     </div>
   );
@@ -88,7 +87,29 @@ ContentCard.propTypes = {
       externalUrl: PropTypes.string,
     }),
   ),
-  hasPostScriptContent: PropTypes.string,
+  postScriptContent: PropTypes.arrayOf(
+    PropTypes.shape({
+      Type: PropTypes.string,
+      contentCopy: PropTypes.string,
+      displayType: PropTypes.string,
+      visualMedia: PropTypes.shape({
+        file: PropTypes.shape({
+          contentType: PropTypes.string,
+          fileName: PropTypes.string,
+          url: PropTypes.string,
+          title: PropTypes.string,
+          details: PropTypes.shape({
+            size: PropTypes.number,
+            image: PropTypes.shape({
+              height: PropTypes.number,
+              width: PropTypes.number,
+            }),
+          }),
+        }),
+      }),
+      visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+  ),
   publishDate: PropTypes.string.isRequired,
   contentCards: PropTypes.arrayOf(
     PropTypes.shape({
@@ -119,7 +140,7 @@ ContentCard.defaultProps = {
   author: '',
   signature: '',
   buttonProps: null,
-  hasPostScriptContent: '',
+  postScriptContent: null,
 };
 
 export default ContentCard;
