@@ -90,11 +90,12 @@ const StoryTwo = (props) => {
   );
 };
 
-StoryTwo.getInitialProps = async ({ query }) => {
+StoryTwo.getInitialProps = async ({ query, asPath, pathname }) => {
   const client = contentfulServer();
+  const slug = query.slug || asPath.replace(`${pathname}/`, '');
   const content = await client.then((response) => response);
 
-  return { content, slug: query.slug };
+  return { content, slug };
 };
 
 StoryTwo.propTypes = {
