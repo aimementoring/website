@@ -63,8 +63,20 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
     <div className={styles.mentorContent}>
       <div className={styles.mentorContentWrapper}>
         <div className={styles.titleContainer}>
-          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>{title}</Title>
-          <Paragraph theme={process.env.REACT_APP_THEME}>Ambassador</Paragraph>
+          {/* <Title type="h2Title" className={styles.ambassadorName}>Patrick J. Adams</Title>
+          <Title type="h5Title">Ambassador</Title>
+          <Paragraph>
+            Beyond my family, no people have helped shape my life, my career and my view
+            of the world more than the mentors I have been lucky enough to work, play and
+            live with. I’m so excited to have found AIME and to do everything I can to
+            serve the cause of mentorship all over the world.
+          </Paragraph>
+          <Button theme="rainbow" aria-label="cta" type="link" url="/ambassadors">
+            See more ambassadors
+          </Button>
+          */}
+          <Title type="h2Title" theme={process.env.REACT_APP_THEME} className={styles.ambassadorName}>{title}</Title>
+          <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Ambassador</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>
             {paragraph}
           </Paragraph>
