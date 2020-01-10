@@ -40,8 +40,8 @@ const StoryTwo = (props) => {
           const author = entry.fields.contentCreator
             && entry.fields.contentCreator.fields.authorName;
           const signature = entry.fields.signature && entry.fields.signature;
-          const hasPostScriptContent = entry.fields.postScriptMessage
-            && entry.fields.postScriptMessage.fields.contentCopy;
+          const postScriptContent = entry.fields.postScriptMessage
+            && entry.fields.postScriptMessage;
           const buttonProps = entry.fields.callToActionButton
             && entry.fields.callToActionButton;
 
@@ -68,7 +68,7 @@ const StoryTwo = (props) => {
                             signature={signature}
                             publishDate={entry.fields.publishDate}
                             contentCards={entry.fields.contentCards}
-                            hasPostScriptContent={hasPostScriptContent}
+                            postScriptContent={postScriptContent}
                             buttonProps={buttonProps}
                           />
                           <Anchor to="/storiesTwo" className={styles.articleTileLink}>
@@ -90,11 +90,12 @@ const StoryTwo = (props) => {
   );
 };
 
-StoryTwo.getInitialProps = async ({ query }) => {
+StoryTwo.getInitialProps = async ({ query, asPath, pathname }) => {
   const client = contentfulServer();
+  const slug = query.slug || asPath.replace(`${pathname}/`, '');
   const content = await client.then((response) => response);
 
-  return { content, slug: query.slug };
+  return { content, slug };
 };
 
 StoryTwo.propTypes = {
@@ -109,6 +110,7 @@ StoryTwo.propTypes = {
       publishDate: PropTypes.string,
       contentCards: PropTypes.array,
       signature: PropTypes.string,
+      postScriptMessage: PropTypes.array,
     }),
   })).isRequired,
 };
