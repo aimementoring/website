@@ -41,10 +41,15 @@ const Ambassadors = () => (
   <div className={styles.mainContainer}>
     <div className={styles.mentorsSection}>
       <div className={styles.mentorsSectionWrapper}>
-        <h1>
+        <Title type="headingLockup" className={styles.carouselTitle} theme={process.env.REACT_APP_THEME}>
+          Our
+          <strong>Ambassadors</strong>
+        </Title>
+
+        {/* <h1>
           <span className={styles.ambassadorsPreText}>Our</span>
           <span className={styles.ambassadorsText}>Ambassadors</span>
-        </h1>
+        </h1> */}
         <div className={styles.carousel}>
           <Carousel type="ambassadors">
             {CAROUSEL_SLIDES.map((slide) => <AmbassadorSlide {...slide} key={slide.title} />)}
@@ -68,7 +73,7 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
     <div className={styles.mentorContent}>
       <div className={styles.mentorContentWrapper}>
         <div className={styles.titleContainer}>
-          <Title type="h2Title" theme={process.env.REACT_APP_THEME} className={styles.ambassadorName}>{title}</Title>
+          <Title type="h2Title" className={styles.ambassadorName} theme={process.env.REACT_APP_THEME}>{title}</Title>
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Ambassador</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>
             {paragraph}
