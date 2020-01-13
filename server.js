@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const cacheableResponse = require('cacheable-response');
 const express = require('express');
 const next = require('next');
@@ -26,6 +27,11 @@ app.prepare().then(() => {
   server.use(compression());
 
   server.get('/', (req, res) => ssrCache({ req, res, pagePath: '/' }));
+
+  // robots.txt
+  server.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/robots.txt'));
+  });
 
   // Positions
   server.get('/:countryId/positions', (req, res) => {
