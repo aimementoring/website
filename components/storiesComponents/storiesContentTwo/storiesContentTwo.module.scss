@@ -5,24 +5,10 @@
   width: 100%;
 
   @supports (object-fit: cover) {
-    height: 169px;
+    height: 10.5em;
     object-fit: cover;
     object-position: top;
   }
-}
-
-.storiesTitle {
-  font-weight: 400;
-  font-size: 24px;
-  color: $black;
-  font-family: $feature-font-family;
-}
-
-.storiesParagraph {
-  font-size: 16px;
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-  line-height: 2;
 }
 
 .storiesGrid {
@@ -58,7 +44,9 @@
   padding: 0.5rem 2rem 1.5rem 2rem;
   
   h5{
+  margin-bottom: 0.5em;
   color:$black;
+  transition: $hoverTransition;
   &:hover {
     color: $purple;
     }
@@ -73,12 +61,6 @@
 .slash {
   color: $light-grey;
 }
-
-.author {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .articleTileLabel {
   font-size: 1rem;
   line-height: 1.5;
@@ -88,7 +70,7 @@
 
 .articleTileLink {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   font-weight: 600;
 
   @media screen and (min-width: $lg) {
