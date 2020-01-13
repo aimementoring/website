@@ -90,6 +90,7 @@ const StoriesTwo = (props) => {
                 <div className={styles.refineSection}>
                   <Title type="h3Title">
                     Imagination
+                    {' '}
                     <strong>Feed</strong>
                   </Title>
                   <div className="intro-sub-text">
