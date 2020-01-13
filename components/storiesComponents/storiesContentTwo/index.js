@@ -57,10 +57,10 @@ const StoriesContentTwo = (props) => {
               <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
                 {datePublished}
               </span>
-              <span key={`c-light-grey-span-${id}`} className={styles.slash}>
-                /
+              <span key={`c-light-grey-span-${id}`}>
+                <br />
               </span>
-              <span key={`px1-span-${id}`} className={styles.author}>
+              <span key={`px1-span-${id}`}>
                 {`By ${contentCreator}`}
               </span>
             </p>
