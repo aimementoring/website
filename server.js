@@ -67,26 +67,6 @@ app.prepare().then(() => {
     });
   });
 
-  // // Story
-  // server.get('/story/:storySlug', (req, res) => {
-  //   const pagePath = '/story';
-  //   const queryParams = {
-  //     storySlug: req.params.storySlug,
-  //   };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
-
-  // // Story
-  // server.get('/blog/:storySlug', (req, res) => {
-  //   const pagePath = '/story';
-  //   const queryParams = { storySlug: req.params.storySlug };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
-
   // Story Page
   server.get('/story/:slug', (req, res) => {
     const pagePath = '/story';
