@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import dynamic from 'next/dynamic';
+import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import Title from 'aime-blueprint/lib/components/title';
 import Anchor from '../common/link';
 import styles from './ambassadors.module.scss';
+import Carousel from '../carousel';
 
-const Carousel = dynamic(() => import('../carousel'));
+
+const {
+  Title,
+  Button,
+} = Components;
 
 const CAROUSEL_SLIDES = [
   {
@@ -36,10 +40,15 @@ const Ambassadors = () => (
   <div className={styles.mainContainer}>
     <div className={styles.mentorsSection}>
       <div className={styles.mentorsSectionWrapper}>
-        <h1>
+        <Title type="headingLockup" className={styles.carouselTitle} theme={process.env.REACT_APP_THEME}>
+          Our
+          <strong>Ambassadors</strong>
+        </Title>
+
+        {/* <h1>
           <span className={styles.ambassadorsPreText}>Our</span>
           <span className={styles.ambassadorsText}>Ambassadors</span>
-        </h1>
+        </h1> */}
         <div className={styles.carousel}>
           <Carousel type="ambassadors">
             {CAROUSEL_SLIDES.map((slide) => <AmbassadorSlide {...slide} key={slide.title} />)}
@@ -63,14 +72,14 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
     <div className={styles.mentorContent}>
       <div className={styles.mentorContentWrapper}>
         <div className={styles.titleContainer}>
-          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>{title}</Title>
-          <Paragraph theme={process.env.REACT_APP_THEME}>Ambassador</Paragraph>
+          <Title type="h2Title" className={styles.ambassadorName} theme={process.env.REACT_APP_THEME}>{title}</Title>
+          <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Ambassador</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>
             {paragraph}
           </Paragraph>
-          <Anchor to="/ambassadors" className={styles.linkButton}>
+          <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/ambassadors">
             See more ambassadors
-          </Anchor>
+          </Button>
         </div>
       </div>
     </div>
