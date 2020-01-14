@@ -5,24 +5,19 @@
   max-width: 100%;
   width: 100%;
 
-  // @todo remove when it is imported from blueprint
   .headingLockup {
-    position: relative;
-    transform: rotate(0);
-    font-size: 2.5rem;
-    line-height: 1.4em;
-    letter-spacing: -0.1em;
-    font-style: normal;
-    font-family: 'Luna Emu', 'Poppins Black', 'Arial Black', 'sans serif';
+    color: $white;
+    text-align: center;
+    line-height: 2em;
 
     strong {
-      position: relative;
-      transform: rotate(-7deg);
       font-size: 5rem;
-      clear: both;
-      display: block;
-      top: -0.4em;
-      left: -0.5em;
+      left: inherit;
+      top: inherit;
+
+      @media screen and (min-width: $md) {
+        font-size: 8rem;
+      }
     }
   }
 }
