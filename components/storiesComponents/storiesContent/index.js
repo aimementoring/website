@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { formatDate } from '../../../utils/utilities';
 import Anchor from '../../common/link';
-import styles from './storiesContentTwo.module.scss';
+import styles from './storiesContent.module.scss';
 
 const Picture = dynamic(() => import('../../picture'));
 
@@ -27,8 +27,8 @@ const StoriesContentTwo = (props) => {
   return (
     <article key={`article-story-${id}`} className={styles.articleTile}>
       <Anchor
-        to={`/storyTwo?slug=${slugTitle}`}
-        as={`/storyTwo/${slugTitle}`}
+        to={`/story?slug=${slugTitle}`}
+        as={`/story/${slugTitle}`}
         className={styles.articleLink}
       >
         <div>
@@ -36,9 +36,9 @@ const StoriesContentTwo = (props) => {
             className={styles.bannerImage}
             thumbnail
             image={{
-              image: `https:${bannerImage}`,
+              image: `https:${bannerImage}?fl=progressive`,
               title,
-              thumbnail: `https:${bannerImage}`,
+              thumbnail: `https:${bannerImage}?fl=progressive`,
             }}
           />
           <div

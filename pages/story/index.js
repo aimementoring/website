@@ -1,103 +1,118 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Router from 'next/router';
+import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
-import Anchor from '../../components/common/link';
+import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
-import { getEntries } from '../../services/craftAPI';
-import { isClientSide } from '../../utils/utilities';
+import Anchor from '../../components/common/link';
+import contentfulServer from '../../api/contentfulServer';
+import {
+  formatDate,
+  removeSpecialCharacters,
+  replaceWhiteSpace,
+} from '../../utils/utilities';
 import styles from './story.module.scss';
 
-const MatrixBuilder = dynamic(() => import(/* webpackChunkName 'MatrixBuilder' */ '../../components/matrixBuilder'));
+const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
-const Story = ({ storySlug, entries }) => {
-  const isClient = isClientSide();
-
-  useEffect(() => {
-    if (isClient && Router.pathname.split('/')[1] === 'blog') {
-      Router.push(`/story/${storySlug}`);
-    }
-  }, [isClient]);
-
-  let bannerStyles = {};
-  if (entries) {
-    bannerStyles = {
-      backgroundPosition: entries.bannerBackgroundPosition || '0% 25%',
-      backgroundImage:
-        entries.bannerImage && entries.bannerImage.length
-          ? `url(${entries.bannerImage[0].image})`
-          : '',
-      maxWidth: '100%',
-    };
-  }
-  let postDate;
-  // Adding "T" to support dates in Safari: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
-  if (entries && entries.postDate) postDate = new Date(entries.postDate.date.replace(/\s/, 'T'));
+// this (route/page "storyTwo") needs to be redirected to storiesTwo is directly visited,
+const Story = (props) => {
+  const { content, slug } = props;
 
   return (
     <Layout>
-      <div>
-        <div>
-          {entries && entries.bannerImage && (
-            <div className={styles.bannerInStory} style={bannerStyles} />
-          )}
-          <div>
-            {entries && (
-              <div className={styles.entriesContainer}>
-                <article className={styles.blogPost}>
-                  <h1 className={styles.blogPostTitle}>{entries.title}</h1>
-                  <div>
-                    {postDate && (
-                      <span className={styles.blogPostTimestamp}>
-                        {`Posted ${postDate.toLocaleString('en-us', {
-                          month: 'long',
-                        })} ${postDate.getDate()}, ${postDate.getFullYear()}`}
-                      </span>
-                    )}
-                  </div>
-                  <article className={styles.blogPostArticle}>
-                    <div>
-                      {entries.post && <MatrixBuilder formData={entries.post} matrixType="blog" />}
-                    </div>
+      {
+        content && content.map((entry) => {
+          const bannerImage = entry.fields.banner
+          && entry.fields.banner
+          && entry.fields.banner.fields.visualMedia
+          && entry.fields.banner.fields.visualMedia.fields.file.url;
+          /*
+           TODO: these params for styling,
+           might need to be added to contentful as overrides for these.
+          */
+          const bannerStyles = {
+            backgroundPosition: '0% 25%',
+            backgroundImage: bannerImage && `url(https:${bannerImage})`,
+            maxWidth: '100%',
+          };
 
-                    <Anchor to="/stories" className={styles.articleTileLink}>
-                      <i className={styles.materialIcons}>keyboard_backspace</i>
-                      {' '}
-                      Back to Stories
-                    </Anchor>
-                  </article>
-                </article>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+          const title = removeSpecialCharacters(entry.fields.title && entry.fields.title);
+          const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
+          const author = entry.fields.contentCreator
+            && entry.fields.contentCreator.fields.authorName;
+          const signature = entry.fields.signature && entry.fields.signature;
+          const postScriptContent = entry.fields.postScriptMessage
+            && entry.fields.postScriptMessage;
+          const buttonProps = entry.fields.callToActionButton
+            && entry.fields.callToActionButton;
+
+          return (
+            <Fragment key={entry.sys.id}>
+              {slug === slugTitle && (
+                <div>
+                  <div>
+                    <div className={styles.bannerInStory} style={bannerStyles} />
+                    <div>
+                      <div className={styles.entriesContainer}>
+                        <article className={styles.blogPost}>
+                          <h1 className={styles.blogPostTitle}>
+                            {entry.fields.title && entry.fields.title}
+                          </h1>
+                          <div>
+                            <span className={styles.blogPostTimestamp}>
+                              {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
+                            </span>
+                          </div>
+                          <article className={styles.blogPostArticle} />
+                          <ContentCard
+                            author={author}
+                            signature={signature}
+                            publishDate={entry.fields.publishDate}
+                            contentCards={entry.fields.contentCards}
+                            postScriptContent={postScriptContent}
+                            buttonProps={buttonProps}
+                          />
+                          <Anchor to="/stories" className={styles.articleTileLink}>
+                            <i className={styles.materialIcons}>keyboard_backspace</i>
+                            {' '}
+                            Back to Stories
+                          </Anchor>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Fragment>
+          );
+        })
+      }
     </Layout>
   );
 };
 
 Story.getInitialProps = async ({ query, asPath, pathname }) => {
-  const storySlug = query.storySlug || asPath.replace(`${pathname}/`, '');
-  const entries = await getEntries(`stories/${storySlug}.json`);
-  return {
-    storySlug,
-    entries,
-  };
+  const client = contentfulServer();
+  const slug = query.slug || asPath.replace(`${pathname}/`, '');
+  const content = await client.then((response) => response);
+
+  return { content, slug };
 };
 
 Story.propTypes = {
-  storySlug: PropTypes.string,
-  entries: PropTypes.shape({
-    bannerBackgroundPosition: PropTypes.string,
-    bannerImage: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-    postDate: PropTypes.string,
-    title: PropTypes.string,
-    post: PropTypes.string,
-  }).isRequired,
-};
-
-Story.defaultProps = {
-  storySlug: '',
+  slug: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.shape({
+    fields: PropTypes.shape({
+      title: PropTypes.string,
+      contentType: PropTypes.string,
+      contentTag: PropTypes.object,
+      banner: PropTypes.object,
+      contentCreator: PropTypes.object,
+      publishDate: PropTypes.string,
+      contentCards: PropTypes.array,
+      signature: PropTypes.string,
+      postScriptMessage: PropTypes.array,
+    }),
+  })).isRequired,
 };
 
 export default Story;

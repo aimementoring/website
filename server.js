@@ -67,29 +67,29 @@ app.prepare().then(() => {
     });
   });
 
-  // Story
-  server.get('/story/:storySlug', (req, res) => {
-    const pagePath = '/story';
-    const queryParams = {
-      storySlug: req.params.storySlug,
-    };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
+  // // Story
+  // server.get('/story/:storySlug', (req, res) => {
+  //   const pagePath = '/story';
+  //   const queryParams = {
+  //     storySlug: req.params.storySlug,
+  //   };
+  //   return ssrCache({
+  //     req, res, pagePath, queryParams,
+  //   });
+  // });
 
-  // Story
-  server.get('/blog/:storySlug', (req, res) => {
-    const pagePath = '/story';
-    const queryParams = { storySlug: req.params.storySlug };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
+  // // Story
+  // server.get('/blog/:storySlug', (req, res) => {
+  //   const pagePath = '/story';
+  //   const queryParams = { storySlug: req.params.storySlug };
+  //   return ssrCache({
+  //     req, res, pagePath, queryParams,
+  //   });
+  // });
 
-  // StoryTwo Testing Auto Deploy
-  server.get('/storyTwo/:slug', (req, res) => {
-    const pagePath = '/storyTwo';
+  // Story Page
+  server.get('/story/:slug', (req, res) => {
+    const pagePath = '/story';
 
     const queryParams = {
       slug: req.params.slug,
