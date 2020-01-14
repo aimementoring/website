@@ -55,6 +55,7 @@ module.exports = withOffline(
         REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN:
           process.env.REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN,
         REACT_APP_SHOPIFY_DOMAIN: process.env.REACT_APP_SHOPIFY_DOMAIN,
+        REACT_APP_GOOGLE_TAG_MANAGER: process.env.REACT_APP_GOOGLE_TAG_MANAGER,
       },
       target: 'serverless',
       transformManifest: (manifest) => ['/'].concat(manifest),
