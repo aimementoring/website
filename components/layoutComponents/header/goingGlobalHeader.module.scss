@@ -48,7 +48,7 @@
         transition: $hoverTransition;
 
         &:hover {
-          color: $light-orange;
+          color: $orange;
         }
       }
     }
@@ -97,6 +97,6 @@
 
   &:hover {
     color: $white;
-    background-color: $light-orange;
+    background-color: $orange;
   }
 }
