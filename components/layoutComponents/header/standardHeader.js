@@ -11,9 +11,9 @@ const MobileMenu = dynamic(() => import(/* webpackChunkName 'MobileMenu' */ '../
 
 const StandardHeader = ({ handleShowIntercom }) => (
   <div>
-    <Anchor className={styles.navHiring} to="/positions">
+    {/* <Anchor className={styles.navHiring} to="/positions">
       We are hiring!
-    </Anchor>
+    </Anchor> */}
     <div className={styles.siteHeaderContainer}>
       <div className={styles.logoContainer}>
         <Logo />
