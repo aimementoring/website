@@ -5,7 +5,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
 import { formatDate } from '../../../utils/utilities';
 import Anchor from '../../common/link';
-import styles from './storiesContentTwo.module.scss';
+import styles from './storiesContent.module.scss';
 
 const {
   Title,
@@ -14,7 +14,7 @@ const {
 
 const Picture = dynamic(() => import('../../picture'));
 
-const StoriesContentTwo = (props) => {
+const StoriesContent = (props) => {
   const {
     id,
     title,
@@ -34,8 +34,8 @@ const StoriesContentTwo = (props) => {
   return (
     <article key={`article-story-${id}`} className={styles.articleTile}>
       <Anchor
-        to={`/storyTwo?slug=${slugTitle}`}
-        as={`/storyTwo/${slugTitle}`}
+        to={`/story?slug=${slugTitle}`}
+        as={`/story/${slugTitle}`}
         className={styles.articleLink}
       >
         <div>
@@ -43,9 +43,9 @@ const StoriesContentTwo = (props) => {
             className={styles.bannerImage}
             thumbnail
             image={{
-              image: `https:${bannerImage}`,
+              image: `https:${bannerImage}?fl=progressive`,
               title,
-              thumbnail: `https:${bannerImage}`,
+              thumbnail: `https:${bannerImage}?fl=progressive`,
             }}
           />
           <div
@@ -87,11 +87,11 @@ const StoriesContentTwo = (props) => {
   );
 };
 
-StoriesContentTwo.defaultProps = {
+StoriesContent.defaultProps = {
   contentCards: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-StoriesContentTwo.propTypes = {
+StoriesContent.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   slugTitle: PropTypes.string,
@@ -170,11 +170,11 @@ StoriesContentTwo.propTypes = {
   }),
 };
 
-StoriesContentTwo.defaultProps = {
+StoriesContent.defaultProps = {
   slugTitle: '',
   publishDate: '',
   contentCreator: '',
   contentPreview: null,
 };
 
-export default StoriesContentTwo;
+export default StoriesContent;
