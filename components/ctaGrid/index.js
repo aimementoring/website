@@ -1,31 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import styles from './ctaGrid.module.scss';
 
 const CtaGrid = ({ elements }) => (
-  <div className="full-width-wrap">
-    <div className="cta-container flex">
-      {elements.map((cta, index) => (
-        <div key={`${cta.title}-${cta.description}`} className={`item center-contents item-${index + 1}`}>
-          <div className="item-contents">
-            <h3>
+  <div className={styles.ctaGridContainer}>
+    <div className={styles.ctaWrapper}>
+      {elements.map((cta) => (
+        <div key={`${cta.title}-${cta.description}`} className={styles.ctaItem}>
+          <div className={styles.itemContents}>
+            <div className={styles.itemContentImage} />
+            <Title className={styles.ctaLockup} type="headingLockup">
               {cta.title}
-            </h3>
-            <div className="sub-item-details show-on-hover">
-              <p>
-                {cta.description}
-              </p>
-              <div className="sub-item-details show-on-hover">
+            </Title>
+            <div className={styles.subItemDetails}>
+              <Paragraph text={cta.description} />
+              <div className={styles.subItemDetails}>
                 {cta.link.indexOf('http') !== -1
                   ? (
-                    <a aria-label="cta" className="basic-btn" href={cta.link} rel="noopener noreferrer" target="_blank">
+                    <Button theme="rainbow" aria-label="cta" type="link" url={cta.link}>
                       {cta.button}
-                    </a>
+                    </Button>
                   )
                   : (
-                    <a className="basic-btn" aria-label="cta-link" href={cta.link}>
+                    <Button theme="rainbow" aria-label="cta-link" type="link" url={cta.link}>
                       {cta.button}
-                    </a>
+                    </Button>
                   )}
               </div>
             </div>
