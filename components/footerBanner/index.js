@@ -1,19 +1,16 @@
 import React from 'react';
-import './index.scss';
+import Title from 'aime-blueprint/lib/components/title';
+import styles from './footerBanner.module.scss';
 
 const FooterBanner = () => (
-  <div className="footer-banner full-width-wrap">
-    <div className="flex flex-wrap items-center">
-      <div className="banner-wrapper">
-        <div className="panel__title-lockup center ">
-          <h1 className="heading-glow">
-            <span className="pre-text">Welcome to the</span>
-            <span className="highlight-text">
-              <em className="f-68 highlight-text__small">AIME</em>
-              <br />
-              <em className="highlight-text__large">Universe</em>
-            </span>
-          </h1>
+  <div className={styles.footerBannerContainer}>
+    <div className={styles.footerBannerWrapper}>
+      <div className={styles.bannerWrapper}>
+        <div className="panel__title-lockup center">
+          <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+            <strong>Imagine</strong>
+            What&apos;s possible
+          </Title>
         </div>
       </div>
     </div>
