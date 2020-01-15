@@ -40,7 +40,7 @@ const ContentCard = (props) => {
                 image={{
                   title,
                   thumbnail: `https:${image}?q=50`,
-                  image: `https:${image}`,
+                  image: `https:${image}?fl=progressive`,
                 }}
               />
               {imageCaption && <div className="figcaption">{imageCaption}</div>}
