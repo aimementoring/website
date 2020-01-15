@@ -4,7 +4,7 @@
     "env": {
       "AUTH0_DOMAIN": "@auth0_domain",
       "AUTH0_RECRUITMENT_CLIENT_ID": "@auth0_recruitment_client_id",
-      "AUTH0_STAFF_CLIENT_ID": "@auth0_staff_client_id",
+      "AUTH0_STAFF_CLIENT_ID": "[obtain_from_auth_0]",
       "GENERATE_SOURCEMAP": "@generate_sourcemap",
       "REACT_APP_AIRTABLE_API_KEY": "@react_app_airtable_api_key",
       "REACT_APP_AIRTABLE_PROGRAM_BASE": "@react_app_airtable_program_base",
@@ -38,7 +38,7 @@
   "env": {
     "AUTH0_DOMAIN": "@auth0_domain",
     "AUTH0_RECRUITMENT_CLIENT_ID": "@auth0_recruitment_client_id",
-    "AUTH0_STAFF_CLIENT_ID": "@auth0_staff_client_id",
+    "AUTH0_STAFF_CLIENT_ID": "[obtain_from_auth_0]",
     "GENERATE_SOURCEMAP": "@generate_sourcemap",
     "REACT_APP_AIRTABLE_API_KEY": "@react_app_airtable_api_key",
     "REACT_APP_AIRTABLE_PROGRAM_BASE": "@react_app_airtable_program_base",
