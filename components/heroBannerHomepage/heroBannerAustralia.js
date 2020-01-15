@@ -1,30 +1,16 @@
 import React from 'react';
+import Title from 'aime-blueprint/lib/components/title';
 import styles from './heroBannerHomepage.module.scss';
 
-const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
 const HeroBannerAustralia = () => (
-  <div>
-    <div className={styles.heroBannerHomepage}>
-      <div className={styles.heroBannerContainer}>
-        <div className={styles.bannerWrapper}>
-          <div className={styles.bannerContentWrap}>
-            <div className={styles.imageWrapper}>
-              <img
-                src={`${ASSETS_URL}/assets/images/no-new-clothes/RECLAIMED_logo_white.png`}
-                alt="Reclaimed"
-              />
-            </div>
-          </div>
-          <a
-            className={styles.buyButton}
-            href="https://shop.aimementoring.com/collections/reclaimed"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            BUY NOW
-          </a>
-        </div>
+  <div className={styles.heroBannerHomepage}>
+    <div className={styles.heroBannerContainer}>
+      <div className={styles.bannerWrapper}>
+        <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+          Become a
+          <strong>mentor</strong>
+          today
+        </Title>
       </div>
     </div>
   </div>
