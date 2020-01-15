@@ -13,7 +13,7 @@ import styles from './story.module.scss';
 
 const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
-// this (route/page "storyTwo") needs to be redirected to storiesTwo is directly visited,
+// this (route/page "story") needs to be redirected to stories is directly visited,
 const Story = (props) => {
   const { content, slug } = props;
 

@@ -1,9 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
+import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import PropTypes from 'prop-types';
 import { formatDate } from '../../../utils/utilities';
 import Anchor from '../../common/link';
 import styles from './storiesContent.module.scss';
+
+const {
+  Title,
+  Button,
+} = Components;
 
 const Picture = dynamic(() => import('../../picture'));
 
@@ -21,8 +28,8 @@ const StoriesContent = (props) => {
 
   const datePublished = formatDate(publishDate, 'short');
   const bannerImage = bannerContent.visualMedia
-  && bannerContent.visualMedia.fields
-  && bannerContent.visualMedia.fields.file.url;
+    && bannerContent.visualMedia.fields
+    && bannerContent.visualMedia.fields.file.url;
 
   return (
     <article key={`article-story-${id}`} className={styles.articleTile}>
@@ -45,30 +52,34 @@ const StoriesContent = (props) => {
             key={`article-description-${id}`}
             className={styles.articleDescription}
           >
-            <h1 className="article-tile-title">{title}</h1>
+            <Title type="h5Title">{title}</Title>
             <p className="article-tile-tagline">
               <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
                 {datePublished}
               </span>
-              <span key={`c-light-grey-span-${id}`} className={styles.slash}>
-                        /
+              <span key={`c-light-grey-span-${id}`}>
+                <br />
               </span>
-              <span key={`px1-span-${id}`} className={styles.author}>
+              <span key={`px1-span-${id}`}>
                 {`By ${contentCreator}`}
               </span>
             </p>
 
-            <p className={styles.articleTileLabel}>
+            <Paragraph>
               {contentPreview && contentPreview.previewCopy ? (
                 `${contentPreview.previewCopy.slice(0, 230)}...`
               )
                 : contentCards && contentCards.slice(0, 1).map((card) => (
                   card.fields.contentCopy
-                    && (
-                      `${card.fields.contentCopy.slice(0, 230).replace(/[*_>]*/g, '')}...`
-                    )))}
-            </p>
-            <div className={styles.articleTileLink}>Read more</div>
+                  && (
+                    `${card.fields.contentCopy.slice(0, 230).replace(/[*_>]*/g, '')}...`
+                  )))}
+            </Paragraph>
+            <div>
+              <Button theme="rainbow" type="button" className={styles.articleTileLink}>
+                READ MORE
+              </Button>
+            </div>
           </div>
         </div>
       </Anchor>
