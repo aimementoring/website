@@ -48,8 +48,8 @@ const StoriesCarousel = (props) => {
                 </p>
               ))}
             <Anchor
-              to={`/storyTwo?slug=${slugTitle}`}
-              as={`/storyTwo/${slugTitle}`}
+              to={`/story?slug=${slugTitle}`}
+              as={`/story/${slugTitle}`}
               className={styles.carouselLink}
             >
               Read More
