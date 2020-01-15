@@ -1,0 +1,136 @@
+@import '../../styles/base/variables';
+
+.ctaGridContainer {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.ctaWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+
+  @media all and(min-width: $md) {
+    flex-wrap: nowrap;
+  }
+
+  .ctaItem {
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    max-width: 100%;
+    background-color: $purple;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    margin: 0.65em;
+    padding: 2em;
+    background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-purple@2x.jpg');
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    @media all and(min-width: $md) {
+      height: 30em;
+    }
+
+    .itemContentImage {
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo1.png');
+      margin-bottom: 2rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 100px;
+    }
+
+    &:hover {
+      background-color: rgba(118, 3, 219, 0.8);
+      background-blend-mode: lighten;
+      // opacity: 0.5;
+
+      .subItemDetails {
+        display: block;
+      }
+
+      .itemContentImage {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: $pink;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-pink@2x.jpg');
+      background-position: left;
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo2.png');
+      }
+    }
+    &:nth-child(3) {
+      background-color: $green;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-shop@2x.jpg');
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo3.png');
+      }
+    }
+    &:nth-child(4) {
+      background-color: $cyan;
+      background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-cyan@2x.jpg');
+
+      .itemContentImage {
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo4.png');
+      }
+    }
+
+    .itemContents {
+      max-width: 260px;
+    }
+
+    .subItemDetails {
+      margin-top: 25px;
+      display: block;
+
+      @media all and(min-width: $md) {
+        display: none;
+      }
+    }
+
+    h3 {
+      font-family: $feature-font-family;
+      font-weight: 900;
+      font-style: italic;
+    }
+
+    p {
+      color: $white;
+    }
+
+    .basic-btn {
+      background-color: $brand-primary;
+      border-radius: 25px;
+      padding: 10px 40px;
+      margin-top: 20px;
+      border: 2px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-family: $feature-font-family;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 0.8rem;
+      letter-spacing: 0.04rem;
+    }
+  }
+
+  .ctaLockup {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    color: $white;
+    padding: 0 0.5em;
+    line-height: 1em;
+  }
+}
