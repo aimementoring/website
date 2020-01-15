@@ -2,7 +2,10 @@
   "version": 2,
   "build": {
     "env": {
-      "REACT_APP_BUGSNAG_KEY": "@react_app_bugsnag_key"
+      "REACT_APP_BUGSNAG_KEY": "@react_app_bugsnag_key",
+      "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "staging",
+      "REACT_APP_CONTENTFUL_API_KEY_MASTER": "@react_app_contentful_api_key_master",
+      "REACT_APP_CONTENTFUL_API_KEY_STAGING": "@react_app_contentful_api_key_staging"
     }
   },
   "env": {
