@@ -34,8 +34,8 @@ const PostScriptMessage = (props) => {
               <Picture
                 image={{
                   title,
-                  thumbnail: `https:${image}?q=50`,
-                  image: `https:${image}`,
+                  thumbnail: `https:${image}?q=50&fl=progressive`,
+                  image: `https:${image}?fl=progressive`,
                 }}
               />
               {imageCaption && <div className="figcaption">{imageCaption}</div>}
