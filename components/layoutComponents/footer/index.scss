@@ -1,11 +1,7 @@
 @import '../../../styles/base/variables';
 
-.footer-hero {
-  min-height: 35vh;
-  background-image: url($cdnRoot + 'assets/images/footer-hero.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.footer {
+  background: $white;
 }
 
 .footer-links--input {
@@ -45,7 +41,7 @@
   font-family: $feature-font-family;
   font-weight: 400;
   text-decoration: none;
-  color: $white;
+  color: $black;
   transition: ease-in .2s color;
 }
 
@@ -58,6 +54,10 @@ a.footer-text:hover {
 
   @media screen and (min-width: $sm) {
     width: unset;
+  }
+
+  a {
+    color: $black;
   }
 }
 
