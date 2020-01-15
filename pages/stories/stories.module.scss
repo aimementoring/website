@@ -4,7 +4,7 @@
   min-height: 800px;
 }
 
-.storyCarousel {
+.carousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,7 @@
 
         &::before {
           color: $white;
-          font-size: 30px;
+          font-size: 1.5rem;
           font-family: 'slick';
           line-height: 20px;
           position: absolute;
@@ -75,77 +75,84 @@
   }
 }
 
-.heroBannerStories {
-  align-items: center;
-  background-position: 0% 25%;
-  display: flex;
-  height: 74vh;
-  justify-content: flex-start;
-  position: relative;
-  width: 100%;
+.storiesContainer {
+  margin: 0 auto;
+  padding-top: 0;
+  max-width: 81.25em;
+  padding: 2em 2em 4em;
+}
 
-  &:before {
-    background-color: rgba(0, 0, 0, 0.7);
-    bottom: 0;
-    content: "";
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+.storiesGrid {
+  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+  display: grid;
+  grid-gap: 1em;
+  flex-wrap: wrap;
+}
 
-  .featuredStory {
-    color: $white;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1330px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    position: relative;
-    width: 1330px;
+.storiesTitle {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $black;
+  font-family: $feature-font-family;
+}
 
-    .textWrap {
-      max-width: 400px;
-    }
+.storiesParagraph {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  line-height: 2;
+}
 
-    .tag {
-      background-color: $brand-secondary;
-      border-radius: 3px;
-      bottom: 0;
-      color: $white;
-      display: inline-block;
-      font-family: $feature-font-family;
-      font-size: 11px;
-      font-weight: bold;
-      left: 0;
-      margin: 1rem 10px 30px 0;
-      padding: 0.2rem 0.3rem;
-      position: relative;
-      text-transform: uppercase;
-      top: 0;
-      z-index: 1;
-    }
+.refineSearch {
 
-    .title {
-      color: $white;
-      line-height: 1.125;
-      margin-bottom: 2rem;
-      font-style: normal;
-    }
-
-    .productTitle {
-      color: $white;
-      font-family: $primary-font-family;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      font-weight: 400;
-      margin-top: 0.5rem;
-    }
+  @media screen and (min-width: $sm) {
+    width: 250px;
+    margin-right: 5rem;
+    float: left;
   }
 }
 
-.carouselLink {
-  color: $white;
-  font-weight: 700;
+.refineSection {
+  position: relative;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: $lg) {
+    margin-bottom: 4rem;
+  }
+
+  .line {
+    background-color: $brand-tertiary;
+    border-radius: 3px;
+    height: 3px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    transition: 0.2s ease all;
+    width: 9%;
+  }
+
+  @media screen and(max-width: $lg) {
+    cursor: pointer;
+
+    .mobilePanel {
+      display: none;
+    }
+
+    .line {
+      background-color: $light-grey;
+      height: 1px;
+    }
+
+    &:after {
+      content: "keyboard_arrow_down";
+      font-family: $icon-font-family;
+      font-size: 1rem;
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    &.active .mobilePanel {
+      display: block;
+    }
+  }
 }
