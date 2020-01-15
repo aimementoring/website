@@ -71,7 +71,7 @@
     }
 
     &:nth-child(2) {
-      border: 1px solid $light-orange;
+      border: 1px solid $orange;
       top: -1px;
 
       @media screen and (min-width: $md) {
@@ -79,11 +79,11 @@
       }
 
       h5 {
-        color: $light-orange;
+        color: $orange;
       }
 
       &:hover {
-        background-color: $light-orange;
+        background-color: $orange;
       }
     }
 
@@ -169,7 +169,7 @@
   }
 
   .module2018 h2 {
-    color: $light-orange;
+    color: $orange;
   }
 
   .module2019 h2 {
@@ -194,7 +194,7 @@
   }
 
   .popFooter {
-    border-top: 1px solid $neonpink;
+    border-top: 1px solid $watermelon;
     width: 100%;
     margin-top: 4em;
   }
@@ -214,7 +214,7 @@
     cursor: pointer;
 
     &:hover {
-      color: $neonpink;
+      color: $watermelon;
     }
   }
 }
@@ -272,7 +272,7 @@
     font-family: $body-font-family;
     font-weight: 900;
     text-transform: uppercase;
-    color: $neonpink;
+    color: $watermelon;
     font-size: 1.5rem;
     line-height: 1em;
     font-style: normal;
@@ -304,8 +304,8 @@
   &.activeTab {
     font-family: $body-font-family-bold;
     font-weight: 900;
-    color: $neonpink;
-    border-bottom: 2px solid $neonpink;
+    color: $watermelon;
+    border-bottom: 2px solid $watermelon;
   }
 
   @media screen and (min-width: $md) {
