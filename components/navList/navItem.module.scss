@@ -1,0 +1,13 @@
+@import '../../styles/base/variables';
+
+.listItem {
+  margin-bottom: 1rem;
+}
+
+.itemLink {
+  color: $black;
+  font-family: 'GT Pressura Mono';
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 14px;
+}
