@@ -21,7 +21,7 @@ const CTA_AU_HOMEPAGE = [
     title: 'Our Impact',
     link: '/impact',
     button: 'Explore our Impact',
-    description: 'Not another smiley faced program',
+    description: 'We\'re not another smiley faced program. We make real difference.',
   },
 ];
 
