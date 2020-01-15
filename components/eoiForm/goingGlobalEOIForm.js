@@ -231,22 +231,18 @@ export default class EOIForm extends PureComponent {
           required
           theme={process.env.REACT_APP_THEME}
         />
-        <div>
-          {(countryDetected || countrySelected) && (
-            <div>
-              <PhoneInput
-                elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
-                onChangeFunction={this.handleFieldChange}
-                onCountrySelected={this.handlePhoneCountrySelected}
-                name="phone"
-                value={phone}
-                defaultCountry={countryDetected}
-                currentSite={currentSite}
-                theme={process.env.REACT_APP_THEME}
-              />
-            </div>
-          )}
-        </div>
+        {(countryDetected || countrySelected) && (
+          <PhoneInput
+            elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
+            onChangeFunction={this.handleFieldChange}
+            onCountrySelected={this.handlePhoneCountrySelected}
+            name="phone"
+            value={phone}
+            defaultCountry={countryDetected}
+            currentSite={currentSite}
+            theme={process.env.REACT_APP_THEME}
+          />
+        )}
         <Textarea
           elementClassName="input-wrapper textarea-wrapper"
           className="input-heigth"
