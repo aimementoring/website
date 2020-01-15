@@ -5,7 +5,9 @@
       "REACT_APP_BUGSNAG_KEY": "@react_app_bugsnag_key",
       "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "staging",
       "REACT_APP_CONTENTFUL_API_KEY_MASTER": "@react_app_contentful_api_key_master",
-      "REACT_APP_CONTENTFUL_API_KEY_STAGING": "@react_app_contentful_api_key_staging"
+      "REACT_APP_CONTENTFUL_API_KEY_STAGING": "@react_app_contentful_api_key_staging",
+      "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": "@react_app_contentful_entry_key_redirects",
+      "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories"
     }
   },
   "env": {
