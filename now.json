@@ -7,7 +7,10 @@
       "REACT_APP_CONTENTFUL_API_KEY_MASTER": "@react_app_contentful_api_key_master",
       "REACT_APP_CONTENTFUL_API_KEY_STAGING": "@react_app_contentful_api_key_staging",
       "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": "@react_app_contentful_entry_key_redirects",
-      "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories"
+      "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories",
+      "REACT_APP_CONTENTFUL_SPACE_ID": "iz0aikshgysc",
+      "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": "redirectEntries",
+      "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": "post"
     }
   },
   "env": {
