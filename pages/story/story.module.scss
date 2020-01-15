@@ -180,6 +180,10 @@
       }
     }
   }
+  .signature {
+    font-size: 24px;
+    font-family: $signature-font-family;
+  }
 }
 
 .articleTileLink {
@@ -205,7 +209,6 @@
   }
 
   .materialIcons {
-
     @extend %materialIcons;
     vertical-align: middle;
     font-size: 15px;
