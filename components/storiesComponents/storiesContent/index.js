@@ -7,7 +7,7 @@ import styles from './storiesContent.module.scss';
 
 const Picture = dynamic(() => import('../../picture'));
 
-const StoriesContentTwo = (props) => {
+const StoriesContent = (props) => {
   const {
     id,
     title,
@@ -76,11 +76,11 @@ const StoriesContentTwo = (props) => {
   );
 };
 
-StoriesContentTwo.defaultProps = {
+StoriesContent.defaultProps = {
   contentCards: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-StoriesContentTwo.propTypes = {
+StoriesContent.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   slugTitle: PropTypes.string,
@@ -159,11 +159,11 @@ StoriesContentTwo.propTypes = {
   }),
 };
 
-StoriesContentTwo.defaultProps = {
+StoriesContent.defaultProps = {
   slugTitle: '',
   publishDate: '',
   contentCreator: '',
   contentPreview: null,
 };
 
-export default StoriesContentTwo;
+export default StoriesContent;

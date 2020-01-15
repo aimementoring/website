@@ -9,7 +9,7 @@ import {
 } from '../../utils/utilities';
 
 import StoriesCarousel from '../../components/storiesComponents/storiesCarousel';
-import StoriesContentTwo from '../../components/storiesComponents/storiesContent';
+import StoriesContent from '../../components/storiesComponents/storiesContent';
 import Carousel from '../../components/carousel';
 
 import styles from './stories.module.scss';
@@ -55,7 +55,7 @@ const Stories = (props) => {
       const bannerContent = entry.fields.banner && entry.fields.banner;
       const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
-        <StoriesContentTwo
+        <StoriesContent
           key={entry.sys.id}
           id={entry.sys.id}
           slugTitle={slug}
@@ -112,6 +112,10 @@ Stories.getInitialProps = async () => {
   return { entries };
 };
 
+const SysShape = PropTypes.shape({
+  id: PropTypes.string,
+});
+
 Stories.defaultProps = {
   entries: PropTypes.arrayOf(PropTypes.shape({})),
 };
@@ -122,18 +126,14 @@ Stories.propTypes = {
     contentType: PropTypes.string,
     contentTag: PropTypes.shape({
       name: PropTypes.string,
-      sys: PropTypes.shape({
-        id: PropTypes.string,
-      }),
+      sys: SysShape,
     }),
     banner: PropTypes.shape({
       displayType: PropTypes.string,
       heading: PropTypes.shape({
         headingText: PropTypes.string,
         type: PropTypes.string,
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       }),
       visualMedia: PropTypes.shape({
         file: PropTypes.shape({
@@ -142,60 +142,42 @@ Stories.propTypes = {
           contentType: PropTypes.string,
         }),
         title: PropTypes.string,
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       }),
-      sys: PropTypes.shape({
-        id: PropTypes.string,
-      }),
+      sys: SysShape,
     }),
     contentCreator: PropTypes.shape({
       authorName: PropTypes.string,
       supportAuthorName: PropTypes.string,
-      sys: PropTypes.shape({
-        id: PropTypes.string,
-      }),
+      sys: SysShape,
     }),
     publishDate: PropTypes.string,
     seoAndMetaTags: PropTypes.shape({
       platformMetaTags: PropTypes.arrayOf(PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       })),
-      sys: PropTypes.shape({
-        id: PropTypes.string,
-      }),
+      sys: SysShape,
     }),
     contentPreview: PropTypes.shape({
       displayType: PropTypes.string,
       previewCopy: PropTypes.string,
       title: PropTypes.string,
       visualMedia: PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       }),
       visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       })),
     }),
     contentCards: PropTypes.arrayOf(PropTypes.shape({
       Type: PropTypes.string,
       displayType: PropTypes.string,
       visualMedia: PropTypes.shape({
-        sys: PropTypes.shape({
-          id: PropTypes.string,
-        }),
+        sys: SysShape,
       }),
       videoMedia: PropTypes.string,
       contentCopy: PropTypes.string,
-      sys: PropTypes.shape({
-        id: PropTypes.string,
-      }),
+      sys: SysShape,
     })),
   })),
 };
