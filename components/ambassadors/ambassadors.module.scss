@@ -8,6 +8,7 @@
 
 .paragraph {
   font-size: 14px;
+  color: $black;
 }
 
 .linkButton {
@@ -42,7 +43,7 @@
 }
 
 .mentorsSection {
-  background-color: $darkest-purple;
+  background-color: $white;
   padding: 60px 0 0;
   position: relative;
   max-width: 100%;
@@ -66,6 +67,7 @@
       margin: 0 auto;
       max-width: 1120px;
       overflow: visible;
+      display: inline-block;
 
       @media (min-width: $sm) {
         width: 100%;
@@ -78,64 +80,32 @@
     }
   }
 
-  h1 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    z-index: 10;
+  .carouselTitle {
+    font-weight: normal;
     position: relative;
+    z-index: 2;
+    color: $orange;
+    text-align: center;
 
     @media all and(min-width: $md) {
-      display: inline-block;
+      text-align: left;
       margin: 0 0 0 80px;
+      left: 2em;
     }
 
-    .preText {
+    strong {
+      color: $purple;
       position: relative;
-      z-index: 2;
-      font-style: italic;
-      font-weight: 900;
-      padding-left: 0;
-      margin-left: -70px;
-
-      @media all and(min-width: $md) {
-        margin-left: 0;
-        padding-left: -10px;
-      }
-
-      @media all and(min-width: $lg) {
-        font-size: calc(#{$base-font-size} + 0.6rem);
-      }
-    }
-
-    .gradientText {
-      background: linear-gradient(135deg, $accent-blue 0%, $accent-pink 100%);
-      color: $white;
-      display: block;
-      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      font-family: "blackhawk_italicregular";
-      font-size: 5.2rem;
-      font-weight: 100;
-      line-height: 6.2rem;
-      margin: -20px 0 0 -30px;
-      outline: none;
-      padding: 10px 30px 30px;
-      position: relative;
-      transform: rotate(-9deg);
       z-index: 1;
-
-      @media all and(min-width: $md) {
-        font-size: 6.2rem;
-        line-height: 3.5rem;
-        margin-top: -30px;
-        padding: 15px 87px 30px 35px;
+      letter-spacing: -0.08em;
+      left: 0;
+      top: 0;
+      @media all and(max-width: $md) {
+        font-size: 3.5rem;
       }
-
-      @media all and(min-width: $lg) {
-        font-size: calc(#{$highlight-text-font-size} + 4.5rem);
-        line-height: 4.2rem;
+      @media all and(min-width: $md) {
+        left: -1.5em;
+        top: -0.3em;
       }
     }
   }
@@ -180,6 +150,7 @@
         height: 430px;
         display: inline-block;
         margin: 0;
+        left: 2.5em;
       }
 
       @media all and(min-width: $lg) {
@@ -187,6 +158,12 @@
         height: 450px;
       }
     }
+  }
+
+  .ambassadorName {
+    font-size: 2rem;
+    font-style: normal;
+    margin-bottom: 0.5em;
   }
 
   .mentorUzo {
@@ -220,8 +197,6 @@
   }
 
   .mentorContent {
-    border: 30px solid #0d0012;
-    box-shadow: inset 0 0 0 2px $white;
     padding: 120px 30px 60px;
     position: relative;
     top: -120px;
@@ -263,23 +238,14 @@
       }
 
       .titleContainer {
-        color: $white;
-        font-size: 14px;
 
         @media all and(min-width: $md) {
           width: 100%;
         }
 
-        .mainTitle {
-          font-family: $primary-font-family;
-          font-size: 14px;
-          font-weight: 300;
+        h5 {
+          margin-bottom: 0.5em;
         }
-      }
-
-      h3 {
-        font-style: normal;
-        margin-bottom: 20px;
       }
     }
   }
@@ -290,7 +256,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background-color: $darkest-purple;
+  background-color: $white;
   position: relative;
 
   @media all and(min-width: $md) {
