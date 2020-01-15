@@ -24,22 +24,29 @@ class DataPrefetchLink extends Link {
 
 const Anchor = ({
   to, as, className, children, ...props
-}) => (
-  <DataPrefetchLink href={to} as={as}>
+}) => {
+  const { target } = props;
+  return target ? (
     <a aria-label={as} className={className} {...props}>{children}</a>
-  </DataPrefetchLink>
-);
+  ) : (
+    <DataPrefetchLink href={to} as={as}>
+      <a aria-label={as} className={className} {...props}>{children}</a>
+    </DataPrefetchLink>
+  );
+};
 
 Anchor.propTypes = {
   to: PropTypes.string.isRequired,
   as: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  target: PropTypes.string,
 };
 
 Anchor.defaultProps = {
   as: null,
   className: null,
+  target: null,
 };
 
 export default Anchor;

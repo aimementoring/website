@@ -1,36 +1,34 @@
 /* Colour */
 
-$brand-primary: #7603db;
+$brand-primary: #FF6187;
 $brand-secondary: #c700ff;
 $brand-tertiary: #da0dff;
 
-$blue-medium: #669dc1;
-$blue-light: #e5eef4;
-$yellow: #f8b049;
-$yellow-light: #fbd7a4;
-$peach: #ffada3;
-$orange: #ffb800;
-$lilac: #f9ebff;
-$lavender: #9da1b4;
-$lavender-light: #dde0f1;
+/* monotone colours */
 $black: #000;
 $grey: #666;
 $medium-grey: #a3a3a3;
 $light-grey: #e8e8e8;
 $white: #fff;
-$pink: #d51dff;
+
+/* subtle depth colours */
+$blue-medium: #669dc1;
+$blue-light: #e5eef4;
+$peach: #ffada3;
+$lilac: #f9ebff;
+$lavender: #9da1b4;
+$lavender-light: #dde0f1;
 $lavender-grey: #b1a9c1;
 
 /* CMYK campaign colours */
 $cmyk-pink: #e9178c;
 $cmyk-blue: #1eafec;
 $cmyk-yellow: #fef035;
-
 $fluro-pink: #f0c;
 $fluro-blue: #00deff;
 $fluro-yellow: #ffea00;
 
-/* New brand colours */
+/* purple storm colours */
 $darkest-purple: #0d0012;
 $black: #000;
 $accent-purple: #8621df;
@@ -39,18 +37,17 @@ $accent-pink: #dc0aff;
 $eggplant: #380249;
 $vibrant-purple: #9d60ec;
 
-/* New new brand colours [face palm] */
-$magenta:         #E82A9E;
-$light-orange:    #FF9835;
-$light-blue:      #22BFE1;
-$green:           #09CD7B;
-$neonpink:        #FF6187;
-$neonpurple:      #9135F0;
-$babypink:        #FFA3EA;
+/* imagination rainbow colours */
+$magenta: #E82A9E;
+$watermelon: #FF6187;
+$purple: #9135F0;
+$pink: #FF91C5;
+$orange: #FFA235;
+$yellow: #FCC606;
+$green: #09CD7B;
+$cyan: #24D1F6;
 
-$color-primary: $neonpurple;
-
-// 9135F0
+$color-primary: $purple;
 
 /* Form element colours */
 $default-input-bg: #fef6ff;
@@ -89,7 +86,7 @@ $micrositePageWidth: 80em;
 /* Border Radius */
 $border-radius: 6px; // Forms
 $border-radius-large: 20px; // Feature Buttons
-$border-radius-button: 90px; // Buttons
+$border-radius-button: 3px; // Buttons
 
 /* Scratch Underlines on Headings */
 $scratch-ul-top: 56px;
@@ -104,7 +101,7 @@ $lg: 64em;
 
 $hoverTransition: all 100ms linear;
 
-$cdnRoot: "https://dbhff1axysj9i.cloudfront.net/"; //Production Cloudfront
+$cdnRoot: "https://d3kott46cqreik.cloudfront.net/"; //Production Cloudfront
 
 %svgIcon {
   stroke-width: 0;
