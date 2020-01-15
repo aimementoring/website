@@ -5,12 +5,12 @@ import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import './home.scss';
 
-const HeroBannerHomepage = dynamic(() => import(/* webpackChunkName 'HeroBannerHomepage' */ '../../components/heroBannerHomepage'));
-const IntroPanelHomepage = dynamic(() => import(/* webpackChunkName 'IntroPanelHomepage' */ '../../components/introPanelHomepage'));
-const CtaGrid = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ctaGrid'));
-const Ambassadors = dynamic(() => import(/* webpackChunkName 'CtaGrid' */ '../../components/ambassadors'));
-const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
-const FooterBanner = dynamic(() => import(/* webpackChunkName 'FooterBanner' */ '../../components/footerBanner'));
+const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
+const IntroPanelHomepage = dynamic(() => import('../../components/introPanelHomepage'));
+const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
+const Ambassadors = dynamic(() => import('../../components/ambassadors'));
+// const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
+const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +25,7 @@ const Home = () => {
       <IntroPanelHomepage />
       <CtaGrid elements={CTA_AU_HOMEPAGE} />
       <Ambassadors />
-      <CtaFAQ />
+      {/* <CtaFAQ /> */}
       <FooterBanner />
     </Layout>
   );
