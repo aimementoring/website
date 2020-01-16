@@ -6,8 +6,8 @@
 
 .itemLink {
   color: $black;
-  font-family: 'GT Pressura Mono';
+  font-family: $body-font-family;
   font-weight: 300;
-  font-size: 13px;
-  line-height: 14px;
+  font-size: 0.85rem;
+  line-height: 1em;
 }
