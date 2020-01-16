@@ -62,20 +62,21 @@ const Story = (props) => {
                               {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
                             </span>
                           </div>
-                          <article className={styles.blogPostArticle} />
-                          <ContentCard
-                            author={author}
-                            signature={signature}
-                            publishDate={entry.fields.publishDate}
-                            contentCards={entry.fields.contentCards}
-                            postScriptContent={postScriptContent}
-                            buttonProps={buttonProps}
-                          />
-                          <Anchor to="/stories" className={styles.articleTileLink}>
-                            <i className={styles.materialIcons}>keyboard_backspace</i>
-                            {' '}
-                            Back to Stories
-                          </Anchor>
+                          <article className={styles.blogPostArticle}>
+                            <ContentCard
+                              author={author}
+                              signature={signature}
+                              publishDate={entry.fields.publishDate}
+                              contentCards={entry.fields.contentCards}
+                              postScriptContent={postScriptContent}
+                              buttonProps={buttonProps}
+                            />
+                            <Anchor to="/stories" className={styles.articleTileLink}>
+                              <i className={styles.materialIcons}>keyboard_backspace</i>
+                              {' '}
+                              Back to Stories
+                            </Anchor>
+                          </article>
                         </article>
                       </div>
                     </div>
