@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
+import { Components } from 'aime-blueprint';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import contentfulServer from '../../api/contentfulServer';
@@ -12,6 +13,10 @@ import {
 import styles from './story.module.scss';
 
 const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
+
+const {
+  Title,
+} = Components;
 
 // this (route/page "story") needs to be redirected to stories is directly visited,
 const Story = (props) => {
@@ -54,9 +59,9 @@ const Story = (props) => {
                     <div>
                       <div className={styles.entriesContainer}>
                         <article className={styles.blogPost}>
-                          <h1 className={styles.blogPostTitle}>
+                          <Title type="h4Title" theme="rainbow">
                             {entry.fields.title && entry.fields.title}
-                          </h1>
+                          </Title>
                           <div>
                             <span className={styles.blogPostTimestamp}>
                               {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
