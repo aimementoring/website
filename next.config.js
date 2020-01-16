@@ -17,7 +17,10 @@ module.exports = withOffline(
         // localIdentName: '[name]__[local]___[hash:base64:5]',
       },
       // https://nextjs.org/docs#cdn-support-with-asset-prefix
-      assetPrefix: process.env.REACT_APP_HOST_ENV === 'production' || process.env.REACT_APP_HOST_ENV === 'staging' ? process.env.REACT_APP_ASSETS_URL : '',
+      assetPrefix: process.env.REACT_APP_HOST !== 'next'
+          && (process.env.REACT_APP_HOST_ENV === 'production' || process.env.REACT_APP_HOST_ENV === 'staging')
+        ? process.env.REACT_APP_ASSETS_URL
+        : '',
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
         REACT_APP_CRAFT_API: process.env.REACT_APP_CRAFT_API,
