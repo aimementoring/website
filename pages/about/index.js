@@ -157,12 +157,14 @@ const About = () => (
               We are a small band of artists at AIME, writing, shaping, creating new worlds,
               challenging est world orders, making magic, fueling imaginative fire.
             </Paragraph>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/founder">
-            Read about our founder
-            </Button>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/positions">
-            Join our team
-            </Button>
+            <div className={styles.btnWrap}>
+              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/founder">
+              Read about our founder
+              </Button>
+              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/positions">
+              Join our team
+              </Button>
+            </div>
           </div>
         </div>
         <div className={styles.column}>
