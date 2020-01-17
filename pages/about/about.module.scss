@@ -1,104 +1,5 @@
 @import "../../styles/base/variables";
 
-%highlightText {
-  font-family: 'blackhawk_italicregular';
-  font-weight: 100;
-  font-size: $highlight-text-font-size;
-  line-height: 1.9rem;
-  display: block;
-  color: $white;
-  transform: rotate(-3deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  position: relative;
-  z-index: 1;
-
-  @media all and (min-width: $md) {
-    font-size: calc(#{$highlight-text-font-size} + 3rem);
-    line-height: 3.5rem;
-    padding: 15px 87px 30px 35px;
-  }
-  @media all and (min-width: $lg) {
-    font-size: calc(#{$highlight-text-font-size} + 4.5rem);
-    line-height: 4.2rem;
-  }
-
-  .smallHighlight {
-    font-size: $highlight-text-font-size;
-    top: 10px;
-    position: relative;
-
-    @media all and(min-width: $md) {
-      top:-10px;
-    }
-
-    @media all and(min-width: $lg) {
-      top:-40px;
-    }
-
-    .scratchUnderline {
-      animation: Gradient 3s ease infinite;
-      color: $white;
-      background-size: 200%;
-      background: linear-gradient(-45deg, $accent-pink, $accent-blue);
-      clip-path: url(#svgScratchClipPath);
-      display: block;
-      left: $scratch-ul-left;
-      max-height: $scratch-ul-height;
-      padding: 0 $scratch-ul-padding-lr;
-      position: absolute;
-      top: $scratch-ul-top;
-      width: 100%;
-      z-index: -10;
-    }
-  }
-}
-
-%postText {
-  color: $white;
-  top: -1.5rem;
-  position: relative;
-  z-index: 2;
-  font-style: italic;
-  font-weight: 900;
-
-  @media (min-width: $lg) {
-    font-size: calc(1rem + 0.6rem);
-  }
-
-  @media screen and (min-width: $md) {
-    top: -3.5rem;
-  }
-}
-
-.gradientTitle {
-  color: $white;
-  background: linear-gradient(135deg, #31e9ff 0%,#dc0aff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  font-family: 'blackhawk_italicregular';
-  font-size: $highlight-text-font-size;
-  font-weight: 100;
-  line-height: 1.9rem;
-  outline: none;
-  padding: 0 30px 0 15px;
-  position: relative;
-  transform: rotate(-5deg);
-  z-index: 1;
-
-  @media all and(min-width: $md) {
-    font-size: calc(#{$highlight-text-font-size} + 3rem);
-    line-height:5.5rem;
-    padding:10px 30px 30px;
-  }
-
-  @media all and(min-width: $lg) {
-    font-size:calc(#{$highlight-text-font-size} + 4.5rem);
-    line-height:6.2rem;
-  }
-}
-
 .positionsButton {
   background-color: $brand-primary;
   border-radius: $border-radius-button;
@@ -129,15 +30,6 @@
   }
 }
 
-.postTextRight {
-  @extend %postText;
-  float: right;
-}
-
-.postTextLeft {
-  @extend %postText;
-  float: left;
-}
 
 .imageBlock {
   display: block;
@@ -145,17 +37,8 @@
   margin-right: auto;
 }
 
-.aboutContainer {
-  background-color: $darkest-purple;
-  padding-bottom: 2rem;
-}
-
 .aboutWrapper {
-  background: linear-gradient(0deg, rgba(26, 0, 36, 1) 0%, rgba(75, 0, 79, 1) 49%, rgba(24, 0, 34, 1) 100%);
-}
-
-.whiteText {
-  color: $white;
+  background-color: pink;
 }
 
 .whiteTitleWithMargin {
@@ -165,7 +48,6 @@
 }
 
 .leftHighlightText {
-  @extend %highlightText;
   float: left;
   transform: rotate(-5deg);
   width: 100%;
@@ -220,6 +102,16 @@
 
     @media screen and (min-width: $md) { 
       padding: 1rem;
+    }
+
+    .sectionHeading {
+      margin: 1.5em 0 0.8em;
+
+      strong {
+        top: 0;
+        left: -0.2em;
+        letter-spacing: -0.15em;
+      } 
     }
   }
 
