@@ -1,31 +1,22 @@
 import React from 'react';
+import Title from 'aime-blueprint/lib/components/title';
 import styles from './heroBannerAbout.module.scss';
 
 const HeroBannerAbout = () => (
   <div className={styles.heroBannerAbout}>
     <div className={styles.heroBannerAboutContent}>
       <div className={styles.bannerWrapper}>
-        <h1>
-          <span className={styles.preText}>We build</span>
-          <span className={styles.highlightText}>
-            <em>
-              Mentoring
-              <br />
-              <span className={styles.scratchUnderline}>&nbsp;</span>
-            </em>
+        <Title type="headingLockup" className={styles.bannerHeader} theme={process.env.REACT_APP_THEME}>
+          We build
+          <strong>
+            Mentoring
             <br />
-            <em>
-              Bridges
-              <br />
-              <span className={styles.scratchUnderline}>&nbsp;</span>
-            </em>
-          </span>
-          <span className={styles.postText}>
-            <span className={styles.subText}>between universities</span>
-            <br />
-            <span>and schools</span>
-          </span>
-        </h1>
+            Bridges
+          </strong>
+          between universities
+          <br />
+          and schools
+        </Title>
       </div>
     </div>
   </div>
