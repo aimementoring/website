@@ -5,8 +5,9 @@ import Anchor from '../../common/link';
 import NavList from '../../navList';
 import FooterNewsletter from '../../footerNewsletter';
 import styles from './footer.module.scss';
+import IntercomChat from '../../intercom';
 
-const Footer = ({ location, handleShowIntercom }) => {
+const Footer = ({ location }) => {
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   const currentYear = moment().year();
   const FOOTER_LINKS = [
@@ -65,12 +66,6 @@ const Footer = ({ location, handleShowIntercom }) => {
           target: '_blank',
           label: 'FAQs',
         },
-        {
-          type: 'button',
-          action: handleShowIntercom,
-          label: 'contact',
-          className: 'c-white intercom-button text-decoration-none',
-        },
       ],
     },
   ];
@@ -86,6 +81,9 @@ const Footer = ({ location, handleShowIntercom }) => {
                   {FOOTER_LINKS.map((footerList) => (
                     <NavList {...footerList} key={footerList.title} />
                   ))}
+                  <li className="listItem">
+                    <IntercomChat classNames="intercom-button" />
+                  </li>
                 </div>
                 <FooterNewsletter />
               </div>

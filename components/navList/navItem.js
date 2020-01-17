@@ -4,7 +4,7 @@ import Anchor from '../common/link';
 import styles from './navItem.module.scss';
 
 const NavItem = ({
-  label, className, target, as, to, type, action,
+  label, className, target, as, to,
 }) => {
   const restProps = {
     'aria-label': label,
@@ -19,25 +19,13 @@ const NavItem = ({
   }
   return (
     <li className={styles.listItem} key={to}>
-      {type === 'button'
-        ? (
-          <button
-            onClick={action}
-            type="button"
-            {...restProps}
-          >
-            {/* eslint-disable-next-line react/no-danger */}
-            <span dangerouslySetInnerHTML={{ __html: label }} />
-          </button>
-        ) : (
-          <Anchor
-            to={to}
-            {...restProps}
-          >
-            {/* eslint-disable-next-line react/no-danger */}
-            <span dangerouslySetInnerHTML={{ __html: label }} />
-          </Anchor>
-        )}
+      <Anchor
+        to={to}
+        {...restProps}
+      >
+        {/* eslint-disable-next-line react/no-danger */}
+        <span dangerouslySetInnerHTML={{ __html: label }} />
+      </Anchor>
     </li>
   );
 };

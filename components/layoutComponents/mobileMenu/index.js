@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import './index.scss';
 
-const LinksComponent = dynamic(() => import(/* webpackChunkName 'LinksComponent' */ './linksComponent'));
+const LinksComponent = dynamic(() => import('./linksComponent'));
 
 const MENU_LINKS = {
   'going-global': [
@@ -21,7 +21,6 @@ const MENU_LINKS = {
     { url: '/stories', title: 'Stories' },
     { url: '/be-a-mentor', title: 'Be a Mentor' },
     { url: '/positions', title: 'Positions' },
-    { url: '/contact', title: 'Contact' },
     { url: '/donate', title: 'Donate' },
   ],
 };
@@ -82,7 +81,7 @@ const MobileMenu = ({ type, logoIsWhite }) => {
         </div>
         <LinksComponent
           links={MENU_LINKS[type] || MENU_LINKS.default}
-          onClick={handleLinkClicked}
+          handleLinkClicked={handleLinkClicked}
           active={actvieMenuOption}
         />
       </nav>

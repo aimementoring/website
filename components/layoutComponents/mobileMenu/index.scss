@@ -12,6 +12,7 @@
 
   .mobile-menu-icon {
     display: block;
+    color: #000000;
 
     @media screen and (min-width: $lg) {
       display: none;

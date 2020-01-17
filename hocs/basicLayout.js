@@ -6,7 +6,6 @@ import ErrorBoundary from '../components/common/errorBoundary';
 import Header from '../components/layoutComponents/header';
 import Footer from '../components/layoutComponents/footer';
 import Logos from '../components/layoutComponents/logos';
-import IntercomChat from '../components/intercom';
 import { getSeoTags } from '../services/craftAPI';
 import './basicLayout.scss';
 
@@ -20,10 +19,6 @@ const Layout = ({ router, children }) => {
     );
   };
 
-  const handleShowIntercom = () => {
-    window.Intercom('showNewMessage');
-  };
-
   useEffect(() => {
     addSeoAndRedirects();
   }, [router]);
@@ -35,13 +30,12 @@ const Layout = ({ router, children }) => {
   return (
     <div>
       <ErrorBoundary>
-        <Header location={router} handleShowIntercom={handleShowIntercom} />
+        <Header location={router} />
         <main role="main">
           <SeoMetadata seo={seo} />
           {children}
-          <IntercomChat />
         </main>
-        <Footer location={router} handleShowIntercom={handleShowIntercom} />
+        <Footer location={router} />
         <Logos />
         <div id="aime-parent-video-box" />
       </ErrorBoundary>
