@@ -6,7 +6,7 @@
 
 .sectionAbout {
   display: block;
-  padding-top: 50px;
+  padding-top: 3em;
   width: 100%;
 
   .imageBlock {
@@ -22,6 +22,15 @@
     justify-content: center;
     flex-direction: column;
     padding: 0 2rem 1rem;
+
+    &:first-child {
+      padding: 3em 0;
+      margin-bottom: 0;
+      
+      @media screen and (min-width: $md) { 
+        padding: 1em;
+      }
+    }
 
     @media screen and (min-width: $md) { 
       padding: 1rem;
@@ -42,8 +51,8 @@
     font-size: 0.9rem;
     line-height: 1.3rem;
 
-    @media screen and (min-width: 767px) { 
-      padding:0 50px 50px;
+    @media screen and (min-width: 47em) { 
+      padding:0 3em 3em;
     }
 
     @media screen and (min-width: $md) { 
@@ -55,8 +64,9 @@
     }
 
     .btnWrap {
-      display: flex;
-      justify-content: space-between;
+      a {
+        margin-bottom: 1em;
+      }
     }
   }
 
@@ -69,7 +79,7 @@
       }
 
       .copy {
-        padding: 40px 0;
+        padding: 2em 0;
   
         h3 {
           position: relative;
@@ -95,6 +105,7 @@
     &:nth-child(even) {
       .column {
         align-items: flex-end;
+        padding-right: 1em;
   
         .copy {
           text-align: right;
