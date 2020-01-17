@@ -42,35 +42,6 @@ const About = () => (
               Tell me more
             </Button>
           </div>
-          {/* <div className={classNames(styles.titleLockup, styles.leftWithMargin)}>
-            <h1>
-              <span className={styles.leftHighlightText}>
-                <em className={styles.mainTitle}>About</em>
-                <br />
-                <em className={styles.smallHighlight}>
-                  AIME
-                  <br />
-                  <span className={styles.scratchUnderline}>&nbsp;</span>
-                </em>
-              </span>
-            </h1>
-          </div>
-          <div className={styles.copy}>
-            <h3 className={styles.whiteTitleWithMargin}>
-              {`We are driven to unlock the limitless potential of children who have been left
-              behind`}
-            </h3>
-            <p>
-              We do that by building mentoring bridges between universities and high schools,
-              between the powerful and the powerless, the haves and the have nots. We know that
-              our fiery and intuitive brand of mentoring ends the cycle of disadvantage by
-              permanently changing mindsets. Based in Redfern, Australia, our operation runs
-              across campuses worldwide.
-            </p>
-            <Anchor to="/know-aime" className={styles.linkButton}>
-              Tell me more
-            </Anchor>
-          </div> */}
         </div>
         <div className={styles.column}>
           <img
