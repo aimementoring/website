@@ -26,12 +26,8 @@ const About = () => (
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              <strong>
-                We are driven to unlock the limitless potential of children who have
-                been left behind.
-              </strong>
-            </Paragraph>
-            <Paragraph>
+              We are driven to unlock the limitless potential of children who have
+              been left behind.
               We do that by building mentoring bridges between universities and high schools,
               between the powerful and the powerless, the haves and the have nots. We know that
               our fiery and intuitive brand of mentoring ends the cycle of disadvantage by
