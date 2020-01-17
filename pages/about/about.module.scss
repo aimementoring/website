@@ -1,96 +1,19 @@
 @import "../../styles/base/variables";
 
-.positionsButton {
-  background-color: $brand-primary;
-  border-radius: $border-radius-button;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $feature-font-family;
-  font-size: 14px;
-  font-weight: 500;
-  margin-left: 1rem;
-  margin-top: 2rem;
-  padding: 1rem 2.5rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 100ms linear !important;
-
-  &:hover {
-    background-color: $brand-secondary;
-    color: $white;
-  }
-
-  @media screen and (min-width: $md) { 
-    padding: 0.7rem 2.2rem;
-  }
-
-  @media screen and (min-width: $lg) {
-    padding: 1rem 2.5rem;
-  }
-}
-
-
-.imageBlock {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .aboutWrapper {
   background-color: $white;
-}
-
-.whiteTitleWithMargin {
-  color: $white;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.leftHighlightText {
-  float: left;
-  transform: rotate(-5deg);
-  width: 100%;
-}
-
-.mainTitle {
-  font-size: 80px;
-}
-
-.linkButton {
-  background-color: $brand-primary;
-  border-radius: $border-radius-button;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $feature-font-family;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 2rem;
-  opacity: 1;
-  padding: 1rem 2.5rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 100ms linear !important;
-  
-  &:hover {
-    background-color: $brand-secondary;
-    color: $white;
-  }
-
-  @media screen and (min-width: $md) { 
-    padding: 0.7rem 2.2rem;
-  }
-
-  @media screen and (min-width: $lg) { 
-    padding: 1rem 2.5rem;
-  }
 }
 
 .sectionAbout {
   display: block;
   padding-top: 50px;
   width: 100%;
+  
+  .imageBlock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .column {
     flex: 1;
@@ -132,24 +55,6 @@
     }
   }
 
-  .titleLockup {
-    right: -7%;
-    text-align: left;
-
-    &.leftWithMargin {
-      float: left;
-      margin-bottom: 2rem;
-    }
-
-    &.left {
-      float: left;
-    }
-
-    @media screen and (min-width: $md) {
-      position: relative;
-    }
-  }
-
   @media screen and (min-width: $md) {
     display: flex;
 
@@ -157,17 +62,7 @@
       .column {
         justify-content: flex-start;
       }
-  
-      .titleLockup {
-        left: -2% !important;
-        margin-bottom: 0;
-        top: 20px;
-  
-        .gradientTitle,
-        .leftHighlightText {
-          padding-bottom: 0;
-        }
-      }
+
       .copy {
         padding: 40px 0;
   
@@ -190,16 +85,6 @@
           order: 2;
         }
       }
-  
-      .titleLockup {
-        left: 0%;
-
-        .gradientTitle,
-        .leftHighlightText {
-          left: -7%;
-          padding-bottom:3rem;
-        }
-      }
     }
   
     &:nth-child(even) {
@@ -212,15 +97,6 @@
           .positionsButton {
             float: right;
           }
-        }
-      }
-      .titleLockup {
-        right: 0%;
-  
-        .gradientTitle,
-        .leftHighlightText {
-          padding-bottom:3rem;
-          right: -7%;
         }
       }
     }
