@@ -9,10 +9,6 @@
       "required": true,
       "value": "https://d2cl4o0mkg71rr.cloudfront.net/website"
     },
-    "REACT_APP_AIRTABLE_PROGRAM_BASE": {
-      "required": true,
-      "value": "appYBHhHUO92wVVmQ"
-    },
     "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE": {
       "required": true,
       "value": "appiTNzrkMrckYbqk"
@@ -57,10 +53,6 @@
       "required": true,
       "value": "https://aime-portal-api.herokuapp.com"
     },
-    "REACT_APP_MENTOR_EOI_BASE_KEY": {
-      "required": true,
-      "value": "appfv6xbNhSMnOq1n"
-    },
     "REACT_APP_PRO_IP_KEY": {
       "required": true,
       "value": "gXmk7M683Y6UBip"
@@ -81,25 +73,9 @@
       "required": true,
       "value": "gDS9IaN67mbSXH2DJnoRFmq8yBjPuFSb+IwAv962"
     },
-    "REACT_APP_RAISELY_USERNAME": {
-      "required": true,
-      "value": "website@aimementoring.com"
-    },
-    "REACT_APP_RAISELY_PASSWORD": {
-      "required": true,
-      "value": "Lgw4)zvb"
-    },
-    "REACT_APP_RAISELY_ORGANISATIONUUID": {
-      "required": true,
-      "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
-    },
     "REACT_APP_THEME": {
       "required": true,
-      "value": "purple"
-    },
-    "REACT_APP_CONTENTFUL_CONTENT_TYPE": {
-      "required": true,
-      "value": "false"
+      "value": "rainbow"
     },
     "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": {
       "required": true,
