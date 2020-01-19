@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
-import contentfulServer from '../../api/contentfulServer';
+import contentfulServer from '../../api/contentfulStories';
 import {
   formatDate,
   removeSpecialCharacters,
