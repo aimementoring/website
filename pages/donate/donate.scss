@@ -1,0 +1,26 @@
+@import "../../styles/base/variables";
+
+#react-donations-index {
+
+  .donation-bg_shape {
+    background:
+      url(https://d2ylaz7bdw65jx.cloudfront.net/assets/images/banner/global@2x-min.jpg)
+      no-repeat top center $darkest-purple;
+    background-size: cover;
+    background-attachment: fixed;
+    // Stop fixed on tablets & phones as it doesn't work
+
+    @media screen and (max-device-width: 1024px) {
+      background-attachment: scroll;
+    }
+  }
+
+  .donate-button {
+    background-color: $brand-secondary;
+    z-index: 3;
+  }
+
+  .testimonials {
+    min-height: 480px;
+  }
+}
