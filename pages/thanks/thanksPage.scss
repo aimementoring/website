@@ -1,0 +1,11 @@
+main {
+  .thanks-page---container {
+    padding-top: 10rem;
+  }
+}
+
+.thanks-img {
+  -webkit-clip-path: url(#svgScratchAmbassadorClipPath);
+  clip-path: url(#svgScratchAmbassadorClipPath);
+  height: 270px;
+}
