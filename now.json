@@ -7,8 +7,8 @@
       "REACT_APP_AIRTABLE_API_KEY": "@react_app_airtable_api_key",
       "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": "@react_app_contentful_entry_key_redirects",
       "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories",
-      "REACT_APP_CONTENTFUL_API_KEY_MASTER": "@react_app_contentful_api_key_master",
-      "REACT_APP_CONTENTFUL_API_KEY_STAGING": "@react_app_contentful_api_key_staging",
+      "REACT_APP_CONTENTFUL_API_KEY": "@react_app_contentful_api_key",
+      "REACT_APP_CONTENTFUL_API_STAGING_key": "@react_app_contentful_api_staging_key",
       "REACT_APP_FILE_UPLOADER_API_KEY": "@react_app_file_uploader_api_key",
       "REACT_APP_ASSETS_URL": "https://d1muvgoqe3g8vw.cloudfront.net/website",
       "REACT_APP_CRAFT_API": "https://aimeweb-backend-staging.herokuapp.com/",
@@ -28,7 +28,7 @@
       "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": "post",
       "REACT_APP_GOOGLE_TAG_MANAGER": "GTM-NK5SFHW",
       "REACT_APP_CDN_ROOT": "https://d2ylaz7bdw65jx.cloudfront.net",
-      "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "staging",
+      "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "master",
       "REACT_APP_HOST": "next"
     }
   },
