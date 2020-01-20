@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../../hocs/basicLayout';
-import contentfulServer from '../../api/contentfulServer';
+import contentfulServer from '../../api/contentfulStories';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
