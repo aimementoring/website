@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-- '10'
+- '12'
 install:
 - node -v
 before_script:
@@ -14,6 +14,3 @@ git:
   depth: 3
 script:
   - yarn build
-after_success:
-  - sleep 4m
-  - yarn run lhbot https://website-ssr-pr-$TRAVIS_PULL_REQUEST.herokuapp.com/
