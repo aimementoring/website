@@ -87,13 +87,13 @@
     },
     "REACT_APP_CONTENTFUL_API_ENVIRONMENT": {
       "required": true,
-      "value": "staging"
+      "value": "master"
     },
-    "REACT_APP_CONTENTFUL_API_KEY_MASTER": {
+    "REACT_APP_CONTENTFUL_API_KEY": {
       "required": true,
       "value": "***REMOVED***"
     },
-    "REACT_APP_CONTENTFUL_API_KEY_STAGING": {
+    "REACT_APP_CONTENTFUL_API_STAGING_KEY": {
       "required": true,
       "value": "***REMOVED***"
     },
