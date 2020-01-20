@@ -5,9 +5,9 @@
       "required": true,
       "value": "***REMOVED***"
     },
-    "REACT_APP_AIRTABLE_PROGRAM_BASE": {
+    "REACT_APP_ASSETS_URL":{
       "required": true,
-      "value": "appYBHhHUO92wVVmQ"
+      "value": "https://d2cl4o0mkg71rr.cloudfront.net/website"
     },
     "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE": {
       "required": true,
@@ -47,15 +47,11 @@
     },
     "REACT_APP_HOST_ENV": {
       "required": true,
-      "value": "staging"
+      "value": "development"
     },
     "REACT_APP_PORTAL_API": {
       "required": true,
       "value": "https://aime-portal-api.herokuapp.com"
-    },
-    "REACT_APP_MENTOR_EOI_BASE_KEY": {
-      "required": true,
-      "value": "appfv6xbNhSMnOq1n"
     },
     "REACT_APP_PRO_IP_KEY": {
       "required": true,
@@ -76,6 +72,58 @@
     "AWS_SECRET_ACCESS_KEY": {
       "required": true,
       "value": "***REMOVED***"
+    },
+    "REACT_APP_THEME": {
+      "required": true,
+      "value": "rainbow"
+    },
+    "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": {
+      "required": true,
+      "value": "rec8N1DIykET8T9SF"
+    },
+    "REACT_APP_CONTENTFUL_SPACE_ID": {
+      "required": true,
+      "value": "iz0aikshgysc"
+    },
+    "REACT_APP_CONTENTFUL_API_ENVIRONMENT": {
+      "required": true,
+      "value": "master"
+    },
+    "REACT_APP_CONTENTFUL_API_KEY": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_CONTENTFUL_API_STAGING_KEY": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": {
+      "required": true,
+      "value": "post"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": {
+      "required": true,
+      "value": "4wvkVrYF22PE8mNSRRPin4"
+    },
+    "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": {
+      "required": true,
+      "value": "redirectEntries"
+    },
+    "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": {
+      "required": true,
+      "value": "3tMx2AccortPX9N15uGGgb"
+    },
+    "REACT_APP_CONTENTFUL_MANAGEMENT_AUTHORIZATION_TOKEN": {
+      "required": true,
+      "value": "***REMOVED***"
+    },
+    "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": {
+      "required": true,
+      "value": "560dd7f8110349a17d6e96c46d02a0ce"
+    },
+    "REACT_APP_GOOGLE_TAG_MANAGER": {
+      "required": true,
+      "value": "GTM-NK5SFHW"
     }
   },
   "formation": {
@@ -84,9 +132,6 @@
     }
   },
   "buildpacks": [
-    {
-      "url": "heroku/python"
-    },
     {
       "url": "heroku/nodejs"
     }
