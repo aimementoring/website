@@ -12,12 +12,16 @@
 
   .mobile-menu-icon {
     display: block;
-    color: #000000;
+    color:$white;
 
     @media screen and (min-width: $lg) {
       display: none;
     }
   }
+}
+
+.headerFilled .mobile-menu .mobile-menu-icon {
+  color: $black;
 }
 
 .mobile-header {
