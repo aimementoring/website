@@ -1,0 +1,96 @@
+.nav-btn {
+  @extend
+    .text-decoration-none,
+    .f-14,
+    .c-white,
+    .my2,
+    .block;
+
+  margin-right: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  font-family: $feature-font-family;
+
+  &.country-select {
+    font-weight: 100;
+  }
+
+  &.active {
+    font-weight: 500;
+    color: $brand-primary;
+    border-bottom: 2px solid #fff;
+  }  
+}
+
+.intercom-button {
+  padding: 0;
+  border: none;
+  color: $black;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 300;
+  font-weight: bold;
+  font-family: sans-serif;
+  background: transparent;
+  &:hover{
+    color: $brand-secondary;
+  }
+
+  &.intercom-button-footer {
+    font-family: $body-font-family;
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1em;
+  }
+}
+
+.nav-btn-outline {
+  @extend
+    .f-12,
+    .block,
+    .text-decoration-none,
+    .py2,
+    .px4,
+    .regular,
+    .feature-font-family,
+    .border-radius-button,
+    .border;
+  transition: .1s ease all;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: .5rem 2rem;
+  }
+}
+
+.donate-nav-btn {
+  @extend
+    .nav-btn-outline,
+    .c-white,
+    .bg-brand-primary;
+
+  border: none;
+
+  &:hover {
+    @extend
+    .c-white;
+  }
+
+}
+
+.shop-nav-btn {
+  @extend
+    .nav-btn-outline,
+    .c-white,
+    .mr2,
+    .b-white;
+
+  &:hover {
+    @extend
+    .bg-primary,
+    .c-white;
+  }
+}
