@@ -68,8 +68,8 @@ const Footer = ({ location, handleShowIntercom }) => {
         {
           type: 'button',
           action: handleShowIntercom,
-          label: 'contact',
-          className: 'c-white intercom-button text-decoration-none',
+          label: 'Contact',
+          className: 'intercom-button intercom-button-footer',
         },
       ],
     },
