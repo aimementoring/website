@@ -1,0 +1,16 @@
+{
+  "name": "aimementoring",
+  "short_name": "aimementoring",
+  "description": "AIME Mentoring website",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "fullscreen"
+}
