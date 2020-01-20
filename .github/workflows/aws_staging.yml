@@ -37,7 +37,7 @@ env:
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
 
 jobs:
-  Test:
+  Aws:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
