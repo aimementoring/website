@@ -12,10 +12,16 @@
   }
 }
 
-.bannerHeading {
-  strong {
-    left: initial;
+.banner-wrapper {
+  .bannerHeading {
+    strong {
+      left: initial;
+    }
   }
+}
+
+.pageIntroHeading {
+  margin-bottom: 1em;
 }
 
 .radio-buttons-space {
