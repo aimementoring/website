@@ -1,68 +1,110 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Setup environment
 
-## Available Scripts
+1. Clone the repo `git clone git@github.com:aimementoring/website.git`
+1. Open the folder `cd website`
+1. Install dependencies `yarn`
+1. Run the project in development mode `yarn dev`
+1. If you want to test the project in build mode (similar to production mode) you need to run `yarn build && yarn start`
 
-In the project directory, you can run:
+# How to create a new page
 
-### `npm start`
+1. Create a new folder inside **pages** folder, with the name of your page (that page is accessible from URL with exact name by default)
+1. Create a new **index.js** file inside that folder with your React component.
+1. It is really important to add the BasicLayout as a parent component, so you need to add in `render` method something like this:
+```jsx
+render() {
+  return (
+    <Layout>
+      {/* YOUR COMPONENT HTML */}
+    </Layout>
+  );
+}
+```
+1. If you want to change the URL, there is a file called `server.js` and you can specify the URL you want to use there, the code is something like this:
+```js
+server.get('/your-component-url', (req, res) => {
+  const pagePath = '/yourComponentFolder';
+  const queryParams = {};
+  return ssrCache({
+    req, res, pagePath, queryParams,
+  });
+});
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Good practices
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Dynamic imports
 
-### `npm test`
+Use dynamic imports instead of importing directly every time you think it is possible to import the component dynamically. To do that, first you need to use a dynamic utils from next `import dynamic from 'next/dynamic';`. After that, you can import a component dynamically using:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<span style="color:green;">Good way to import components</span>
+```jsx
+const MyComponent = dynamic(() => import(/* webpackChunkName 'MyComponent' */ '../components/myComponent'));
+```
 
-### `npm run build`
+<span style="color:red;">Bad way to import components</span>
+```jsx
+import MyComponent from '../components/myComponent';
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is important because we can reduce the amount of lines and code for the first render, and we load the components asynchronously.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### When we should use dynamic imports
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We use dynamic imports for React Components which has render method, and for UI libraries (e.g. Aime Blueprint component).
+It is important to use only in those cases, and we should avoid using it when we load data, functional libraries or methods, because it could break prerender, and also we want the data directly when we render the page for the SEO.
 
-### `npm run eject`
+## Small pages and components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It is quite important to create small components and small pages, so we can have good performance on the website.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### How to do that?
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Instead of adding a long HTML in your render method on your page, you should break it down, and create small components from there that you can import in your page dynamically.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The main idea with that is:
+1. We can easily reuse code adding the same components on different pages.
+1. We can easily Unit test components and methods.
+1. Refactors and design changes are faster and easier.
+1. First render is faster because we load content asynchronously so we don't need to have the full page when we are navigating.
+1. It is easier to add and update styles with css modules because files are smaller.
 
-## Learn More
+# AWS Command line
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you want to test aws s3 command locally, you need first to install aws command, following next instructions:
+```shell
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+or you can install it with python, based on [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+```shell
+# Install pip3 if you don't have it yet
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+# Install aws cli
+pip3 install awscli --upgrade --user
+```
 
-### Code Splitting
+After installation is finished, verify the installation has completed correctly with the following command:
+```shell
+pip3 install awscli --upgrade --user
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Now follow next steps:
+1. From root folder of this project, run `cp -R .aws ~/.awd` to save credentials in our computer
+1. `aws configure list` to see what credentials you have defined in your computer. Expected output should look like this:
+    ```
+    Name Value Type Location
+    ---- ----- ---- --------
+    profile <not set> None None
+    access_key ****************CNUG shared-credentials-file
+    secret_key ****************v962 shared-credentials-file
+    region ap-southeast-2 config-file ~/.aws/config
+    ```
+1. Execute `sync:aws:next:staging` or any other command on aws to check if it works
 
-### Analyzing the Bundle Size
+# IMPORTANT ON STAGING AND MASTER
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Don't forget to add **PUBLIC_URL** in environment variables on Heroku for Staging and Production, because are uploading next static folder there to improve the performance, and it is important to load those files from the CDN instead of loading them locally.
