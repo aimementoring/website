@@ -1,0 +1,277 @@
+@import "../../styles/base/variables";
+
+.heroBannerHomepage {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  .headingLockup {
+    color: $white;
+    text-align: center;
+    line-height: 2em;
+
+    strong {
+      font-size: 5rem;
+      left: inherit;
+      top: inherit;
+
+      @media screen and (min-width: $md) {
+        font-size: 8rem;
+      }
+    }
+  }
+}
+
+.heroBannerContainer {
+  align-items: center;
+  display: flex;
+
+  &::after {
+    position: absolute;
+    height: 10px;
+    background-color: $white;
+  }
+}
+
+.bannerWrapper {
+  background:
+    url($cdnRoot+"assets/images/banner/become-a-mentor-today.png")
+    no-repeat top center $watermelon;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: auto 120%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 13em 2em;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: $md) {
+    background-size: cover;
+    padding: 2em;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+  }
+
+  @media screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+}
+
+.featureLockup {
+  border: 5px solid red;
+  font-style: normal;
+}
+
+.bannerWrapperUS {
+  background:
+    url($cdnRoot+"assets/images/banner/banner-us.jpg") no-repeat top
+    center #050301;
+  background-size: cover;
+  background-attachment: fixed;
+  display: block;
+
+  @media screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+
+  @media screen and (min-width: $md) {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.column {
+  flex-direction: column;
+
+  &:first-child {
+    padding-top: 10rem;
+    text-align: center;
+    margin-bottom: 30%;
+
+    @media screen and (min-width: $md) {
+      padding-top: 0;
+      text-align: left;
+      margin-bottom: 0;
+      padding-right: 10%;
+    }
+  }
+}
+
+.highlightText {
+  color: $white;
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  font-family: "blackhawk_italicregular";
+  font-size: $highlight-text-font-size;
+  font-weight: 100;
+  line-height: 0.9;
+  position: relative;
+  transform: rotate(-5deg);
+  z-index: 1;
+
+  @media all and(min-width: $md) {
+    font-size: calc(#{$highlight-text-font-size} + 3rem);
+    line-height: 3.5rem;
+    padding: 15px 87px 30px 35px;
+  }
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$highlight-text-font-size} + 4.5rem);
+    line-height: 4.2rem;
+  }
+
+  em {
+    position: relative;
+    font-family: "blackhawk_italicregular";
+  }
+}
+
+.homeHeroSubText {
+  font-size: calc(#{$base-font-size} + 3rem);
+  line-height: 4.2rem;
+  padding: 0;
+
+  @media screen and (min-width: $sm) {
+    font-size: calc(#{$base-font-size} + 4rem);
+    line-height: 5.2rem;
+    padding: 0;
+  }
+
+  @media screen and (min-width: $md) {
+    font-size: calc(#{$base-font-size} + 4.5rem);
+    line-height: 6.2rem;
+    padding: 0;
+  }
+}
+
+.hoodedScholarTitle {
+  font-size: 20px;
+  color: $white;
+  margin-bottom: 1rem;
+  line-height: 1.375;
+}
+
+.linkBtn {
+  background-color: transparent;
+  border-radius: $border-radius-button;
+  border-style: solid;
+  border-width: 1px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $feature-font-family;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease all;
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+}
+
+.videoBtn {
+  width: 100%;
+  display: flex;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  padding-bottom: 4rem;
+  padding-top: 1rem;
+  align-items: center;
+
+  .iconPlay {
+    display: inline-block;
+    fill: currentColor;
+    height: 50px;
+    margin: 0 auto;
+    stroke-width: 0;
+    stroke: currentColor;
+    width: 50px;
+  }
+}
+
+.founder {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1rem;
+}
+
+.founderParagraph {
+  font-size: 16px;
+}
+
+.bannerContentWrap {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+
+  @media screen and (min-width: $md) {
+    width: 26em;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+
+  @media screen and (min-width: $md) {
+    position: relative;
+  }
+
+  img {
+    height: auto;
+    width: auto;
+    display: block;
+  }
+}
+
+.buyButton {
+  background: $black;
+  border-radius: 3px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "PoppinsBold";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.075px;
+  margin: 1em auto;
+  padding: 1em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: $hoverTransition;
+
+  &:hover {
+    background-color: #e82a9e;
+    color: $white;
+  }
+
+  @media screen and (min-width: $md) {
+    margin: 1em 0 0;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+}
