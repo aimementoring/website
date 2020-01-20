@@ -1,0 +1,14 @@
+@import '../../styles/base/variables';
+
+.listItem {
+  margin-bottom: 1rem;
+}
+
+.itemLink {
+  color: $black;
+  font-family: $body-font-family;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1em;
+  text-decoration: none;
+}
