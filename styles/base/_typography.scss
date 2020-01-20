@@ -1,0 +1,629 @@
+@font-face {
+  font-family: 'Luna Emu';
+  src: url($cdnRoot+"assets/fonts/luna-emu/lunaemu2-regular-webfont.woff2") format('woff2'),
+    url($cdnRoot+"assets/fonts/luna-emu/lunaemu2-regular-webfont.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// GT Pressura Mono
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-webfont.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Italic";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-italic-webfont.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Bold";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-webfont.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono Bold Italic";
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+// Univers
+@font-face {
+  font-family: 'Univers';
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Light.otf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Univers';
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Bold.otf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+// TODO: Can't we just have one reference to Poppins and then bring in various weights?
+// don't want to change right now in case it breaks all the headings across the site
+
+// Poppins
+@font-face {
+  font-family: 'PoppinsLight';
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Light.ttf');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Medium.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local(), url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PoppinsBlackItalic';
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BlackItalic.ttf');
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Bold.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BoldItalic.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+    font-family: 'blackhawk_italicregular';
+    src: url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff2') format('woff2'),
+         url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Material Icons
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+    url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.woff') format('woff'),
+    url($cdnRoot + 'assets/fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+// Indie Flower
+@font-face {
+  font-family: 'Indie Flower';
+  src: url($cdnRoot + 'assets/fonts/indie-flower/IndieFlower.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
+  text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
+  -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
+  font-feature-settings: 'liga';       // Support for IE.
+}
+
+// Font Family
+.feature-font-family { font-family: $feature-font-family; }
+.body-font-family { font-family: $primary-font-family; }
+.icon-font-family { font-family: $icon-font-family; }
+.signature-font-family { font-family: $signature-font-family; }
+
+// Font Size
+.f-12 { font-size: 12px; }
+.f-13 { font-size: 13px; }
+.f-14 { font-size: 14px; }
+.f-15 { font-size: 15px; }
+.f-16 { font-size: 16px; }
+.f-18 { font-size: 18px; }
+.f-20 { font-size: 20px; }
+.f-24 { font-size: 24px; }
+.f-30 { font-size: 30px; }
+.f-38 { font-size: 38px; }
+.f-40 { font-size: 40px; }
+.f-42 { font-size: 42px; }
+.f-52 { font-size: 52px; }
+.f-68 { font-size: 68px; }
+.f-80 { font-size: 80px; }
+.f-100 { font-size: 100px; }
+.f-200 { font-size: 200px; }
+
+@media screen and (max-width: $sm) {
+  .f-68 {
+    font-size: 42px;
+  }
+}
+
+// Font Weight
+.light { font-weight: 300; }
+.regular { font-weight: 400; }
+.bold { font-weight: 500; }
+.heavy { font-weight: 900; }
+
+// Line Height
+.lh-large { line-height: 2; }
+.lh-base { line-height: 1.5; }
+.lh-small { line-height: 1.375; }
+.lh-smaller { line-height: 1.25; }
+.lh-title { line-height: 1.125; }
+
+// Transform
+.capitalize { text-transform: capitalize; }
+.uppercase { text-transform: uppercase; }
+.center-align { text-align: center; }
+
+.md-left-align {
+  @media (min-width: $md) {
+    text-align: left;
+  }
+}
+
+// Custom
+h1,h2,h3 {
+  font-weight: 700;
+  font-style: italic;
+  font-family: $feature-font-family;
+}
+
+h2 {
+  font-size: calc(#{$base-font-size} + 0.6rem);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  @extend
+    .feature-font-family,
+    .bold,
+    .c-black;
+
+  // font-size: calc(#{$base-font-size} + 1.8rem);
+  font-size: $base-font-size;
+  font-family: $feature-font-family;
+  color: $white;
+  display: inline-block;
+
+  @media all and(min-width: $md) {
+    font-size: calc(#{$base-font-size} + 0.6rem);
+  }
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$base-font-size} + 1.8rem);
+  }
+}
+
+.pre-text,
+.post-text {
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+  font-weight: 900;
+
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$base-font-size} + 0.6rem);
+  }
+}
+
+.pre-text {
+  padding-left: 10px;
+}
+
+.highlight-text {
+  font-family: 'blackhawk_italicregular';
+  font-weight: 100;
+  font-size: $highlight-text-font-size;
+  line-height: 1.9rem;
+  display: block;
+  color: #fff;
+  transform: rotate(-20deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position: relative;
+  z-index: 1;
+
+  @media all and(min-width: $md) {
+    font-size: calc(#{$highlight-text-font-size} + 3rem);
+    line-height: 3.5rem;
+    padding: 15px 87px 30px 35px;
+  }
+  @media all and(min-width: $lg) {
+    font-size: calc(#{$highlight-text-font-size} + 4.5rem);
+    line-height: 4.2rem;
+  }
+
+  .highlight-text__small {
+    font-size:$highlight-text-font-size;
+    top:10px;
+    @media all and(min-width: $md) {
+      top:-10px;
+    }
+    @media all and(min-width: $lg) {
+      top:-40px;
+    }
+
+    .scratch-underline{
+      top: $scratch-ul-top;
+      left: $scratch-ul-left;
+      padding: 0 $scratch-ul-padding-lr;
+      max-height: $scratch-ul-height;
+
+    }
+  }
+
+  &-straight {
+    transform: rotate(-5deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    line-height: 0.9;
+  }
+
+  em{
+    position: relative;
+    font-family: 'blackhawk_italicregular';
+  }
+
+  &-straight {
+    transform: rotate(-5deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    line-height: 0.9;
+  }
+
+
+}
+
+.scratch-underline{
+  background: linear-gradient(-45deg, #DC0AFF, #31E9FF);
+  background-size: 200%;
+  clip-path: url(#svgScratchClipPath);
+  -webkit-animation: Gradient 3s ease infinite;
+	-moz-animation: Gradient 3s ease infinite;
+  animation: Gradient 3s ease infinite;
+
+  @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  width: 100%;
+  display: block;
+  position: absolute;
+  z-index: -10;
+
+  top: $scratch-ul-top;
+  left: $scratch-ul-left;
+  padding: 0 $scratch-ul-padding-lr;
+  max-height: $scratch-ul-height;
+
+  @media all and(min-width: $md) {
+    top:calc(#{$scratch-ul-top} + 30px);
+    left:calc(#{$scratch-ul-left} - 10px);
+    padding:0 (calc(#{$scratch-ul-padding-lr} + 10px));
+    max-height:calc(#{$scratch-ul-height} + 10px);
+  }
+
+  @media all and(min-width: $lg) {
+    top:calc(#{$scratch-ul-top} + 50px);
+    left:calc(#{$scratch-ul-left} - 20px);
+    padding:0 (calc(#{$scratch-ul-padding-lr} + 20px));
+    max-height:calc(#{$scratch-ul-height} + 20px);
+  }
+
+}
+
+.gradient-text{
+  background: linear-gradient(135deg, #31e9ff 0%,#dc0aff 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size:calc(#{$highlight-text-font-size} + 1rem);
+  line-height: 5rem;
+  padding:0 30px 0 15px;
+  outline:none;
+
+  @media all and(min-width: $md) {
+    font-size:calc(#{$highlight-text-font-size} + 3rem);
+    line-height:5.5rem;
+    padding:10px 30px 30px;
+  }
+  @media all and(min-width: $lg) {
+    font-size:calc(#{$highlight-text-font-size} + 4.5rem);
+    line-height:6.2rem;
+  }
+
+}
+
+.highlight-text__med {
+  font-size: 4rem;
+  line-height: 2rem;
+  display: inline-block;
+  padding: 0.2em 0 0.4em;
+
+  @media screen and (min-width: $sm) {
+    font-size: 6rem;
+    line-height: 3rem;
+  }
+}
+
+/* styles for the second panel on most pages - the intro panel
+highlight text is slightly larger than all the rest */
+.intro-panel{
+  .pre-text{
+    padding-left: 10px;
+    @media all and(min-width: $md) {
+      padding-left: 20px;
+    }
+  }
+  .gradient-text{
+    font-size: 8rem;
+    line-height: 8rem;
+    margin-bottom:40px;
+    margin-left: -40px;
+    padding:0 30px;
+    @media all and(min-width: $md) {
+      font-size: 9.5rem;
+      line-height: 10rem;
+      margin:-10px 0 10px -20px;
+      padding:0 45px 0 10px;
+    }
+  }
+}
+
+
+/* styles for the glow headings */
+.heading-glow{
+  position: relative;
+  .pre-text{
+    color: #A34EE7;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding-left: 0 !important;
+    top:15px;
+    @media all and(min-width: $md) {
+      position: absolute;
+      left: 55px;
+      top: 0;
+      text-align: left;
+      width: 95px;
+    }
+  }
+  .highlight-text{
+    text-align: center;
+    transform: rotate(-9deg);
+    line-height: 3.3rem;
+    @media all and(min-width: $md) {
+      margin-top:0;
+
+    }
+    @media all and(min-width: $lg) {
+      line-height: 2rem;
+    }
+    em{
+      text-shadow: 0 2px 15px #BD10E0;
+
+      &.highlight-text__large{
+        font-size:calc(#{$highlight-text-font-size} + 1rem);
+
+        @media all and(min-width: $md) {
+          font-size:calc(#{$highlight-text-font-size} + 3rem);
+        }
+      }
+    }
+  }
+}
+/* subpage banner titles*/
+.banner-wrapper{
+  &.subpage-banner{
+    h1{
+      line-height: 3rem;
+    }
+    .pre-text{
+      padding-left:0;
+    }
+  }
+}
+
+
+h3 {
+  @extend
+    .feature-font-family,
+    .light,
+    .f-18;
+}
+
+h4 {
+  @extend
+    .feature-font-family,
+    .regular,
+    .f-15;
+}
+
+a {
+  opacity: 1;
+  transition: ease-in .1s opacity;
+
+  &:hover {
+    color: $brand-primary-hover;
+  }
+}
+
+ul a, ol a, p a {
+  color: $brand-primary;
+  font-weight: bold;
+  letter-spacing: 0.001em;
+}
+
+.primary-title {
+  @extend
+    .feature-font-family,
+    .bold,
+    .c-black;
+  font-size: 32px;
+  line-height: 38px;
+
+  @media screen and (max-width: $md) {
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  @media screen and (max-width: $sm) {
+    font-size: 24px;
+    margin: 2rem 0;
+  }
+
+  @media screen and (min-width: $md) {
+    font-size: 50px;
+    line-height: 62px;
+  }
+}
+
+.secondary-title {
+  @extend
+    .feature-font-family,
+    .light,
+    .f-18;
+}
+
+
+.subheading-highlight{
+  font-size:2.5rem;
+  letter-spacing: 0.3rem;
+  font-family: $primary-font-family;
+  font-style: normal;
+  line-height: 4.5rem;
+  font-weight: 100;
+  margin-top: 2rem;
+  @media screen and (min-width: $md) {
+    font-size:3rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .letter-spacing-large{
+    letter-spacing: 1em;
+    margin-right:-1em;
+    display:inline-block;
+
+    @media screen and (min-width: $md) {
+      letter-spacing: 5.1rem;
+      margin-right:-5.1rem;
+    }
+  }
+  strong {
+    letter-spacing: 0.3rem;
+    font-weight: 900;
+    font-style: italic;
+
+    @media screen and (min-width: $md) {
+      letter-spacing: 1.2rem;
+    }
+
+
+  }
+}
+
+.background-scratch-highlight {
+  .scratch-underline {
+    background: $brand-primary-hover;
+    top:20px;
+    max-height: 15px;
+    min-width: 80px;
+  }
+}
+
+.feature-font-heading{
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  @media screen and (min-width: $md) {
+    font-size: 2rem;
+  }
+
+}
+
+.text-highlight {
+  color: $white !important;
+  background: $brand-primary;
+  padding: 3px 10px 5px 1px;
+  &.purple {
+    background:$brand-tertiary;
+  }
+}
+
+.sml-rotate {
+  transform: rotate(-9deg);
+}

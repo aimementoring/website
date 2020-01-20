@@ -1,0 +1,158 @@
+@import "../../styles/base/variables";
+
+.carouselContainer {
+  min-height: 800px;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: $md) {
+    margin-bottom: 4rem;
+  }
+
+  :global(.slick-slider) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  :global(.slick-dots) {
+    bottom: 0;
+    padding: 1rem 0;
+    width: 35%;
+    position: absolute;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      cursor: pointer;
+      height: 20px;
+      margin: 0 2px;
+      width: 20px;
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      padding: 0;
+
+      &.slick-active button::before {
+        opacity: .75;
+      }
+
+      button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        color: transparent;
+        border: 0;
+        outline: none;
+        background: transparent;
+
+        &::before {
+          color: $white;
+          font-size: 1.5rem;
+          font-family: 'slick';
+          line-height: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          content: '•';
+          text-align: center;
+          opacity: .25;
+        }
+      }
+    }
+  }
+}
+
+.storiesContainer {
+  margin: 0 auto;
+  padding-top: 0;
+  max-width: 81.25em;
+  padding: 2em 2em 4em;
+}
+
+.storiesGrid {
+  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+  display: grid;
+  grid-gap: 1em;
+  flex-wrap: wrap;
+}
+
+.storiesTitle {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $black;
+  font-family: $feature-font-family;
+}
+
+.storiesParagraph {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.refineSearch {
+
+  @media screen and (min-width: $sm) {
+    width: 250px;
+    margin-right: 5rem;
+    float: left;
+  }
+}
+
+.refineSection {
+  position: relative;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: $lg) {
+    margin-bottom: 4rem;
+  }
+
+  .line {
+    background-color: $brand-tertiary;
+    border-radius: 3px;
+    height: 3px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    transition: 0.2s ease all;
+    width: 9%;
+  }
+
+  @media screen and(max-width: $lg) {
+    cursor: pointer;
+
+    .mobilePanel {
+      display: none;
+    }
+
+    .line {
+      background-color: $light-grey;
+      height: 1px;
+    }
+
+    &:after {
+      content: "keyboard_arrow_down";
+      font-family: $icon-font-family;
+      font-size: 1rem;
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    &.active .mobilePanel {
+      display: block;
+    }
+  }
+}
