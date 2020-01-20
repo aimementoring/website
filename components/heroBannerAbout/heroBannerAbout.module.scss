@@ -1,0 +1,49 @@
+@import "../../styles/base/variables";
+
+@import "../../styles/baseClasses/scratchUnderline";
+
+.heroBannerAbout {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+
+  .heroBannerAboutContent {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bannerWrapper {
+    align-items: center;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url($cdnRoot+"assets/images/about/banner-about.jpg") no-repeat center
+      center #050301;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    @media screen and (max-device-width: 1024px) {
+      background-attachment: scroll;
+    }
+
+    .bannerHeader {
+      color: $white;
+      text-align: center;
+      line-height: 1em;
+
+      strong {
+        top: inherit;
+        left: inherit;
+        line-height: 0.8em;
+        margin-bottom: 0.1em;
+      }
+    }
+  }
+}
+
