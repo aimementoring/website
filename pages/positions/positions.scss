@@ -1,0 +1,28 @@
+@import "../../styles/base/variables";
+
+.positions {
+
+  .scratch-bg.video-button {
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .job-tabs--link {
+    &:not(.active):hover {
+      color: $brand-secondary;
+    }
+  
+    &.active:hover {
+      background: $brand-secondary;
+      opacity: 1;
+    }
+  }
+}
