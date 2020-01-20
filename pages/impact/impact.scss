@@ -1,0 +1,429 @@
+@import "../../styles/base/variables";
+
+//Page specific layout styles
+
+.impact-page {
+  .hero-panel {
+    overflow: hidden;
+
+    .hero-panel-video-button {
+      display: none;
+
+      @media not all and (min-resolution: 0.001dpcm) {
+        display: flex;
+      }
+    }
+  }
+
+  #panel1 {
+    margin-top: -150px;
+  }
+
+  .more-info .full-height {
+    height: 100%;
+  }
+
+  .section-impact {
+    padding-top: 50px;
+  }
+
+  // TODO: create variables for all the diff banner image urls in the variables file
+
+  .section-background-image {
+    background: url($cdnRoot+"assets/images/banner/Default@2x-min.jpg")
+      no-repeat top center / cover #050301;
+
+    &-purple-smoke {
+      background: url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
+        no-repeat top center / cover #050301;
+    }
+  }
+
+  .banner-wrapper {
+    background-size: cover;
+  }
+
+  .full-height {
+    height: 50vh;
+
+    @media screen and (min-width: $sm) {
+      height: 75vh;
+    }
+  }
+
+  .scratch-overlay-wrapper.top-scratch {
+    position: relative;
+  }
+
+  .section-hoodedScholar-title {
+    color: $white;
+    font-family: $feature-font-family;
+    font-weight: 900;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  &-highlight-text {
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 2.5rem;
+    line-height: 1.1;
+
+    @media screen and (min-width: $sm) {
+      padding: 16px;
+      font-size: $highlight-text-font-size;
+    }
+
+    @media all and(min-width: $lg) {
+      font-size: calc(#{$highlight-text-font-size} + 2rem);
+    }
+
+    &-heropanel {
+      margin: 0 auto;
+      padding: 16px 16px 8px 16px;
+      font-size: calc(#{$highlight-text-font-size} + 1.5rem);
+
+      @media screen and (min-width: $sm) {
+        font-size: calc(#{$highlight-text-font-size} + 2.5rem);
+        padding: 16px 16px 8px 16px;
+      }
+
+      @media screen and (min-width: $md) {
+        font-size: calc(#{$highlight-text-font-size} + 3.5rem);
+        padding: 16px 16px 8px 16px;
+      }
+
+      @media all and(min-width: $lg) {
+        font-size: calc(#{$highlight-text-font-size} + 4.5rem);
+        padding: 16px 16px 8px 16px;
+      }
+    }
+  }
+
+  .text-highlight.purple a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  .section-about:nth-child(1) .section-about__column {
+    justify-content: center;
+  }
+
+  .section-about:nth-child(n + 2) {
+    margin-top: 0;
+  }
+
+  .section-about .section-about__column img {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  //TODO: I think these can be components
+
+  .icon-ArrowDown {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 10px;
+  }
+
+  .arrowDown-label {
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: flex-start;
+
+    .icon {
+      margin-top: 4px;
+      margin-right: 16px;
+      width: 100%;
+      max-width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .download-btn {
+    padding: 1rem 1rem;
+
+    @media screen and (min-width: $md) {
+      padding: 1rem 2rem;
+    }
+  }
+
+  .download-btn-text {
+    float: left;
+  }
+
+  .download-btn-text:after {
+    content: "";
+    display: block;
+    background: url($cdnRoot+"assets/images/Download.svg") no-repeat center
+      center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 0 0 0 0.5rem;
+
+    @media screen and (min-width: $md) {
+      margin: 0 0 0 1rem;
+    }
+  }
+
+  .video-button {
+    display: flex;
+  }
+
+  .video-banner {
+    clip-path: none;
+
+    &-overlay {
+      margin: 0 auto;
+    }
+  }
+
+  .vid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .vid-headline {
+    z-index: 7;
+  }
+
+  /* .video-overlay {
+        background: url($cdnRoot + 'assets/images/transparent-black.png') repeat center center;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        position: absolute;
+    } */
+
+  .bgVideo-container {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    overflow: hidden;
+  }
+
+  #bgVideo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    #bgVideo {
+      height: 100%;
+    }
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    #bgVideo {
+      min-width: 100%;
+      min-height: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: $sm) {
+    .bgVideo-container {
+      background: url($cdnRoot+"assets/images/impact/purple-smoke.jpg")
+        no-repeat top center / cover #050301;
+    }
+
+    #bgVideo {
+      display: none;
+    }
+  }
+
+  .absolute-wrapper {
+    width: 40px;
+    height: 20px;
+    margin-bottom: -4.7rem;
+    background: #18001d;
+  }
+
+  .absolute-text {
+    font-family: $feature-font-family;
+    font-weight: 900;
+    left: 35%;
+  }
+
+  .grid {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+      grid-template-areas:
+        "sidebar"
+        "content";
+
+      @media screen and (min-width: $md) {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "sidebar content";
+      }
+    }
+  }
+
+  .sidebar {
+    flex: 1;
+    padding: 2rem;
+
+    @media screen and (min-width: $lg) {
+      padding: 5rem;
+    }
+
+    @supports (display: grid) {
+      grid-area: sidebar;
+    }
+
+    .sidebarTitle {
+      font-size: 3rem;
+      line-height: 1;
+
+      &-hr {
+        height: 3px;
+        width: 30px;
+      }
+    }
+
+    .buttons-container {
+      display: block;
+
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 0.5rem;
+      }
+    }
+  }
+
+  .download-btn-text {
+    font-family: $feature-font-family;
+    font-weight: 900;
+    width: 100%;
+  }
+
+  .download-btn-text::after {
+    content: "";
+    display: block;
+    background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat
+      center center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 0 0 0 0.5rem;
+  }
+
+  .ghost-btn {
+    text-align: left;
+    padding: 1rem 1.5rem;
+  }
+
+  .ghost-btn.bg-brand-primary {
+    color: #7602da;
+  }
+
+  .ghost-btn:hover {
+    color: $white;
+  }
+
+  .ghost-btn-alt:hover {
+    color: #7602da;
+  }
+
+  .main-content {
+    flex: 3;
+
+    @supports (display: grid) {
+      grid-area: content;
+    }
+  }
+
+  .main-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+  }
+
+  .tile {
+    display: block;
+    flex: 1;
+    min-width: 250px;
+    -ms-flex-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.5rem;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 5px;
+      padding: 0;
+    }
+  }
+
+  .tile-title {
+    font-size: 15px;
+  }
+
+  .tile-copy {
+    font-size: 12px;
+  }
+
+  .main-grid .video-button,
+  .main-grid .image-button {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.gradient-purple {
+  background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
+}
+
+.text-highlight.purple a {
+  text-decoration: none;
+  color: $white;
+}
