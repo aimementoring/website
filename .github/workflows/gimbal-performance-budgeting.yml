@@ -39,7 +39,7 @@ env:
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
 
 jobs:
-  Test:
+  Gimbal:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
