@@ -20,12 +20,12 @@ const CtaGrid = ({ elements }) => (
               <div className={styles.subItemDetails}>
                 {cta.link.indexOf('http') !== -1
                   ? (
-                    <Button theme="rainbow" aria-label="cta" type="link" url={cta.link}>
+                    <Button theme="rainbow" className={styles.ctaGridBtn} aria-label="cta" type="link" url={cta.link}>
                       {cta.button}
                     </Button>
                   )
                   : (
-                    <Button theme="rainbow" aria-label="cta-link" type="link" url={cta.link}>
+                    <Button theme="rainbow" className={styles.ctaGridBtn} aria-label="cta-link" type="link" url={cta.link}>
                       {cta.button}
                     </Button>
                   )}
