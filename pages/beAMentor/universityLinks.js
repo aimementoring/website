@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './beAMentor.scss';
+import './beAMentor.module.scss';
 
 const UniversityLinks = ({ options }) => (
   <div className="display-none">
