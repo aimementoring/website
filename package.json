@@ -93,7 +93,8 @@
     "husky": "^3.0.9",
     "lighthouse": "^5.4.0",
     "lighthousebot": "git+https://github.com/GoogleChromeLabs/lighthousebot.git",
-    "lint-staged": "^10.0.0-1"
+    "lint-staged": "^10.0.0-1",
+    "sqlite3": "^4.1.1"
   },
   "lint-staged": {
     "**/*.{js,jsx}": "eslint --ext .js"
