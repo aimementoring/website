@@ -87,13 +87,13 @@
     },
     "REACT_APP_CONTENTFUL_API_ENVIRONMENT": {
       "required": true,
-      "value": "staging"
+      "value": "master"
     },
-    "REACT_APP_CONTENTFUL_API_KEY_MASTER": {
+    "REACT_APP_CONTENTFUL_API_KEY": {
       "required": true,
       "value": "0cacfc910d0c5d6bce2c6cfedfa03bc050a1f2bddd42fa4e1a09fedf0c4959d3"
     },
-    "REACT_APP_CONTENTFUL_API_KEY_STAGING": {
+    "REACT_APP_CONTENTFUL_API_STAGING_KEY": {
       "required": true,
       "value": "vYlKba5d86Ba-TEj3xaAUWrd1xUuNLdh1Q1zJQQeLoc"
     },
