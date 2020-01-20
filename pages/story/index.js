@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
+import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import contentfulServer from '../../api/contentfulServer';
@@ -54,28 +55,29 @@ const Story = (props) => {
                     <div>
                       <div className={styles.entriesContainer}>
                         <article className={styles.blogPost}>
-                          <h1 className={styles.blogPostTitle}>
+                          <Title type="h4Title" theme="rainbow">
                             {entry.fields.title && entry.fields.title}
-                          </h1>
+                          </Title>
                           <div>
                             <span className={styles.blogPostTimestamp}>
                               {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
                             </span>
                           </div>
-                          <article className={styles.blogPostArticle} />
-                          <ContentCard
-                            author={author}
-                            signature={signature}
-                            publishDate={entry.fields.publishDate}
-                            contentCards={entry.fields.contentCards}
-                            postScriptContent={postScriptContent}
-                            buttonProps={buttonProps}
-                          />
-                          <Anchor to="/stories" className={styles.articleTileLink}>
-                            <i className={styles.materialIcons}>keyboard_backspace</i>
-                            {' '}
-                            Back to Stories
-                          </Anchor>
+                          <article className={styles.blogPostArticle}>
+                            <ContentCard
+                              author={author}
+                              signature={signature}
+                              publishDate={entry.fields.publishDate}
+                              contentCards={entry.fields.contentCards}
+                              postScriptContent={postScriptContent}
+                              buttonProps={buttonProps}
+                            />
+                            <Anchor to="/stories" className={styles.articleTileLink}>
+                              <i className={styles.materialIcons}>keyboard_backspace</i>
+                              {' '}
+                              Back to Stories
+                            </Anchor>
+                          </article>
                         </article>
                       </div>
                     </div>
