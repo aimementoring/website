@@ -77,11 +77,12 @@ const IntercomChat = (props) => {
 
 IntercomChat.propTypes = {
   label: PropTypes.string,
-  classNames: PropTypes.string.isRequired,
+  classNames: PropTypes.string,
 };
 
 IntercomChat.defaultProps = {
   label: 'Get in Touch',
+  classNames: 'navBtn',
 };
 
 export default IntercomChat;

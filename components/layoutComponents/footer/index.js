@@ -5,7 +5,6 @@ import Anchor from '../../common/link';
 import NavList from '../../navList';
 import FooterNewsletter from '../../footerNewsletter';
 import styles from './footer.module.scss';
-import IntercomChat from '../../intercom';
 
 const Footer = ({ location }) => {
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
@@ -17,15 +16,18 @@ const Footer = ({ location }) => {
         {
           to: '/beAMentor',
           as: '/be-a-mentor',
+          isExternal: false,
           label: 'Become a <strong>Mentor</strong>',
         },
         {
           to: 'https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved',
           target: '_blank',
+          isExternal: true,
           label: 'Become a <strong>Partner</strong>',
         },
         {
           to: '/donate',
+          isExternal: false,
           label: 'Make a Donation',
         },
       ],
@@ -36,20 +38,24 @@ const Footer = ({ location }) => {
         {
           to: 'https://shop.aimementoring.com/',
           target: '_blank',
+          isExternal: true,
           label: 'Shop Apparel',
         },
         {
           to: '/theMentor',
           as: '/the-mentor',
+          isExternal: false,
           label: 'Read the book',
         },
         {
           to: '/about',
+          isExternal: false,
           label: 'About AIME',
         },
         {
           to: '/founder',
           as: '/jack-manning-bancroft',
+          isExternal: false,
           label: 'Founder & CEO',
         },
       ],
@@ -59,12 +65,20 @@ const Footer = ({ location }) => {
       items: [
         {
           to: '/positions',
+          isExternal: false,
           label: 'Work with AIME',
         },
         {
-          to: 'https://faqs.aimementoring.com',
+          to: 'https://faqs.aimementoring.com/en/ ',
           target: '_blank',
+          isExternal: true,
           label: 'FAQs',
+        },
+        {
+          to: null,
+          target: '_blank',
+          isExternal: null,
+          label: 'Get in Touch',
         },
       ],
     },
@@ -81,9 +95,6 @@ const Footer = ({ location }) => {
                   {FOOTER_LINKS.map((footerList) => (
                     <NavList {...footerList} key={footerList.title} />
                   ))}
-                  <li className="listItem">
-                    <IntercomChat classNames="intercom-button" />
-                  </li>
                 </div>
                 <FooterNewsletter />
               </div>

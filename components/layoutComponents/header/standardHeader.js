@@ -30,7 +30,7 @@ const StandardHeader = () => (
             </Anchor>
           </li>
           <li className={styles.listItem}>
-            <IntercomChat classNames="intercom-button-nav navBtn" />
+            <IntercomChat />
           </li>
           <li className={styles.inlineListItem}>
             <a

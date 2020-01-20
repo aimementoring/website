@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from '../common/link';
 import styles from './navItem.module.scss';
+import IntercomChat from '../intercom';
 
 const NavItem = ({
-  label, className, target, as, to,
+  label, className, target, as, to, isExternal,
 }) => {
   const restProps = {
     'aria-label': label,
@@ -19,13 +20,32 @@ const NavItem = ({
   }
   return (
     <li className={styles.listItem} key={to}>
-      <Anchor
-        to={to}
-        {...restProps}
-      >
-        {/* eslint-disable-next-line react/no-danger */}
-        <span dangerouslySetInnerHTML={{ __html: label }} />
-      </Anchor>
+      {to === null && isExternal === null
+        && (<IntercomChat classNames={styles.itemLink} />)}
+      <>
+        {
+          isExternal ? (
+            <a
+              href={to}
+              {...restProps}
+            >
+              {/* eslint-disable-next-line react/no-danger */}
+              <span dangerouslySetInnerHTML={{ __html: label }} />
+            </a>
+          ) : (to !== null
+            && (
+              <Anchor
+                to={to}
+                {...restProps}
+              >
+                {/* eslint-disable-next-line react/no-danger */}
+                <span dangerouslySetInnerHTML={{ __html: label }} />
+              </Anchor>
+            )
+          )
+        }
+
+      </>
     </li>
   );
 };
@@ -36,8 +56,7 @@ NavItem.propTypes = {
   target: PropTypes.string,
   as: PropTypes.string,
   to: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'link']),
-  action: PropTypes.func,
+  isExternal: PropTypes.bool,
 };
 
 NavItem.defaultProps = {
@@ -45,8 +64,7 @@ NavItem.defaultProps = {
   target: null,
   as: null,
   to: '',
-  type: 'link',
-  action: () => {},
+  isExternal: null,
 };
 
 export default NavItem;

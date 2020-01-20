@@ -22,6 +22,7 @@ const MENU_LINKS = {
     { url: '/be-a-mentor', title: 'Be a Mentor' },
     { url: '/positions', title: 'Positions' },
     { url: '/donate', title: 'Donate' },
+    { url: '', title: null },
   ],
 };
 

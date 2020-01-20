@@ -9,20 +9,21 @@ const LinksComponent = ({
 }) => (
   <ul className="overflow-scroll list-reset pl3 pb3 pt2 flex flex-column items-start flex-auto">
     <div>
-      <li className="py2">
-        <IntercomChat classNames="intercom-button-nav navBtn" />
-      </li>
       {
         links.map((link) => (
           <li key={link.title} className="py2">
-            <Anchor
-              className={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'} 
+            {!link.title && link.url === '' ? (
+              <IntercomChat classNames={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'}${active === link.title ? 'active' : ''}`} />
+            ) : (
+              <Anchor
+                className={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'} 
                     ${active === link.title ? 'active' : ''}`}
-              onClick={handleLinkClicked(link.title)}
-              to={link.url && link.url}
-            >
-              {link.title}
-            </Anchor>
+                onClick={handleLinkClicked(link.title)}
+                to={link.url}
+              >
+                {link.title}
+              </Anchor>
+            )}
           </li>
         ))
       }
