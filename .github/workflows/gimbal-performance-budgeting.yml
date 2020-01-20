@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+    - staging
+  pull_request:
+    branches:
+    - master
+    - staging
+      
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Install yarn dependencies
+        run: yarn
+      - name: Build
+        run: yarn run build
+      - name: Performance Budgeting Regression Testing
+        uses: ModusCreateOrg/gimbal/action@master
+        env:
+          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
