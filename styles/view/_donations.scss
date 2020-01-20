@@ -1,0 +1,322 @@
+@import "../../styles/base/variables";
+
+//TODO: Any hard-coded urls - reference to CDN variable
+
+.donation-bg_shape {
+  min-height: 600px;
+  background-image: url('https://d2ylaz7bdw65jx.cloudfront.net/resources/donations_floating_elements.svg');
+  background-color:  #FFBD07;
+  background-size: contain;
+  background-repeat: initial;
+  clip-path: url(#svgCurve);
+}  
+
+
+@mixin horizontal-align {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+@mixin animation($animation, $time) {
+  animation: $animation $time;
+}
+
+.donations-trapezoid {
+
+  @media screen and (min-width: 1441px) {
+    @include horizontal-align;
+    background: url('https://d2ylaz7bdw65jx.cloudfront.net/resources/donation_trapezoid.svg');
+    background-size: cover;
+    background: linear-gradient(to right, $brand-secondary 0%,$accent-purple 100%);
+    border-radius: 2px;
+    top: 420px;
+    width: 67%;
+    height: 576px;
+    z-index: 2;
+  }
+
+}
+
+.want-to-donate-title {
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.9;
+  letter-spacing: -0.6px;
+  color: #ffffff;
+}
+.trapezoid-title {
+  font-family: Poppins;
+  line-height: 0.9;
+  letter-spacing: -0.6px;
+}
+
+.donations-divider {
+  opacity: 0.3;
+  margin-top:2.222rem;
+  margin-bottom: 2.222rem;
+  color: #550D94;
+}
+
+.donations-colour-divider {
+  border: solid 3px $accent-pink;
+  width: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.trapezoid-text {
+  word-wrap: break-word;
+  font-family: Helvetica;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  display: block;
+} 
+
+.progress-bar-container{
+  border: solid 1px #9013FE;
+  background: $darkest-purple;
+  border-radius: 27px;
+  position: relative;
+}
+.sf-n-progress-bar{
+  background: $accent-pink !important;
+}
+
+.number-of-donations {
+  position: absolute;
+  top: 11px;
+  right: 18px;
+  color: #fff;
+  font-weight: 900;
+}
+
+.viewCampaignsButton {
+  background-color: $white;
+  border-color: #9013FE;
+  color: $medium-grey;
+  padding: 12px 24px;
+}
+
+.campaing-home-text {
+
+  p {
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+  }
+
+  img {
+    // @extend .rounded;
+    @include animation(fadein, 2s);
+    box-shadow: 5px 5px 10px $medium-grey;
+  }
+}
+
+.trapezoid-left-column {
+  width: 47.5%;
+}
+
+.iframe-container {
+  background-color: $white;
+  width: 27%;
+  margin-left: 19%;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+  z-index:3;
+
+  iframe {
+    min-height: 550px;
+    width: 100%;
+  }
+}
+
+.no-sticky {
+  top: 500px;
+}
+
+.no-sticky-bottom {
+  position: fixed;
+  bottom: 450px;
+}
+
+.sticky {
+  position: fixed;
+  top: 50px;
+  margin-top:100px;
+}
+
+.title-donations-container {
+  max-width: none;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  height:350px;
+
+    @media screen and (min-width: 1441px) {
+    height:400px;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .donation-bg_shape {
+    margin-bottom: 22.222rem;
+  }  
+  .trapezoid-right-column {
+    width: 41%;
+  }
+  .trapezoid-title {
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.9;
+    letter-spacing: -0.6px;
+  }
+  .rc-select {
+    margin-top: 1.5rem;
+  }
+  .rc-select-selection{
+    border-radius: 4px;
+    height: 40px;
+    background: $eggplant;
+    border-color:$accent-purple;
+    color:$white;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .select-donation-container{
+    display: block;
+  }
+  .want-to-donate-title-container {
+    height: 27.77%;
+  }
+  .donate-button {
+    display:none;
+  }
+  .full-trapezoid-emptynes {
+    display: none;
+  }
+}
+
+.selected-campaign-donations-container {
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1441px) {
+    width: 67%;
+  }
+
+  > div {
+    @media screen and (min-width: 1441px) {
+      justify-content: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+  }
+
+}
+
+.donation-aside {
+
+    @media screen and (min-width: 1441px) {
+      padding: 0 2rem;
+      width: 49%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+
+  .donations-trapezoid {
+    background: linear-gradient(to right, $brand-secondary 0%,$accent-purple 100%);
+    border-radius: 33px;
+    width: 81%;
+    max-width:400px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: -275px;
+    position: relative;
+    top: -250px;
+  }  
+
+  // TODO: Remove the !important - there now because
+  .trapezoid-left-column {
+    display: none !important;
+  }
+  .trapezoid-right-column {
+    width: 100%;
+    justify-content: normal;
+    align-items: center;
+    padding:1rem;
+  }
+  .trapezoid-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
+
+  .want-to-donate-title-container {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .trapezoid-title {
+    font-size: 1.25rem;
+    text-align: center;
+    padding-left: 5px;
+  }
+  .select-donation-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rc-select  {
+    width: 80%;
+  }
+  .rc-select-selection{
+    border-radius: 4px;
+    height: 40px;
+    background: $eggplant;
+    border-color:$accent-purple;
+    color:$white;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .donations-divider{
+    width: 88%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .progress-bar-container {
+    width: 88%;
+  }
+  .iframe-container {
+    display:none;
+  }
+  .donate-button {
+    display:block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fdb940;
+    height: 50px;
+    border: 0px;
+    color:#fff;
+    font-weight: 900;
+  }
+  .full-trapezoid-emptynes {
+    margin-top: 63px;
+    display: block;
+  }
+}
