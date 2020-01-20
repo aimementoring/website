@@ -1,0 +1,83 @@
+@import "../../../styles/base/variables";
+
+.bannerImage {
+  border-radius: 3px 3px 0 0;
+  width: 100%;
+
+  @supports (object-fit: cover) {
+    height: 10.5em;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.storiesGrid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
+  grid-gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.articleTile {
+  border-color: $light-grey;
+  border-radius: $border-radius;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex: 33.33%;
+  margin: 0.5rem 0.5rem 1rem;
+  opacity: 1;
+  position: relative;
+
+  @supports (display: grid) {
+    margin: 0;
+  }
+}
+
+.articleLink {
+  padding: 0;
+  text-decoration: none;
+}
+
+.articleDescription {
+  padding: 0.5rem 2rem 1.5rem 2rem;
+  
+  h5{
+  margin-bottom: 0.5em;
+  color:$black;
+  transition: $hoverTransition;
+  &:hover {
+    color: $purple;
+    }
+  }
+
+}
+
+.postDate {
+  padding-right: 0.5rem;
+}
+
+.slash {
+  color: $light-grey;
+}
+.articleTileLabel {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: $grey;
+}
+
+.articleTileLink {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+}
