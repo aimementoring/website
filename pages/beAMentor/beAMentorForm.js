@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { getCountryGroupOptions } from '../../utils/expresionOfInterest';
-import './beAMentor.scss';
+import './beAMentor.module.scss';
 
 const Select = dynamic(() => import(/* webpackChunkName 'Select' */ 'aime-blueprint/lib/components/select'));
 const ReturningMentor = dynamic(() => import(/* webpackChunkName 'ReturningMentor' */ './returningMentor'));
