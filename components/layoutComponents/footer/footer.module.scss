@@ -1,0 +1,104 @@
+@import '../../../styles/base/variables';
+
+.footerContainer {
+  max-width: 100%;
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+
+  @media screen and (min-width: $lg) {
+    padding-bottom: 4rem;
+  }
+
+  .footerWrapper {
+    display: flex;
+    margin: 0 auto; 
+    max-width: 1120px; 
+    overflow: visible;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 4rem;
+  }
+
+  .footerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media screen  and (min-width: $lg) {
+      flex-direction: row;
+    }
+  }
+
+  .linksContainer {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    flex-wrap: wrap;
+  }
+
+}
+.footerCopyrightContainer {
+  background-color: $black;
+  padding: 2rem;
+
+  @media screen and (min-width: $lg) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .footerCopyrightWrapper {
+    font-size: 12px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    padding-top: 0.5rem;
+    
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+  }
+
+  .copyrightText {
+    color: $white;
+    font-family: 'GT Pressura Mono';
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+  }
+
+  .footerList {
+    flex-direction: column;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+    }
+  }
+
+  .footerListItem {
+    display: flex;
+    font-family: 'GT Pressura Mono';
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    color: $white;
+    margin-right: 2rem;
+
+    .footerLink {
+      color: $white;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
