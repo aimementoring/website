@@ -1,0 +1,102 @@
+@import '../../../styles/base/variables';
+
+.navMicrositeWrapper {
+  z-index: 50;
+  top: 0;
+  width: 100%;
+  transition: $hoverTransition;
+  // position: fixed;
+  background-color: $white;
+}
+
+// :global(.headerFilled) {
+
+//   .navMicrositeWrapper {
+//     background-color: $white;
+//   }
+// }
+
+.navMicrosite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5em 1em;
+}
+
+.navMenuLinks {
+  display: flex;
+  align-items: center;
+  font-family: $body-font-family-bold;
+  font-size: 1rem;
+  letter-spacing: .002em;
+  line-height: 1.5;
+  font-weight: 400;
+
+  @media screen and (max-width: $md) {
+    display: none !important;
+  }
+
+  ul {
+    display: flex;
+
+    li.goingGlobalMenuItem {
+      margin: 0 1em;
+
+      a {
+        color: $black;
+        text-decoration: none;
+        transition: $hoverTransition;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  .list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .listItem {
+    display: inline-block;
+    position: relative;
+
+    &:hover .submenuWrapper {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.navLink {
+  background: transparent;
+  background-color: $color-primary;
+  border-radius: 3px;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "PoppinsBold";
+  font-size: 0.8rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  margin: 0 0 0 1em;
+  opacity: 1;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.1s linear;
+  vertical-align: baseline;
+
+  @media (min-width: $md) {
+    padding: 0.6em 1.7em;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $orange;
+  }
+}
