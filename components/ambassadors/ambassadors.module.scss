@@ -1,0 +1,277 @@
+@import "../../styles/base/variables";
+
+.fullWidthWrap {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.paragraph {
+  font-size: 14px;
+  color: $black;
+}
+
+.linkButton {
+  background-color: $brand-primary;
+  border-radius: $border-radius-button;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $feature-font-family;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2rem;
+  opacity: 1;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.1s linear;
+
+  &:hover {
+    background: $brand-primary-hover;
+    color: $white;
+    opacity: 1;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+}
+
+.mentorsSection {
+  background-color: $white;
+  padding: 60px 0 0;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  @media all and(min-width: $md) {
+    padding: 80px 0 90px;
+  }
+
+  .mentorsSectionWrapper {
+    max-width: 960px;
+    margin: 60px auto 0;
+    overflow: visible;
+
+    @media all and(min-width: $md) {
+      margin-top: initial;
+    }
+
+    .mentorSlideWrapper {
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1120px;
+      overflow: visible;
+      display: inline-block;
+
+      @media (min-width: $sm) {
+        width: 100%;
+      }
+
+      @media all and(min-width: $md) {
+        padding: 20px 20px 50px;
+        max-height: 430px;
+      }
+    }
+  }
+
+  .carouselTitle {
+    font-weight: normal;
+    position: relative;
+    z-index: 2;
+    color: $orange;
+    text-align: center;
+
+    @media all and(min-width: $md) {
+      text-align: left;
+      margin: 0 0 0 80px;
+      left: 2em;
+    }
+
+    strong {
+      color: $purple;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.08em;
+      left: 0;
+      top: 0;
+      @media all and(max-width: $md) {
+        font-size: 3.5rem;
+      }
+      @media all and(min-width: $md) {
+        left: -1.5em;
+        top: -0.3em;
+      }
+    }
+  }
+
+  .mentorImageWrapper {
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    justify-content: center;
+    float: none;
+
+    @media (min-width: $sm) {
+      width: 100%;
+      float: left;
+      box-sizing: border-box;
+    }
+
+    @media all and(min-width: $md) {
+      overflow: visible;
+      display: initial;
+      width: 50%;
+    }
+
+    .homepageMentorsImage {
+      transition: ease-in 0.1s transform;
+      clip-path: url(#svgScratchAmbassadorClipPath);
+      display: block;
+      position: relative;
+      width: 260px;
+      height: 260px;
+      background-blend-mode: overlay;
+      background-size: cover;
+      margin: 0 auto;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      @media all and(min-width: $md) {
+        width: 430px;
+        height: 430px;
+        display: inline-block;
+        margin: 0;
+        left: 2.5em;
+      }
+
+      @media all and(min-width: $lg) {
+        width: 450px;
+        height: 450px;
+      }
+    }
+  }
+
+  .ambassadorName {
+    font-size: 2rem;
+    font-style: normal;
+    margin-bottom: 0.5em;
+  }
+
+  .mentorUzo {
+    background-image:
+      url($cdnRoot+"assets/images/ambassadors/uzo_aduba.jpg"),
+      linear-gradient(
+        135deg,
+        rgba(49, 233, 255, 0.5) 0%,
+        rgba(220, 10, 255, 0.5) 100%
+      );
+  }
+
+  .mentorPatrick {
+    background-image:
+      url($cdnRoot+"assets/images/ambassadors/patrick_j_adams.jpg"),
+      linear-gradient(
+        135deg,
+        rgba(49, 233, 255, 0.5) 0%,
+        rgba(220, 10, 255, 0.5) 100%
+      );
+  }
+
+  .mentorIan {
+    background-image:
+      url($cdnRoot+"assets/images/ambassadors/ian_thorpe.jpg"),
+      linear-gradient(
+        135deg,
+        rgba(49, 233, 255, 0.5) 0%,
+        rgba(220, 10, 255, 0.5) 100%
+      );
+  }
+
+  .mentorContent {
+    padding: 120px 30px 60px;
+    position: relative;
+    top: -120px;
+    z-index: 1;
+
+    @media (min-width: $sm) {
+      box-sizing: border-box;
+      float: left;
+      width: 100%;
+    }
+
+    @media all and(min-width: $md) {
+      border-width: 20px;
+      float: right;
+      margin-right: 60px;
+      min-height: 420px;
+      padding: 50px;
+      top: -430px;
+      width: 66.66667%;
+    }
+
+    @media all and(min-width: 58em) {
+      width: 73%;
+    }
+
+    @media all and(min-width: $lg) {
+      width: 83.3%;
+      padding: 70px;
+      margin-right: 0;
+    }
+
+    .mentorContentWrapper {
+      text-align: center;
+
+      @media all and(min-width: $md) {
+        text-align: initial;
+        float: right;
+        width: 58.33333%;
+      }
+
+      .titleContainer {
+
+        @media all and(min-width: $md) {
+          width: 100%;
+        }
+
+        h5 {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  background-color: $white;
+  position: relative;
+
+  @media all and(min-width: $md) {
+    margin-top: -100px;
+  }
+
+  :global(.slick-dots) {
+    display: none;
+
+    li {
+      visibility: hidden;
+      position: relative;
+      display: inline-block;
+      margin: 0px 5px;
+      padding: 0px;
+    }
+  }
+}
