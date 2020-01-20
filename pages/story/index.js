@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
-import contentfulServer from '../../api/contentfulServer';
+import contentfulServer from '../../api/contentfulStories';
 import {
   formatDate,
   removeSpecialCharacters,
@@ -14,7 +14,6 @@ import styles from './story.module.scss';
 
 const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
-// this (route/page "story") needs to be redirected to stories is directly visited,
 const Story = (props) => {
   const { content, slug } = props;
 
