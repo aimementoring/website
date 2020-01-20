@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import COUNTRY_CODES from '../../utils/countryCodes';
 import { COUNTRIES_WITH_AIME_COMING_SOON } from '../../constants';
-import './beAMentor.scss';
+import './beAMentor.module.scss';
 
 const getCountryNameByCode = (countryCode) => {
   const countryFound = COUNTRY_CODES.find((country) => country.code === countryCode);
