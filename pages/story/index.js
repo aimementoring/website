@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import contentfulServer from '../../api/contentfulServer';
