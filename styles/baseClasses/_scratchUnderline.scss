@@ -1,0 +1,79 @@
+@import "../base/variables";
+
+.scratchUnderline {
+  background: linear-gradient(-45deg, #dc0aff, #31e9ff);
+  background-size: 200%;
+  clip-path: url(#svgScratchClipPath);
+  -webkit-animation: Gradient 3s ease infinite;
+  -moz-animation: Gradient 3s ease infinite;
+  animation: Gradient 3s ease infinite;
+
+  @-webkit-keyframes Gradient {
+
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @-moz-keyframes Gradient {
+
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes Gradient {
+
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  width: 100%;
+  display: block;
+  position: absolute;
+  z-index: -10;
+
+  top: $scratch-ul-top;
+  left: $scratch-ul-left;
+  padding: 0 $scratch-ul-padding-lr;
+  max-height: $scratch-ul-height;
+
+  @media all and(min-width: $md) {
+    top: calc(#{$scratch-ul-top} + 30px);
+    left: calc(#{$scratch-ul-left} - 10px);
+    padding: 0 (calc(#{$scratch-ul-padding-lr} + 10px));
+    max-height: calc(#{$scratch-ul-height} + 10px);
+  }
+
+  @media all and(min-width: $lg) {
+    top: calc(#{$scratch-ul-top} + 50px);
+    left: calc(#{$scratch-ul-left} - 20px);
+    padding: 0 (calc(#{$scratch-ul-padding-lr} + 20px));
+    max-height: calc(#{$scratch-ul-height} + 20px);
+  }
+}
