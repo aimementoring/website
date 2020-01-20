@@ -1,9 +1,0 @@
-@import '../../styles/base/variables';
-
-.footer-banner {
-  .banner-wrapper {
-    background: url($cdnRoot + 'assets/images/banner/footer-banner@2x.jpg') no-repeat top center / cover $darkest-purple;
-    height: 520px;
-    background-blend-mode: screen;
-  }
-}
