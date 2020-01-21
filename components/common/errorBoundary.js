@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Anchor from './link';
 import bugsnagClient from '../../utils/bugsnag';
+import IntercomChat from '../intercom';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class ErrorBoundary extends Component {
                   <p className="f-14 light pt2 c-white">
                     {'Sorry for any inconvenience. If you\'re seeing this often, please'}
                     {' '}
-                    <Anchor to="/contact"> contact us </Anchor>
+                    <IntercomChat />
                   </p>
                   <Anchor to="/home" as="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
                 </div>
