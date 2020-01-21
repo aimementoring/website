@@ -188,7 +188,7 @@ const About = () => (
               the range designed and inspired by kids to change the world. Our shop currently
               ships out of Australia, if you can’t wait to get your hands on it, it usually
               takes a few weeks to send over. And jump onto our Saturday Swag list to be the
-              first to know when AIME Apparel launches into the US in a legit way in 2019.
+              first to know when AIME Apparel launches into the US in a legit way in 2020.
             </Paragraph>
             <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="https://shop.aimementoring.com/">
             Shop Apparel
