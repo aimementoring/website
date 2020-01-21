@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import './beAMentor.module.scss';
 
-const RadioButton = dynamic(() => import(/* webpackChunkName 'RadioButton' */ 'aime-blueprint/lib/components/radioButton'));
+const RadioButton = dynamic(() => import('aime-blueprint/lib/components/radioButton'));
 
 const radioButtonsOptions = [
   {
