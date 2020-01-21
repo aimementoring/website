@@ -18,7 +18,7 @@ const WelcomeBox = () => (
         as mentors for marginalised youth and lead a revolution for them to rise up out of
         inequality. We&apos;ve been working with Aboriginal and Torres Strait islander
         kids in Australia
-        for the past 15 years and in 2019 we&apos;re working across Australia, Uganda, South Africa,
+        for the past 15 years and in 2020 we&apos;re working across Australia, Uganda, South Africa,
         Nigeria and the United States. Soon to be launching in Rwanda and Zimbabwe too. We
         understand that what we are fighting for is a global issue, and it takes a united effort to
         defeat systematic oppression. We are aware that these issues don’t exist just in our
