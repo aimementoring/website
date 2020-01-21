@@ -18,11 +18,11 @@ const BeAMentorForm = () => (
       </mark>
       <br />
       <br />
-      We&apos;ve got a team of gems, updating our mentor 2020 program&nbsp;
+      We&apos;ve got a team of gems, updating our online mentor program&nbsp;
       <strong>
         right now
       </strong>
-      ! So please hold tight with us a little bit longer and we&apos;ll
+      ! So please be patient with us a little bit longer and we&apos;ll
       have this page updated with your 2020 mentor application options
       before you know it.
       <br />
