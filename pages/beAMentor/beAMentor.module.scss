@@ -12,7 +12,13 @@
   }
 }
 
+.hero-banner--mentor {
+  background: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
+  background-size: cover;
+}
+
 .banner-wrapper {
+  flex-direction: column;
   .bannerHeading {
     strong {
       left: initial;
@@ -74,6 +80,14 @@
 
     @media only screen and (min-width: $md) {
       grid-area: HEADER;
+    }
+
+    .yearWelcomeHeading {
+      strong {
+        left: initial;
+        line-height: inherit;
+        top: 0.1em;
+      }
     }
   }
 
