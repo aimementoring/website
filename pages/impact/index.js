@@ -3,14 +3,11 @@ import dynamic from 'next/dynamic';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import './impact.scss';
+import IntercomChat from '../../components/intercom';
 
 const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
-const handleShowIntercom = () => {
-  window.Intercom('show');
-};
 
 const Impact = () => (
   <Layout>
@@ -351,14 +348,7 @@ const Impact = () => (
             <h2 className="center">
               <span className="f-24 feature-font-family">Want to create change?</span>
             </h2>
-            <button
-              type="button"
-              onClick={handleShowIntercom}
-              className="ghost-btn bg-brand-primary center mb2"
-              aria-label="partner with us"
-            >
-              <span className=" download-btn-text">Partner with us</span>
-            </button>
+            <IntercomChat classNames="ghost-btn bg-brand-primary center mb2" label="partner with us" />
           </div>
         </section>
       </div>
