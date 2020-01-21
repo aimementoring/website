@@ -11,11 +11,8 @@ const WelcomeBox = () => (
   <div className="welcome-box">
     <div className="welcome-text-box left">
       <Title type="h4Title" className={styles.pageIntroHeading} theme={process.env.REACT_APP_THEME}>
-        Welcome to the world of mentoring.
-      </Title>
-      <Paragraph>
         We believe a mentor can change someone’s life through a permanent shift in mindset.
-      </Paragraph>
+      </Title>
       <Paragraph>
         We want to ignite the flame within university/college students across the planet to rise up
         as mentors for marginalised youth and lead a revolution for them to rise up out of
