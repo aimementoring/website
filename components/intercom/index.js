@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
 
-const IntercomChat = () => {
+const IntercomChat = (props) => {
+  const { classNames, label } = props;
+
   const intercomChat = () => {
     (() => {
       const w = window;
@@ -42,19 +45,44 @@ const IntercomChat = () => {
       // change 'hide_default_launcher: false' if you want to show the round chat icon in
       // bottom right of screen then go to line 106 and comment that line.
       hide_default_launcher: true,
-      custom_launcher_selector: '.intercom-button-nav',
       alignment: 'right',
       horizontal_padding: 20,
       vertical_padding: 20,
       background_color: 'rgba(255,255,255, 0.7)',
     });
+    // eslint-disable-next-line no-console
   };
 
   useEffect(() => {
     intercomChat();
   }, []);
 
-  return <span />;
+  const handleShowIntercom = () => {
+    window.Intercom('showNewMessage');
+  };
+
+  return (
+    <span>
+      <button
+        type="button"
+        aria-label={label}
+        className={classNames && classNames}
+        onClick={handleShowIntercom}
+      >
+        {label}
+      </button>
+    </span>
+  );
+};
+
+IntercomChat.propTypes = {
+  label: PropTypes.string,
+  classNames: PropTypes.string,
+};
+
+IntercomChat.defaultProps = {
+  label: 'Get in Touch',
+  classNames: 'navBtn',
 };
 
 export default IntercomChat;
