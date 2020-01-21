@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import styles from './heroBannerHomepage.module.scss';
 
 const HeroBannerAustralia = () => (
@@ -11,6 +12,7 @@ const HeroBannerAustralia = () => (
           <strong>mentor</strong>
           today
         </Title>
+        <Button theme={process.env.REACT_APP_THEME} type="link" url="/be-a-mentor">Apply now</Button>
       </div>
     </div>
   </div>
