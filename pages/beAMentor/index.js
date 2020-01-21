@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
-// import { Components } from 'aime-blueprint';
-// import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { uploadMentorEOI, getUniversities } from '../../services/portalApi';
@@ -14,11 +12,6 @@ import {
 } from '../../utils/expresionOfInterest';
 import COUNTRY_CODES from '../../utils/countryCodes';
 import './beAMentor.module.scss';
-
-// const {
-//   Title,
-//   Button,
-// } = Components;
 
 const Loading = dynamic(() => import(/* webpackChunkName 'Loading' */ 'aime-blueprint/lib/components/loading'));
 const UniversityLinks = dynamic(() => import(/* webpackChunkName 'UniversityLinks' */ './universityLinks'));
