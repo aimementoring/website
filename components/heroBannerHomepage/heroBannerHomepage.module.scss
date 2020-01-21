@@ -12,6 +12,7 @@
 
     strong {
       font-size: 5rem;
+      line-height: 0.6em;
       left: inherit;
       top: inherit;
 
@@ -36,7 +37,7 @@
 .bannerWrapper {
   background:
     url($cdnRoot+"assets/images/banner/become-a-mentor-today.png")
-    no-repeat top center $watermelon;
+    no-repeat top center $purple;
   align-items: center;
   background-attachment: fixed;
   background-size: auto 120%;
