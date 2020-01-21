@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
@@ -53,9 +52,5 @@ const StandardHeader = () => (
     </div>
   </div>
 );
-
-StandardHeader.propTypes = {
-  handleShowIntercom: PropTypes.func.isRequired,
-};
 
 export default StandardHeader;

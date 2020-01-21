@@ -14,4 +14,9 @@
   text-decoration: underline;
   font-size: 0.85rem;
   line-height: 1em;
+  cursor: pointer;
+
+  &:hover {
+    color: #c700ff;
+  }
 }

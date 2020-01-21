@@ -5,7 +5,7 @@ import styles from './navItem.module.scss';
 import IntercomChat from '../intercom';
 
 const NavItem = ({
-  label, className, target, as, to, isExternal,
+  label, className, target, as, to,
 }) => {
   const restProps = {
     'aria-label': label,
@@ -18,22 +18,27 @@ const NavItem = ({
   if (as) {
     restProps.as = as;
   }
+
+  const rule = new RegExp('^https?://', 'i');
+  const linkTest = rule.test(to) ? 'external' : 'internal';
+
   return (
     <li className={styles.listItem} key={to}>
-      {to === null && isExternal === null
-        && (<IntercomChat classNames={styles.itemLink} />)}
-      <>
-        {
-          isExternal ? (
-            <a
-              href={to}
-              {...restProps}
-            >
-              {/* eslint-disable-next-line react/no-danger */}
-              <span dangerouslySetInnerHTML={{ __html: label }} />
-            </a>
-          ) : (to !== null
-            && (
+      {!to ? <IntercomChat classNames={styles.itemLink} />
+        : (
+          <>
+            {
+              linkTest && (
+                <a
+                  href={to}
+                  {...restProps}
+                >
+                  {/* eslint-disable-next-line react/no-danger */}
+                  <span dangerouslySetInnerHTML={{ __html: label }} />
+                </a>
+              )
+            }
+            {!linkTest && (
               <Anchor
                 to={to}
                 {...restProps}
@@ -41,11 +46,9 @@ const NavItem = ({
                 {/* eslint-disable-next-line react/no-danger */}
                 <span dangerouslySetInnerHTML={{ __html: label }} />
               </Anchor>
-            )
-          )
-        }
-
-      </>
+            )}
+          </>
+        )}
     </li>
   );
 };
