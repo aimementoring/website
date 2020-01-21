@@ -177,12 +177,6 @@ export const CTA_US_HOMEPAGE = [
     button: 'Get to Know AIME',
     description: 'Get to know AIME. Who we are and why we do what we do.',
   },
-  {
-    title: 'Contact',
-    link: '/contact',
-    button: 'Contact',
-    description: 'If you wanna know more reach out and we\'ll do our best to answer your questions',
-  },
 ];
 
 export const TALENT_HEADER_MENU_ITEMS = [
