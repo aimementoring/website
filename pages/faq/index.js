@@ -6,6 +6,7 @@ import Anchor from '../../components/common/link';
 import { getEntries } from '../../services/craftAPI';
 import { isClientSide } from '../../utils/utilities';
 import scrollToComponent from '../../utils/scrollToComponent';
+import IntercomChat from '../../components/intercom';
 
 const FAQs = ({ faqsData, categories }) => {
   const [state, setState] = useState({});
@@ -14,10 +15,6 @@ const FAQs = ({ faqsData, categories }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleShowIntercom = () => {
-    window.Intercom('show');
-  };
 
   let hash = '';
   if (isClientSide()) {
@@ -124,7 +121,7 @@ const FAQs = ({ faqsData, categories }) => {
                 {`, thank you for wanting to know about AIME. We’ll do our best
                 to front foot some of the common questions. If we don’t nail them all, feel free
                 to `}
-                <button onClick={handleShowIntercom} type="button" aria-label="Ping us a note">ping us a note</button>
+                <IntercomChat label="ping us a note" />
                 {`. Your questions help us refine our
                 answers and we'll use them to update this space and help everyone to understand
                 AIME as quickly as possible.`}
