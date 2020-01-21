@@ -21,10 +21,12 @@ const NavItem = ({
 
   const rule = new RegExp('^https?://', 'i');
   const linkTest = rule.test(to) ? 'external' : 'internal';
+  const labelCheck = label.indexOf('Become a Partner') > -1
+    ? 'Become a Partner' : 'Get in Touch';
 
   return (
     <li className={styles.listItem} key={to}>
-      {!to ? <IntercomChat classNames={styles.itemLink} />
+      {!to ? <IntercomChat classNames={styles.itemLink} label={labelCheck} />
         : (
           <>
             {

@@ -19,9 +19,9 @@ const Footer = ({ location }) => {
           label: 'Become a <strong>Mentor</strong>',
         },
         {
-          to: 'https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved',
+          to: null,
           target: '_blank',
-          label: 'Become a <strong>Partner</strong>',
+          label: 'Become a Partner',
         },
         {
           to: '/donate',
@@ -60,11 +60,6 @@ const Footer = ({ location }) => {
         {
           to: '/positions',
           label: 'Work with AIME',
-        },
-        {
-          to: 'https://faqs.aimementoring.com/en/ ',
-          target: '_blank',
-          label: 'FAQs',
         },
         {
           to: null,
