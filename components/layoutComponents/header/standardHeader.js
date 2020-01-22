@@ -13,6 +13,7 @@ const StandardHeader = () => (
   <div>
     <div className={styles.navHiring}>
       Hey mate! Welcome to our new beta site. Please be patient with us while we perfect it
+      &nbsp;
       <span role="img" aria-label="kissing face with squinting eyes">
         😙
       </span>
