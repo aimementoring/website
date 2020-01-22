@@ -78,10 +78,6 @@
     "videojs-contrib-hls": "5.14.1"
   },
   "devDependencies": {
-    "@modus/gimbal": "^1.2.6",
-    "@modus/gimbal-plugin-axe": "^1.2.6",
-    "@modus/gimbal-plugin-last-value": "^1.2.6",
-    "@modus/gimbal-plugin-sqlite": "^1.2.6",
     "babel-eslint": "^10.0.3",
     "cross-env": "^6.0.3",
     "eslint": "^6.5.1",
@@ -92,8 +88,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^3.0.9",
     "lighthouse": "^5.4.0",
-    "lint-staged": "^10.0.0-1",
-    "sqlite3": "^4.1.1"
+    "lint-staged": "^10.0.0-1"
   },
   "lint-staged": {
     "**/*.{js,jsx}": "eslint --ext .js"
