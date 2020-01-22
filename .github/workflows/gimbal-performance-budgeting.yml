@@ -58,7 +58,5 @@ jobs:
         run: yarn run build
       - name: Performance Budgeting Regression Testing
         uses: ModusCreateOrg/gimbal/action@master
-        with:
-          args: .next
         env:
           GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
