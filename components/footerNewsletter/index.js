@@ -41,12 +41,13 @@ const FooterNewsletter = () => (
         >
           {/* <input type="hidden" name="utf8" value="✓" />
           <input type="hidden" name="submissionmessage" value="footernewslettersubscription" /> */}
-          {/* need to uncomment the below - couldn't push up because of eslint errors */}
+          {/* need to uncomment the below -
+          couldn't push up because of eslint errors */}
           {/* <LabeledInput
             type="email"
             name="EMAIL"
             id="mce-EMAIL"
-            value={initalState.value}
+            value={state.boop}
             onChangeFunction={updateValue}
             label="Email address"
             theme={process.env.REACT_APP_THEME}
@@ -61,8 +62,10 @@ const FooterNewsletter = () => (
           {/* <div style="position: absolute; left: -5000px;" aria-hidden="true">
             <input type="text" name="b_ce86e2fc6ca77a51919157a03_30964260b5"
             tabindex="-1" value=""/>
-          </div> */}
-          <button type="submit" className={styles.submitButton} name="subscribe" aria-label="Subscribe" />
+          </div>
+          <button type="submit"
+          className={styles.submitButton} name="subscribe"
+          aria-label="Subscribe" /> */}
         </form>
         {/* this is the mailchimp default form code for reference
         <form
@@ -89,5 +92,6 @@ const FooterNewsletter = () => (
     </div>
   </div>
 );
+// };
 
 export default FooterNewsletter;
