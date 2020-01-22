@@ -16,7 +16,7 @@ const Footer = ({ location }) => {
         {
           to: '/beAMentor',
           as: '/be-a-mentor',
-          label: 'Become a <strong>Mentor</strong>',
+          label: 'Become a Mentor',
         },
         {
           to: null,
