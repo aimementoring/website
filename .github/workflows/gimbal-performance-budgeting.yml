@@ -49,7 +49,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: '12.x'
       - name: Install yarn dependencies
         run: yarn
       - name: Check environment variables
@@ -58,5 +58,7 @@ jobs:
         run: yarn run build
       - name: Performance Budgeting Regression Testing
         uses: ModusCreateOrg/gimbal/action@master
+        with:
+          args: .next
         env:
           GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
