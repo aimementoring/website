@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from '../common/link';
 import styles from './navItem.module.scss';
+import IntercomChat from '../intercom';
 
 const NavItem = ({
-  label, className, target, as, to, type, action,
+  label, className, target, as, to,
 }) => {
   const restProps = {
     'aria-label': label,
@@ -17,26 +18,38 @@ const NavItem = ({
   if (as) {
     restProps.as = as;
   }
+
+  const rule = new RegExp('^https?://', 'i');
+  const linkTest = rule.test(to) ? 'external' : 'internal';
+  const labelCheck = label.indexOf('Become a Partner') > -1
+    ? 'Become a Partner' : 'Get in Touch';
+
   return (
     <li className={styles.listItem} key={to}>
-      {type === 'button'
-        ? (
-          <button
-            onClick={action}
-            type="button"
-            {...restProps}
-          >
-            {/* eslint-disable-next-line react/no-danger */}
-            <span dangerouslySetInnerHTML={{ __html: label }} />
-          </button>
-        ) : (
-          <Anchor
-            to={to}
-            {...restProps}
-          >
-            {/* eslint-disable-next-line react/no-danger */}
-            <span dangerouslySetInnerHTML={{ __html: label }} />
-          </Anchor>
+      {!to ? <IntercomChat classNames={styles.itemLink} label={labelCheck} />
+        : (
+          <>
+            {
+              linkTest && (
+                <a
+                  href={to}
+                  {...restProps}
+                >
+                  {/* eslint-disable-next-line react/no-danger */}
+                  <span dangerouslySetInnerHTML={{ __html: label }} />
+                </a>
+              )
+            }
+            {!linkTest && (
+              <Anchor
+                to={to}
+                {...restProps}
+              >
+                {/* eslint-disable-next-line react/no-danger */}
+                <span dangerouslySetInnerHTML={{ __html: label }} />
+              </Anchor>
+            )}
+          </>
         )}
     </li>
   );
@@ -48,8 +61,7 @@ NavItem.propTypes = {
   target: PropTypes.string,
   as: PropTypes.string,
   to: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'link']),
-  action: PropTypes.func,
+  isExternal: PropTypes.bool,
 };
 
 NavItem.defaultProps = {
@@ -57,8 +69,7 @@ NavItem.defaultProps = {
   target: null,
   as: null,
   to: '',
-  type: 'link',
-  action: () => {},
+  isExternal: null,
 };
 
 export default NavItem;
