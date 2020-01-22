@@ -19,6 +19,26 @@
   span {
     font-style: italic;
   }
+
+  button {
+    color:#FF6187;
+    font-weight: bold;
+    letter-spacing: 0.001em;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 1;
+    transition: ease-in .1s opacity;
+    
+    &:hover {
+      color: #c700ff;
+    }
+  }
 }
 
 .redirectHide {
