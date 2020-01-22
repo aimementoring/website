@@ -12,7 +12,9 @@ const MobileMenu = dynamic(() => import('../mobileMenu'));
 const StandardHeader = () => (
   <div>
     <div className={styles.navHiring}>
-      Hey mate! Welcome to our new beta site. Please be patient with us while we perfect it
+      Hey mate!
+      This site’s in draft mode.
+      Please be patient with us while it’s updated to reflect AIME in 2020 & beyond
       &nbsp;
       <span role="img" aria-label="kissing face with squinting eyes">
         😙
