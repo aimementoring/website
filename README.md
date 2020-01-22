@@ -108,3 +108,4 @@ Now follow next steps:
 # IMPORTANT ON STAGING AND MASTER
 
 1. Don't forget to add **PUBLIC_URL** in environment variables on Heroku for Staging and Production, because are uploading next static folder there to improve the performance, and it is important to load those files from the CDN instead of loading them locally.
+
