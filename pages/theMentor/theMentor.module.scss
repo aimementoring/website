@@ -16,6 +16,19 @@
   .banner-wrapper {
     background-size: cover;
   }
+  .mentorBannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .mentorPara {
+      margin: 2em 0;
+      max-width: 30em;
+      color: $white;
+      text-align: center;
+    }
+  }
 
   .full-height {
     height: auto;
@@ -29,10 +42,6 @@
     color: $white;
     font-family: $feature-font-family;
     font-weight: 900;
-  }
-
-  p {
-    margin-bottom: 20px;
   }
 
   &-highlight-text {
