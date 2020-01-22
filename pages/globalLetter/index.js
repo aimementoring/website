@@ -1,6 +1,7 @@
 import React from 'react';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
+import IntercomChat from '../../components/intercom';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -171,9 +172,7 @@ const GlobalLetter = () => (
       </div>
 
       <div className="wrap-md w100 clearfix">
-        <Anchor to="/contact" className="bg-blue left basic-btn bold my2" style={{ border: '0' }}>
-          I&#039;d like AIME at my University
-        </Anchor>
+        <IntercomChat classNames="bg-blue left basic-btn bold my2" style={{ border: '0' }} label="I&#039;d like AIME at my University" />
       </div>
 
       <div className="references">
