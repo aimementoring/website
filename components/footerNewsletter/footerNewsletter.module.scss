@@ -1,5 +1,10 @@
 @import '../../styles/base/variables';
 
+.absolutelyHide {
+  position: absolute;
+  left: -5000px;
+}
+
 .newsletterContainer {
   display: flex;
   justify-content: flex-start;
@@ -28,19 +33,34 @@
       position: relative;
     }
   }
+  
+  .subscribeInput {
+    height: 3rem;
+
+    &:focus ~ label {
+      transform: translate3d(0, -1.4em, 0) scale(0.75);
+    }
+  }
+
+  label {
+    top: 1.2em;
+  }
 
   .submitButton {
-    height: 60px;
-    width: 60px;
+    height: 3em;
+    width: 3em;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0 2rem;
-    background-color: #5E6366;
+    padding: 0 1.2em;
+    background-color: $purple;
+    border-color: $purple;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     background-image: url($cdnRoot+"assets/images/arrow.svg");
-    font-size: 16px;
+    font-size: 1em;
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 1em;
     background-position: 50%;
     display: flex;
     align-items: center;
