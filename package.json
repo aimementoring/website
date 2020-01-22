@@ -33,6 +33,8 @@
     "@bugsnag/js": "^6.4.3",
     "@bugsnag/plugin-react": "^6.4.0",
     "@modus/gimbal-plugin-axe": "^1.2.6",
+    "@modus/gimbal-plugin-last-value": "^1.2.6",
+    "@modus/gimbal-plugin-sqlite": "^1.2.6",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "aime-blueprint": "^2.2.0",
