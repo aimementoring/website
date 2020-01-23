@@ -243,6 +243,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: $white;
+  font-family: $body-font-family;
+  
+  h3 {
+    font-family: $body-font-family;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+    display: block;
+    font-style: normal;
+  }
 }
 
 .welcome-video {
