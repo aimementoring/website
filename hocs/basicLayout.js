@@ -6,7 +6,7 @@ import ErrorBoundary from '../components/common/errorBoundary';
 import Header from '../components/layoutComponents/header';
 import Footer from '../components/layoutComponents/footer';
 import Logos from '../components/layoutComponents/logos';
-import { getSeoTags } from '../services/craftAPI';
+import SEO_TAGS from '../constants/seoTags';
 import './basicLayout.scss';
 
 const Layout = ({ router, children }) => {
@@ -14,9 +14,10 @@ const Layout = ({ router, children }) => {
 
   const addSeoAndRedirects = () => {
     const { pathname } = router;
-    getSeoTags(pathname.split('/')[1].length > 1 ? pathname : '').then(
-      (seoTags) => { setSeo(seoTags); },
-    );
+
+    if (pathname in SEO_TAGS) {
+      setSeo(SEO_TAGS[pathname]);
+    }
   };
 
   useEffect(() => {
