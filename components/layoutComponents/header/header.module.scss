@@ -146,6 +146,7 @@
 .submenuLink {
   display: block;
   border-top: 1px solid $purple;
+  border-bottom: none !important;
   font-family: $body-font-family;
   font-size: 0.85em;
   font-weight: bold;
@@ -292,7 +293,7 @@
     }
 
     &:hover a {
-      color: $purple;
+      border-bottom: 2px solid $white;
     }
   }
 
@@ -312,6 +313,8 @@
     text-decoration: none;
     background: none;
     border: none;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     
     &.active {
@@ -322,14 +325,21 @@
 
     &.activeItem, 
     &:hover {
-      color: $purple;
+      border-bottom: 2px solid $white;
     }
   }
 }
 
-.headerFilled .navBtn,
-.headerFilled .intercom-button-nav {
-  color: $black;
+.headerFilled {
+  .navBtn,
+  .intercom-button-nav {
+    color: $black;
+  }
+  .listItem:hover .navBtn,
+  .inlineListItem:hover .navBtn {
+    border-bottom: 2px solid $purple;
+  }
+
 }
 
 .navLink {
