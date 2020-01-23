@@ -21,6 +21,7 @@ export const MAIN_CAMPAIGNS = {
 
 export const getRaiselyToken = async () => {
   const raiselyToken = getFromStorage('raisely_token');
+  console.log('FROM STORAGE - ', { raiselyToken });
 
   return new Promise((resolve, reject) => {
     if (raiselyToken) {
@@ -35,12 +36,14 @@ export const getRaiselyToken = async () => {
         },
       })
         .then((jsonData) => {
+          console.log('FROM LOGIN - ', { jsonData, API });
           const { token } = jsonData;
           setOnStorage('raisely_token', token);
           resolve(token);
         })
         .catch((error) => {
           /* eslint no-param-reassign: "off" */
+          console.log('FROM LOGIN WITH ERROR - ', { error, API });
           error.message = `Getting Raisely token: ${error.message}`;
           reject(error);
           /* eslint no-param-reassign: "error" */
@@ -66,6 +69,7 @@ export const getCampaignDonations = async (campaign) => {
 
   return new Promise((resolve, reject) => {
     getRaiselyToken().then((token) => {
+      console.log('DONATE TOKEN - ', { token });
       request(url, { headers: { Authorization: `Bearer ${token}` } })
         .then((response) => resolve(response.data))
         .catch((error) => reject(error));
