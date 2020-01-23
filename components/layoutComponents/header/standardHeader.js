@@ -11,9 +11,15 @@ const MobileMenu = dynamic(() => import('../mobileMenu'));
 
 const StandardHeader = () => (
   <div>
-    {/* <Anchor className={styles.navHiring} to="/positions">
-      We are hiring!
-    </Anchor> */}
+    <div className={styles.navHiring}>
+      Hey mate!
+      This site’s in draft mode.
+      Please be patient with us while it’s updated to reflect AIME in 2020 & beyond
+      &nbsp;
+      <span role="img" aria-label="kissing face with squinting eyes">
+        😙
+      </span>
+    </div>
     <div className={styles.siteHeaderContainer}>
       <div className={styles.logoContainer}>
         <Logo />
