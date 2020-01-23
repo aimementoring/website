@@ -14,7 +14,7 @@ const CountryOutsideProgram = ({ countrySelected }) => {
   const countryName = getCountryNameByCode(countrySelected);
   return (
     <div>
-      <p className="pt3">
+      <p>
         {COUNTRIES_WITH_AIME_COMING_SOON.indexOf(countrySelected) > -1 ? (
           `AIME is going to be in ${countryName}
             soon and we will need Mentors! We can't give you an exact date but fill in your details and we will be in touch :)`
