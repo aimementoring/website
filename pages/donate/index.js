@@ -25,20 +25,7 @@ class Donate extends PureComponent {
   }
 
   componentDidMount() {
-    const { campaigns } = this.props;
-
-    const mains = Object.keys(MAIN_CAMPAIGNS);
-    let pickedCampaign = '';
-    if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
-      pickedCampaign = Router.query.campaign;
-    }
-    const filteredCampaigns = campaigns.filter((item) => mains.indexOf(item.uuid) > -1);
-    this.setState({
-      campaigns: filteredCampaigns,
-      selectedCampaign:
-        campaigns.find((item) => item.path === pickedCampaign)
-        || filteredCampaigns.find((item) => item.path === 'aimedonations'),
-    });
+    this.getFilteredCampaigs();
   }
 
   componentDidUpdate() {
@@ -53,6 +40,28 @@ class Donate extends PureComponent {
         }
       };
     }
+  }
+
+  getFilteredCampaigs = async () => {
+    let { campaigns } = this.props;
+
+    const mains = Object.keys(MAIN_CAMPAIGNS);
+    let pickedCampaign = '';
+    if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
+      pickedCampaign = Router.query.campaign;
+    }
+
+    console.log({ campaigns });
+    if (campaigns.length === 0) {
+      campaigns = await getActiveCampaigns();
+    }
+    const filteredCampaigns = campaigns.filter((item) => mains.indexOf(item.uuid) > -1);
+    this.setState({
+      campaigns: filteredCampaigns,
+      selectedCampaign:
+        campaigns.find((item) => item.path === pickedCampaign)
+        || filteredCampaigns.find((item) => item.path === 'aimedonations'),
+    });
   }
 
   onOpenCustomPopup = (e) => {
