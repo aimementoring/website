@@ -6,7 +6,7 @@ import NavList from '../../navList';
 import FooterNewsletter from '../../footerNewsletter';
 import styles from './footer.module.scss';
 
-const Footer = ({ location, handleShowIntercom }) => {
+const Footer = ({ location }) => {
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   const currentYear = moment().year();
   const FOOTER_LINKS = [
@@ -16,12 +16,12 @@ const Footer = ({ location, handleShowIntercom }) => {
         {
           to: '/beAMentor',
           as: '/be-a-mentor',
-          label: 'Become a <strong>Mentor</strong>',
+          label: 'Become a Mentor',
         },
         {
-          to: 'https://faqs.aimementoring.com/en/articles/3404540-how-do-i-get-involved',
+          to: null,
           target: '_blank',
-          label: 'Become a <strong>Partner</strong>',
+          label: 'Become a Partner',
         },
         {
           to: '/donate',
@@ -61,15 +61,9 @@ const Footer = ({ location, handleShowIntercom }) => {
           label: 'Work with AIME',
         },
         {
-          to: 'https://faqs.aimementoring.com',
+          to: null,
           target: '_blank',
-          label: 'FAQs',
-        },
-        {
-          type: 'button',
-          action: handleShowIntercom,
-          label: 'Contact',
-          className: 'intercom-button intercom-button-footer',
+          label: 'Get in touch',
         },
       ],
     },
@@ -122,7 +116,6 @@ Footer.propTypes = {
     hash: PropTypes.string,
     pathname: PropTypes.string,
   }).isRequired,
-  handleShowIntercom: PropTypes.func.isRequired,
 };
 
 export default Footer;
