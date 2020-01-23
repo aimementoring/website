@@ -48,7 +48,7 @@ const IntercomChat = (props) => {
       alignment: 'right',
       horizontal_padding: 20,
       vertical_padding: 20,
-      background_color: 'rgba(255,255,255, 0.7)',
+      background_color: '#9135F0',
     });
     // eslint-disable-next-line no-console
   };
