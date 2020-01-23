@@ -14,15 +14,17 @@
 
 .navHiring {
   color: $white;
-  background: $cmyk-pink;
-  padding: 0.25em;
+  background: $magenta;
+  padding: 0.75em;
   display: block;
   text-align: center;
+  font-size: 0.9em;
+  font-family: $body-font-family;
 
   &:hover {
     color: $white;
     text-decoration: none;
-  }
+  }  
 }
 
 .submenuArrow {
