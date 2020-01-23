@@ -21,7 +21,12 @@ export const MAIN_CAMPAIGNS = {
 
 export const getRaiselyToken = async () => {
   const raiselyToken = getFromStorage('raisely_token');
-  console.log('FROM STORAGE - ', { raiselyToken });
+  console.log('FROM STORAGE - ', {
+    raiselyToken,
+    REACT_APP_DONATE_USERNAME: process.env.REACT_APP_DONATE_USERNAME,
+    REACT_APP_DONATE_PASSWORD: process.env.REACT_APP_DONATE_PASSWORD,
+    REACT_APP_DONATE_ORGANISATION_UUID: process.env.REACT_APP_DONATE_ORGANISATION_UUID,
+  });
 
   return new Promise((resolve, reject) => {
     if (raiselyToken) {
