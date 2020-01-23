@@ -1,6 +1,6 @@
 @import "../../styles/base/variables";
 
-.eoi-intro-section {
+.mentorEOIContainer {
 
   @media only screen and (min-width: $md) {
     padding: 0 2em;
@@ -12,11 +12,61 @@
   }
 }
 
-.radio-buttons-space {
-  margin-top: 1rem;
+.heroBannerMentor {
+  background: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
+  background-size: cover;
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  padding: 35px 0;
+
+  @media screen and (min-width: $sm) {
+    padding: 0;
+    height: 62vh;
+  }
+
+  .banWrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .banContentWrapper {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .bannerHeading {
+      color: $white;
+      strong {
+        left: initial;
+      }
+    }
+  }
 }
 
-.welcome-text-box {
+.pageIntroHeading {
+  margin-bottom: 1em;
+}
+
+.countryEmojisWrapper {
+  position: relative;
+  font-size: 1.5rem;
+  transform: rotate(-9deg);
+  display: inline-block;
+  margin-top: 1em;
+  left: -0.8em;
+}
+
+.welcomeBeAMentorContent {
+  float: left;
 
   @media only screen and (min-width: $md) {
     grid-area: WELCOME-INFO;
@@ -24,9 +74,16 @@
   }
 }
 
-.be-a-mentor--box {
+.beAMentorContainer {
 
-  .welcome-box {
+  .fullWidthWrap {
+    position: relative;
+    max-width: 78em;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .welcomeBeAMentor {
     padding: 2em 1.5em 1em;
     display: flex;
     flex-direction: column;
@@ -42,36 +99,27 @@
     }
   }
 
-  .css-1492t68 {
-    position: initial;
-    overflow: inherit;
-    top: inherit;
-    transform: inherit;
-    color: $brand-primary;
-  }
-
   p {
     font-size: 0.9rem;
     margin-bottom: 1.5em;
     line-height: 1.5em;
   }
 
-  .year-header {
+  .beAMentorYearHeader {
     padding-top: 2.5rem;
     z-index: 14;
+    text-align: center;
 
     @media only screen and (min-width: $md) {
       grid-area: HEADER;
     }
-  }
 
-  .highlight-text__med {
-    font-size: 4rem;
-    line-height: 2rem;
-
-    @media screen and (min-width: $sm) {
-      font-size: 4rem;
-      line-height: 3rem;
+    .yearWelcomeHeading {
+      strong {
+        left: initial;
+        line-height: inherit;
+        top: 0.1em;
+      }
     }
   }
 
@@ -87,9 +135,11 @@
   }
 }
 
-.form-container {
+.beAMentorFormWrapper {
   background-color: $lilac;
   padding: 3em 1.5em 5em;
+  margin: 0 auto;
+  padding: 0 3em;
 
   .input {
     background-color: $white;
@@ -114,7 +164,6 @@
   }
 }
 
-.form-question-heading,
 .select-auto-complete-country {
   font-family: "PoppinsBlackItalic";
   font-size: 1rem;
@@ -218,14 +267,22 @@
 
 // TODO: Move general styles to video componenet
 
-.video-wrapper {
+.videoBeAMentor {
   position: relative;
   padding-bottom: 56.25%; // 16:9
   padding-top: 30px;
   height: 0;
   overflow: hidden;
 
-  .video-banner {
+  @media only screen and (min-width: $md) {
+    grid-area: WELCOME-VIDEO;
+  }
+
+  .videoBanner {
+    background:
+      linear-gradient(#1a0024de, #1a0024c4),
+      url($cdnRoot+"assets/images/be-a-mentor/mentor_recruitment_video_bg.jpg")
+      50% 50% / cover !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -234,38 +291,8 @@
     clip-path: none;
     cursor: pointer;
     transition: all 0.3s ease-in;
-  }
-}
-
-.video-banner-overlay {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: $white;
-  font-family: $body-font-family;
-  
-  h3 {
-    font-family: $body-font-family;
-    text-transform: uppercase;
-    margin: 0.5em 0;
-    display: block;
-    font-style: normal;
-  }
-}
-
-.welcome-video {
-
-  @media only screen and (min-width: $md) {
-    grid-area: WELCOME-VIDEO;
-  }
-
-  .video-banner {
-    background:
-      linear-gradient(#1a0024de, #1a0024c4),
-      url($cdnRoot+"assets/images/be-a-mentor/mentor_recruitment_video_bg.jpg")
-      50% 50% / cover !important;
+    display: flex;
+    border-radius: 3px;
 
     &:hover {
       background:
@@ -277,33 +304,30 @@
         50% 50% / cover !important;
     }
   }
+
 }
 
-.intro-video {
+.videoBannerOverlay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+  font-family: $body-font-family;
 
-  @media only screen and (min-width: $sm) {
-    grid-column: 10 / span 8;
-    grid-row: 3 / span 1;
+  .vidPlayBtn {
+    text-align: center;
+    margin: 2em auto 1em;
+    width: 4em;
   }
 
-  .video-banner {
-    background:
-      linear-gradient(#1a0024de, #1a0024c4),
-      url($cdnRoot+"assets/images/campaigns/hooded-scholar/hs-video-image-dark.jpg")
-      50% 50% / cover !important;
-
-    &:hover {
-      background:
-        linear-gradient(
-          rgba(118, 3, 219, 0.6),
-          rgba(118, 3, 219, 0.6)
-        ),
-        url($cdnRoot+"assets/images/campaigns/hooded-scholar/hs-video-image-dark.jpg")
-        50% 50% / cover !important;
-    }
+  h3 {
+    font-family: $body-font-family;
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
   }
-}
-
-.off-center {
-  left: -0.8em;
 }
