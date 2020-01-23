@@ -2,12 +2,16 @@ const myOwnStorage = {};
 
 // inspired by this https://michalzalecki.com/why-using-localStorage-directly-is-a-bad-idea/
 function isSupported(storage) {
-  try {
-    const key = '__some_key_we_are_just_using_to_check__';
-    storage.setItem(key, key);
-    storage.removeItem(key);
-    return true;
-  } catch (e) {
+  if (storage) {
+    try {
+      const key = '__some_key_we_are_just_using_to_check__';
+      storage.setItem(key, key);
+      storage.removeItem(key);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  } else {
     return false;
   }
 }
