@@ -8,8 +8,8 @@ const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '.
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const WelcomeBox = () => (
-  <div className="welcome-box">
-    <div className="welcome-text-box left">
+  <div className={styles.welcomeBeAMentor}>
+    <div className={styles.welcomeBeAMentorContent}>
       <Title type="h4Title" className={styles.pageIntroHeading} theme={process.env.REACT_APP_THEME}>
         We believe a mentor can change someone’s life through a permanent shift in mindset.
       </Title>
@@ -36,18 +36,17 @@ const WelcomeBox = () => (
         Express your interest now, applications are open!
       </Paragraph>
     </div>
-    <div className="video-wrapper welcome-video">
+    <div className={styles.videoBeAMentor}>
       <VideoButton video="https://player.vimeo.com/external/326229385.m3u8?s=ccd4312c26f7981d8bcac17bb0bfd10584cfc150" />
-      <div className="video-banner flex block rounded">
-        <div className="video-banner-overlay center">
+      <div className={styles.videoBanner}>
+        <div className={styles.videoBannerOverlay}>
           <img
             alt=""
-            className="center mx-auto mt2"
-            style={{ width: '70px' }}
+            className={styles.vidPlayBtn}
             src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
           />
-          <h3 className="c-white">So you wanna be an AIME Mentor?</h3>
-          <p className="c-white">{'Here is what it\'s all about...'}</p>
+          <h3>So you wanna be an AIME Mentor?</h3>
+          <p>{'Here is what it\'s all about...'}</p>
         </div>
       </div>
     </div>
