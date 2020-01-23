@@ -1,5 +1,5 @@
 import React from 'react';
-import './beAMentor.scss';
+import './beAMentor.module.scss';
 
 const ReturningMentor = () => (
   <div className="mt4">
