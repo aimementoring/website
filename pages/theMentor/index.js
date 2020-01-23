@@ -6,7 +6,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import styles from './theMentor.module.scss';
 
-const Testimonials = dynamic(() => import(/* webpackChunkName 'Testimonials' */ '../../components/testimonials'));
+const Testimonials = dynamic(() => import('../../components/testimonials'));
 
 const TheMentor = () => (
   <Layout>
