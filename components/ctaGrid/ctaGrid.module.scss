@@ -32,9 +32,14 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    max-width: calc(25% - 1.3em);
 
-    @media all and(min-width: $md) {
+    @media all and(min-width: $sm) {
       height: 30em;
+    }
+
+    @media all and (max-width: $lg) {
+      max-width: 100%;
     }
 
     .itemContentImage {
@@ -77,6 +82,7 @@
         background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo2.png');
       }
     }
+
     &:nth-child(3) {
       background-color: $green;
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-shop@2x.jpg');
@@ -85,6 +91,7 @@
         background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo3.png');
       }
     }
+
     &:nth-child(4) {
       background-color: $cyan;
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-cyan@2x.jpg');
