@@ -1,7 +1,13 @@
 @import '../../styles/base/variables';
 
-.listItem {
-  margin-bottom: 1rem;
+.footerContent {
+  .listItem {
+    margin-bottom: 1rem;
+
+    &:nth-child(1){
+      margin-top: 1em;
+    }
+  }
 }
 
 .itemLink {
