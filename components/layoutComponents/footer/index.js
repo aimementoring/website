@@ -35,7 +35,6 @@ const Footer = ({ location }) => {
         {
           to: 'https://shop.aimementoring.com/',
           target: '_blank',
-          isExternal: true,
           label: 'Shop Apparel',
         },
         {
