@@ -8,7 +8,7 @@ const Testimonials = ({ prev, next }) => (
       className="border-none"
       onClick={prev}
       aria-label="previous"
-      style={{ color: '#ffffff', backgroundColor: 'transparent' }}
+      style={{ color: '#000000', backgroundColor: 'transparent' }}
     >
       <svg className="icon icon-arrow-prev">
         <use xlinkHref="#icon-arrow-prev" />
@@ -17,7 +17,7 @@ const Testimonials = ({ prev, next }) => (
     <button
       type="button"
       className="border-none"
-      style={{ color: '#ffffff', backgroundColor: 'transparent' }}
+      style={{ color: '#000000', backgroundColor: 'transparent' }}
       aria-label="next"
       onClick={next}
     >
