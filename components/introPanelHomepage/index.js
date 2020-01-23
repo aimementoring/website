@@ -25,9 +25,9 @@ const IntroPanelHomepage = () => (
           <div className="intro-sub-text">
             <Paragraph>
               Want to change the world? We&apos;re recruiting mentors
-              across Australia, Uganda and South Africa
-              <mark> RIGHT NOW! </mark>
-              That could be you! Join forces with AIME and together, we&apos;ll shape
+              across Australia, Uganda and South Africa&nbsp;
+              <mark>RIGHT NOW!</mark>
+              &nbsp;That could be you! Join forces with AIME and together, we&apos;ll shape
               a brighter future and lift kids out of inequality. Click the button
               to learn more about becoming a mentor. And if you&apos;re in the USA or
               Nigeria, look out - we&apos;re coming for you real real soon.
