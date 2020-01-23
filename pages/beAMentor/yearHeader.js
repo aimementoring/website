@@ -3,7 +3,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import styles from './beAMentor.module.scss';
 
 const YearHeader = () => (
-  <div className="year-header sm-col sm-col-12 clearfix center">
+  <div className={styles.beAMentorYearHeader}>
     <Title type="headingLockup" className={styles.yearWelcomeHeading} theme={process.env.REACT_APP_THEME}>
       {`Bring on ${new Date().getFullYear()},`}
       <strong>
