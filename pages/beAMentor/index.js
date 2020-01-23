@@ -11,7 +11,7 @@ import {
   getDataOfUniversity,
 } from '../../utils/expresionOfInterest';
 import COUNTRY_CODES from '../../utils/countryCodes';
-import './beAMentor.module.scss';
+import styles from './beAMentor.module.scss';
 
 const Loading = dynamic(() => import(/* webpackChunkName 'Loading' */ 'aime-blueprint/lib/components/loading'));
 const UniversityLinks = dynamic(() => import(/* webpackChunkName 'UniversityLinks' */ './universityLinks'));
@@ -290,21 +290,19 @@ const BeAMentor = () => {
 
   return (
     <Layout>
-      <div className="be-a-mentor--box">
+      <div className={styles.beAMentorContainer}>
         <HeroBanner />
-        <section className="full-width-wrap">
-          <div className="lg-wrap mx-auto">
-            <div className="eoi-intro-section">
-              <YearHeader />
-              <WelcomeBox />
-              <BeAMentorForm
-                handleFieldChange={handleFieldChange}
-                handleReturningMentorChange={handleReturningMentorChange}
-                submitData={submitData}
-                countrySelectedIsInsideAIMEProgram={countrySelectedIsInsideAIMEProgram}
-                {...state}
-              />
-            </div>
+        <section className={styles.fullWidthWrap}>
+          <div className={styles.mentorEOIContainer}>
+            <YearHeader />
+            <WelcomeBox />
+            <BeAMentorForm
+              handleFieldChange={handleFieldChange}
+              handleReturningMentorChange={handleReturningMentorChange}
+              submitData={submitData}
+              countrySelectedIsInsideAIMEProgram={countrySelectedIsInsideAIMEProgram}
+              {...state}
+            />
           </div>
         </section>
         <Loading loading={state.loading} theme={process.env.REACT_APP_THEME} />
