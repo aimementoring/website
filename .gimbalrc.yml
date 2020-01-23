@@ -7,10 +7,11 @@
      - unused-source
 
  configs:
+   buildDir: .next
    comment:
      # Only show failures in GitHub PR comments.
      # Useful to pinpoint why a build has failed
-     onlyFailures: true
+     onlyFailures: false
 
    # Heap snapshot settings
    heap-snapshot:
@@ -39,41 +40,41 @@
        seo: 95
 
    # File and directory size settings
-   size:
-     - path: ./build/precache-*.js
-       maxSize: 10 KB
-     - path: ./build/static/js/[0-9]*.chunk.js
-       maxSize: 1 MB
-     - path: ./build/static/js/*.chunk.js
-       maxSize: 1 MB
-     - path: ./build/static/js/runtime*.js
-       maxSize: 10 KB
-     - path: ./build/index.html
-       maxSize: 10 KB
-     - path: ./build/favicon.ico
-       maxSize: 10 KB
-     - path: ./build/
-       maxSize: 18 MB
+  #  size:
+  #    - path: ./.next/precache-*.js
+  #      maxSize: 10 KB
+  #    - path: ./.next/static/js/[0-9]*.chunk.js
+  #      maxSize: 1 MB
+  #    - path: ./.next/static/js/*.chunk.js
+  #      maxSize: 1 MB
+  #    - path: ./.next/static/js/runtime*.js
+  #      maxSize: 10 KB
+  #    - path: ./.next/index.html
+  #      maxSize: 10 KB
+  #    - path: ./.next/favicon.ico
+  #      maxSize: 10 KB
+  #    - path: .next/
+  #      maxSize: 18 MB
 
-   # Unused source settings
-   unused-source:
-     threshold:
-       - path: "**/*(private).*.chunk.css"
-         maxSize: 60%
-       - path: "**/!(private).*.chunk.css"
-         maxSize: 60%
-       - path: "**/*([0-9]).*.chunk.js"
-         maxSize: 90%
-       - path: "**/!([0-9]|main).*.chunk.js"
-         maxSize: 45%
-       - path: "**/(main).*.chunk.js"
-         maxSize: 50%
+  #  # Unused source settings
+  #  unused-source:
+  #    threshold:
+  #      - path: "**/*(private).*.chunk.css"
+  #        maxSize: 60%
+  #      - path: "**/!(private).*.chunk.css"
+  #        maxSize: 60%
+  #      - path: "**/*([0-9]).*.chunk.js"
+  #        maxSize: 90%
+  #      - path: "**/!([0-9]|main).*.chunk.js"
+  #        maxSize: 45%
+  #      - path: "**/(main).*.chunk.js"
+  #        maxSize: 50%
 
  # Locations of reports. Useful for storing artifacts in CI
  outputs:
    # Only show failures in CLI
    cli:
-     onlyFailures: true
+     onlyFailures: false
    html: ./gimbal-artifacts/results.html
    json: ./gimbal-artifacts/results.json
    markdown: ./gimbal-artifacts/results.md
@@ -86,6 +87,7 @@
 
    # Save reports to a database. Needed for gimbal-plugin-last-value
    - plugin: "@modus/gimbal-plugin-sqlite"
+     file: ./gimbal-artifacts/gimbal_tests.db
      lastValue: true
 
    # Axe a11y audits
