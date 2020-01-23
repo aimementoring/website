@@ -31,7 +31,6 @@ const FooterNewsletter = () => {
               className={styles.subscribeInput}
               required
             />
-            ;
             {/*
               real people should not fill in the below input and expect good things...
               do not remove this or risk form bot signups
