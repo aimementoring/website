@@ -14,29 +14,31 @@
 
 .navHiring {
   color: $white;
-  background: $cmyk-pink;
-  padding: 0.25em;
+  background: $magenta;
+  padding: 0.75em;
   display: block;
   text-align: center;
+  font-size: 0.9em;
+  font-family: $body-font-family;
 
   &:hover {
     color: $white;
     text-decoration: none;
-  }
+  }  
 }
 
 .submenuArrow {
-  background: #a813ef;
-  border-color: #a813ef;
+  background: $white;
+  border-color: $purple;
   border-left-style: solid;
   border-radius: 3px 0 0 0;
   border-top-style: solid;
-  border-width: 2px;
+  border-width: 1px;
   height: 12px;
   left: 50%;
   margin: 0 0 0 -8px;
   position: absolute;
-  top: -6px;
+  top: -7px;
   transform: rotate(45deg);
   width: 12px;
   z-index: 99;
@@ -46,18 +48,23 @@
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem 1rem 2rem;
+  font-family: $body-font-family;
 
   .subtitle {
-    color: $white;
-    font-size: 18px;
-    font-weight: 400;
+    font-family: $body-font-family;
+    color: $black;
+    font-size: 1.4em;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
 
   .description {
-    font-size: 14px;
+    font-size: 0.85em;
+    font-weight: 400;
     margin-bottom: 0.5rem;
-    color: $white;
+    color: $black;
 
     @media (min-width: $sm) {
       width: 83.33333%;
@@ -137,24 +144,18 @@
 }
 
 .submenuLink {
-  background: 93% 50% $accent-purple;
-  background-size: 200% auto;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  box-shadow: inset 0 0 10px #00000050;
-  color: $brand-primary;
   display: block;
-  font-family: $feature-font-family;
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 400;
+  border-top: 1px solid $purple;
+  font-family: $body-font-family;
+  font-size: 0.85em;
+  font-weight: bold;
   letter-spacing: 0.01rem;
   padding: 1.3rem 2rem;
   transition: ease-in 0.1s all;
 
   &:hover {
-    background-color: #9a3aef;
-    color: $white;
+    background-color: $purple;
+    color: $white !important;
     box-shadow: none;
   }
 }
@@ -186,12 +187,8 @@
 }
 
 .submenuWrapper {
-  background:
-    linear-gradient(
-      to right,
-      $brand-secondary 0%,
-      $accent-purple 100%
-    );
+  background: $white;
+  border: 1px solid $purple;
   position: absolute;
   left: 50%;
   top: 100%;
@@ -215,7 +212,7 @@
 
   a {
     text-decoration: none;
-    color: $white;
+    color: $black;
 
     &.active {
       font-family: $feature-font-family;
@@ -293,35 +290,39 @@
       opacity: 1;
       visibility: visible;
     }
+
+    &:hover a {
+      color: $purple;
+    }
   }
 
-  .intercom-button-nav {
-    border: none;
-    color: $white;
-    cursor: pointer;
-    background: transparent;
+  button.navBtn {
+    padding: 0.15em 0;
   }
 
   .navBtn {
     color: $white;
     display: block;
-    font-family: $feature-font-family;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 500;
+    font-family: $body-font-family;
+    font-size: 0.9em;
+    font-weight: 900;
     margin-bottom: 1rem;
     margin-right: 1.5rem;
     margin-top: 1rem;
     text-decoration: none;
-
+    background: none;
+    border: none;
+    cursor: pointer;
+    
     &.active {
       border-bottom: 2px solid $white;
       color: $brand-primary;
       font-weight: 500;
     }
 
-    &.activeItem {
-      color: #c700ff;
+    &.activeItem, 
+    &:hover {
+      color: $purple;
     }
   }
 }
