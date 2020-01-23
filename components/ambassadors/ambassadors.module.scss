@@ -263,6 +263,10 @@
     margin-top: -100px;
   }
 
+  :global(.slick-slide) {
+    padding-bottom: 20px;
+  }
+
   :global(.slick-dots) {
     display: none;
 
