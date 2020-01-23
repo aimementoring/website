@@ -1,19 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
+import IntercomChat from '../../intercom';
 
-const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
-const MenuItem = dynamic(() => import(/* webpackChunkName 'MenuItem' */ './menuItem'));
-const MobileMenu = dynamic(() => import(/* webpackChunkName 'MobileMenu' */ '../mobileMenu'));
+const Logo = dynamic(() => import('./logo'));
+const MenuItem = dynamic(() => import('./menuItem'));
+const MobileMenu = dynamic(() => import('../mobileMenu'));
 
-const StandardHeader = ({ handleShowIntercom }) => (
+const StandardHeader = () => (
   <div>
-    {/* <Anchor className={styles.navHiring} to="/positions">
-      We are hiring!
-    </Anchor> */}
+    <div className={styles.navHiring}>
+      This site’s in draft mode.
+      Please be patient with us while it’s updated to reflect AIME in 2020 & beyond.
+    </div>
     <div className={styles.siteHeaderContainer}>
       <div className={styles.logoContainer}>
         <Logo />
@@ -29,9 +30,7 @@ const StandardHeader = ({ handleShowIntercom }) => (
             </Anchor>
           </li>
           <li className={styles.listItem}>
-            <button type="button" className="intercom-button-nav nav-btn" onClick={handleShowIntercom}>
-              Get in touch
-            </button>
+            <IntercomChat />
           </li>
           <li className={styles.inlineListItem}>
             <a
@@ -54,9 +53,5 @@ const StandardHeader = ({ handleShowIntercom }) => (
     </div>
   </div>
 );
-
-StandardHeader.propTypes = {
-  handleShowIntercom: PropTypes.func.isRequired,
-};
 
 export default StandardHeader;
