@@ -7,17 +7,6 @@ const API = process.env.REACT_APP_CRAFT_API;
 
 export const getAssetsBaseUrl = () => process.env.REACT_APP_ASSETS_URL;
 
-export const getSeoTags = async (page, site = 1) => {
-  if (page || page === '') {
-    const url = `${API}/actions/seomatic/meta-container/all-meta-containers/?uri=${page}&siteId=${site}`;
-    return axios(url)
-      .then(checkStatus)
-      .then((response) => (response.status !== 204 ? response.data : {}))
-      .catch((error) => handleError(error, `${error} URL: ${url}`));
-  }
-  return null;
-};
-
 export const getEntries = async (section) => {
   const loaded = getFromStorage(`${section}_entry`);
   return new Promise((resolve, reject) => {
