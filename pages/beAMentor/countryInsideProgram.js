@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import './beAMentor.module.scss';
+import styles from './beAMentor.module.scss';
 
 const RadioButton = dynamic(() => import('aime-blueprint/lib/components/radioButton'));
 
@@ -19,7 +19,7 @@ const radioButtonsOptions = [
 
 const CountryInsideProgram = ({ handleReturningMentorChange, returningMentor }) => (
   <div>
-    <div className="relative f-24 sml-rotate rotate-text inline-block mt1 off-center">
+    <div className={styles.countryEmojisWrapper}>
       <span role="img" aria-label="thumbs up">
         👍🏽
       </span>
@@ -27,17 +27,15 @@ const CountryInsideProgram = ({ handleReturningMentorChange, returningMentor }) 
         👌🏾
       </span>
     </div>
-    <h4 className="form-question-heading">
+    <h4>
       Cool cool cool. Is this going to be your first time mentoring with AIME?
     </h4>
     <RadioButton
-      elementClassName="custom-radio custom-radio--default f-14"
       onChangeFunction={handleReturningMentorChange}
       name="returningMentor"
       options={radioButtonsOptions}
       value={returningMentor ? 'returningMentor' : 'notReturningMentor'}
       theme={process.env.REACT_APP_THEME}
-      radiuButtonClass="radio-buttons-space"
     />
   </div>
 );
