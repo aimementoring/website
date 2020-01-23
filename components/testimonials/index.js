@@ -4,7 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './testimonials.module.scss';
 
-const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../carousel'));
+const Carousel = dynamic(() => import('../carousel'));
 
 const Testimonials = () => {
   const customCarouselValues = {
