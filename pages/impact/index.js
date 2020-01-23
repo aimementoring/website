@@ -348,7 +348,7 @@ const Impact = () => (
             <h2 className="center">
               <span className="f-24 feature-font-family">Want to create change?</span>
             </h2>
-            <IntercomChat classNames="ghost-btn bg-brand-primary center mb2" label="partner with us" />
+            <IntercomChat classNames="ghost-btn bg-brand-primary center mb2" label="Partner with us" />
           </div>
         </section>
       </div>
