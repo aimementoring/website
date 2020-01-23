@@ -1,14 +1,28 @@
 @import '../../styles/base/variables';
 
-.listItem {
-  margin-bottom: 1rem;
+.footerContent {
+  .listItem {
+    margin-bottom: 1rem;
+
+    &:nth-child(1){
+      margin-top: 1em;
+    }
+  }
 }
 
 .itemLink {
   color: $black;
   font-family: $body-font-family;
   font-weight: 300;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
   font-size: 0.85rem;
   line-height: 1em;
-  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #c700ff;
+  }
 }
