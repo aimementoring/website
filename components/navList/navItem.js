@@ -61,7 +61,6 @@ NavItem.propTypes = {
   target: PropTypes.string,
   as: PropTypes.string,
   to: PropTypes.string,
-  isExternal: PropTypes.bool,
 };
 
 NavItem.defaultProps = {
@@ -69,7 +68,6 @@ NavItem.defaultProps = {
   target: null,
   as: null,
   to: '',
-  isExternal: null,
 };
 
 export default NavItem;
