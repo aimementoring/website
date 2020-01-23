@@ -74,7 +74,6 @@ export const getCampaignDonations = async (campaign) => {
 
   return new Promise((resolve, reject) => {
     getRaiselyToken().then((token) => {
-      console.log('DONATE TOKEN - ', { token });
       request(url, { headers: { Authorization: `Bearer ${token}` } })
         .then((response) => resolve(response.data))
         .catch((error) => reject(error));
