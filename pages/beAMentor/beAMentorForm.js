@@ -1,11 +1,11 @@
 import React from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import './beAMentor.module.scss';
+import styles from './beAMentor.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const BeAMentorForm = () => (
-  <div className="form-container mx-auto px3">
+  <div className={styles.beAMentorFormWrapper}>
     <img
       src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
       alt="Listen up"
