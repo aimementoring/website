@@ -50,7 +50,6 @@ const IntercomChat = (props) => {
       vertical_padding: 20,
       background_color: 'rgba(255,255,255, 0.7)',
     });
-    // eslint-disable-next-line no-console
   };
 
   useEffect(() => {
