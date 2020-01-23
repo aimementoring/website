@@ -65,7 +65,7 @@ const TalentMobileMenu = ({ handleTalentItemClicked, hash }) => {
                 key={item}
               >
                 <Anchor
-                  className={classNames('text-decoration-none f-18 feature-font-family c-white', { active: hash === `#${item.toLowerCase()}` })}
+                  className={classNames('text-decoration-none', { active: hash === `#${item.toLowerCase()}` })}
                   to="/home"
                   as="/"
                 >
@@ -81,7 +81,7 @@ const TalentMobileMenu = ({ handleTalentItemClicked, hash }) => {
             role="presentation"
           >
             <Anchor
-              className={classNames('text-decoration-none f-18 feature-font-family c-white', { active: hash === '#register' })}
+              className={classNames('text-decoration-none', { active: hash === '#register' })}
               to="/home"
               as="/"
             >
