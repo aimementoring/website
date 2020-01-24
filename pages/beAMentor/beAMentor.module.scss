@@ -18,7 +18,7 @@
   position: relative;
   height: 50vh;
   width: 100%;
-  padding: 35px 0;
+  padding: 10em 0;
 
   @media screen and (min-width: $sm) {
     padding: 0;
@@ -139,7 +139,7 @@
   background-color: $lilac;
   padding: 3em 1.5em 5em;
   margin: 0 auto;
-  padding: 0 3em;
+  padding: 2em 3em;
 
   .input {
     background-color: $white;
