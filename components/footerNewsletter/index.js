@@ -39,7 +39,6 @@ const FooterNewsletter = () => {
               <input
                 type="text"
                 name="b_ce86e2fc6ca77a51919157a03_30964260b5"
-                value=""
               />
             </div>
             <button
