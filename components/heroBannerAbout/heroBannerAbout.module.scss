@@ -27,11 +27,7 @@
     justify-content: center;
     position: relative;
     width: 100%;
-    padding-top: 3em;
-    
-    @media screen and (min-width: $md) { 
-      padding-top: 0;
-    }
+    padding: 0;
 
     @media screen and (max-device-width: 1024px) {
       background-attachment: scroll;
@@ -41,6 +37,7 @@
       color: $white;
       text-align: center;
       line-height: 1em;
+      margin-top: 2em;
 
       strong {
         top: inherit;
