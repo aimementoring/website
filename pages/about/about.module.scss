@@ -39,6 +39,7 @@
     &:first-child {
       padding: 1em;
       margin-bottom: 0;
+    }
 
     @media screen and (min-width: $md) { 
       padding: 1rem;
@@ -131,4 +132,3 @@
     }
   }
 }
-
