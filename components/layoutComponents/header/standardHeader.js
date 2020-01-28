@@ -43,7 +43,7 @@ const StandardHeader = () => (
             </a>
           </li>
           <li className={styles.inlineListItem}>
-            <Anchor className={styles.navBtn} to="https://aimedonations.raisely.com/">
+            <Anchor className={styles.navBtn} to="https://aimedonations.raisely.com/" target="_blank">
               Donate
             </Anchor>
           </li>
