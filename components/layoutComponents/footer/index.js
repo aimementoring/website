@@ -24,7 +24,8 @@ const Footer = ({ location }) => {
           label: 'Become a Partner',
         },
         {
-          to: '/donate',
+          to: 'https://aimedonations.raisely.com',
+          target: '_blank',
           label: 'Make a Donation',
         },
       ],
