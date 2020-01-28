@@ -13,13 +13,14 @@ const LinksComponent = ({
         links.map((link) => (
           <li key={link.title} className="py2">
             {!link.title && link.url === '' ? (
-              <IntercomChat classNames={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'}${active === link.title ? 'active' : ''}`} />
+              <IntercomChat classNames={`text-decoration-none menuNavLink ${link.class || 'c-black'}${active === link.title ? 'active' : ''}`} />
             ) : (
               <Anchor
-                className={`text-decoration-none f-18 feature-font-family ${link.class || 'c-white'} 
+                className={`text-decoration-none menuNavLink ${link.class || 'c-black'} 
                     ${active === link.title ? 'active' : ''}`}
                 onClick={handleLinkClicked(link.title)}
                 to={link.url}
+                target={link.target || false}
               >
                 {link.title}
               </Anchor>
