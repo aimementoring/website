@@ -20,6 +20,7 @@ const LinksComponent = ({
                     ${active === link.title ? 'active' : ''}`}
                 onClick={handleLinkClicked(link.title)}
                 to={link.url}
+                target={link.target || false}
               >
                 {link.title}
               </Anchor>
