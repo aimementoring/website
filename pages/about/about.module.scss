@@ -7,6 +7,13 @@
 .sectionAbout {
   display: block;
   width: 100%;
+  padding: 1em;
+  max-width: 90em;
+  margin: 0 auto;
+
+  @media screen and (min-width: $md) { 
+    padding-top: 3em;
+  }
 
   @media screen and (min-width: $md) { 
     padding-top: 3em;
@@ -24,12 +31,14 @@
     align-items: right;
     justify-content: center;
     flex-direction: column;
-    padding: 0 2rem 1rem;
+    
+    @media screen and (min-width: $md) { 
+      padding: 0 2rem 1rem;
+    }
 
     &:first-child {
       padding: 1em;
       margin-bottom: 0;
-    }
 
     @media screen and (min-width: $md) { 
       padding: 1rem;
