@@ -90,7 +90,7 @@ export const HEADER_MENU_ITEMS = [
         linkText: 'Overview',
       },
       {
-        to: '/knowAime',
+        to: '/know-aime',
         as: '/know-aime',
         linkText: 'Get to know AIME',
       },
@@ -100,7 +100,7 @@ export const HEADER_MENU_ITEMS = [
         linkText: 'Our Impact',
       },
       {
-        to: '/founder',
+        to: '/jack-manning-bancroft',
         as: '/jack-manning-bancroft',
         linkText: 'CEO & Founder',
       },
@@ -176,12 +176,6 @@ export const CTA_US_HOMEPAGE = [
     link: '/about',
     button: 'Get to Know AIME',
     description: 'Get to know AIME. Who we are and why we do what we do.',
-  },
-  {
-    title: 'Contact',
-    link: '/contact',
-    button: 'Contact',
-    description: 'If you wanna know more reach out and we\'ll do our best to answer your questions',
   },
 ];
 
