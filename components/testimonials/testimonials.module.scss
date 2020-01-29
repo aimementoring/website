@@ -2,6 +2,10 @@
 
 .testimonials {
 
+  .testiHeader {
+    text-align: center;
+  }
+
   &-highlight-text {
     font-size: calc(#{$base-font-size} + 2rem);
     padding-bottom: 30px;
