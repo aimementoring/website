@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { isClientSide } from '../../utils/utilities';
 
-const CartView = dynamic(() => import(/* webpackChunkName 'CartView' */ './cartView'));
+const CartView = dynamic(() => import('./cartView'));
 
 const Cart = ({ checkout, client }) => {
   const [checkoutState, setCheckoutState] = useState(checkout);
