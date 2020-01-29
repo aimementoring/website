@@ -5,7 +5,7 @@ import { getEntries } from '../../services/craftAPI';
 import bugsnagClient from '../../utils/bugsnag';
 import Layout from '../../hocs/basicLayout';
 
-const MatrixBuilder = dynamic(() => import(/* webpackChunkName 'MatrixBuilder' */ '../../components/matrixBuilder'));
+const MatrixBuilder = dynamic(() => import('../../components/matrixBuilder'));
 
 const BeAFriend = ({ entries }) => {
   const [formElements, setFormElements] = useState(entries);
