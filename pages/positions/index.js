@@ -6,10 +6,10 @@ import Layout from '../../hocs/basicLayout';
 import { isClientSide } from '../../utils/utilities';
 import './positions.scss';
 
-const JobsBanner = dynamic(() => import(/* webpackChunkName 'JobsBanner' */ '../../components/jobsBanner'));
-const JobsTabs = dynamic(() => import(/* webpackChunkName 'JobsTabs' */ '../../components/jobsTabs'));
-const Jobs = dynamic(() => import(/* webpackChunkName 'Jobs' */ '../../components/jobs'));
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButtons' */ '../../components/videoButton'));
+const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
+const JobsTabs = dynamic(() => import('../../components/jobsTabs'));
+const Jobs = dynamic(() => import('../../components/jobs'));
+const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
