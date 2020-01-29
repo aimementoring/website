@@ -20,7 +20,7 @@ const ImaginationDeclarationHeader = () => {
             <strong>{imaginationDeclarationNumber}</strong>
             People have pledged
           </span>
-          <Anchor to="/imaginationDeclaration" as="/imagination-declaration#pledge" className={styles.navLink}>
+          <Anchor to="/imagination-declaration" as="/imagination-declaration#pledge" className={styles.navLink}>
             Pledge
           </Anchor>
         </nav>
