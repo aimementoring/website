@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { getAssetsBaseUrl } from '../../services/craftAPI';
 import styles from './goingGlobal.module.scss';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const TabComponent = () => {
   const assetsUrl = getAssetsBaseUrl();
