@@ -86,8 +86,11 @@
     z-index: 2;
     color: $orange;
     text-align: center;
+    margin: 0 auto;
+    display: block;
 
     @media all and(min-width: $md) {
+      display: inline-block;
       text-align: left;
       margin: 0 0 0 80px;
       left: 2em;
