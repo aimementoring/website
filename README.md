@@ -39,7 +39,7 @@ Use dynamic imports instead of importing directly every time you think it is pos
 
 <span style="color:green;">Good way to import components</span>
 ```jsx
-const MyComponent = dynamic(() => import(/* webpackChunkName 'MyComponent' */ '../components/myComponent'));
+const MyComponent = dynamic(() => import('../components/myComponent'));
 ```
 
 <span style="color:red;">Bad way to import components</span>
@@ -108,3 +108,7 @@ Now follow next steps:
 # IMPORTANT ON STAGING AND MASTER
 
 1. Don't forget to add **PUBLIC_URL** in environment variables on Heroku for Staging and Production, because are uploading next static folder there to improve the performance, and it is important to load those files from the CDN instead of loading them locally.
+
+# Where to import your assets
+
+There are two folders on AWS where we store all our assets - images, fonts, files, etc. These are `aimementoring-staging` (`d2cl4o0mkg71rr`) and `aimementoring` (`d1muvgoqe3g8vw`).
