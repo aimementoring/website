@@ -127,15 +127,6 @@ app.prepare().then(() => {
     });
   });
 
-  // BeAMentor
-  server.get('/be-a-mentor/:universityId', (req, res) => {
-    const pagePath = '/beAMentor';
-    const queryParams = { universityId: req.params.universityId };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
-
   // Be a friend
   server.get('/be-a-friend', (req, res) => {
     const pagePath = '/beAFriend';
