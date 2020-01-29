@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import AMBASSADORS_LIST from '../../constants/ambassadorsList';
 
-const AmbassadorBox = dynamic(() => import(/* webpackChunkName 'AmbassadorBox' */ '../../components/ambassadorBox'));
+const AmbassadorBox = dynamic(() => import('../../components/ambassadorBox'));
 
 const Ambassadors = () => (
   <Layout>
