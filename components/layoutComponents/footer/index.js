@@ -14,7 +14,7 @@ const Footer = ({ location }) => {
       title: 'Pitch In',
       items: [
         {
-          to: '/beAMentor',
+          to: '/be-a-mentor',
           as: '/be-a-mentor',
           label: 'Become a Mentor',
         },
@@ -39,7 +39,7 @@ const Footer = ({ location }) => {
           label: 'Shop Apparel',
         },
         {
-          to: '/theMentor',
+          to: '/the-mentor',
           as: '/the-mentor',
           label: 'Read the book',
         },
@@ -48,7 +48,7 @@ const Footer = ({ location }) => {
           label: 'About AIME',
         },
         {
-          to: '/founder',
+          to: '/jack-manning-bancroft',
           as: '/jack-manning-bancroft',
           label: 'Founder & CEO',
         },
@@ -93,7 +93,7 @@ const Footer = ({ location }) => {
               <ul className={styles.footerList}>
                 <li className={styles.footerListItem}>
                   <Anchor
-                    to="/termsAndConditions"
+                    to="/terms-of-service"
                     as="/terms-of-service"
                     className={styles.footerLink}
                   >
