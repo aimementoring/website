@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButtons' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
