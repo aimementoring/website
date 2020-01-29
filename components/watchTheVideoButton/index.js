@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const WatchTheVideoButton = () => (
   <div className="flex-column">
