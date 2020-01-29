@@ -90,7 +90,7 @@ export const HEADER_MENU_ITEMS = [
         linkText: 'Overview',
       },
       {
-        to: '/knowAime',
+        to: '/know-aime',
         as: '/know-aime',
         linkText: 'Get to know AIME',
       },
