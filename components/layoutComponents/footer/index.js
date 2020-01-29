@@ -14,7 +14,7 @@ const Footer = ({ location }) => {
       title: 'Pitch In',
       items: [
         {
-          to: '/beAMentor',
+          to: '/be-a-mentor',
           as: '/be-a-mentor',
           label: 'Become a Mentor',
         },
@@ -93,7 +93,7 @@ const Footer = ({ location }) => {
               <ul className={styles.footerList}>
                 <li className={styles.footerListItem}>
                   <Anchor
-                    to="/termsAndConditions"
+                    to="/terms-of-service"
                     as="/terms-of-service"
                     className={styles.footerLink}
                   >
