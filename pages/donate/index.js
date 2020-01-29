@@ -8,9 +8,9 @@ import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../
 import bugsnagClient from '../../utils/bugsnag';
 import './donate.scss';
 
-const Trapezoid = dynamic(() => import(/* webpackChunkName 'Trapezoid' */ '../../components/donateTrapezoid'));
-const RaiselyModal = dynamic(() => import(/* webpackChunkName 'RaiselyModal' */ '../../components/raiselyModal'));
-const Sticky = dynamic(() => import(/* webpackChunkName 'Sticky' */ '../../components/donateSticky'));
+const Trapezoid = dynamic(() => import('../../components/donateTrapezoid'));
+const RaiselyModal = dynamic(() => import('../../components/raiselyModal'));
+const Sticky = dynamic(() => import('../../components/donateSticky'));
 
 class Donate extends PureComponent {
   constructor(props) {
@@ -51,7 +51,6 @@ class Donate extends PureComponent {
       pickedCampaign = Router.query.campaign;
     }
 
-    console.log({ campaigns });
     if (campaigns.length === 0) {
       campaigns = await getActiveCampaigns();
     }
