@@ -4,8 +4,8 @@ import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import './knowAime.scss';
 
-const CtaFAQ = dynamic(() => import(/* webpackChunkName 'CtaFAQ' */ '../../components/ctaFAQ'));
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
+const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
+const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
