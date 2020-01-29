@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
 import './customCarousels.scss';
 
-const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
-const VideoCarousel = dynamic(() => import(/* webpackChunkName 'VideoCarousel' */ './videoCarousel'));
+const Carousel = dynamic(() => import('../index'));
+const VideoCarousel = dynamic(() => import('./videoCarousel'));
 
 const VioletCarousel = ({
   type,
