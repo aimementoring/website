@@ -111,4 +111,5 @@ Now follow next steps:
 
 # Where to import your assets
 
+
 There are two folders on AWS where we store all our assets - images, fonts, files, etc. These are `aimementoring-staging` (`d2cl4o0mkg71rr`) and `aimementoring` (`d1muvgoqe3g8vw`).
