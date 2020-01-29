@@ -4,7 +4,7 @@ import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import './index.scss';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -32,7 +32,7 @@ const IntroPanelHomepage = () => (
               to learn more about becoming a mentor. And if you&apos;re in the USA or
               Nigeria, look out - we&apos;re coming for you real real soon.
             </Paragraph>
-            <Button theme="rainbow" aria-label="cta" type="link" url="/beAMentor">
+            <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
               Be a mentor
             </Button>
           </div>
