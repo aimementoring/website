@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Layout from '../../hocs/basicLayout';
-import { ANNUAL_2016_REPORT_YEARS } from '../../constants';
+import Layout from '../../../hocs/basicLayout';
+import { ANNUAL_2016_REPORT_YEARS } from '../../../constants';
 import './annualReport.scss';
 
 const AnnualReport = () => {
