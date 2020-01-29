@@ -4,7 +4,7 @@ import Anchor from '../../common/link';
 import MyContext from '../../../layouts/context';
 import styles from './header.module.scss';
 
-const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
+const Logo = dynamic(() => import('./logo'));
 
 const ImaginationDeclarationHeader = () => {
   const { imaginationDeclarationNumber } = useContext(MyContext);
@@ -20,7 +20,7 @@ const ImaginationDeclarationHeader = () => {
             <strong>{imaginationDeclarationNumber}</strong>
             People have pledged
           </span>
-          <Anchor to="/imaginationDeclaration" as="/imagination-declaration#pledge" className={styles.navLink}>
+          <Anchor to="/imagination-declaration" as="/imagination-declaration#pledge" className={styles.navLink}>
             Pledge
           </Anchor>
         </nav>
