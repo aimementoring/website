@@ -5,7 +5,7 @@ import Layout from '../../hocs/basicLayout';
 import './impact.scss';
 import IntercomChat from '../../components/intercom';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../components/videoButton'));
+const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 

@@ -10,9 +10,9 @@ import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
 
-const JobFilter = dynamic(() => import(/* webpackChunkName 'JobFilter' */ './JobFilter'));
-const JobPreview = dynamic(() => import(/* webpackChunkName 'JobPreview' */ './JobPreview'));
-const PositionsRedirectMessage = dynamic(() => import(/* webpackChunkName 'PositionsRedirectMessage' */ '../positionsRedirectMessage'));
+const JobFilter = dynamic(() => import('./JobFilter'));
+const JobPreview = dynamic(() => import('./JobPreview'));
+const PositionsRedirectMessage = dynamic(() => import('../positionsRedirectMessage'));
 
 const Jobs = ({
   backgroundColor, cdnUrl, isRedirect, handleRedirectHide, jobTitle,
