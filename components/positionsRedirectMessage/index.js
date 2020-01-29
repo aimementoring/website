@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Anchor from '../common/link';
 import styles from './positionsRedirectMessage.module.scss';
+import IntercomChat from '../intercom';
 
 const { REACT_APP_PITCH_YOURSELF_TO_AIME_ID } = process.env;
 
@@ -29,7 +30,7 @@ const PositionsRedirectMessage = ({ jobTitle, handleRedirectHide, filteredJobs }
         </p>
         <p>
           {`If you want to talk to someone about ${jobTitle} specifically,`}
-          <Anchor to="/contact">reach out to us</Anchor>
+          <IntercomChat label="reach out to us" />
           {checkJobId && (
             <em>
               or
