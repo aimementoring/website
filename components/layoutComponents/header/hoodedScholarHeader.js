@@ -24,7 +24,7 @@ const HoodedScholarHeader = ({ location }) => {
         {Router.pathname.indexOf('/fam-details') === -1 && (
           <div className={styles.countdownContainer}>
             <li className={styles.inlineListItem}>
-              <Anchor className={styles.donateBtn} to="/hoodedScholar" as="/hooded-scholar#register">
+              <Anchor className={styles.donateBtn} to="/hooded-scholar" as="/hooded-scholar#register">
                 SIGN ME UP
               </Anchor>
             </li>
