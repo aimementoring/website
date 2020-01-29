@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 
-const TabsTitle = dynamic(() => import(/* webpackChunkName 'TabsTitle' */ './tabsTitle'));
-const TabsContent = dynamic(() => import(/* webpackChunkName 'TabsContent' */ './tabsContent'));
+const TabsTitle = dynamic(() => import('./tabsTitle'));
+const TabsContent = dynamic(() => import('./tabsContent'));
 
 const JobsTabs = ({ onClick, active, countryId }) => (
   <div className="wrap mx-auto p3">
