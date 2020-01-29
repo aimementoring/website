@@ -27,9 +27,6 @@ app.prepare().then(() => {
   server.use(compression());
 
   server.get('/', (req, res) => {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-      res.redirect(`https://${req.headers.host}${req.url}`);
-    }
     ssrCache({ req, res, pagePath: '/' });
   });
 
@@ -69,7 +66,9 @@ app.prepare().then(() => {
     }
 
     server.get('*', (req, res) => {
-      if (req.headers['x-forwarded-proto'] !== 'https') {
+      if (req.headers.host.indexOf(`localhost:${port}`) === -1
+        && req.headers.host.indexOf(`127.0.0.1:${port}`) === -1
+        && req.headers['x-forwarded-proto'] !== 'https') {
         res.redirect(`https://${req.headers.host}${req.url}`);
       }
       return handle(req, res);
