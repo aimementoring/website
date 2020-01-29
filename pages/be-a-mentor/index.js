@@ -167,7 +167,7 @@ const BeAMentor = () => {
       });
       // Update the URL when the user selects the university without changing the components state
       Router.push(
-        '/beAMentor?page2=true',
+        '/be-a-mentor?page2=true',
         `/be-a-mentor/${universitySelected[0].reportingName.toLowerCase()}?page2=true`,
         { shallow: true },
       );
