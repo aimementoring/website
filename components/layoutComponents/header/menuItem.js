@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Anchor from '../../common/link';
 import styles from './header.module.scss';
 
-const BE_A_MENTOR_TO = '/beAMentor';
+const BE_A_MENTOR_TO = '/be-a-mentor';
 const BE_A_MENTOR_AS = '/be-a-mentor';
 
 const MenuItem = ({
