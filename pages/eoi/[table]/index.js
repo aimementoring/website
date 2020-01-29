@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import Layout from '../../hocs/basicLayout';
-import { uploadCustomEOI } from '../../services/portalApi';
-import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../utils/utilities';
-import eoiData from '../../constants/dynamicEOI';
+import Layout from '../../../hocs/basicLayout';
+import { uploadCustomEOI } from '../../../services/portalApi';
+import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../../utils/utilities';
+import eoiData from '../../../constants/dynamicEOI';
 import './DynamicEOI.scss';
 
-const HoodedScholarForm = dynamic(() => import(/* webpackChunkName 'HoodedScholarForm' */ '../../components/eoiForm'));
+const HoodedScholarForm = dynamic(() => import(/* webpackChunkName 'HoodedScholarForm' */ '../../../components/eoiForm'));
 
 const DynamicEOI = ({ table }) => {
   const [tableName, setTableName] = useState('');
