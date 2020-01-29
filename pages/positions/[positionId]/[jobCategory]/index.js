@@ -18,12 +18,12 @@ import Anchor from '../../../../components/common/link';
 import UtilityFuncs from '../../../../components/utilityFuncs';
 import './positionsEntry.scss';
 
-const CountrySelector = dynamic(() => import(/* webpackChunkName 'CountrySelector' */ 'aime-blueprint/lib/components/countrySelector'));
-const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
-const kebabCase = dynamic(() => import(/* webpackChunkName 'kebabCase' */ 'lodash/kebabCase'));
-const FileUploader = dynamic(() => import(/* webpackChunkName 'FileUploader' */ '../../../../components/fileUploader'));
-const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../../../../components/addressAutocompleteInput'));
-const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../../../../components/universitySelector'));
+const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
+const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
+const kebabCase = dynamic(() => import('lodash/kebabCase'));
+const FileUploader = dynamic(() => import('../../../../components/fileUploader'));
+const AddressAutocompleteInput = dynamic(() => import('../../../../components/addressAutocompleteInput'));
+const UniversitySelector = dynamic(() => import('../../../../components/universitySelector'));
 
 const PositionsEntry = ({ positionId, jobCategory }) => {
   const [state, setState] = useState({
