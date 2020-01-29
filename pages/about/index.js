@@ -10,7 +10,7 @@ const {
   Button,
 } = Components;
 
-const HeroBannerAbout = dynamic(() => import(/* webpackChunkName 'HeroBannerAbout' */ '../../components/heroBannerAbout'));
+const HeroBannerAbout = dynamic(() => import('../../components/heroBannerAbout'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
