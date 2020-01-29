@@ -10,9 +10,9 @@ import { getAllCountries } from '../../utils/country';
 import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
 
-const JobFilter = dynamic(() => import(/* webpackChunkName 'JobFilter' */ './JobFilter'));
-const JobPreview = dynamic(() => import(/* webpackChunkName 'JobPreview' */ './JobPreview'));
-const PositionsRedirectMessage = dynamic(() => import(/* webpackChunkName 'PositionsRedirectMessage' */ '../positionsRedirectMessage'));
+const JobFilter = dynamic(() => import('./JobFilter'));
+const JobPreview = dynamic(() => import('./JobPreview'));
+const PositionsRedirectMessage = dynamic(() => import('../positionsRedirectMessage'));
 
 const Jobs = ({
   backgroundColor, cdnUrl, isRedirect, handleRedirectHide, jobTitle,
@@ -223,7 +223,7 @@ const Jobs = ({
           <span className="line bg-brand-tertiary mb3 mt1" />
           <p className="pb1 md-pb3 lg-pb3">
             Sorry, there are no positions available at the moment. You can
-            <Anchor to="/beAFriend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
+            <Anchor to="/be-a-friend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
             {'though and receive updates about everything that\'s happening.'}
           </p>
         </div>
