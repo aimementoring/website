@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import styles from './goingGlobal.module.scss';
 
-const Modal = dynamic(() => import(/* webpackChunkName 'Modal' */ 'react-modal'));
-const BoxContent = dynamic(() => import(/* webpackChunkName 'BoxContent' */ './boxContent'));
-const Module1 = dynamic(() => import(/* webpackChunkName 'Module1' */ './module1'));
-const Module2 = dynamic(() => import(/* webpackChunkName 'Module2' */ './module2'));
-const Module3 = dynamic(() => import(/* webpackChunkName 'Module3' */ './module3'));
+const Modal = dynamic(() => import('react-modal'));
+const BoxContent = dynamic(() => import('./boxContent'));
+const Module1 = dynamic(() => import('./module1'));
+const Module2 = dynamic(() => import('./module2'));
+const Module3 = dynamic(() => import('./module3'));
 
 const BOXES_CONTENT = [
   {
