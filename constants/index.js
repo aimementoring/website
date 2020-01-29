@@ -100,7 +100,7 @@ export const HEADER_MENU_ITEMS = [
         linkText: 'Our Impact',
       },
       {
-        to: '/founder',
+        to: '/jack-manning-bancroft',
         as: '/jack-manning-bancroft',
         linkText: 'CEO & Founder',
       },
