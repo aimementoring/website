@@ -34,21 +34,21 @@ app.prepare().then(() => {
   });
 
   // Positions
-  server.get('/:countryId/positions', (req, res) => {
-    const pagePath = '/positions';
-    const queryParams = { countryId: req.params.countryId };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
-
-  // Positions
   server.get('/positions/:positionId/:jobCategory', (req, res) => {
     const pagePath = '/positionsEntry';
     const queryParams = {
       positionId: req.params.positionId,
       jobCategory: req.params.jobCategory,
     };
+    return ssrCache({
+      req, res, pagePath, queryParams,
+    });
+  });
+
+  // Positions
+  server.get('/:countryId/positions', (req, res) => {
+    const pagePath = '/positions';
+    const queryParams = { countryId: req.params.countryId };
     return ssrCache({
       req, res, pagePath, queryParams,
     });
@@ -88,17 +88,8 @@ app.prepare().then(() => {
     });
   });
 
-  // BeAMentor
-  server.get('/be-a-mentor/:universityId', (req, res) => {
-    const pagePath = '/beAMentor';
-    const queryParams = { universityId: req.params.universityId };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
-
   // EOI
-  server.get('/eoi/:table?', (req, res) => {
+  server.get('/eoi', (req, res) => {
     const pagePath = '/dynamicEOI';
     const queryParams = { table: req.params.table || '' };
     return ssrCache({
@@ -106,7 +97,7 @@ app.prepare().then(() => {
     });
   });
 
-  server.get('/eoi', (req, res) => {
+  server.get('/eoi/:table?', (req, res) => {
     const pagePath = '/dynamicEOI';
     const queryParams = { table: req.params.table || '' };
     return ssrCache({
@@ -131,6 +122,15 @@ app.prepare().then(() => {
   server.get('/be-a-mentor', (req, res) => {
     const pagePath = '/beAMentor';
     const queryParams = {};
+    return ssrCache({
+      req, res, pagePath, queryParams,
+    });
+  });
+
+  // BeAMentor
+  server.get('/be-a-mentor/:universityId', (req, res) => {
+    const pagePath = '/beAMentor';
+    const queryParams = { universityId: req.params.universityId };
     return ssrCache({
       req, res, pagePath, queryParams,
     });
