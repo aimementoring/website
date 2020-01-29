@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import handleError from '../../utils/errorHandler';
 
-const UploadedFile = dynamic(() => import(/* webpackChunkName 'UploadedFile' */ './uploadedFile'));
+const UploadedFile = dynamic(() => import('./uploadedFile'));
 
 const hiddenStyle = {
   opacity: 0,
@@ -49,8 +49,10 @@ const FileUploader = ({
         onError={(error) => { handleError(error, `error ${error}`); }}
         render={({ onPick }) => (
           <div className="relative">
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
             <label
               onClick={onPick}
+              onKeyPress={onPick}
               className="document-item--button"
               htmlFor={`uploadFile-${apiKey}`}
             >

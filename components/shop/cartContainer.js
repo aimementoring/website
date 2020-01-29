@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import { isClientSide } from '../../utils/utilities';
 
-const Cart = dynamic(() => import(/* webpackChunkName 'Cart' */ './cart'));
+const Cart = dynamic(() => import('./cart'));
 let Client;
 
 const TheMentorProducts = () => {
