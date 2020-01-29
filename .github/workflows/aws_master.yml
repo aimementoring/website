@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-    - staging
+    - master
 
 env:
   REACT_APP_BUGSNAG_KEY: ${{ secrets.REACT_APP_BUGSNAG_KEY }}
@@ -58,4 +58,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2
       - name: Upload to aws
-        run: yarn sync:aws:next:staging
+        run: yarn sync:aws:next:master
