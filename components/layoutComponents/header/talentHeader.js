@@ -6,8 +6,8 @@ import Anchor from '../../common/link';
 // import { TALENT_HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 
-const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
-const TalentMobileMenu = dynamic(() => import(/* webpackChunkName 'TalentMobileMenu' */ '../mobileMenu/talentMobileMenu'));
+const Logo = dynamic(() => import('./logo'));
+const TalentMobileMenu = dynamic(() => import('../mobileMenu/talentMobileMenu'));
 
 const TalentHeader = ({ location, handleTalentItemClicked }) => {
   const [showFirstHeader, setShowFirstHeader] = useState(!location.hash && !location.search);
