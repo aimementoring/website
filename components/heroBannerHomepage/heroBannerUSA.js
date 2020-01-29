@@ -23,7 +23,7 @@ const HeroBannerUSA = () => (
           <div className={styles.homeHeroSubText}>
             <h1 className={styles.hoodedScholarTitle}>The Hooded Scholar</h1>
             <p>
-              <Anchor to="/hoodedScholar" as="/hooded-scholar" className={styles.linkBtn}>
+              <Anchor to="/hooded-scholar" as="/hooded-scholar" className={styles.linkBtn}>
                 Apply
               </Anchor>
             </p>

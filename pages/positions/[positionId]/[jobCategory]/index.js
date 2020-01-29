@@ -3,27 +3,27 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import compact from 'lodash/compact';
 import dynamic from 'next/dynamic';
-import Layout from '../../hocs/basicLayout';
-import bugsnagClient from '../../utils/bugsnag';
+import Layout from '../../../../hocs/basicLayout';
+import bugsnagClient from '../../../../utils/bugsnag';
 import {
   capitaliseFirstCharacter,
   removeSpecialCharacters,
   getCountrySite,
   isClientSide,
-} from '../../utils/utilities';
-import handleError from '../../utils/errorHandler';
-import { getFormattedDate } from '../../utils/positions';
-import { findJob } from '../../services/positions';
-import Anchor from '../../components/common/link';
-import UtilityFuncs from '../../components/utilityFuncs';
+} from '../../../../utils/utilities';
+import handleError from '../../../../utils/errorHandler';
+import { getFormattedDate } from '../../../../utils/positions';
+import { findJob } from '../../../../services/positions';
+import Anchor from '../../../../components/common/link';
+import UtilityFuncs from '../../../../components/utilityFuncs';
 import './positionsEntry.scss';
 
 const CountrySelector = dynamic(() => import(/* webpackChunkName 'CountrySelector' */ 'aime-blueprint/lib/components/countrySelector'));
 const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
 const kebabCase = dynamic(() => import(/* webpackChunkName 'kebabCase' */ 'lodash/kebabCase'));
-const FileUploader = dynamic(() => import(/* webpackChunkName 'FileUploader' */ '../../components/fileUploader'));
-const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../../components/addressAutocompleteInput'));
-const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../../components/universitySelector'));
+const FileUploader = dynamic(() => import(/* webpackChunkName 'FileUploader' */ '../../../../components/fileUploader'));
+const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../../../../components/addressAutocompleteInput'));
+const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../../../../components/universitySelector'));
 
 const PositionsEntry = ({ positionId, jobCategory }) => {
   const [state, setState] = useState({
