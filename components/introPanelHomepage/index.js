@@ -32,7 +32,7 @@ const IntroPanelHomepage = () => (
               to learn more about becoming a mentor. And if you&apos;re in the USA or
               Nigeria, look out - we&apos;re coming for you real real soon.
             </Paragraph>
-            <Button theme="rainbow" aria-label="cta" type="link" url="/beAMentor">
+            <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
               Be a mentor
             </Button>
           </div>
