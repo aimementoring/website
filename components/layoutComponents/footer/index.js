@@ -39,7 +39,7 @@ const Footer = ({ location }) => {
           label: 'Shop Apparel',
         },
         {
-          to: '/theMentor',
+          to: '/the-mentor',
           as: '/the-mentor',
           label: 'Read the book',
         },
@@ -48,7 +48,7 @@ const Footer = ({ location }) => {
           label: 'About AIME',
         },
         {
-          to: '/founder',
+          to: '/jack-manning-bancroft',
           as: '/jack-manning-bancroft',
           label: 'Founder & CEO',
         },
