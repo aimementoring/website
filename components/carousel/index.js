@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import './slick.scss';
 
-const Slider = dynamic(() => import(/* webpackChunkName 'Slider' */ 'react-slick'));
-const LiveHeader = dynamic(() => import(/* webpackChunkName 'LiveHeader' */ './carouselHeaders/liveHeader'));
-const AimeVideos = dynamic(() => import(/* webpackChunkName 'AimeVideos' */ './carouselHeaders/aimeVideos'));
-const Testimonials = dynamic(() => import(/* webpackChunkName 'Testimonials' */ './carouselHeaders/testimonials'));
-const Wall = dynamic(() => import(/* webpackChunkName 'Wall' */ './carouselHeaders/wall'));
+const Slider = dynamic(() => import('react-slick'));
+const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
+const AimeVideos = dynamic(() => import('./carouselHeaders/aimeVideos'));
+const Testimonials = dynamic(() => import('./carouselHeaders/testimonials'));
+const Wall = dynamic(() => import('./carouselHeaders/wall'));
 
 const defaultSettings = {
   dots: true,
