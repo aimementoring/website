@@ -24,7 +24,7 @@ const VioletCarousel = ({
           <VideoCarousel title={title} elements={elements} settings={settings} />
           <div className="center-align md-left-align py2 my1">
             <Anchor
-              to="/knowAime"
+              to="/know-aime"
               as="/know-aime"
               aria-label="know-aime"
               className="b-white ghost-btn center"
