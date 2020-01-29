@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
 import styles from './heroBannerHomepage.module.scss';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const HeroBannerUSA = () => (
   <div>
@@ -23,7 +23,7 @@ const HeroBannerUSA = () => (
           <div className={styles.homeHeroSubText}>
             <h1 className={styles.hoodedScholarTitle}>The Hooded Scholar</h1>
             <p>
-              <Anchor to="/hoodedScholar" as="/hooded-scholar" className={styles.linkBtn}>
+              <Anchor to="/hooded-scholar" as="/hooded-scholar" className={styles.linkBtn}>
                 Apply
               </Anchor>
             </p>

@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic';
 import { getAssetsBaseUrl } from '../../../services/craftAPI';
 import './customCarousels.scss';
 
-const Carousel = dynamic(() => import(/* webpackChunkName 'Carousel' */ '../index'));
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../../videoButton'));
+const Carousel = dynamic(() => import('../index'));
+const VideoButton = dynamic(() => import('../../videoButton'));
 
 const AimeVideos = ({ settings, elements, title }) => {
   const assetsUrl = getAssetsBaseUrl();
