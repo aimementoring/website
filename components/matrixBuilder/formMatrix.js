@@ -4,18 +4,18 @@ import React, { PureComponent } from 'react';
 import { FORM_MATRIX_AVAILABLE_ELEMENTS } from '../../constants';
 import { getUcFirst } from '../../utils/utilities';
 
-const Input = dynamic(() => import(/* webpackChunkName 'Input' */ 'aime-blueprint/lib/components/input'));
-const Select = dynamic(() => import(/* webpackChunkName 'Select' */ 'aime-blueprint/lib/components/select'));
-const Textarea = dynamic(() => import(/* webpackChunkName 'Textarea' */ 'aime-blueprint/lib/components/textarea'));
-const Checkbox = dynamic(() => import(/* webpackChunkName 'Checkbox' */ 'aime-blueprint/lib/components/checkbox'));
-const CountrySelector = dynamic(() => import(/* webpackChunkName 'CountrySelector' */ 'aime-blueprint/lib/components/countrySelector'));
-const Paragraph = dynamic(() => import(/* webpackChunkName 'Paragraph' */ 'aime-blueprint/lib/components/paragraph'));
-const PhoneInput = dynamic(() => import(/* webpackChunkName 'PhoneInput' */ 'aime-blueprint/lib/components/phoneInput'));
-const Header = dynamic(() => import(/* webpackChunkName 'Header' */ '../commonElements/header'));
-const VideoFormElement = dynamic(() => import(/* webpackChunkName 'VideoFormElement' */ '../commonElements/videoFormElement'));
-const UploadFormElement = dynamic(() => import(/* webpackChunkName 'UploadFormElement' */ '../commonElements/uploadFormElement'));
-const AddressAutocompleteInput = dynamic(() => import(/* webpackChunkName 'AddressAutocompleteInput' */ '../addressAutocompleteInput'));
-const UniversitySelector = dynamic(() => import(/* webpackChunkName 'UniversitySelector' */ '../universitySelector'));
+const Input = dynamic(() => import('aime-blueprint/lib/components/input'));
+const Select = dynamic(() => import('aime-blueprint/lib/components/select'));
+const Textarea = dynamic(() => import('aime-blueprint/lib/components/textarea'));
+const Checkbox = dynamic(() => import('aime-blueprint/lib/components/checkbox'));
+const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
+const Paragraph = dynamic(() => import('aime-blueprint/lib/components/paragraph'));
+const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
+const Header = dynamic(() => import('../commonElements/header'));
+const VideoFormElement = dynamic(() => import('../commonElements/videoFormElement'));
+const UploadFormElement = dynamic(() => import('../commonElements/uploadFormElement'));
+const AddressAutocompleteInput = dynamic(() => import('../addressAutocompleteInput'));
+const UniversitySelector = dynamic(() => import('../universitySelector'));
 
 class FormMatrix extends PureComponent {
   getMatrix = () => {
