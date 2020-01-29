@@ -16,23 +16,36 @@
   .banner-wrapper {
     background-size: cover;
   }
+  .mentorBannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .mentorPara {
+      margin: 2em 0;
+      max-width: 30em;
+      color: $white;
+      text-align: center;
+    }
+  }
 
   .full-height {
     height: auto;
 
     @media screen and (min-width: $sm) {
-      height: 90vh;
+      height: 80vh;
     }
+  }
+
+  .carousel {
+    margin-top: initial;
   }
 
   .section-hoodedScholar-title {
     color: $white;
     font-family: $feature-font-family;
     font-weight: 900;
-  }
-
-  p {
-    margin-bottom: 20px;
   }
 
   &-highlight-text {
@@ -128,6 +141,10 @@
     font-family: $feature-font-family;
     font-weight: 900;
     left: 35%;
+  }
+
+  .aimeVideos-buttons button {
+    color: $white !important;
   }
 }
 

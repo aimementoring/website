@@ -4,7 +4,7 @@ import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import './index.scss';
 
-const VideoButton = dynamic(() => import(/* webpackChunkName 'VideoButton' */ '../videoButton'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -25,14 +25,14 @@ const IntroPanelHomepage = () => (
           <div className="intro-sub-text">
             <Paragraph>
               Want to change the world? We&apos;re recruiting mentors
-              across Australia, Uganda and South Africa
-              <mark> RIGHT NOW! </mark>
-              That could be you! Join forces with AIME and together, we&apos;ll shape
+              across Australia, Uganda and South Africa&nbsp;
+              <mark>RIGHT NOW!</mark>
+              &nbsp;That could be you! Join forces with AIME and together, we&apos;ll shape
               a brighter future and lift kids out of inequality. Click the button
               to learn more about becoming a mentor. And if you&apos;re in the USA or
               Nigeria, look out - we&apos;re coming for you real real soon.
             </Paragraph>
-            <Button theme="rainbow" aria-label="cta" type="link" url="/beAMentor">
+            <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
               Be a mentor
             </Button>
           </div>
