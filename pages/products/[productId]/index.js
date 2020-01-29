@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import { isClientSide } from '../../utils/utilities';
-import Layout from '../../hocs/basicLayout';
+import { setOnStorage, getFromStorage } from '../../../utils/localStorage';
+import { isClientSide } from '../../../utils/utilities';
+import Layout from '../../../hocs/basicLayout';
 
-const ProductFull = dynamic(() => import(/* webpackChunkName 'ProductFull' */ '../../components/shop/productFull'));
+const ProductFull = dynamic(() => import(/* webpackChunkName 'ProductFull' */ '../../../components/shop/productFull'));
 let Client;
 
 const TheMentorProducts = ({ productHandle }) => {
