@@ -22,28 +22,6 @@
   }  
 }
 
-.intercom-button {
-  padding: 0;
-  border: none;
-  color: $black;
-  cursor: pointer;
-  font-size: 100%;
-  font-weight: 300;
-  font-weight: bold;
-  font-family: sans-serif;
-  background: transparent;
-  &:hover{
-    color: $brand-secondary;
-  }
-
-  &.intercom-button-footer {
-    font-family: $body-font-family;
-    font-weight: 300;
-    font-size: 0.85rem;
-    line-height: 1em;
-  }
-}
-
 .nav-btn-outline {
   @extend
     .f-12,
