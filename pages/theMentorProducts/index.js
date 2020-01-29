@@ -5,7 +5,7 @@ import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import { isClientSide } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
 
-const ProductFull = dynamic(() => import(/* webpackChunkName 'ProductFull' */ '../../components/shop/productFull'));
+const ProductFull = dynamic(() => import('../../components/shop/productFull'));
 let Client;
 
 const TheMentorProducts = ({ productHandle }) => {
