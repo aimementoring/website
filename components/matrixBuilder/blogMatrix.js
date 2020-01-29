@@ -6,9 +6,9 @@ import { getUcFirst } from '../../utils/utilities';
 import { BLOG_MATRIX_AVAILABLE_ELEMENTS } from '../../constants';
 import styles from './matrixBuilder.module.scss';
 
-const VideoFormElement = dynamic(() => import(/* webpackChunkName 'VideoFormElement' */ '../commonElements/videoFormElement'));
-const TextToHtmlConverter = dynamic(() => import(/* webpackChunkName 'TextToHtmlConverter' */ '../commonElements/textToHtmlConverter'));
-const Header = dynamic(() => import(/* webpackChunkName 'Header' */ '../commonElements/header'));
+const VideoFormElement = dynamic(() => import('../commonElements/videoFormElement'));
+const TextToHtmlConverter = dynamic(() => import('../commonElements/textToHtmlConverter'));
+const Header = dynamic(() => import('../commonElements/header'));
 
 class BlogMatrix extends PureComponent {
   getMatrix = () => {
