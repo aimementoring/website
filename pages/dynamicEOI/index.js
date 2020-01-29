@@ -7,7 +7,7 @@ import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../
 import eoiData from '../../constants/dynamicEOI';
 import './DynamicEOI.scss';
 
-const HoodedScholarForm = dynamic(() => import(/* webpackChunkName 'HoodedScholarForm' */ '../../components/eoiForm'));
+const HoodedScholarForm = dynamic(() => import('../../components/eoiForm'));
 
 const DynamicEOI = ({ table }) => {
   const [tableName, setTableName] = useState('');
