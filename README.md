@@ -39,7 +39,7 @@ Use dynamic imports instead of importing directly every time you think it is pos
 
 <span style="color:green;">Good way to import components</span>
 ```jsx
-const MyComponent = dynamic(() => import(/* webpackChunkName 'MyComponent' */ '../components/myComponent'));
+const MyComponent = dynamic(() => import('../components/myComponent'));
 ```
 
 <span style="color:red;">Bad way to import components</span>
