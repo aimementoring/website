@@ -112,7 +112,7 @@ const BeAFriend = ({ entries }) => {
 };
 
 BeAFriend.getInitialProps = async () => {
-  const entries = await getEntries('/beAFriend');
+  const entries = await getEntries('/be-a-friend');
   return { entries: entries.formBuilder };
 };
 
