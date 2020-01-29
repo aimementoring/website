@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import MENTORS_LIST from '../../constants/mentorsList';
 
-const MentorBox = dynamic(() => import(/* webpackChunkName 'MentorBox' */ '../../components/mentorBox'));
+const MentorBox = dynamic(() => import('../../components/mentorBox'));
 
 const Mentors = () => (
   <Layout>
