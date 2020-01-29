@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import Anchor from '../../common/link';
 import styles from './header.module.scss';
 
-const Logo = dynamic(() => import(/* webpackChunkName 'Logo' */ './logo'));
+const Logo = dynamic(() => import('./logo'));
 
 const HoodedScholarHeader = ({ location }) => {
   const [showFirstHeader, setShowFirstHeader] = useState(!location.hash && !location.search);
