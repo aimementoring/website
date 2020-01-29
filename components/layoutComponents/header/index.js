@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import { isClientSide } from '../../../utils/utilities';
 import styles from './header.module.scss';
 
-const TalentHeader = dynamic(() => import(/* webpackChunkName 'TalentHeader' */ './talentHeader'));
-const GoingGlobalHeader = dynamic(() => import(/* webpackChunkName 'GoingGlobalHeader' */ './goingGlobalHeader'));
-const ImaginationDeclarationHeader = dynamic(() => import(/* webpackChunkName 'ImaginationDeclarationHeader' */ './imaginationDeclarationHeader'));
-const StandardHeader = dynamic(() => import(/* webpackChunkName 'StandardHeader' */ './standardHeader'));
+const TalentHeader = dynamic(() => import('./talentHeader'));
+const GoingGlobalHeader = dynamic(() => import('./goingGlobalHeader'));
+const ImaginationDeclarationHeader = dynamic(() => import('./imaginationDeclarationHeader'));
+const StandardHeader = dynamic(() => import('./standardHeader'));
 
 const getHeaderComponent = (pathname) => {
   let component = 'default';
@@ -32,7 +32,7 @@ const HEADERS_MAP = {
   goingGlobal: GoingGlobalHeader,
 };
 
-const Header = ({ location, handleShowIntercom }) => {
+const Header = ({ location }) => {
   const [headerClass, setHeaderClass] = useState(classNames(styles.headerTransparent, {
     [styles.doNotDisplay]: location.pathname.indexOf('/hooded-scholar') > -1,
   }));
@@ -80,7 +80,6 @@ const Header = ({ location, handleShowIntercom }) => {
         {headerComponent && (
           <HeaderComponent
             location={location}
-            handleShowIntercom={handleShowIntercom}
             handleTalentItemClicked={handleTalentItemClicked}
           />
         )}
@@ -95,7 +94,6 @@ Header.propTypes = {
     search: PropTypes.string,
     pathname: PropTypes.string,
   }).isRequired,
-  handleShowIntercom: PropTypes.func.isRequired,
 };
 
 export default Header;
