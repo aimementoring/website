@@ -308,7 +308,7 @@ const Impact = () => (
                 </div>
                 <div className="buttons-container pt2">
                   <Anchor
-                    to="/founder"
+                    to="/jack-manning-bancroft"
                     as="/jack-manning-bancroft"
                     className="ghost-btn bg-brand-primary c-white mb2"
                     aria-label="jack manning bancroft"
@@ -318,10 +318,10 @@ const Impact = () => (
                   <Anchor to="/about" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">Learn more about AIME</span>
                   </Anchor>
-                  <Anchor to="/caseStudies" as="/case-studies" className="ghost-btn bg-brand-primary c-white mb2">
+                  <Anchor to="/case-studies" as="/case-studies" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">AIME Classroom</span>
                   </Anchor>
-                  <Anchor to="/globalLetter" as="/global-letter" className="ghost-btn bg-brand-primary c-white mb2">
+                  <Anchor to="/global-letter" as="/global-letter" className="ghost-btn bg-brand-primary c-white mb2">
                     <span className=" download-btn-text">Global Letter</span>
                   </Anchor>
                 </div>
