@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import './beAMentor.module.scss';
 
 const Checkbox = dynamic(() => import('aime-blueprint/lib/components/checkbox'));
 const Input = dynamic(() => import('aime-blueprint/lib/components/input'));
