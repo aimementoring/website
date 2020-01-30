@@ -2,7 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import styles from './beAMentor.module.scss';
+import styles from './welcomeBox.module.scss';
 
 const VideoButton = dynamic(() => import('../../components/videoButton'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
