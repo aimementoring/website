@@ -34,7 +34,6 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
       <div className="positions">
         <JobsBanner />
         <section className="relative">
-          <div className="scratch-overlay-wrapper top-scratch bg-white" />
           <JobsTabs onClick={setSelectedTab} active={selectedTab} countryId={countryId} />
           <div
             className="video-banner-cta hero endorsement-wrap my4 flex flex-column items-center justify-center changed"
