@@ -18,8 +18,9 @@ const Stories = (props) => {
   const { entries } = props;
   const isLoading = !entries;
 
-  const filteredDate = sortDates(entries);
-  const filteredStoryContent = entries.filter((entry) => (
+  const getStoryPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
+  const filteredDate = sortDates(getStoryPosts);
+  const filteredStoryContent = getStoryPosts.filter((entry) => (
     entry.fields.publishDate.indexOf(filteredDate) === -1
       || !filteredDate
   ));
