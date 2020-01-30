@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import Anchor from '../../components/common/link';
-import styles from './goingGlobal.module.scss';
+import Anchor from '../common/link';
+import styles from './goingGlobalIndex.module.scss';
 
 const VideoButton = dynamic(() => import('../../components/videoButton'));
 
