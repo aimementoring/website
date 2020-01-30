@@ -1,5 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import './impact.scss';
@@ -15,7 +17,7 @@ const Impact = () => (
       <div className="">
         <div className="full-width-wrap">
           <div className="flex flex-wrap items-center">
-            <div className="hero-panel banner-wrapper full-height section-background-image section-background-image-purple-smoke xs-py4">
+            <div className="hero-panel banner-wrapper full-height section-background-image section-background-image-purple-smoke">
               <div className="vid-container">
                 <div className="video-overlay" />
                 <div className="bgVideo-container">
@@ -30,17 +32,14 @@ const Impact = () => (
                     />
                   </video>
                 </div>
-                <div className="vid-headline flex align-items xs-py4">
+                <div className="vid-headline flex align-items">
                   <div className="px1 center m3">
-                    <h1 className="px1 xs-pt4 pb4 center">
-                      <span className="highlight-text hoodedScholar-highlight-text-heropanel highlight-text-straight m3">
-                        <em className="">
-                          Our
-                          <br />
-                          Impact
-                        </em>
-                      </span>
-                    </h1>
+                    <Title type="headingLockup" className="bannerHeaderImpact" theme={process.env.REACT_APP_THEME}>
+                      Our
+                      <strong>
+                        Impact
+                      </strong>
+                    </Title>
                     <div className="hero-panel-video-button video-button">
                       <VideoButton video="https://player.vimeo.com/external/291611142.m3u8?s=d8b2918ab04b455016524208a81d89ba2fca166f" />
                       <div className="video-banner-overlay center">
@@ -58,48 +57,42 @@ const Impact = () => (
             </div>
           </div>
         </div>
-        <div className="scratch-overlay-wrapper top-scratch bg-white" />
         <section className="section bg-white" id="panel1">
-          <div className="wrap items-center lg-px4 lg-pb4 lg-pt0">
-            <h2 className="xs-p1 sm-p2 md-p4 lg-p4 center">
-              <span className="f-24 feature-font-family">
-                We’ve got a story of change that’s lit up the world since 2005, one kid at a time.
-                It’s a simple idea, mentoring.
-                <br />
-                {' '}
-                <br />
-                It’s a
-                {' '}
-                <span className="text-highlight purple">
-                  <a href="#panel4" aria-label="proven model"> proven model</a>
-                </span>
-                {' '}
-                to end inequality and bring the powerful and powerless together, cost-effectively
-                and at scale.
-              </span>
-            </h2>
+          <div className="wrap items-center xs-p2 p3">
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              We’ve got a story of change that’s lit up the world since 2005, one kid at a time.
+              It’s a simple idea, mentoring.
+            </Title>
+            <br />
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              It’s a proven model to end inequality and bring the
+              powerful and powerless together, cost-effectively
+              and at scale.
+            </Title>
           </div>
         </section>
         <section className="section-impact bg-dark-purple-gradient">
-          <div className="pt4 pb2 xs-p2 center">
-            <h1 className="">
-              <span className="c-white highlight-text highlight-text-straight">
-                <em className="f-80">Quick facts</em>
-              </span>
-            </h1>
+          <div className="pt4 pb2 xs-p2 center c-white">
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            Quick facts
+            </Title>
           </div>
           <div className="wrap">
             <section className="section-about">
               <div className="section-about__column p2 xs-p1 items-center">
-                <div className="section-about__copy lg-col-8">
-                  <h3 className="c-white my2">We’ve ended educational inequality</h3>
-                  <p className="c-white">
+                <div className="section-about__copy lg-col-8 section-impact-copy">
+                  <Paragraph>
+                    <strong>
+                      We&apos;ve ended educational inequality
+                    </strong>
+                  </Paragraph>
+                  <Paragraph>
                     We do that by building mentoring bridges between universities and high
                     schools, between the powerful and the powerless, the haves and the have nots.
                     We know that our fiery and intuitive brand of mentoring ends the cycle of
                     disadvantage by permanently changing mindsets. Based in Redfern, Australia,
                     our operation runs across campuses worldwide.
-                  </p>
+                  </Paragraph>
                 </div>
               </div>
               <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
@@ -112,13 +105,16 @@ const Impact = () => (
             </section>
             <section className="section-about">
               <div className="section-about__column p2">
-                <div className="section-about__copy lg-col-8">
-                  <h3 className="c-white my2">We’re cost-effective</h3>
-                  <p className="c-white">
+                <div className="section-about__copy lg-col-8 section-impact-copy">
+                  <Paragraph>
+                    <strong>
+                      We’re cost-effective
+                    </strong>
+                  </Paragraph>
+                  <Paragraph>
                     As at 2018, every $ spent on AIME, $9 worth of benefits are generated for the
                     society.
-                    {' '}
-                  </p>
+                  </Paragraph>
                 </div>
               </div>
               <div className="section-about__column p2" style={{ alignItems: 'flex-start' }}>
@@ -131,13 +127,17 @@ const Impact = () => (
             </section>
             <section className="section-about">
               <div className="section-about__column p2">
-                <div className="section-about__copy lg-col-8">
-                  <h3 className="c-white my2">We’re scalable</h3>
-                  <p className="c-white">
+                <div className="section-about__copy lg-col-8 section-impact-copy">
+                  <Paragraph>
+                    <strong>
+                      We&apos;re scalable
+                    </strong>
+                  </Paragraph>
+                  <Paragraph>
                     What started as a simple idea working with 25 mentees at the University of
                     Sydney is now a global movement of change through mentoring, fueled by
                     university students, and the model is set for rapid expansion till 2025.
-                  </p>
+                  </Paragraph>
                 </div>
               </div>
               <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
@@ -149,15 +149,12 @@ const Impact = () => (
               </div>
             </section>
           </div>
-          <div className="wrap items-center xs-p2 sm-p2 md-p4 lg-p4">
-            <h2 className="py4 center">
-              <span className="c-white pre-text center f-18 feature-font-family">
-                and most importantly…
-              </span>
-              <span className="c-white highlight-text__small highlight-text highlight-text-straight pt2 f-32">
-                AIME CHANGES LIVES
-              </span>
-            </h2>
+          <div className="wrap items-center xs-p2 sm-p2 md-p4 lg-p4 c-white center">
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              And most importantly…
+              <br />
+              AIME CHANGES LIVES
+            </Title>
           </div>
         </section>
         <section className="section-impact bg-lavender-light" id="panel4">
@@ -329,13 +326,12 @@ const Impact = () => (
               <div className="baseGrid main-content">
                 <div className="section-background-image full-height full-width-wrap flex flex-wrap items-center">
                   <div className="xs-p2 sm-p2 md-p4 lg-p4">
-                    <span className="white center">
-                      <span className="impactNew-highlight-text highlight-text highlight-text-straight white center">
+                    <span className="white center bottom-panel-impact-heading">
+                      <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
                         AIME achieves the Holy Grail of educational interventions
-                      </span>
-                      <p className="c-white post-text center xs-pt2 sm-pt3 md-pt3 lg-pt4 pb0 f-14 feature-font-family">
+                        <br />
                         AIME Mentoring - A Solution for Educational Inequality
-                      </p>
+                      </Title>
                     </span>
                   </div>
                 </div>
