@@ -1,0 +1,19 @@
+@import "../../styles/base/variables";
+
+.beAMentorYearHeader {
+  padding-top: 2.5rem;
+  z-index: 14;
+  text-align: center;
+
+  @media only screen and (min-width: $md) {
+    grid-area: HEADER;
+  }
+
+  .yearWelcomeHeading {
+    strong {
+      left: initial;
+      line-height: inherit;
+      top: 0.1em;
+    }
+  }
+}
