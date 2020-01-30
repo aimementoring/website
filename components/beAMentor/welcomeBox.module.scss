@@ -1,0 +1,97 @@
+@import "../../styles/base/variables";
+
+.welcomeBeAMentorContent {
+  float: left;
+
+  @media only screen and (min-width: $md) {
+    grid-area: WELCOME-INFO;
+    padding-right: 2.5em;
+  }
+}
+
+.welcomeBeAMentor {
+  padding: 2em 1.5em 1em;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: $md) {
+    padding: 5em 4em 3em 1.5em;
+    grid-area: WELCOME-AREA;
+    display: grid;
+    grid-template: auto auto / 45% 55%;
+    grid-template-areas:
+      "WELCOME-INFO  WELCOME-INFO"
+      "WELCOME-VIDEO  WELCOME-VIDEO";
+  }
+}
+
+.pageIntroHeading {
+  margin-bottom: 1em;
+}
+
+// TODO: Move general styles to video componenet
+
+.videoBeAMentor {
+  position: relative;
+  padding-bottom: 56.25%; // 16:9
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+
+  @media only screen and (min-width: $md) {
+    grid-area: WELCOME-VIDEO;
+  }
+
+  .videoBanner {
+    background:
+      linear-gradient(#1a0024de, #1a0024c4),
+      url($cdnRoot+"assets/images/be-a-mentor/mentor_recruitment_video_bg.jpg")
+      50% 50% / cover !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    display: flex;
+    border-radius: 3px;
+
+    &:hover {
+      background:
+        linear-gradient(
+          rgba(118, 3, 219, 0.6),
+          rgba(118, 3, 219, 0.6)
+        ),
+        url($cdnRoot+"assets/images/be-a-mentor/mentor_recruitment_video_bg.jpg")
+        50% 50% / cover !important;
+    }
+  }
+
+}
+
+.videoBannerOverlay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+  font-family: $body-font-family;
+
+  .vidPlayBtn {
+    text-align: center;
+    margin: 2em auto 1em;
+    width: 4em;
+  }
+
+  h3 {
+    font-family: $body-font-family;
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+}
