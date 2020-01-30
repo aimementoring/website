@@ -108,8 +108,9 @@ const Stories = (props) => {
 Stories.getInitialProps = async () => {
   const client = contentfulServer();
   const entries = await client.then((response) => response);
+  const getStoryPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
 
-  return { entries };
+  return { entries: getStoryPosts };
 };
 
 const SysShape = PropTypes.shape({
