@@ -18,9 +18,8 @@ const Stories = (props) => {
   const { entries } = props;
   const isLoading = !entries;
 
-  const getStoryPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
-  const filteredDate = sortDates(getStoryPosts);
-  const filteredStoryContent = getStoryPosts.filter((entry) => (
+  const filteredDate = sortDates(entries);
+  const filteredStoryContent = entries.filter((entry) => (
     entry.fields.publishDate.indexOf(filteredDate) === -1
       || !filteredDate
   ));
@@ -109,8 +108,9 @@ const Stories = (props) => {
 Stories.getInitialProps = async () => {
   const client = contentfulServer();
   const entries = await client.then((response) => response);
+  const getStoryPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
 
-  return { entries };
+  return { entries: getStoryPosts };
 };
 
 const SysShape = PropTypes.shape({
