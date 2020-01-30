@@ -53,7 +53,6 @@
     display: flex;
     flex-wrap: wrap;
     padding: 2rem;
-    margin-top: 0;
 
     @supports (display: grid) {
       display: grid;
