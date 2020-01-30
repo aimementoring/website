@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import Anchor from '../../components/common/link';
+import Anchor from '../common/link';
 import { uploadCustomEOI } from '../../services/portalApi';
-import styles from './goingGlobal.module.scss';
+import styles from './goingGlobalIndex.module.scss';
 
 const EoiForm = dynamic(() => import('../../components/eoiForm/goingGlobalEOIForm'));
 
