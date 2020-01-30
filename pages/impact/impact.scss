@@ -15,10 +15,6 @@
     }
   }
 
-  #panel1 {
-    margin-top: -150px;
-  }
-
   .more-info .full-height {
     height: 100%;
   }
@@ -44,11 +40,7 @@
   }
 
   .full-height {
-    height: 50vh;
-
-    @media screen and (min-width: $sm) {
-      height: 75vh;
-    }
+    height: 55vh;
   }
 
   .scratch-overlay-wrapper.top-scratch {
@@ -123,7 +115,18 @@
     max-width: 350px;
     width: 100%;
   }
+  
+  .section-impact-copy {
+    p {
+      color: $white;
+    }
+  }
 
+  .bottom-panel-impact-heading {
+    h1 {
+      color: $white;
+    }
+  }
   //TODO: I think these can be components
 
   .icon-ArrowDown {
@@ -200,6 +203,17 @@
 
   .vid-headline {
     z-index: 7;
+
+    .bannerHeaderImpact {
+      margin-top: 4em;
+      
+      @media screen and (min-width: $md) {
+        margin-top: 2em;
+      }
+      strong {
+        left: initial;
+      }
+    }
   }
 
   /* .video-overlay {
