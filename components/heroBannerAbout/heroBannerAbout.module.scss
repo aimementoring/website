@@ -33,6 +33,11 @@
       background-attachment: scroll;
     }
 
+    .bannerContent {
+      z-index: 1;
+      text-align: center;
+    }
+
     .bannerHeader {
       color: $white;
       text-align: center;
