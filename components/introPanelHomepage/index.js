@@ -24,7 +24,9 @@ const IntroPanelHomepage = () => (
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Want to change the world? We&apos;re always recruiting mentors and we are
+              Want to change the world? We&apos;re always recruiting mentors. &nbsp;
+              <mark>RIGHT NOW</mark>
+              &nbsp; We&apos;re&nbsp;
               gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria &nbsp;
               <mark>REAL SOON!</mark>
               &nbsp;We are also activly recruiting in the USA! Join forces with AIME and together,
