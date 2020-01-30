@@ -1,0 +1,98 @@
+@import "../../styles/base/variables";
+
+.mentorEOIContainer {
+
+  @media only screen and (min-width: $md) {
+    padding: 0 2em;
+    display: grid;
+    grid: 15% 85% / 46% 54%;
+    grid-template-areas:
+      "HEADER        HEADER"
+      "WELCOME-AREA  FORM-AREA";
+  }
+}
+
+.heroBannerMentor {
+  background: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
+  background-size: cover;
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  padding: 10em 0;
+
+  @media screen and (min-width: $sm) {
+    padding: 0;
+    height: 62vh;
+  }
+
+  .banWrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .banContentWrapper {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .bannerHeading {
+      color: $white;
+      strong {
+        left: initial;
+      }
+    }
+  }
+}
+
+.beAMentorContainer {
+
+  .fullWidthWrap {
+    position: relative;
+    max-width: 78em;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+  }
+
+  .beAMentorYearHeader {
+    padding-top: 2.5rem;
+    z-index: 14;
+    text-align: center;
+
+    @media only screen and (min-width: $md) {
+      grid-area: HEADER;
+    }
+
+    .yearWelcomeHeading {
+      strong {
+        left: initial;
+        line-height: inherit;
+        top: 0.1em;
+      }
+    }
+  }
+
+  .info-content-heading {
+    font-family: "PoppinsBlackItalic";
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .section-intro-heading {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
