@@ -27,7 +27,7 @@ const IntroPanelHomepage = () => (
               Want to change the world? We&apos;re always recruiting mentors. &nbsp;
               <mark>RIGHT NOW</mark>
               &nbsp; We&apos;re&nbsp;
-              gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria &nbsp;
+              gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria.
               <mark>REAL SOON!</mark>
               &nbsp;We are also activly recruiting in the USA! Join forces with AIME and together,
               we&apos;ll shape a fairer world.
