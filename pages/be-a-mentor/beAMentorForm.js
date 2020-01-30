@@ -18,11 +18,9 @@ const BeAMentorForm = () => (
       </mark>
       <br />
       <br />
-      We are currently updating our 2020 application process &nbsp;
-      <strong>
-        and we&apos;ve had to temporarily take it offline.
-      </strong>
-      Please be patient with us a little bit longer and we&apos;ll
+      We are currently updating our 2020 application process&nbsp;
+      <strong>and we&apos;ve had to temporarily take it offline.</strong>
+      &nbsp;Please be patient with us a little bit longer and we&apos;ll
       have this all back up early next week so you can get your name on the list.
       <br />
       <br />
