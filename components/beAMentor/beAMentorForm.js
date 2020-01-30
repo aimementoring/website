@@ -1,6 +1,6 @@
 import React from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import styles from './beAMentor.module.scss';
+import styles from './beAMentorForm.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
