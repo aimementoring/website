@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Anchor from '../../components/common/link';
-import styles from './goingGlobal.module.scss';
+import Anchor from '../common/link';
+import styles from './goingGlobalIndex.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
