@@ -16,9 +16,8 @@
   .bannerWrapper {
     align-items: center;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url($cdnRoot+"assets/images/about/banner-about.jpg") no-repeat center
-      center #050301;
+      url($cdnRoot+"assets/images/banner/bg-patttern-purple@2x.jpg") no-repeat center
+      center $purple;
     background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
