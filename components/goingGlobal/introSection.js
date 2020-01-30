@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './goingGlobal.module.scss';
+import styles from './goingGlobalIndex.module.scss';
 
 const Intro = ({ setReference }) => (
   <section
