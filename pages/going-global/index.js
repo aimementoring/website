@@ -9,13 +9,13 @@ import { isClientSide } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
 import styles from './goingGlobal.module.scss';
 
-const Intro = dynamic(() => import('./introSection'));
-const CaseStudies = dynamic(() => import('./caseStudiesSection'));
-const Results = dynamic(() => import('./resultsSection'));
-const ImaginationCurriculum = dynamic(() => import('./imaginationCurriculumSection'));
-const Resources = dynamic(() => import('./resourcesSection'));
-const Register = dynamic(() => import('./registerSection'));
-const Message = dynamic(() => import('./messageSection'));
+const Intro = dynamic(() => import('../../components/goingGlobal/introSection'));
+const CaseStudies = dynamic(() => import('../../components/goingGlobal/caseStudiesSection'));
+const Results = dynamic(() => import('../../components/goingGlobal/resultsSection'));
+const ImaginationCurriculum = dynamic(() => import('../../components/goingGlobal/imaginationCurriculumSection'));
+const Resources = dynamic(() => import('../../components/goingGlobal/resourcesSection'));
+const Register = dynamic(() => import('../../components/goingGlobal/registerSection'));
+const Message = dynamic(() => import('../../components/goingGlobal/messageSection'));
 
 const GoingGlobal = () => {
   const [reloadData, setReloadData] = useState(false);
