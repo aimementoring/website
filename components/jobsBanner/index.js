@@ -6,8 +6,8 @@ const JobsBanner = () => (
     <div className="flex flex-wrap items-center full-height">
       <div className="banner-wrapper subpage-banner center pt3">
         <Title type="headingLockup" className="bannerHeadingPositions" theme={process.env.REACT_APP_THEME}>
-          AIME
-          <strong>Positions</strong>
+          Work
+          <strong>With us</strong>
         </Title>
       </div>
     </div>
