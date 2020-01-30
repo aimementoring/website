@@ -67,6 +67,14 @@
   // Stop fixed on tablets & phones as it doesn't work
   @media screen and (max-device-width: 1024px){
     background-attachment: scroll;
+    padding-top: 10em;
+  }
+
+  .founderBannerHeader {
+    letter-spacing: -0.15em;
+    strong {
+      top: 0;
+    }
   }
 }
 
