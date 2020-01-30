@@ -10,9 +10,9 @@ const HeroBannerAustralia = () => (
         <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
           Become a
           <strong>mentor</strong>
-          today
+          <br />
         </Title>
-        <Button theme={process.env.REACT_APP_THEME} type="link" url="/be-a-mentor">Apply now</Button>
+        <Button theme={process.env.REACT_APP_THEME} type="link" url="/be-a-mentor">Learn more</Button>
       </div>
     </div>
   </div>
