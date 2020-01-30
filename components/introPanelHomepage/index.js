@@ -24,11 +24,11 @@ const IntroPanelHomepage = () => (
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Want to change the world? We&apos;re always recruiting mentors. &nbsp;
+              Want to change the world? We&apos;re always recruiting mentors.&nbsp;
               <mark>RIGHT NOW</mark>
-              &nbsp; We&apos;re&nbsp;
+              &nbsp;we&apos;re&nbsp;
               gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria.
-              &nbsp;We are also activly recruiting in the USA! Join forces with AIME and together,
+              We are also activly recruiting in the USA! Join forces with AIME and together,
               we&apos;ll shape a fairer world.
             </Paragraph>
             <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
