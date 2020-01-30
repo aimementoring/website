@@ -11,14 +11,14 @@ import {
   getDataOfUniversity,
 } from '../../utils/expresionOfInterest';
 import COUNTRY_CODES from '../../utils/countryCodes';
-import styles from './beAMentor.module.scss';
+import styles from './styles.module.scss';
 
 const Loading = dynamic(() => import('aime-blueprint/lib/components/loading'));
-const UniversityLinks = dynamic(() => import('./universityLinks'));
-const BeAMentorForm = dynamic(() => import('./beAMentorForm'));
-const WelcomeBox = dynamic(() => import('./welcomeBox'));
-const HeroBanner = dynamic(() => import('./heroBanner'));
-const YearHeader = dynamic(() => import('./yearHeader'));
+const UniversityLinks = dynamic(() => import('../../components/beAMentor/universityLinks'));
+const BeAMentorForm = dynamic(() => import('../../components/beAMentor/beAMentorForm'));
+const WelcomeBox = dynamic(() => import('../../components/beAMentor/welcomeBox'));
+const HeroBanner = dynamic(() => import('../../components/beAMentor/heroBanner'));
+const YearHeader = dynamic(() => import('../../components/beAMentor/yearHeader'));
 
 const BeAMentor = () => {
   const [state, setState] = useState({
