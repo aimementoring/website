@@ -1,9 +1,5 @@
 /* Colour */
 
-$brand-primary: #FF6187;
-$brand-secondary: #c700ff;
-$brand-tertiary: #da0dff;
-
 /* monotone colours */
 $black: #000;
 $grey: #666;
@@ -38,9 +34,9 @@ $eggplant: #380249;
 $vibrant-purple: #9d60ec;
 
 /* imagination rainbow colours */
+$purple: #9135F0;
 $magenta: #E82A9E;
 $watermelon: #FF6187;
-$purple: #9135F0;
 $pink: #FF91C5;
 $orange: #FFA235;
 $yellow: #FCC606;
@@ -48,6 +44,10 @@ $green: #09CD7B;
 $cyan: #24D1F6;
 
 $color-primary: $purple;
+
+$brand-primary: $purple;
+$brand-secondary: $magenta;
+$brand-tertiary: $watermelon;
 
 /* Form element colours */
 $default-input-bg: #fef6ff;
