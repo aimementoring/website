@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import styles from './goingGlobal.module.scss';
+import styles from './goingGlobalIndex.module.scss';
 
 const TabComponent = dynamic(() => import('../../components/goingGlobal/tabComponent'));
 
