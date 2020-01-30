@@ -6,17 +6,19 @@ const HeroBannerAbout = () => (
   <div className={styles.heroBannerAbout}>
     <div className={styles.heroBannerAboutContent}>
       <div className={styles.bannerWrapper}>
-        <Title type="headingLockup" className={styles.bannerHeader} theme={process.env.REACT_APP_THEME}>
-          We build
-          <strong>
-            Mentoring
+        <div className={styles.bannerContent}>
+          <Title type="headingLockup" className={styles.bannerHeader} theme={process.env.REACT_APP_THEME}>
+            We build
+            <strong>
+              Mentoring
+              <br />
+              Bridges
+            </strong>
+            between universities
             <br />
-            Bridges
-          </strong>
-          between universities
-          <br />
-          and schools
-        </Title>
+            and schools
+          </Title>
+        </div>
       </div>
     </div>
   </div>
