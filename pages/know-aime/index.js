@@ -1,10 +1,12 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import List from 'aime-blueprint/lib/components/list';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import './knowAime.scss';
 
-const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
 const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -35,30 +37,28 @@ const KnowAime = () => (
           </div>
           <div className="vid-headline flex align-items xs-py4">
             <div className="px1 center m3">
-              <h1>
-                <span className="pre-text center light f-24 feature-font-family">Get to know</span>
-                <span className="highlight-text highlight-text-straight knowAime-highlight-text">
+              <Title type="headingLockup" className="knowAimeBannerHeader" theme={process.env.REACT_APP_THEME}>
+                Get to know
+                <strong>
                   AIME
-                </span>
-                <hr className="highlight-hr mt3 mx-auto" />
-              </h1>
+                </strong>
+              </Title>
             </div>
           </div>
         </div>
       </div>
-      <div className="scratch-overlay-wrapper top-scratch bg-white" />
       <div className="grid">
         <div className="baseGrid sidebar">
           <div className="">
             <h2 className="sidebarTitle feature-font-family">An intro to AIME</h2>
             <hr className="sidebarTitle-hr gradient-purple" />
           </div>
-          <p className="f-14">
+          <Paragraph>
             The purpose of these resources is to provide a space for you to get to know AIME and
             understanding how it works. The nature of AIME as an organisation is it’s alive, like
             the kids and university students we work with and the world we inhabit, we move with the
             times, we adapt and evolve constantly. Can you keep up?
-          </p>
+          </Paragraph>
           <div className="buttons-container pt4">
             <Anchor to="/the-mentor" as="/the-mentor" className="ghost-btn bg-brand-primary c-white mb2">
               <span className=" download-btn-text">Read &quot;The Mentor&quot;</span>
@@ -73,22 +73,24 @@ const KnowAime = () => (
         </div>
         <div className="baseGrid main-content">
           <div className="rowTitle">
-            <h2 className="feature-font-family">What’s the end game?</h2>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              What’s the end game?
+            </Title>
           </div>
           <div className="firstRow main-grid">
             <div className="tile tile--half">
-              <p>
+              <Paragraph>
                 Our vision is to bring rebellious mentoring to every campus in the world and see
                 every university student across the earth mentoring high school kids who are being
                 left behind.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 We’d love to do ourselves out of a job and have inspired a generation to lead,
                 provided the tools, then be able to declare that the problem we set out to solve is
                 solved, for example we want to see Indigenous educational inequality ended. We
                 believe every non profit should have an exit strategy and should be trying to finish
                 what they’ve started.
-              </p>
+              </Paragraph>
             </div>
             <div className="tile">
               <div className="">
@@ -110,50 +112,56 @@ const KnowAime = () => (
                 </div>
               </div>
               <div className="">
-                <h3 className="tile-title">Cogs</h3>
-                <p className="tile-copy">
+                <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
+                  Cogs
+                </Title>
+                <Paragraph>
                   This short film is directed by Oscar-winning filmmaker, Laurent Witz, and tells
                   the story of a world built on a mechanised system that favours only some. We
                   created it in the hope it would inspire others to join us in changing the way the
                   world works. It’s since won a Webby award and been viewed 20 million times across
                   a number of channels.
-                </p>
+                </Paragraph>
               </div>
             </div>
           </div>
           <div className="rowTitle">
-            <h2 className="feature-font-family">Okay, how does it work?</h2>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              Okay, how does it work?
+            </Title>
           </div>
           <div className="secondRow main-grid">
             <div className="single-tile">
               <div className="single-tile-video">
-                <p>
+                <Paragraph>
                   We build a World Of Mentoring, a bridge between university and high school which
                   mentors kids from Age 12-18 and features:
-                </p>
-                <ol>
-                  <li>Free academic tutoring: between 20-30 sessions a year</li>
-                  <li>45 one-hour AIME Theatre of Education sessions @ the university campus</li>
-                  <li>One-on-one career transition support for the Year 12 kids</li>
-                </ol>
-                <p>
+                </Paragraph>
+                <Paragraph>
+                  <ol>
+                    <li>Free academic tutoring: between 20-30 sessions a year</li>
+                    <li>45 one-hour AIME Theatre of Education sessions @ the university campus</li>
+                    <li>One-on-one career transition support for the Year 12 kids</li>
+                  </ol>
+                </Paragraph>
+                <Paragraph>
                   As a headline. This is not a one-on-one mentoring model. The program is guided by
                   a curriculum and all of our workshops happen on both the university and high
                   school campuses with groups of university students and high school kids together,
                   with a lead AIME mentor helping facilitate the delivery of the content.
-                </p>
+                </Paragraph>
 
-                <p>
+                <Paragraph>
                   The program is structured, has a start and end point, as we believe our role is to
                   be mentors and not saviours. That the ultimate success is the kids not wanting to
                   be in the program any more because they are stronger without us. There is no
                   contact outside of our programmed workshops.
-                </p>
+                </Paragraph>
 
-                <p>
+                <Paragraph>
                   Check out the videos below explaining the different elements we’ve developed to
                   the model.
-                </p>
+                </Paragraph>
               </div>
               <div className="single-tile-copy">
                 <video
@@ -177,7 +185,9 @@ const KnowAime = () => (
             </div>
           </div>
           <div className="rowTitle">
-            <h2 className="feature-font-family">The Program Model</h2>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            The Program Model
+            </Title>
           </div>
           <div className="secondRow main-grid">
             <div className="tile">
@@ -288,37 +298,53 @@ const KnowAime = () => (
             </div>
           </div>
           <div className="rowTitle">
-            <h2 className="feature-font-family">What are some of the headlines on AIME?</h2>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              What are some of the headlines on AIME?
+            </Title>
           </div>
           <div className="secondRow main-grid">
             <div className="single-tile">
               <div className="single-tile-video">
-                <p>Started in 2005 with 25 kids and from 2005 to 2018 AIME has gone from:</p>
-                <ul>
-                  <li>{'25 kids (mentees) > 10,000 kids'}</li>
-                  <li>{'One country > Three countries (on the way to 4)'}</li>
-                  <li>{'965 uni student mentors > 3000 uni student mentors'}</li>
-                </ul>
-                <h3 className="mb2">Headlines on the Founder and CEO</h3>
-                <ul>
-                  <li>
-                    Founded AIME as a 19 year old uni student starting with 25 kids, in the third
-                    year of his degree.
-                  </li>
-                  <li>CEO @ 22</li>
-                  <li>Young Australian of the Year award recipient</li>
-                  <li>Youngest person in Aus history to receive Hon Doctorate</li>
-                  <li>AIME BRW 12th Best Place to Work in Asia</li>
-                  <li>
-                    Got a book called The Mentor of which the proceeds raised fund our work globally
-                  </li>
-                </ul>
-                <h3 className="mb2">What are the Plans for the next 3 years?</h3>
-                <ul>
-                  <li>20,000 Indigenous kids in Aus</li>
-                  <li>20,000 kids in the US in 2020</li>
-                  <li>100,000 kids worldwide by 2021</li>
-                </ul>
+                <Paragraph>
+                  Started in 2005 with 25 kids and from 2005 to 2018. AIME has gone from:
+                </Paragraph>
+                <List
+                  type="ulList"
+                  list={[
+                    '25 kids (mentees) > 10,000 kids',
+                    'One country > Three countries (on the way to 4)',
+                    '965 uni student mentors > 3000 uni student mentors',
+                  ]}
+                />
+                <Paragraph>
+                  <strong>
+                    Headlines on the Founder and CEO
+                  </strong>
+                </Paragraph>
+                <List
+                  type="ulList"
+                  list={[
+                    'Founded AIME as a 19 year old uni student starting with 25 kids, in the third year of his degree.',
+                    'CEO @ 22',
+                    'Young Australian of the Year award recipient',
+                    'Youngest person in Aus history to receive Hon Doctorate',
+                    'AIME BRW 12th Best Place to Work in Asia',
+                    'Got a book called The Mentor of which the proceeds raised fund our work globally',
+                  ]}
+                />
+                <Paragraph>
+                  <strong>
+                    What are the Plans for the next 3 years?
+                  </strong>
+                </Paragraph>
+                <List
+                  type="ulList"
+                  list={[
+                    '20,000 Indigenous kids in Aus',
+                    '20,000 kids in the US in 2020',
+                    '100,000 kids worldwide by 2021',
+                  ]}
+                />
               </div>
               <div className="tile">
                 <div className="">
@@ -341,37 +367,44 @@ const KnowAime = () => (
                   </a>
                 </div>
                 <div className="">
-                  <h3 className="tile-title">Australian Story</h3>
-                  <p className="tile-copy">
-                    {'30-minute life story piece about AIME\'s founder Jack Manning Bancroft from 2012'}
-                  </p>
+                  <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
+                    Australian Story
+                  </Title>
+                  <Paragraph>
+                    30-minute life story piece about
+                    AIME&apos;s founder Jack Manning Bancroft from 2012.
+                  </Paragraph>
                 </div>
               </div>
             </div>
           </div>
           <div className="rowTitle">
-            <h2 className="feature-font-family">How are we going to do that?</h2>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              How are we going to do that?
+            </Title>
           </div>
           <div className="firstRow main-grid">
             <div className="tile tile--half">
-              <p>
+              <Paragraph>
                 In a simple sentence, we are looking to take the model back to where it started with
                 our founder, a volunteer model led by university students to mentor high school
                 kids. And as an organisation we are working round the clock to make the tools that
                 will simplify the process for the university across the globe running AIME.
-              </p>
-              <p>
-                {`To provide the training to take on the AIME for the US, Pacific, India, Africa,,
-                we're chartering a plane to Sydney in Feb each year to target up to 20,000
+              </Paragraph>
+              <Paragraph>
+                To provide the training to take on the AIME for the US, Pacific, India, Africa,,
+                we&apos;re chartering a plane to Sydney in Feb each year to target up to 20,000
                 disadvantaged kids in one go. On the 2019 plane, 200 uni students from different US
                 campuses and coming from disadvantaged backgrounds, will be flown alongside world
                 class leaders, storytellers and performers, to be trained and inspired at the
-                world's first ever`}
-                <stong>Festival of Mentoring</stong>
-  . On return each of them will
+                world&apos;s first ever&nbsp;
+                <mark>
+                  Festival of Mentoring
+                </mark>
+                . On return each of them will
                 launch AIME in their campuses and aim to mobilise 100 mentors to work with 100
                 disadvantaged school kids.
-              </p>
+              </Paragraph>
             </div>
             <div className="tile">
               <div className="">
@@ -393,16 +426,17 @@ const KnowAime = () => (
                 </div>
               </div>
               <div className="">
-                <h3 className="tile-title">Welcome to AIME</h3>
-                <p className="tile-copy">
+                <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
+                  Welcome to AIME
+                </Title>
+                <Paragraph>
                   If you were to watch one vid to get a quick sense of the AIME vibe this would be
                   it. It tells the AIME story alongside that of the oldest continuing surviving
                   culture, Indigenous Australians, from which AIME has its roots.
-                </p>
+                </Paragraph>
               </div>
             </div>
           </div>
-          <CtaFAQ />
           <div className="rowTitle">
             <h2 className="feature-font-family">Extra Vids</h2>
           </div>
