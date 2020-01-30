@@ -19,21 +19,15 @@ const WelcomeBox = () => (
         inequality. We&apos;ve been working with Aboriginal and Torres Strait islander
         kids in Australia
         for the past 15 years and in 2020 we&apos;re working across Australia, Uganda, South Africa,
-        Nigeria and the United States. Soon to be launching in Rwanda and Zimbabwe too. We
+        Nigeria and the United States. We
         understand that what we are fighting for is a global issue, and it takes a united effort to
         defeat systematic oppression. We are aware that these issues don’t exist just in our
         backyard, but all around the globe.
       </Paragraph>
       <Paragraph>
-        This year we&apos;ll bring change like you&apos;ve never seen.
-      </Paragraph>
-      <Paragraph>
         <mark>
           If it&apos;s not going to be you then who? If it&apos;s not going to be now then when?
         </mark>
-      </Paragraph>
-      <Paragraph>
-        Express your interest now, applications are open!
       </Paragraph>
     </div>
     <div className={styles.videoBeAMentor}>
