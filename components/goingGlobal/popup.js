@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import styles from './goingGlobal.module.scss';
+import styles from './goingGlobalComp.module.scss';
 
 const Modal = dynamic(() => import('react-modal'));
 const BoxContent = dynamic(() => import('./boxContent'));
