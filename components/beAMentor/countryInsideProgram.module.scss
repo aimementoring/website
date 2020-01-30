@@ -1,0 +1,10 @@
+@import "../../styles/base/variables";
+
+.countryEmojisWrapper {
+  position: relative;
+  font-size: 1.5rem;
+  transform: rotate(-9deg);
+  display: inline-block;
+  margin-top: 1em;
+  left: -0.8em;
+}
