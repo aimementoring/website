@@ -24,13 +24,12 @@ const IntroPanelHomepage = () => (
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Want to change the world? We&apos;re recruiting mentors
-              across Australia, Uganda and South Africa&nbsp;
-              <mark>RIGHT NOW!</mark>
-              &nbsp;That could be you! Join forces with AIME and together, we&apos;ll shape
-              a brighter future and lift kids out of inequality. Click the button
-              to learn more about becoming a mentor. And if you&apos;re in the USA or
-              Nigeria, look out - we&apos;re coming for you real real soon.
+              Want to change the world? We&apos;re always recruiting mentors.&nbsp;
+              <mark>RIGHT NOW</mark>
+              &nbsp;we&apos;re&nbsp;
+              gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria.
+              We are also activly recruiting in the USA! Join forces with AIME and together,
+              we&apos;ll shape a fairer world.
             </Paragraph>
             <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
               Be a mentor
@@ -45,8 +44,6 @@ const IntroPanelHomepage = () => (
             <div className="video-banner flex block rounded mx-auto">
               <div className="video-banner-overlay center">
                 <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
-                <h3>This could be you</h3>
-                <p>Watch what it means to be an AIME Mentor</p>
               </div>
             </div>
           </div>
