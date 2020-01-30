@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './goingGlobal.module.scss';
+import styles from './goingGlobalIndex.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
