@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../hocs/basicLayout';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -8,22 +9,17 @@ const Founder = () => (
     <div className="hero-banner--default hero-banner--founder full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
-          <h1>
-            <span className="pre-text">Jack Manning Bancroft</span>
-            <span className="highlight-text">
-              <em>
-                Founder &amp; CEO
-                <br />
-                <span className="scratch-underline">&nbsp;</span>
-              </em>
-            </span>
-          </h1>
+          <Title type="headingLockup" className="founderBannerHeader" theme={process.env.REACT_APP_THEME}>
+            Jack Manning Bancroft
+            <strong>
+              Founder &amp; CEO
+            </strong>
+          </Title>
         </div>
       </div>
     </div>
 
     <article className="matrix-general relative">
-      <div className="scratch-overlay-wrapper top-scratch bg-white" />
       <div className="wrap-md pt3 pb2">
         <p>Hi!</p>
         <p>My name’s Jack and I founded AIME fifteen years ago with imagination.</p>
