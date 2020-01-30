@@ -19,7 +19,7 @@ const WelcomeBox = () => (
         inequality. We&apos;ve been working with Aboriginal and Torres Strait islander
         kids in Australia
         for the past 15 years and in 2020 we&apos;re working across Australia, Uganda, South Africa,
-        Nigeria and the United States.We
+        Nigeria and the United States. We
         understand that what we are fighting for is a global issue, and it takes a united effort to
         defeat systematic oppression. We are aware that these issues don’t exist just in our
         backyard, but all around the globe.
