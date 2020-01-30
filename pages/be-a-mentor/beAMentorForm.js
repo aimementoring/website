@@ -22,7 +22,7 @@ const BeAMentorForm = () => (
       <strong>
         and we&apos;ve had to temporarily take it offline.
       </strong>
-      ! Please be patient with us a little bit longer and we&apos;ll
+      Please be patient with us a little bit longer and we&apos;ll
       have this all back up early next week so you can get your name on the list.
       <br />
       <br />
