@@ -77,6 +77,12 @@
   @media screen and (max-device-width: 1024px){
     background-attachment: scroll;
   }
+  .bannerHeadingPositions {
+    letter-spacing: -0.15em;
+    strong {
+      left: initial;
+    }
+  }
 }
 
 .hero-banner--satswag {
