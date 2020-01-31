@@ -73,7 +73,7 @@ const Cart = ({ checkout, client }) => {
           <div className="nav-btn">
             <p>Shopping Cart</p>
             <span className="counter">{checkoutState.lineItems.length}</span>
-            <img src={`${process.env.REACT_APP_CDN_ROOT}/assets/images/shopping-cart.svg`} alt="" />
+            <img src={`${process.env.REACT_APP_ASSETS_URL}/assets/images/shopping-cart.svg`} alt="" />
           </div>
           <div className="submenu-wrapper">
             <div className="submenu-arrow" />
