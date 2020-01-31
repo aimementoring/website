@@ -5,11 +5,11 @@ import EoiForm from '../../components/eoiForm/fireSupportForm';
 import Layout from '../../hocs/basicLayout';
 import styles from './styles.module.scss';
 
-const FireSupport = () => {
-  const assetsUrl = getAssetsBaseUrl();
-  const tableName = 'Fire Support';
-  const { assetsUrl } = this.state;
-  const { history } = this.props;
+const assetsUrl = getAssetsBaseUrl();
+const tableName = 'Fire Support';
+
+const FireSupport = ({ handleReloadData }) => {
+  // const { history } = this.props;
 
   return (
     <Layout>
@@ -102,11 +102,11 @@ const FireSupport = () => {
               </p>
 
               <EoiForm
-                history={history}
+                // history={history}
                 uploadData={uploadCustomEOI}
                 tableName={tableName}
                 showBeAFriendCheckbox
-                handleReloadData={this.handleReloadData}
+                handleReloadData={handleReloadData}
               />
             </div>
           </section>
@@ -116,5 +116,9 @@ const FireSupport = () => {
     );
   };
   
+  Register.propTypes = {
+    handleReloadData: PropTypes.func.isRequired,
+  };
+
   export default FireSupport;
   
