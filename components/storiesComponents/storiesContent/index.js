@@ -53,7 +53,7 @@ const StoriesContent = (props) => {
             className={styles.articleDescription}
           >
             <Title type="h5Title">{title}</Title>
-            <p className="article-tile-tagline">
+            <Paragraph>
               <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
                 {datePublished}
               </span>
@@ -63,7 +63,7 @@ const StoriesContent = (props) => {
               <span key={`px1-span-${id}`}>
                 {`By ${contentCreator}`}
               </span>
-            </p>
+            </Paragraph>
 
             <Paragraph>
               {contentPreview && contentPreview.previewCopy ? (
