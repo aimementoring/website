@@ -13,11 +13,11 @@
       border: 1px solid #E3E5E5;
 
       &:focus {
-        border-color: $neonpurple;
+        border-color: $purple;
       }
 
       &::placeholder {
-        color: $neonpurple;
+        color: $purple;
       }
     }
   }
@@ -25,10 +25,10 @@
     font-family: $feature-font-family;
     font-size: 0.875rem;
     font-weight: 400;
-    color: $neonpurple;
+    color: $purple;
 
     [class*="placeholder"] {
-      color: $neonpurple;
+      color: $purple;
       padding: 0 0.5em;
     }
 
@@ -41,11 +41,11 @@
     border: 1px solid #E3E5E5;
 
     &:focus {
-      border-color: $neonpurple;
+      border-color: $purple;
     }
 
     &::placeholder {
-      color: $neonpurple;
+      color: $purple;
     }
   }
   .submit {
@@ -72,7 +72,7 @@
     }
 
     &:hover {
-      background-color: $neonpurple;
+      background-color: $purple;
     }
   }
 } 
