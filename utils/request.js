@@ -31,7 +31,9 @@ export default function request(url, options) {
         'loginToken',
       )}`;
     }
-    fetchOptions.body = JSON.stringify(options.body);
+    if (fetchOptions.headers.Accept === 'application/json') {
+      fetchOptions.body = JSON.stringify(options.body);
+    }
   }
 
   return crossFetch(url, fetchOptions)
