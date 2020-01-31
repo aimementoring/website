@@ -3,7 +3,6 @@ const cacheableResponse = require('cacheable-response');
 const express = require('express');
 const next = require('next');
 const compression = require('compression');
-const path = require('path');
 const fetchContentfulEntries = require('./api/contentfulRedirects');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -25,11 +24,6 @@ const ssrCache = cacheableResponse({
 app.prepare().then(() => {
   const server = express();
   server.use(compression());
-
-  // robots.txt
-  server.get('/robots.txt', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/robots.txt'));
-  });
 
   // Positions
   server.get('/:countryId/positions', (req, res) => {
@@ -75,8 +69,6 @@ app.prepare().then(() => {
     server.listen(port, (err) => {
       if (err) throw err;
 
-      // eslint-disable-next-line no-underscore-dangle
-      console.log(server._router.stack.map((route) => route.route));
       // eslint-disable-next-line no-console
       console.log(`> Ready on http://localhost:${port}`);
     });
