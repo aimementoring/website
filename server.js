@@ -61,6 +61,7 @@ app.prepare().then(() => {
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
       const url = response[i];
+      console.log('CONTENTFUL', { url });
       server.get(url.fields.sourceUrl, (_req, res) => {
         res.redirect(url.fields.redirectType, url.fields.destinationUrl);
       });
