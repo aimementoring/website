@@ -41,12 +41,18 @@
     position: relative;
   }
 
+  .knowAimeBannerHeader {
+    letter-spacing: -0.15em;
+    strong {
+      left: initial
+    }
+  }
+
   .grid {
     display: block;
     display: flex;
     flex-wrap: wrap;
     padding: 2rem;
-    margin-top: -130px;
 
     @supports (display: grid) {
       display: grid;
