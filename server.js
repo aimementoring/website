@@ -26,6 +26,13 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
+  server.get('*', (req, res) => {
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
+      res.redirect(`https://${req.headers.host}${req.url}`);
+    }
+    return handle(req, res);
+  });
+
   server.get('/', (req, res) => {
     ssrCache({ req, res, pagePath: '/' });
   });
@@ -64,13 +71,6 @@ app.prepare().then(() => {
         res.redirect(url.fields.redirectType, url.fields.destinationUrl);
       });
     }
-
-    server.get('*', (req, res) => {
-      if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
-        res.redirect(`https://${req.headers.host}${req.url}`);
-      }
-      return handle(req, res);
-    });
 
     server.listen(port, (err) => {
       if (err) throw err;
