@@ -7,7 +7,6 @@ import { isClientSide } from '../../utils/utilities';
 import './positions.scss';
 
 const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
-const JobsTabs = dynamic(() => import('../../components/jobsTabs'));
 const Jobs = dynamic(() => import('../../components/jobs'));
 const VideoButton = dynamic(() => import('../../components/videoButton'));
 
@@ -16,7 +15,6 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const Positions = ({ redirected, redirectJobTitle, countryId }) => {
   const [isRedirect, setIsRedirect] = useState(redirected);
   const [jobTitle, setJobTitle] = useState(redirectJobTitle);
-  const [selectedTab, setSelectedTab] = useState('Life at AIME');
 
   const isClient = isClientSide();
 
@@ -34,10 +32,8 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
       <div className="positions">
         <JobsBanner />
         <section className="relative">
-          <div className="scratch-overlay-wrapper top-scratch bg-white" />
-          <JobsTabs onClick={setSelectedTab} active={selectedTab} countryId={countryId} />
           <div
-            className="video-banner-cta hero endorsement-wrap my4 flex flex-column items-center justify-center changed"
+            className="video-banner-cta hero endorsement-wrap flex flex-column items-center justify-center changed"
             style={{
               backgroundImage: `url('${ASSETS_URL}/assets/images/banner/endorsement-video.png')`,
             }}
