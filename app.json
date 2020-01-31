@@ -129,10 +129,6 @@
       "required": true,
       "value": "GTM-NK5SFHW"
     },
-    "REACT_APP_CDN_ROOT": {
-      "required": true,
-      "value": "https://d2cl4o0mkg71rr.cloudfront.net"
-    },
     "REACT_APP_DONATE_USERNAME": {
       "required": true,
       "value": "website@aimementoring.com"
