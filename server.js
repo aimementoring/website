@@ -2,7 +2,6 @@ require('dotenv').config();
 const path = require('path');
 const cacheableResponse = require('cacheable-response');
 const express = require('express');
-const ssl = require('express-ssl');
 const next = require('next');
 const compression = require('compression');
 const fetchContentfulEntries = require('./api/contentfulRedirects');
@@ -25,7 +24,6 @@ const ssrCache = cacheableResponse({
 
 app.prepare().then(() => {
   const server = express();
-  server.use(ssl());
   server.use(compression());
 
   server.get('/', (req, res) => {
