@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import Layout from '../../../hocs/basicLayout';
-import { uploadCustomEOI } from '../../../services/portalApi';
-import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../../utils/utilities';
-import eoiData from '../../../constants/dynamicEOI';
-import './DynamicEOI.scss';
+import { useRouter } from 'next/router';
+import Layout from '../../hocs/basicLayout';
+import { uploadCustomEOI } from '../../services/portalApi';
+import { firstCharacterToUpperCaseAndSpacesForDivision, isClientSide } from '../../utils/utilities';
+import eoiData from '../../constants/dynamicEOI';
+import './eoi.scss';
 
-const HoodedScholarForm = dynamic(() => import('../../../components/eoiForm'));
+const HoodedScholarForm = dynamic(() => import('../../components/eoiForm'));
 
-const DynamicEOI = ({ table }) => {
+const DynamicEOI = () => {
   const [tableName, setTableName] = useState('');
   const [title, setTitle] = useState('Expression of Interest!');
   const [subTitle, setSubTitle] = useState('Please complete your data');
   const [img, setImg] = useState('');
   const isClient = isClientSide();
+  const router = useRouter();
+  const { table } = router.query;
 
   const setDefaultTable = () => {
     if (isClient) {
@@ -80,18 +82,6 @@ const DynamicEOI = ({ table }) => {
       </div>
     </Layout>
   );
-};
-
-DynamicEOI.getInitialProps = async ({ query }) => ({
-  tableName: query.tableName,
-});
-
-DynamicEOI.propTypes = {
-  table: PropTypes.string,
-};
-
-DynamicEOI.defaultProps = {
-  table: null,
 };
 
 export default DynamicEOI;
