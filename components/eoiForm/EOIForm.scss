@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import '../../styles/base/variables';
 
 .custom-form-input-container {
   z-index: 1;
@@ -6,34 +6,46 @@
 
 //TODO: I'll set this up with CSS modules with more time tomorrow
 .form-light {
-  .custom-form-input-container,
-  .textarea-wrapper {
+  .custom-form-input-container, .textarea-wrapper {
     padding: 0 0.5em 1em;
-    .input,
-    select,
-    textarea {
-      border: 1px solid #e3e5e5;
+    .input, select, textarea {
+      font-family: $feature-font-family;
+      border: 1px solid #E3E5E5;
 
       &:focus {
-        border-color: $purple;
+        border-color: $neonpurple;
       }
 
       &::placeholder {
-        color: $purple;
+        color: $neonpurple;
       }
     }
   }
-  .input,
-  select,
-  textarea {
-    border: 1px solid #e3e5e5;
+  .select-uni-location {
+    font-family: $feature-font-family;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: $neonpurple;
+
+    [class*="placeholder"] {
+      color: $neonpurple;
+      padding: 0 0.5em;
+    }
+
+    [class*="singleValue"] {
+      color: $black;
+      padding: 0 0.5em;
+    }
+  }
+  .input, select, textarea {
+    border: 1px solid #E3E5E5;
 
     &:focus {
-      border-color: $purple;
+      border-color: $neonpurple;
     }
 
     &::placeholder {
-      color: $purple;
+      color: $neonpurple;
     }
   }
   .submit {
@@ -55,8 +67,24 @@
     transition: all 0.1s linear;
     pointer-events: auto;
 
+    &.support-submit {
+      background-color: $light-orange;
+    }
+
     &:hover {
-      background-color: $cyan;
+      background-color: $neonpurple;
     }
   }
+} 
+
+.university-eoi-form-container {
+  padding: 0 0.5em 1em;
+
+  .css-1hwfws3 {
+    max-height: 4em;
+  }
+}
+
+.mh-60 {
+  min-height: 3.75em;
 }
