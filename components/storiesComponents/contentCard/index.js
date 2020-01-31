@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import {
   formatDate,
 } from '../../../utils/utilities';
@@ -46,9 +47,10 @@ const ContentCard = (props) => {
               {imageCaption && <div className="figcaption">{imageCaption}</div>}
             </>
           )}
-        <ReactMarkdown>
-          {storyBody}
-        </ReactMarkdown>
+        <ReactMarkdown
+          source={storyBody}
+          renderers={{ paragraph: Paragraph }}
+        />
       </Fragment>
     );
   });
