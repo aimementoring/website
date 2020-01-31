@@ -49,6 +49,7 @@
     "cross-fetch": "^3.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-ssl": "^3.1.0",
     "filestack-react": "2.0.6",
     "google-maps": "^3.3.0",
     "isomorphic-unfetch": "^3.0.0",
