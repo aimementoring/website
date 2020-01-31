@@ -1946,10 +1946,10 @@ agent-base@^4.3.0:
   dependencies:
     es6-promisify "^5.0.0"
 
-aime-blueprint@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.2.1.tgz#65303a4ea2086e228b94a34e7a39b29677241def"
-  integrity sha512-0OJfHi9QzJPxawv40eILyS2fBsDawyLZebR7HlJu12b4PCXNbHpcqYJ6Xg+7Jt6iE6cmDIDLmi72ScvWaZkjkg==
+aime-blueprint@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.2.3.tgz#9bb3943fa865e1cecb96afcd73bdea1fb5962adb"
+  integrity sha512-Qc+Nb37m4Eau9n/vpE/enKNdgb9+0G75Cm3lUiKojUFOQQOusYKl3v/c1zxTvtBZl62eCovH5YMJPXsMSzOv1w==
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
