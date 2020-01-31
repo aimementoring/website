@@ -25,17 +25,6 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  server.get('*', (req, res) => {
-    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
-      res.redirect(301, `https://${req.headers.host}${req.url}`);
-    }
-    return handle(req, res);
-  });
-
-  server.get('/', (req, res) => {
-    ssrCache({ req, res, pagePath: '/' });
-  });
-
   // Positions
   server.get('/:countryId/positions', (req, res) => {
     const pagePath = '/positions';
@@ -68,13 +57,18 @@ app.prepare().then(() => {
 
     server.get('*', (req, res) => {
       if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
-        res.redirect(`https://${req.headers.host}${req.url}`);
+        res.redirect(301, `https://${req.headers.host}${req.url}`);
       }
       return handle(req, res);
     });
 
+    server.get('/', (req, res) => {
+      ssrCache({ req, res, pagePath: '/' });
+    });
+
     server.listen(port, (err) => {
       if (err) throw err;
+
       // eslint-disable-next-line no-console
       console.log(`> Ready on http://localhost:${port}`);
     });
