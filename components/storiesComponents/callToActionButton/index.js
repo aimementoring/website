@@ -22,9 +22,7 @@ const CallToActionButton = (props) => {
             }}
             className={styles.postElementLink}
           >
-            <ReactMarkdown>
-              {label}
-            </ReactMarkdown>
+            <ReactMarkdown source={label} />
           </a>
         );
       })}
