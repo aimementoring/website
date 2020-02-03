@@ -5,6 +5,7 @@ import compact from 'lodash/compact';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../../../hocs/basicLayout';
 import bugsnagClient from '../../../../utils/bugsnag';
 import {
@@ -360,15 +361,15 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             ) : null}
             <div>
               {!showForm && Object.keys(job).length > 0 && (
-                <button
+                <Button theme={process.env.REACT_APP_THEME}
                   id="applyNowButton"
                   type="button"
-                  onClick={showApplicationForm}
+                  onClickFunction={showApplicationForm}
                   className="basic-btn border-none submit bold bg-purple c-white regular js-non-unavailable-position"
                   aria-label="apply now"
-                >
+                  >
                   Apply now
-                </button>
+                </Button>
               )}
             </div>
             <div>
@@ -686,14 +687,12 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
               )}
             </div>
 
-            <Anchor
-              to="/positions#opportunity-list"
-              className="article-tile-link basic-btn italic"
-            >
-              <i className="material-icons">keyboard_backspace</i>
-                Back to
-                Opportunity List
-            </Anchor>
+            <Paragraph>
+              <Anchor to="/positions#opportunity-list" className="backToOpps">
+                <i className="material-icons">keyboard_backspace</i>
+                Back to list of opportunities
+              </Anchor>
+            </Paragraph>
           </div>
         </div>
       </Layout>
