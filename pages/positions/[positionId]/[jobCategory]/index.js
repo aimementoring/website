@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
+import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Layout from '../../../../hocs/basicLayout';
 import bugsnagClient from '../../../../utils/bugsnag';
 import {
@@ -416,30 +417,36 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
 
                     {/* <!-- About You Section --> */}
                     <div className="clearfix">
-                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b flex">
-                        <input
+                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+                        <LabeledInput
                           type="text"
-                          className="input"
-                          placeholder="First Name"
                           name="first_name"
+                          onChangeFunction={(name, inputValue) => setValue(inputValue)}
+                          label="First Name"
+                          theme={process.env.REACT_APP_THEME}
+                          className="inputJobApplication"
                           required
                         />
                       </div>
-                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b flex">
-                        <input
+                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+                        <LabeledInput
                           type="text"
-                          className="input"
-                          placeholder="Last Name"
                           name="last_name"
+                          onChangeFunction={(name, inputValue) => setValue(inputValue)}
+                          label="Last Name"
+                          theme={process.env.REACT_APP_THEME}
+                          className="inputJobApplication"
                           required
                         />
                       </div>
-                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b flex">
-                        <input
+                      <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+                        <LabeledInput
                           type="email"
-                          className="input"
-                          placeholder="Email"
                           name="email"
+                          onChangeFunction={(name, inputValue) => setValue(inputValue)}
+                          label="Email"
+                          theme={process.env.REACT_APP_THEME}
+                          className="inputJobApplication"
                           required
                         />
                       </div>
@@ -450,96 +457,12 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                           geoIpLookup={lookupGeoIp}
                           css={['intl-tel-input w100', 'input']}
                           utilsScript="libphonenumber.js"
+                          theme={process.env.REACT_APP_THEME}
                         />
                       </div>
                     </div>
 
-                    {/* <!-- Your Location Section --> */}
-                    <div className="sm-col sm-col-12 md-col-12 o7-r o7-b clearfix">
-                      <AddressAutocompleteInput
-                        placeholder="Start typing your address..."
-                        onAddressSelected={onAddressSelected}
-                        classNameProp="input js-autocomplete-address"
-                      />
-                      <div>
-                        {locationError && (
-                          <p className="error-message">
-                            Oh no! Sorry looks like we’re not accepting
-                            applications from this country yet
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Unit Number"
-                        name="unit_number"
-                      />
-                    </div>
-
-                    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Street number"
-                        name="street_number"
-                        value={streetNumber}
-                        onChange={handleFieldChange('streetNumber')}
-                      />
-                    </div>
-
-                    <div className="sm-col sm-col-12 md-col-12 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Street name"
-                        name="street_name"
-                        value={streetName}
-                        onChange={handleFieldChange('streetName')}
-                        required
-                      />
-                    </div>
-
-                    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="Postcode"
-                        name="postcode"
-                        value={postCode}
-                        onChange={handleFieldChange('postCode')}
-                        required
-                      />
-                    </div>
-
-                    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="State/Territory"
-                        name="state"
-                        value={territory}
-                        onChange={handleFieldChange('territory')}
-                        required
-                      />
-                    </div>
-
-                    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
-                      <input
-                        type="text"
-                        className="input"
-                        placeholder="City"
-                        name="city"
-                        value={city}
-                        onChange={handleFieldChange('city')}
-                        required
-                      />
-                    </div>
-
-                    <CountrySelector
+                    {/* <CountrySelector
                       containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b"
                       placeholder="What country do you live in?"
                       classNames="input"
@@ -583,7 +506,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                         <option value="Word of Mouth">Word of Mouth</option>
                         <option value="Other">Other</option>
                       </select>
-                    </div>
+                    </div> */}
 
                     <div className="sm-col sm-col-12 md-col-12 o7-r o7-b js-message-question-div">
                       {job.messageQuestion && (

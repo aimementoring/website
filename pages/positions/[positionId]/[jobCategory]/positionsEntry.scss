@@ -23,3 +23,11 @@
   text-decoration: none;
   padding: 2em 0 1em;
 }
+
+.job-application {
+  .inputJobApplication,
+  input[type="tel"] {
+    width: 100%;
+    height: auto;
+  }
+}
