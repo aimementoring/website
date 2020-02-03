@@ -163,44 +163,46 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
   };
 
   const setRequiredDocuments = ({ requiredDocuments }) => {
-    if (!requiredDocuments || !requiredDocuments.length) {
-      document.querySelector('.js-job-documents').classList.add('hide');
-      return;
-    }
-    const documentsContainer = document.querySelector('.js-job-document-container');
-    const elements = transformTemplate(
-      documentsContainer.querySelector('[type="text/template"]'),
-      requiredDocuments.length,
-    );
+    if (state.showForm) {
+      if (!requiredDocuments || !requiredDocuments.length) {
+        document.querySelector('.js-job-documents').classList.add('hide');
+        return;
+      }
+      const documentsContainer = document.querySelector('.js-job-document-container');
+      const elements = transformTemplate(
+        documentsContainer.querySelector('[type="text/template"]'),
+        requiredDocuments.length,
+      );
 
-    if (
-      elements
+      if (
+        elements
       && elements.length > 0
       && elements[elements.length - 1]
       && elements[elements.length - 1].classList
-    ) {
-      elements[elements.length - 1].classList.remove('mb2');
-    }
-
-    requiredDocuments.forEach((document, index) => {
-      if (elements[index]) {
-        const div = elements[index].querySelector('.upload-field');
-        div.dataset.buttonText = `Upload ${document}`;
-        div.dataset.inputName = `job-${kebabCase(document)}`;
-        div.dataset.apiKey = div.getAttribute('data-api-key');
-        div.dataset.requiredFile = true;
-      } else {
-        bugsnagClient.notify(new Error('No elements detected to upload file'), {
-          severity: 'error',
-        });
+      ) {
+        elements[elements.length - 1].classList.remove('mb2');
       }
-    });
 
-    elements.forEach((element) => {
-      documentsContainer.appendChild(element);
-    });
+      requiredDocuments.forEach((document, index) => {
+        if (elements[index]) {
+          const div = elements[index].querySelector('.upload-field');
+          div.dataset.buttonText = `Upload ${document}`;
+          div.dataset.inputName = `job-${kebabCase(document)}`;
+          div.dataset.apiKey = div.getAttribute('data-api-key');
+          div.dataset.requiredFile = true;
+        } else {
+          bugsnagClient.notify(new Error('No elements detected to upload file'), {
+            severity: 'error',
+          });
+        }
+      });
 
-    UtilityFuncs.loadComponent('.upload-field', FileUploader);
+      elements.forEach((element) => {
+        documentsContainer.appendChild(element);
+      });
+
+      UtilityFuncs.loadComponent('.upload-field', FileUploader);
+    }
   };
 
   const handleFieldChange = (propertyValue) => (e) => {
