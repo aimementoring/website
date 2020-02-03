@@ -235,7 +235,7 @@ const Jobs = ({
 Jobs.propTypes = {
   cdnUrl: PropType.string.isRequired,
   backgroundColor: PropType.string,
-  isRedirect: PropType.bool,
+  isRedirect: PropType.oneOfType([PropType.bool, PropType.string]),
   handleRedirectHide: PropType.func,
   jobTitle: PropType.string.isRequired,
 };
