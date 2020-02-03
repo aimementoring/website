@@ -8,6 +8,7 @@ import styles from './header.module.scss';
 
 const TalentHeader = dynamic(() => import('./talentHeader'));
 const GoingGlobalHeader = dynamic(() => import('./goingGlobalHeader'));
+const FireSupportHeader = dynamic(() => import('./fireSupportHeader'));
 const ImaginationDeclarationHeader = dynamic(() => import('./imaginationDeclarationHeader'));
 const StandardHeader = dynamic(() => import('./standardHeader'));
 
@@ -19,6 +20,8 @@ const getHeaderComponent = (pathname) => {
     component = 'imaginationDeclaration';
   } else if (pathname.indexOf('/going-global') > -1 || pathname.indexOf('/goingGlobal') > -1) {
     component = 'goingGlobal';
+  } else if (pathname.indexOf('/fire-support') > -1 || pathname.indexOf('/fireSupport') > -1) {
+    component = 'fireSupport';
   } else if (pathname.indexOf('/hooded-scholar') > -1 || pathname.indexOf('/hoodedScholar') > -1) {
     component = null;
   }
@@ -30,6 +33,7 @@ const HEADERS_MAP = {
   talent: TalentHeader,
   imaginationDeclaration: ImaginationDeclarationHeader,
   goingGlobal: GoingGlobalHeader,
+  fireSupport: FireSupportHeader,
 };
 
 const Header = ({ location }) => {

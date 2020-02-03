@@ -21,6 +21,11 @@
   align-items: center;
   justify-content: space-between;
   padding: .5em 1em;
+
+  &.fireSupportHeader {
+    justify-content: center;
+    padding: 1em;
+  }
 }
 
 .navMenuLinks {

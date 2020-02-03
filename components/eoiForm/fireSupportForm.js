@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
 import Router from 'next/router';
-import Input from 'aime-blueprint/lib/components/input';
-import Textarea from 'aime-blueprint/lib/components/textarea';
+import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
+import LabeledTextarea from 'aime-blueprint/lib/components/labeledTextarea';
 import Loading from 'aime-blueprint/lib/components/loading';
 import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
 import UniversitySelector from '../universitySelectorWithAutoComplete';
@@ -134,7 +134,7 @@ const EOIForm = ({ currentSite, uploadData }) => {
   return (
     <form className="clearfix form-light student-chapter-form" ref={formEl}>
       <input type="hidden" name="utf8" />
-      <Input
+      <LabeledInput
         placeholder="First Name"
         name="firstName"
         required
@@ -142,23 +142,26 @@ const EOIForm = ({ currentSite, uploadData }) => {
         elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
         value={firstName}
         onChangeFunction={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
       />
-      <Input
+      <LabeledInput
         type="text"
         elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
         placeholder="Last Name"
         name="lastName"
         value={lastName}
         onChangeFunction={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
         required
       />
-      <Input
+      <LabeledInput
         type="email"
         elementClassName="sm-col sm-col-6 md-col-6 custom-form-input-container"
         placeholder="Email"
         name="email"
         value={email}
         onChangeFunction={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
         required
       />
       <div>
@@ -171,6 +174,7 @@ const EOIForm = ({ currentSite, uploadData }) => {
             value={phone}
             defaultCountry="au"
             currentSite={currentSite}
+            theme={process.env.REACT_APP_THEME}
           />
         </div>
       </div>
@@ -186,10 +190,11 @@ const EOIForm = ({ currentSite, uploadData }) => {
           value={university || null}
           backgroundColor="#FFFF"
           borderColor="#E3E5E5"
+          theme={process.env.REACT_APP_THEME}
         />
       </div>
       {universityIsOutsideAIME && (
-        <Input
+        <LabeledInput
           type="universityOutsideOfAime"
           elementClassName="sm-col sm-col-12 md-col-12 custom-form-input-container"
           placeholder="Your University"
@@ -197,16 +202,18 @@ const EOIForm = ({ currentSite, uploadData }) => {
           className="mh-60"
           value={universityOutsideOfAime}
           onChangeFunction={handleFieldChange}
+          theme={process.env.REACT_APP_THEME}
           required
         />
       )}
-      <Textarea
+      <LabeledTextarea
         elementClassName="input-wrapper textarea-wrapper"
         className="input-heigth"
         placeholder="Please provide your location, dates, availability &amp; any specialist skills you have"
         name="message"
         value={message}
         onChangeFunction={handleFieldChange}
+        theme={process.env.REACT_APP_THEME}
       />
       <div className="sm-col sm-col-12 md-col-12 center-align md-left-align py2 my1">
         <input onClick={submitData} type="submit" className="submit support-submit" value="REGISTER" />
