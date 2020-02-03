@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import compact from 'lodash/compact';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../../../hocs/basicLayout';
 import bugsnagClient from '../../../../utils/bugsnag';
 import {
@@ -238,18 +240,14 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
     <div className="hero-banner--default full-width-wrap job-hero">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper subpage-banner center">
-          <h1>
-            <span className="pre-text">Work with</span>
-            <span className="highlight-text">
-              <em>
+          <div className="bannerContent">
+            <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
+              Work with
+              <strong>
                 AIME
-                <br />
-              </em>
-            </span>
-            <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
-              &nbsp;
-            </span>
-          </h1>
+              </strong>
+            </Title>
+          </div>
         </div>
       </div>
     </div>
@@ -273,10 +271,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             data-job-id={id}
             data-current-site={currentSite}
           >
-            <h1
-              className="lh-smaller sm-text-wrap py2 c-black"
-              style={{ display: 'block' }}
-            >
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               Hello, are you the
               <span className="c-purple js-job-name">
                 {job
@@ -285,28 +280,28 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                   : job.name && ` ${job.name.replace('-', '')} `}
               </span>
               {'we\'re looking for?'}
-            </h1>
+            </Title>
             <div className="block f-14 light js-non-unavailable-position c-black">
-              <p className="inline-block js-job-location">{location}</p>
-              {location && (
+              <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{location}</Title>
+              {/* {location && (
                 <p className="inline-block px1 js-job-dash-location">-</p>
-              )}
-              <p className="inline-block js-job-term">{job.term}</p>
-              {job.salaryRange && (
+              )} */}
+              <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{job.term}</Title>
+              {/* {job.salaryRange && (
                 <p className="inline-block px1 js-job-dash-location">-</p>
-              )}
+              )} */}
               {job.salaryRange && (
-                <p className="inline-block js-job-expires">{job.salaryRange}</p>
+                <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{job.salaryRange}</Title>
               )}
             </div>
 
             <div className="block mb3 md-mb4 lg-mb4 f-14 light js-non-unavailable-position c-purple">
               {job.expire && (
                 <div>
-                  <p className="inline-block">Applications close at &nbsp; </p>
-                  <p className="inline-block js-job-expires">
+                  <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Applications close at &nbsp; </Title>
+                  <Paragraph>
                     <strong>{getFormattedDate(job.expire)}</strong>
-                  </p>
+                  </Paragraph>
                 </div>
               )}
             </div>
@@ -334,13 +329,13 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                 </div>
               )}
             </div>
-            <h4 className="mb1 feature-font-family regular js-non-unavailable-position c-brand-primary">
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               The Opportunity
-            </h4>
+            </Title>
 
-            <p className="f-14 light lh-large mb4 js-job-description js-non-unavailable-position c-black">
+            <Paragraph>
               {job.description}
-            </p>
+            </Paragraph>
 
             {!hideDocsContainer ? (
               <div className="js-job-packs block mb3 md-mb4 lg-mb4">
@@ -357,9 +352,9 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                     </span>
                   </a>
                 </script>
-                <h4 className="mb1 feature-font-family regular c-brand-primary">
+                <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                   Supporting Docs
-                </h4>
+                </Title>
                 <div className="flex flex-wrap js-container" />
               </div>
             ) : null}
@@ -379,7 +374,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             <div>
               {positionExpired && (
                 <div className="block mb3 md-mb4 lg-mb4 f-14 light js-unavailable-position c-black">
-                  <p>Sadly this position has expired</p>
+                  <Paragraph>Sadly this position has expired</Paragraph>
                 </div>
               )}
             </div>
