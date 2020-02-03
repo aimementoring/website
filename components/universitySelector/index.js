@@ -17,7 +17,7 @@ const UniversitySelector = ({
       <option value="" disabled>
         {placeholder}
       </option>
-      {universities.length
+      {universities && universities.length
         && universities
           .filter((university) => university.text && university.value)
           .map((university) => (

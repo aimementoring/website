@@ -23,7 +23,6 @@ import './positionsEntry.scss';
 
 const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
 const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
-const kebabCase = dynamic(() => import('lodash/kebabCase'));
 const FileUploader = dynamic(() => import('../../../../components/fileUploader'));
 const AddressAutocompleteInput = dynamic(() => import('../../../../components/addressAutocompleteInput'));
 const UniversitySelector = dynamic(() => import('../../../../components/universitySelector'));
@@ -178,10 +177,11 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
       elements[elements.length - 1].classList.remove('mb2');
     }
 
-    requiredDocuments.forEach((document, index) => {
+    requiredDocuments.forEach(async (document, index) => {
       if (elements[index]) {
         const div = elements[index].querySelector('.upload-field');
         div.dataset.buttonText = `Upload ${document}`;
+        const { default: kebabCase } = await import('lodash/kebabCase');
         div.dataset.inputName = `job-${kebabCase(document)}`;
         div.dataset.apiKey = div.getAttribute('data-api-key');
         div.dataset.requiredFile = true;
@@ -361,13 +361,14 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             ) : null}
             <div>
               {!showForm && Object.keys(job).length > 0 && (
-                <Button theme={process.env.REACT_APP_THEME}
+                <Button
+                  theme={process.env.REACT_APP_THEME}
                   id="applyNowButton"
                   type="button"
                   onClickFunction={showApplicationForm}
                   className="basic-btn border-none submit bold bg-purple c-white regular js-non-unavailable-position"
                   aria-label="apply now"
-                  >
+                >
                   Apply now
                 </Button>
               )}
@@ -383,7 +384,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
               {showForm && Object.keys(job).length > 0 && (
                 <div
                   id="jobApplicationReveal"
-                  className="job-application--reveal flex flex-column border-top b-light-blue pt4 js-non-unavailable-position"
+                  className={`${showForm ? '' : 'hide'} job-application--reveal flex flex-column border-top b-light-blue pt4 js-non-unavailable-position`}
                 >
                   <h4 className="feature-font-family regular f-15 pb2 c-brand-primary">
                     Apply now
