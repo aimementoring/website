@@ -271,7 +271,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             data-job-id={id}
             data-current-site={currentSite}
           >
-            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
               Hello, are you the
               <span className="c-purple js-job-name">
                 {job
@@ -329,7 +329,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                 </div>
               )}
             </div>
-            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
               The Opportunity
             </Title>
 
@@ -352,7 +352,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                     </span>
                   </a>
                 </script>
-                <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+                <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
                   Supporting Docs
                 </Title>
                 <div className="flex flex-wrap js-container" />
