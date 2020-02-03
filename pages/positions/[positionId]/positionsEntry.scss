@@ -1,7 +1,33 @@
-@import "../../../styles/base/variables";
+@import "../../../../styles/base/variables";
 
 .job-hero {
   background:
-    url($cdnRoot+"assets/images/banner/Partner@2x-min.jpg") no-repeat
-    bottom center / cover #050301;
+    url($cdnRoot+"assets/images/banner/banner-pattern-blue.jpg") no-repeat
+    bottom center / cover $cyan;
+}
+
+.bannerContent .headingJobsSingle {
+  text-align: center;
+  strong {
+    left: initial;
+  }
+}
+
+.headingJobContent {
+  margin: 1.5em 0 0.5em;
+}
+
+.backToOpps {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2em 0 1em;
+}
+
+.job-application {
+  .inputJobApplication,
+  input[type="tel"] {
+    width: 100%;
+    height: auto;
+  }
 }
