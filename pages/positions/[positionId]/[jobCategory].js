@@ -3,27 +3,27 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import compact from 'lodash/compact';
 import dynamic from 'next/dynamic';
-import Layout from '../../../../hocs/basicLayout';
-import bugsnagClient from '../../../../utils/bugsnag';
+import Layout from '../../../hocs/basicLayout';
+import bugsnagClient from '../../../utils/bugsnag';
 import {
   capitaliseFirstCharacter,
   removeSpecialCharacters,
   getCountrySite,
   isClientSide,
-} from '../../../../utils/utilities';
-import handleError from '../../../../utils/errorHandler';
-import { getFormattedDate } from '../../../../utils/positions';
-import { findJob } from '../../../../services/positions';
-import Anchor from '../../../../components/common/link';
-import UtilityFuncs from '../../../../components/utilityFuncs';
+} from '../../../utils/utilities';
+import handleError from '../../../utils/errorHandler';
+import { getFormattedDate } from '../../../utils/positions';
+import { findJob } from '../../../services/positions';
+import Anchor from '../../../components/common/link';
+import UtilityFuncs from '../../../components/utilityFuncs';
 import './positionsEntry.scss';
 
 const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
 const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
 const kebabCase = dynamic(() => import('lodash/kebabCase'));
-const FileUploader = dynamic(() => import('../../../../components/fileUploader'));
-const AddressAutocompleteInput = dynamic(() => import('../../../../components/addressAutocompleteInput'));
-const UniversitySelector = dynamic(() => import('../../../../components/universitySelector'));
+const FileUploader = dynamic(() => import('../../../components/fileUploader'));
+const AddressAutocompleteInput = dynamic(() => import('../../../components/addressAutocompleteInput'));
+const UniversitySelector = dynamic(() => import('../../../components/universitySelector'));
 
 const PositionsEntry = ({ positionId, jobCategory }) => {
   const [state, setState] = useState({
@@ -53,6 +53,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
     setState({
       ...state,
       id: positionId,
+      isLoading: false,
       redirectJobTitle: jobCategory.replace(/\W+/g, ' '),
     });
   }, [isClient]);
@@ -80,13 +81,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
   const createJobPacks = ({ jobPacks }) => {
     // eslint-disable-line no-unused-vars
     const jobPackContainer = document.querySelector('.js-job-packs');
-    if (jobPacks.length === 0) {
-      setState({
-        ...state,
-        hideDocsContainer: true,
-      });
-      return;
-    }
+
     const elements = transformTemplate(
       jobPackContainer.querySelector('[type="text/template"]'),
       jobPacks.length,
@@ -121,7 +116,14 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
           location,
           isLoading: false,
         });
-        createJobPacks(job);
+        if (job.jobPacks >= 1) {
+          createJobPacks(job);
+          setState({
+            ...state,
+            isLoading: false,
+            hideDocsContainer: true,
+          });
+        }
       })
       .catch((error) => {
         setState({
@@ -139,13 +141,14 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
     const { job } = state;
     if (address.countryCode) {
       if (!job.availableIn.find((site) => site === address.countryCode.toLowerCase())) {
-        setState({ ...state, locationError: true });
+        setState({ ...state, locationError: true, isLoading: false });
       } else {
-        setState({ ...state, locationError: false });
+        setState({ ...state, locationError: false, isLoading: false });
       }
     }
     setState({
       ...state,
+      isLoading: false,
       city: address.city ? address.city : '',
       territory: address.territory ? address.territory : '',
       postCode: address.postCode ? address.postCode : '',
@@ -198,12 +201,12 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
 
   const handleFieldChange = (propertyValue) => (e) => {
     const newValue = e.target.value;
-    setState({ ...state, [propertyValue]: newValue });
+    setState({ ...state, [propertyValue]: newValue, isLoading: false });
   };
 
   const showApplicationForm = (e) => {
     e.preventDefault();
-    setState({ ...state, showForm: true });
+    setState({ ...state, showForm: true, isLoading: false });
     setRequiredDocuments(state.job);
   };
 
@@ -263,6 +266,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
       </Layout>
     );
   }
+
   if (!displayError) {
     return (
       <Layout>
@@ -341,8 +345,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             <p className="f-14 light lh-large mb4 js-job-description js-non-unavailable-position c-black">
               {job.description}
             </p>
-
-            {!hideDocsContainer ? (
+            {hideDocsContainer && (
               <div className="js-job-packs block mb3 md-mb4 lg-mb4">
                 <script type="text/template">
                   <a
@@ -362,7 +365,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                 </h4>
                 <div className="flex flex-wrap js-container" />
               </div>
-            ) : null}
+            )}
             <div>
               {!showForm && Object.keys(job).length > 0 && (
                 <button

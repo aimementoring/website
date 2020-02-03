@@ -18,7 +18,7 @@ const JobPreview = ({
   const nameAsLink = name.replace(/ /g, '-');
   const location = compact([city, state, country].map((item) => item.trim())).join(', ');
   const details = [];
-
+  console.log('TCL: state', state);
   if (location) {
     details.push(
       <p key={location} className="inline-block">
@@ -56,6 +56,7 @@ const JobPreview = ({
   }
 
   return (
+
     <div className="homepage-main-actions mb2">
       <Anchor
         to="/positions/[positionId]/[jobCategory]"

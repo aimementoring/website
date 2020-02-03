@@ -53,7 +53,7 @@ app.prepare().then(() => {
 
   // Positions
   server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
-    const pagePath = '/positionsEntry';
+    const pagePath = '/positions/[positionId]';
     const queryParams = {
       id: req.params.id,
       jobCategory: req.params.jobCategory,
