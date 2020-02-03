@@ -16,7 +16,7 @@
 
 .hero-banner--default {
   height: 50vh;
-  background: url($cdnRoot + 'assets/images/banner/Default@2x-min.jpg') no-repeat top center / cover fixed #050301;
+  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
   padding: 35px 0;
 
   @media screen and (min-width: $sm) {
