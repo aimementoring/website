@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import compact from 'lodash/compact';
-import dynamic from 'next/dynamic';
-import Layout from '../../../hocs/basicLayout';
+// import dynamic from 'next/dynamic';
+import CountrySelector from 'aime-blueprint/lib/components/countrySelector';
+import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
+import kebabCase from 'lodash/kebabCase';
 import bugsnagClient from '../../../utils/bugsnag';
+import Layout from '../../../hocs/basicLayout';
 import {
   capitaliseFirstCharacter,
   removeSpecialCharacters,
@@ -16,14 +19,9 @@ import { getFormattedDate } from '../../../utils/positions';
 import { findJob } from '../../../services/positions';
 import Anchor from '../../../components/common/link';
 import UtilityFuncs from '../../../components/utilityFuncs';
-import './positionsEntry.scss';
-
-const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
-const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
-const kebabCase = dynamic(() => import('lodash/kebabCase'));
-const FileUploader = dynamic(() => import('../../../components/fileUploader'));
-const AddressAutocompleteInput = dynamic(() => import('../../../components/addressAutocompleteInput'));
-const UniversitySelector = dynamic(() => import('../../../components/universitySelector'));
+import FileUploader from '../../../components/fileUploader';
+import AddressAutocompleteInput from '../../../components/addressAutocompleteInput';
+// import UniversitySelector from '../../../components/universitySelector';
 
 const PositionsEntry = ({ positionId, jobCategory }) => {
   const [state, setState] = useState({
@@ -79,28 +77,27 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
   };
 
   const createJobPacks = ({ jobPacks }) => {
-    if (state.hideDocsContainer) {
-      // eslint-disable-line no-unused-vars
-      const jobPackContainer = document.querySelector('.js-job-packs');
+    // eslint-disable-line no-unused-vars
 
-      const elements = transformTemplate(
-        jobPackContainer.querySelector('[type="text/template"]'),
-        jobPacks.length,
-      );
+    const jobPackContainer = document.querySelector('.js-job-packs');
 
-      if (elements.length > 0) elements[0].classList.add('mb2');
+    const elements = transformTemplate(
+      jobPackContainer.querySelector('[type="text/template"]'),
+      jobPacks.length,
+    );
 
-      jobPacks.forEach((jobPack, index) => {
-        const anchor = elements[index];
-        anchor.href = jobPack.url;
-        anchor.querySelector('span').innerHTML = jobPack.filename;
-      });
+    if (elements.length > 0) elements[0].classList.add('mb2');
 
-      elements.forEach((element) => {
-        jobPackContainer.querySelector('.js-container').appendChild(element);
-      });
-      jobPackContainer.classList.remove('hide');
-    }
+    jobPacks.forEach((jobPack, index) => {
+      const anchor = elements[index];
+      anchor.href = jobPack.url;
+      anchor.querySelector('span').innerHTML = jobPack.filename;
+    });
+
+    elements.forEach((element) => {
+      jobPackContainer.querySelector('.js-container').appendChild(element);
+    });
+    return jobPackContainer.classList.remove('hide');
   };
 
   useEffect(() => {
@@ -121,9 +118,18 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
 
         if (job && job.jobPacks.length >= 1) {
           createJobPacks(job);
+          setState({
+            ...state,
+            job,
+            location,
+            isLoading: false,
+            hideDocsContainer: false,
+          });
         } else {
           setState({
             ...state,
+            job,
+            location,
             isLoading: false,
             hideDocsContainer: true,
           });
@@ -213,8 +219,11 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
   const showApplicationForm = (e) => {
     e.preventDefault();
     setState({ ...state, showForm: true, isLoading: false });
-    setRequiredDocuments(state.job);
   };
+
+  useEffect(() => {
+    setRequiredDocuments(state.job);
+  }, [state.showForm]);
 
   const lookupGeoIp = (callback) => {
     callback(state.currentSite);
@@ -272,7 +281,6 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
       </Layout>
     );
   }
-
   if (!displayError) {
     return (
       <Layout>
@@ -351,7 +359,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             <p className="f-14 light lh-large mb4 js-job-description js-non-unavailable-position c-black">
               {job.description}
             </p>
-            {hideDocsContainer && (
+            {!hideDocsContainer && (
               <div className="js-job-packs block mb3 md-mb4 lg-mb4">
                 <script type="text/template">
                   <a
@@ -552,20 +560,21 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                     </div>
 
                     <CountrySelector
+                      style={{ width: `${90}%` }}
                       containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b"
                       placeholder="What country do you live in?"
                       classNames="input"
-                      onChangeFunction={handleFieldChange}
+                      onChangeFunction={handleFieldChange('countryAddress')}
                       value={countryAddress}
                     />
-                    <div>
+                    {/* <div>
                       {job.displayCampusSelect && (
                         <UniversitySelector
                           placeholder="Chose site of desired position"
                           containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b js-campus-select"
                         />
                       )}
-                    </div>
+                    </div> */}
 
                     <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
                       <select
@@ -638,7 +647,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
                             <div
                               className="upload-field mb2"
                               data-api-key={
-                                process.env.REACT_APP_FILE_UPLOADER_API_KEY
+                                console.log(process.env.REACT_APP_FILE_UPLOADER_API_KEY)
                               }
                             />
                           </label>
