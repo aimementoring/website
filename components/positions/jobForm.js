@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import AboutYouSectionForm from './aboutYouSectionForm';
-import LocationSectionForm from './locationSectionForm';
+// import LocationSectionForm from './locationSectionForm';
 import JobUniAndContactFrom from './jobUniAndContactFrom';
 import JobQuestionAndVideoLink from './jobQuestionAndVideoLink';
 import SupportingDocsSectionForm from './supportingDocsSectionForm';
@@ -13,15 +13,16 @@ import HiddenFieldsAndSubmitAction from './hiddenFieldsAndSubmitAction';
 const JobForm = ({
   showForm,
   job,
-  onAddressSelected,
-  locationError,
-  streetNumber,
-  streetName,
-  postCode,
-  territory,
-  city,
-  handleFieldChange,
-  countryAddress,
+  // onAddressSelected,
+  // locationError,
+  // streetNumber,
+  // streetName,
+  // postCode,
+  // territory,
+  // city,
+  // handleFieldChange,
+  // countryAddress,
+  handleFormFieldChange,
 }) => (
   <div>
     {showForm && Object.keys(job).length > 0 && (
@@ -38,8 +39,8 @@ const JobForm = ({
           action="https://formkeep.com/f/50e5b258d8a7"
           method="POST"
         >
-          <AboutYouSectionForm />
-          <LocationSectionForm
+          <AboutYouSectionForm handleChange={handleFormFieldChange} />
+          {/* <LocationSectionForm
             onAddressSelected={onAddressSelected}
             locationError={locationError}
             streetNumber={streetNumber}
@@ -49,7 +50,7 @@ const JobForm = ({
             city={city}
             handleFieldChange={handleFieldChange}
             countryAddress={countryAddress}
-          />
+          /> */}
           <JobUniAndContactFrom displayCampusSelect={job.displayCampusSelect} />
           <JobQuestionAndVideoLink
             messageQuestion={job.messageQuestion}
@@ -76,29 +77,31 @@ JobForm.propTypes = {
     requiredDocuments: PropTypes.arrayOf(PropTypes.string),
     country: PropTypes.string,
   }),
-  onAddressSelected: PropTypes.func,
-  locationError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  streetNumber: PropTypes.string,
-  streetName: PropTypes.string,
-  postCode: PropTypes.string,
-  territory: PropTypes.string,
-  city: PropTypes.string,
-  countryAddress: PropTypes.string,
-  handleFieldChange: PropTypes.func,
+  // onAddressSelected: PropTypes.func,
+  // locationError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  // streetNumber: PropTypes.string,
+  // streetName: PropTypes.string,
+  // postCode: PropTypes.string,
+  // territory: PropTypes.string,
+  // city: PropTypes.string,
+  // countryAddress: PropTypes.string,
+  // handleFieldChange: PropTypes.func,
+  handleFormFieldChange: PropTypes.func,
 };
 
 JobForm.defaultProps = {
   showForm: false,
   job: {},
-  onAddressSelected: () => {},
-  locationError: null,
-  streetNumber: '',
-  streetName: '',
-  postCode: '',
-  territory: '',
-  city: '',
-  countryAddress: null,
-  handleFieldChange: () => {},
+  // onAddressSelected: () => {},
+  // locationError: null,
+  // streetNumber: '',
+  // streetName: '',
+  // postCode: '',
+  // territory: '',
+  // city: '',
+  // countryAddress: null,
+  // handleFieldChange: () => {},
+  handleFormFieldChange: () => {},
 };
 
 export default JobForm;
