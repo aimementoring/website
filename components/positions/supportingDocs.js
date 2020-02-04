@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Title from 'aime-blueprint/lib/components/title';
 
 const SupportingDocs = ({ jobPacks }) => (
   jobPacks && jobPacks.length > 0 && (
     <div className="js-job-packs block mb3 md-mb4 lg-mb4">
-      <h4 className="mb1 feature-font-family regular c-brand-primary">
+      <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
         Supporting Docs
-      </h4>
+      </Title>
       <div className="flex flex-wrap js-container">
         {jobPacks.map((jobPack) => (
           <a
