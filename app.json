@@ -140,6 +140,10 @@
     "REACT_APP_DONATE_ORGANISATION_UUID": {
       "required": true,
       "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
+    },
+    "REACT_APP_MAILCHIMP_KEY": {
+      "required": true,
+      "value": "***REMOVED***"
     }
   },
   "formation": {
