@@ -91,12 +91,12 @@ const PositionsEntry = () => {
     }
     setState({
       ...state,
-      city: address.city ? address.city : '',
-      territory: address.territory ? address.territory : '',
-      postCode: address.postCode ? address.postCode : '',
-      streetName: address.streetName ? address.streetName : '',
-      streetNumber: address.streetNumber ? address.streetNumber : '',
-      countryAddress: address.country ? address.country : '',
+      city: address.city || '',
+      territory: address.territory || '',
+      postCode: address.postCode || '',
+      streetName: address.streetName || '',
+      streetNumber: address.streetNumber || '',
+      countryAddress: address.country || '',
       locationError: locationError !== null ? locationError : state.locationError,
     });
   };
@@ -129,9 +129,7 @@ const PositionsEntry = () => {
     redirected,
     redirectJobTitle,
   } = state;
-  let embedVideoId = job.embedVideo;
 
-  if (Number.isNaN(embedVideoId)) embedVideoId = false;
   if (isLoading) return <Loading />;
 
   if (!displayError) {
@@ -144,7 +142,7 @@ const PositionsEntry = () => {
             <JobsDetail {...job} location={location} />
             <JobVideoOpportunity
               id={id}
-              embedVideoId={embedVideoId}
+              embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
               description={job ? job.description : ''}
             />
             <SupportingDocs jobPacks={job && job.jobPacks ? job.jobPacks : []} />
