@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import { getFormattedDate } from '../../utils/positions';
 
 const JobsDetail = ({
@@ -7,26 +9,20 @@ const JobsDetail = ({
 }) => (
   <>
     <div className="block f-14 light js-non-unavailable-position c-black">
-      <p className="inline-block js-job-location">{location}</p>
-      {location && (
-        <p className="inline-block px1 js-job-dash-location">-</p>
-      )}
-      <p className="inline-block js-job-term">{term}</p>
+      <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{location}</Title>
+      <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{term}</Title>
       {salaryRange && (
-        <>
-          <p className="inline-block px1 js-job-dash-location">-</p>
-          <p className="inline-block js-job-expires">{salaryRange}</p>
-        </>
+        <Title type="h5Title" theme={process.env.REACT_APP_THEME}>{salaryRange}</Title>
       )}
     </div>
 
     <div className="block mb3 md-mb4 lg-mb4 f-14 light js-non-unavailable-position c-purple">
       {expire && (
         <div>
-          <p className="inline-block">Applications close at &nbsp; </p>
-          <p className="inline-block js-job-expires">
+          <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Applications close at &nbsp; </Title>
+          <Paragraph>
             <strong>{getFormattedDate(expire)}</strong>
-          </p>
+          </Paragraph>
         </div>
       )}
     </div>
