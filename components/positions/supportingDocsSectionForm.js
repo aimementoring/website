@@ -13,19 +13,21 @@ const SupportingDocsSectionForm = ({ requiredDocuments }) => (
       application.
     </p>
     <div className="flex flex-column items-start job-documents js-job-document-container">
-      {requiredDocuments.length > 0 && requiredDocuments.map((document, index) => (
-        /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
-        <label key={document}>
-          <div className={`upload-field ${index < requiredDocuments.length < 1 ? 'mb2' : ''}`}>
-            <FileUploader
-              apiKey={process.env.REACT_APP_FILE_UPLOADER_API_KEY}
-              buttonText={`Upload ${document}`}
-              inputName={`job-${kebabCase(document)}`}
-              requiredFile
-            />
-          </div>
-        </label>
-      ))}
+      {requiredDocuments
+        && requiredDocuments.length > 0
+        && requiredDocuments.map((document, index) => (
+          /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
+          <label key={document}>
+            <div className={`upload-field ${index < requiredDocuments.length < 1 ? 'mb2' : ''}`}>
+              <FileUploader
+                apiKey={process.env.REACT_APP_FILE_UPLOADER_API_KEY}
+                buttonText={`Upload ${document}`}
+                inputName={`job-${kebabCase(document)}`}
+                requiredFile
+              />
+            </div>
+          </label>
+        ))}
     </div>
   </div>
 );
