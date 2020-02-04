@@ -106,6 +106,10 @@ const PositionsEntry = () => {
     setState({ ...state, [propertyValue]: newValue });
   };
 
+  const handleFormFieldChange = (name, value) => {
+    setState({ ...state, [name]: value });
+  };
+
   const showApplicationForm = (e) => {
     e.preventDefault();
     setState({ ...state, showForm: true });
@@ -163,6 +167,7 @@ const PositionsEntry = () => {
               territory={territory}
               city={city}
               handleFieldChange={handleFieldChange}
+              handleFormFieldChange={handleFormFieldChange}
               countryAddress={countryAddress}
             />
             <BackAction />
