@@ -40,7 +40,7 @@ const FileUploader = ({
     setUploadedFiles(uploadedFiles.concat(fileList));
   };
 
-  return typeof window !== 'undefined' && ReactFilestack ? (
+  return isClient && ReactFilestack ? (
     <>
       <ReactFilestack
         apikey={apiKey}
