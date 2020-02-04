@@ -1,21 +1,18 @@
 import React from 'react';
+import Title from 'aime-blueprint/lib/components/title';
 
 const Header = () => (
   <div className="hero-banner--default full-width-wrap job-hero">
     <div className="flex flex-wrap items-center full-height">
       <div className="banner-wrapper subpage-banner center">
-        <h1>
-          <span className="pre-text">Work with</span>
-          <span className="highlight-text">
-            <em>
+        <div className="bannerContent">
+          <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
+            Work with
+            <strong>
               AIME
-              <br />
-            </em>
-          </span>
-          <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
-            &nbsp;
-          </span>
-        </h1>
+            </strong>
+          </Title>
+        </div>
       </div>
     </div>
   </div>
