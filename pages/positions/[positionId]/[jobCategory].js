@@ -27,7 +27,6 @@ const PositionsEntry = () => {
   const router = useRouter();
   const { positionId, jobCategory } = router.query;
   const [state, setState] = useState({
-    id: positionId,
     currentSite: '',
     showForm: false,
     positionExpired: false,
@@ -51,37 +50,38 @@ const PositionsEntry = () => {
   useEffect(() => {
     setState({
       ...state,
-      id: positionId,
       redirectJobTitle: jobCategory ? jobCategory.replace(/\W+/g, ' ') : '',
     });
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
     const countryId = getCountrySite() || 'global';
-    try {
-      const job = await findJob(state.id, countryId);
-      const location = compact([job.city.trim(), job.state.trim(), job.country.trim()]).join(', ');
-      setState({
-        ...state,
-        job,
-        location,
-        isLoading: false,
-      });
-    } catch (error) {
-      setState({
-        ...state,
-        displayError: error,
-        redirected: true,
-        isLoading: false,
-        redirectJobTitle: capitaliseFirstCharacter(state.redirectJobTitle),
-      });
-      handleError(error, error);
+    if (positionId) {
+      try {
+        const job = await findJob(positionId, countryId);
+        const location = compact([job.city.trim(), job.state.trim(), job.country.trim()]).join(', ');
+        setState({
+          ...state,
+          job,
+          location,
+          isLoading: false,
+        });
+      } catch (error) {
+        setState({
+          ...state,
+          displayError: error,
+          redirected: true,
+          isLoading: false,
+          redirectJobTitle: capitaliseFirstCharacter(state.redirectJobTitle),
+        });
+        handleError(error, error);
+      }
     }
   };
 
   useEffect(() => {
     findJobByIdAndCountry();
-  }, []);
+  }, [isClient, positionId]);
 
   const onAddressSelected = (address) => {
     const { job } = state;
@@ -116,7 +116,6 @@ const PositionsEntry = () => {
   };
 
   const {
-    id,
     showForm,
     positionExpired,
     job,
@@ -145,7 +144,7 @@ const PositionsEntry = () => {
             <JobsTitle {...job} />
             <JobsDetail {...job} location={location} />
             <JobVideoOpportunity
-              id={id}
+              id={positionId}
               embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
               description={job ? job.description : ''}
             />
