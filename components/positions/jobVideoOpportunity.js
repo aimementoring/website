@@ -1,6 +1,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 
 const JobVideoOpportunity = ({ id, embedVideoId, description }) => (
   <>
@@ -27,13 +29,12 @@ const JobVideoOpportunity = ({ id, embedVideoId, description }) => (
         </div>
       )}
     </div>
-    <h4 className="mb1 feature-font-family regular js-non-unavailable-position c-brand-primary">
+    <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
       The Opportunity
-    </h4>
-
-    <p className="f-14 light lh-large mb4 js-job-description js-non-unavailable-position c-black">
+    </Title>
+    <Paragraph>
       {description}
-    </p>
+    </Paragraph>
   </>
 );
 
