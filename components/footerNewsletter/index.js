@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Router from 'next/router';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
@@ -12,7 +13,7 @@ const FooterNewsletter = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    request(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${AIME_FRIENDS_LIST}/members`, {
+    const mailchimpAnswer = await request(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${AIME_FRIENDS_LIST}/members`, {
       method: 'POST',
       headers: {
         Authorization: `apikey ${process.env.MAILCHIMP_KEY}`,
@@ -20,6 +21,15 @@ const FooterNewsletter = () => {
       body: {
         email_address: value,
         status: 'subscribed',
+      },
+    });
+    console.log({ mailchimpAnswer });
+    Router.push({
+      pathname: '/thanks',
+      query: {
+        messages:
+          `Your message has been succesfully submitted and we will get back to you as soon as we can!
+          `,
       },
     });
   };
