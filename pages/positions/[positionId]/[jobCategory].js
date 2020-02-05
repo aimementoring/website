@@ -168,6 +168,7 @@ const PositionsEntry = () => {
               handleFieldChange={handleFieldChange}
               handleFormFieldChange={handleFormFieldChange}
               countryAddress={countryAddress}
+              values={state}
             />
             <BackAction />
           </div>
