@@ -1,25 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Checkbox from 'aime-blueprint/lib/components/checkbox';
 
-const BecomeAFriendSection = () => (
+const BecomeAFriendSection = ({ handleChange, values }) => (
   <div className="sm-col sm-col-12 md-col-12 f-14 pt1 pb3 flex items-center custom-checkbox custom-checkbox--default">
-    <input
-      type="hidden"
-      name="be-an-aime-friend"
-      value="no"
-    />
-    <input
+    <Checkbox
       id="aime-friend"
-      type="checkbox"
-      className="hide"
       name="be-an-aime-friend"
-      value="yes"
+      value={values['be-an-aime-friend'] || false}
+      placeholder="Become an AIME Friend. Recieve updates about AIME and help us tackle inequality."
+      onChangeFunction={handleChange}
+      theme={process.env.REACT_APP_THEME}
     />
-    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-    <label htmlFor="aime-friend">
-      Become an AIME Friend. Recieve updates about AIME and
-      help us tackle inequality.
-    </label>
   </div>
 );
+
+BecomeAFriendSection.propTypes = {
+  handleChange: PropTypes.func,
+  values: PropTypes.shape({
+    'be-an-aime-friend': PropTypes.bool,
+  }),
+};
+
+BecomeAFriendSection.defaultProps = {
+  handleChange: () => {},
+  values: {},
+};
 
 export default BecomeAFriendSection;
