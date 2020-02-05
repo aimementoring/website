@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Title from 'aime-blueprint/lib/components/title';
 import AboutYouSectionForm from './aboutYouSectionForm';
 // import LocationSectionForm from './locationSectionForm';
 import JobUniAndContactFrom from './jobUniAndContactFrom';
@@ -30,9 +30,9 @@ const JobForm = ({
         id="jobApplicationReveal"
         className="job-application--reveal flex flex-column border-top b-light-blue pt4 js-non-unavailable-position"
       >
-        <h4 className="feature-font-family regular f-15 pb2 c-brand-primary">
+        <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
           Apply now
-        </h4>
+        </Title>
         <form
           className="job-application"
           acceptCharset="UTF-8"
