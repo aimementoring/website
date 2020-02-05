@@ -2,7 +2,7 @@ import React from 'react';
 import Title from 'aime-blueprint/lib/components/title';
 
 const Header = () => (
-  <div className="hero-banner--default full-width-wrap job-hero">
+  <div className="hero-banner--default hero-banner--jobs full-width-wrap job-hero">
     <div className="flex flex-wrap items-center full-height">
       <div className="banner-wrapper subpage-banner center">
         <div className="bannerContent">
