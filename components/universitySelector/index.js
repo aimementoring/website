@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Select from 'aime-blueprint/lib/components/select';
 import { loadUniversities } from '../../services/positions';
 import { isClientSide } from '../../utils/utilities';
+import './styles.scss';
 
 const UniversitySelector = ({
   placeholder, classNames, containerClassNames, onChangeFunction,
@@ -26,6 +27,7 @@ const UniversitySelector = ({
         name="uni-campus-attending"
         className={classNames}
         onChange={onChangeFunction}
+        theme={process.env.REACT_APP_THEME} 
         defaultValue=""
         required
       >
@@ -54,7 +56,7 @@ UniversitySelector.propTypes = {
 
 UniversitySelector.defaultProps = {
   onChangeFunction: () => {},
-  classNames: '',
+  classNames: 'testingClass',
   containerClassNames: '',
 };
 
