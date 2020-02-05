@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LabeledTextarea from 'aime-blueprint/lib/components/labeledTextarea';
+import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 
 const JobQuestionAndVideoLink = ({ messageQuestion, isThereVideoLink }) => (
   <>
@@ -18,10 +19,12 @@ const JobQuestionAndVideoLink = ({ messageQuestion, isThereVideoLink }) => (
 
     <div className="sm-col sm-col-12 md-col-12 o7-r o7-b js-video-link">
       {isThereVideoLink && (
-        <input
+        <LabeledInput
           type="text"
           className="input"
-          placeholder="Link us a video explanation(www.youtube.com/12356)"
+          onChangeFunction={(name, updateValue) => setValue(updateValue)}
+          theme={process.env.REACT_APP_THEME}
+          label="Link us a video explanation(www.youtube.com/12356)"
           name="video-link"
         />
       )}
