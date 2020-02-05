@@ -62,13 +62,15 @@ const ReportsTwo = (props) => {
     const bannerImage = content.fields.banner
     && content.fields.banner.fields.visualMedia
     && content.fields.banner.fields.visualMedia.fields.file.url;
+    const contentPreview = content.fields.contentPreview
+      && content.fields.contentPreview.fields.previewCopy;
     return (
       <ReportTwo
         key={content.sys.id}
         bannerImage={bannerImage}
         title={content.fields.title}
         reportUrl={content.fields.reportUrl}
-        contentPreview={content.fields.contentPreview}
+        contentPreview={contentPreview}
       />
     );
   });

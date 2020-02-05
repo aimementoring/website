@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 // import { formatDate } from '../../../utils/utilities';
+import styles from './report.module.scss';
 
 const {
   Title,
@@ -16,24 +17,9 @@ const ReportTwo = (props) => {
   const {
     title, reportUrl, bannerImage, contentPreview,
   } = props;
-  console.log('TCL: bannerImage', bannerImage);
-  // getReadMoreLink = () => {
-  //   const { report } = this.props;
-  //   switch (report.type.handle) {
-  //   case 'fullPageReport':
-  //     return report.url;
-  //   case 'pdfReport':
-  //     if (report.attachment && report.attachment.url) {
-  //       return report.attachment.url;
-  //     }
-  //     return report.urlHandle;
-  //   default:
-  //     return report.url;
-  //   }
-  // };
 
   return (
-    <article className="article-tile">
+    <article className={styles.articleTile}>
       <a
         aria-label="banner-image"
         href={reportUrl}
@@ -43,7 +29,7 @@ const ReportTwo = (props) => {
       >
         <div>
           <Picture
-            className="rounded-top article-image"
+            className={`rounded-top ${styles.articleImage}`}
             thumbnail
             image={{
               image: `https:${bannerImage}?fl=progressive`,
@@ -51,8 +37,9 @@ const ReportTwo = (props) => {
               thumbnail: `https:${bannerImage}?fl=progressive`,
             }}
           />
-          <Title type="h5Title">{title}</Title>
-          {/* <Paragraph className="article-tile-tagline">
+          <div className={styles.articleDescription}>
+            <Title className={styles.articleTileTitle} type="h5Title">{title}</Title>
+            {/* <Paragraph className={styles.articleTileTagline}>
               <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
                 {datePublished}
               </span>
@@ -63,16 +50,20 @@ const ReportTwo = (props) => {
                 {`By ${contentCreator}`}
               </span>
             </Paragraph> */}
-          <Paragraph>
-            {contentPreview && contentPreview.previewCopy && (
-              `${contentPreview.previewCopy.slice(0, 230)}...`)}
-          </Paragraph>
-          <div>
-            <Button theme="rainbow" type="button">
-                Read more
-              {' '}
-              <i className="material-icons">&#xE315;</i>
-            </Button>
+            <Paragraph className={styles.articleTileLabel}>
+              {contentPreview && (
+                `${contentPreview.slice(0, 230)}...`)}
+            </Paragraph>
+            <div>
+              <Button
+                className={styles.articleTileLink}
+                theme="rainbow"
+                type="button"
+              >
+              Read more
+                <i className={styles.materialIcons}>&#xE315;</i>
+              </Button>
+            </div>
           </div>
         </div>
       </a>
