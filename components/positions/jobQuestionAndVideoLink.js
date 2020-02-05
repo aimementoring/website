@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LabeledTextarea from 'aime-blueprint/lib/components/labeledTextarea';
 
 const JobQuestionAndVideoLink = ({ messageQuestion, isThereVideoLink }) => (
   <>
     <div className="sm-col sm-col-12 md-col-12 o7-r o7-b js-message-question-div">
       {messageQuestion && (
-        <textarea
+        <LabeledTextarea
           className="input js-message-question"
-          placeholder={messageQuestion}
           name="message-question"
+          onChangeFunction={(name, updateValue) => setValue(updateValue)}
+          theme={process.env.REACT_APP_THEME}
+          label={messageQuestion}
         />
       )}
     </div>
