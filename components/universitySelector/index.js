@@ -6,7 +6,7 @@ import { isClientSide } from '../../utils/utilities';
 import './styles.scss';
 
 const UniversitySelector = ({
-  placeholder, classNames, containerClassNames, onChangeFunction,
+  placeholder, classNames, containerClassNames, onChangeFunction, value,
 }) => {
   const [universities, setUniversities] = useState([]);
 
@@ -27,22 +27,18 @@ const UniversitySelector = ({
         name="uni-campus-attending"
         className={classNames}
         onChange={onChangeFunction}
-        theme={process.env.REACT_APP_THEME} 
-        defaultValue=""
-        required
-      >
-        <option value="" disabled>
-          {placeholder}
-        </option>
-        {universities && universities.length
-          && universities
+        theme={process.env.REACT_APP_THEME}
+        value={value}
+        options={universities && universities.length
+          ? universities
             .filter((university) => university.text && university.value)
-            .map((university) => (
-              <option key={university.value} disabled="" value={university.value}>
-                {university.text}
-              </option>
-            ))}
-      </Select>
+            .map((university) => ({
+              value: university.value,
+              label: university.text,
+            }))
+          : []}
+        required
+      />
     </div>
   );
 };
@@ -52,12 +48,14 @@ UniversitySelector.propTypes = {
   classNames: PropTypes.string,
   containerClassNames: PropTypes.string,
   onChangeFunction: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 UniversitySelector.defaultProps = {
   onChangeFunction: () => {},
   classNames: 'testingClass',
   containerClassNames: '',
+  value: null,
 };
 
 export default UniversitySelector;
