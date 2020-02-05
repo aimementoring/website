@@ -55,6 +55,7 @@ const JobForm = ({
           <JobUniAndContactFrom
             displayCampusSelect={job.displayCampusSelect}
             handleChange={handleFormFieldChange}
+            values={values}
           />
           <JobQuestionAndVideoLink
             messageQuestion={job.messageQuestion}
