@@ -8,7 +8,7 @@ const JobUniAndContactFrom = ({ displayCampusSelect }) => (
     <div>
       {displayCampusSelect && (
         <UniversitySelector
-          placeholder="Chose site of desired position"
+          placeholder="Choose site of desired position"
           containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b js-campus-select"
         />
       )}
@@ -18,7 +18,7 @@ const JobUniAndContactFrom = ({ displayCampusSelect }) => (
       <Select
         id="referral-source"
         name="referral-source"
-        className="input select-inactive"
+        className="select-inactive"
         defaultValue=""
         required
         theme={process.env.REACT_APP_THEME}
