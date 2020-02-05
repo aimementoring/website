@@ -13,6 +13,7 @@ import HiddenFieldsAndSubmitAction from './hiddenFieldsAndSubmitAction';
 const JobForm = ({
   showForm,
   job,
+  values,
   // onAddressSelected,
   // locationError,
   // streetNumber,
@@ -39,7 +40,7 @@ const JobForm = ({
           action="https://formkeep.com/f/50e5b258d8a7"
           method="POST"
         >
-          <AboutYouSectionForm handleChange={handleFormFieldChange} />
+          <AboutYouSectionForm handleChange={handleFormFieldChange} values={values} />
           {/* <LocationSectionForm
             onAddressSelected={onAddressSelected}
             locationError={locationError}
@@ -51,14 +52,27 @@ const JobForm = ({
             handleFieldChange={handleFieldChange}
             countryAddress={countryAddress}
           /> */}
-          <JobUniAndContactFrom displayCampusSelect={job.displayCampusSelect} />
+          <JobUniAndContactFrom
+            displayCampusSelect={job.displayCampusSelect}
+            handleChange={handleFormFieldChange}
+          />
           <JobQuestionAndVideoLink
             messageQuestion={job.messageQuestion}
             isThereVideoLink={job.isThereVideoLink}
+            handleChange={handleFormFieldChange}
+            values={values}
           />
-          <SupportingDocsSectionForm requiredDocuments={job.requiredDocuments} />
-          <IndigenousForm country={job.country} />
-          <BecomeAFriendSection />
+          <SupportingDocsSectionForm
+            requiredDocuments={job.requiredDocuments}
+          />
+          <IndigenousForm
+            handleChange={handleFormFieldChange}
+            values={values}
+          />
+          <BecomeAFriendSection
+            handleChange={handleFormFieldChange}
+            values={values}
+          />
           <HiddenFieldsAndSubmitAction type={job.type} name={job.name} />
         </form>
       </div>
@@ -77,6 +91,7 @@ JobForm.propTypes = {
     requiredDocuments: PropTypes.arrayOf(PropTypes.string),
     country: PropTypes.string,
   }),
+  values: PropTypes.shape({}),
   // onAddressSelected: PropTypes.func,
   // locationError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   // streetNumber: PropTypes.string,
@@ -92,6 +107,7 @@ JobForm.propTypes = {
 JobForm.defaultProps = {
   showForm: false,
   job: {},
+  values: {},
   // onAddressSelected: () => {},
   // locationError: null,
   // streetNumber: '',
