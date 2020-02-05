@@ -3,7 +3,54 @@ import PropTypes from 'prop-types';
 import Select from 'aime-blueprint/lib/components/select';
 import UniversitySelector from '../universitySelector';
 
-const JobUniAndContactFrom = ({ displayCampusSelect, handleChange }) => (
+const REFERRAL_OPTIONS = [
+  {
+    value: '',
+    label: 'What brought you here?',
+  },
+  {
+    value: 'AIME Friends Email',
+    label: 'AIME Friends Email',
+  },
+  {
+    value: 'AIME Website',
+    label: 'AIME Website',
+  },
+  {
+    value: 'During an AIME Session',
+    label: 'During an AIME Session',
+  },
+  {
+    value: 'Ethical Positions',
+    label: 'Ethical Positions',
+  },
+  {
+    value: 'Koori Mail',
+    label: 'Koori Mail',
+  },
+  {
+    value: 'LinkedIn',
+    label: 'LinkedIn',
+  },
+  {
+    value: 'SEEK',
+    label: 'SEEK',
+  },
+  {
+    value: 'Social Media',
+    label: 'Social Media',
+  },
+  {
+    value: 'Word of Mouth',
+    label: 'Word of Mouth',
+  },
+  {
+    value: 'Other',
+    label: 'Other',
+  },
+];
+
+const JobUniAndContactFrom = ({ displayCampusSelect, handleChange, values }) => (
   <>
     <div>
       {displayCampusSelect && (
@@ -19,32 +66,12 @@ const JobUniAndContactFrom = ({ displayCampusSelect, handleChange }) => (
       <Select
         id="referral-source"
         name="referral-source"
-        className="select-inactive"
-        defaultValue=""
         required
         theme={process.env.REACT_APP_THEME}
         onChangeFunction={handleChange}
-      >
-        <option value="" disabled="">
-          What brought you here?
-        </option>
-        <option value="AIME Friends Email">
-          AIME Friends Email
-        </option>
-        <option value="AIME Website">AIME Website</option>
-        <option value="During an AIME Session">
-          During an AIME Session
-        </option>
-        <option value="Ethical Positions">
-          Ethical Positions
-        </option>
-        <option value="Koori Mail">Koori Mail</option>
-        <option value="LinkedIn">LinkedIn</option>
-        <option value="SEEK">SEEK</option>
-        <option value="Social Media">Social Media</option>
-        <option value="Word of Mouth">Word of Mouth</option>
-        <option value="Other">Other</option>
-      </Select>
+        value={values['referral-source']}
+        options={REFERRAL_OPTIONS}
+      />
     </div>
   </>
 );
@@ -52,11 +79,15 @@ const JobUniAndContactFrom = ({ displayCampusSelect, handleChange }) => (
 JobUniAndContactFrom.propTypes = {
   displayCampusSelect: PropTypes.bool,
   handleChange: PropTypes.func,
+  values: PropTypes.shape({
+    'referral-source': PropTypes.string,
+  }),
 };
 
 JobUniAndContactFrom.defaultProps = {
   displayCampusSelect: false,
   handleChange: () => {},
+  values: {},
 };
 
 export default JobUniAndContactFrom;
