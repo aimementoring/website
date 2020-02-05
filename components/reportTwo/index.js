@@ -1,78 +1,90 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
+import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+// import { formatDate } from '../../../utils/utilities';
 
-class Report extends PureComponent {
-  getReadMoreLink = () => {
-    const { report } = this.props;
-    switch (report.type.handle) {
-    case 'fullPageReport':
-      return report.url;
-    case 'pdfReport':
-      if (report.attachment && report.attachment.url) {
-        return report.attachment.url;
-      }
-      return report.urlHandle;
-    default:
-      return report.url;
-    }
-  };
+const {
+  Title,
+  Button,
+} = Components;
 
-  render() {
-    const { report } = this.props;
-    const readMoreLink = this.getReadMoreLink();
-    const bannerImageUrl = report.bannerImageUrl && report.bannerImageUrl[0]
-      ? report.bannerImageUrl[0].image
-      : '';
-    return (
-      <article className="article-tile">
-        <a
-          aria-label="banner-image"
-          href={readMoreLink}
-          className="article-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img className="rounded-top article-image" src={bannerImageUrl} alt="" />
-          {/* {% for tag in report.reportTags.limit(2).all() %}
-            <p className="featured-story--tag">{{tag.title}}</p>
-          {% endfor %} */}
-          <div className="article-description">
-            <h1 className="article-tile-title pt1">{report.title}</h1>
-            <p className="article-tile-label">{report.previewText}</p>
-            <a
-              href={readMoreLink}
-              className="article-tile-link basic-btn italic"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="read more"
-            >
-              Read more
+const Picture = dynamic(() => import('../picture'));
+
+const ReportTwo = (props) => {
+  const {
+    title, reportUrl, bannerImage, contentPreview,
+  } = props;
+  console.log('TCL: bannerImage', bannerImage);
+  // getReadMoreLink = () => {
+  //   const { report } = this.props;
+  //   switch (report.type.handle) {
+  //   case 'fullPageReport':
+  //     return report.url;
+  //   case 'pdfReport':
+  //     if (report.attachment && report.attachment.url) {
+  //       return report.attachment.url;
+  //     }
+  //     return report.urlHandle;
+  //   default:
+  //     return report.url;
+  //   }
+  // };
+
+  return (
+    <article className="article-tile">
+      <a
+        aria-label="banner-image"
+        href={reportUrl}
+        className="article-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div>
+          <Picture
+            className="rounded-top article-image"
+            thumbnail
+            image={{
+              image: `https:${bannerImage}?fl=progressive`,
+              title,
+              thumbnail: `https:${bannerImage}?fl=progressive`,
+            }}
+          />
+          <Title type="h5Title">{title}</Title>
+          {/* <Paragraph className="article-tile-tagline">
+              <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
+                {datePublished}
+              </span>
+              <span key={`c-light-grey-span-${id}`}>
+                <br />
+              </span>
+              <span key={`px1-span-${id}`}>
+                {`By ${contentCreator}`}
+              </span>
+            </Paragraph> */}
+          <Paragraph>
+            {contentPreview && contentPreview.previewCopy && (
+              `${contentPreview.previewCopy.slice(0, 230)}...`)}
+          </Paragraph>
+          <div>
+            <Button theme="rainbow" type="button">
+                Read more
               {' '}
               <i className="material-icons">&#xE315;</i>
-            </a>
+            </Button>
           </div>
-        </a>
-      </article>
-    );
-  }
-}
-
-Report.propTypes = {
-  report: PropTypes.shape({
-    title: PropTypes.string,
-    previewText: PropTypes.string,
-    bannerImageUrl: PropTypes.arrayOf(PropTypes.shape({
-      image: PropTypes.string,
-    })),
-    urlHandle: PropTypes.string,
-    url: PropTypes.string,
-    attachment: PropTypes.shape({
-      url: PropTypes.string,
-    }),
-    type: PropTypes.shape({
-      handle: PropTypes.string,
-    }),
-  }).isRequired,
+        </div>
+      </a>
+    </article>
+  );
 };
 
-export default Report;
+ReportTwo.propTypes = {
+  title: PropTypes.string.isRequired,
+  reportUrl: PropTypes.string.isRequired,
+  bannerImage: PropTypes.string.isRequired,
+  contentPreview: PropTypes.string.isRequired,
+};
+
+export default ReportTwo;

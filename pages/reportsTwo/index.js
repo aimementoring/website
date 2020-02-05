@@ -1,61 +1,77 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 import contentfulServer from '../../api/contentfulPosts';
 import Layout from '../../hocs/basicLayout';
 
-// const Report = dynamic(() => import('../../components/report'));
+const ReportTwo = dynamic(() => import('../../components/reportTwo'));
 
-const Reports = (props) => {
+const ReportsTwo = (props) => {
   const { entries } = props;
+  console.log('TCL: ReportsTwo -> entries', entries);
+  const [reports, setReportEntries] = useState(entries);
+  console.log('TCL: ReportsTwo -> reports', reports);
+  const [categorySelected, setCategorySelected] = useState('All reports');
+  console.log('TCL: ReportsTwo -> categorySelected', categorySelected);
 
-  // const [categorySelected, setCategorySelected] = useState('All reports');
-  const [categoryTitles, setCategoryTitles] = useState(['All reports', 'Annual', 'Financial', 'Interim', 'Research']);
+  // const handleReportTypes = () => {
+  //   if (!reports.length) {
+  //     setCategoryTitles(['All reports', 'Annual', 'Financial', 'Interim', 'Research']);
+  //   } else {
+  //     // TODO: Add this to the content model in Contentful
+  //     const reportType = reports.map((filter) => (filter.fields.reportType));
+  //     setCategoryTitles(reportType);
+  //   }
+  //   setCategoryTitles(categoryTitles);
+  // };
 
-  const handleReportTypes = async () => {
-    const reports = entries;
-    if (!reports.length && !reports.reportTagsTitles) {
-      setCategoryTitles(['All reports', 'Annual', 'Financial', 'Interim', 'Research']);
-    } else {
-      // TODO: Add this to the content model in Contentful
-      setCategoryTitles(reports.reportTagsTitles);
+  const handleCategoryChange = (newCategory) => (e) => {
+    e.preventDefault();
+    if (newCategory === categorySelected) {
+      return;
     }
-    setCategoryTitles(categoryTitles);
+    if (newCategory === 'All reports') {
+      setReportEntries(reports);
+      setCategorySelected(newCategory);
+    }
+    const reportsToShow = entries.filter(
+      (report) => report.fields.reportType.indexOf(categorySelected) > -1,
+    );
+    setReportEntries(reportsToShow);
+    setCategorySelected(newCategory);
   };
 
-  useEffect(() => { handleReportTypes(); }, []);
+  const getCategoryLinks = entries.map((category) => {
+    console.log('TCL: getCategoryLinks -> category', category);
+    const active = category === categorySelected ? 'active' : '';
+    return (
+      <li className="block mr2" key={category.fields.reportType}>
+        <div
+          className={`filter-list ${active}`}
+          onClick={handleCategoryChange(category.fields.reportType)}
+          onKeyPress={handleCategoryChange(category.fields.reportType)}
+          role="presentation"
+        >
+          {category.fields.reportType}
+        </div>
+      </li>
+    );
+  });
 
-  // const getCategoryLinks = () => entries.map((category) => {
-  //   const active = category === categorySelected ? 'active' : '';
-  //   return (
-  //     <li className="block mr2" key={category}>
-  //       <div
-  //         className={`filter-list ${active}`}
-  //         // onClick={handleCategoryChange(category)}
-  //         // onKeyPress={handleCategoryChange(category)}
-  //         role="presentation"
-  //       >
-  //         {category}
-  //       </div>
-  //     </li>
-  //   );
-  // });
-
-  // const handleCategoryChange = (newCategory) => (e) => {
-  //   e.preventDefault();
-  //   if (newCategory === categorySelected) return;
-  //   if (newCategory === 'All reports') {
-  //     setReports(entries);
-  //     setCategorySelected(newCategory);
-  //     return;
-  //   }
-  //   const reportsToShow = entries.filter((report) => {
-  //     const searchString = `${report.slug} ${report.previewText} ${report.title}`.toLowerCase();
-  //     return searchString.indexOf(newCategory.toLowerCase()) > -1;
-  //   });
-  //   setReports(reportsToShow);
-  //   setCategorySelected(newCategory);
-  // };
+  const reportCard = reports.map((content) => {
+    const bannerImage = content.fields.banner
+    && content.fields.banner.fields.visualMedia
+    && content.fields.banner.fields.visualMedia.fields.file.url;
+    return (
+      <ReportTwo
+        key={content.sys.id}
+        bannerImage={bannerImage}
+        title={content.fields.title}
+        reportUrl={content.fields.reportUrl}
+        contentPreview={content.fields.contentPreview}
+      />
+    );
+  });
 
   return (
     <Layout>
@@ -76,24 +92,24 @@ const Reports = (props) => {
       </div>
       <section className="relative">
         <div className="scratch-overlay-wrapper top-scratch bg-white" />
-        {/* {reports && (
+        {reports && (
           <div className="wrap py3">
             <div className="filter-list-container">
               <h4 className="c-brand-primary py2 f-15 px2 border border-radius mt3">Category</h4>
               <ul className="flex flex-wrap">{getCategoryLinks}</ul>
             </div>
             <div className="grid reports-grid mb4">
-              {reports.map((report) => <Report key={report.slug} report={report} />)}
+              {reportCard}
             </div>
           </div>
-        )} */}
+        )}
       </section>
     </Layout>
   );
 };
 
 
-Reports.getInitialProps = async () => {
+ReportsTwo.getInitialProps = async () => {
   const client = contentfulServer();
   const entries = await client.then((response) => response);
   const getReportsPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'report'));
@@ -105,11 +121,11 @@ const SysShape = PropTypes.shape({
   id: PropTypes.string,
 });
 
-Reports.defaultProps = {
+ReportsTwo.defaultProps = {
   entries: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
-Reports.propTypes = {
+ReportsTwo.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     contentType: PropTypes.string,
@@ -171,4 +187,4 @@ Reports.propTypes = {
   })),
 };
 
-export default Reports;
+export default ReportsTwo;
