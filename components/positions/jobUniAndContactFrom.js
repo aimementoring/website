@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import Select from 'aime-blueprint/lib/components/select';
 import UniversitySelector from '../universitySelector';
 
-const JobUniAndContactFrom = ({ displayCampusSelect }) => (
+const JobUniAndContactFrom = ({ displayCampusSelect, handleChange }) => (
   <>
     <div>
       {displayCampusSelect && (
         <UniversitySelector
           placeholder="Choose site of desired position"
           containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b js-campus-select"
+          onChangeFunction={handleChange}
         />
       )}
     </div>
@@ -22,6 +23,7 @@ const JobUniAndContactFrom = ({ displayCampusSelect }) => (
         defaultValue=""
         required
         theme={process.env.REACT_APP_THEME}
+        onChangeFunction={handleChange}
       >
         <option value="" disabled="">
           What brought you here?
@@ -49,10 +51,12 @@ const JobUniAndContactFrom = ({ displayCampusSelect }) => (
 
 JobUniAndContactFrom.propTypes = {
   displayCampusSelect: PropTypes.bool,
+  handleChange: PropTypes.func,
 };
 
 JobUniAndContactFrom.defaultProps = {
   displayCampusSelect: false,
+  handleChange: () => {},
 };
 
 export default JobUniAndContactFrom;
