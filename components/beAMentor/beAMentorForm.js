@@ -1,5 +1,6 @@
 import React from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import styles from './beAMentorForm.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -14,20 +15,31 @@ const BeAMentorForm = () => (
     <Paragraph>
       <br />
       <mark>
-        Hey you! Please hold tight.
+        Hey you! So you wanna be a mentor?
       </mark>
       <br />
       <br />
-      We are currently updating our 2020 application process&nbsp;
-      <strong>and we&apos;ve had to temporarily take it offline.</strong>
-      &nbsp;Please be patient with us a little bit longer and we&apos;ll
-      have this all back up early next week so you can get your name on the list.
+      {`Mentor applications aren't open just yet as we're
+      updating our processes. However, you should get a head-start by`}
+      &nbsp;
+      <strong>registering your details</strong>
+      &nbsp;
+      {`and creating an AIME account.
+      Once they're open, we'll notify you so you can complete
+      your application.`}
       <br />
       <br />
-      <strong>
-        One by one we&apos;ll get it done!
-      </strong>
+      {`One by one we'll get it done!`}
+      <br />
+      <br />
     </Paragraph>
+    <Button
+      theme={process.env.REACT_APP_THEME}
+      type="link"
+      target="_blank"
+      url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor">
+      Sign up
+    </Button>
   </div>
 );
 
