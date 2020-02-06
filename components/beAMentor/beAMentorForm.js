@@ -42,7 +42,7 @@ const BeAMentorForm = () => (
       theme={process.env.REACT_APP_THEME}
       type="link"
       target="_blank"
-      url="https://portal.aimementoring.com/login">
+      url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor">
       Sign up
     </Button>
   </div>
