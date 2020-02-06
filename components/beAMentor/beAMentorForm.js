@@ -27,11 +27,6 @@ const BeAMentorForm = () => (
       {`and creating an AIME account.
       Once they're open, we'll notify you so you can complete
       your application.`}
-      {/* Mentor applications aren&apos;t open just yet as we&apos;re
-      updating our processes. However, you should get a head-start by&nbsp;
-      <strong>registering your details</strong> and creating an AIME account.
-      Once they&apos;re open, we&apos;ll notify you so you can complete
-      your application. */}
       <br />
       <br />
       {`One by one we'll get it done!`}
