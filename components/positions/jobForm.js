@@ -52,11 +52,11 @@ const JobForm = ({
             handleFieldChange={handleFieldChange}
             countryAddress={countryAddress}
           /> */}
-          <JobUniAndContactFrom
+          {/* <JobUniAndContactFrom
             displayCampusSelect={job.displayCampusSelect}
             handleChange={handleFormFieldChange}
             values={values}
-          />
+          /> */}
           <JobQuestionAndVideoLink
             messageQuestion={job.messageQuestion}
             isThereVideoLink={job.isThereVideoLink}
@@ -66,14 +66,14 @@ const JobForm = ({
           <SupportingDocsSectionForm
             requiredDocuments={job.requiredDocuments}
           />
-          <IndigenousForm
+          {/* <IndigenousForm
             handleChange={handleFormFieldChange}
             values={values}
           />
           <BecomeAFriendSection
             handleChange={handleFormFieldChange}
             values={values}
-          />
+          /> */}
           <HiddenFieldsAndSubmitAction type={job.type} name={job.name} />
         </form>
       </div>
