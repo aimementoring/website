@@ -72,23 +72,19 @@ const Reports = (props) => {
       />
     );
   });
-  // reportsTitle
+
   return (
     <Layout>
-      <div className="hero-banner--default hero-banner--impact full-width-wrap">
-        <div className="flex flex-wrap items-center full-height">
-          <div className="banner-wrapper">
-            <Title type="h5Title">
-              <span className="highlight-text">
-                <em>
+      <div className={styles.heroBannerReports}>
+        <Title type="h5Title">
+          <span className="highlight-text">
+            <em>
                     Reports
-                  <br />
-                  <span>&nbsp;</span>
-                </em>
-              </span>
-            </Title>
-          </div>
-        </div>
+              <br />
+              <span>&nbsp;</span>
+            </em>
+          </span>
+        </Title>
       </div>
       <section>
         <div className={styles.reportsContainer} />
