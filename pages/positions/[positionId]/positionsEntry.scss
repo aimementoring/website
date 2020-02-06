@@ -31,9 +31,28 @@
 }
 
 .job-application {
+  .inputJobApplicationWrapper {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 0 0.5em 0; 
+    @media screen and (min-width: $md) {
+      width: 50%;
+      padding: 0 0.7em 0.4em 0; 
+    }
+    div {
+      float: none;
+    }
+  }
   .inputJobApplication,
   input[type="tel"] {
     width: 100%;
     height: auto;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+  .react-phone-number-input__row:focus-within {
+    border: 2px solid $brand-primary;
   }
 }
