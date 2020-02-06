@@ -5,7 +5,7 @@ import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
 
 const AboutYouSectionForm = ({ handleChange, values }) => (
   <div className="clearfix">
-    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+    <div className="inputJobApplicationWrapper">
       <LabeledInput
         type="text"
         name="first_name"
@@ -17,7 +17,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         className="inputJobApplication"
       />
     </div>
-    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+    <div className="inputJobApplicationWrapper">
       <LabeledInput
         type="text"
         name="last_name"
@@ -29,7 +29,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         required
       />
     </div>
-    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+    <div className="inputJobApplicationWrapper">
       <LabeledInput
         type="email"
         name="email"
@@ -41,7 +41,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         required
       />
     </div>
-    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b flex flex-column js-phone-component">
+    <div className="inputJobApplicationWrapper flex flex-column js-phone-component">
       <PhoneInput
         placeholder="Enter phone number"
         theme={process.env.REACT_APP_THEME}
@@ -49,6 +49,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         value={values.phone || ''}
         defaultCountry="AU"
         onChangeFunction={handleChange}
+        className="inputJobApplication"
       />
     </div>
   </div>
