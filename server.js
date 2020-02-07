@@ -66,13 +66,12 @@ app.prepare().then(() => {
     }
 
     server.get('*', (req, res) => {
-      console.log('TCL: req', req.url);
+      if (req.path.substr(-1) === '/' && req.path.length > 1) {
+        const query = req.url.slice(req.path.length);
+        res.redirect(301, req.path.slice(0, -1) + query);
+      }
       if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
-        if (req.url.endsWith('/')) {
-          res.redirect(301, `https://${req.headers.host}${req.url.slice(0, req.url.length - 1)}`);
-        } else {
-          res.redirect(301, `https://${req.headers.host}${req.url}`);
-        }
+        res.redirect(301, `https://${req.headers.host}${req.url}`);
       }
       return handle(req, res);
     });
