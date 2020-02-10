@@ -9,6 +9,7 @@ module.exports = withOffline(
       webpack(config) {
         return config;
       },
+      exportTrailingSlash: false,
       cssModules: true,
       sassLoaderOptions: {},
       cssLoaderOptions: {
