@@ -6,6 +6,7 @@ import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
+const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
 const IntroPanelHomepage = dynamic(() => import('../../components/introPanelHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import('../../components/ambassadors'));
@@ -22,6 +23,7 @@ const Home = () => {
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" />
+      <QuicklinksHomepage />
       <IntroPanelHomepage />
       <CtaGrid elements={CTA_AU_HOMEPAGE} />
       <Ambassadors />
