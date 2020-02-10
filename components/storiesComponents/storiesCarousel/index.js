@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Anchor from '../../common/link';
+import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './storiesCarousel.module.scss';
 
 // This could be in blueprint, not sure?
+
+const {
+  Title,
+  Button,
+} = Components;
 
 const StoriesCarousel = (props) => {
   const {
@@ -33,27 +39,26 @@ const StoriesCarousel = (props) => {
             className={styles.textWrap}
             key={`carousel-sm-text-wrap-${id}`}
           >
-            <p className={styles.tag}>Featured</p>
-            <h1 className={styles.title}>{title}</h1>
+            <Title type="h3Title">{title}</Title>
             {contentPreview && contentPreview.previewCopy
               ? (
-                <p className={styles.productTitle}>
+                <Paragraph>
                   {`${contentPreview.previewCopy.slice(0, 230)}...`}
-                </p>
+                </Paragraph>
               )
               : contentCards && contentCards.slice(0, 1).map((card) => (
-                <p className={styles.productTitle} key={card.sys.id}>
+                <Paragraph key={card.sys.id}>
                   {card.fields.contentCopy
                       && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
-                </p>
+                </Paragraph>
               ))}
-            <Anchor
+            <Button
+              theme={process.env.REACT_APP_THEME}
               to={`/story?slug=${slugTitle}`}
               as={`/story/${slugTitle}`}
-              className={styles.carouselLink}
             >
               Read More
-            </Anchor>
+            </Button>
           </div>
         </div>
       </div>
