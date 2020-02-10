@@ -1,0 +1,23 @@
+@import "../../styles/base/variables";
+
+.hero-banner--founder {
+  .founderBannerHeader {
+    strong {
+      left: initial;
+      letter-spacing: -0.1em;
+    }
+    @media all and(min-width: $md) {
+      margin-top: 2em;
+    }
+  }
+}
+.plainContentWrapper {
+  padding: 3em 1.5em;
+  margin: 0 auto;
+  max-width: 45em;
+
+  @media all and(min-width: $md) {
+    padding: 5em 3em;
+  }
+}
+
