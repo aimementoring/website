@@ -69,15 +69,6 @@
   }
 }
 
-.hero-banner--founder {
-  background: url($cdnRoot + 'assets/images/banner/JMB@2x-min.jpg') no-repeat top center / cover fixed #050301;  
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-    padding-top: 10em;
-  }
-}
-
 .hero-banner--jobs {
   background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
   height: 60vh;
