@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Components } from 'aime-blueprint';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import contentfulServer from '../../api/contentfulStories';
 import {
@@ -13,6 +15,10 @@ import StoriesContent from '../../components/storiesComponents/storiesContent';
 import Carousel from '../../components/carousel';
 
 import styles from './stories.module.scss';
+
+const {
+  Title,
+} = Components;
 
 const Stories = (props) => {
   const { entries } = props;
@@ -82,16 +88,20 @@ const Stories = (props) => {
             <div className={styles.storiesContainer}>
               <aside className={styles.refineSearch}>
                 <div className={styles.refineSection}>
-                  <h2 className={styles.storiesTitle}>
-                    {'Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!'}
-                  </h2>
-                  <span className={styles.line} />
+                  <Title type="h3Title">
+                    Imagination
+                  </Title>
+                  <Title type="h2Title">
+                    Feed
+                  </Title>
                   <div className={styles.mobilePanel}>
-                    <p className={styles.storiesParagraph}>
-                      {`AIME has been delivering kindness through mentoring for 14 years.
-                          Each year we release a Book of Kindness with tales of human generosity.
-                          Here are some of those stories of hope, positivity and change...`}
-                    </p>
+                    <div className={styles.storiesParagraph}>
+                      <Paragraph>
+                        AIME has been delivering kindness through mentoring for 14 years.
+                        Each year we release a Book of Kindness with tales of human generosity.
+                        Here are some of those stories of hope, positivity and change...
+                      </Paragraph>
+                    </div>
                   </div>
                 </div>
               </aside>
