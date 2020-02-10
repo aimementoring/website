@@ -90,7 +90,7 @@
 }
 
 .storiesParagraph {
-  margin: 1.5rem 0 ;
+  margin: 1.5rem 0;
 }
 
 .refineSearch {
@@ -106,6 +106,13 @@
   position: relative;
   margin-bottom: 1rem;
 
+  h3,h2{
+    display: none;
+    @media screen and (min-width: $md) {
+      display: block;
+    }
+    
+  }
   @media screen and (min-width: $lg) {
     margin-bottom: 4rem;
   }
