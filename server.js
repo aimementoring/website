@@ -1,5 +1,4 @@
 require('dotenv').config();
-const path = require('path');
 const cacheableResponse = require('cacheable-response');
 const express = require('express');
 const next = require('next');
@@ -25,15 +24,6 @@ const ssrCache = cacheableResponse({
 app.prepare().then(() => {
   const server = express();
   server.use(compression());
-
-  server.get('/', (req, res) => {
-    ssrCache({ req, res, pagePath: '/' });
-  });
-
-  // robots.txt
-  server.get('/robots.txt', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/robots.txt'));
-  });
 
   // Positions
   server.get('/:countryId/positions', (req, res) => {
@@ -76,8 +66,13 @@ app.prepare().then(() => {
       return handle(req, res);
     });
 
+    server.get('/', (req, res) => {
+      ssrCache({ req, res, pagePath: '/' });
+    });
+
     server.listen(port, (err) => {
       if (err) throw err;
+
       // eslint-disable-next-line no-console
       console.log(`> Ready on http://localhost:${port}`);
     });

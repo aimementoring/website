@@ -121,9 +121,25 @@
       "required": true,
       "value": "560dd7f8110349a17d6e96c46d02a0ce"
     },
+    "REACT_APP_SHOPIFY_DOMAIN": {
+      "required": true,
+      "value": "aimementoring.myshopify.com"
+    },
     "REACT_APP_GOOGLE_TAG_MANAGER": {
       "required": true,
       "value": "GTM-NK5SFHW"
+    },
+    "REACT_APP_DONATE_USERNAME": {
+      "required": true,
+      "value": "website@aimementoring.com"
+    },
+    "REACT_APP_DONATE_PASSWORD": {
+      "required": true,
+      "value": "Lgw4)zvb"
+    },
+    "REACT_APP_DONATE_ORGANISATION_UUID": {
+      "required": true,
+      "value": "7eafc9b2-404f-11e7-bc97-06facaa3db7b"
     }
   },
   "formation": {

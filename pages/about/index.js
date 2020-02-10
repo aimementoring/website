@@ -154,7 +154,7 @@ const About = () => (
               challenging est world orders, making magic, fueling imaginative fire.
             </Paragraph>
             <div className={styles.btnWrap}>
-              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/founder">
+              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/jack-manning-bancroft">
               Read about our founder
               </Button>
               <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/positions">
