@@ -56,6 +56,10 @@ app.prepare().then(() => {
     }
 
     server.get('*', (req, res) => {
+      if (req.path.substr(-1) === '/' && req.path.length > 1) {
+        const query = req.url.slice(req.path.length);
+        res.redirect(301, `${req.path.slice(0, -1)}${query}`);
+      }
       if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.REACT_APP_HOST_ENV !== 'development') {
         res.redirect(301, `https://${req.headers.host}${req.url}`);
       }
