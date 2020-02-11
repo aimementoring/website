@@ -41,14 +41,9 @@ const Ambassadors = () => (
     <div className={styles.mentorsSection}>
       <div className={styles.mentorsSectionWrapper}>
         <Title type="headingLockup" className={styles.carouselTitle} theme={process.env.REACT_APP_THEME}>
-          Our
-          <strong>Ambassadors</strong>
+          People of
+          <strong>AIME</strong>
         </Title>
-
-        {/* <h1>
-          <span className={styles.ambassadorsPreText}>Our</span>
-          <span className={styles.ambassadorsText}>Ambassadors</span>
-        </h1> */}
         <div className={styles.carousel}>
           <Carousel type="ambassadors">
             {CAROUSEL_SLIDES.map((slide) => <AmbassadorSlide {...slide} key={slide.title} />)}
@@ -78,7 +73,7 @@ const AmbassadorSlide = ({ image, title, paragraph }) => (
             {paragraph}
           </Paragraph>
           <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/ambassadors">
-            See more ambassadors
+            Meet our people
           </Button>
         </div>
       </div>
