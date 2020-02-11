@@ -7,42 +7,22 @@
   margin-bottom: 2rem;
   flex-direction: column;
   justify-content: center;
-  background: url($cdnRoot + 'assets/images/banner/bg-pattern-purple@2x.jpg') no-repeat top center / cover #050301;
+  background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
+    no-repeat top center / cover #050301;
 }
 
 .reportsContainer {
   margin: 0 auto;
   padding-top: 0;
   max-width: 81.25em;
-  padding: 2em 2em 4em;
 }
 
 .filterListContainer {
   min-width: 280px;
   margin-bottom: 2rem;
-
+  padding: 2em 2em 0;
   li {
     cursor: pointer;
-  }
-
-  @media screen and (max-width: $lg) {
-    margin-bottom: 4rem;
-
-    ul {
-      display: none;
-      border: 1px solid $brand-primary;
-      margin-top: 0;
-      margin-right: 0;
-      border-radius: 0 0 6px 6px;
-
-      li {
-        cursor: pointer;
-      }
-    }
-
-    &.active ul  {
-      display: block;
-    }
   }
 }
 
@@ -51,18 +31,25 @@
   display: grid;
   grid-gap: 1em;
   flex-wrap: wrap;
+  padding: 2em 2em 4em;
 }
 
-.reportsTitle {
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: $black;
-  font-family: $feature-font-family;
-}
+@media screen and (max-width: $lg) {
+  // margin-bottom: 4rem;
 
-.reportsParagraph {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-  line-height: 2;
+  ul {
+    display: none;
+    border: 1px solid $brand-primary;
+    margin-top: 0;
+    margin-right: 0;
+    border-radius: 0 0 6px 6px;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  &.active ul {
+    display: block;
+  }
 }

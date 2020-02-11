@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-// import { formatDate } from '../../../utils/utilities';
 import styles from './report.module.scss';
 
 const {
@@ -39,17 +38,6 @@ const Report = (props) => {
           />
           <div className={styles.articleDescription}>
             <Title type="h5Title">{title}</Title>
-            {/* <Paragraph className={styles.articleTileTagline}>
-              <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
-                {datePublished}
-              </span>
-              <span key={`c-light-grey-span-${id}`}>
-                <br />
-              </span>
-              <span key={`px1-span-${id}`}>
-                {`By ${contentCreator}`}
-              </span>
-            </Paragraph> */}
             <Paragraph className={styles.articleTileLabel}>
               {contentPreview && (
                 `${contentPreview.slice(0, 230)}...`)}

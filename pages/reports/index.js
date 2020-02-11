@@ -76,32 +76,23 @@ const Reports = (props) => {
   return (
     <Layout>
       <div className={styles.heroBannerReports}>
-        <Title type="h5Title">
-          <span className="highlight-text">
-            <em>
-                    Reports
-              <br />
-              <span>&nbsp;</span>
-            </em>
-          </span>
+        <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
+          <strong>Reports</strong>
         </Title>
       </div>
-      <section>
-        <div className={styles.reportsContainer} />
-        {reports && (
-          <div className="wrap py3">
-            <div className={styles.filterListContainer}>
-              <Title type="h5Title">
+      {reports && (
+        <>
+          <div className={styles.filterListContainer}>
+            <Title type="h5Title">
                 Category
-              </Title>
-              <ul className="flex flex-wrap">{getCategoryLinks}</ul>
-            </div>
-            <div className={styles.reportsGrid}>
-              {reportCard}
-            </div>
+            </Title>
+            <ul className="flex flex-wrap">{getCategoryLinks}</ul>
           </div>
-        )}
-      </section>
+          <div className={styles.reportsGrid}>
+            {reportCard}
+          </div>
+        </>
+      )}
     </Layout>
   );
 };
