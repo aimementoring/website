@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import classNames from 'classnames';
+import Title from 'aime-blueprint/lib/components/title';
 import contentfulServer from '../../api/contentfulPosts';
 import Layout from '../../hocs/basicLayout';
 import styles from './reports.modules.scss';
 
-const {
-  Title,
-} = Components;
-
 const Report = dynamic(() => import('../../components/report'));
 
-const Reports = (props) => {
-  const { entries } = props;
-
+const Reports = ({ entries }) => {
   const [reports, setReportEntries] = useState(entries);
-  const [categoryTypes, setCategoryTypes] = useState(['All reports', 'Annual', 'Financial', 'Interim', 'Research']);
   const [categorySelected, setCategorySelected] = useState('All reports');
+  const categoryTypes = ['All reports', 'Annual', 'Financial', 'Interim', 'Research'];
 
   useEffect(() => {
-    if (!reports.length) {
-      setCategoryTypes(['All reports', 'Annual', 'Financial', 'Interim', 'Research']);
-    }
     if (categorySelected === 'All reports') {
       setReportEntries(entries);
     }
@@ -40,34 +32,31 @@ const Reports = (props) => {
     setCategorySelected(newCategory);
   };
 
-  const getCategoryLinks = categoryTypes.map((category) => {
-    const active = category === categorySelected ? 'active' : '';
-    return (
-      <li className="block mr2" key={category}>
-        <div
-          className={`filter-list ${active}`}
-          onClick={handleCategoryChange(category)}
-          onKeyPress={handleCategoryChange(category)}
-          role="presentation"
-        >
-          {category}
-        </div>
-      </li>
-    );
-  });
+  const categoryLinks = categoryTypes.map((category) => (
+    <li className="block mr2" key={category}>
+      <div
+        className={classNames('filter-list', { active: category === categorySelected })}
+        onClick={handleCategoryChange(category)}
+        onKeyPress={handleCategoryChange(category)}
+        role="presentation"
+      >
+        {category}
+      </div>
+    </li>
+  ));
 
-  const reportCard = reports.map((content) => {
-    const bannerImage = content.fields.banner
-    && content.fields.banner.fields.visualMedia
-    && content.fields.banner.fields.visualMedia.fields.file.url;
-    const contentPreview = content.fields.contentPreview
-      && content.fields.contentPreview.fields.previewCopy;
+  const reportCard = reports.map(({ fields, sys }) => {
+    const bannerImage = fields.banner
+    && fields.banner.fields.visualMedia
+    && fields.banner.fields.visualMedia.fields.file.url;
+    const contentPreview = fields.contentPreview
+      && fields.contentPreview.fields.previewCopy;
     return (
       <Report
-        key={content.sys.id}
+        key={sys.id}
         bannerImage={bannerImage}
-        title={content.fields.title}
-        reportUrl={content.fields.reportUrl}
+        title={fields.title}
+        reportUrl={fields.reportUrl}
         contentPreview={contentPreview}
       />
     );
@@ -86,7 +75,7 @@ const Reports = (props) => {
             <Title type="h5Title">
                 Category
             </Title>
-            <ul className="flex flex-wrap">{getCategoryLinks}</ul>
+            <ul className="flex flex-wrap">{categoryLinks}</ul>
           </div>
           <div className={styles.reportsGrid}>
             {reportCard}

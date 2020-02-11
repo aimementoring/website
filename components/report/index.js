@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './report.module.scss';
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const Picture = dynamic(() => import('../picture'));
 
