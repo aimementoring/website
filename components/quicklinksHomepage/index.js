@@ -41,7 +41,7 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="#" className="quicklinkTitle">
-            Partner with us
+            Buy a hoodie
           </a>
         </Paragraph>
       </div>
@@ -55,7 +55,35 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="#" className="quicklinkTitle">
-            Partner with us
+            Become a mentor
+          </a>
+        </Paragraph>
+      </div>
+
+      <div className="quicklinkGridItem">
+        <a href="#" className="quicklinkImage">
+          <img
+            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
+            alt="speaker"
+          />
+        </a>
+        <Paragraph>
+          <a href="#" className="quicklinkTitle">
+            Work with us
+          </a>
+        </Paragraph>
+      </div>
+
+      <div className="quicklinkGridItem">
+        <a href="#" className="quicklinkImage">
+          <img
+            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
+            alt="speaker"
+          />
+        </a>
+        <Paragraph>
+          <a href="#" className="quicklinkTitle">
+            Donate
           </a>
         </Paragraph>
       </div>
