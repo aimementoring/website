@@ -1,0 +1,63 @@
+@import '../../styles/base/variables';
+
+.quicklinksPanel {
+  max-width: $lg;
+  margin: 0 auto;
+  padding: 5em 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .quicklinksHeader {
+    color: $watermelon;
+    margin-bottom: 1em;
+  }
+
+  .quicklinksGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+    @media screen and (min-width: $md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .quicklinkGridItem {
+    margin-right: 1em;
+    display: block;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .quicklinkImage {
+    width: 8em;
+    height: 8em;
+    display: block;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid $purple;
+    box-shadow: 2px 2px 0 $purple;
+    margin-bottom: 1em;
+    transition: $hoverTransition;
+
+    &:hover {
+      // border-color: $watermelon;
+      // box-shadow: 2px 2px 0 $watermelon;
+      background-color: $watermelon;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .quicklinkTitle {
+    text-decoration: none;
+  }
+}
