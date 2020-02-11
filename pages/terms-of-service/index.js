@@ -1,45 +1,27 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { Components } from 'aime-blueprint';
-import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
 import PropTypes from 'prop-types';
 import contentfulServer from '../../api/contentfulStories';
 import Layout from '../../hocs/basicLayout';
 
-const {
-  Title,
-} = Components;
+import TermPhraseCard from '../../components/termPhraseCard';
 
-const TermsAndConditions = (props) => {
-  const { entries } = props;
-
-  return (
-    <Layout>
-      <div style={{ height: `${120}px`, backgroundColor: 'black' }} />
-      {entries && entries.map((terms) => {
-        const termContent = terms.fields.contentCards
-          && terms.fields.contentCards.map((card) => (
-            <ReactMarkdown
-              key={card.sys.id}
-              source={card.fields.contentCopy}
-              renderers={{ paragraph: Paragraph }}
-            />
-          ));
-        return (
-          <div key={terms.sys.id} className="matrix-general">
-            <div className="wrap-md mb0 md-mb3 lg-mb3 clearfix">
-              <span className="line above" />
-              <Title type="h5Title">{terms.fields.title}</Title>
-            </div>
-            <div className="wrap-md">
-              {termContent}
-            </div>
-          </div>
-        );
-      })}
-    </Layout>
-  );
-};
+const TermsAndConditions = ({ entries }) => (
+  <Layout>
+    <div style={{ height: `${120}px`, backgroundColor: 'black' }} />
+    {entries && entries.map(({ fields, sys }) => (
+      <div key={sys.id} className="matrix-general">
+        <div className="wrap-md mb0 md-mb3 lg-mb3 clearfix">
+          <span className="line above" />
+          <Title type="h5Title">{fields.title}</Title>
+        </div>
+        <div className="wrap-md">
+          <TermPhraseCard contentCards={fields.contentCards} />
+        </div>
+      </div>
+    ))}
+  </Layout>
+);
 
 TermsAndConditions.getInitialProps = async () => {
   const client = contentfulServer();
