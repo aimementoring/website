@@ -1,13 +1,14 @@
 @import '../../styles/base/variables';
 
 .quicklinksPanel {
-  max-width: $lg;
+  max-width: 60em;
   margin: 0 auto;
   padding: 5em 1em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  text-align: center;
 
   .quicklinksHeader {
     color: $watermelon;
@@ -21,6 +22,7 @@
   
     @media screen and (min-width: $md) {
       flex-wrap: nowrap;
+      align-items: stretch;
     }
   }
 
