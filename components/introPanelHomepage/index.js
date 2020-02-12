@@ -1,17 +1,13 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import './index.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const IntroPanelHomepage = () => (
   <div className="full-width-wrap content-panel home-intro-panel">
