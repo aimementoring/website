@@ -19,33 +19,44 @@ const IntroPanelHomepage = () => (
       <div className="home-intro-panel--inner">
         <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
           <Title type="headingLockup">
-            If not you...
-            <strong>Then who?</strong>
+            <strong>
+              Hey <span>there!</span>
+            </strong>
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Want to change the world? We&apos;re always recruiting mentors.&nbsp;
-              <mark>RIGHT NOW</mark>
-              &nbsp;we&apos;re&nbsp;
-              gearing up for focused campaigns in Australia, Uganda, South Africa and Nigeria.
-              We are also activly recruiting in the USA! Join forces with AIME and together,
-              we&apos;ll shape a fairer world.
+              Our site is in draft mode as we updated it to reflect
+              AIME in 2020 & beyond. We’re imagining a fairer world
+              by using our imagination curriculum and mentoring to create
+              change for marginalised youth.
             </Paragraph>
-            <Button theme="rainbow" aria-label="cta" type="link" url="/be-a-mentor">
-              Be a mentor
+            <Paragraph>
+              <mark>Wanna see how?</mark>
+              &nbsp;Check out our plan to bring it to life
+              (max 10 minute read)
+            </Paragraph>
+            <Paragraph>
+              - JMB
+            </Paragraph>
+            <Button theme="rainbow" aria-label="cta"
+              type="link"
+              target="_blank"
+              url="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing">
+              View Strategy
             </Button>
           </div>
         </div>
         <div className="sm-col-12 sm-col-6">
-          <div className="intro-video-wrap">
+          <div className="welcomeVideoWrapper intro-video-wrap">
             <VideoButton
-              video="https://player.vimeo.com/external/326229385.m3u8?s=ccd4312c26f7981d8bcac17bb0bfd10584cfc150"
+              video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
             />
-            <div className="video-banner flex block rounded mx-auto">
+            <div className="welcomeVideo video-banner flex block rounded">
               <div className="video-banner-overlay center">
                 <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
               </div>
             </div>
+            <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
           </div>
         </div>
       </div>
