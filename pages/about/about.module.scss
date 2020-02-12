@@ -76,6 +76,13 @@
         margin-bottom: 1em;
       }
     }
+
+    ul li {
+      font-size: 0.875rem;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+      font-weight: 100;
+    }
   }
 
   @media screen and (min-width: $md) {
@@ -104,11 +111,6 @@
       .column {
         align-items: flex-start;
         justify-content: center;
-
-        img {
-          border: 1px solid $purple;
-          box-shadow: 2px 2px 0 $purple;
-        }
   
         &:nth-child(1) {
           order: 2;
@@ -121,12 +123,6 @@
         align-items: flex-end;
         padding-right: 1em;
 
-        img {
-          border: 1px solid $purple;
-          box-shadow: 2px 2px 0 $purple;
-          border-radius: 50%;
-        }
-  
         .copy {
           text-align: right;
   
@@ -138,11 +134,11 @@
     }
   }
 
-  @media screen and (min-width: $lg) { 
-    &:nth-child(n+2) {
-      margin-top: -10rem;
-    }
-  }
+  // @media screen and (min-width: $lg) { 
+  //   &:nth-child(n+2) {
+  //     margin-top: -10rem;
+  //   }
+  // }
 
 
   .fullWidthPanel {
