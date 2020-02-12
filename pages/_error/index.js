@@ -57,7 +57,7 @@ const ErrorPage = () => {
               <Paragraph>
                 Sorry for any inconvenience.
               </Paragraph>
-              <Button type="link" url="http://www.aimementoring.com" theme={process.env.REACT_APP_THEME}>
+              <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
                 Back to home
               </Button>
             </div>
