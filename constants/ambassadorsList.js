@@ -160,10 +160,7 @@ export default [
   {
     image: 'people-jade.jpg',
     name: 'Jade Symons',
-    description: `AIME and its values are something I really believe in. It’s radical,
-    cultural-shifting work is reshaping both the psychological framework of
-    Indigenous and non-Indigenous people. AIME’s work really makes you
-    believe in humans and our collective capacity.`,
+    description: `w.`,
   },
   {
     image: 'caiti_ward.jpg',
