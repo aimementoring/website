@@ -8,6 +8,15 @@ export default [
                 space to achieve this..`,
   },
   {
+    image: 'people-giorgia.jpg',
+    name: 'Giorgia Moran',
+    description: `I came to AIME as a university student. I started as a mentor, then became an
+    intern and now I’m a staff member. I get the incredible opportunity to see the impact the
+    program provides for our Indigenous high school students. AIME empowers and guides mentees
+    onto positive educational pathways whilst preparing them to become leaders of our
+    future generations.`,
+  },
+  {
     image: 'taylor_schilling.jpg',
     name: 'Taylor Schilling',
     description: `My life has been profoundly shaped by different mentors at different times. I want
@@ -18,6 +27,14 @@ export default [
     image: 'uzo_aduba.jpg',
     name: 'Uzo Aduba',
     description: 'By standing together with dignity and hope for the future, AIME transforms lives.',
+  },
+  {
+    image: 'people-darcy.jpg',
+    name: 'Darcy Sketcher',
+    description: `I was sick of reading the paper or hearing stories of inequality
+    in our own backyard. I decided to get off my backside and do something about
+    it. AIME encourages and empowers our mentees to create a fairer and a more
+    loving world.`,
   },
   {
     image: 'patrick_j_adams.jpg',
@@ -41,6 +58,14 @@ export default [
     name: 'Yael Stone',
     description: `The global community is staring at monstrous inequality. AIME's mentoring model
                 creates a bridge that brings people together and makes change possible.`,
+  },
+  {
+    image: 'people-makhale.jpg',
+    name: 'Makhale Tshifaro',
+    description: `I know that one’s greatest weakness lies in giving up when they fail,
+    but the most certain way to succeed is always to try one last time. This is why
+    I joined AIME, because failure is the opportunity to begin again more intelligently
+    and I want to encourage mentees to use the power of failure.`,
   },
   {
     image: 'kate_mulgrew.jpg',
@@ -69,6 +94,15 @@ export default [
     description: `There is unmitigated proof that mentoring helps build resilience and opportunity
                 for those that need a hand. Any movement that fosters a positive impact on the
                 lives of our youth, our future, has my whole hearted support. Go AIME`,
+  },
+  {
+    image: 'people-connor.jpg',
+    name: 'Connor MacNamara',
+    description: `After finding a sense of belonging within myself, my culture and family
+    I knew the next step for me was to give back and help my local community. AIME for
+    me was the perfect way to easily and effectively achieve this. I believe so much
+    in AIME’s vision to empower the youth, particularly Indigenous kids through
+    education and embracing who they truly are.`,
   },
   {
     image: 'tai_hara.jpg',
@@ -122,6 +156,14 @@ export default [
     description: `AIME is an amazing organisation that is invested in creating positive change for
                 people all over the world. Their mentoring program enables young people to see a
                 world of possibility beyond their own expectations. I want to be part of that.`,
+  },
+  {
+    image: 'people-jade.jpg',
+    name: 'Jade Symons',
+    description: `AIME and its values are something I really believe in. It’s radical,
+    cultural-shifting work is reshaping both the psychological framework of
+    Indigenous and non-Indigenous people. AIME’s work really makes you
+    believe in humans and our collective capacity.`,
   },
   {
     image: 'caiti_ward.jpg',
