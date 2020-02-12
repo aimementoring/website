@@ -26,7 +26,7 @@ const UniversitySelector = ({
         placeholder={placeholder}
         name="uni-campus-attending"
         className={classNames}
-        onChange={onChangeFunction}
+        onChangeFunction={onChangeFunction}
         theme={process.env.REACT_APP_THEME}
         value={value}
         options={universities && universities.length
@@ -37,7 +37,6 @@ const UniversitySelector = ({
               label: university.text,
             }))
           : []}
-        required
       />
     </div>
   );
@@ -53,7 +52,7 @@ UniversitySelector.propTypes = {
 
 UniversitySelector.defaultProps = {
   onChangeFunction: () => {},
-  classNames: 'testingClass',
+  classNames: '',
   containerClassNames: '',
   value: null,
 };
