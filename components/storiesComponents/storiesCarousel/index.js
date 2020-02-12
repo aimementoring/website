@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
+import Router from 'next/router';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './storiesCarousel.module.scss';
-import Anchor from '../../common/link';
 
 // This could be in blueprint, not sure?
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const StoriesCarousel = (props) => {
   const {
@@ -21,6 +17,10 @@ const StoriesCarousel = (props) => {
     contentCards,
     contentPreview,
   } = props;
+
+  const handleClick = () => {
+    Router.push(`/story/${slugTitle}`);
+  };
 
   return (
     <div
@@ -53,9 +53,9 @@ const StoriesCarousel = (props) => {
                       && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
                 </Paragraph>
               ))}
-            <Anchor to={`/story?slug=${slugTitle}`} as={`/story/${slugTitle}`}>
-              <Button theme={process.env.REACT_APP_THEME}> Read More</Button>
-            </Anchor>
+            <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
+                Read More
+            </Button>
           </div>
         </div>
       </div>
