@@ -1,16 +1,12 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
 import { formatDate } from '../../../utils/utilities';
 import Anchor from '../../common/link';
 import styles from './storiesContent.module.scss';
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const Picture = dynamic(() => import('../../picture'));
 
@@ -64,7 +60,6 @@ const StoriesContent = (props) => {
                 {`By ${contentCreator}`}
               </span>
             </Paragraph>
-
             <Paragraph>
               {contentPreview && contentPreview.previewCopy ? (
                 `${contentPreview.previewCopy.slice(0, 230)}...`
