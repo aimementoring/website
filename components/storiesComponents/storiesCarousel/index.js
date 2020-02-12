@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './storiesCarousel.module.scss';
+import Anchor from '../../common/link';
 
 // This could be in blueprint, not sure?
 
@@ -52,13 +53,9 @@ const StoriesCarousel = (props) => {
                       && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
                 </Paragraph>
               ))}
-            <Button
-              theme={process.env.REACT_APP_THEME}
-              to={`/story?slug=${slugTitle}`}
-              as={`/story/${slugTitle}`}
-            >
-              Read More
-            </Button>
+            <Anchor to={`/story?slug=${slugTitle}`} as={`/story/${slugTitle}`}>
+              <Button theme={process.env.REACT_APP_THEME}> Read More</Button>
+            </Anchor>
           </div>
         </div>
       </div>
