@@ -18,11 +18,11 @@ const FileUploader = ({
 
   const loadFileStackReact = async () => {
     // eslint-disable-next-line global-require
-    ReactFilestack = require('filestack-react');
+    ReactFilestack = await require('filestack-react');
   };
 
   useEffect(() => {
-    loadFileStackReact();
+    if (isClient && !ReactFilestack) loadFileStackReact();
   }, [isClient]);
 
   const onFileRemove = (index) => setUploadedFiles(uploadedFiles.filter((_, i) => i !== index));
