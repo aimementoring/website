@@ -56,10 +56,10 @@ const JobUniAndContactFrom = ({ displayCampusSelect, handleChange, values }) => 
       {displayCampusSelect && (
         <UniversitySelector
           placeholder="Choose site of desired position"
-          name="university"
+          name="uni-campus-attending"
           containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b js-campus-select"
           onChangeFunction={handleChange}
-          value={values.university}
+          value={values['uni-campus-attending']}
         />
       )}
     </div>
@@ -83,7 +83,7 @@ JobUniAndContactFrom.propTypes = {
   handleChange: PropTypes.func,
   values: PropTypes.shape({
     'referral-source': PropTypes.string,
-    university: PropTypes.string,
+    'uni-campus-attending': PropTypes.string,
   }),
 };
 
