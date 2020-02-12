@@ -62,7 +62,7 @@ const ErrorPage = () => {
               </Button>
             </div>
             <div>
-              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/404-dancing.gif`} alt="" />
+              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
             </div>
           </div>
         </div>
