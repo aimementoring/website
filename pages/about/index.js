@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import List from 'aime-blueprint/lib/components/list';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
@@ -103,22 +104,18 @@ const About = () => (
               the Imagination Curriculum and its 21 mentoring values, featured below,
               to change the world. The organisation has set out to do this by:
             </Paragraph>
+            <List type="ulList" list={[
+              'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;', 
+              'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;', 
+              'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.'
+            ]} />
             <Paragraph>
-              Helping marginalised kids reach educational parity and beyond,
-              and accelerating entrepreneurship and changing mindsets among them;
-            </Paragraph>
-            <Paragraph>
-              Giving privilege a purpose by offering those who will have power tomorrow
-              the chance to volunteer today as university mentors, working with school
-              teachers to change mindsets and transform schools;
-            </Paragraph>
-            <Paragraph>
-              Offering those with power today the chance to create policy change,
-              give away their wealth and create more equal opportunities for all.
-            </Paragraph>
-            <Paragraph>
-              In 2019, AIME received the global “Top 50 Organisations in Education”
-              award for its significant contributions towards the field of education.
+              In 2019, AIME received the global “
+              <a target="_blank"
+                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232">
+                Top 50 Organisations in Education
+              </a>
+              " award for its significant contributions towards the field of education.
             </Paragraph>
             {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/impact">
               Read more
