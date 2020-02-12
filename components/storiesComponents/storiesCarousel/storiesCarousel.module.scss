@@ -33,13 +33,17 @@
     text-align: center;
     
     .textWrap {
-      max-width: 400px;
+      max-width: 40em;
       margin: 0 auto;
     }
 
     h3{
-      margin-bottom: 1rem;
       font-size: 2.3rem;
+      margin-bottom: 0.5em;;
+
+      @media screen and (min-width: $md) {
+      margin: 0.7em 0;
+      }
     }
 
     p{
