@@ -167,6 +167,16 @@
     margin-bottom: 0.5em;
   }
 
+  .mentorMakhale {
+    background-image:
+      url($cdnRoot+"assets/images/ambassadors/people-makhale.jpg"),
+      linear-gradient(
+        135deg,
+        rgba(49, 233, 255, 0.5) 0%,
+        rgba(220, 10, 255, 0.5) 100%
+      );
+  }
+
   .mentorUzo {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/uzo_aduba.jpg"),
