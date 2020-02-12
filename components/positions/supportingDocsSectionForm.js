@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import kebabCase from 'lodash/kebabCase';
-import FileUploader from '../fileUploader';
+import FileUploader from 'aime-blueprint/lib/components/fileUploader';
 
 const SupportingDocsSectionForm = ({ requiredDocuments }) => (
   <>
@@ -26,6 +26,16 @@ const SupportingDocsSectionForm = ({ requiredDocuments }) => (
                   buttonText={`Upload ${document}`}
                   inputName={`job-${kebabCase(document)}`}
                   requiredFile
+                />
+                <FileUploader
+                  name={`job-${kebabCase(document)}`}
+                  folderInS3Name="jobs/kevin_test"
+                  maxNumberOfFiles={1}
+                  filesUploaded=""
+                  height={500}
+                  companionUrl="https://uppy-file-uploader.herokuapp.com/"
+                  theme="rainbow"
+                  placeholder={`Upload ${document}`}
                 />
               </div>
             </label>
