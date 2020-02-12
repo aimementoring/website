@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import contentfulServer from '../../api/contentfulStories';
@@ -15,10 +15,6 @@ import StoriesContent from '../../components/storiesComponents/storiesContent';
 import Carousel from '../../components/carousel';
 
 import styles from './stories.module.scss';
-
-const {
-  Title,
-} = Components;
 
 const Stories = (props) => {
   const { entries } = props;
