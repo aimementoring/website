@@ -103,6 +103,12 @@
     &:nth-child(odd) {
       .column {
         align-items: flex-start;
+        justify-content: center;
+
+        img {
+          border: 1px solid $purple;
+          box-shadow: 2px 2px 0 $purple;
+        }
   
         &:nth-child(1) {
           order: 2;
@@ -114,6 +120,12 @@
       .column {
         align-items: flex-end;
         padding-right: 1em;
+
+        img {
+          border: 1px solid $purple;
+          box-shadow: 2px 2px 0 $purple;
+          border-radius: 50%;
+        }
   
         .copy {
           text-align: right;
@@ -130,5 +142,20 @@
     &:nth-child(n+2) {
       margin-top: -10rem;
     }
+  }
+
+
+  .fullWidthPanel {
+    text-align: center;
+
+    h1 {
+      strong {
+        left: initial;
+      }
+    }
+  }
+
+  &:last-child {
+    margin: 0;
   }
 }
