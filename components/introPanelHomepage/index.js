@@ -37,7 +37,7 @@ const IntroPanelHomepage = () => (
             <Button theme="rainbow" aria-label="cta"
               type="link"
               target="_blank"
-              url="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing">
+              url={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}>
               View Strategy
             </Button>
           </div>
