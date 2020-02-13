@@ -34,30 +34,41 @@
     &:last-child {
       margin-right: 0;
     }
-  }
 
-  .quicklinkImage {
-    width: 8em;
-    height: 8em;
-    display: block;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    border: 2px solid $purple;
-    box-shadow: 2px 2px 0 $purple;
-    margin-bottom: 1em;
-    transition: $hoverTransition;
-
-    &:hover {
-      // border-color: $watermelon;
-      // box-shadow: 2px 2px 0 $watermelon;
-      background-color: $watermelon;
-    }
-
-    img {
+    .quicklinkImage {
+      width: 8em;
+      height: 8em;
       display: block;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid $purple;
+      box-shadow: 2px 2px 0 $purple;
+      margin-bottom: 1em;
+      transition: $hoverTransition;
+  
+      &:hover {
+        // border-color: $watermelon;
+        // box-shadow: 2px 2px 0 $watermelon;
+        background-color: $watermelon;
+      }
+  
+      img {
+        display: block;
+        padding: 1em;
+      }
+    }
+
+    &:nth-child(4) {
+      .quicklinkImage {
+        img {
+          padding: 1.5em;
+        }
+      }
     }
   }
+
+  
 
   .quicklinkTitle {
     text-decoration: none;
