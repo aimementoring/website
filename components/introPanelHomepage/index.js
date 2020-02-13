@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Anchor from '../common/link';
 import './index.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
@@ -16,7 +17,9 @@ const IntroPanelHomepage = () => (
         <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
           <Title type="headingLockup">
             <strong>
-              Hey <span>there!</span>
+              Hey
+              {' '}
+              <span>there!</span>
             </strong>
           </Title>
           <div className="intro-sub-text">
@@ -34,12 +37,12 @@ const IntroPanelHomepage = () => (
             <Paragraph>
               - JMB
             </Paragraph>
-            <Button theme="rainbow" aria-label="cta"
-              type="link"
+            <Anchor
+              to="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing"
               target="_blank"
               url={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}>
               View Strategy
-            </Button>
+            </Anchor>
           </div>
         </div>
         <div className="sm-col-12 sm-col-6">
