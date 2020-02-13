@@ -1,19 +1,19 @@
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import Input from 'aime-blueprint/lib/components/input';
+import Select from 'aime-blueprint/lib/components/select';
+import Textarea from 'aime-blueprint/lib/components/textarea';
+import Checkbox from 'aime-blueprint/lib/components/checkbox';
+import CountrySelector from 'aime-blueprint/lib/components/countrySelector';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
+import UploadFormElement from '../commonElements/uploadFormElement';
 import { FORM_MATRIX_AVAILABLE_ELEMENTS } from '../../constants';
 import { getUcFirst } from '../../utils/utilities';
 
-const Input = dynamic(() => import('aime-blueprint/lib/components/input'));
-const Select = dynamic(() => import('aime-blueprint/lib/components/select'));
-const Textarea = dynamic(() => import('aime-blueprint/lib/components/textarea'));
-const Checkbox = dynamic(() => import('aime-blueprint/lib/components/checkbox'));
-const CountrySelector = dynamic(() => import('aime-blueprint/lib/components/countrySelector'));
-const Paragraph = dynamic(() => import('aime-blueprint/lib/components/paragraph'));
-const PhoneInput = dynamic(() => import('aime-blueprint/lib/components/phoneInput'));
 const Header = dynamic(() => import('../commonElements/header'));
 const VideoFormElement = dynamic(() => import('../commonElements/videoFormElement'));
-const UploadFormElement = dynamic(() => import('../commonElements/uploadFormElement'));
 const AddressAutocompleteInput = dynamic(() => import('../addressAutocompleteInput'));
 const UniversitySelector = dynamic(() => import('../universitySelector'));
 
