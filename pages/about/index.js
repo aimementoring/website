@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import List from 'aime-blueprint/lib/components/list';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
@@ -26,45 +27,53 @@ const About = () => (
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              We are driven to unlock the limitless potential of children who have
-              been left behind.
-              We do that by building mentoring bridges between universities and high schools,
-              between the powerful and the powerless, the haves and the have nots. We know that
-              our fiery and intuitive brand of mentoring ends the cycle of disadvantage by
-              permanently changing mindsets. Based in Redfern, Australia, our operation runs
-              across campuses worldwide.
+              AIME is an Global organisation working to transform education
+              from the inside out, to create equality, more access to opportunities,
+              and a fairer world for marginalised children.
             </Paragraph>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/know-aime">
+            <Paragraph>
+              AIME’s structured mentoring model unlocks the potential of marginalised
+              children to overcome some of the barriers to success they face, by inspiring
+              them and those around them to imagine and create a future different from
+              the predetermined narrative of impending disadvantage that surrounds them.
+              The program also aims to develop a sense of pride in these children,
+              help them see the value education can bring them, and develop
+              leadership skills and ambitions early on.
+            </Paragraph>
+            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/know-aime">
               Tell me more
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
           <img
             className={styles.imageBlock}
-            src={`${ASSETS_URL}/assets/images/about/about-aime.jpg`}
+            src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
             alt="about aime"
           />
         </div>
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
             The
             <strong>Kids</strong>
             At AIME
-          </Title>
+          </Title> */}
           <div className={styles.copy}>
-            <Paragraph>
+            {/* <Paragraph>
               <strong>
                 Providing the stage.
               </strong>
-            </Paragraph>
+            </Paragraph> */}
             <Paragraph>
-              Everything we do is about these kids. They see themselves as being on the outside
-              looking in…. that’s until we give them the mic. AIME program days are all about
-              that. The Kids at AIME are central to the entire organisation. We’re just
-              providing the framework, but they’re making the difference.
+              Since it was founded in 2005, AIME has worked with 39,000 Indigenous
+              kids in Australia, who have achieved educational parity and beyond.
+              Over 6,000 university students in Australia have volunteered with
+              AIME since 2005, making it the largest volunteer movement in Australian
+              history. Having scaled and proven its model of mentoring in Australia,
+              AIME has  now expanded the model across the continents of Africa and
+              the USA.
             </Paragraph>
           </div>
         </div>
@@ -72,134 +81,64 @@ const About = () => (
           <img
             className={styles.imageBlock}
             alt="kids at aime"
-            src={`${ASSETS_URL}/assets/images/about/the-kids-at-aime.jpg`}
+            src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
           />
         </div>
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
             Hard lined
             <strong>Impact</strong>
-          </Title>
+          </Title> */}
           <div className={styles.copy}>
-            <Paragraph>
+            {/* <Paragraph>
               <strong>
                 Not another smiley faced program.
               </strong>
-            </Paragraph>
+            </Paragraph> */}
             <Paragraph>
-              We turn up. Turn up. Turn up. We&apos;ve been at it since 2005
-              and we&apos;re only just getting started! AIME benefits mentees,
-              mentors and the entire community we work
-              in. Don&apos;t take our word for it, check out the evidence.
+              AIME’s commitment is to keep building its Social Network for Good,
+              a worldwide movement of people who want to create a fairer world and
+              build bridges between those with power and those without, and to use
+              the Imagination Curriculum and its 21 mentoring values, featured below,
+              to change the world. The organisation has set out to do this by:
             </Paragraph>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/impact">
+            <List type="ulList" list={[
+              'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;', 
+              'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;', 
+              'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.'
+            ]} />
+            <Paragraph>
+              In 2019, AIME received the global “
+              <a target="_blank"
+                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232">
+                Top 50 Organisations in Education
+              </a>
+              " award for its significant contributions towards the field of education.
+            </Paragraph>
+            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/impact">
               Read more
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
           <img
             className={styles.imageBlock}
             alt="impact"
-            src={`${ASSETS_URL}/assets/images/about/impact.jpg`}
+            src={`${ASSETS_URL}/assets/images/illustrations/heart-explode-person.png`}
           />
         </div>
       </section>
       <section className={styles.sectionAbout}>
-        <div className={styles.column}>
+        <div className={styles.fullWidthPanel}>
           <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            The gift of
-            <strong>Knowledge</strong>
+            Our 21
+            <strong>Values</strong>
           </Title>
-          <div className={styles.copy}>
-            <Paragraph>
-              <strong>
-                We&apos;ve got knowledge & tools to share.
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              In 2018 we opened our model on demand to Universities from across the globe, with
-              plans to be operational in 10+ different countries in 2020. Checkout our knowledge
-              and tools and how you can get involved.
-            </Paragraph>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/know-aime">
-            Learn more
-            </Button>
-          </div>
-        </div>
-        <div className={styles.column}>
           <img
-            className={styles.imageBlock}
-            alt="gift of knowledge"
-            src={`${ASSETS_URL}/assets/images/about/gift-of-knowladge.jpg`}
-          />
-        </div>
-      </section>
-      <section className={styles.sectionAbout}>
-        <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            Our
-            <strong>Team</strong>
-          </Title>
-          <div className={styles.copy}>
-            <Paragraph>
-              <strong>
-                Rebels with a cause.
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              We are a small band of artists at AIME, writing, shaping, creating new worlds,
-              challenging est world orders, making magic, fueling imaginative fire.
-            </Paragraph>
-            <div className={styles.btnWrap}>
-              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/jack-manning-bancroft">
-              Read about our founder
-              </Button>
-              <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/positions">
-              Join our team
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.column}>
-          <img
-            className={styles.imageBlock}
-            alt="team"
-            src={`${ASSETS_URL}/assets/images/about/team.jpg`}
-          />
-        </div>
-      </section>
-      <section className={styles.sectionAbout}>
-        <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            <strong>Apparel</strong>
-            That changes lives
-          </Title>
-          <div className={styles.copy}>
-            <Paragraph>
-              <strong>
-                AIME makes the greatest hoodie on earth.
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              We are doing our best to make the most meaningful hoodie on the planet, check out
-              the range designed and inspired by kids to change the world. Our shop currently
-              ships out of Australia, if you can’t wait to get your hands on it, it usually
-              takes a few weeks to send over. And jump onto our Saturday Swag list to be the
-              first to know when AIME Apparel launches into the US in a legit way in 2020.
-            </Paragraph>
-            <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="https://shop.aimementoring.com/">
-            Shop Apparel
-            </Button>
-          </div>
-        </div>
-        <div className={styles.column}>
-          <img
-            className={styles.imageBlock}
-            alt="hoodie"
-            src={`${ASSETS_URL}/assets/images/about/hoodie.jpg`}
+            alt="AIME's 21 Values"
+            src={`${ASSETS_URL}/assets/images/illustrations/21Values%402x+(1).jpg`}
           />
         </div>
       </section>
