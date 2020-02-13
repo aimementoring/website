@@ -149,6 +149,7 @@
 
   .fullWidthPanel {
     text-align: center;
+    width: 100%;
 
     h1 {
       strong {
@@ -165,5 +166,24 @@
 
   &:last-child {
     margin: 0;
+  }
+}
+
+.fullWidthPanelStrat {
+  text-align: center;
+  padding: 2em;
+  background-color: $pink;
+  width: 100%;
+
+  h5 a{
+    color: $purple;
+    font-size: 1.8rem;
+    text-decoration: none;
+    display: block;
+    transition: $hoverTransition;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
