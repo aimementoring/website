@@ -48,14 +48,19 @@
 
 .hero-banner--case-studies {
   background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
+  max-height: 50vh;
   // Stop fixed on tablets & phones as it doesn't work
   @media screen and (max-device-width: 1024px){
     background-attachment: scroll;
-    padding-top: 10em;
+    padding-top: 8em;
   }
   .bannerHeadingAmbassadors {
     text-align: center;
     letter-spacing: -0.15em;
+    @media screen and (min-width: $md) {
+      margin-top: 2em;
+
+    }
     strong {
       left: initial;
     }
