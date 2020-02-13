@@ -23,7 +23,7 @@ const CAROUSEL_SLIDES = [
   {
     image: styles.mentorUzo,
     title: 'Uzo Aduba',
-    type: 'Ambassadors',
+    type: '2017 Global Ambassador',
     paragraph: 'By standing together with dignity and hope for the future, AIME transforms lives.',
   },
   {
@@ -38,7 +38,7 @@ const CAROUSEL_SLIDES = [
   {
     image: styles.mentorPatrick,
     title: 'Patrick J. Adams',
-    type: 'Ambassadors',
+    type: '2017 Global Ambassador',
     paragraph: `Beyond my family, no people have helped shape my life, my career and my view
       of the world more than the mentors I have been lucky enough to work, play and
       live with. I’m so excited to have found AIME and to do everything I can to
@@ -56,7 +56,7 @@ const CAROUSEL_SLIDES = [
   {
     image: styles.mentorIan,
     title: 'Ian Thorpe',
-    type: 'Ambassadors',
+    type: '2017 Global Ambassador',
     paragraph: `I believe in the work AIME does and I want to see it broaden to being a
       service globally. I want to see this happen because I believe in the young
       people of our future and the future they can create for the world.`,
