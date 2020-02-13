@@ -91,7 +91,7 @@ const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, v
                 </div>
               </label>
             ))}
-            <Loading loading={loading} theme={process.env.REACT_APP_THEME} />
+            <Loading loading={loading} theme="plain" />
           </div>
         </div>
       )}
