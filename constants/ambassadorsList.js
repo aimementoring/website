@@ -51,6 +51,13 @@ export default [
                 cause of mentorship all over the world.`,
   },
   {
+    image: 'people-sherice.jpg',
+    name: 'Sherice Jackson',
+    type: '2019 Co-CEO',
+    description: `I want to be able to help students like me and make them care about education
+    rather than resenting school like I did for so long.`,
+  },
+  {
     image: 'troain_bellisario.jpg',
     name: 'Troian Bellasario',
     type: '2017 Global Ambassador',
