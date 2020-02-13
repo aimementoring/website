@@ -11,6 +11,7 @@
       "REACT_APP_CONTENTFUL_API_STAGING_key": "@react_app_contentful_api_staging_key",
       "REACT_APP_CONTENTFUL_SPACE_ID": "@react_app_contentful_space_id",
       "REACT_APP_FILE_UPLOADER_API_KEY": "@react_app_file_uploader_api_key",
+      "REACT_APP_MAILCHIMP_KEY": "@react_app_mailchimp_key",
       "REACT_APP_ASSETS_URL": "https://d1muvgoqe3g8vw.cloudfront.net/website",
       "REACT_APP_CRAFT_API": "https://aimeweb-backend-staging.herokuapp.com/",
       "REACT_APP_HOST_ENV": "staging",
@@ -29,7 +30,8 @@
       "REACT_APP_GOOGLE_TAG_MANAGER": "GTM-NK5SFHW",
       "REACT_APP_CDN_ROOT": "https://d2ylaz7bdw65jx.cloudfront.net",
       "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "master",
-      "REACT_APP_HOST": "next"
+      "REACT_APP_HOST": "next",
+      "REACT_APP_MAILCHIMP_API": "https://us12.api.mailchimp.com/3.0"
     }
   },
   "routes": [
