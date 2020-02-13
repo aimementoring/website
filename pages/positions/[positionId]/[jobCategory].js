@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
+import kebabCase from 'lodash/kebabCase';
 import Layout from '../../../hocs/basicLayout';
 import {
   capitaliseFirstCharacter,
@@ -125,6 +126,20 @@ const PositionsEntry = () => {
 
   const handleSubmit = async () => {
     let attachments = [];
+    const uploadedAttachments = state.jobForm.attachments
+      .map((attach) => attach.filename.substr(4));
+    const attachmentValidation = state.job.requiredDocuments
+      ? state.job.requiredDocuments.filter((doc) => !uploadedAttachments.includes(kebabCase(doc)))
+      : [];
+
+    if (attachmentValidation.length) {
+      setState({
+        ...state,
+        error: `Please upload pending files: ${attachmentValidation.join(', ')}`,
+      });
+      return;
+    }
+    setState({ ...state, error: null });
     if (state.jobForm.attachments && state.jobForm.attachments.length > 0) {
       attachments = state.jobForm.attachments.reduce((accum, attachment) => {
         const jobAttachments = attachment.url.length === 1
@@ -180,6 +195,7 @@ const PositionsEntry = () => {
     isLoading,
     redirected,
     redirectJobTitle,
+    error,
   } = state;
 
   if (isLoading) return <Loading />;
@@ -219,6 +235,7 @@ const PositionsEntry = () => {
               countryAddress={countryAddress}
               values={state.jobForm}
               onSubmit={handleSubmit}
+              submitErrors={error}
             />
             <BackAction />
           </div>

@@ -25,6 +25,7 @@ const JobForm = ({
   // countryAddress,
   handleFormFieldChange,
   onSubmit,
+  submitErrors,
 }) => (
   <div>
     {showForm && Object.keys(job).length > 0 && (
@@ -77,6 +78,7 @@ const JobForm = ({
             handleChange={handleFormFieldChange}
             values={values}
           /> */}
+          {submitErrors && <div>{submitErrors}</div>}
           <HiddenFieldsAndSubmitAction type={job.type} name={job.name} onSubmit={onSubmit} />
         </form>
       </div>
@@ -96,6 +98,7 @@ JobForm.propTypes = {
     country: PropTypes.string,
   }),
   values: PropTypes.shape({}),
+  submitErrors: PropTypes.string,
   // onAddressSelected: PropTypes.func,
   // locationError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   // streetNumber: PropTypes.string,
@@ -124,6 +127,7 @@ JobForm.defaultProps = {
   // handleFieldChange: () => {},
   handleFormFieldChange: () => {},
   onSubmit: () => {},
+  submitErrors: null,
 };
 
 export default JobForm;
