@@ -72,5 +72,8 @@
 
   .quicklinkTitle {
     text-decoration: none;
+    max-width: 6em;
+    display: block;
+    margin: 0 auto;
   }
 }
