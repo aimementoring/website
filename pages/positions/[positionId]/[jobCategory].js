@@ -9,6 +9,7 @@ import {
   isClientSide,
 } from '../../../utils/utilities';
 import handleError from '../../../utils/errorHandler';
+import request from '../../../utils/request';
 import { findJob } from '../../../services/positions';
 import Header from '../../../components/positions/header';
 import Loading from '../../../components/positions/loading';
@@ -44,6 +45,7 @@ const PositionsEntry = () => {
     redirectJobTitle: jobCategory && jobCategory.length && jobCategory.trim()
       ? removeSpecialCharacters(jobCategory)
       : '',
+    jobForm: {},
   });
 
   const isClient = isClientSide();
@@ -107,12 +109,59 @@ const PositionsEntry = () => {
   };
 
   const handleFormFieldChange = (name, value) => {
-    setState({ ...state, [name]: value });
+    setState({
+      ...state,
+      jobForm: {
+        ...state.jobForm,
+        [name]: value,
+      },
+    });
   };
 
   const showApplicationForm = (e) => {
     e.preventDefault();
     setState({ ...state, showForm: true });
+  };
+
+  const handleSubmit = async () => {
+    let attachments = [];
+    if (state.jobForm.attachments && state.jobForm.attachments.length > 0) {
+      attachments = state.jobForm.attachments.reduce((accum, attachment) => {
+        const jobAttachments = attachment.url.length === 1
+          ? [{
+            filename: attachment.filename,
+            url: attachment.url[0],
+          }]
+          : attachment.url.map((url, index) => ({
+            filename: `${attachment.filename}_${index}`,
+            url,
+          }));
+        return [...accum, ...jobAttachments];
+      }, []);
+    }
+    const answer = await request(`${process.env.REACT_APP_PORTAL_API}/website/positions`, {
+      method: 'POST',
+      body: {
+        ...state.jobForm,
+        attachments,
+        job_id: state.job.id,
+        job_type: state.job.type,
+        job_name: state.job.name,
+        job_location: state.job.city,
+        submissionmessage: 'jobs',
+      },
+    });
+    if (answer.data === 'OK') {
+      Router.push({
+        pathname: '/thanks',
+        query: {
+          messages: `
+              Yeah! Thanks for filling out our little form!
+              Your local AIME people will make contact with you really soon
+              `,
+        },
+      });
+    }
   };
 
   const {
@@ -168,7 +217,8 @@ const PositionsEntry = () => {
               handleFieldChange={handleFieldChange}
               handleFormFieldChange={handleFormFieldChange}
               countryAddress={countryAddress}
-              values={state}
+              values={state.jobForm}
+              onSubmit={handleSubmit}
             />
             <BackAction />
           </div>
