@@ -11,7 +11,7 @@ export default [
   {
     image: 'people-giorgia.jpg',
     name: 'Giorgia Moran',
-    type: 'Ambassador',
+    type: 'Program Manager',
     description: `I came to AIME as a university student. I started as a mentor, then became an
     intern and now I’m a staff member. I get the incredible opportunity to see the impact the
     program provides for our Indigenous high school students. AIME empowers and guides mentees
@@ -111,7 +111,7 @@ export default [
   {
     image: 'people-connor.jpg',
     name: 'Connor MacNamara',
-    type: 'Ambassador',
+    type: 'Mentor',
     description: `After finding a sense of belonging within myself, my culture and family
     I knew the next step for me was to give back and help my local community. AIME for
     me was the perfect way to easily and effectively achieve this. I believe so much
