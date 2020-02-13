@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import IntercomChat from '../../components/intercom';
+import IntercomChat from '../intercom';
 import styles from './ctaGrid.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
-const CtaGrid = ({ elements }) => (
+const CtaGrid = ({ elements, partnerRef }) => (
   <div className={styles.ctaGridContainer}>
     <div className={styles.ctaWrapper}>
       {elements.map((cta) => (
@@ -63,10 +63,10 @@ const CtaGrid = ({ elements }) => (
             If you want to know more get in touch with Helen,
             our Director of Partnering.
           </Paragraph>
-          <div className={styles.intercomBtnWrap}>
+          <div ref={partnerRef} className={styles.intercomBtnWrap}>
             <IntercomChat />
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   </div>
@@ -74,6 +74,7 @@ const CtaGrid = ({ elements }) => (
 
 CtaGrid.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.object).isRequired,
+  partnerRef: PropTypes.shape({}).isRequired,
 };
 
 export default CtaGrid;
