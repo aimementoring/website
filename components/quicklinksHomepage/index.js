@@ -21,8 +21,8 @@ const QuicklinksHomepage = () => (
       <div className="quicklinkGridItem">
         <a href="#" className="quicklinkImage">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
-            alt="speaker"
+            src={`${ASSETS_URL}/assets/images/illustrations/team-flag.png`}
+            alt="Team Flag"
           />
         </a>
         <Paragraph>
@@ -49,8 +49,8 @@ const QuicklinksHomepage = () => (
       <div className="quicklinkGridItem">
         <a href="#" className="quicklinkImage">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
-            alt="speaker"
+            src={`${ASSETS_URL}/assets/images/illustrations/thumbsup-smiley.png`}
+            alt="Smiley thumbs up"
           />
         </a>
         <Paragraph>
@@ -63,8 +63,8 @@ const QuicklinksHomepage = () => (
       <div className="quicklinkGridItem">
         <a href="#" className="quicklinkImage">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
-            alt="speaker"
+            src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
+            alt="Pink Earth"
           />
         </a>
         <Paragraph>
@@ -77,8 +77,8 @@ const QuicklinksHomepage = () => (
       <div className="quicklinkGridItem">
         <a href="#" className="quicklinkImage">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
-            alt="speaker"
+            src={`${ASSETS_URL}/assets/images/illustrations/bunch-flowers.png`}
+            alt="Bunch of Flowers"
           />
         </a>
         <Paragraph>
