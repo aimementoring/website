@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'aime-blueprint/lib/components/button';
 
-const HiddenFieldsAndSubmitAction = ({ type, name }) => (
+const HiddenFieldsAndSubmitAction = ({ type, name, onSubmit }) => (
   <>
     <input type="hidden" name="utf8" value="✓" />
     <input
@@ -29,11 +29,13 @@ const HiddenFieldsAndSubmitAction = ({ type, name }) => (
         value="Submit Application"
       /> */}
       <Button
-        theme={process.env.REACT_APP_THEME} 
+        theme={process.env.REACT_APP_THEME}
         // className="submit submit-button bold bg-purple mt3 mb4"
         aria-label="submit"
         type="button"
-        value="Submit Application">
+        value="Submit Application"
+        onClickFunction={onSubmit}
+      >
         Submit Application
       </Button>
     </div>
@@ -43,11 +45,13 @@ const HiddenFieldsAndSubmitAction = ({ type, name }) => (
 HiddenFieldsAndSubmitAction.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
+  onSubmit: PropTypes.func,
 };
 
 HiddenFieldsAndSubmitAction.defaultProps = {
   name: '',
   type: '',
+  onSubmit: () => {},
 };
 
 export default HiddenFieldsAndSubmitAction;
