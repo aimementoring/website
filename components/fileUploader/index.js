@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from 'react';
-// import ReactFilestack from 'filestack-react';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
+import UploadedFile from './uploadedFile';
 import handleError from '../../utils/errorHandler';
-
-const UploadedFile = dynamic(() => import('./uploadedFile'));
+import { isClientSide } from '../../utils/utilities';
 
 const hiddenStyle = {
   opacity: 0,
 };
 
-let ReactFilestack;
+let ReactFilestack = null;
 
 const FileUploader = ({
   apiKey, buttonText, requiredFile, inputName,
 }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
+  const isClient = isClientSide();
 
-  const fetchFileStackLibrary = async () => {
+  const loadFileStackReact = async () => {
     // eslint-disable-next-line global-require
     ReactFilestack = await require('filestack-react');
   };
 
   useEffect(() => {
-    fetchFileStackLibrary();
-  }, []);
+    if (isClient && !ReactFilestack) loadFileStackReact();
+  }, [isClient]);
 
   const onFileRemove = (index) => setUploadedFiles(uploadedFiles.filter((_, i) => i !== index));
 
@@ -41,7 +40,7 @@ const FileUploader = ({
     setUploadedFiles(uploadedFiles.concat(fileList));
   };
 
-  return typeof window !== 'undefined' ? (
+  return isClient && ReactFilestack ? (
     <>
       <ReactFilestack
         apikey={apiKey}
