@@ -48,7 +48,7 @@ const About = () => (
         <div className={styles.column}>
           <img
             className={styles.imageBlock}
-            src={`${ASSETS_URL}/assets/images/illustrations/creative-person.png`}
+            src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
             alt="about aime"
           />
         </div>
@@ -81,7 +81,7 @@ const About = () => (
           <img
             className={styles.imageBlock}
             alt="kids at aime"
-            src={`${ASSETS_URL}/assets/images/illustrations/pink-earth.png`}
+            src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
           />
         </div>
       </section>
@@ -126,7 +126,7 @@ const About = () => (
           <img
             className={styles.imageBlock}
             alt="impact"
-            src={`${ASSETS_URL}/assets/images/illustrations/heart-person.png`}
+            src={`${ASSETS_URL}/assets/images/illustrations/heart-explode-person.png`}
           />
         </div>
       </section>
