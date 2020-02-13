@@ -11,11 +11,11 @@ const JobQuestionAndVideoLink = ({
       {messageQuestion && (
         <LabeledTextarea
           className="input js-message-question"
-          name="message-question"
+          name="message_question"
           onChangeFunction={handleChange}
           theme={process.env.REACT_APP_THEME}
           label={messageQuestion}
-          value={values['message-question'] || ''}
+          value={values.message_question || ''}
         />
       )}
     </div>
@@ -27,8 +27,8 @@ const JobQuestionAndVideoLink = ({
           onChangeFunction={handleChange}
           theme={process.env.REACT_APP_THEME}
           label="Link us a video explanation(www.youtube.com/12356)"
-          name="video-link"
-          value={values['video-link'] || ''}
+          name="video_link"
+          value={values.video_link || ''}
         />
       )}
     </div>
@@ -40,8 +40,8 @@ JobQuestionAndVideoLink.propTypes = {
   isThereVideoLink: PropTypes.bool,
   handleChange: PropTypes.func,
   values: PropTypes.shape({
-    'video-link': PropTypes.string,
-    'message-question': PropTypes.string,
+    video_link: PropTypes.string,
+    message_question: PropTypes.string,
   }),
 };
 
