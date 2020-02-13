@@ -5,6 +5,7 @@
   position: relative;
   padding-top: 4rem;
   padding-bottom: 1rem;
+  border-top: 1px solid $light-grey;
 
   @media screen and (min-width: $lg) {
     padding-bottom: 4rem;
