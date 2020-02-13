@@ -5,6 +5,7 @@ import AwsS3 from '@uppy/aws-s3';
 import Webcam from '@uppy/webcam';
 import DashboardModal from '@uppy/react/lib/DashboardModal';
 import Dashboard from '@uppy/react/lib/Dashboard';
+import Button from 'aime-blueprint/lib/components/button';
 import { checkValidations } from 'aime-blueprint/lib/utils/validation';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
@@ -169,15 +170,16 @@ class FileUploader extends Component {
             proudlyDisplayPoweredByUppy={false}
           />
         ) : (
-          <>
-            <button
-              className={`${styles.documentItemButton} ${validationErrors
-                && styles.withErrors}`}
-              onClick={this.handleModalClick}
+          <div className={styles.fileUploadContainer}>
+            <Button
+              theme={process.env.REACT_APP_THEME}
+              className={validationErrors && styles.withErrors}
+              aria-label="upload"
               type="button"
+              onClickFunction={this.handleModalClick}
             >
               {placeholder || 'Upload Files'}
-            </button>
+            </Button>
             <div className={`${!modalOpen && styles.closed}`}>
               <DashboardModal
                 uppy={this.uppy}
@@ -205,13 +207,13 @@ class FileUploader extends Component {
                       className={styles.fileLink}
                       type="button"
                     >
-                      {file.split('/').slice(-1)[0]}
+                      {decodeURIComponent(file).split('/').slice(-1)[0]}
                     </button>
                   </span>
                 ))}
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
     );
