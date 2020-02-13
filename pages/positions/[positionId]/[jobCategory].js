@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
 import kebabCase from 'lodash/kebabCase';
+import BlueprintLoading from 'aime-blueprint/lib/components/loading';
 import Layout from '../../../hocs/basicLayout';
 import {
   capitaliseFirstCharacter,
@@ -42,6 +43,7 @@ const PositionsEntry = () => {
     locationError: false,
     displayError: null,
     isLoading: true,
+    loading: false,
     redirected: false,
     redirectJobTitle: jobCategory && jobCategory.length && jobCategory.trim()
       ? removeSpecialCharacters(jobCategory)
@@ -139,7 +141,8 @@ const PositionsEntry = () => {
       });
       return;
     }
-    setState({ ...state, error: null });
+
+    setState({ ...state, loading: true, error: null });
     if (state.jobForm.attachments && state.jobForm.attachments.length > 0) {
       attachments = state.jobForm.attachments.reduce((accum, attachment) => {
         const jobAttachments = attachment.url.length === 1
@@ -166,6 +169,7 @@ const PositionsEntry = () => {
         submissionmessage: 'jobs',
       },
     });
+    setState({ ...state, loading: false });
     if (answer.data === 'OK') {
       Router.push({
         pathname: '/thanks',
@@ -196,6 +200,7 @@ const PositionsEntry = () => {
     redirected,
     redirectJobTitle,
     error,
+    loading,
   } = state;
 
   if (isLoading) return <Loading />;
@@ -240,6 +245,7 @@ const PositionsEntry = () => {
             <BackAction />
           </div>
         </div>
+        <BlueprintLoading loading={loading} theme={process.env.REACT_APP_THEME} />
       </Layout>
     );
   }
