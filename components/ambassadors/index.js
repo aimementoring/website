@@ -21,6 +21,12 @@ const CAROUSEL_SLIDES = [
     paragraph: 'I know that one’s greatest weakness lies in giving up when they fail, but the most certain way to succeed is always to try one last time. This is why I joined AIME, because failure is the opportunity to begin again more intelligently and I want to encourage mentees to use the power of failure.',
   },
   {
+    image: styles.mentorSherice,
+    title: 'Sherice Jackson',
+    type: '2019 Co-CEO',
+    paragraph: 'I want to be able to help students like me and make them care about education rather than resenting school like I did for so long.',
+  },
+  {
     image: styles.mentorUzo,
     title: 'Uzo Aduba',
     type: '2017 Global Ambassador',
