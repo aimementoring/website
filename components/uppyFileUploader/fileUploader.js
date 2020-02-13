@@ -197,7 +197,6 @@ class FileUploader extends Component {
             )}
             {filesUploadedArray.length > 0 && (
               <div>
-                <span className={styles.fileLabelList}>Uploaded: </span>
                 {filesUploadedArray.map((file) => (
                   <span className={styles.fileLabel} key={file}>
                     <button
