@@ -9,11 +9,11 @@ import './style.scss';
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const QuicklinksHomepage = (props) => {
-  const { scrollHandler } = props;
+  const { scrollHandler, getInvolvedRef } = props;
 
   // <a> should be blueprint buttons maybe?
   return (
-    <div className="quicklinksPanel">
+    <div className="quicklinksPanel" ref={getInvolvedRef}>
       <Title type="h3Title" className="quicklinksHeader">
         Get involved
       </Title>
@@ -94,5 +94,6 @@ const QuicklinksHomepage = (props) => {
 
 QuicklinksHomepage.propTypes = {
   scrollHandler: PropTypes.func.isRequired,
+  getInvolvedRef: PropTypes.shape({}).isRequired,
 };
 export default QuicklinksHomepage;
