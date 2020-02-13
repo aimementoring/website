@@ -40,9 +40,6 @@ const About = () => (
               help them see the value education can bring them, and develop
               leadership skills and ambitions early on.
             </Paragraph>
-            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/know-aime">
-              Tell me more
-            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
@@ -55,17 +52,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            The
-            <strong>Kids</strong>
-            At AIME
-          </Title> */}
           <div className={styles.copy}>
-            {/* <Paragraph>
-              <strong>
-                Providing the stage.
-              </strong>
-            </Paragraph> */}
             <Paragraph>
               Since it was founded in 2005, AIME has worked with 39,000 Indigenous
               kids in Australia, who have achieved educational parity and beyond.
@@ -87,16 +74,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            Hard lined
-            <strong>Impact</strong>
-          </Title> */}
           <div className={styles.copy}>
-            {/* <Paragraph>
-              <strong>
-                Not another smiley faced program.
-              </strong>
-            </Paragraph> */}
             <Paragraph>
               AIME’s commitment is to keep building its Social Network for Good,
               a worldwide movement of people who want to create a fairer world and
@@ -117,9 +95,6 @@ const About = () => (
               </a>
               " award for its significant contributions towards the field of education.
             </Paragraph>
-            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/impact">
-              Read more
-            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
