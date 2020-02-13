@@ -692,7 +692,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
             </div>
 
             <Anchor
-              to="/positions#opportunity-list"
+              to="/get-involved#opportunity-list"
               className="article-tile-link basic-btn italic"
             >
               <i className="material-icons">keyboard_backspace</i>
@@ -705,7 +705,7 @@ const PositionsEntry = ({ positionId, jobCategory }) => {
     );
   }
   Router.push({
-    pathname: '/positions',
+    pathname: '/get-involved',
     query: {
       redirected,
       redirectJobTitle,

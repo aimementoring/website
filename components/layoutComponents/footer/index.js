@@ -58,7 +58,7 @@ const Footer = ({ location }) => {
       title: 'Go Further',
       items: [
         {
-          to: '/positions',
+          to: '/get-involved',
           label: 'Work with AIME',
         },
         {

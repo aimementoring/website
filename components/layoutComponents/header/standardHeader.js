@@ -25,8 +25,8 @@ const StandardHeader = () => (
             <MenuItem key={item.title.replace(/\s/g, '-')} {...item} />
           ))}
           <li className={styles.listItem}>
-            <Anchor className={styles.navBtn} to="/positions">
-              Work with us
+            <Anchor className={styles.navBtn} to="/get-involved">
+              Get involved
             </Anchor>
           </li>
           <li className={styles.listItem}>

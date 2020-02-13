@@ -58,8 +58,8 @@ const JobPreview = ({
   return (
     <div className="homepage-main-actions mb2">
       <Anchor
-        to="/positions/[positionId]/[jobCategory]"
-        as={`/positions/${id}/${nameAsLink}`}
+        to="/get-involved/[positionId]/[jobCategory]"
+        as={`/get-involved/${id}/${nameAsLink}`}
         className="homepage-main-actions--inner"
       >
         <div className="relative m3">

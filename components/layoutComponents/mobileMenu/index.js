@@ -20,7 +20,7 @@ const MENU_LINKS = {
     { url: '/about', title: 'About' },
     { url: '/stories', title: 'Stories' },
     { url: '/be-a-mentor', title: 'Be a Mentor' },
-    { url: '/positions', title: 'Positions' },
+    { url: '/get-involved', title: 'Positions' },
     { url: 'https://aimedonations.raisely.com/', title: 'Donate', target: '_blank' },
     { url: '', title: null },
   ],

@@ -22,7 +22,7 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
     setIsRedirect(redirected);
     setJobTitle(redirectJobTitle);
     const currentUrl = isClient ? `/${Router.pathname.split('/')[1]}` : null;
-    if (isClient && currentUrl === '/positions') {
+    if (isClient && currentUrl === '/get-involved') {
       Router.push(currentUrl, currentUrl, { shallow: true });
     }
   }, [isClient, redirected, redirectJobTitle]);

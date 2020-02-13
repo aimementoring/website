@@ -26,8 +26,8 @@ app.prepare().then(() => {
   server.use(compression());
 
   // Positions
-  server.get('/:countryId/positions', (req, res) => {
-    const pagePath = '/positions';
+  server.get('/:countryId/get-involved', (req, res) => {
+    const pagePath = '/get-involved';
     const queryParams = { countryId: req.params.countryId };
     return ssrCache({
       req, res, pagePath, queryParams,
@@ -35,7 +35,7 @@ app.prepare().then(() => {
   });
 
   // Positions
-  server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
+  server.get('/:countryId/get-involved/:id/:jobCategory', (req, res) => {
     const pagePath = '/positionsEntry';
     const queryParams = {
       id: req.params.id,

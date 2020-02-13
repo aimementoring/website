@@ -1,16 +1,10 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Anchor from '../common/link';
 import './style.scss';
 
-
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const QuicklinksHomepage = () => (
   <div className="quicklinksPanel">
@@ -19,40 +13,40 @@ const QuicklinksHomepage = () => (
     </Title>
     <div className="quicklinksGrid">
       <div className="quicklinkGridItem">
-        <a href="#" className="quicklinkImage">
+        <Anchor href="#" className="quicklinkImage">
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/team-flag.png`}
             alt="Team Flag"
           />
-        </a>
+        </Anchor>
         <Paragraph>
-          <a href="#" className="quicklinkTitle">
+          <Anchor to="/get-involved" className="quicklinkTitle">
             Partner with us
-          </a>
-        </Paragraph>
-      </div>
-      
-      <div className="quicklinkGridItem">
-        <a href="https://shop.aimementoring.com/" className="quicklinkImage">
-          <img
-            src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
-            alt="Hoodie"
-          />
-        </a>
-        <Paragraph>
-          <a href="https://shop.aimementoring.com/" target="_blank" className="quicklinkTitle">
-            Buy a hoodie
-          </a>
+          </Anchor>
         </Paragraph>
       </div>
 
       <div className="quicklinkGridItem">
-        <a href="/be-a-mentor" className="quicklinkImage">
+        <Anchor href="https://shop.aimementoring.com/" className="quicklinkImage">
+          <img
+            src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
+            alt="Hoodie"
+          />
+        </Anchor>
+        <Paragraph>
+          <Anchor to="https://shop.aimementoring.com/" target="_blank" className="quicklinkTitle">
+            Buy a hoodie
+          </Anchor>
+        </Paragraph>
+      </div>
+
+      <div className="quicklinkGridItem">
+        <Anchor to="/be-a-mentor" className="quicklinkImage">
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/thumbsup-smiley.png`}
             alt="Smiley thumbs up"
           />
-        </a>
+        </Anchor>
         <Paragraph>
           <a href="/be-a-mentor" className="quicklinkTitle">
             Become a mentor
@@ -61,30 +55,30 @@ const QuicklinksHomepage = () => (
       </div>
 
       <div className="quicklinkGridItem">
-        <a href="/positions" className="quicklinkImage">
+        <Anchor to="/get-involved" className="quicklinkImage">
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
             alt="Pink Earth"
           />
-        </a>
+        </Anchor>
         <Paragraph>
-          <a href="/positions" className="quicklinkTitle">
-            Work with us
-          </a>
+          <Anchor href="/get-involved" className="quicklinkTitle">
+            Get involved
+          </Anchor>
         </Paragraph>
       </div>
 
       <div className="quicklinkGridItem">
-        <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkImage">
+        <Anchor to="https://aimedonations.raisely.com/" target="_blank" className="quicklinkImage">
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/bunch-flowers.png`}
             alt="Bunch of Flowers"
           />
-        </a>
+        </Anchor>
         <Paragraph>
-          <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkTitle">
+          <Anchor href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkTitle">
             Donate
-          </a>
+          </Anchor>
         </Paragraph>
       </div>
     </div>
