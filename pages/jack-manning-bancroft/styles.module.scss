@@ -1,0 +1,40 @@
+@import "../../styles/base/variables";
+
+.hero-banner--founder {
+  background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
+  padding: 0;
+  
+  @media all and(min-width: $md) {
+    background-size: contain;
+  }
+
+  .founderBannerHeader {
+    margin-top: 4em;
+
+    strong {
+      left: initial;
+      letter-spacing: -0.1em;
+    }
+    @media all and(min-width: $md) {
+      margin-top: 2em;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+.plainContentWrapper {
+  padding: 3em 1.5em;
+  margin: 0 auto;
+  max-width: 45em;
+
+  @media all and(min-width: $md) {
+    padding: 5em 3em;
+  }
+}
+
