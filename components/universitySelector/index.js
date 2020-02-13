@@ -1,37 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Select from 'aime-blueprint/lib/components/select';
 import { loadUniversities } from '../../services/positions';
+import { isClientSide } from '../../utils/utilities';
+import './styles.scss';
 
 const UniversitySelector = ({
-  placeholder, classNames, containerClassNames, onChangeFunction, universities,
-}) => (
-  <div className={containerClassNames}>
-    <select
-      placeholder={placeholder}
-      name="uni-campus-attending"
-      className={classNames}
-      onChange={onChangeFunction}
-      defaultValue=""
-      required
-    >
-      <option value="" disabled>
-        {placeholder}
-      </option>
-      {universities.length
-        && universities
-          .filter((university) => university.text && university.value)
-          .map((university) => (
-            <option key={university.value} disabled="" value={university.value}>
-              {university.text}
-            </option>
-          ))}
-    </select>
-  </div>
-);
+  placeholder, classNames, containerClassNames, onChangeFunction, value,
+}) => {
+  const [universities, setUniversities] = useState([]);
 
-UniversitySelector.getInitialProps = async () => {
-  const universities = await loadUniversities();
-  return { universities };
+  const fetchUniversities = async () => {
+    const data = await loadUniversities();
+    setUniversities(data);
+  };
+
+  const isClient = isClientSide();
+  useEffect(() => {
+    fetchUniversities();
+  }, [isClient]);
+
+  return (
+    <div className={containerClassNames}>
+      <Select
+        placeholder={placeholder}
+        name="uni-campus-attending"
+        className={classNames}
+        onChangeFunction={onChangeFunction}
+        theme={process.env.REACT_APP_THEME}
+        value={value}
+        options={universities && universities.length
+          ? universities
+            .filter((university) => university.text && university.value)
+            .map((university) => ({
+              value: university.value,
+              label: university.text,
+            }))
+          : []}
+      />
+    </div>
+  );
 };
 
 UniversitySelector.propTypes = {
@@ -39,13 +47,14 @@ UniversitySelector.propTypes = {
   classNames: PropTypes.string,
   containerClassNames: PropTypes.string,
   onChangeFunction: PropTypes.func,
-  universities: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 UniversitySelector.defaultProps = {
   onChangeFunction: () => {},
   classNames: '',
   containerClassNames: '',
+  value: null,
 };
 
 export default UniversitySelector;
