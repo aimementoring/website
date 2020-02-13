@@ -25,27 +25,27 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  // Positions
-  server.get('/:countryId/positions', (req, res) => {
-    const pagePath = '/positions';
-    const queryParams = { countryId: req.params.countryId };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
+  // // Positions
+  // server.get('/:countryId/positions', (req, res) => {
+  //   const pagePath = '/positions';
+  //   const queryParams = { countryId: req.params.countryId };
+  //   return ssrCache({
+  //     req, res, pagePath, queryParams,
+  //   });
+  // });
 
-  // Positions
-  server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
-    const pagePath = '/positionsEntry';
-    const queryParams = {
-      id: req.params.id,
-      jobCategory: req.params.jobCategory,
-      countryId: req.params.countryId,
-    };
-    return ssrCache({
-      req, res, pagePath, queryParams,
-    });
-  });
+  // // Positions
+  // server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
+  //   const pagePath = '/positionsEntry';
+  //   const queryParams = {
+  //     id: req.params.id,
+  //     jobCategory: req.params.jobCategory,
+  //     countryId: req.params.countryId,
+  //   };
+  //   return ssrCache({
+  //     req, res, pagePath, queryParams,
+  //   });
+  // });
 
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
