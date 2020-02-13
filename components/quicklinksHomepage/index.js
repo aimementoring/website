@@ -55,7 +55,7 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="/be-a-mentor" className="quicklinkTitle">
-            Become a uni mentor
+            Be a uni mentor
           </a>
         </Paragraph>
       </div>
