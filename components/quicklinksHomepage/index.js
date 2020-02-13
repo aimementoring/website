@@ -41,7 +41,7 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="https://shop.aimementoring.com/" target="_blank" className="quicklinkTitle">
-            Buy a hoodie
+            Buy  a hoodie
           </a>
         </Paragraph>
       </div>
@@ -55,7 +55,7 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="/be-a-mentor" className="quicklinkTitle">
-            Become a mentor
+            Become a uni mentor
           </a>
         </Paragraph>
       </div>
@@ -69,7 +69,7 @@ const QuicklinksHomepage = () => (
         </a>
         <Paragraph>
           <a href="/positions" className="quicklinkTitle">
-            Work with us
+            Work  with us
           </a>
         </Paragraph>
       </div>
