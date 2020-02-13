@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import Title from 'aime-blueprint/lib/components/title';
 import Loading from 'aime-blueprint/lib/components/loading';
-import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import FileUploader from '../uppyFileUploader';
 
 const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, values }) => {
@@ -65,12 +64,6 @@ const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, v
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
             Provide Supporting Documents
           </Title>
-          <Paragraph>
-            We need the below documents to proceed with your
-            application. Please only submit one document per application.
-            You can use this tool to merge documents https://www.ilovepdf.com/
-            {/* @TODO: Allow to submit more than one file */}
-          </Paragraph>
           <div className="flex flex-column items-start job-documents js-job-document-container">
             {requiredDocuments.map((document, index) => (
               /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
