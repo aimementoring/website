@@ -145,3 +145,62 @@
     line-height: 1em;
   }
 }
+
+.partnerPanelWrap {
+  margin: 0.65em auto;
+  padding: 2em;
+  background: url($cdnRoot + 'assets/images/homepage-grid/partnerships@2x.jpg') no-repeat top center / cover $orange;
+
+  @media all and(min-width: $md) {
+    padding: 7em 0;
+  }
+
+  .contentWrap {
+    background-color: $white;
+    max-width: 43em;
+    margin: 1em;
+    padding: 2em;
+    text-align: center;
+    @media all and(min-width: $md) {
+      padding: 3em 6em;
+      margin: 0 auto;
+    }
+  }
+
+  .partnerPanelIcon {
+    width: 6em;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .partnerTitle {
+    color: $grey90;
+    text-align: center;
+    display: block;
+    strong {
+      color: $orange;
+      left: initial;
+    }
+  }
+
+  .intercomBtnWrap {
+    button.navBtn {
+      background-color: $watermelon;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      transition: $hoverTransition;
+
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
+}
