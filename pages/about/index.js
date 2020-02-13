@@ -125,6 +125,16 @@ const About = () => (
           />
         </div>
       </section>
+      <section className={styles.sectionAbout}>
+        <div className={styles.fullWidthPanelStrat}>
+          <Title type="h5Title" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+            <a target="_blank"
+              href={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}>
+                READ OUR STRATEGY NOW
+            </a>
+          </Title>
+        </div>
+      </section>
     </div>
   </Layout>
 );
