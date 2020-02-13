@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import AboutYouSectionForm from './aboutYouSectionForm';
 // import LocationSectionForm from './locationSectionForm';
-import JobUniAndContactFrom from './jobUniAndContactFrom';
+// import JobUniAndContactFrom from './jobUniAndContactFrom';
 import JobQuestionAndVideoLink from './jobQuestionAndVideoLink';
 import SupportingDocsSectionForm from './supportingDocsSectionForm';
-import IndigenousForm from './indigenousForm';
-import BecomeAFriendSection from './becomeAFriendSection';
+// import IndigenousForm from './indigenousForm';
+// import BecomeAFriendSection from './becomeAFriendSection';
 import HiddenFieldsAndSubmitAction from './hiddenFieldsAndSubmitAction';
 
 const JobForm = ({
@@ -24,6 +24,7 @@ const JobForm = ({
   // handleFieldChange,
   // countryAddress,
   handleFormFieldChange,
+  onSubmit,
 }) => (
   <div>
     {showForm && Object.keys(job).length > 0 && (
@@ -65,6 +66,8 @@ const JobForm = ({
           />
           <SupportingDocsSectionForm
             requiredDocuments={job.requiredDocuments}
+            handleFormFieldChange={handleFormFieldChange}
+            values={values}
           />
           {/* <IndigenousForm
             handleChange={handleFormFieldChange}
@@ -74,7 +77,7 @@ const JobForm = ({
             handleChange={handleFormFieldChange}
             values={values}
           /> */}
-          <HiddenFieldsAndSubmitAction type={job.type} name={job.name} />
+          <HiddenFieldsAndSubmitAction type={job.type} name={job.name} onSubmit={onSubmit} />
         </form>
       </div>
     )}
@@ -103,6 +106,7 @@ JobForm.propTypes = {
   // countryAddress: PropTypes.string,
   // handleFieldChange: PropTypes.func,
   handleFormFieldChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 JobForm.defaultProps = {
@@ -119,6 +123,7 @@ JobForm.defaultProps = {
   // countryAddress: null,
   // handleFieldChange: () => {},
   handleFormFieldChange: () => {},
+  onSubmit: () => {},
 };
 
 export default JobForm;
