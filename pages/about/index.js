@@ -111,6 +111,14 @@ const About = () => (
             Our 21
             <strong>Values</strong>
           </Title>
+          <div className={styles.copy}>
+            <Paragraph>
+              We have distilled the essence of our model of mentoring into 21
+              core values and used these values to develop a suite of training
+              tools to get a generation of mentors ready to light the spark
+              of marginalised youth worldwide.
+            </Paragraph>
+          </div>
           <img
             alt="AIME's 21 Values"
             src={`${ASSETS_URL}/assets/images/illustrations/21Values%402x+(1).jpg`}
