@@ -16,6 +16,7 @@ const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
   const partnerRef = createRef();
+  const getInvolvedRef = createRef();
 
   useEffect(() => {
     if (!getFromStorage('home_first_visit')) {
@@ -23,22 +24,31 @@ const Home = () => {
     }
   }, []);
 
-  const scrollHandler = () => {
+  const scrollToPartnerBanner = () => {
     if (isClientSide()) {
       const goToPartnerBanner = partnerRef.current.getBoundingClientRect().top;
-      window.scrollTo(0, goToPartnerBanner);
+      if (goToPartnerBanner) { window.scrollTo(0, goToPartnerBanner); }
+    }
+  };
+
+  const scrollToGetInvolved = () => {
+    if (isClientSide()) {
+      const getInvolved = getInvolvedRef.current.getBoundingClientRect().top;
+      if (getInvolved) { window.scrollTo(0, getInvolved); }
     }
   };
 
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(partnerRef.current.getBoundingClientRect().top);
-  }, [partnerRef]);
+    // eslint-disable-next-line no-console
+    console.log(getInvolvedRef.current.getBoundingClientRect().bottom);
+  }, [partnerRef, getInvolvedRef]);
 
   return (
     <Layout>
-      <HeroBannerHomepage currentSite="au" />
-      <QuicklinksHomepage scrollHandler={scrollHandler} />
+      <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
+      <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <IntroPanelHomepage />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
