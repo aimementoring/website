@@ -1,16 +1,9 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import './style.scss';
 
-
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const QuicklinksHomepage = () => (
   <div className="quicklinksPanel">
