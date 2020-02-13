@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Anchor from './link';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import bugsnagClient from '../../utils/bugsnag';
 import IntercomChat from '../intercom';
+import './styles.scss';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -27,34 +30,36 @@ class ErrorBoundary extends Component {
     if (hasError) {
       return (
         <div>
-          <div className="full-width-wrap bg-darkest-purple">
-            <div className="hero-banner--default hero-banner--404 full-width-wrap bg-darkest-purple">
+          <div className="full-width-wrap">
+            <div className="hero-banner--default hero-banner--404 full-width-wrap">
               <div className="flex flex-wrap items-center full-height">
                 <div className="banner-wrapper subpage-banner center">
-                  <h1>
-                    <span className="pre-text">Uh </span>
-                    <span className="highlight-text">
-                      <em>
-                        OH
-                        <br />
-                      </em>
-                    </span>
-                  </h1>
+                  <div className="bannerContent">
+                    <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
+                      Uh
+                      <strong>
+                        Oh
+                      </strong>
+                    </Title>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="md-wrap mx-auto p3 page-404-container">
               <div className="justify-center items-center sm-flex">
                 <div>
-                  <p className="f-30 feature-font-family regular c-white">
+                  <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                     {'Oops, this wasn\'t meant to happen.'}
-                  </p>
-                  <p className="f-14 light pt2 c-white">
+                  </Title>
+                  <Paragraph>
                     {'Sorry for any inconvenience. If you\'re seeing this often, please'}
-                    {' '}
+                  </Paragraph>
+                  <div className="errorInterComWrapper">
                     <IntercomChat />
-                  </p>
-                  <Anchor to="/home" as="/" className="basic-btn bold bg-brand-primary c-white mt3">Back to home</Anchor>
+                  </div>
+                  <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
+                    Back to home
+                  </Button>
                 </div>
               </div>
             </div>
