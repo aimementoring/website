@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Router from 'next/router';
-import Anchor from '../../components/common/link';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import bugsnagClient from '../../utils/bugsnag';
 import './index.scss';
 
@@ -35,31 +37,32 @@ const ErrorPage = () => {
         <div className="hero-banner--default hero-banner--404 full-width-wrap">
           <div className="flex flex-wrap items-center full-height">
             <div className="banner-wrapper subpage-banner center">
-              <h1>
-                <span className="pre-text">Uh </span>
-                <span className="highlight-text">
-                  <em>
-                    OH
-                    <br />
-                  </em>
-                </span>
-              </h1>
+              <div className="bannerContent">
+                <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
+                  Uh
+                  <strong>
+                    Oh
+                  </strong>
+                </Title>
+              </div>
             </div>
           </div>
         </div>
         <div className="md-wrap mx-auto p3 page-404-container">
           <div className="justify-center items-center sm-flex">
             <div>
-              <p className="f-30 feature-font-family regular">
+              <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                 {'Oops, this wasn\'t meant to happen.'}
-              </p>
-              <p className="f-14 light pt2">
+              </Title>
+              <Paragraph>
                 Sorry for any inconvenience.
-              </p>
-              <Anchor to="/" className="basic-btn bold bg-brand-primary mt3">Back to home</Anchor>
+              </Paragraph>
+              <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
+                Back to home
+              </Button>
             </div>
             <div>
-              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/404-dancing.gif`} alt="" />
+              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
             </div>
           </div>
         </div>
