@@ -135,7 +135,7 @@ export const CTA_AU_HOMEPAGE = [
     title: 'About AIME',
     link: '/about',
     button: 'See what we\'re about',
-    description: 'We are driven to unlock the limitless potential of children who have been left behind',
+    description: 'We’re a global movement for change.',
   },
   {
     title: 'Shop Apparel',
