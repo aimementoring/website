@@ -22,21 +22,11 @@
   vertical-align: text-bottom;
 }
 
-.documentItemButton {
-  font-family: $feature-font-family;
-  color: $white;
-  font-size: 0.9rem;
-  letter-spacing: 0.001rem;
-  background-color: $brand-primary;
-  border-radius: 3px;
-  padding: 0.6em 1.5em;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
+.fileUploadContainer {
   margin-bottom: 1em;
 }
 
-.documentItemButton.withErrors {
+.withErrors {
   background-color: $error-color;
 }
 
