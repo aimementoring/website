@@ -102,7 +102,7 @@ const AmbassadorSlide = ({
             {paragraph}
           </Paragraph>
           <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/ambassadors">
-            Meet our people
+            Meet some of our people
           </Button>
         </div>
       </div>
