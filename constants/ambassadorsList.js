@@ -2,7 +2,7 @@ export default [
   {
     image: 'swati_dlamini_mandela.jpg',
     name: 'Swati Dlamini Mandela',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `My grandfather always said that education for all of our children was the best way
                 to end inequality in our world. We all bear a responsibility to change the
                 poverty, unemployment and inequality, AIME inspires everyone in the education
@@ -21,7 +21,7 @@ export default [
   {
     image: 'taylor_schilling.jpg',
     name: 'Taylor Schilling',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `My life has been profoundly shaped by different mentors at different times. I want
                 to do whatever I can to help AIME provide that experience for young people around
                 the world.`,
@@ -29,7 +29,7 @@ export default [
   {
     image: 'uzo_aduba.jpg',
     name: 'Uzo Aduba',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: 'By standing together with dignity and hope for the future, AIME transforms lives.',
   },
   {
@@ -44,7 +44,7 @@ export default [
   {
     image: 'patrick_j_adams.jpg',
     name: 'Patrick J Adams',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `Beyond my family, no people have helped shape my life, my career and my view of
                 the world more than the mentors I have been lucky enough to work, play and live
                 with. I’m so excited to have found AIME and to do everything I can to serve the
@@ -53,7 +53,7 @@ export default [
   {
     image: 'troain_bellisario.jpg',
     name: 'Troian Bellasario',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `Our future belongs to the next generation and I have no doubt that they will build
                 it brighter and better than we ever could; but, I want to live in a world where
                 every young person has an equal shot at that herculean task. AIME’s mentorship
@@ -63,7 +63,7 @@ export default [
   {
     image: 'yael_stone.jpg',
     name: 'Yael Stone',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `The global community is staring at monstrous inequality. AIME's mentoring model
                 creates a bridge that brings people together and makes change possible.`,
   },
@@ -79,7 +79,7 @@ export default [
   {
     image: 'kate_mulgrew.jpg',
     name: 'Kate Mulgrew',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `AIME is not only mighty, it is crucial. It has the power to knit the entire global
                 community together through education, and endorses mentorship in the best possible
                 way. It will lift, it will deepen, it will transform.`,
@@ -87,7 +87,7 @@ export default [
   {
     image: 'ian_thorpe.jpg',
     name: 'Ian Thorpe',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `I believe in the work AIME does and I want to see it broaden to being a service
                 globally. I want to see this happen because I believe in the young people of our
                 future and the future they can create for the world.`,
@@ -95,7 +95,7 @@ export default [
   {
     image: 'joe_lo_truglio.jpg',
     name: 'Joe Lo Truglio',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `If you have a mentor, you have a glimpse of what you can do, who you can be. A
                 child can suddenly see his future. AIME is a great organization which reminds us
                 all how important that is.`,
@@ -103,7 +103,7 @@ export default [
   {
     image: 'danielle_cormack.jpg',
     name: 'Danielle Cormack',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `There is unmitigated proof that mentoring helps build resilience and opportunity
                 for those that need a hand. Any movement that fosters a positive impact on the
                 lives of our youth, our future, has my whole hearted support. Go AIME`,
@@ -121,7 +121,7 @@ export default [
   {
     image: 'tai_hara.jpg',
     name: 'Tai Hara',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `AIME to me is a place where barriers don’t exist. A place that allows young people
                 to be leaders, to ignite within and extend beyond themselves - sharing, learning,
                 growing and enriching lives together. It’s an organisation that is unwavering in
@@ -132,7 +132,7 @@ export default [
   {
     image: 'beth_dover.jpg',
     name: 'Beth Dover',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `I know that for me, gaining insight from my mentors helped me understand not just
                 the subject matter, but how to process the information and apply it to your real
                 life. As a student, feeling cared for in an educational system is so important.
@@ -141,7 +141,7 @@ export default [
   {
     image: 'ben_lee.jpg',
     name: 'Ben Lee',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `The value of mentoring is massive as it can open our minds and hearts to
                 possibilities that we couldnt have conceived of even existing previously. It is a
                 tender relationship between two people, where both are connected, present in
@@ -151,7 +151,7 @@ export default [
   {
     image: 'rose_mcIver.jpg',
     name: 'Rose McIver',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `I believe that mentoring has the power to change lives. Encouraging, supporting
                 and guiding our youth towards making decisions that serve their future and their
                 community is the most powerful approach we have to overcoming social injustice. It
@@ -161,7 +161,7 @@ export default [
   {
     image: 'dash_mihok.jpg',
     name: 'Dash Mihok',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `I am who I am because of people that took the time to look with Love, deeper and
                 further... Into a kids possibility... Mentor's plant seeds that can ultimately
                 make the difference in every life choice and help breed a grander view of equality
@@ -172,7 +172,7 @@ export default [
   {
     image: 'elana_stone.jpg',
     name: 'Elana Stone',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `AIME is an amazing organisation that is invested in creating positive change for
                 people all over the world. Their mentoring program enables young people to see a
                 world of possibility beyond their own expectations. I want to be part of that.`,
@@ -186,7 +186,7 @@ export default [
   {
     image: 'caiti_ward.jpg',
     name: 'Caiti Ward',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `If you can't see it, you can't be it', and there's no better time than now to take
                 responsibility and start showing up for the disadvantaged and underprivileged. I
                 don't know who I would be today if it weren't for the incredible mentors who, with
@@ -197,14 +197,14 @@ export default [
   {
     image: 'adrienne_c_moore.jpg',
     name: 'Adrienne C Moore',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `Whatever you do, strive to do it so well that no man living and no man dead and no
                 man yet to be born could do it any better.`,
   },
   {
     image: 'lauren_bath.jpg',
     name: 'Lauren Bath',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `I got into my career out of a desire to travel and an unexpected side effect was
                 how travel changed me. I want to leave this planet a better place than I found it
                 and I can’t think of a better organisation to support for this end than AIME.
@@ -215,7 +215,7 @@ export default [
   {
     image: 'steve_crombie.jpg',
     name: 'Steve Crombie',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `Education is our future. I admire AIME's dream to ensure that all people, wealthy
                 or poor, indigenous or non-indigenous have the same access to education. The
                 better educated we are, the more capable we are of facing the future together. I
@@ -224,7 +224,7 @@ export default [
   {
     image: 'amelia_darmawan.jpg',
     name: 'Amelia Darmawan',
-    type: 'Ambassador',
+    type: '2017 Global Ambassador',
     description: `Every child on the planet deserves the chance to fulfil their true potential. I
                 support AIME because I want to be part of a generation that will lift up the next
                 and not stand idly by in the face of inequality.`,
