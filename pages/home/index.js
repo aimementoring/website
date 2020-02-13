@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
+import { isClientSide } from '../../utils/utilities';
 import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
@@ -14,18 +15,32 @@ const Ambassadors = dynamic(() => import('../../components/ambassadors'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
+  const partnerRef = createRef();
+
   useEffect(() => {
     if (!getFromStorage('home_first_visit')) {
       setOnStorage('home_first_visit', true);
     }
   }, []);
 
+  const scrollHandler = () => {
+    if (isClientSide()) {
+      const goToPartnerBanner = partnerRef.current.getBoundingClientRect().top;
+      window.scrollTo(0, goToPartnerBanner);
+    }
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(partnerRef.current.getBoundingClientRect().top);
+  }, [partnerRef]);
+
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" />
-      <QuicklinksHomepage />
+      <QuicklinksHomepage scrollHandler={scrollHandler} />
       <IntroPanelHomepage />
-      <CtaGrid elements={CTA_AU_HOMEPAGE} />
+      <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
       {/* <CtaFAQ /> */}
       <FooterBanner />
