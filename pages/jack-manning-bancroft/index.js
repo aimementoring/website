@@ -1,6 +1,8 @@
 import React from 'react';
 import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
+import './styles.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -10,7 +12,7 @@ const Founder = () => (
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
           <Title type="headingLockup" className="founderBannerHeader" theme={process.env.REACT_APP_THEME}>
-            Jack Manning Bancroft
+            Our
             <strong>
               Founder &amp; CEO
             </strong>
@@ -19,36 +21,73 @@ const Founder = () => (
       </div>
     </div>
 
-    <article className="matrix-general relative">
-      <div className="wrap-md pt3 pb2">
-        <p>Hi!</p>
-        <p>My name’s Jack and I founded AIME fifteen years ago with imagination.</p>
-        <p>For 60,000 years my ancestors have been passing on their stories and imagination.</p>
-        <p>
-          I used imagination to build a story that my generation could connect to and think of how
-          we could find a solution to the challenge of Indigenous inequality in Australia.
-        </p>
-        <p>
-          That story is AIME and it is our imagination that allows us to help create more stories
-          and ideas, in turn unlocking the imaginations of tens-of-thousands of university
-          students and high school kids across the world.
-        </p>
-        <p>
-          I now lead our Dream Factory inside of AIME. I have imagination pouring through me and
-          am desperate to to use it to help solve some of the challenges of our time.
-        </p>
-        <p>
-          If your interested in partnering or working with us, seeing what we can imagine, know
-          that we run the walk and rap the talk. We do not conform.
-        </p>
-        <p>We would love to hear what you’re crazy about.</p>
-        <p>
-          Below are some examples of what we have achieved along the way - in other peoples words.
-        </p>
-        <p>Yours in imagination.</p>
-        <p>Jack.</p>
+    <article>
+      <div className="plainContentWrapper">
+        <Paragraph>
+          Jack Manning Bancroft is the CEO and Founder of AIME, an
+          award-winning social movement that uses mentoring and imagination
+          to unlock the potential of marginalised youth to create a fairer
+          world.
+        </Paragraph>
+        <Paragraph>
+          AIME is an imaginative educational program and a volunteer mentoring
+          movement - a social network for good.
+        </Paragraph>
+        <Paragraph>
+          Jack, a proud Indigenous Australian from the Bundjalung nation,
+          founded AIME in 2005 at the age of 19, with the goal of finding a
+          solution to Indigenous inequality in Australia. Driven by
+          imagination and audacious kindness, he re-engineered the concept of
+          mentoring. He developed a cost-effective and scalable model that
+          brings university students together as volunteers to mentor
+          marginalised and minority high schools kids so that they complete
+          high school successfully, go on to university and ultimately, into
+          fulfilling careers.
+        </Paragraph>
+        <Paragraph>
+          Over the past 16 years, AIME’s mentoring tools and techniques - its
+          Imagination Curriculum, of which Jack has been the lead designer -
+          have helped transform schooling for thousands of marginalised kids.
+        </Paragraph>
+        <Paragraph>
+          Jack’s vision is to unlock the AIME Imagination Curriculum for every
+          school in the world and train teachers to be mentors so we can
+          achieve educational parity and beyond for marginalised kids across
+          the Earth’s surface.
+        </Paragraph>
+        <Paragraph>
+          Jack has received a string of awards and recognition for his work,
+          his philosophy, and his vision for a fairer world. He was MJ Bale’s
+          Man of Character in 2014 and won Australia’s Happy Harold Education
+          Award in 2013. In 2010, five years after founding AIME, he received
+          the <a href="https://hrawards.humanrights.gov.au/2010-human-rights-medal-and-awards-winners" target="_blank">
+            Australian Human Rights Medal
+          </a>, <a href="https://www.gq.com.au/men-of-the-year/previous-winners/jack-manning-bancroft/news-story/105819449424e7c085ba1527b80f4fda" target="_blank">
+            GQ Man of Inspiration
+          </a>, New South Wales <a href="https://www.australianoftheyear.org.au/alumni/connect/jack-manning-bancroft/" target="_blank">
+            Young Australian of the Year
+          </a>, and the University of Sydney <a href="https://sydney.edu.au/news/84.html?newsstoryid=5978" target="_blank">
+            Young Alumni of the Year
+          </a> awards. Most recently Jack was the <a href="http://www.mediaring.com.au/news/indigenous-entrepreneur-becomes-australias-youngest-honorary-doctor/#more-981" target="_blank">
+            youngest person in Australian history to receive an Honorary Doctorate
+          </a>.
+        </Paragraph>
+        <Paragraph>
+          Jack holds a BA in Media and Communications from the University of
+          Sydney. He was awarded the Stanford Australia Foundation Dyson
+          Bequest Scholarship in 2013 to attend Stanford University’s flagship
+          Executive Program. In 2016, he received an Honorary Fellowship from
+          Western Sydney University and the same year, became the youngest
+          person in Australian history to receive an Honorary Doctorate from
+          the University of South Australia.
+        </Paragraph>
+        <Paragraph>
+          Jack is also a published children’s author with <a href="https://www.hardiegrant.com/au/publishing/bookfinder/book/the-eagle-inside-by-jack-manning-bancroft/9781760125271" target="_blank">The Eagle Inside</a>,
+          and has written <a href="https://www.goodreads.com/book/show/45899178-the-mentor" target="_blank">The Mentor</a> and <a href="https://www.amazon.co.uk/Mentoring-Fairer-World-Jack-Manning-Bancroft/dp/1743793537" target="_blank">Mentoring - The Key to a Fairer World</a>.
+        </Paragraph>
       </div>
-      <div className="wrap-md">
+
+      {/* <div className="wrap-md">
         <div className="mt0 mb3 md-mt2 lg-mt2 flex items-center">
           <span className="sm-line bg-brand-primary inline-block mr2 md-mr3 lg-mr3" />
           <div className="inline-block">
@@ -216,7 +255,7 @@ const Founder = () => (
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </article>
   </Layout>
 );
