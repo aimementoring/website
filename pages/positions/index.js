@@ -77,7 +77,7 @@ Positions.getInitialProps = async ({ query }) => ({
 });
 
 Positions.propTypes = {
-  redirected: PropTypes.bool,
+  redirected: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   redirectJobTitle: PropTypes.string,
   countryId: PropTypes.string,
 };
