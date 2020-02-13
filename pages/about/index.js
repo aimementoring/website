@@ -8,7 +8,6 @@ import styles from './about.module.scss';
 
 const {
   Title,
-  Button,
 } = Components;
 
 const HeroBannerAbout = dynamic(() => import('../../components/heroBannerAbout'));
@@ -27,7 +26,7 @@ const About = () => (
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              AIME is an Global organisation working to transform education
+              AIME is a global organisation working to transform education
               from the inside out, to create equality, more access to opportunities,
               and a fairer world for marginalised children.
             </Paragraph>
@@ -82,18 +81,24 @@ const About = () => (
               the Imagination Curriculum and its 21 mentoring values, featured below,
               to change the world. The organisation has set out to do this by:
             </Paragraph>
-            <List type="ulList" list={[
-              'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;', 
-              'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;', 
-              'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.'
-            ]} />
+            <List
+              type="ulList"
+              list={[
+                'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;',
+                'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;',
+                'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.',
+              ]}
+            />
             <Paragraph>
-              In 2019, AIME received the global “
-              <a target="_blank"
-                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232">
+              In 2019, AIME received the global&nbsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232"
+              >
                 Top 50 Organisations in Education
               </a>
-              " award for its significant contributions towards the field of education.
+              &nbsp;award for its significant contributions towards the field of education.
             </Paragraph>
           </div>
         </div>
@@ -128,8 +133,11 @@ const About = () => (
       <section className={styles.sectionAbout}>
         <div className={styles.fullWidthPanelStrat}>
           <Title type="h5Title" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            <a target="_blank"
-              href={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}
+            >
                 READ OUR STRATEGY NOW
             </a>
           </Title>
