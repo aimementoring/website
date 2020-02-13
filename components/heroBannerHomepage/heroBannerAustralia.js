@@ -14,7 +14,7 @@ const HeroBannerAustralia = () => (
             <strong>AIME</strong>
           </Title>
           <Paragraph>
-            We’re worldwide social movement of everyday humans, working
+            We’re a global social movement of everyday humans, working
             relentlessly to build a fairer world
           </Paragraph>
           <Button theme={process.env.REACT_APP_THEME} type="link" onClickAction="#">Get involved</Button>
