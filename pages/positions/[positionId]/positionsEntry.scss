@@ -1,0 +1,58 @@
+@import "../../../styles/base/variables";
+
+.job-hero {
+  background:
+    url($cdnRoot+"assets/images/banner/banner-pattern-blue.jpg") no-repeat
+    bottom center / cover $cyan;
+}
+
+.bannerContent .headingJobsSingle {
+  text-align: center;
+  letter-spacing: -0.15em;
+  margin-top: 3em;
+  strong {
+    left: initial;
+    letter-spacing: -0.15em;
+    @media screen and (min-width: $md) {
+      top: initial;
+    }
+  }
+}
+
+.headingJobContent {
+  margin: 1.5em 0 0.5em;
+}
+
+.backToOpps {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2em 0 1em;
+}
+
+.job-application {
+  .inputJobApplicationWrapper {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 0 0.5em 0; 
+    @media screen and (min-width: $md) {
+      width: 50%;
+      padding: 0 0.7em 0.4em 0; 
+    }
+    div {
+      float: none;
+    }
+  }
+  .inputJobApplication,
+  input[type="tel"] {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+  .react-phone-number-input__row:focus-within {
+    border: 2px solid $brand-primary;
+  }
+}
