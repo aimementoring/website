@@ -115,6 +115,10 @@
 .job-application--reveal {
   visibility: visible;
   opacity: 1;
+
+  h5 {
+    margin-bottom: 1em;
+  }
 }
 
 .document-item--button-reset {
