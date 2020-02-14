@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Anchor from '../../common/link';
+import Router from 'next/router';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './storiesCarousel.module.scss';
 
 // This could be in blueprint, not sure?
@@ -14,6 +17,10 @@ const StoriesCarousel = (props) => {
     contentCards,
     contentPreview,
   } = props;
+
+  const handleClick = () => {
+    Router.push(`/story/${slugTitle}`);
+  };
 
   return (
     <div
@@ -33,27 +40,22 @@ const StoriesCarousel = (props) => {
             className={styles.textWrap}
             key={`carousel-sm-text-wrap-${id}`}
           >
-            <p className={styles.tag}>Featured</p>
-            <h1 className={styles.title}>{title}</h1>
+            <Title type="h3Title">{title}</Title>
             {contentPreview && contentPreview.previewCopy
               ? (
-                <p className={styles.productTitle}>
+                <Paragraph>
                   {`${contentPreview.previewCopy.slice(0, 230)}...`}
-                </p>
+                </Paragraph>
               )
               : contentCards && contentCards.slice(0, 1).map((card) => (
-                <p className={styles.productTitle} key={card.sys.id}>
+                <Paragraph key={card.sys.id}>
                   {card.fields.contentCopy
                       && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
-                </p>
+                </Paragraph>
               ))}
-            <Anchor
-              to={`/story?slug=${slugTitle}`}
-              as={`/story/${slugTitle}`}
-              className={styles.carouselLink}
-            >
-              Read More
-            </Anchor>
+            <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
+                Read More
+            </Button>
           </div>
         </div>
       </div>
