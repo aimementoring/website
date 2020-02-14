@@ -8,7 +8,6 @@ import styles from './about.module.scss';
 
 const {
   Title,
-  Button,
 } = Components;
 
 const HeroBannerAbout = dynamic(() => import('../../components/heroBannerAbout'));
@@ -27,7 +26,7 @@ const About = () => (
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              AIME is an Global organisation working to transform education
+              AIME is a global organisation working to transform education
               from the inside out, to create equality, more access to opportunities,
               and a fairer world for marginalised children.
             </Paragraph>
@@ -40,9 +39,6 @@ const About = () => (
               help them see the value education can bring them, and develop
               leadership skills and ambitions early on.
             </Paragraph>
-            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/know-aime">
-              Tell me more
-            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
@@ -55,17 +51,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            The
-            <strong>Kids</strong>
-            At AIME
-          </Title> */}
           <div className={styles.copy}>
-            {/* <Paragraph>
-              <strong>
-                Providing the stage.
-              </strong>
-            </Paragraph> */}
             <Paragraph>
               Since it was founded in 2005, AIME has worked with 39,000 Indigenous
               kids in Australia, who have achieved educational parity and beyond.
@@ -87,16 +73,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          {/* <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            Hard lined
-            <strong>Impact</strong>
-          </Title> */}
           <div className={styles.copy}>
-            {/* <Paragraph>
-              <strong>
-                Not another smiley faced program.
-              </strong>
-            </Paragraph> */}
             <Paragraph>
               AIME’s commitment is to keep building its Social Network for Good,
               a worldwide movement of people who want to create a fairer world and
@@ -104,22 +81,25 @@ const About = () => (
               the Imagination Curriculum and its 21 mentoring values, featured below,
               to change the world. The organisation has set out to do this by:
             </Paragraph>
-            <List type="ulList" list={[
-              'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;', 
-              'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;', 
-              'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.'
-            ]} />
+            <List
+              type="ulList"
+              list={[
+                'Helping marginalised kids reach educational parity and beyond, and accelerating entrepreneurship and changing mindsets among them;',
+                'Giving privilege a purpose by offering those who will have power tomorrow the chance to volunteer today as university mentors, working with school teachers to change mindsets and transform schools;',
+                'Offering those with power today the chance to create policy change, give away their wealth and create more equal opportunities for all.',
+              ]}
+            />
             <Paragraph>
-              In 2019, AIME received the global “
-              <a target="_blank"
-                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232">
+              In 2019, AIME received the global&nbsp;
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232"
+              >
                 Top 50 Organisations in Education
               </a>
-              " award for its significant contributions towards the field of education.
+              &nbsp;award for its significant contributions towards the field of education.
             </Paragraph>
-            {/* <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/impact">
-              Read more
-            </Button> */}
           </div>
         </div>
         <div className={styles.column}>
@@ -136,10 +116,31 @@ const About = () => (
             Our 21
             <strong>Values</strong>
           </Title>
+          <div className={styles.copy}>
+            <Paragraph>
+              We have distilled the essence of our model of mentoring into 21
+              core values and used these values to develop a suite of training
+              tools to get a generation of mentors ready to light the spark
+              of marginalised youth worldwide.
+            </Paragraph>
+          </div>
           <img
             alt="AIME's 21 Values"
             src={`${ASSETS_URL}/assets/images/illustrations/21Values%402x+(1).jpg`}
           />
+        </div>
+      </section>
+      <section className={styles.sectionAbout}>
+        <div className={styles.fullWidthPanelStrat}>
+          <Title type="h5Title" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`${ASSETS_URL}/assets/pdf/strategy/AIME_strat_1401.pdf`}
+            >
+                READ OUR STRATEGY NOW
+            </a>
+          </Title>
         </div>
       </section>
     </div>
