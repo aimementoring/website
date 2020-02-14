@@ -32,16 +32,16 @@ const QuicklinksHomepage = (props) => {
             </a>
           </Paragraph>
         </div>
-      
+
         <div className="quicklinkGridItem">
-          <a href="https://shop.aimementoring.com/" className="quicklinkImage">
+          <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
               alt="Hoodie"
             />
           </a>
           <Paragraph>
-            <a href="https://shop.aimementoring.com/" target="_blank" className="quicklinkTitle">
+            <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkTitle">
               Buy  a hoodie
             </a>
           </Paragraph>
@@ -76,14 +76,14 @@ const QuicklinksHomepage = (props) => {
         </div>
 
         <div className="quicklinkGridItem">
-          <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkImage">
+          <a href="https://aimedonations.raisely.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/bunch-flowers.png`}
               alt="Bunch of Flowers"
             />
           </a>
           <Paragraph>
-            <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkTitle">
+            <a href="https://aimedonations.raisely.com/" target="_blank" rel="noopener noreferrer" className="quicklinkTitle">
               Donate
             </a>
           </Paragraph>
