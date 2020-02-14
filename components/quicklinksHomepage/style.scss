@@ -27,9 +27,12 @@
   }
 
   .quicklinkGridItem {
-    margin-right: 1em;
     display: block;
     text-align: center;
+  
+    @media screen and (min-width: $md) {
+      margin-right: 2em;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -73,5 +76,8 @@
 
   .quicklinkTitle {
     text-decoration: none;
+    // max-width: 6em;
+    display: block;
+    margin: 0 auto;
   }
 }
