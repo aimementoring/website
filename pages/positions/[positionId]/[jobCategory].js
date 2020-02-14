@@ -151,6 +151,7 @@ const PositionsEntry = () => {
         submissionmessage: 'jobs',
       },
     });
+    console.log('and the answer is ', answer);
     if (answer.data === 'OK') {
       Router.push({
         pathname: '/thanks',

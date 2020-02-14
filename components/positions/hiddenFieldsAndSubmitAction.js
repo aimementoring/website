@@ -51,7 +51,9 @@ HiddenFieldsAndSubmitAction.propTypes = {
 HiddenFieldsAndSubmitAction.defaultProps = {
   name: '',
   type: '',
-  onSubmit: () => {},
+  onSubmit: () => {
+    console.log('no onSubmit function provided!');
+  },
 };
 
 export default HiddenFieldsAndSubmitAction;
