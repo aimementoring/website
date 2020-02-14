@@ -38,13 +38,6 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(partnerRef.current.getBoundingClientRect().top);
-    // eslint-disable-next-line no-console
-    console.log(getInvolvedRef.current.getBoundingClientRect().bottom);
-  }, [partnerRef, getInvolvedRef]);
-
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
