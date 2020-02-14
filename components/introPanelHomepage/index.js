@@ -39,8 +39,8 @@ const IntroPanelHomepage = () => (
             </Paragraph>
             <Anchor
               to="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing"
+              type="link"
               target="_blank"
-              aria-label="cta"
             >
               <Button theme={process.env.REACT_APP_THEME} aria-label="cta">
                 View Strategy
