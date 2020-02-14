@@ -26,3 +26,21 @@
     }
   }
 }
+
+.positionsIntroPanel {
+  border: 1px solid pink;
+  padding: 4em 1em 2em;
+
+  .positionsIntroPanelContent {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-banner {
+    &.welcomeVideo {
+      background: url($cdnRoot + 'assets/images/media/vid-puppets.jpg') no-repeat top center / cover $magenta;
+    }
+  }
+}
