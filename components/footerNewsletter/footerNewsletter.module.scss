@@ -31,6 +31,10 @@
 
     form {
       position: relative;
+
+      label {
+        top: 1.22em;
+      }
     }
   }
   
@@ -38,12 +42,8 @@
     height: 3rem;
 
     &:focus ~ label {
-      transform: translate3d(0, -1.4em, 0) scale(0.75);
+      transform: translate3d(0, -1.5em, 0) scale(0.75);
     }
-  }
-
-  label {
-    top: 1.2em;
   }
 
   .submitButton {
