@@ -26,3 +26,15 @@
     }
   }
 }
+
+.positionsIntroPanel {
+  border: 1px solid pink;
+  padding: 4em 1em 2em;
+
+  .positionsIntroPanelContent {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
