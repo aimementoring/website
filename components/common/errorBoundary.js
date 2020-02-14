@@ -5,6 +5,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import bugsnagClient from '../../utils/bugsnag';
 import IntercomChat from '../intercom';
+import './styles.scss';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -29,15 +30,15 @@ class ErrorBoundary extends Component {
     if (hasError) {
       return (
         <div>
-          <div className="full-width-wrap bg-darkest-purple">
-            <div className="hero-banner--default hero-banner--404 full-width-wrap bg-darkest-purple">
+          <div className="full-width-wrap">
+            <div className="hero-banner--default hero-banner--404 full-width-wrap">
               <div className="flex flex-wrap items-center full-height">
                 <div className="banner-wrapper subpage-banner center">
                   <div className="bannerContent">
                     <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
                       <strong>
                         Uh Oh
-                      </strong>
+                      <strong>
                     </Title>
                   </div>
                 </div>
@@ -50,8 +51,11 @@ class ErrorBoundary extends Component {
                     {'Oops, this wasn\'t meant to happen.'}
                   </Title>
                   <Paragraph>
-                    Sorry for any inconvenience.
+                    {'Sorry for any inconvenience. If you\'re seeing this often, please'}
                   </Paragraph>
+                  <div className="errorInterComWrapper">
+                    <IntercomChat />
+                  </div>
                   <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
                     Back to home
                   </Button>
