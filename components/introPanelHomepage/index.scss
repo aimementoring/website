@@ -26,6 +26,10 @@
       @media screen and (min-width: $md) {
         margin: inherit;
       }
+
+      strong span {
+        color: $orange;
+      }
     }
   }
 }
@@ -51,5 +55,29 @@
   h3, p {
     color: $white;
   }
+
+  &.welcomeVideo {
+    background: url($cdnRoot + 'assets/images/video/vid-sherice.jpg') no-repeat top center / cover $magenta;
+    max-width: 25em;
+    margin-top: 2em;
+  }
 }
 
+
+.home-intro-panel--inner .intro-video-wrap {
+  .videoCaption {
+    text-align: right;
+    font-size: 0.65rem;
+    line-height: 2.5em;
+    color: $grey90;
+  }
+}
+
+.welcomeVideoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $md) {
+    align-items: flex-end;
+  }
+}
