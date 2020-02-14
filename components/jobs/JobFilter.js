@@ -22,7 +22,7 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
           </span>
         </li>
         {filtersType.map((type) => (
-          <li className="block mr1" key={type}>
+          <li className="block mr1" key={type || 'undefined'}>
             {!!type && (
               <span
                 className={`filter-list cursor ${currentFilter === type ? 'active' : ''}`}
