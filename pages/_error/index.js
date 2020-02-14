@@ -39,9 +39,8 @@ const ErrorPage = () => {
             <div className="banner-wrapper subpage-banner center">
               <div className="bannerContent">
                 <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
-                  Uh
                   <strong>
-                    Oh
+                    Uh Oh
                   </strong>
                 </Title>
               </div>
