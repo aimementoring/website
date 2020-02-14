@@ -36,7 +36,7 @@
 
 .bannerWrapper {
   background:
-    url($cdnRoot+"assets/images/banner/become-a-mentor-today.png")
+    url($cdnRoot+"assets/images/banner/heyhello@2x.jpg")
     no-repeat top center $purple;
   align-items: center;
   background-attachment: fixed;
@@ -44,18 +44,19 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 70vh;
   justify-content: center;
   padding: 13em 2em;
   position: relative;
   width: 100%;
+  margin: 1em;
 
   &:after {
     position: absolute;
     content: "";
     width: 100%;
     height: 100%;
-    background: rgba(000,000,000,0.3);
+    background: rgba(000,000,000,0.1);
   }
 
   @media screen and (min-width: $md) {
@@ -72,6 +73,12 @@
   .bannerContent {
     z-index: 1;
     text-align: center;
+
+    p {
+      color: $white;
+      max-width: 30em;
+      margin: 2em 0;
+    }
   }
 }
 
