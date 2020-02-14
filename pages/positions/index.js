@@ -4,8 +4,6 @@ import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import Button from 'aime-blueprint/lib/components/button';
-import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import { isClientSide } from '../../utils/utilities';
 import './positions.scss';
@@ -58,22 +56,8 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
             </div>
           </div> */}
 
-          <div className="home-intro-panel positionsIntroPanel">
+          {/* <div className="home-intro-panel positionsIntroPanel">
             <div className="home-intro-panel--inner positionsIntroPanelContent">
-              
-              <div className="sm-col-12 sm-col-6">
-                <div className="welcomeVideoWrapper intro-video-wrap">
-                  <VideoButton
-                    video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
-                  />
-                  <div className="welcomeVideo video-banner flex block rounded">
-                    <div className="video-banner-overlay center">
-                      <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
-                    </div>
-                  </div>
-                  <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
-                </div>
-              </div>
               <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
                 <Title type="headingLockup">
                   <strong>
@@ -107,8 +91,65 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
                   </Anchor>
                 </div>
               </div>
+              <div className="sm-col-12 sm-col-6">
+                <div className="welcomeVideoWrapper intro-video-wrap">
+                  <VideoButton
+                    video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
+                  />
+                  <div className="welcomeVideo video-banner flex block rounded">
+                    <div className="video-banner-overlay center">
+                      <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
+                    </div>
+                  </div>
+                  <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
+                </div>
+              </div>
+
             </div>
+          </div> */}
+
+
+          <div className="full-width-wrap content-panel home-intro-panel positionsIntroPanel">
+            <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
+              <div className="home-intro-panel--inner positionsIntroPanelContent">
+                <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
+                  <Title type="headingLockup">
+                    <strong>
+                      Get&nbsp;
+                      <span>involved</span>
+                    </strong>
+                  </Title>
+                  <div className="intro-sub-text">
+                    <Paragraph>
+                      Welcome to AIME. A group that is looking to transform education
+                      from the inside out, through imagination & mentoring in order to
+                      create more educational equality, access to opportunities
+                      and in turn a fairer world.
+                    </Paragraph>
+                    <Paragraph>
+                      If you get the chance to work with us -&nbsp;
+                      <mark>bring everything you have</mark>
+                      , embrace our 21 mentor values,
+                      and enter a world of imagining what’s possible.
+                    </Paragraph>
+                  </div>
+                </div>
+                <div className="sm-col-12 sm-col-6">
+                  <div className="welcomeVideoWrapper intro-video-wrap">
+                    <VideoButton
+                      video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
+                    />
+                    <div className="welcomeVideo video-banner flex block rounded">
+                      <div className="video-banner-overlay center">
+                        <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
+                      </div>
+                    </div>
+                    <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
             
           <div className="wrap mx-auto px3">
             {!!countryId && (
