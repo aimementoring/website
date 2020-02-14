@@ -8,15 +8,13 @@ const HeroBannerAbout = () => (
       <div className={styles.bannerWrapper}>
         <div className={styles.bannerContent}>
           <Title type="headingLockup" className={styles.bannerHeader} theme={process.env.REACT_APP_THEME}>
-            We build
+            We're a worldwide
             <strong>
-              Mentoring
+              Social
               <br />
-              Bridges
+              Movement
             </strong>
-            between universities
-            <br />
-            and schools
+            for a fairer world
           </Title>
         </div>
       </div>
