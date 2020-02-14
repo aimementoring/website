@@ -11,10 +11,10 @@ const MobileMenu = dynamic(() => import('../mobileMenu'));
 
 const StandardHeader = () => (
   <div>
-    <div className={styles.navHiring}>
+    {/* <div className={styles.navHiring}>
       This site’s in draft mode.
       Please be patient with us while it’s updated to reflect AIME in 2020 & beyond.
-    </div>
+    </div> */}
     <div className={styles.siteHeaderContainer}>
       <div className={styles.logoContainer}>
         <Logo />
