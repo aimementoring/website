@@ -25,6 +25,7 @@ const QuicklinksHomepage = (props) => {
               alt="Team Flag"
             />
           </a>
+
           <Paragraph>
             <a onClick={scrollHandler} target="_blank" className="quicklinkTitle">
               Partner with us
@@ -33,15 +34,15 @@ const QuicklinksHomepage = (props) => {
         </div>
 
         <div className="quicklinkGridItem">
-          <a href="https://shop.aimementoring.com/" className="quicklinkImage">
+          <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
               alt="Hoodie"
             />
           </a>
           <Paragraph>
-            <a href="https://shop.aimementoring.com/" target="_blank" className="quicklinkTitle">
-              Buy a hoodie
+            <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkTitle">
+              Buy  a hoodie
             </a>
           </Paragraph>
         </div>
@@ -55,7 +56,7 @@ const QuicklinksHomepage = (props) => {
           </a>
           <Paragraph>
             <a href="/be-a-mentor" className="quicklinkTitle">
-              Become a mentor
+              Be a uni mentor
             </a>
           </Paragraph>
         </div>
@@ -69,20 +70,20 @@ const QuicklinksHomepage = (props) => {
           </a>
           <Paragraph>
             <a href="/positions" className="quicklinkTitle">
-              Work with us
+              Work  with us
             </a>
           </Paragraph>
         </div>
 
         <div className="quicklinkGridItem">
-          <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkImage">
+          <a href="https://aimedonations.raisely.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/bunch-flowers.png`}
               alt="Bunch of Flowers"
             />
           </a>
           <Paragraph>
-            <a href="https://aimedonations.raisely.com/" target="_blank" className="quicklinkTitle">
+            <a href="https://aimedonations.raisely.com/" target="_blank" rel="noopener noreferrer" className="quicklinkTitle">
               Donate
             </a>
           </Paragraph>
