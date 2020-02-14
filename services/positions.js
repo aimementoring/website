@@ -56,6 +56,4 @@ export const findJob = async (id, currentSite) => {
   return job;
 };
 
-export const loadUniversities = async () => {
-  airtableFetchRecords(sitesConfig).then((options) => options);
-};
+export const loadUniversities = () => airtableFetchRecords(sitesConfig).then((options) => options);
