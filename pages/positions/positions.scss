@@ -37,4 +37,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  .video-banner {
+    &.welcomeVideo {
+      background: url($cdnRoot + 'assets/images/media/vid-puppets.jpg') no-repeat top center / cover $magenta;
+    }
+  }
 }
