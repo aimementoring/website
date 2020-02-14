@@ -59,7 +59,7 @@ const ErrorPage = () => {
               <Anchor to="/" className="basic-btn bold bg-brand-primary mt3">Back to home</Anchor>
             </div>
             <div>
-              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/404-dancing.gif`} alt="" />
+              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="" />
             </div>
           </div>
         </div>
