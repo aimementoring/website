@@ -38,7 +38,7 @@ class ErrorBoundary extends Component {
                     <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
                       <strong>
                         Uh Oh
-                      <strong>
+                      </strong>
                     </Title>
                   </div>
                 </div>
