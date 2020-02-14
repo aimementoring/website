@@ -17,7 +17,7 @@ const defaultSettings = {
   slidesToScroll: 1,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 8000,
+  autoplaySpeed: 6000,
   responsive: [
     {
       breakpoint: 768,
