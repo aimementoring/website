@@ -17,8 +17,7 @@ const IntroPanelHomepage = () => (
         <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
           <Title type="headingLockup">
             <strong>
-              Hey
-              {' '}
+              Hey&nbsp;
               <span>there!</span>
             </strong>
           </Title>
