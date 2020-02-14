@@ -36,7 +36,7 @@ const QuicklinksHomepage = (props) => {
         <div className="quicklinkGridItem">
           <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
-              src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
+              src={`${ASSETS_URL}/assets/images/illustrations/hoodie-imagination.png`}
               alt="Hoodie"
             />
           </a>
