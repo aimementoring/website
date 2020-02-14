@@ -15,7 +15,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             <strong>AIME</strong>
           </Title>
           <Paragraph>
-            We’re worldwide social movement of everyday humans, working
+            We’re a global social movement of everyday humans, working
             relentlessly to build a fairer world
           </Paragraph>
           <Button
