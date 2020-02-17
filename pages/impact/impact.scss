@@ -21,8 +21,9 @@
 
   .section-impact {
 
-    .section-about {
+    .wrapImpactFacts {
       background-color: $watermelon;
+      margin: 1em;
     }
   }
 
@@ -137,7 +138,7 @@
   }
 
   .section-about .section-about__column img {
-    max-width: 30em;
+    max-width: 25em;
     width: 100%;
   }
   
