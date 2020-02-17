@@ -13,17 +13,16 @@ const FooterNewsletter = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailchimpAnswer = await request(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${AIME_FRIENDS_LIST}/members`, {
+    await request(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${AIME_FRIENDS_LIST}/members`, {
       method: 'POST',
       headers: {
-        Authorization: `apikey ${process.env.MAILCHIMP_KEY}`,
+        Authorization: `apikey ${process.env.REACT_APP_MAILCHIMP_KEY}`,
       },
       body: {
         email_address: value,
         status: 'subscribed',
       },
     });
-    console.log({ mailchimpAnswer });
     Router.push({
       pathname: '/thanks',
       query: {
