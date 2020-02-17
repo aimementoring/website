@@ -6,18 +6,13 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './footerNewsletter.module.scss';
 import request from '../../utils/request';
 
-const AIME_FRIENDS_LIST = '30964260b5';
-
 const FooterNewsletter = () => {
   const [value, setValue] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await request(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${AIME_FRIENDS_LIST}/members`, {
+    await request(`${process.env.REACT_APP_PORTAL_API}/website/subscribe_newsletter`, {
       method: 'POST',
-      headers: {
-        Authorization: `apikey ${process.env.REACT_APP_MAILCHIMP_KEY}`,
-      },
       body: {
         email_address: value,
         status: 'subscribed',
