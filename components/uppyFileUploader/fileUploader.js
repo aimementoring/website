@@ -36,11 +36,12 @@ class FileUploader extends Component {
     this.uppy.close();
   }
 
-  handleModalClick = () => {
-    const { modalOpen } = this.state;
-    this.setState({
-      modalOpen: !modalOpen,
-    });
+  handleModalOpen = () => {
+    this.setState({ modalOpen: true });
+  };
+
+  handleModalClose = () => {
+    this.setState({ modalOpen: false });
   };
 
   getFilesUploadedAsArray = (props) => {
@@ -176,7 +177,7 @@ class FileUploader extends Component {
               className={validationErrors && styles.withErrors}
               aria-label="upload"
               type="button"
-              onClickFunction={this.handleModalClick}
+              onClickFunction={this.handleModalOpen}
             >
               {placeholder || 'Upload Files'}
             </Button>
@@ -187,7 +188,7 @@ class FileUploader extends Component {
                 closeModalOnClickOutside
                 open={modalOpen}
                 proudlyDisplayPoweredByUppy={false}
-                onRequestClose={this.handleModalClick}
+                onRequestClose={this.handleModalClose}
                 note={`When you're done, click the x in the
                   top right to return to the form.`}
               />

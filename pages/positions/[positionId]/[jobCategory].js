@@ -131,7 +131,9 @@ const PositionsEntry = () => {
     const uploadedAttachments = state.jobForm.attachments
       .map((attach) => attach.filename.substr(4));
     const attachmentValidation = state.job.requiredDocuments
-      ? state.job.requiredDocuments.filter((doc) => !uploadedAttachments.includes(kebabCase(doc)))
+      ? state.job.requiredDocuments.filter(
+        (doc) => uploadedAttachments.indexOf(kebabCase(doc)) === -1,
+      )
       : [];
 
     if (attachmentValidation.length) {
