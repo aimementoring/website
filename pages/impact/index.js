@@ -43,7 +43,7 @@ const Impact = () => (
           </div>
         </section>
         <section className="section-impact">
-          <div className="wrap">
+          <div className="wrapImpactFacts">
             <section className="section-about">
               <div className="section-about__column p2 xs-p1 items-center">
                 <div className="section-about__copy lg-col-8 section-impact-copy">
