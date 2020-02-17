@@ -30,7 +30,7 @@
       "REACT_APP_GOOGLE_TAG_MANAGER": "GTM-NK5SFHW",
       "REACT_APP_CDN_ROOT": "https://d2ylaz7bdw65jx.cloudfront.net",
       "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "master",
-      "REACT_APP_HOST": "next",
+      "REACT_APP_HOST": "next"
     }
   },
   "routes": [
