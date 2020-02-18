@@ -29,7 +29,7 @@ export function setOnStorage(key, value) {
 
 export function getFromStorage(key) {
   try {
-    if (isSupported(localStorage)) {
+    if (typeof window !== 'undefined' && isSupported(localStorage)) {
       const item = JSON.parse(localStorage.getItem(key));
       return item && item.value;
     }
@@ -40,7 +40,7 @@ export function getFromStorage(key) {
 }
 
 export function removeFromStorage(key) {
-  if (isSupported(localStorage)) {
+  if (typeof window !== 'undefined' && isSupported(localStorage)) {
     localStorage.removeItem(key);
   } else {
     delete myOwnStorage.key;
