@@ -1,8 +1,32 @@
 @import '../../styles/base/variables';
 
 .quickNewsFeed {
-  border: 1px solid red;
+  border-top: 1px solid $watermelon;
+  border-bottom: 1px solid $watermelon;
   display: block;
   width: 100%;
   padding: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+
+  .feedContent {
+  /* Starting position */
+  transform:translateX(100%);
+  /* Apply animation to this element */	
+  animation: scroll-left 25s linear infinite;
+  }
+  /* Move it (define the animation) */
+  @keyframes scroll-left {
+    0% { 
+      transform: translateX(100%); 		
+    }
+    100% { 
+      transform: translateX(-300%); 
+    }
+  }
+
+  span {
+    color: $magenta;
+    padding-right: 2em;
+  }
 }
