@@ -58,6 +58,8 @@ module.exports = withOffline(
         REACT_APP_SHOPIFY_DOMAIN: process.env.REACT_APP_SHOPIFY_DOMAIN,
         REACT_APP_GOOGLE_TAG_MANAGER: process.env.REACT_APP_GOOGLE_TAG_MANAGER,
         REACT_APP_FILE_UPLOADER_API_KEY: process.env.REACT_APP_FILE_UPLOADER_API_KEY,
+        REACT_APP_MAILCHIMP_API: process.env.REACT_APP_MAILCHIMP_API,
+        REACT_APP_MAILCHIMP_KEY: process.env.REACT_APP_MAILCHIMP_KEY,
       },
       target: 'serverless',
       transformManifest: (manifest) => ['/'].concat(manifest),

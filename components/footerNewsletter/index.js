@@ -11,13 +11,7 @@ const FooterNewsletter = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await request(`${process.env.REACT_APP_PORTAL_API}/website/subscribe_newsletter`, {
-      method: 'POST',
-      body: {
-        email_address: value,
-        status: 'subscribed',
-      },
-    });
+    await request(`api/mailchimp?email=${value}`, {});
     Router.push({
       pathname: '/thanks',
       query: {
