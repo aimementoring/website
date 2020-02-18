@@ -78,7 +78,7 @@ const Impact = () => (
                     </strong>
                   </Paragraph>
                   <Paragraph>
-                    As at 2018, every $ spent on AIME, $9 worth of benefits are generated for the
+                    As at 2019, every $ spent on AIME, $8.90 worth of benefits are generated for the
                     society.
                   </Paragraph>
                 </div>
