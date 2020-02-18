@@ -5,6 +5,7 @@ import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { uploadMentorEOI, getUniversities } from '../../services/portalApi';
 import bugsnagClient from '../../utils/bugsnag';
+import { isClientSide } from '../../utils/utilities';
 import { getAllCountries, detectCountry } from '../../utils/country';
 import {
   getCountriesAccordingToAimeProgram,
@@ -71,7 +72,7 @@ const BeAMentor = () => {
       countriesWithAimeProgram: countriesObject.countriesWithAimeProgram,
     }, () => {
       let universityId = null;
-      if (typeof window !== 'undefined') {
+      if (isClientSide()) {
         universityId = Router.query.universityId;
       }
 
@@ -140,7 +141,7 @@ const BeAMentor = () => {
   };
 
   let pathname = null;
-  if (typeof window !== 'undefined') {
+  if (isClientSide()) {
     pathname = Router.asPath.split('#');
   }
   useEffect(() => {
@@ -204,7 +205,7 @@ const BeAMentor = () => {
   };
 
   const handlePhoneCountrySelected = () => {
-    if (typeof window !== 'undefined') {
+    if (isClientSide()) {
       const phoneCountrySelected = document.getElementsByClassName('flag-container')[0].firstElementChild.title;
       if (phoneCountrySelected) {
         const phoneArea = phoneCountrySelected.split('+') ? `+${phoneCountrySelected.split('+')[1]}` : '';
