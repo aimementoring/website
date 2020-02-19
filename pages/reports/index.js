@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
 import { getEntries } from '../../services/craftAPI';
 import Layout from '../../hocs/basicLayout';
 
@@ -82,23 +83,19 @@ class Reports extends PureComponent {
     const { reportsToShow } = this.state;
     return (
       <Layout>
-        <div className="hero-banner--default hero-banner--impact full-width-wrap">
+        <div className="hero-banner--default full-width-wrap">
           <div className="flex flex-wrap items-center full-height">
             <div className="banner-wrapper">
-              <h1>
-                <span className="highlight-text">
-                  <em>
-                    Reports
-                    <br />
-                    <span className="scratch-underline">&nbsp;</span>
-                  </em>
-                </span>
-              </h1>
+              <Title type="headingLockup" className="bannerHeaderImpact" theme={process.env.REACT_APP_THEME}>
+                <strong>
+                  Reports
+                </strong>
+              </Title>
+              
             </div>
           </div>
         </div>
         <section className="relative">
-          <div className="scratch-overlay-wrapper top-scratch bg-white" />
           {reportsToShow && (
             <div className="wrap py3">
               <div className="filter-list-container">
