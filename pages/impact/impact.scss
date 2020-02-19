@@ -20,11 +20,37 @@
   }
 
   .section-impact {
-    padding-top: 50px;
+
+    .wrapImpactFacts {
+      background-color: $watermelon;
+      margin: 1em;
+    }
   }
 
-  // TODO: create variables for all the diff banner image urls in the variables file
+  .sectionLastQuote {
+    background-color: $orange;
+  }
 
+  .intercomBtnWrap {
+    button.navBtn {
+      background-color: $watermelon;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      transition: $hoverTransition;
+  
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
   .section-background-image {
     background: url($cdnRoot+"assets/images/banner/Default@2x-min.jpg")
       no-repeat top center / cover #050301;
@@ -112,7 +138,7 @@
   }
 
   .section-about .section-about__column img {
-    max-width: 350px;
+    max-width: 25em;
     width: 100%;
   }
   
