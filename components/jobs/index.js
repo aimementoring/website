@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
 import dynamic from 'next/dynamic';
 import compact from 'lodash/compact';
-import Anchor from '../common/link';
 import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
@@ -222,9 +221,10 @@ const Jobs = ({
           <h1 className="lh-base">We are not hiring.</h1>
           <span className="line bg-brand-tertiary mb3 mt1" />
           <p className="pb1 md-pb3 lg-pb3">
-            Sorry, there are no positions available at the moment. You can
-            <Anchor to="/be-a-friend" as="/be-a-friend">sign up to be an AIME Friend</Anchor>
-            {'though and receive updates about everything that\'s happening.'}
+            {`Sorry, there are no positions available at the moment. You can 
+            go to the bottom of the page and enter your mail address to
+            become an AIME Friend though – you'll receive updates about 
+            everything that's happening.`}
           </p>
         </div>
       )}
