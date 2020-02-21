@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import contentfulServer from '../../api/contentfulPosts';
+import { sortDates } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
 import styles from './reports.modules.scss';
 
@@ -51,12 +52,15 @@ const Reports = ({ entries }) => {
     && fields.banner.fields.visualMedia.fields.file.url;
     const contentPreview = fields.contentPreview
       && fields.contentPreview.fields.previewCopy;
+    const reportUrl = !fields.reportUrl
+      ? fields.reportFile && fields.reportFile.fields.file.url
+      : fields.reportUrl;
     return (
       <Report
         key={sys.id}
         bannerImage={bannerImage}
         title={fields.title}
-        reportUrl={fields.reportUrl}
+        reportUrl={reportUrl}
         contentPreview={contentPreview}
       />
     );
@@ -73,9 +77,9 @@ const Reports = ({ entries }) => {
         <>
           <div className={styles.filterListContainer}>
             <Title type="h5Title">
-                Category
+              Category
             </Title>
-            <ul className="flex flex-wrap">{categoryLinks}</ul>
+            <ul>{categoryLinks}</ul>
           </div>
           <div className={styles.reportsGrid}>
             {reportCard}
@@ -90,7 +94,13 @@ const Reports = ({ entries }) => {
 Reports.getInitialProps = async () => {
   const client = contentfulServer();
   const entries = await client.then((response) => response);
-  const getReportsPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'report'));
+
+  const filteredDate = sortDates(entries);
+  const filteredReports = entries.filter((entry) => (
+    entry.fields.publishDate.indexOf(filteredDate) === -1
+    || !filteredDate
+  ));
+  const getReportsPosts = filteredReports.filter((entry) => (entry.fields.contentTag.fields.name === 'report'));
 
   return { entries: getReportsPosts };
 };
