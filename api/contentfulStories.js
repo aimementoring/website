@@ -3,9 +3,9 @@ const contentful = require('contentful');
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY,
+  accessToken: process.env.REACT_APP_CONTENTFUL_API_STAGING_KEY,
   entry_id: process.env.REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES,
-  environment: process.env.REACT_APP_CONTENTFUL_API_ENVIRONMENT,
+  environment: 'staging', // process.env.REACT_APP_CONTENTFUL_API_ENVIRONMENT,
 });
 
 module.exports = () => (
