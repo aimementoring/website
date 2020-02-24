@@ -1,51 +1,33 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import styles from './CallToActionButton.module.scss';
 
 const CallToActionButton = (props) => {
-  const { buttonProps } = props;
+  const { label, externalUrl } = props;
 
   return (
     <div className={styles.buttonContainer}>
-      {buttonProps.map((link) => {
-        const { label, externalUrl } = link.fields;
-        return (
-          <a
-            key={link.sys.id}
-            href={externalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              border: '0',
-              alignSelf: 'center',
-            }}
-            className={styles.postElementLink}
-          >
-            <ReactMarkdown source={label} />
-          </a>
-        );
-      })}
+      <a
+        href={externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          border: '0',
+          alignSelf: 'center',
+        }}
+        className={styles.postElementLink}
+      >
+        {label}
+      </a>
     </div>
   );
 };
 
 CallToActionButton.propTypes = {
-  buttonProps: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      externalUrl: PropTypes.string,
-    }),
-  ),
+  label: PropTypes.string.isRequired,
+  externalUrl: PropTypes.string.isRequired,
 };
 
-CallToActionButton.defaultProps = {
-  buttonProps: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: '',
-      externalUrl: '',
-    }),
-  ),
-};
+// CallToActionButton.defaultProps = {};
 
 export default CallToActionButton;
