@@ -26,15 +26,13 @@ const Home = () => {
 
   const scrollToPartnerBanner = () => {
     if (isClientSide()) {
-      const goToPartnerBanner = partnerRef.current.getBoundingClientRect().top;
-      if (goToPartnerBanner) { window.scrollTo(0, goToPartnerBanner); }
+      partnerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToGetInvolved = () => {
     if (isClientSide()) {
-      const getInvolved = getInvolvedRef.current.getBoundingClientRect().top;
-      if (getInvolved) { window.scrollTo(0, getInvolved); }
+      getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
