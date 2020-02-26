@@ -38,7 +38,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
         </div>
       ))}
     </div>
-    <div className={styles.fullWidthPanelWrapper}>
+    <div ref={partnerRef} className={styles.fullWidthPanelWrapper}>
       <div className={styles.partnerPanelWrap}>
         <div className={styles.contentWrap}>
           <img
@@ -63,7 +63,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
             If you want to know more get in touch with Helen,
             our Director of Partnering.
           </Paragraph>
-          <div ref={partnerRef} className={styles.intercomBtnWrap}>
+          <div className={styles.intercomBtnWrap}>
             <IntercomChat />
           </div>
         </div>
