@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
-import contentfulServer from '../../api/contentfulStories';
+import contentfulServer from '../../api/contentfulPosts';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
