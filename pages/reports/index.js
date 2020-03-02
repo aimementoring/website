@@ -1,119 +1,178 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { getEntries } from '../../services/craftAPI';
+import classNames from 'classnames';
+import Title from 'aime-blueprint/lib/components/title';
+import contentfulServer from '../../api/contentfulPosts';
+import { sortDates } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
+import styles from './reports.modules.scss';
 
 const Report = dynamic(() => import('../../components/report'));
 
-class Reports extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reports: [],
-      categorySelected: 'All reports',
-      categoryTitles: [],
-    };
-  }
+const Reports = ({ entries }) => {
+  const [reports, setReportEntries] = useState(entries);
+  const [categorySelected, setCategorySelected] = useState('All reports');
+  const categoryTypes = ['All reports', 'Annual', 'Financial', 'Interim', 'Research'];
 
-  componentDidMount() {
-    this.fetchReports();
-  }
-
-  fetchReports = async () => {
-    let { reports } = this.state;
-    if (!reports.length) {
-      let categoryTitles;
-      const entry = await getEntries('reports');
-      reports = entry.data;
-      if (!reports.reportTagsTitles) {
-        categoryTitles = ['All reports', 'Annual', 'Financial', 'Interim', 'Research'];
-      } else {
-        categoryTitles = reports.reportTagsTitles;
-      }
-      this.setState({
-        reports,
-        categoryTitles,
-        reportsToShow: reports,
-      });
+  useEffect(() => {
+    if (categorySelected === 'All reports') {
+      setReportEntries(entries);
     }
-  };
+  }, [reports]);
 
-  getCategoryLinks = () => {
-    const { categorySelected, categoryTitles } = this.state;
-    return categoryTitles.map((category) => {
-      const active = category === categorySelected ? 'active' : '';
-      return (
-        <li className="block mr2" key={category}>
-          <div
-            className={`filter-list ${active}`}
-            onClick={this.handleCategoryChange(category)}
-            onKeyPress={this.handleCategoryChange(category)}
-            role="presentation"
-          >
-            {category}
-          </div>
-        </li>
-      );
-    });
-  };
-
-  handleCategoryChange = (newCategory) => (e) => {
+  const handleCategoryChange = (newCategory) => (e) => {
     e.preventDefault();
-    const { reports, categorySelected } = this.state;
-    if (newCategory === categorySelected) return;
-    if (newCategory === 'All reports') {
-      this.setState({
-        reportsToShow: reports,
-        categorySelected: newCategory,
-      });
+    if (newCategory === categorySelected) {
       return;
     }
-    const reportsToShow = reports.filter((report) => {
-      const searchString = `${report.slug} ${report.previewText} ${report.title}`.toLowerCase();
-      return searchString.indexOf(newCategory.toLowerCase()) > -1;
-    });
-    this.setState({
-      reportsToShow,
-      categorySelected: newCategory,
-    });
+    const reportsToShow = entries.filter(
+      (report) => report.fields.reportType.indexOf(newCategory) > -1,
+    );
+    setReportEntries(reportsToShow);
+    setCategorySelected(newCategory);
   };
 
-  render() {
-    const { reportsToShow } = this.state;
+  const categoryLinks = categoryTypes.map((category) => (
+    <li className="block mr2" key={category}>
+      <div
+        className={classNames('filter-list', { active: category === categorySelected })}
+        onClick={handleCategoryChange(category)}
+        onKeyPress={handleCategoryChange(category)}
+        role="presentation"
+      >
+        {category}
+      </div>
+    </li>
+  ));
+
+  const reportCard = reports.map(({ fields, sys }) => {
+    const bannerImage = fields.banner
+    && fields.banner.fields.visualMedia
+    && fields.banner.fields.visualMedia.fields.file.url;
+    const contentPreview = fields.contentPreview
+      && fields.contentPreview.fields.previewCopy;
+    const reportUrl = !fields.reportUrl
+      ? fields.reportFile && fields.reportFile.fields.file.url
+      : fields.reportUrl;
     return (
-      <Layout>
-        <div className="hero-banner--default hero-banner--impact full-width-wrap">
-          <div className="flex flex-wrap items-center full-height">
-            <div className="banner-wrapper">
-              <h1>
-                <span className="highlight-text">
-                  <em>
-                    Reports
-                    <br />
-                    <span className="scratch-underline">&nbsp;</span>
-                  </em>
-                </span>
-              </h1>
-            </div>
-          </div>
-        </div>
-        <section className="relative">
-          <div className="scratch-overlay-wrapper top-scratch bg-white" />
-          {reportsToShow && (
-            <div className="wrap py3">
-              <div className="filter-list-container">
-                <h4 className="c-brand-primary py2 f-15 px2 border border-radius mt3">Category</h4>
-                <ul className="flex flex-wrap">{this.getCategoryLinks()}</ul>
-              </div>
-              <div className="grid reports-grid mb4">
-                {reportsToShow.map((report) => <Report key={report.slug} report={report} />)}
-              </div>
-            </div>
-          )}
-        </section>
-      </Layout>
+      <Report
+        key={sys.id}
+        bannerImage={bannerImage}
+        title={fields.title}
+        reportUrl={reportUrl}
+        contentPreview={contentPreview}
+      />
     );
-  }
-}
+  });
+
+  return (
+    <Layout>
+      <div className={styles.heroBannerReports}>
+        <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
+          <strong>Reports</strong>
+        </Title>
+      </div>
+      {reports && (
+        <>
+          <div className={styles.filterListContainer}>
+            <Title type="h5Title">
+              Category
+            </Title>
+            <ul>{categoryLinks}</ul>
+          </div>
+          <div className={styles.reportsGrid}>
+            {reportCard}
+          </div>
+        </>
+      )}
+    </Layout>
+  );
+};
+
+
+Reports.getInitialProps = async () => {
+  const client = contentfulServer();
+  const entries = await client.then((response) => response);
+
+  const filteredDate = sortDates(entries);
+  const filteredReports = entries.filter((entry) => (
+    entry.fields.publishDate.indexOf(filteredDate) === -1
+    || !filteredDate
+  ));
+  const getReportsPosts = filteredReports.filter((entry) => (entry.fields.contentTag.fields.name === 'report'));
+
+  return { entries: getReportsPosts };
+};
+
+const SysShape = PropTypes.shape({
+  id: PropTypes.string,
+});
+
+Reports.defaultProps = {
+  entries: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+Reports.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    contentType: PropTypes.string,
+    contentTag: PropTypes.shape({
+      name: PropTypes.string,
+      sys: SysShape,
+    }),
+    banner: PropTypes.shape({
+      displayType: PropTypes.string,
+      heading: PropTypes.shape({
+        headingText: PropTypes.string,
+        type: PropTypes.string,
+        sys: SysShape,
+      }),
+      visualMedia: PropTypes.shape({
+        file: PropTypes.shape({
+          url: PropTypes.string,
+          fileName: PropTypes.string,
+          contentType: PropTypes.string,
+        }),
+        title: PropTypes.string,
+        sys: SysShape,
+      }),
+      sys: SysShape,
+    }),
+    contentCreator: PropTypes.shape({
+      authorName: PropTypes.string,
+      supportAuthorName: PropTypes.string,
+      sys: SysShape,
+    }),
+    publishDate: PropTypes.string,
+    seoAndMetaTags: PropTypes.shape({
+      platformMetaTags: PropTypes.arrayOf(PropTypes.shape({
+        sys: SysShape,
+      })),
+      sys: SysShape,
+    }),
+    contentPreview: PropTypes.shape({
+      displayType: PropTypes.string,
+      previewCopy: PropTypes.string,
+      title: PropTypes.string,
+      visualMedia: PropTypes.shape({
+        sys: SysShape,
+      }),
+      visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
+        sys: SysShape,
+      })),
+    }),
+    contentCards: PropTypes.arrayOf(PropTypes.shape({
+      Type: PropTypes.string,
+      displayType: PropTypes.string,
+      visualMedia: PropTypes.shape({
+        sys: SysShape,
+      }),
+      videoMedia: PropTypes.string,
+      contentCopy: PropTypes.string,
+      sys: SysShape,
+    })),
+  })),
+};
 
 export default Reports;
