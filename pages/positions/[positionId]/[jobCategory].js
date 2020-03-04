@@ -128,9 +128,10 @@ const PositionsEntry = () => {
 
   const handleSubmit = async () => {
     let attachments = [];
-    const uploadedAttachments = state.jobForm.attachments
-      .map((attach) => attach.filename.substr(4));
-    const attachmentValidation = state.job.requiredDocuments
+    const uploadedAttachments = state.jobForm && state.jobForm.attachments
+      ? state.jobForm.attachments.map((attach) => attach.filename.substr(4))
+      : [];
+    const attachmentValidation = state.job && state.job.requiredDocuments
       ? state.job.requiredDocuments.filter(
         (doc) => uploadedAttachments.indexOf(kebabCase(doc)) === -1,
       )
