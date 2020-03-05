@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
-import Title from 'aime-blueprint/lib/components/title';
-import Button from 'aime-blueprint/lib/components/button';
-import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import styles from './storiesCarousel.module.scss';
-
-// This could be in blueprint, not sure?
+import Banner from '../../banner';
 
 const StoriesCarousel = (props) => {
   const {
-    id,
     title,
     slugTitle,
     bannerImage,
@@ -26,39 +20,21 @@ const StoriesCarousel = (props) => {
     <div
       className={slugTitle}
     >
-      <div
-        className={styles.heroBannerStories}
-        style={{
-          backgroundImage: `url(https:${bannerImage})`,
-        }}
-      >
-        <div
-          className={styles.featuredStory}
-          key={`story-description-${id}`}
-        >
-          <div
-            className={styles.textWrap}
-            key={`carousel-sm-text-wrap-${id}`}
-          >
-            <Title type="h3Title">{title}</Title>
-            {contentPreview && contentPreview.previewCopy
-              ? (
-                <Paragraph>
-                  {`${contentPreview.previewCopy.slice(0, 230)}...`}
-                </Paragraph>
-              )
-              : contentCards && contentCards.slice(0, 1).map((card) => (
-                <Paragraph key={card.sys.id}>
-                  {card.fields.contentCopy
-                      && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
-                </Paragraph>
-              ))}
-            <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
-                Read More
-            </Button>
-          </div>
-        </div>
-      </div>
+      <Banner
+        title={title}
+        buttonText="Read More"
+        bannerImage={bannerImage}
+        handleClick={handleClick}
+        copy={contentPreview && contentPreview.previewCopy
+          ? (
+            `${contentPreview.previewCopy.slice(0, 230)}...`
+          )
+          : contentCards && contentCards.slice(0, 1).map((card) => (
+            card.fields.contentCopy
+              && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)
+
+          ))}
+      />
     </div>
   );
 };
@@ -69,7 +45,6 @@ StoriesCarousel.defaultProps = {
 };
 
 StoriesCarousel.propTypes = {
-  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   slugTitle: PropTypes.string.isRequired,
   bannerImage: PropTypes.string,
