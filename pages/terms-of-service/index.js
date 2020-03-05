@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from 'aime-blueprint/lib/components/title';
 import PropTypes from 'prop-types';
-import contentfulServer from '../../api/contentfulStories';
+import contentfulServer from '../../api/contentfulPosts';
 import Layout from '../../hocs/basicLayout';
 
 import TermPhraseCard from '../../components/termPhraseCard';
