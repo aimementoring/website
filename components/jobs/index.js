@@ -36,12 +36,10 @@ const Jobs = ({
   const buildFilter = () => {
     const isExpiredIfExpire = "IF({Expire}='', TRUE(), IS_AFTER({Expire}, NOW()))";
     const isPublishedIfPublish = "OR({Publish}!='', IS_BEFORE({Publish}, NOW()))";
-    const countryAvailable = `OR((FIND("${state.countrySelected.toLowerCase()}", AvailableIn) > 0), (FIND("global", AvailableIn) > 0))`;
     return `AND(${compact([
       state.currentFilter,
       isExpiredIfExpire,
       isPublishedIfPublish,
-      countryAvailable,
     ]).join(', ')})`;
   };
 
