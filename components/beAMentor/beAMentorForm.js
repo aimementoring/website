@@ -14,16 +14,15 @@ const BeAMentorForm = () => (
     />
     <Title type="h5Title">Mentor applications are now open!</Title>
     <Paragraph>
-      <br />
-      <mark>Excited? We are too! </mark>
-      <br />
-      <br />
-      Mentors applications are up and running.
-      <br />
-      <br />
-      If you are new to mentoring with us, create an AIME account and we`&apos;`ll
-      guide through the application process. If you are a returning mentor,
-      welcome back. Sign in to your account to finalise your application for
+      Excited? We are too!&nbsp;
+      <mark>
+        Mentors applications are up and running.
+      </mark>
+    </Paragraph>
+    <Paragraph>
+      If you are new to mentoring with us, create an AIME account and we'll
+      guide through your application process. If you are a returning mentor,
+      welcome back. Sign in to your account below and finalise your application for
       this year.
     </Paragraph>
     <Button
