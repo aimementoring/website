@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './logo';
 import Anchor from '../../common/link';
-import { isClientSide } from '../../../utils/utilities';
+import isClientSide from '../../../utils/isClientSide';
 import MobileMenu from '../mobileMenu';
 import styles from './goingGlobalHeader.module.scss';
 
