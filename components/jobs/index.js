@@ -7,7 +7,8 @@ import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
-import { isClientSide, sortArrayOfObjectByField } from '../../utils/utilities';
+import { sortArrayOfObjectByField } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 
 import Select from '../commonElements/reactSelect';
 
