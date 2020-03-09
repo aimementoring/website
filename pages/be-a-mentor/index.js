@@ -5,7 +5,7 @@ import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { uploadMentorEOI, getUniversities } from '../../services/portalApi';
 import bugsnagClient from '../../utils/bugsnag';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import { getAllCountries, detectCountry } from '../../utils/country';
 import {
   getCountriesAccordingToAimeProgram,
