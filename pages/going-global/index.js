@@ -5,7 +5,7 @@ import React, {
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import scrollToComponent from '../../utils/scrollToComponent';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import Layout from '../../hocs/basicLayout';
 import styles from './goingGlobal.module.scss';
 
