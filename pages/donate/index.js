@@ -6,7 +6,7 @@ import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../services/donations';
 import bugsnagClient from '../../utils/bugsnag';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import './donate.scss';
 
 const Trapezoid = dynamic(() => import('../../components/donateTrapezoid'));
