@@ -149,6 +149,7 @@ const PositionsEntry = () => {
         job_name: state.job.name,
         job_location: state.job.city,
         submissionmessage: 'jobs',
+        stage: 'Initial Review',
       },
     });
     if (answer.data === 'OK') {
