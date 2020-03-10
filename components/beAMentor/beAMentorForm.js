@@ -14,20 +14,21 @@ const BeAMentorForm = () => (
     />
     <Title type="h5Title">Mentor applications are open!</Title>
     <Paragraph>
-      Excited? We are too!&nbsp;
+      The doors to the AIME Dream Factory are now wide open and we're
+      hoping to find many incredible individuals passing through, striving
+      to be a mentor. Trust us when we say,&nbsp;
       <mark>
-        Mentors applications are now up and running
+        the opportunities when you mentor at AIME are extensive
       </mark>
-      &nbsp;and all you have to do is <strong>apply now</strong>.
+      &nbsp;and go further than you would think.
     </Paragraph>
     <Paragraph>
-      You may have mentored with us in the past, in which case you already
-      know about the endless opportunities that come with mentoring at AIME.
-      Sign into your account below to submit your application for this year.
-    </Paragraph>
-    <Paragraph>
-      If you are new to mentoring with us, apply now by creating an AIME account
-      and we'll guide through your application process.
+      If you're new to mentoring with us, <strong>apply now</strong>
+      &nbsp;&#8212; it can be an
+      extensive application process but hopefully it's a fun one too.
+      If you've mentored before, sign into your AIME account below and
+      we'll guide you through the remainder of your application.
+      Good luck!
     </Paragraph>
     <br />
     <Button
