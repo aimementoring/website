@@ -12,19 +12,24 @@ const BeAMentorForm = () => (
       src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
       alt="Listen up"
     />
-    <Title type="h5Title">Mentor applications are now open!</Title>
+    <Title type="h5Title">Mentor applications are open!</Title>
     <Paragraph>
       Excited? We are too!&nbsp;
       <mark>
-        Mentors applications are up and running.
+        Mentors applications are now up and running
       </mark>
+      &nbsp;and all you have to do is <strong>apply now</strong>.
     </Paragraph>
     <Paragraph>
-      If you are new to mentoring with us, create an AIME account and we'll
-      guide through your application process. If you are a returning mentor,
-      welcome back. Sign in to your account below and finalise your application for
-      this year.
+      You may have mentored with us in the past, in which case you already
+      know about the endless opportunities that come with mentoring at AIME.
+      Sign into your account below to submit your application for this year.
     </Paragraph>
+    <Paragraph>
+      If you are new to mentoring with us, apply now by creating an AIME account
+      and we'll guide through your application process.
+    </Paragraph>
+    <br />
     <Button
       theme={process.env.REACT_APP_THEME}
       type="link"
