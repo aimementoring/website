@@ -6,8 +6,11 @@ import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
-import Select from '../commonElements/reactSelect';
 import { sortArrayOfObjectByField } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
+
+import Select from '../commonElements/reactSelect';
+
 
 const JobFilter = dynamic(() => import('./JobFilter'));
 const JobPreview = dynamic(() => import('./JobPreview'));
@@ -73,7 +76,7 @@ const Jobs = ({
   }, []);
 
   const handleAutoScroll = () => {
-    if (state.jobsLoaded && redirectRef.current) {
+    if (isClientSide() && state.jobsLoaded && redirectRef.current) {
       window.scrollTo(0, redirectRef.current.offsetTop);
     }
   };
