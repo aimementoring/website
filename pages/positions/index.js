@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import './positions.scss';
 
 const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
