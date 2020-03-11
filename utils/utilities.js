@@ -1,8 +1,6 @@
 import moment from 'moment';
 import { getFromStorage } from './localStorage';
 
-export const isClientSide = () => typeof window !== 'undefined';
-
 export function getCountrySite() {
   return getFromStorage('country_code_selected');
 }
