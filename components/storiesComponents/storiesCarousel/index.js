@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
-import Banner from '../../banner';
+import { StoryBanner } from '../../banner/index';
 
 const StoriesCarousel = (props) => {
   const {
@@ -20,7 +20,7 @@ const StoriesCarousel = (props) => {
     <div
       className={slugTitle}
     >
-      <Banner
+      <StoryBanner
         title={title}
         buttonText="Read More"
         bannerImage={bannerImage}
