@@ -50,7 +50,7 @@ const StoriesCarousel = (props) => {
               : contentCards && contentCards.slice(0, 1).map((card) => (
                 <Paragraph key={card.sys.id}>
                   {card.fields.contentCopy
-                      && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
+                      && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>[^\]0-9]*/g, '')}…`)}
                 </Paragraph>
               ))}
             <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
