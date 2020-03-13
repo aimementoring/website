@@ -6,6 +6,8 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import { SimpleBanner } from '../../components/banner/index';
 import bugsnagClient from '../../utils/bugsnag';
+import isClientSide from '../../utils/isClientSide';
+
 import './index.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -17,7 +19,7 @@ const ErrorPage = () => {
         /* eslint no-param-reassign: "off" */
         report.severity = 'info';
         report.groupingHash = Router.pathname;
-        if (typeof window !== 'undefined') {
+        if (isClientSide()) {
           report.metaData = {
             request: { referer: document.referrer },
           };
