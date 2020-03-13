@@ -1,28 +1,20 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
+import { SimpleBanner } from '../../components/banner/index';
 import CASE_STUDIES from '../../constants/caseStudiesList';
 
 const CaseStudyBox = dynamic(() => import('../../components/caseStudyBox'));
 
 const CaseStudies = () => (
   <Layout>
-    <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
-      <div className="flex flex-wrap items-center full-height">
-        <div className="banner-wrapper">
-          <h1>
-            <span className="highlight-text">
-              <em>
-                Case Studies
-                <br />
-                <span className="scratch-underline">&nbsp;</span>
-              </em>
-            </span>
-          </h1>
-        </div>
-      </div>
-    </div>
-
+    <SimpleBanner
+      title={(<strong>Case Studies</strong>)}
+      titleType="headingLockup"
+      titleStyleClass="bannerHeadingAmbassadors"
+      bannerContainerClass="hero-banner--default hero-banner--case-studies full-width-wrap"
+      bannerWrapperClass="flex flex-wrap items-center full-height"
+    />
     <section className="py3 relative">
       <div className="scratch-overlay-wrapper top-scratch bg-white" />
 
