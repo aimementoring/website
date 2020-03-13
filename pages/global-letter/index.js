@@ -2,6 +2,7 @@ import React from 'react';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
+import { SimpleBanner } from '../../components/banner/index';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -15,28 +16,28 @@ for (let i = 0; i < 3; i += 1) { // To get rid of the hardoced S3 bucket that wa
 }
 const GlobalLetter = () => (
   <Layout>
-    <div className="hero-banner--default full-width-wrap">
-      <div className="flex flex-wrap items-center full-height">
-        <div className="banner-wrapper subpage-banner center">
-          <h1>
-            <span className="pre-text">Open letter to</span>
-            <span className="highlight-text">
-              <em>
+    <SimpleBanner
+      title={(
+        <h1>
+          <span className="pre-text">Open letter to</span>
+          <span className="highlight-text">
+            <em>
                 Universities
-                {' '}
-                <br />
-                {' '}
+              {' '}
+              <br />
+              {' '}
                 Around the World
-              </em>
-            </span>
-            <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
+            </em>
+          </span>
+          <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
               &nbsp;
-            </span>
-          </h1>
-        </div>
-      </div>
-    </div>
-
+          </span>
+        </h1>
+      )}
+      bannerContainerClass="hero-banner--default full-width-wrap"
+      bannerWrapperClass="flex flex-wrap items-center full-height"
+      bannerContentWrapperClass="banner-wrapper subpage-banner center"
+    />
     <div className="matrix-general">
       <div className="wrap-md mb0 md-my3 lg-my3 clearfix">
         <p className="destroy-p subtitle-basic center mx-auto">
