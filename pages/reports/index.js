@@ -6,6 +6,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import contentfulServer from '../../api/contentfulPosts';
 import { sortDates } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
+import { SimpleBanner } from '../../components/banner/index';
 import styles from './reports.modules.scss';
 
 const Report = dynamic(() => import('../../components/report'));
@@ -68,11 +69,11 @@ const Reports = ({ entries }) => {
 
   return (
     <Layout>
-      <div className={styles.heroBannerReports}>
-        <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
-          <strong>Reports</strong>
-        </Title>
-      </div>
+      <SimpleBanner
+        title={<strong>Reports</strong>}
+        titleType="headingLockup"
+        bannerContainerClass={styles.heroBannerReports}
+      />
       {reports && (
         <>
           <div className={styles.filterListContainer}>
