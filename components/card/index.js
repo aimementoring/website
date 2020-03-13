@@ -55,9 +55,9 @@ const Card = (props) => {
               >
                 {title
             && (
-              <Title type="h5Title">{title}</Title>
+              <Title theme={process.env.REACT_APP_THEME} type="h5Title">{title}</Title>
             )}
-                <Paragraph>
+                <Paragraph theme={process.env.REACT_APP_THEME}>
                   {datePublished
               && (
                 <span key={`pr1-story-entry-${cardId}`} className={styles.postDate}>
@@ -78,12 +78,12 @@ const Card = (props) => {
                 </Paragraph>
                 {contentPreview
             && (
-              <Paragraph>
+              <Paragraph theme={process.env.REACT_APP_THEME}>
                 {contentPreview}
               </Paragraph>
             )}
                 <div>
-                  <Button theme="rainbow" type="button" className={styles.articleTileLink}>
+                  <Button theme={process.env.REACT_APP_THEME} type="button" className={styles.articleTileLink}>
                     {buttonText}
                   </Button>
                 </div>
@@ -115,9 +115,9 @@ const Card = (props) => {
               >
                 {title
             && (
-              <Title type="h5Title">{title}</Title>
+              <Title theme={process.env.REACT_APP_THEME} type="h5Title">{title}</Title>
             )}
-                <Paragraph>
+                <Paragraph theme={process.env.REACT_APP_THEME}>
                   {datePublished
               && (
                 <span key={`pr1-story-entry-${cardId}`} className={styles.postDate}>
@@ -138,12 +138,12 @@ const Card = (props) => {
                 </Paragraph>
                 {contentPreview
             && (
-              <Paragraph>
+              <Paragraph theme={process.env.REACT_APP_THEME}>
                 {contentPreview}
               </Paragraph>
             )}
                 <div>
-                  <Button theme="rainbow" type="button" className={styles.articleTileLink}>
+                  <Button theme={process.env.REACT_APP_THEME} type="button" className={styles.articleTileLink}>
                     {buttonText}
                   </Button>
                 </div>
