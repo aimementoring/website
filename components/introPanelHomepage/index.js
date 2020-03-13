@@ -23,26 +23,34 @@ const IntroPanelHomepage = () => (
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Our site is in draft mode as we updated it to reflect
-              AIME in 2020 & beyond. We’re imagining a fairer world
-              by using our imagination curriculum and mentoring to create
-              change for marginalised youth.
+            We now have a plan to deliver AIME remotely if COVID-19 forces further school and university closures - click the partner link above and be a part of sharing AIME&apos;s Imagination Factory & Mentoring knowledge with kids stuck at home across the world.
             </Paragraph>
             <Paragraph>
               <mark>Wanna see how?</mark>
-              &nbsp;Check out our plan to bring it to life
-              (max 10 minute read)
+              &nbsp;Check out our plan to take our Imagination Factory direct to homes as part of the work towards our 3 year strategy.
             </Paragraph>
             <Paragraph>
-              - JMB
+              - Jack MB, AIME CEO & Founder, 13 March 2020
             </Paragraph>
+            <Anchor
+              to="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376269"
+              type="link"
+              target="_blank"
+            >
+              <Button theme={process.env.REACT_APP_THEME} aria-label="cta">
+                View COVID-19 Plan
+              </Button>
+            </Anchor>
+
+            <br />
+
             <Anchor
               to="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing"
               type="link"
               target="_blank"
             >
               <Button theme={process.env.REACT_APP_THEME} aria-label="cta">
-                View Strategy
+                View 3 Year Strategy
               </Button>
             </Anchor>
           </div>
