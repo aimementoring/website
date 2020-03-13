@@ -53,11 +53,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
             </strong>
           </Title>
           <Paragraph>
-            Do you work for or lead an organisation? Maybe you want to
-            partner with us? We are currently working through our
-            partnership options for 2020 and beyond - We’re open
-            to build partnerships in many areas, and have structures
-            in place for many already.
+            Do you work for or lead an organisation? Maybe you want to partner with us? We are currently working through our partnership options for 2020 and beyond, including specific activations around COVID-19  - We’re open to build partnerships in many areas, and have structures in place for many already.
           </Paragraph>
           <Paragraph>
             If you want to know more get in touch with Helen,
