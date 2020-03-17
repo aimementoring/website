@@ -33,7 +33,7 @@ const BeAMentorForm = () => (
         &nbsp;and hopefully we can share some love with you during this isolated time.
       </Paragraph>
 
-      <Paragraph>By all means sing up for both and we&apos;ll keep you updated.</Paragraph>
+      <Paragraph>By all means sign up for both and we&apos;ll keep you updated.</Paragraph>
 
     </div>
 
