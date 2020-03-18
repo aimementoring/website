@@ -27,9 +27,15 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
       </div>
       <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
         <img
+          src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
+          alt="Pink Earth"
+          className={styles.dancingIllo}
+        />
+        <img
           src={`${ASSETS_URL}/assets/images/banner/heyhello@2x.jpg`}
           alt="Welcome hello from AIME"
         />
+        <a href="">Watch the episodes</a>
       </div>
     </div>
   </div>

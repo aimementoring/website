@@ -5,7 +5,7 @@
   max-width: 100%;
   width: 100%;
   padding: 1em;
-  margin-top: 5em;
+  margin-top: 6em;
 
   .headingLockup {
     color: $black;
@@ -19,7 +19,7 @@
       top: inherit;
 
       @media screen and (min-width: $md) {
-        font-size: 8rem;
+        // font-size: 8rem;
       }
     }
   }
@@ -31,11 +31,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 75vh;
-  border: 10px solid blue;
-  background-color: $pink;
 
   @media screen and (min-width: $md) {
+    flex-direction: row;
     align-items: center;
     padding: 2em;
   }
@@ -45,7 +43,6 @@
     flex-grow: 1;
     flex-basis: 0;
     width: 70%;
-    border: 1px dashed red;
     clear: both;
     display: flex;
     flex-direction: column;
@@ -54,7 +51,7 @@
   .bannerContent {
     z-index: 1;
     justify-content: flex-end;
-
+    padding-right: 3em;
     p {
       color: $black;
       max-width: 30em;
@@ -63,8 +60,33 @@
   }
 
   .bannerMediaFeature {
-    border: 5px solid $magenta;
     align-self: flex-end;
+    text-align: right;
+    font-family: $body-font-family;
+
+    @media screen and (min-width: $md) {
+      align-self: center;
+      flex-grow: 1.33;
+    }
+
+    .dancingIllo {
+      width: 8em;
+      position: absolute;
+      top: 2em;
+      right: 3em;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: $black;
+      margin-top: 0.5em;
+      transition: $hoverTransition;
+
+      &:hover {
+        color: $magenta;
+      }
+    }
   }
 }
 
