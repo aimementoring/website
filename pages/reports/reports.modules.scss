@@ -1,0 +1,60 @@
+@import "../../styles/base/variables";
+
+.heroBannerReports {
+  display: flex;
+  min-height: 71vh;
+  text-align: center;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
+    no-repeat top center / cover #050301;
+}
+
+.filterListContainer {
+  min-width: 280px;
+  margin-bottom: 2rem;
+  padding: 2em 2em 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+  li {
+    cursor: pointer;
+  }
+}
+}
+
+.reportsGrid {
+  display: grid;
+  grid-gap: 1em;
+  margin: 0 auto;
+  padding-top: 0;
+  flex-wrap: wrap;
+  max-width: 81.25em;
+  padding: 2em 2em 4em;
+  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+}
+
+@media screen and (max-width: $lg) {
+  .filterListContainer {
+    padding: 0 2em 0;
+
+    ul, h5 {
+      display: none;
+      border: 1px solid $brand-primary;
+      margin-top: 0;
+      margin-right: 0;
+      border-radius: 0 0 6px 6px;
+
+      li {
+        cursor: pointer;
+      }
+    }
+
+    &.active ul {
+      display: block;
+    }
+  }
+}
