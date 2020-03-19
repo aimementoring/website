@@ -88,3 +88,7 @@ export const sortDates = (dates) => {
 
   return sortedDatesArray;
 };
+
+export const removeMarkdownLink = (stringValue) => (
+  stringValue.replace(/[*_>[^\]0-9]*/g, '')
+);
