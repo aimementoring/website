@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'aime-blueprint/lib/components/select';
 import { loadUniversities } from '../../services/positions';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import './styles.scss';
 
 const UniversitySelector = ({
