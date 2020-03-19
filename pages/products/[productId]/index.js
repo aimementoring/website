@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { setOnStorage, getFromStorage } from '../../../utils/localStorage';
-import { isClientSide } from '../../../utils/utilities';
 import { SimpleBanner } from '../../../components/banner/index';
+import isClientSide from '../../../utils/isClientSide';
 import Layout from '../../../hocs/basicLayout';
 
 const ProductFull = dynamic(() => import('../../../components/shop/productFull'));
