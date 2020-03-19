@@ -7,6 +7,7 @@ import Anchor from '../../components/common/link';
 import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../services/donations';
 import { SimpleBanner } from '../../components/banner/index';
 import bugsnagClient from '../../utils/bugsnag';
+import isClientSide from '../../utils/isClientSide';
 import './donate.scss';
 
 const Trapezoid = dynamic(() => import('../../components/donateTrapezoid'));
@@ -48,7 +49,7 @@ class Donate extends PureComponent {
 
     const mains = Object.keys(MAIN_CAMPAIGNS);
     let pickedCampaign = '';
-    if (typeof window !== 'undefined' && Router.query && Router.query.campaign) {
+    if (isClientSide() && Router.query && Router.query.campaign) {
       pickedCampaign = Router.query.campaign;
     }
 
