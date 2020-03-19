@@ -4,7 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
-import { formatDate } from '../../../utils/utilities';
+import { formatDate, removeMarkdownLink } from '../../../utils/utilities';
 import Anchor from '../../common/link';
 import styles from './storiesContent.module.scss';
 
@@ -67,7 +67,7 @@ const StoriesContent = (props) => {
                 : contentCards && contentCards.slice(0, 1).map((card) => (
                   card.fields.contentCopy
                   && (
-                    `${card.fields.contentCopy.slice(0, 230).replace(/[*_>]*/g, '')}...`
+                    `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
                   )))}
             </Paragraph>
             <div>
