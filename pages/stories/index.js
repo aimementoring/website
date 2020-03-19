@@ -34,14 +34,14 @@ const Stories = (props) => {
         && entry.fields.banner.fields.visualMedia
         && entry.fields.banner.fields.visualMedia.fields
         && entry.fields.banner.fields.visualMedia.fields.file.url;
-
+      const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
         <StoriesCarousel
           slugTitle={slug}
           key={entry.sys.id}
           bannerImage={bannerImage}
           title={entry.fields.title && entry.fields.title}
-          contentPreview={entry.fields.contentPreview}
+          contentPreview={contentPreview}
           contentCards={entry.fields.contentCards}
         />
       );
