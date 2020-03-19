@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 
-const SimpleBanner = (props) => {
+const ImageBanner = (props) => {
   const {
     copy,
     title,
@@ -44,36 +44,37 @@ const SimpleBanner = (props) => {
   );
 };
 
-SimpleBanner.defaultProps = {
+ImageBanner.defaultProps = {
   copy: '',
-  title: null,
+  title: null || '',
   titleType: '',
-  bannerImage: '',
-  imageClass: null,
+  imageClass: '',
   imageAlt: '',
   imageStyle: null,
   imageSrc: '',
-  titleStyleClass: null,
-  bannerWrapperClass: null,
-  paragraphStyleClass: null,
-  bannerContainerClass: null,
-  bannerContentWrapperClass: null,
+  titleStyleClass: '',
+  bannerWrapperClass: '',
+  paragraphStyleClass: '',
+  bannerContainerClass: '',
+  bannerContentWrapperClass: '',
 };
 
-SimpleBanner.propTypes = {
+ImageBanner.propTypes = {
   copy: PropTypes.string,
-  title: PropTypes.node,
+  title: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string,
+  ]),
   titleType: PropTypes.string,
-  bannerImage: PropTypes.string,
-  imageClass: PropTypes.shape(PropTypes.object),
+  imageClass: PropTypes.string,
   imageAlt: PropTypes.string,
-  imageStyle: PropTypes.shape(PropTypes.object),
+  imageStyle: PropTypes.shape({}),
   imageSrc: PropTypes.string,
-  titleStyleClass: PropTypes.shape(PropTypes.object),
-  paragraphStyleClass: PropTypes.shape(PropTypes.object),
-  bannerWrapperClass: PropTypes.shape(PropTypes.object),
-  bannerContainerClass: PropTypes.shape(PropTypes.object),
-  bannerContentWrapperClass: PropTypes.shape(PropTypes.object),
+  titleStyleClass: PropTypes.string,
+  paragraphStyleClass: PropTypes.string,
+  bannerWrapperClass: PropTypes.string,
+  bannerContainerClass: PropTypes.string,
+  bannerContentWrapperClass: PropTypes.string,
 };
 
-export default SimpleBanner;
+export default ImageBanner;
