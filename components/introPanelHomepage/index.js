@@ -4,6 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../common/link';
+import { ImageBanner } from '../banner/index';
 import './index.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
@@ -53,11 +54,15 @@ const IntroPanelHomepage = () => (
             <VideoButton
               video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
             />
-            <div className="welcomeVideo video-banner flex block rounded">
-              <div className="video-banner-overlay center">
-                <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
-              </div>
-            </div>
+            <ImageBanner
+              paragraphStyleClass="videoCaption"
+              bannerContainerClass="welcomeVideo video-banner flex block rounded"
+              bannerContentWrapperClass="video-banner-overlay center"
+              imageClass="center mx-auto mt2"
+              imageAlt=""
+              imageStyle={{ width: '70px' }}
+              imageSrc={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
+            />
             <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
           </div>
         </div>
