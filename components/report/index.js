@@ -1,78 +1,64 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import styles from './report.module.scss';
 
-class Report extends PureComponent {
-  getReadMoreLink = () => {
-    const { report } = this.props;
-    switch (report.type.handle) {
-    case 'fullPageReport':
-      return report.url;
-    case 'pdfReport':
-      if (report.attachment && report.attachment.url) {
-        return report.attachment.url;
-      }
-      return report.urlHandle;
-    default:
-      return report.url;
-    }
-  };
+const Picture = dynamic(() => import('../picture'));
 
-  render() {
-    const { report } = this.props;
-    const readMoreLink = this.getReadMoreLink();
-    const bannerImageUrl = report.bannerImageUrl && report.bannerImageUrl[0]
-      ? report.bannerImageUrl[0].image
-      : '';
-    return (
-      <article className="article-tile">
-        <a
-          aria-label="banner-image"
-          href={readMoreLink}
-          className="article-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img className="rounded-top article-image" src={bannerImageUrl} alt="" />
-          {/* {% for tag in report.reportTags.limit(2).all() %}
-            <p className="featured-story--tag">{{tag.title}}</p>
-          {% endfor %} */}
-          <div className="article-description">
-            <h1 className="article-tile-title pt1">{report.title}</h1>
-            <p className="article-tile-label">{report.previewText}</p>
-            <a
-              href={readMoreLink}
-              className="article-tile-link basic-btn italic"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="read more"
-            >
-              Read more
-              {' '}
-              <i className="material-icons">&#xE315;</i>
-            </a>
+const Report = (props) => {
+  const {
+    title, reportUrl, bannerImage, contentPreview,
+  } = props;
+
+  return (
+    <article key={`article-report-${title}`} className={styles.articleTile}>
+      <a
+        aria-label="banner-image"
+        href={reportUrl}
+        className={styles.articleLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div>
+          <Picture
+            className={styles.articleImage}
+            thumbnail
+            image={{
+              image: `https:${bannerImage}?fl=progressive`,
+              title,
+              thumbnail: `https:${bannerImage}?fl=progressive`,
+            }}
+          />
+          <div className={styles.articleDescription}>
+            <Title type="h5Title">{title}</Title>
+            <Paragraph className={styles.articleTileLabel}>
+              {contentPreview && (
+                `${contentPreview.slice(0, 230)}...`)}
+            </Paragraph>
+            <div>
+              <Button
+                type="button"
+                theme="rainbow"
+                className={styles.articleTileLink}
+              >
+                READ MORE
+              </Button>
+            </div>
           </div>
-        </a>
-      </article>
-    );
-  }
-}
+        </div>
+      </a>
+    </article>
+  );
+};
 
 Report.propTypes = {
-  report: PropTypes.shape({
-    title: PropTypes.string,
-    previewText: PropTypes.string,
-    bannerImageUrl: PropTypes.arrayOf(PropTypes.shape({
-      image: PropTypes.string,
-    })),
-    urlHandle: PropTypes.string,
-    url: PropTypes.string,
-    attachment: PropTypes.shape({
-      url: PropTypes.string,
-    }),
-    type: PropTypes.shape({
-      handle: PropTypes.string,
-    }),
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  reportUrl: PropTypes.string.isRequired,
+  bannerImage: PropTypes.string.isRequired,
+  contentPreview: PropTypes.string.isRequired,
 };
 
 export default Report;
