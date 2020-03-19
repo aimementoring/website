@@ -76,10 +76,11 @@ const Reports = ({ entries }) => {
         titleType="headingLockup"
         bannerContainerClass={styles.heroBannerReports}
       />
+      {/* @todo LARA: REMOVE FROM HERE LATER */}
       <CarouselCards />
       <div className={styles.carouselContainer}>
         <Card
-          href="/"
+          urlTo="/"
           image="//images.ctfassets.net/iz0aikshgysc/2CD4XNN4YwS3x3ThGFqWAd/6b777014c886c7c16c6e03eafa8dcfe1/kpmg-ecom.png"
           title="SUNDAY KINDNESS"
           publishDate="2019-07-05"
@@ -89,7 +90,7 @@ const Reports = ({ entries }) => {
           type="spotlight"
         />
         <Card
-          href="/"
+          urlTo="/"
           image="//images.ctfassets.net/iz0aikshgysc/5OlLGV3iEBjmEyS4uzUOMg/bf1c3fe0316edebbca69acc5d0b9f5df/aimefp.png"
           video="https://player.vimeo.com/external/220543875.m3u8?s=fef0be1439c6cd9179ade0e502dea995e0a75a8f"
           title="THE IMAGINATION DECLARATION"
@@ -99,7 +100,7 @@ const Reports = ({ entries }) => {
           type="spotlight"
         />
         <Card
-          href="/"
+          urlTo="/"
           image="//images.ctfassets.net/iz0aikshgysc/3yYQNkBDs60DJdyniHhycL/8fbfe825b0025bd1abf871c1f1cdbf79/no-shame-report.jpg"
           title="THE IMAGINATION DECLARATION"
           publishDate="2019-07-05"
@@ -109,7 +110,7 @@ const Reports = ({ entries }) => {
           type="spotlight"
         />
         <Card
-          href="/"
+          urlTo="/"
           image="//images.ctfassets.net/iz0aikshgysc/2CD4XNN4YwS3x3ThGFqWAd/6b777014c886c7c16c6e03eafa8dcfe1/kpmg-ecom.png"
           title="SUNDAY KINDNESS"
           publishDate="2019-07-05"
@@ -119,6 +120,7 @@ const Reports = ({ entries }) => {
           type="spotlight"
         />
       </div>
+      {/* REMOVE UNTIL HERE LATER */}
       {reports && (
         <>
           <div className={styles.filterListContainer}>

@@ -35,9 +35,10 @@ const Card = (props) => {
   };
   if (href) anchorProps.target = '_blank';
   const withVideo = video && image;
+  const ContainerComponent = withVideo ? 'div' : Anchor;
 
   return (
-    <Anchor {...anchorProps}>
+    <ContainerComponent {...anchorProps}>
       <div>
         {withVideo && (
           <VideoButton video={video} />
@@ -98,7 +99,7 @@ const Card = (props) => {
           </div>
         </div>
       </div>
-    </Anchor>
+    </ContainerComponent>
   );
 };
 
