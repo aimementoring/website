@@ -1,26 +1,28 @@
 import React from 'react';
-import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
+import { SimpleBanner } from '../../components/banner/index';
 import './styles.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const Founder = () => (
   <Layout>
-    <div className="hero-banner--default hero-banner--founder full-width-wrap">
-      <div className="flex flex-wrap items-center full-height">
-        <div className="banner-wrapper">
-          <Title type="headingLockup" className="founderBannerHeader" theme={process.env.REACT_APP_THEME}>
-            Our
-            <strong>
+    <SimpleBanner
+      title={(
+        <>
+          Our
+          <strong>
               Founder &amp; CEO
-            </strong>
-          </Title>
-        </div>
-      </div>
-    </div>
-
+          </strong>
+        </>
+      )}
+      titleType="headingLockup"
+      titleStyleClass="founderBannerHeader"
+      bannerWrapperClass="hero-banner--default hero-banner--founder full-width-wrap"
+      bannerContentWrapperClass="flex flex-wrap items-center full-height"
+      bannerContentClass="banner-wrapper"
+    />
     <article>
       <div className="plainContentWrapper">
         <Paragraph>
@@ -60,17 +62,33 @@ const Founder = () => (
           his philosophy, and his vision for a fairer world. He was MJ Bale’s
           Man of Character in 2014 and won Australia’s Happy Harold Education
           Award in 2013. In 2010, five years after founding AIME, he received
-          the <a href="https://hrawards.humanrights.gov.au/2010-human-rights-medal-and-awards-winners" target="_blank">
+          the
+          {' '}
+          <a href="https://hrawards.humanrights.gov.au/2010-human-rights-medal-and-awards-winners" target="_blank">
             Australian Human Rights Medal
-          </a>, <a href="https://www.gq.com.au/men-of-the-year/previous-winners/jack-manning-bancroft/news-story/105819449424e7c085ba1527b80f4fda" target="_blank">
+          </a>
+,
+          {' '}
+          <a href="https://www.gq.com.au/men-of-the-year/previous-winners/jack-manning-bancroft/news-story/105819449424e7c085ba1527b80f4fda" target="_blank">
             GQ Man of Inspiration
-          </a>, New South Wales <a href="https://www.australianoftheyear.org.au/alumni/connect/jack-manning-bancroft/" target="_blank">
+          </a>
+, New South Wales
+          {' '}
+          <a href="https://www.australianoftheyear.org.au/alumni/connect/jack-manning-bancroft/" target="_blank">
             Young Australian of the Year
-          </a>, and the University of Sydney <a href="https://sydney.edu.au/news/84.html?newsstoryid=5978" target="_blank">
+          </a>
+, and the University of Sydney
+          {' '}
+          <a href="https://sydney.edu.au/news/84.html?newsstoryid=5978" target="_blank">
             Young Alumni of the Year
-          </a> awards. Most recently Jack was the <a href="http://www.mediaring.com.au/news/indigenous-entrepreneur-becomes-australias-youngest-honorary-doctor/#more-981" target="_blank">
+          </a>
+          {' '}
+awards. Most recently Jack was the
+          {' '}
+          <a href="http://www.mediaring.com.au/news/indigenous-entrepreneur-becomes-australias-youngest-honorary-doctor/#more-981" target="_blank">
             youngest person in Australian history to receive an Honorary Doctorate
-          </a>.
+          </a>
+.
         </Paragraph>
         <Paragraph>
           Jack holds a BA in Media and Communications from the University of
@@ -82,8 +100,18 @@ const Founder = () => (
           the University of South Australia.
         </Paragraph>
         <Paragraph>
-          Jack is also a published children’s author with <a href="https://www.hardiegrant.com/au/publishing/bookfinder/book/the-eagle-inside-by-jack-manning-bancroft/9781760125271" target="_blank">The Eagle Inside</a>,
-          and has written <a href="https://www.goodreads.com/book/show/45899178-the-mentor" target="_blank">The Mentor</a> and <a href="https://www.amazon.co.uk/Mentoring-Fairer-World-Jack-Manning-Bancroft/dp/1743793537" target="_blank">Mentoring - The Key to a Fairer World</a>.
+          Jack is also a published children’s author with
+          {' '}
+          <a href="https://www.hardiegrant.com/au/publishing/bookfinder/book/the-eagle-inside-by-jack-manning-bancroft/9781760125271" target="_blank">The Eagle Inside</a>
+,
+          and has written
+          {' '}
+          <a href="https://www.goodreads.com/book/show/45899178-the-mentor" target="_blank">The Mentor</a>
+          {' '}
+and
+          {' '}
+          <a href="https://www.amazon.co.uk/Mentoring-Fairer-World-Jack-Manning-Bancroft/dp/1743793537" target="_blank">Mentoring - The Key to a Fairer World</a>
+.
         </Paragraph>
       </div>
 
