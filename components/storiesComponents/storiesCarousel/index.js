@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import { StoryBanner } from '../../banner/index';
+import { removeMarkdownLink } from '../../../utils/utilities';
 
 const StoriesCarousel = (props) => {
   const {
@@ -17,9 +18,7 @@ const StoriesCarousel = (props) => {
   };
 
   return (
-    <div
-      className={slugTitle}
-    >
+    <div className={slugTitle}>
       <StoryBanner
         title={title}
         buttonText="Read More"
@@ -31,8 +30,7 @@ const StoriesCarousel = (props) => {
           )
           : contentCards && contentCards.slice(0, 1).map((card) => (
             card.fields.contentCopy
-              && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)
-
+              && (`${removeMarkdownLink(card.fields.contentCopy.slice(0, 240))} …`)
           ))}
       />
     </div>
