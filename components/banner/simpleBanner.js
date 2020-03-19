@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
-import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 
 const SimpleBanner = (props) => {
@@ -16,8 +15,9 @@ const SimpleBanner = (props) => {
     paragraphStyleClass,
     bannerContainerClass,
     bannerContentWrapperClass,
-  } = props;
 
+  } = props;
+  console.log('SimpleBanner -> bannerContentWrapperClass', typeof bannerContentWrapperClass);
   return (
     <div className={bannerContainerClass}>
       <div className={bannerWrapperClass}>
@@ -53,12 +53,12 @@ SimpleBanner.defaultProps = {
   title: null || '',
   titleType: '',
   button: null,
-  titleStyleClass: null,
+  titleStyleClass: '',
   bannerContentClass: '',
-  bannerWrapperClass: null,
-  paragraphStyleClass: null,
-  bannerContainerClass: null,
-  bannerContentWrapperClass: null,
+  bannerWrapperClass: '',
+  paragraphStyleClass: '',
+  bannerContainerClass: '',
+  bannerContentWrapperClass: '',
 };
 
 SimpleBanner.propTypes = {
@@ -69,12 +69,12 @@ SimpleBanner.propTypes = {
   ]),
   titleType: PropTypes.string,
   button: PropTypes.node,
-  bannerContentClass: PropTypes.shape(PropTypes.object),
-  titleStyleClass: PropTypes.shape(PropTypes.object),
-  paragraphStyleClass: PropTypes.shape(PropTypes.object),
-  bannerWrapperClass: PropTypes.shape(PropTypes.object),
-  bannerContainerClass: PropTypes.shape(PropTypes.object),
-  bannerContentWrapperClass: PropTypes.shape(PropTypes.object),
+  bannerContentClass: PropTypes.string,
+  titleStyleClass: PropTypes.string,
+  paragraphStyleClass: PropTypes.string,
+  bannerWrapperClass: PropTypes.string,
+  bannerContainerClass: PropTypes.string,
+  bannerContentWrapperClass: PropTypes.string,
 };
 
 export default SimpleBanner;
