@@ -37,9 +37,8 @@ const Stories = (props) => {
       const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
         <StoriesCarousel
-          key={entry.sys.id}
-          id={entry.sys.id}
           slugTitle={slug}
+          key={entry.sys.id}
           bannerImage={bannerImage}
           title={entry.fields.title && entry.fields.title}
           contentPreview={contentPreview}
