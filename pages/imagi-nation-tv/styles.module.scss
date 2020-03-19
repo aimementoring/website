@@ -1,0 +1,90 @@
+@import "../../styles/base/variables";
+
+.hiddenTitle {
+  position: absolute;
+  left: -9999px;
+  border: 1px solid red;
+}
+
+
+.heroBannerHomepage {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  .headingLockup {
+    color: $white;
+    text-align: center;
+    line-height: 2em;
+
+    strong {
+      font-size: 5rem;
+      line-height: 0.6em;
+      left: inherit;
+      top: inherit;
+
+      @media screen and (min-width: $md) {
+        font-size: 8rem;
+      }
+    }
+  }
+}
+
+.heroBannerContainer {
+  align-items: center;
+  display: flex;
+
+  &::after {
+    position: absolute;
+    height: 10px;
+    background-color: $white;
+  }
+}
+
+.bannerWrapper {
+  background:
+    url($cdnRoot+"assets/images/banner/heyhello@2x.jpg")
+    no-repeat top center $purple;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: auto 120%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+  padding: 13em 2em;
+  position: relative;
+  width: 100%;
+  margin: 1em;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(000,000,000,0.1);
+  }
+
+  @media screen and (min-width: $md) {
+    background-size: cover;
+    padding: 2em;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+  }
+
+  @media screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+
+  .bannerContent {
+    z-index: 1;
+    text-align: center;
+
+    p {
+      color: $white;
+      max-width: 30em;
+      margin: 2em 0;
+    }
+  }
+}
