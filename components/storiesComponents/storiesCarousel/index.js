@@ -5,7 +5,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './storiesCarousel.module.scss';
-
+import { removeMarkdownLink } from '../../../utils/utilities';
 // This could be in blueprint, not sure?
 
 const StoriesCarousel = (props) => {
@@ -41,7 +41,8 @@ const StoriesCarousel = (props) => {
             key={`carousel-sm-text-wrap-${id}`}
           >
             <Title type="h3Title">{title}</Title>
-            {contentPreview && contentPreview.previewCopy
+            {contentPreview
+              && contentPreview.previewCopy
               ? (
                 <Paragraph>
                   {`${contentPreview.previewCopy.slice(0, 230)}...`}
@@ -50,7 +51,7 @@ const StoriesCarousel = (props) => {
               : contentCards && contentCards.slice(0, 1).map((card) => (
                 <Paragraph key={card.sys.id}>
                   {card.fields.contentCopy
-                      && (`${card.fields.contentCopy.slice(0, 240).replace(/[*_>]*/g, '')} …`)}
+                      && (`${removeMarkdownLink(card.fields.contentCopy.slice(0, 240))}…`)}
                 </Paragraph>
               ))}
             <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
