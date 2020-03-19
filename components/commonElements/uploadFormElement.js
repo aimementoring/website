@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import UtilityFuncs from '../utilityFuncs';
 import FileUploader from '../fileUploader';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 
 const UploadFormElement = ({ index, formElement }) => {
   const isDynamicRender = isClientSide();
