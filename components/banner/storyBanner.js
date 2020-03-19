@@ -50,7 +50,7 @@ const StoryBanner = (props) => {
 };
 
 StoryBanner.defaultProps = {
-  copy: '',
+  copy: [] || '',
   title: '',
   bannerImage: '',
   handleClick: null,
@@ -58,7 +58,10 @@ StoryBanner.defaultProps = {
 };
 
 StoryBanner.propTypes = {
-  copy: PropTypes.string,
+  copy: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string,
+  ]),
   title: PropTypes.string,
   handleClick: PropTypes.func,
   buttonText: PropTypes.string,
