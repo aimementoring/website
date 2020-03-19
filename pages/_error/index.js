@@ -4,6 +4,7 @@ import Router from 'next/router';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
+import { SimpleBanner } from '../../components/banner/index';
 import bugsnagClient from '../../utils/bugsnag';
 import isClientSide from '../../utils/isClientSide';
 
@@ -36,19 +37,19 @@ const ErrorPage = () => {
         <meta name="prerender-status-code" content="404" />
       </Helmet>
       <div id="404page" className="full-width-wrap">
-        <div className="hero-banner--default hero-banner--404 full-width-wrap">
-          <div className="flex flex-wrap items-center full-height">
-            <div className="banner-wrapper subpage-banner center">
-              <div className="bannerContent">
-                <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
-                  <strong>
-                    Uh Oh
-                  </strong>
-                </Title>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SimpleBanner
+          title={(
+            <strong>
+              Uh Oh
+            </strong>
+          )}
+          titleType="headingLockup"
+          titleStyleClass="headingJobsSingle"
+          bannerContainerClass="hero-banner--default hero-banner--404 full-width-wrap"
+          bannerWrapperClass="flex flex-wrap items-center full-height"
+          bannerContentWrapperClass="banner-wrapper subpage-banner center"
+          bannerContentClass="banner-wrapper"
+        />
         <div className="md-wrap mx-auto p3 page-404-container">
           <div className="justify-center items-center sm-flex">
             <div>
