@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { formatDate } from '../../../utils/utilities';
 import styles from './storiesContent.module.scss';
 
 const Card = dynamic(() => import('../../card'));
@@ -18,10 +17,14 @@ const StoriesContent = (props) => {
     contentPreview,
   } = props;
 
-  const datePublished = formatDate(publishDate, 'short');
+
   const bannerImage = bannerContent.visualMedia
     && bannerContent.visualMedia.fields
     && bannerContent.visualMedia.fields.file.url;
+  const contentCreatorBy = contentCreator
+    && contentCreator.toLowerCase().indexOf('by') !== -1
+    ? `By ${contentCreator}`
+    : contentCreator;
 
   return (
     <article key={`article-story-${id}`} className={styles.articleTile}>
@@ -32,8 +35,8 @@ const StoriesContent = (props) => {
         urlAs={`/story/${slugTitle}`}
         image={bannerImage}
         buttonText="READ MORE"
-        publishDate={datePublished}
-        contentCreator={`By ${contentCreator}`}
+        publishDate={publishDate}
+        contentCreator={contentCreatorBy}
         contentPreview={
           contentPreview && contentPreview.previewCopy ? (
             `${contentPreview.previewCopy.slice(0, 230)}...`
