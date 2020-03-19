@@ -77,7 +77,8 @@ const Reports = ({ entries }) => {
         bannerContainerClass={styles.heroBannerReports}
       />
       {/* @todo LARA: REMOVE FROM HERE LATER */}
-      <CarouselCards />
+      {/* Commenting out below so we can merge and rebase diff PR with staging - will fix in new PR */}
+      {/* <CarouselCards />
       <div className={styles.carouselContainer}>
         <Card
           urlTo="/"
@@ -119,7 +120,7 @@ const Reports = ({ entries }) => {
           buttonText="READ MORE"
           type="spotlight"
         />
-      </div>
+      </div> */}
       {/* REMOVE UNTIL HERE LATER */}
       {reports && (
         <>
