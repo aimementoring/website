@@ -6,8 +6,8 @@ import {
   capitaliseFirstCharacter,
   removeSpecialCharacters,
   getCountrySite,
-  isClientSide,
 } from '../../../utils/utilities';
+import isClientSide from '../../../utils/isClientSide';
 import handleError from '../../../utils/errorHandler';
 import request from '../../../utils/request';
 import { findJob } from '../../../services/positions';
