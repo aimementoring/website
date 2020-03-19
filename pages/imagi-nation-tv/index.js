@@ -6,10 +6,11 @@ import CASE_STUDIES from '../../constants/caseStudiesList';
 import styles from './styles.module.scss';
 
 const CaseStudyBox = dynamic(() => import('../../components/caseStudyBox'));
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ImagiNationTV = () => (
   <Layout>
-    <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
+    {/* <div className="hero-banner--default hero-banner--case-studies full-width-wrap">
       <div className="flex flex-wrap items-center full-height">
         <div className="banner-wrapper">
           <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
@@ -18,17 +19,42 @@ const ImagiNationTV = () => (
           </Title>
         </div>
       </div>
-    </div>
+    </div> */}
 
-    <div className={styles.heroBanner}>
+    <div className={styles.heroBannerImagiTV}>
       <div className={styles.bannerWrapper}>
         <div className={styles.bannerContent}>
-          <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+          <Title className={styles.welcomeTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
             Welcome to
             <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
+            <img
+              src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+              alt="Imagi-Nation TV"
+              className={styles.logoImagiTV}
+            />
           </Title>
+          
         </div>
       </div>
+    </div>
+
+    <div className={styles.contentWrapperCampaignPg}>
+
+      <section className={styles.videoContainerFeature}>
+        <div className="video-container">
+          <iframe
+            title="case-studies-video-container"
+            src="https://player.vimeo.com/video/219339041?title=0&amp;byline=0&amp;portrait=0"
+            width="640"
+            height="360"
+            frameBorder="0"
+            webkitallowfullscreen=""
+            mozallowfullscreen=""
+            allowFullScreen=""
+          />
+        </div>
+      </section>
+
     </div>
 
     <section className="py3 relative">
@@ -37,9 +63,6 @@ const ImagiNationTV = () => (
         <div className="mt0 pt1 mb3 flex items-center">
           <span className="line bg-brand-tertiary inline-block mr2 md-mr3 lg-mr3" />
           <div className="inline-block">
-            <h1 id="classroom-video" className="inline-block lh-base">
-              Classroom Interview
-            </h1>
             <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">
               Award-winning journalist and human rights campaigner, Jeff McMullen got together
               with a group of AIME mentors and alumni to chat about their experiences with the
