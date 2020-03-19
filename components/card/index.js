@@ -23,8 +23,8 @@ const Card = (props) => {
     contentCreator,
     contentPreview,
   } = props;
-
   const datePublished = publishDate && formatDate(publishDate, 'short');
+
   return (
     <>
       {href
@@ -158,19 +158,31 @@ const Card = (props) => {
 Card.defaultProps = {
   cardId: '-',
   buttonText: 'Click Me!',
+  title: '',
+  urlTo: '',
+  urlAs: '',
+  href: '',
+  image: '',
+  publishDate: '',
+  contentCreator: '',
+  contentPreview: [] || '',
+
 };
 
 Card.propTypes = {
   cardId: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  urlTo: PropTypes.string.isRequired,
-  urlAs: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  urlTo: PropTypes.string,
+  urlAs: PropTypes.string,
+  href: PropTypes.string,
+  image: PropTypes.string,
   buttonText: PropTypes.string,
-  publishDate: PropTypes.string.isRequired,
-  contentCreator: PropTypes.string.isRequired,
-  contentPreview: PropTypes.string.isRequired,
+  publishDate: PropTypes.string,
+  contentCreator: PropTypes.string,
+  contentPreview: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string,
+  ]),
 };
 
 export default Card;
