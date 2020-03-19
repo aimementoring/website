@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
@@ -9,6 +10,7 @@ import Anchor from '../common/link';
 import styles from './card.module.scss';
 
 const Picture = dynamic(() => import('../picture'));
+const VideoButton = dynamic(() => import('../videoButton'));
 
 const Card = (props) => {
   const {
@@ -18,140 +20,85 @@ const Card = (props) => {
     urlAs,
     href,
     image,
+    video,
     buttonText,
     publishDate,
     contentCreator,
     contentPreview,
+    type,
   } = props;
   const datePublished = publishDate && formatDate(publishDate, 'short');
+  const anchorProps = {
+    className: type === 'spotlight' ? styles.spotlightArticleLink : styles.articleLink,
+    as: urlAs || 'banner-image',
+    to: href || urlTo,
+  };
+  if (href) anchorProps.target = '_blank';
+  const withVideo = video && image;
 
   return (
-    <>
-      {href
-        ? (
-          <a
-            aria-label="banner-image"
-            href={href}
-            className={styles.articleLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div>
-              {image
-          && (
-            <Picture
-              className={styles.bannerImage}
-              thumbnail
-              image={{
-                image: `https:${image}?fl=progressive`,
-                title,
-                thumbnail: `https:${image}?fl=progressive`,
-              }}
-            />
-          )}
-              <div
-                key={`article-description-${cardId}`}
-                className={styles.articleDescription}
-              >
-                {title
-            && (
-              <Title theme={process.env.REACT_APP_THEME} type="h5Title">{title}</Title>
-            )}
-                <Paragraph theme={process.env.REACT_APP_THEME}>
-                  {datePublished
-              && (
-                <span key={`pr1-story-entry-${cardId}`} className={styles.postDate}>
-                  {datePublished}
-                </span>
-              )}
-                  {contentCreator
-              && (
-                <>
-                  <span key={`c-light-grey-span-${cardId}`}>
-                    <br />
-                  </span>
-                  <span key={`px1-span-${cardId}`}>
-                    {`By ${contentCreator}`}
-                  </span>
-                </>
-              )}
-                </Paragraph>
-                {contentPreview
-            && (
-              <Paragraph theme={process.env.REACT_APP_THEME}>
-                {contentPreview}
-              </Paragraph>
-            )}
-                <div>
-                  <Button theme={process.env.REACT_APP_THEME} type="button" className={styles.articleTileLink}>
-                    {buttonText}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </a>
-        ) : (
-          <Anchor
-            to={urlTo}
-            as={urlAs}
-            className={styles.articleLink}
-          >
-            <div>
-              {image
-          && (
-            <Picture
-              className={styles.bannerImage}
-              thumbnail
-              image={{
-                image: `https:${image}?fl=progressive`,
-                title,
-                thumbnail: `https:${image}?fl=progressive`,
-              }}
-            />
-          )}
-              <div
-                key={`article-description-${cardId}`}
-                className={styles.articleDescription}
-              >
-                {title
-            && (
-              <Title theme={process.env.REACT_APP_THEME} type="h5Title">{title}</Title>
-            )}
-                <Paragraph theme={process.env.REACT_APP_THEME}>
-                  {datePublished
-              && (
-                <span key={`pr1-story-entry-${cardId}`} className={styles.postDate}>
-                  {datePublished}
-                </span>
-              )}
-                  {contentCreator
-              && (
-                <>
-                  <span key={`c-light-grey-span-${cardId}`}>
-                    <br />
-                  </span>
-                  <span key={`px1-span-${cardId}`}>
-                    {`By ${contentCreator}`}
-                  </span>
-                </>
-              )}
-                </Paragraph>
-                {contentPreview
-            && (
-              <Paragraph theme={process.env.REACT_APP_THEME}>
-                {contentPreview}
-              </Paragraph>
-            )}
-                <div>
-                  <Button theme={process.env.REACT_APP_THEME} type="button" className={styles.articleTileLink}>
-                    {buttonText}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </Anchor>
+    <Anchor {...anchorProps}>
+      <div>
+        {withVideo && (
+          <VideoButton video={video} />
         )}
-    </>
+        {image && (
+          <Picture
+            className={video ? styles.bannerVideo : styles.bannerImage}
+            thumbnail
+            image={{
+              image: `https:${image}?fl=progressive`,
+              title,
+              thumbnail: `https:${image}?fl=progressive`,
+            }}
+          />
+        )}
+        {withVideo && (
+          <img
+            alt=""
+            className={styles.videoIcon}
+            src={`${process.env.REACT_APP_ASSETS_URL}/assets/images/play-btn-white.svg`}
+          />
+        )}
+        <div
+          key={`article-description-${cardId}`}
+          className={classNames(styles.articleDescription, {
+            [styles.withVideo]: withVideo,
+          })}
+        >
+          {title && (
+            <Title theme={process.env.REACT_APP_THEME} type="h5Title">{title}</Title>
+          )}
+          <Paragraph theme={process.env.REACT_APP_THEME}>
+            {datePublished && (
+              <span key={`pr1-story-entry-${cardId}`} className={styles.postDate}>
+                {datePublished}
+              </span>
+            )}
+            {contentCreator && (
+              <>
+                <span key={`c-light-grey-span-${cardId}`}>
+                  <br />
+                </span>
+                <span key={`px1-span-${cardId}`}>
+                  {`By ${contentCreator}`}
+                </span>
+              </>
+            )}
+          </Paragraph>
+          {contentPreview && contentPreview.length > 0 && (
+            <Paragraph theme={process.env.REACT_APP_THEME} className={styles.contentPreview}>
+              {contentPreview}
+            </Paragraph>
+          )}
+          <div className={withVideo && styles.rightButton}>
+            <Button theme={process.env.REACT_APP_THEME} type="button" className={type === 'spotlight' ? styles.spotlightButton : styles.articleTileLink}>
+              {buttonText}
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Anchor>
   );
 };
 
@@ -163,10 +110,11 @@ Card.defaultProps = {
   urlAs: '',
   href: '',
   image: '',
+  video: '',
   publishDate: '',
   contentCreator: '',
   contentPreview: [] || '',
-
+  type: '',
 };
 
 Card.propTypes = {
@@ -176,6 +124,7 @@ Card.propTypes = {
   urlAs: PropTypes.string,
   href: PropTypes.string,
   image: PropTypes.string,
+  video: PropTypes.string,
   buttonText: PropTypes.string,
   publishDate: PropTypes.string,
   contentCreator: PropTypes.string,
@@ -183,6 +132,7 @@ Card.propTypes = {
     PropTypes.array,
     PropTypes.string,
   ]),
+  type: PropTypes.string,
 };
 
 export default Card;
