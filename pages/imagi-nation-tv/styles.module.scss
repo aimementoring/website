@@ -6,7 +6,6 @@
   width: 100%;
   // background: url($cdnRoot + 'assets/images/banner/bg-yellow-wave@2x.jpg') no-repeat top center / cover $yellow;
   padding-top: 7.5em;
-  background-color: $yellow;
 
   .subpageBannerWrapper {
     padding: 2em;
@@ -39,10 +38,18 @@
 
   padding-top: 1em;
   .videoContainerFeature {
-    border: 2px solid blue;
+    max-width: 65em;
+    margin: 0 auto;
   }
 
   .videoCaptionWrapper {
-    border: 3px solid red;
+    border: 1px solid #C6CACC;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    text-align: center;
+    padding: 1em 2em;
+    @media screen and (min-width: $md) {
+      padding: 1.5em 4em;
+    }
   }
 }

@@ -36,21 +36,22 @@ const ImagiNationTV = () => (
         <VideoPlayer
           url="https://www.youtube.com/watch?v=Kcqz2ShknNw&feature=emb_logo"
           imageUrl="https://images.ctfassets.net/iz0aikshgysc/4veRQTJ6ilhYLtfflt5yPu/514ecaff0ba258f1853b718ca70115bc/Sherice_banner.jpg"
-        >
-          <div className={styles.videoCaptionWrapper}>
-            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
-              Hey Lara
-            </Title>
-            <Paragraph theme={process.env.REACT_APP_THEME}>
-              Lara should click this video.
-            </Paragraph>
-            <Button type="link" text="Watch now" theme={process.env.REACT_APP_THEME} url="https://www.youtube.com/watch?v=DiQaOlsDZlY" />
-          </div>
-        </VideoPlayer>
+        / >
+        <div className={styles.videoCaptionWrapper}>
+          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            IMAGINATION - EPISODE 1
+          </Title>
+          <Paragraph theme={process.env.REACT_APP_THEME}>
+            World class teachers and knowledge holders across our schools, universities and
+            further abroad, philosophers, and big picture thinkers distill the complexity of
+            today to help us imagine and create tomorrow in a Q&A format.
+          </Paragraph>
+          <Button type="link" text="Watch now" theme={process.env.REACT_APP_THEME} url="https://www.youtube.com/watch?v=DiQaOlsDZlY" />
+        </div>
       </section>
 
     </div>
-    
+
   </Layout>
 );
 

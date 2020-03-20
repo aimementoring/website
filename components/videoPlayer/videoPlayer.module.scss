@@ -4,13 +4,13 @@
   width: 100%;
   max-width: 65em;
   height: 20em;
-  padding: 3.2rem;
   z-index: 12000;
   position: relative;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: auto;
+  border-radius: 3px;
 
   @media screen and (min-width: $sm) {
     height: 30em;
