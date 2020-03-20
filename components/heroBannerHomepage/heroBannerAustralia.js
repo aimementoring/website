@@ -44,12 +44,16 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           alt="ATOM"
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
-        <img
-          src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
-          alt="Imagi-nation TV"
-          className={styles.videoCoverArt}
-        />
-        <a href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">Watch the episodes</a>
+        <a href="https://www.youtube.com/user/aimementoring" target="_blank">
+          <img
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
+            alt="Imagi-nation TV"
+            className={styles.videoCoverArt}
+          />
+        </a>
+        <a className={styles.textLinkChannel} href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">
+          Watch the episodes
+        </a>
       </div>
     </div>
   </div>
