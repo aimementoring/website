@@ -5,26 +5,55 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import styles from './heroBannerHomepage.module.scss';
 
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
 const HeroBannerAustralia = ({ scrollHandler }) => (
   <div className={styles.heroBannerHomepage}>
-    <div className={styles.heroBannerContainer}>
-      <div className={styles.bannerWrapper}>
-        <div className={styles.bannerContent}>
-          <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
-            Welcome to
-            <strong>AIME</strong>
-          </Title>
-          <Paragraph>
-            We’re a global social movement of everyday humans, working
-            relentlessly to build a fairer world
-          </Paragraph>
-          <Button
-            theme={process.env.REACT_APP_THEME}
-            onClickFunction={scrollHandler}
-          >
-            Get involved
-          </Button>
-        </div>
+    <div className={styles.bannerWrapper}>
+      <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
+        <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+          Introducing
+          <img
+            src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+            alt="Imagi-Nation TV"
+            className={styles.logoImagiTV}
+          />
+        </Title>
+        <Paragraph>
+          A chance for kids at home to have mentors in their lives to <em>Make Sense of Today & Imagine Tomorrow</em>. 
+        </Paragraph>
+        <Button
+          theme={process.env.REACT_APP_THEME}
+          onClickFunction={scrollHandler}
+          className={styles.watchBtn}
+          url="https://www.youtube.com/user/aimementoring"
+          target="_blank"
+          type="link"
+        >
+          Watch live on YouTube
+        </Button>
+      </div>
+      <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
+        <img
+          src={`${ASSETS_URL}/assets/images/illustrations/EARTH-min@2x.gif`}
+          alt="Spinning Earth"
+          className={styles.dancingIllo}
+        />
+        <img
+          src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
+          alt="ATOM"
+          className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+        />
+        <a href="https://www.youtube.com/user/aimementoring" target="_blank">
+          <img
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
+            alt="Imagi-nation TV"
+            className={styles.videoCoverArt}
+          />
+        </a>
+        <a className={styles.textLinkChannel} href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">
+          Watch the episodes
+        </a>
       </div>
     </div>
   </div>
