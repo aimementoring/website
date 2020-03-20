@@ -2,39 +2,60 @@
 
 .heroBannerHomepage {
   background:
-    url($cdnRoot+"assets/images/decorative/bg-dotties@2x.jpg") no-repeat top
-    right transparent;
-  background-size: contain;
+    url($cdnRoot+"assets/images/decorative/bg-dotties@2x.jpg") no-repeat 100% 100% transparent;
+  background-size: 100% 60%;
   position: relative;
   max-width: 100%;
   width: 100%;
   padding: 1em;
   margin-top: 6em;
 
-  .headingLockup {
+  @media screen and (min-width: $sm) {
+    background-size: 80% 70%;
+  }
+
+  @media screen and (min-width: $md) {
+    background-position: top right;
+    background-size: contain;
+  }
+  
+  .welcomeTitle {
     color: $black;
     text-align: left;
-    line-height: 2em;
-
-    strong {
-      font-size: 5rem;
-      line-height: 0.6em;
-      left: inherit;
-      top: inherit;
-
-      @media screen and (min-width: $md) {
-        // font-size: 8rem;
-      }
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    @media screen and (min-width: $md) {
+      font-size: 1.8rem;
     }
+  }
+
+  .logoImagiTV {
+    position: relative;
+    width: 10rem;
+    left: -0.5em;
+    margin-top: -0.5em;
+
+    @media screen and (min-width: $md) {
+      width: 17rem;
+    }
+  }
+
+  .watchBtn {
+    padding: 1.1em 5em;
   }
 }
 
 .bannerWrapper {
   position: relative;
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 1em;
+
+  @media screen and (min-width: $sm) {
+    display: flex;
+  }
 
   @media screen and (min-width: $md) {
     flex-direction: row;
@@ -46,16 +67,22 @@
     box-sizing: border-box;
     flex-grow: 1;
     flex-basis: 0;
-    width: 70%;
     clear: both;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: $sm) {
+      width: 70%;
+    }
   }
 
   .bannerContent {
     z-index: 1;
     justify-content: flex-end;
-    padding-right: 3em;
+
+    @media screen and (min-width: $sm) {
+      padding-right: 3em;
+    }
+
     p {
       color: $black;
       max-width: 30em;
@@ -65,29 +92,50 @@
 
   .bannerMediaFeature {
     position: relative;
-    padding: 2em;
+    padding-top: 1.5em;
     align-self: flex-end;
     text-align: right;
     font-family: $body-font-family;
 
+    @media screen and (min-width: $sm) {
+      padding: 2em;
+      margin-top: -5em;
+    }
+
     @media screen and (min-width: $md) {
       align-self: center;
       flex-grow: 1.33;
+      margin-top: 0;
+      top: 2em;
     }
 
     .dancingIllo {
-      width: 8em;
+      width: 5em;
       position: absolute;
       top: -2em;
-      right: 3em;
+      right: 0;
+
+      @media screen and (min-width: $md) {
+        width: 8em;
+        right: 3em;
+      }
 
       &.dancingIlloBtm {
         top: initial;
         bottom: 0;
         right: initial;
-        left: -7em;
-        width: 13em;
+        left: -4em;
+        width: 7em;
+
+        @media screen and (min-width: $md) {
+          left: -7em;
+          width: 13em;
+        }
       }
+    }
+
+    .videoCoverArt {
+      border-radius: 3px;
     }
 
     a {

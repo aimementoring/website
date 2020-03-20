@@ -11,7 +11,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
   <div className={styles.heroBannerHomepage}>
     <div className={styles.bannerWrapper}>
       <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
-        <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+        <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
           Introducing
           <img
             src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
@@ -25,6 +25,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
         <Button
           theme={process.env.REACT_APP_THEME}
           onClickFunction={scrollHandler}
+          className={styles.watchBtn}
         >
           Watch now
         </Button>
@@ -43,6 +44,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
         <img
           src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
           alt="Imagi-nation TV"
+          className={styles.videoCoverArt}
         />
         <a href="">Watch the episodes</a>
       </div>
