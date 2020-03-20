@@ -26,14 +26,17 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           theme={process.env.REACT_APP_THEME}
           onClickFunction={scrollHandler}
           className={styles.watchBtn}
+          url="https://www.youtube.com/watch?v=Kcqz2ShknNw&feature=youtu.be"
+          target="_blank"
+          type="link"
         >
-          Watch now
+          Watch live on YouTube
         </Button>
       </div>
       <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
         <img
-          src={`${ASSETS_URL}/assets/images/illustrations/pinky-earth.png`}
-          alt="Pink Earth"
+          src={`${ASSETS_URL}/assets/images/illustrations/EARTH-min@2x.gif`}
+          alt="Spinning Earth"
           className={styles.dancingIllo}
         />
         <img
@@ -46,7 +49,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           alt="Imagi-nation TV"
           className={styles.videoCoverArt}
         />
-        <a href="">Watch the episodes</a>
+        <a href="https://youtu.be/Kcqz2ShknNw" target="_blank">Watch the episodes</a>
       </div>
     </div>
   </div>

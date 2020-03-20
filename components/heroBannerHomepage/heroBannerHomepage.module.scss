@@ -110,14 +110,19 @@
     }
 
     .dancingIllo {
-      width: 5em;
+      width: 7em;
       position: absolute;
       top: -2em;
       right: 0;
 
+      @media screen and (min-width: $sm) {
+        right: 2em;
+      }
+
       @media screen and (min-width: $md) {
-        width: 8em;
-        right: 3em;
+        width: 13em;
+        top: -5em;
+        right: 1em;
       }
 
       &.dancingIlloBtm {
@@ -125,11 +130,9 @@
         bottom: 0;
         right: initial;
         left: -4em;
-        width: 7em;
 
         @media screen and (min-width: $md) {
           left: -7em;
-          width: 13em;
         }
       }
     }
@@ -144,6 +147,7 @@
       color: $black;
       margin-top: 0.5em;
       transition: $hoverTransition;
+      cursor: pointer;
 
       &:hover {
         color: $magenta;
