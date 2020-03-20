@@ -26,7 +26,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           theme={process.env.REACT_APP_THEME}
           onClickFunction={scrollHandler}
           className={styles.watchBtn}
-          url="https://www.youtube.com/watch?v=Kcqz2ShknNw&feature=youtu.be"
+          url="https://www.youtube.com/user/aimementoring"
           target="_blank"
           type="link"
         >
@@ -49,7 +49,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           alt="Imagi-nation TV"
           className={styles.videoCoverArt}
         />
-        <a href="https://youtu.be/Kcqz2ShknNw" target="_blank">Watch the episodes</a>
+        <a href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">Watch the episodes</a>
       </div>
     </div>
   </div>
