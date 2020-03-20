@@ -26,7 +26,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           theme={process.env.REACT_APP_THEME}
           onClickFunction={scrollHandler}
           className={styles.watchBtn}
-          url="https://www.youtube.com/watch?v=r4MRUg-7Vmw&feature=youtu.be"
+          url="https://www.youtube.com/user/aimementoring/live"
           target="_blank"
           type="link"
         >
