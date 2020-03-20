@@ -1,6 +1,10 @@
 @import "../../styles/base/variables";
 
 .heroBannerHomepage {
+  background:
+    url($cdnRoot+"assets/images/decorative/bg-dotties@2x.jpg") no-repeat top
+    right transparent;
+  background-size: contain;
   position: relative;
   max-width: 100%;
   width: 100%;
@@ -60,6 +64,8 @@
   }
 
   .bannerMediaFeature {
+    position: relative;
+    padding: 2em;
     align-self: flex-end;
     text-align: right;
     font-family: $body-font-family;
@@ -72,8 +78,16 @@
     .dancingIllo {
       width: 8em;
       position: absolute;
-      top: 2em;
+      top: -2em;
       right: 3em;
+
+      &.dancingIlloBtm {
+        top: initial;
+        bottom: 0;
+        right: initial;
+        left: -7em;
+        width: 13em;
+      }
     }
 
     a {

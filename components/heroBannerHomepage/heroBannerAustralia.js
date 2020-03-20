@@ -32,8 +32,13 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           className={styles.dancingIllo}
         />
         <img
-          src={`${ASSETS_URL}/assets/images/banner/heyhello@2x.jpg`}
-          alt="Welcome hello from AIME"
+          src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
+          alt="ATOM"
+          className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+        />
+        <img
+          src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
+          alt="Imagi-nation TV"
         />
         <a href="">Watch the episodes</a>
       </div>
