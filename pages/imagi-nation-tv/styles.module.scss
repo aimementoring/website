@@ -8,7 +8,7 @@
   padding-top: 7.5em;
   background-color: $yellow;
 
-  .bannerWrapper {
+  .subpageBannerWrapper {
     padding: 2em;
   }
 
@@ -39,6 +39,10 @@
 
   padding-top: 1em;
   .videoContainerFeature {
+    border: 2px solid blue;
+  }
 
+  .videoCaptionWrapper {
+    border: 3px solid red;
   }
 }
