@@ -13,7 +13,11 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
       <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
         <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
           Introducing
-          <strong>Imagi-nation TV</strong>
+          <img
+            src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+            alt="Imagi-Nation TV"
+            className={styles.logoImagiTV}
+          />
         </Title>
         <Paragraph>
           A chance for kids at home to have mentors in their lives to <em>Make Sense of Today & Imagine Tomorrow</em>. 
