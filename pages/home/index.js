@@ -8,7 +8,7 @@ import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
-const IntroPanelHomepage = dynamic(() => import('../../components/introPanelHomepage'));
+// const IntroPanelHomepage = dynamic(() => import('../../components/introPanelHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import('../../components/ambassadors'));
 // const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
@@ -42,7 +42,7 @@ const Home = () => {
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      <IntroPanelHomepage />
+      {/* <IntroPanelHomepage /> */}
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
       {/* <CtaFAQ /> */}
