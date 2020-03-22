@@ -23,7 +23,7 @@ export const GLOBAL_TAGS = {
       height: 642, // 1 EXCEPTIONS (/jack-manning-bancroft)
     },
   },
-  articleJsonLd: [
+  jsonLd: [
     {
       type: 'NGO',
       id: '#identity',
@@ -55,7 +55,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Ambassadors',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         url: 'https://aimementoring.com/ambassadors',
         title: 'Ambassadors',
@@ -68,8 +68,16 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         copyrightYear: '2018-02-21T12:38:51+11:00',
         creatorName: '#creator',
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/ambassadors",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/ambassadors',
+          },
+        ],
         name: 'Ambassadors',
         publisherName: '#creator',
       },
@@ -105,7 +113,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Be an AIME Mentor',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         url: 'https://aimementoring.com/be-a-mentor',
         title: 'Be an AIME Mentor',
@@ -118,8 +126,16 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         copyrightYear: '2018-02-12T15:52:47+11:00',
         creatorName: '#creator',
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/be-a-mentor",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/be-a-mentor',
+          },
+        ],
         name: 'Be an AIME Mentor',
         publisherName: '#creator',
       },
@@ -168,8 +184,16 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         copyrightYear: '2018-02-05T10:24:38+11:00',
         creatorName: '#creator',
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/about",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/about',
+          },
+        ],
         name: 'About AIME Mentoring',
         publisherName: '#creator',
       },
@@ -260,7 +284,7 @@ export const SEO_TAGS = {
       hrefLang: 'x-default',
     },
     title: 'Case Studies',
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -272,8 +296,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Case Studies',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        // inLanguage:'en-001',
-        // mainEntityOfPage:'https://aimementoring.com/case-studies',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/case-studies',
+          },
+        ],
         name: 'Case Studies',
         publisherName: '#creator',
         url: 'https://aimementoring.com/case-studies',
@@ -310,7 +342,7 @@ export const SEO_TAGS = {
       hrefLang: 'x-default',
     },
     title: 'AIME Mentoring',
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -349,7 +381,7 @@ export const SEO_TAGS = {
       hrefLang: 'x-default',
     },
     title: 'Donate to AIME Mentoring',
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -361,8 +393,16 @@ export const SEO_TAGS = {
         description: 'To change the world, we need to change the way it works! You have the opportunity to make a difference!',
         title: 'Donate to AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/donate',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/donate',
+          },
+        ],
         name: 'Donate to AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com/donate',
@@ -399,7 +439,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -438,7 +478,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -489,7 +529,7 @@ export const SEO_TAGS = {
         url: 'https://d2ylaz7bdw65jx.cloudfront.net/resources/_800x800_crop_center-center_82_none/JMB@2x-min.jpg',
       },
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -501,8 +541,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'],
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/jack-manning-bancroft",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/jack-manning-bancroft',
+          },
+        ],
         name: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com/jack-manning-bancroft',
@@ -539,7 +587,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Global Letter',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -551,8 +599,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Global Letter',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/global-letter",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/global-letter',
+          },
+        ],
         name: 'Global Letter',
         publisherName: '#creator',
         url: 'https://aimementoring.com/global-letter',
@@ -589,7 +645,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -628,7 +684,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -640,8 +696,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com',
+          },
+        ],
         name: 'AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com',
@@ -673,7 +737,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -685,8 +749,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com',
+          },
+        ],
         name: 'AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com',
@@ -718,7 +790,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'The Hooded Scholar Scholarship from AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -730,8 +802,16 @@ export const SEO_TAGS = {
         description: 'For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become "The Hooded Scholar" and lead a mentoring movement out of their campus to lift kids out of inequality.',
         title: 'The Hooded Scholar Scholarship from AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/hooded-scholar/',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/hooded-scholar/',
+          },
+        ],
         name: 'The Hooded Scholar Scholarship from AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com/hooded-scholar/',
@@ -768,7 +848,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Impact',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -780,8 +860,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Impact',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/impact',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/impact',
+          },
+        ],
         name: 'Impact',
         publisherName: '#creator',
         url: 'https://aimementoring.com/impact',
@@ -818,7 +906,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Know AIME',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -830,8 +918,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Know AIME',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/know-aime',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/know-aime',
+          },
+        ],
         name: 'Know AIME',
         publisherName: '#creator',
         url: 'https://aimementoring.com/know-aime',
@@ -868,7 +964,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -907,7 +1003,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Work at AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -919,8 +1015,16 @@ export const SEO_TAGS = {
         description: 'We ranked 12th best place to work in Asia for 2016.',
         title: 'Work at AIME Mentoring',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/positions',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/positions',
+          },
+        ],
         name: 'Work at AIME Mentoring',
         publisherName: '#creator',
         url: 'https://aimementoring.com/positions',
@@ -957,7 +1061,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Quizzes',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -969,8 +1073,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Quizzes',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/quizzes',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/quizzes',
+          },
+        ],
         name: 'Quizzes',
         publisherName: '#creator',
         url: 'https://aimementoring.com/quizzes',
@@ -1007,7 +1119,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Reports',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -1019,8 +1131,16 @@ export const SEO_TAGS = {
         description: 'Read all about the effects and progress that occur in the AIME Program.',
         title: 'AIME Reports',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/reports',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/reports',
+          },
+        ],
         name: 'AIME Reports',
         publisherName: '#creator',
         url: 'https://aimementoring.com/reports',
@@ -1057,7 +1177,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Stories of Sunday Kindness',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -1069,8 +1189,16 @@ export const SEO_TAGS = {
         description: "At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn't cost a thing. Let's sprinkle it everywhere!",
         title: 'AIME Stories of Sunday Kindness',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/stories',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories',
+          },
+        ],
         name: 'AIME Stories of Sunday Kindness',
         publisherName: '#creator',
         url: 'https://aimementoring.com/stories',
@@ -1107,7 +1235,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
@@ -1146,7 +1274,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Thanks',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -1158,8 +1286,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Thanks',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        // "inLanguage":"en-001",
-        // "mainEntityOfPage":"https://aimementoring.com/thanks",
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/thanks',
+          },
+        ],
         name: 'Thanks',
         publisherName: '#creator',
         url: 'https://aimementoring.com/thanks',
@@ -1196,7 +1332,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'The Mentor',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'Article',
         authorName: '#identity',
@@ -1208,8 +1344,16 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'The Mentor',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        inLanguage: 'en-001',
-        mainEntityOfPage: 'https://aimementoring.com/the-mentor',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/the-mentor',
+          },
+        ],
         name: 'The Mentor',
         publisherName: '#creator',
         url: 'https://aimementoring.com/the-mentor',
@@ -1246,7 +1390,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'AIME Mentoring',
     },
-    articleJsonLd: [
+    jsonLd: [
       {
         type: 'WebSite',
         authorName: '#identity',
