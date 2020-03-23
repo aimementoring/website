@@ -10,8 +10,8 @@ import { SimpleBanner } from '../../components/banner/index';
 import styles from './reports.modules.scss';
 
 const Report = dynamic(() => import('../../components/report'));
-const Card = dynamic(() => import('../../components/card'));
-const CarouselCards = dynamic(() => import('../../components/carouselCards'));
+// const Card = dynamic(() => import('../../components/card'));
+// const CarouselCards = dynamic(() => import('../../components/carouselCards'));
 
 const Reports = ({ entries }) => {
   const [reports, setReportEntries] = useState(entries);
@@ -77,9 +77,11 @@ const Reports = ({ entries }) => {
         bannerContainerClass={styles.heroBannerReports}
       />
       {/* @todo LARA: REMOVE FROM HERE LATER */}
-      {/* Commenting out below so we can merge and rebase diff PR with staging - will fix in new PR */}
-      {/* <CarouselCards />
-      <div className={styles.carouselContainer}>
+      {/* Commenting out below so we can merge and rebase
+      diff PR with staging - will fix in new PR */}
+      {/* <CarouselCards /> */}
+      {/* eslint-disable max-len */}
+      {/* <div className={styles.carouselContainer}>
         <Card
           urlTo="/"
           image="//images.ctfassets.net/iz0aikshgysc/2CD4XNN4YwS3x3ThGFqWAd/6b777014c886c7c16c6e03eafa8dcfe1/kpmg-ecom.png"
@@ -121,6 +123,7 @@ const Reports = ({ entries }) => {
           type="spotlight"
         />
       </div> */}
+      {/* eslint-enable max-len */}
       {/* REMOVE UNTIL HERE LATER */}
       {reports && (
         <>
