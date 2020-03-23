@@ -40,6 +40,59 @@ export const GLOBAL_TAGS = {
 };
 
 export const SEO_TAGS = {
+  '/': {
+    title: 'AIME Mentoring',
+    canonical: 'https://aimementoring.com',
+    languageAlternate: {
+      href: 'https://aimementoring.com/',
+      hrefLang: 'x-default',
+    },
+    description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
+    openGraph: {
+      url: 'https://aimementoring.com',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-15T16:13:50+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-22T11:52:10+10:00',
+        datePublished: '2018-02-15T16:13:50+11:00',
+        description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
+        title: 'AIME Mentoring',
+        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg'],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com',
+          },
+        ],
+        name: 'AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
   '/ambassadors': {
     title: 'Ambassadors',
     canonical: 'https://aimementoring.com/ambassadors',
@@ -241,8 +294,6 @@ export const SEO_TAGS = {
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: '2016 Annual Story',
         images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        // 'inLanguage': 'en-001',
-        // 'mainEntityOfPage': 'https://aimementoring.com/reports/2016-annual-story',
         name: '2016 Annual Story',
         publisherName: '#creator',
         url: 'https://aimementoring.com/reports/2016-annual-story',
@@ -327,45 +378,6 @@ export const SEO_TAGS = {
       },
     ],
   },
-  '/coming-soon': {
-    description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-    openGraph: {
-      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      title: 'AIME Mentoring',
-    },
-    twitter: {
-      title: 'AIME Mentoring',
-    },
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-    languageAlternate: {
-      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      hrefLang: 'x-default',
-    },
-    title: 'AIME Mentoring',
-    jsonLd: [
-      {
-        type: 'WebSite',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        creatorName: '#creator',
-        description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-        name: 'AIME Mentoring',
-        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
-          },
-        ],
-      },
-    ],
-  },
   '/donate': {
     description: 'To change the world, we need to change the way it works! You have the opportunity to make a difference!',
     openGraph: {
@@ -426,7 +438,6 @@ export const SEO_TAGS = {
   },
   '/eoi': {
     title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
     languageAlternate: {
       href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
       hrefLang: 'x-default',
@@ -465,7 +476,6 @@ export const SEO_TAGS = {
   },
   '/dynamicEOI': {
     title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
     languageAlternate: {
       href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
       hrefLang: 'x-default',
@@ -632,7 +642,6 @@ export const SEO_TAGS = {
   },
   '/going-global': {
     title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
     languageAlternate: {
       href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
       hrefLang: 'x-default',
@@ -656,112 +665,6 @@ export const SEO_TAGS = {
         mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
         name: 'AIME Mentoring',
         url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
-          },
-        ],
-      },
-    ],
-  },
-  '/': {
-    title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com',
-    languageAlternate: {
-      href: 'https://aimementoring.com/',
-      hrefLang: 'x-default',
-    },
-    description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
-    openGraph: {
-      url: 'https://aimementoring.com',
-      title: 'AIME Mentoring',
-    },
-    twitter: {
-      title: 'AIME Mentoring',
-    },
-    jsonLd: [
-      {
-        type: 'Article',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        copyrightYear: '2018-02-15T16:13:50+11:00',
-        creatorName: '#creator',
-        dateModified: '2018-09-22T11:52:10+10:00',
-        datePublished: '2018-02-15T16:13:50+11:00',
-        description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
-        title: 'AIME Mentoring',
-        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg'],
-        additionalMetaTags: [
-          {
-            property: 'inLanguage',
-            content: 'en-001',
-          },
-          {
-            property: 'mainEntityOfPage',
-            content: 'https://aimementoring.com',
-          },
-        ],
-        name: 'AIME Mentoring',
-        publisherName: '#creator',
-        url: 'https://aimementoring.com',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
-          },
-        ],
-      },
-    ],
-  },
-  '/home': {
-    title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com',
-    languageAlternate: {
-      href: 'https://aimementoring.com/',
-      hrefLang: 'x-default',
-    },
-    description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
-    openGraph: {
-      url: 'https://aimementoring.com',
-      title: 'AIME Mentoring',
-    },
-    twitter: {
-      title: 'AIME Mentoring',
-    },
-    jsonLd: [
-      {
-        type: 'Article',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        copyrightYear: '2018-02-15T16:13:50+11:00',
-        creatorName: '#creator',
-        dateModified: '2018-09-22T11:52:10+10:00',
-        datePublished: '2018-02-15T16:13:50+11:00',
-        description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
-        title: 'AIME Mentoring',
-        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg'],
-        additionalMetaTags: [
-          {
-            property: 'inLanguage',
-            content: 'en-001',
-          },
-          {
-            property: 'mainEntityOfPage',
-            content: 'https://aimementoring.com',
-          },
-        ],
-        name: 'AIME Mentoring',
-        publisherName: '#creator',
-        url: 'https://aimementoring.com',
       },
       {
         type: 'BreadcrumbList',
@@ -944,45 +847,6 @@ export const SEO_TAGS = {
             position: 2,
             name: 'Know AIME',
             item: 'https://aimementoring.com/know-aime',
-          },
-        ],
-      },
-    ],
-  },
-  '/mentors': {
-    title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-    languageAlternate: {
-      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      hrefLang: 'x-default',
-    },
-    description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-    openGraph: {
-      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      title: 'AIME Mentoring',
-    },
-    twitter: {
-      title: 'AIME Mentoring',
-    },
-    jsonLd: [
-      {
-        type: 'WebSite',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        creatorName: '#creator',
-        description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-        name: 'AIME Mentoring',
-        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
           },
         ],
       },
@@ -1220,9 +1084,8 @@ export const SEO_TAGS = {
       },
     ],
   },
-  '/terms-and-conditions': {
-    title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+  '/terms-of-service': {
+    title: 'Terms of Service',
     languageAlternate: {
       href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
       hrefLang: 'x-default',
@@ -1370,45 +1233,6 @@ export const SEO_TAGS = {
             position: 2,
             name: 'The Mentor',
             item: 'https://aimementoring.com/the-mentor',
-          },
-        ],
-      },
-    ],
-  },
-  '/products': {
-    title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-    languageAlternate: {
-      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      hrefLang: 'x-default',
-    },
-    description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-    openGraph: {
-      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      title: 'AIME Mentoring',
-    },
-    twitter: {
-      title: 'AIME Mentoring',
-    },
-    jsonLd: [
-      {
-        type: 'WebSite',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        creatorName: '#creator',
-        description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: ['https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg'],
-        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-        name: 'AIME Mentoring',
-        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
           },
         ],
       },
