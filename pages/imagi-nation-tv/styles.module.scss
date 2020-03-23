@@ -14,7 +14,6 @@
     @media screen and (min-width: $md) {
       padding: 1em 2em;
     }
-    
   }
 
   .welcomeTitle {
@@ -27,6 +26,7 @@
     padding: 1em;
     z-index: 10;
     position: relative;
+
     @media screen and (min-width: $md) {
       font-size: 1.8rem;
     }
@@ -48,11 +48,21 @@
   
   .bannerContent {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
 
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .imagiBannerInfo {
       max-width: 30em;
+
+      @media screen and (max-width: $sm) {
+        margin-top: 2em;
+      }
 
       .infoTitle {
         letter-spacing: -.15em;
@@ -92,6 +102,10 @@
 }
 
 .inTVContentWrapper {
+  .purpleTitle {
+    color: $purple;
+    margin-bottom: 1em;
+  }
 
   .triBtnSet {
     padding: 3em 1em; 
@@ -125,30 +139,50 @@
     width: 100%;
     columns: 20em;
     column-gap: 1.5em;
-    
-    .episodePanel {
-      break-inside: avoid-column;
-      margin-bottom: 1.5em;
+  }
 
-      .episodeHeader {
-        background-color: $cyan;
-        padding: 1em;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
+  .partnersWrapper {
+    max-width: 64em;
+    margin: auto;
 
-        img {
-          width: 10em;
-        }
+    .partnersHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 1em;
+      flex-direction: row;
+
+      @media screen and (max-width: $sm) {
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .becomeAPartnerBtn {
+      background-color: $pink;
+
+      @media screen and (max-width: $sm) {
+        width: 100%;
+      }
+    }
+
+    .partnersImagesGroup {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width: 52em;
+      margin: 1em auto;
+
+      @media screen and (max-width: $sm) {
+        flex-direction: column;
+        margin: 1em 2em;
       }
 
-      .episodeContentInfo {
-        padding: 1em;
-        border: 1px solid $grey40;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
-        border-top: none;
+      .partnerImage {
+        margin: 1em;
       }
     }
   }
-
 }
