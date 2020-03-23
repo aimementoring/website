@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+// @TODO: Replace anchor by an element as a Blueprint button
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -36,7 +40,7 @@ const QuicklinksHomepage = (props) => {
         <div className="quicklinkGridItem">
           <a href="https://shop.aimementoring.com/" target="_blank" rel="noopener noreferrer" className="quicklinkImage">
             <img
-              src={`${ASSETS_URL}/assets/images/illustrations/hoodie-apparel.png`}
+              src={`${ASSETS_URL}/assets/images/illustrations/hoodie-imagination.png`}
               alt="Hoodie"
             />
           </a>
