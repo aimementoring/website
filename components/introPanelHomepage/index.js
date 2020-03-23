@@ -18,33 +18,49 @@ const IntroPanelHomepage = () => (
         <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
           <Title type="headingLockup">
             <strong>
-              Hey
-              {' '}
+              Hey&nbsp;
               <span>there!</span>
             </strong>
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-              Our site is in draft mode as we updated it to reflect
-              AIME in 2020 & beyond. We’re imagining a fairer world
-              by using our imagination curriculum and mentoring to create
-              change for marginalised youth.
+              In responce to COVID-19 we will be pausing our physical delivery of the program in
+              schools and universities until June 1 and focusing on the digital solution of our
+              daily mentor TV show&nbsp;
+              <a
+                href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376273"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                IMAGI-NATION TV
+              </a>
+            .
             </Paragraph>
             <Paragraph>
               <mark>Wanna see how?</mark>
-              &nbsp;Check out our plan to bring it to life
-              (max 10 minute read)
+              &nbsp;Check out&nbsp;
+              <a
+                href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376269"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                our plan
+              </a>
+              &nbsp;to take our Imagination Factory direct to homes as part of the work towards our
+              3 year strategy.
             </Paragraph>
             <Paragraph>
-              - JMB
+              - Jack MB, AIME CEO & Founder, 17 March 2020
             </Paragraph>
+            <br />
+
             <Anchor
               to="https://drive.google.com/a/aimementoring.com/file/d/173GIgP8070ojn4lMmgTaQMXSjahaGRCY/view?usp=sharing"
               type="link"
               target="_blank"
             >
               <Button theme={process.env.REACT_APP_THEME} aria-label="cta">
-                View Strategy
+                View 3 Year Strategy
               </Button>
             </Anchor>
           </div>
