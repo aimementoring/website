@@ -40,9 +40,17 @@
       width: 17rem;
     }
   }
-
-  .watchBtn {
-    padding: 1.1em 5em;
+  .triBtnSet {
+    .watchBtn {
+      padding: 1.1em 5em;
+      background-color: $orange;
+    }
+    .imagiDonate {
+      background-color: $purple;
+    }
+    .imagiHoodieBtn {
+      background-color: $cyan;
+    }
   }
 }
 
