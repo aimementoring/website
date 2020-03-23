@@ -1,19 +1,18 @@
 import React from 'react';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-// import CASE_STUDIES from '../../constants/caseStudiesList';
-// import VideoPlayer from '../../components/videoPlayer';
 import styles from './styles.module.scss';
+import Anchor from '../../components/common/link';
 
-// const CaseStudyBox = dynamic(() => import('../../components/caseStudyBox'));
+const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
+const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ImagiNationTV = () => (
   <Layout>
-
     <div className={styles.heroBannerImagiTV}>
       <div className={styles.subpageBannerWrapper}>
         <div className={styles.bannerContent}>
@@ -42,37 +41,43 @@ const ImagiNationTV = () => (
         </div>
       </div>
       <div className={styles.videoContainerFeature}>
-        <a href="https://www.youtube.com/user/aimementoring/live" target="_blank">
+        <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
             alt="Imagi-nation TV"
             className={styles.videoCoverArt}
           />
-        </a>
+        </Anchor>
       </div>
     </div>
     <div className={styles.inTVContentWrapper}>
       <section className={styles.triBtnSet}>
-        <Button type="link"
+        <Button
+          type="link"
           text="Watch live on YouTube"
           theme={process.env.REACT_APP_THEME}
           className={`${styles.imagiBtn}`}
-          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" />
-        <Button type="link"
+          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
+        />
+        <Button
+          type="link"
           className={`${styles.imagiDonate} ${styles.imagiBtn}`}
           text="Donate to [INTV]"
           theme={process.env.REACT_APP_THEME}
-          url="https://imagi-nation-tv.raisely.com/" />
-        <Button type="link"
+          url="https://imagi-nation-tv.raisely.com/"
+        />
+        <Button
+          type="link"
           className={`${styles.imagiHoodieBtn} ${styles.imagiBtn}`}
           text="Buy the Imagi-Nation Hoodie"
           theme={process.env.REACT_APP_THEME}
-          url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
+          url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
+        />
       </section>
-      <hr />
+      <DoubleCurvedLine />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
-          <Title className={styles.welcomeTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
+          <Title className={styles.purpleTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
             About Each Episode
           </Title>
           <Paragraph>
@@ -81,71 +86,160 @@ const ImagiNationTV = () => (
             know. Get in it, good chance to explain it a bit more here.
           </Paragraph>
         </div>
-        
-        <div className={`${styles.dailyWrapper} ${styles.episodePanel}`}>
-          <div className={styles.episodeHeader}>
+        <ImaginationTvCard
+          day="Tuesday"
+          title="Youngsters"
+          image="youngsters_mobile"
+          color="aquamarine"
+        >
+          <Paragraph>
+            <strong>
+              Presidential Speech for IMAGI-NATION
+            </strong>
+          </Paragraph>
+          <Paragraph>
+            Every week, students from across the world are given the stage to deliver a
+            3-minute speech as the President of IMAGI-NATION. They will focus on the topic
+            of the week, and use the space to inspire us all to make sense of the world
+            today so we can imagine the world tomorrow.
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              CHAOS Classroom
+            </strong>
+          </Paragraph>
+          <Paragraph>
+            Join AIME Founder & CEO Jack Manning Bancroft and 15 students from across
+            Australia and around the world who will take part in a 7 minute hyperdrive
+            lesson on the topic theme of the week. See a real life case study as to how
+            to run a classroom digitally amongst the chaos of today.
+          </Paragraph>
+          <Paragraph>
+            We’ll also be inviting boss human guest teachers take on the reins of
+            the CHAOS Classroom and run a session on any one of our 21 core values.
+          </Paragraph>
+        </ImaginationTvCard>
+        <ImaginationTvCard
+          day="Thursday"
+          title="Keynote"
+          image="keynote_tablet"
+          color="purple"
+        >
+          <Paragraph>
+            <strong>
+              &quot;Cancelled, not cancelled&quot;
+            </strong>
+          </Paragraph>
+          <Paragraph>
+            Each week AIME gives the stage to a festival or conference that has been
+            cancelled to have some level of publicity and promotion.
+          </Paragraph>
+          <Paragraph>
+            To inspire marginalised kids to rise up and change their world.
+            To inspire us all to seek knowledge, to find inspiration in ideas, and
+            embrace the kindness of someone sharing what they know with us.
+          </Paragraph>
+        </ImaginationTvCard>
+        <ImaginationTvCard
+          day="Monday"
+          title="Thinkers"
+          image="thinkers_computer"
+          color="lightblue"
+        >
+          <Paragraph>
+            World-class teachers and knowledge holders, across our schools and
+            universities and further abroad; the philosophers & big picture thinkers
+            of the world.
+          </Paragraph>
+        </ImaginationTvCard>
+        <ImaginationTvCard
+          day="Wednesday"
+          title="Designers"
+          image="designers_tv"
+          color="orange"
+        >
+          <Paragraph>
+            Those building the world today and tomorrow.
+            There’s no limit to what we believe is “design”.
+          </Paragraph>
+          <Paragraph>
+            You’ll have the chance to dance around a big picture topic with 2
+            other panelists. We are elevating the knowledge of designers who have
+            got us here today, who have created the world we live in. We are
+            exploring the mindsets, processes, philosophy and thinking patterns
+            that have taken you to where you are now.
+          </Paragraph>
+        </ImaginationTvCard>
+        <ImaginationTvCard
+          day="Friday"
+          title="Artists"
+          image="artists_tv"
+          color="pink"
+        >
+          <Paragraph>
+            <strong>
+              What can we create in 25 minutes?
+            </strong>
+          </Paragraph>
+          <Paragraph>
+            Up to 5 artists will join us for 25 minutes to set out on a creative
+            adventure. To make something from nothing. To show us that we all have
+            art in us, we can all create, if only we begin to imagine.
+          </Paragraph>
+          <Paragraph>
+            <strong>
+              Musician performance &quot;Let the music play&quot;
+            </strong>
+          </Paragraph>
+          <Paragraph>
+            Each week, AIME will profile musicians who will have the chance to play
+            a song live on IMAGI-NATION TV. We see the value of music to bring people
+            together, to inspire us in dark times, to give us love and hope. This
+            segment is to keep the music playing in the face of concerts, festivals
+            and gigs being cancelled worldwide.
+          </Paragraph>
+        </ImaginationTvCard>
+      </section>
+      <DoubleCurvedLine />
+      <section className={styles.partnersWrapper}>
+        <div className={styles.partnersHeader}>
+          <Title className={styles.purpleTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
+            Our partners
+          </Title>
+          <Button
+            type="link"
+            className={styles.becomeAPartnerBtn}
+            text="Become a partner"
+            theme={process.env.REACT_APP_THEME}
+            url="https://imagi-nation-tv.raisely.com/"
+          />
+        </div>
+        <div className={styles.partnersImagesGroup}>
+          <div className={styles.partnerImage}>
             <img
-              src={`${ASSETS_URL}/assets/images/illustrations/EARTH-min@2x.gif`}
-              alt="Spinning Earth"
-              className={styles.dancingIllo}
+              src={`${ASSETS_URL}/assets/images/partners/waverly.png`}
+              alt="Imagi-nation TV"
             />
-            <Title className={styles.headingLockup} type="h3Title" theme={process.env.REACT_APP_THEME}>
-              Monday
-              <strong>Thinkers</strong>
-            </Title>
           </div>
-          <div className={styles.episodeContentInfo}>
-            <Paragraph>
-              World-class teachers and knowledge holders, across our schools and
-              universities and further abroad; the philosophers & big picture thinkers
-              of the world.
-            </Paragraph>
+          <div className={styles.partnerImage}>
+            <img
+              src={`${ASSETS_URL}/assets/images/partners/pedestrian.png`}
+              alt="Imagi-nation TV"
+            />
+          </div>
+          <div className={styles.partnerImage}>
+            <img
+              src={`${ASSETS_URL}/assets/images/partners/warragul.png`}
+              alt="Imagi-nation TV"
+            />
+          </div>
+          <div className={styles.partnerImage}>
+            <img
+              src={`${ASSETS_URL}/assets/images/partners/background.png`}
+              alt="Imagi-nation TV"
+            />
           </div>
         </div>
-
-        
-        <div className={`${styles.dailyWrapper} ${styles.episodePanel}`}>
-          <div className={styles.episodeHeader}>
-            <img
-              src={`${ASSETS_URL}/assets/images/illustrations/EARTH-min@2x.gif`}
-              alt="Spinning Earth"
-              className={styles.dancingIllo}
-            />
-            <Title className={styles.headingLockup} type="h3Title" theme={process.env.REACT_APP_THEME}>
-              Tuesday
-              <strong>Youngsters</strong>
-            </Title>
-          </div>
-          <div className={styles.episodeContentInfo}>
-            <Paragraph>
-              <strong>
-                Presidential Speech for IMAGI-NATION
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              Every week, students from across the world are given the stage to deliver a
-              3-minute speech as the President of IMAGI-NATION. They will focus on the topic
-              of the week, and use the space to inspire us all to make sense of the world
-              today so we can imagine the world tomorrow.
-            </Paragraph>
-            <Paragraph>
-              <strong>
-                CHAOS Classroom
-              </strong>
-            </Paragraph>
-            <Paragraph>
-              Join AIME Founder & CEO Jack Manning Bancroft and 15 students from across
-              Australia and around the world who will take part in a 7 minute hyperdrive
-              lesson on the topic theme of the week. See a real life case study as to how
-              to run a classroom digitally amongst the chaos of today.
-            </Paragraph>
-            <Paragraph>
-              We’ll also be inviting boss human guest teachers take on the reins of
-              the CHAOS Classroom and run a session on any one of our 21 core values.
-            </Paragraph>
-          </div>
-        </div>
-
       </section>
     </div>
   </Layout>
