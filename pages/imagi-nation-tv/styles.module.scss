@@ -12,7 +12,7 @@
   .subpageBannerWrapper {
     padding: 1em;
     @media screen and (min-width: $md) {
-      padding: 2em;
+      padding: 1em 2em;
     }
     
   }
@@ -37,7 +37,7 @@
     width: 13rem;
     left: -1em;
     @media screen and (min-width: $md) {
-      width: 20rem;
+      width: 17rem;
     }
   }
 
@@ -46,16 +46,29 @@
     left: -9999px;
   }
   
+  .bannerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .imagiBannerInfo {
+      max-width: 30em;
+
+      .infoTitle {
+        letter-spacing: -.15em;
+      }
+    }
+  }
 }
 
 
 .videoContainerFeature {
   max-width: 65em;
   margin: 0 auto;
-  margin-top: -3.5em;
+  // margin-top: -3.5em;
 
   @media screen and (min-width: $md) {
-    margin-top: -18em;
+    // margin-top: -18em;
 
   }
 }
@@ -78,13 +91,8 @@
   }
 }
 
-.imagi-landing-wrapper {
+.inTVContentWrapper {
 
-  .imagiPara {
-    padding: 1em 3em 0;
-    text-align: center;
-    width: 100%;
-  }
   .triBtnSet {
     padding: 3em 1em; 
     
@@ -108,8 +116,39 @@
         margin: 0;
       }
     }
-    
+  }
 
+  .inTVEpisodesWrapper {
+    max-width: $lg;
+    padding: 2em;
+    margin: 0 auto;
+    width: 100%;
+    columns: 20em;
+    column-gap: 1.5em;
+    
+    .episodePanel {
+      break-inside: avoid-column;
+      margin-bottom: 1.5em;
+
+      .episodeHeader {
+        background-color: $cyan;
+        padding: 1em;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        img {
+          width: 10em;
+        }
+      }
+
+      .episodeContentInfo {
+        padding: 1em;
+        border: 1px solid $grey40;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-top: none;
+      }
+    }
   }
 
 }
