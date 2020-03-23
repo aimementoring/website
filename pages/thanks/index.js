@@ -8,7 +8,7 @@ import './thanksPage.scss';
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ThanksPage = ({ query }) => {
-  let message = 'Your message has been succesfully submitted and we will get back to you as soon as we can!';
+  let message = 'Your message has been successfully submitted and we will get back to you as soon as we can!';
   if (query && query.messages) {
     message = query.messages;
   }
