@@ -29,9 +29,11 @@ const Reports = ({ entries }) => {
     if (newCategory === categorySelected) {
       return;
     }
-    const reportsToShow = entries.filter(
-      (report) => report.fields.reportType.indexOf(newCategory) > -1,
-    );
+
+
+    const reportsToShow = entries.filter((report) => report.fields
+      && report.fields.reportType
+      && report.fields.reportType.indexOf(newCategory) > -1);
     setReportEntries(reportsToShow);
     setCategorySelected(newCategory);
   };
