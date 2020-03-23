@@ -22,16 +22,29 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
         <Paragraph>
           A chance for kids at home to have mentors in their lives to <em>Make Sense of Today & Imagine Tomorrow</em>. 
         </Paragraph>
-        <Button
-          theme={process.env.REACT_APP_THEME}
-          onClickFunction={scrollHandler}
-          className={styles.watchBtn}
-          url="https://www.youtube.com/user/aimementoring/live"
-          target="_blank"
-          type="link"
-        >
-          Watch live on YouTube
-        </Button>
+
+        <div className="triBtnSet">
+          <Button
+            theme={process.env.REACT_APP_THEME}
+            onClickFunction={scrollHandler}
+            className={styles.watchBtn}
+            url="https://www.youtube.com/user/aimementoring/live"
+            target="_blank"
+            type="link"
+          >
+            Watch live on YouTube
+          </Button>
+          <Button 
+            type="link"
+            text="Donate to [INTV]"
+            theme={process.env.REACT_APP_THEME}
+            url="https://imagi-nation-tv.raisely.com/"
+            className={styles.imagiDonate}
+          />
+          <Button type="link" text="Buy the Imagi-Nation Hoodie"
+            className={styles.imagiHoodieBtn}
+            theme={process.env.REACT_APP_THEME} url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
+        </div>
       </div>
       <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
         <img
