@@ -45,10 +45,10 @@ const ImagiNationTV = () => (
       </Paragraph>
       <div className="triBtnSet">
         <Button type="link"
-          text="Watch the episode"
+          text="Watch the episodes"
           theme={process.env.REACT_APP_THEME}
           className={`${styles.imagiBtn}`}
-          url="https://www.youtube.com/user/aimementoring/live" />
+          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" />
         <Button type="link"
           className={`${styles.imagiDonate} ${styles.imagiBtn}`}
           text="Donate to [INTV]"
