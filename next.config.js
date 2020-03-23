@@ -2,6 +2,13 @@ require('dotenv').config();
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
+const sitemap = require('nextjs-sitemap-generator');
+
+sitemap({
+  baseUrl: 'https://aimementoring.com',
+  pagesDirectory: `${__dirname}/pages`,
+  targetDirectory: 'public/static/',
+});
 
 module.exports = withOffline(
   withCSS(
@@ -21,6 +28,7 @@ module.exports = withOffline(
         };
         return config;
       },
+      poweredByHeader: false,
       exportTrailingSlash: false,
       cssModules: true,
       sassLoaderOptions: {},
