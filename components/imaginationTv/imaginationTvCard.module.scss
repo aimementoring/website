@@ -30,6 +30,7 @@
       position: relative;
       color: #004B60;
       transform: matrix(0.99, -0.12, 0.15, 0.99, 0, 0);
+      letter-spacing: -0.1em;
 
       strong {
         color: $white;
@@ -38,7 +39,7 @@
   }
 
   .episodeContentInfo {
-    padding: 1em;
+    padding: 1.8em 1.5em 0.5em;
     border: 1px solid $grey40;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
