@@ -27,6 +27,10 @@
         margin: inherit;
       }
 
+      strong {
+        letter-spacing: -0.1em;
+      }
+
       strong span {
         color: $orange;
       }
@@ -57,7 +61,7 @@
   }
 
   &.welcomeVideo {
-    background: url($cdnRoot + 'assets/images/video/vid-sherice.jpg') no-repeat top center / cover $magenta;
+    background: url($cdnRoot + 'assets/images/media/welcome-video-bg%402x+(1).jpg') no-repeat top center / cover $magenta;
     max-width: 25em;
     margin-top: 2em;
   }
