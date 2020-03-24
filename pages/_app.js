@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { withRouter } from 'next/router';
 import TagManager from 'react-gtm-module';
 import {
@@ -41,7 +41,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, router } = this.props;
     return (
-      <Container>
+      <>
         <DefaultSeo {...defaultSeoProps} />
         <SeoComponent page={router.asPath} />
         {jsonLd && jsonLd.length > 0 && jsonLd.map(({ type, name, ...props }) => {
@@ -52,7 +52,7 @@ class MyApp extends App {
           return null;
         })}
         <Component {...pageProps} />
-      </Container>
+      </>
     );
   }
 }
