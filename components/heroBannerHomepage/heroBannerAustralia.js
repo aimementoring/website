@@ -38,7 +38,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             type="link"
             text="Donate to [INTV]"
             theme={process.env.REACT_APP_THEME}
-            url="https://imagi-nation-tv.raisely.com/"
+            url="/donate"
             className={`${styles.triBtn} ${styles.imagiDonate}`}
           />
           <Button type="link" text="Buy the Imagi-Nation Hoodie"
