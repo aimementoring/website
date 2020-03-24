@@ -1,10 +1,8 @@
 import React from 'react';
 import Router from 'next/router';
-import Title from 'aime-blueprint/lib/components/title';
-import Button from 'aime-blueprint/lib/components/button';
-import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import entriesType from '../entriesType';
 import Carousel from '../../carousel';
+import { StoryBanner } from '../../banner';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
@@ -38,19 +36,14 @@ const StoriesCarousel = ({ entries }) => (
             ));
           const handleClick = () => Router.push(`/story/${slugTitle}`);
           return (
-            <div key={id}>
-              <div className={styles.heroBannerStories} style={{ backgroundImage: `url(https:${image})` }}>
-                <div className={styles.featuredStory}>
-                  <div className={styles.textWrap}>
-                    {title && <Title type="h3Title">{title}</Title>}
-                    {copy && <Paragraph>{copy}</Paragraph>}
-                    <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
-                      Read more
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <StoryBanner
+              key={id}
+              copy={copy}
+              title={title}
+              buttonText="Read more"
+              handleClick={handleClick}
+              bannerImage={image}
+            />
           );
         })}
       </Carousel>
