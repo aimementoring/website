@@ -73,9 +73,7 @@ const TheMentorProducts = ({ productHandle }) => {
         bannerContentClass="banner-wrapper"
       />
       <div id="product-full">
-        {state.product && (
-          <ProductFull {...state} />
-        )}
+        {state.product && <ProductFull {...state} />}
       </div>
     </Layout>
   );
