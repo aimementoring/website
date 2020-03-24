@@ -19,10 +19,10 @@ const TheMentor = () => (
             bannerContentWrapperClass="banner-wrapper full-height section-background-image xs-py4"
             bannerContentClass={styles.mentorBannerContent}
             copy="The Mentor, by AIME Founder and CEO Jack Manning Bancroft is the story of how
-      it all started. Gain a real insight into contemporary Indigenous Australia.
-      How from humble beginnings a young Indigenous man&apos;s journey through university
-      lead to starting a fire that tackles education inequality across Australia and
-      now the world."
+              it all started. Gain a real insight into contemporary Indigenous Australia.
+              How from humble beginnings a young Indigenous man&apos;s journey through university
+              lead to starting a fire that tackles education inequality across Australia and
+              now the world."
             button={(
               <Button
                 theme={process.env.REACT_APP_THEME}
