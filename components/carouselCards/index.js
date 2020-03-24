@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import styles from './carouselCards.modules.scss';
+import styles from './carouselCards.module.scss';
 
 const Carousel = dynamic(() => import('../carousel'));
 const Card = dynamic(() => import('../card'));
@@ -8,7 +8,7 @@ const Card = dynamic(() => import('../card'));
 const CarouselCards = () => (
   <Carousel settings={{ dots: false, autoplaySpeed: 10000 }}>
     <div>
-      <div className={styles.carouselContainer}>
+      <div className={styles.cardsCarouselContainer}>
         <Card
           href="/"
           image="//images.ctfassets.net/iz0aikshgysc/2CD4XNN4YwS3x3ThGFqWAd/6b777014c886c7c16c6e03eafa8dcfe1/kpmg-ecom.png"
@@ -42,7 +42,7 @@ const CarouselCards = () => (
       </div>
     </div>
     <div>
-      <div className={styles.carouselContainer}>
+      <div className={styles.cardsCarouselContainer}>
         <Card
           href="/"
           image="//images.ctfassets.net/iz0aikshgysc/2CD4XNN4YwS3x3ThGFqWAd/6b777014c886c7c16c6e03eafa8dcfe1/kpmg-ecom.png"
