@@ -65,7 +65,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
         </a>
         <a className={styles.textLinkChannel} href="/imagi-nation-tv" target="_blank">
-          Check out what it's all about
+          See what it's all about
         </a>
       </div>
     </div>
