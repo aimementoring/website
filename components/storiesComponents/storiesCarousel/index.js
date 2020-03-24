@@ -1,100 +1,64 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Router from 'next/router';
-import { StoryBanner } from '../../banner/index';
-import { removeMarkdownLink } from '../../../utils/utilities';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import entriesType from '../entriesType';
+import Carousel from '../../carousel';
+import {
+  removeSpecialCharacters,
+  replaceWhiteSpace,
+  removeMarkdownLink,
+} from '../../../utils/utilities';
+import styles from './storiesCarousel.module.scss';
 
-const StoriesCarousel = (props) => {
-  const {
-    title,
-    slugTitle,
-    bannerImage,
-    contentCards,
-    contentPreview,
-  } = props;
-
-  const handleClick = () => {
-    Router.push(`/story/${slugTitle}`);
-  };
-
-  return (
-    <div className={slugTitle}>
-      <StoryBanner
-        title={title}
-        buttonText="Read More"
-        bannerImage={bannerImage}
-        handleClick={handleClick}
-        copy={contentPreview && contentPreview.previewCopy
-          ? (
-            `${contentPreview.previewCopy.slice(0, 230)}...`
-          )
-          : contentCards && contentCards.slice(0, 1).map((card) => (
-            card.fields.contentCopy
-              && (`${removeMarkdownLink(card.fields.contentCopy.slice(0, 240))} …`)
-          ))}
-      />
+const StoriesCarousel = ({ entries }) => (
+  <div className={styles.carouselContainer}>
+    <div className={styles.carousel}>
+      <Carousel>
+        {entries.map(({
+          fields: {
+            banner, title, contentPreview, contentCards,
+          },
+          sys: { id },
+        }) => {
+          const slugTitle = replaceWhiteSpace(removeSpecialCharacters(title), '-').toLowerCase();
+          const image = banner
+            && banner.fields.visualMedia
+            && banner.fields.visualMedia.fields
+            && banner.fields.visualMedia.fields.file
+            && banner.fields.visualMedia.fields.file.url;
+          const previewCopy = contentPreview
+            && contentPreview.fields
+            && contentPreview.fields.previewCopy;
+          const copy = previewCopy
+            ? `${previewCopy.slice(0, 230)}...`
+            : contentCards && contentCards.slice(0, 1).map(({ fields: { contentCopy } }) => (
+              contentCopy && (`${removeMarkdownLink(contentCopy.slice(0, 240))}...`)
+            ));
+          const handleClick = () => Router.push(`/story/${slugTitle}`);
+          return (
+            <div key={id}>
+              <div className={styles.heroBannerStories} style={{ backgroundImage: `url(https:${image})` }}>
+                <div className={styles.featuredStory}>
+                  <div className={styles.textWrap}>
+                    {title && <Title type="h3Title">{title}</Title>}
+                    {copy && <Paragraph>{copy}</Paragraph>}
+                    <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
+                      Read more
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </Carousel>
     </div>
-  );
-};
+  </div>
+);
 
-StoriesCarousel.defaultProps = {
-  contentCards: PropTypes.arrayOf(PropTypes.shape({})),
-  bannerImage: '',
-};
-
-StoriesCarousel.propTypes = {
-  title: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string.isRequired,
-  bannerImage: PropTypes.string,
-  contentCards: PropTypes.arrayOf(PropTypes.shape({
-    Type: PropTypes.string,
-    contentCopy: PropTypes.string,
-    displayType: PropTypes.string,
-    visualMedia: PropTypes.shape({
-      file: PropTypes.shape({
-        contentType: PropTypes.string,
-        fileName: PropTypes.string,
-        url: PropTypes.string,
-        title: PropTypes.string,
-        details: PropTypes.shape({
-          size: PropTypes.number,
-          image: PropTypes.shape({
-            height: PropTypes.number,
-            width: PropTypes.number,
-          }),
-        }),
-      }),
-    }),
-    visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
-    })),
-  })),
-  contentPreview: PropTypes.shape({
-    Type: PropTypes.string,
-    previewCopy: PropTypes.string,
-    displayType: PropTypes.string,
-    visualMedia: PropTypes.shape({
-      file: PropTypes.shape({
-        contentType: PropTypes.string,
-        fileName: PropTypes.string,
-        url: PropTypes.string,
-        title: PropTypes.string,
-        details: PropTypes.shape({
-          size: PropTypes.number,
-          image: PropTypes.shape({
-            height: PropTypes.number,
-            width: PropTypes.number,
-          }),
-        }),
-      }),
-    }),
-    visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({
-
-    })),
-  }),
-};
-
-StoriesCarousel.defaultProps = {
-  contentPreview: null,
-};
+StoriesCarousel.propTypes = { entries: entriesType };
+StoriesCarousel.defaultProps = { entries: [] };
 
 export default StoriesCarousel;
