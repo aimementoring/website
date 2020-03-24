@@ -72,7 +72,7 @@ const ImagiNationTV = () => (
           className={`${styles.imagiDonate} ${styles.imagiBtn}`}
           text="Donate to [INTV]"
           theme={process.env.REACT_APP_THEME}
-          url="https://imagi-nation-tv.raisely.com/"
+          url="/donate"
         />
       </section>
       <DoubleCurvedLine />
