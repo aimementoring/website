@@ -27,7 +27,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           <Button
             theme={process.env.REACT_APP_THEME}
             onClickFunction={scrollHandler}
-            className={styles.watchBtn}
+            className={`${styles.triBtn} ${styles.watchBtn}`}
             url="https://www.youtube.com/user/aimementoring/live"
             target="_blank"
             type="link"
@@ -39,10 +39,10 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             text="Donate to [INTV]"
             theme={process.env.REACT_APP_THEME}
             url="https://imagi-nation-tv.raisely.com/"
-            className={styles.imagiDonate}
+            className={`${styles.triBtn} ${styles.imagiDonate}`}
           />
           <Button type="link" text="Buy the Imagi-Nation Hoodie"
-            className={styles.imagiHoodieBtn}
+            className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
             theme={process.env.REACT_APP_THEME} url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
         </div>
       </div>
