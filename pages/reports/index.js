@@ -10,8 +10,6 @@ import { SimpleBanner } from '../../components/banner/index';
 import styles from './reports.modules.scss';
 
 const Report = dynamic(() => import('../../components/report'));
-// const Card = dynamic(() => import('../../components/card'));
-// const CarouselCards = dynamic(() => import('../../components/carouselCards'));
 
 const Reports = ({ entries }) => {
   const [reports, setReportEntries] = useState(entries);
