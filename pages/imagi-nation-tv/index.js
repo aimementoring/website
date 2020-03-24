@@ -4,6 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
+import IntercomChat from '../../components/intercom';
 import styles from './styles.module.scss';
 import Anchor from '../../components/common/link';
 
@@ -61,23 +62,23 @@ const ImagiNationTV = () => (
         />
         <Button
           type="link"
-          className={`${styles.imagiDonate} ${styles.imagiBtn}`}
-          text="Donate to [INTV]"
-          theme={process.env.REACT_APP_THEME}
-          url="https://imagi-nation-tv.raisely.com/"
-        />
-        <Button
-          type="link"
           className={`${styles.imagiHoodieBtn} ${styles.imagiBtn}`}
           text="Buy the Imagi-Nation Hoodie"
           theme={process.env.REACT_APP_THEME}
           url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
         />
+        <Button
+          type="link"
+          className={`${styles.imagiDonate} ${styles.imagiBtn}`}
+          text="Donate to [INTV]"
+          theme={process.env.REACT_APP_THEME}
+          url="https://imagi-nation-tv.raisely.com/"
+        />
       </section>
       <DoubleCurvedLine />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
-          <Title className={styles.purpleTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
+          <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
             About Each Episode
           </Title>
           <Paragraph>
@@ -86,6 +87,18 @@ const ImagiNationTV = () => (
             know. Get in it, good chance to explain it a bit more here.
           </Paragraph>
         </div>
+        <ImaginationTvCard
+          day="Monday"
+          title="Thinkers"
+          image="thinkers_computer"
+          color="lightblue"
+        >
+          <Paragraph>
+            World-class teachers and knowledge holders, across our schools and
+            universities and further abroad; the philosophers & big picture thinkers
+            of the world.
+          </Paragraph>
+        </ImaginationTvCard>
         <ImaginationTvCard
           day="Tuesday"
           title="Youngsters"
@@ -120,6 +133,24 @@ const ImagiNationTV = () => (
           </Paragraph>
         </ImaginationTvCard>
         <ImaginationTvCard
+          day="Wednesday"
+          title="Designers"
+          image="designers_tv"
+          color="orange"
+        >
+          <Paragraph>
+            Those building the world today and tomorrow.
+            There’s no limit to what we believe is “design”.
+          </Paragraph>
+          <Paragraph>
+            You’ll have the chance to dance around a big picture topic with 2
+            other panelists. We are elevating the knowledge of designers who have
+            got us here today, who have created the world we live in. We are
+            exploring the mindsets, processes, philosophy and thinking patterns
+            that have taken you to where you are now.
+          </Paragraph>
+        </ImaginationTvCard>
+        <ImaginationTvCard
           day="Thursday"
           title="Keynote"
           image="keynote_tablet"
@@ -138,36 +169,6 @@ const ImagiNationTV = () => (
             To inspire marginalised kids to rise up and change their world.
             To inspire us all to seek knowledge, to find inspiration in ideas, and
             embrace the kindness of someone sharing what they know with us.
-          </Paragraph>
-        </ImaginationTvCard>
-        <ImaginationTvCard
-          day="Monday"
-          title="Thinkers"
-          image="thinkers_computer"
-          color="lightblue"
-        >
-          <Paragraph>
-            World-class teachers and knowledge holders, across our schools and
-            universities and further abroad; the philosophers & big picture thinkers
-            of the world.
-          </Paragraph>
-        </ImaginationTvCard>
-        <ImaginationTvCard
-          day="Wednesday"
-          title="Designers"
-          image="designers_tv"
-          color="orange"
-        >
-          <Paragraph>
-            Those building the world today and tomorrow.
-            There’s no limit to what we believe is “design”.
-          </Paragraph>
-          <Paragraph>
-            You’ll have the chance to dance around a big picture topic with 2
-            other panelists. We are elevating the knowledge of designers who have
-            got us here today, who have created the world we live in. We are
-            exploring the mindsets, processes, philosophy and thinking patterns
-            that have taken you to where you are now.
           </Paragraph>
         </ImaginationTvCard>
         <ImaginationTvCard
@@ -203,16 +204,12 @@ const ImagiNationTV = () => (
       <DoubleCurvedLine />
       <section className={styles.partnersWrapper}>
         <div className={styles.partnersHeader}>
-          <Title className={styles.purpleTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
+          <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
             Our partners
           </Title>
-          <Button
-            type="link"
-            className={styles.becomeAPartnerBtn}
-            text="Become a partner"
-            theme={process.env.REACT_APP_THEME}
-            url="https://imagi-nation-tv.raisely.com/"
-          />
+          <div className={styles.becomeAPartnerBtn}>
+            <IntercomChat label="Become a partner" />
+          </div>
         </div>
         <div className={styles.partnersImagesGroup}>
           <div className={styles.partnerImage}>
