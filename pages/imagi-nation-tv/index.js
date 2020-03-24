@@ -79,12 +79,25 @@ const ImagiNationTV = () => (
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-            About Each Episode
+            A mentor in the home for every kid, every day.
           </Title>
           <Paragraph>
-            The latest from Hope, mentors around the world, Nala, covering
-            all the topics from feeling nice, music gigs, blah and this, you
-            know. Get in it, good chance to explain it a bit more here.
+            This is a show for those kids sitting at the back of the classroom,
+            delivering the message that we see them, that there are a multitude
+            of kids just like them ready to rise up, and that this is their moment to lead.
+          </Paragraph>
+          <Paragraph>
+            And today, it’s about those with knowledge and experience gathering together
+            in one moment so we are not alone, so that we move through tough times and
+            great times with a sense of connectedness.
+          </Paragraph>
+          <Paragraph>
+            The classroom and studio is Google. Guests join from their homes. The broadcast space is YouTube.
+          </Paragraph>
+          <Paragraph>
+          The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
+          countries who are currently involved in AIME’s Imagination Factory, and a world
+          of people looking to make sense of today in order to imagine tomorrow.
           </Paragraph>
         </div>
         <ImaginationTvCard
