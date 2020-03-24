@@ -64,8 +64,8 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">
-          Watch the episodes
+        <a className={styles.textLinkChannel} href="/imagi-nation-tv" target="_blank">
+          Check out what it's all about
         </a>
       </div>
     </div>
