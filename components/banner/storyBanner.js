@@ -20,24 +20,12 @@ const StoryBanner = (props) => {
 
   return (
     <div>
-      <div
-        className={styles.heroBannerStories}
-        style={imageBanner}
-      >
+      <div className={styles.heroBannerStories} style={imageBanner}>
         <div className={styles.featuredStory}>
           <div className={styles.textWrap}>
-            {title
-            && (
-              <Title type="h3Title">{title}</Title>
-            )}
-            {copy
-              && (
-                <Paragraph>
-                  {copy}
-                </Paragraph>
-              )}
-            {handleClick
-            && (
+            {title && <Title type="h3Title">{title}</Title>}
+            {copy && <Paragraph>{copy}</Paragraph>}
+            {handleClick && (
               <Button onClickFunction={handleClick} theme={process.env.REACT_APP_THEME}>
                 {buttonText}
               </Button>
