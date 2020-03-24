@@ -7,7 +7,7 @@ import contentfulServer from '../../api/contentfulPosts';
 import { sortDates } from '../../utils/utilities';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
-import styles from './reports.modules.scss';
+import styles from './reports.module.scss';
 
 const Report = dynamic(() => import('../../components/report'));
 
