@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1]
+## [5.0.0]
 ### Added
 
 - Redesign of home page
@@ -14,13 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Migrate architecture to SSR using nextjs
 - Migrate to css modules some pages and components
 - Start using Blueprint components as Input, Textarea, Paragraph, Titles
-- Improve performance issues and accessibility.
 
-## [Unreleased]
-- Revamp Apparel
-- Stories and World of Kindness Enhancements
-- Removing Craft from the picture
-- Fixing Changelog version. We're in about 4.5 taking into account the past versions from the website.
 ### [4.5.5] 2019-08-29
 - A bugsnag error catch to collect EOI form information from the user, then send it to bugsnag, this ensures if the error occurs we can still collect the key details of the user.
 - added the above information to the USER tab in bugsnag rather than create a new tab for the information.
