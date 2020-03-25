@@ -1,4 +1,6 @@
-import React, { useEffect, createRef } from 'react';
+import React, {
+  useEffect, useRef,
+} from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
@@ -15,8 +17,8 @@ const Ambassadors = dynamic(() => import('../../components/ambassadors'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
-  const partnerRef = createRef();
-  const getInvolvedRef = createRef();
+  const partnerRef = useRef(null);
+  const getInvolvedRef = useRef(null);
 
   useEffect(() => {
     if (!getFromStorage('home_first_visit')) {
@@ -24,15 +26,47 @@ const Home = () => {
     }
   }, []);
 
-  const scrollToPartnerBanner = () => {
-    if (isClientSide()) {
-      partnerRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // TODO: finish this function for safari smooth scroll and
+  // figure out why it starts from the top of screen each click
+
+  // const smoothScrollTo = (delay, position) => {
+  //   const scrollDelay = delay;
+  //   if (isClientSide()) {
+  //     let i = scrollDelay;
+  //     const int = setInterval(() => {
+  //       window.scrollTo(0, i);
+  //       i += scrollDelay;
+  //       if (Math.abs(window.scrollY) >= Math.abs(position)) {
+  //         clearInterval(int);
+  //       }
+  //     }, 20);
+  //   }
+  // };
+
 
   const scrollToGetInvolved = () => {
     if (isClientSide()) {
-      getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      if (isSmoothScrollSupported) {
+        getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // const pos = getInvolvedRef.current.getBoundingClientRect();
+        // smoothScrollTo(10, pos.top);
+        getInvolvedRef.current.scrollIntoView(false);
+      }
+    }
+  };
+
+  const scrollToPartnerBanner = () => {
+    if (isClientSide()) {
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      if (isSmoothScrollSupported) {
+        partnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // const pos = partnerRef.current.getBoundingClientRect();
+        // smoothScrollTo(10, pos.top + 500);
+        partnerRef.current.scrollIntoView(false);
+      }
     }
   };
 
