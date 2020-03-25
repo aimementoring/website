@@ -2,6 +2,13 @@
 
 .positions {
 
+  .home-intro-panel-inner-content {
+    h1 {
+      letter-spacing: -0.15em;
+      color: $orange;
+    }
+  }
+
   .scratch-bg.video-button {
     position: relative;
 
@@ -25,17 +32,22 @@
       opacity: 1;
     }
   }
+
+  .videoCaption {
+    text-align: right;
+  }
 }
 
 .positionsIntroPanel {
-  border: 1px solid pink;
   padding: 4em 1em 2em;
 
   .positionsIntroPanelContent {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @media screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .video-banner {
