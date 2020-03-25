@@ -20,7 +20,10 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
         </Title>
         <Paragraph>
-          A chance for kids at home to have mentors in their lives to <em>Make Sense of Today & Imagine Tomorrow</em>. 
+          A chance for kids at home to have mentors in their lives to
+          {' '}
+          <em>Make Sense of Today & Imagine Tomorrow</em>
+.
         </Paragraph>
 
         <div className="triBtnSet">
@@ -34,7 +37,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           >
             Watch live on YouTube
           </Button>
-          <Button 
+          <Button
             type="link"
             text="Donate to [INTV]"
             theme={process.env.REACT_APP_THEME}
@@ -57,7 +60,11 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           alt="ATOM"
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
-        <a href="https://www.youtube.com/user/aimementoring" target="_blank">
+        <a
+          href="https://www.youtube.com/user/aimementoring"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
             alt="Imagi-nation TV"
