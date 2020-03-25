@@ -71,7 +71,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} href="/imagi-nation-tv" target="_blank">
+        <a className={styles.textLinkChannel} href="/imagi-nation-tv">
           See what it's all about
         </a>
       </div>
