@@ -11,7 +11,7 @@ export const GLOBAL_TAGS = {
     images: [{
       width: 1200,
       height: 630,
-      url: `'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`,
+      url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
     }],
   },
   twitter: {
@@ -20,7 +20,7 @@ export const GLOBAL_TAGS = {
     description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
     creator: '@aimementoring', // I think we cannot use this one
     image: {
-      url: `'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`,
+      url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
       width: 1200,
       height: 642,
     },
@@ -68,7 +68,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-15T16:13:50+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -109,7 +109,7 @@ export const SEO_TAGS = {
       images: [{
         width: 1200,
         height: 630,
-        url: `'${ASSETS_URL}/resources/social_share/intv_social_share.jpg'`,
+        url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
       }],
     },
     twitter: {
@@ -117,7 +117,7 @@ export const SEO_TAGS = {
       title: 'IMAGI-NATION{TV}',
       url: 'https://aimementoring.com/imagi-nation-tv',
       image: {
-        url: `'${ASSETS_URL}/resources/social_share/intv_social_share.jpg'`,
+        url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
         width: 1200,
         height: 642,
       },
@@ -133,7 +133,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-15T16:13:50+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'IMAGI-NATION{TV}',
-        images: [`'${ASSETS_URL}/resources/social_share/intv_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/intv_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -169,7 +169,7 @@ export const SEO_TAGS = {
       {
         url: 'https://aimementoring.com/ambassadors',
         title: 'Ambassadors',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         datePublished: '2018-02-21T12:38:51+11:00',
         dateModified: '2018-03-07T11:33:06+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
@@ -227,7 +227,7 @@ export const SEO_TAGS = {
       {
         url: 'https://aimementoring.com/be-a-mentor',
         title: 'Be an AIME Mentor',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         datePublished: '2018-02-12T15:52:47+11:00',
         dateModified: '2018-08-20T10:47:16+10:00',
         description: 'AIME is a mentoring bridge between university and high school. On that bridge, there are two lanes. One lane has university students making their way to high schools to deliver free tutoring. On the other, school buses travel to university campuses where students participate in mentoring workshops.',
@@ -285,7 +285,7 @@ export const SEO_TAGS = {
       {
         url: 'https://aimementoring.com/about',
         title: 'About AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         datePublished: '2018-02-05T10:24:38+11:00',
         dateModified: '2018-03-07T11:36:14+11:00',
         description: 'We are driven to unlock the limitless potential of children who have been left behind. We do that by building mentoring bridges between universities and high schools, between the powerful and the powerless, the haves and the have nots.',
@@ -350,7 +350,7 @@ export const SEO_TAGS = {
         datePublished: '2016-02-20T19:19:00+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: '2016 Annual Story',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         name: '2016 Annual Story',
         publisherName: '#creator',
         url: 'https://aimementoring.com/reports/2016-annual-story',
@@ -403,7 +403,7 @@ export const SEO_TAGS = {
         datePublished: '2018-09-21T08:23:00+10:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Case Studies',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -461,7 +461,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-23T12:12:22+11:00',
         description: 'To change the world, we need to change the way it works! You have the opportunity to make a difference!',
         title: 'Donate to AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -514,7 +514,7 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         creatorName: '#creator',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
         name: 'AIME Mentoring',
         url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
@@ -552,7 +552,7 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         creatorName: '#creator',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
         name: 'AIME Mentoring',
         url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
@@ -584,7 +584,7 @@ export const SEO_TAGS = {
         {
           width: 1200,
           height: 630,
-          url: `'${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
+          url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
         },
       ],
     },
@@ -593,7 +593,7 @@ export const SEO_TAGS = {
       image: {
         width: 800,
         height: 800,
-        url: `'${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
+        url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
       },
     },
     jsonLd: [
@@ -607,7 +607,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-15T10:42:37+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`],
+        images: [`${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -665,7 +665,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-19T18:31:49+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Global Letter',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -718,7 +718,7 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         creatorName: '#creator',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
         name: 'AIME Mentoring',
         url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
@@ -761,7 +761,7 @@ export const SEO_TAGS = {
         datePublished: '2018-10-01T21:23:00+10:00',
         description: 'For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become "The Hooded Scholar" and lead a mentoring movement out of their campus to lift kids out of inequality.',
         title: 'The Hooded Scholar Scholarship from AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -819,7 +819,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-21T16:06:02+11:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Impact',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -877,7 +877,7 @@ export const SEO_TAGS = {
         datePublished: '2018-08-20T20:46:00+10:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Know AIME',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -935,7 +935,7 @@ export const SEO_TAGS = {
         datePublished: '2018-04-19T10:16:13+10:00',
         description: 'We ranked 12th best place to work in Asia for 2016.',
         title: 'Work at AIME Mentoring',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -993,7 +993,7 @@ export const SEO_TAGS = {
         datePublished: '2018-04-09T10:44:58+10:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Quizzes',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -1051,7 +1051,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-21T12:51:52+11:00',
         description: 'Read all about the effects and progress that occur in the AIME Program.',
         title: 'AIME Reports',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -1109,7 +1109,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-21T11:56:33+11:00',
         description: "At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn't cost a thing. Let's sprinkle it everywhere!",
         title: 'AIME Stories of Sunday Kindness',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -1162,7 +1162,7 @@ export const SEO_TAGS = {
         copyrightHolder: '#identity',
         creatorName: '#creator',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
         name: 'AIME Mentoring',
         url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
@@ -1205,7 +1205,7 @@ export const SEO_TAGS = {
         datePublished: '2018-09-21T08:25:00+10:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'Thanks',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
@@ -1263,7 +1263,7 @@ export const SEO_TAGS = {
         datePublished: '2018-09-21T08:22:00+10:00',
         description: 'We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.',
         title: 'The Mentor',
-        images: [`'${ASSETS_URL}/resources/social_share/AIME_social_share.jpg'`],
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
