@@ -9,7 +9,7 @@ import {
   formatDate,
   removeSpecialCharacters,
   replaceWhiteSpace,
-} from '../../../utils/utilities';
+} from '../../../utils/formatting';
 import styles from './story.module.scss';
 
 const ContentCard = dynamic(() => import('../../../components/storiesComponents/contentCard'));
