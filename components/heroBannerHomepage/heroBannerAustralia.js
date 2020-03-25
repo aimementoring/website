@@ -20,29 +20,32 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
         </Title>
         <Paragraph>
-          A chance for kids at home to have mentors in their lives to <em>Make Sense of Today & Imagine Tomorrow</em>. 
+          A chance for kids at home to have mentors in their lives to
+          {' '}
+          <em>Make Sense of Today & Imagine Tomorrow</em>
+.
         </Paragraph>
 
         <div className="triBtnSet">
           <Button
             theme={process.env.REACT_APP_THEME}
             onClickFunction={scrollHandler}
-            className={styles.watchBtn}
+            className={`${styles.triBtn} ${styles.watchBtn}`}
             url="https://www.youtube.com/user/aimementoring/live"
             target="_blank"
             type="link"
           >
             Watch live on YouTube
           </Button>
-          <Button 
+          <Button
             type="link"
-            text="Donate to [INTV]"
+            text="Donate to IN{TV}"
             theme={process.env.REACT_APP_THEME}
-            url="https://imagi-nation-tv.raisely.com/"
-            className={styles.imagiDonate}
+            url="/donate"
+            className={`${styles.triBtn} ${styles.imagiDonate}`}
           />
           <Button type="link" text="Buy the Imagi-Nation Hoodie"
-            className={styles.imagiHoodieBtn}
+            className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
             theme={process.env.REACT_APP_THEME} url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
         </div>
       </div>
@@ -57,15 +60,19 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           alt="ATOM"
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
-        <a href="https://www.youtube.com/user/aimementoring" target="_blank">
+        <a
+          href="https://www.youtube.com/user/aimementoring"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
-            alt="Imagi-nation TV"
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80" target="_blank">
-          Watch the episodes
+        <a className={styles.textLinkChannel} href="/imagi-nation-tv">
+          See what it's all about
         </a>
       </div>
     </div>
