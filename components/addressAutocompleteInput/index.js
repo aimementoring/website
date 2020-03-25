@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getGlobalVariables } from '../../services/craftAPI';
 import LocationSearchInput from './locationSearchInput';
 
 const AddressAutocompleteInput = ({
@@ -12,8 +11,7 @@ const AddressAutocompleteInput = ({
   const [googleMapsApiToken, setGoogleMapsApiToken] = useState(null);
 
   const getGoogleApiToken = async () => {
-    const data = await getGlobalVariables();
-    setGoogleMapsApiToken(data.googleMapsApiToken);
+    setGoogleMapsApiToken(process.env.GOOGLE_MAPS_API_TOKEN);
   };
 
   useEffect(() => {
