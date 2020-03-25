@@ -66,8 +66,8 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           rel="noopener noreferrer"
         >
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
-            alt="Imagi-nation TV"
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
         </a>
