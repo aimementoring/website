@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../../hocs/basicLayout';
 import Anchor from '../../../components/common/link';
-import contentfulServer from '../../../api/contentfulStories';
+import contentfulServer from '../../../api/contentfulPosts';
 import {
   formatDate,
   removeSpecialCharacters,
