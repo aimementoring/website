@@ -61,7 +61,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
         <a
-          href="https://www.youtube.com/user/aimementoring"
+          href="https://www.youtube.com/user/aimementoring/live"
           target="_blank"
           rel="noopener noreferrer"
         >
