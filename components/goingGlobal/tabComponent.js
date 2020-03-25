@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { getAssetsBaseUrl } from '../../services/craftAPI';
+import { getAssetsBaseUrl } from '../../utils/utilities';
 import styles from './goingGlobalComp.module.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
