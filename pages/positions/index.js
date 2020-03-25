@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import './positions.scss';
 
 const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
@@ -75,7 +75,6 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
               </div>
             </div>
           </div>
-            
           <div className="wrap mx-auto px3">
             {!!countryId && (
               <Jobs
