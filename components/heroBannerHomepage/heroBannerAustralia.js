@@ -30,7 +30,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           <Button
             theme={process.env.REACT_APP_THEME}
             onClickFunction={scrollHandler}
-            className={styles.watchBtn}
+            className={`${styles.triBtn} ${styles.watchBtn}`}
             url="https://www.youtube.com/user/aimementoring/live"
             target="_blank"
             type="link"
@@ -39,18 +39,14 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           </Button>
           <Button
             type="link"
-            text="Donate to [INTV]"
+            text="Donate to IN{TV}"
             theme={process.env.REACT_APP_THEME}
-            url="https://imagi-nation-tv.raisely.com/"
-            className={styles.imagiDonate}
+            url="/donate"
+            className={`${styles.triBtn} ${styles.imagiDonate}`}
           />
-          <Button
-            type="link"
-            text="Buy the Imagi-Nation Hoodie"
-            className={styles.imagiHoodieBtn}
-            theme={process.env.REACT_APP_THEME}
-            url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
-          />
+          <Button type="link" text="Buy the Imagi-Nation Hoodie"
+            className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
+            theme={process.env.REACT_APP_THEME} url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
         </div>
       </div>
       <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
@@ -70,18 +66,13 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           rel="noopener noreferrer"
         >
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
-            alt="Imagi-nation TV"
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
         </a>
-        <a
-          className={styles.textLinkChannel}
-          href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Watch the episodes
+        <a className={styles.textLinkChannel} href="/imagi-nation-tv">
+          See what it's all about
         </a>
       </div>
     </div>
