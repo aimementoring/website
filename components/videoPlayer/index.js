@@ -4,8 +4,6 @@ import ReactPlayer from 'react-player';
 import Modal from '../modal';
 import styles from './videoPlayer.module.scss';
 
-// HLS info not sure if we want to add this might help performance? - https://www.dacast.com/blog/hls-streaming-protocol/
-
 const VideoPlayer = (props) => {
   const {
     url,
@@ -191,7 +189,7 @@ VideoPlayer.defaultProps = {
   backgroundVimeo: false,
   backgroundColor: 'black',
   containerClassName: '',
-  theme: 'rainbow',
+  theme: process.env.REACT_APP_THEME,
   children: null,
 };
 
