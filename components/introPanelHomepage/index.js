@@ -4,6 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../common/link';
+import { ImageBanner } from '../banner/index';
 import './index.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
@@ -23,20 +24,34 @@ const IntroPanelHomepage = () => (
           </Title>
           <div className="intro-sub-text">
             <Paragraph>
-            In responce to COVID-19 we will be pausing our physical delivery of the program in schools and universities until June 1 and focusing on the digital solution of our daily mentor TV show&nbsp;
-              <a href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376273" target="_blank">IMAGI-NATION TV</a>
+              In responce to COVID-19 we will be pausing our physical delivery of the program in
+              schools and universities until June 1 and focusing on the digital solution of our
+              daily mentor TV show&nbsp;
+              <a
+                href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376273"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                IMAGI-NATION TV
+              </a>
             .
             </Paragraph>
             <Paragraph>
               <mark>Wanna see how?</mark>
               &nbsp;Check out&nbsp;
-              <a href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376269" target="_blank">our plan</a>
-              &nbsp;to take our Imagination Factory direct to homes as part of the work towards our 3 year strategy.
+              <a
+                href="https://mailchi.mp/aimementoring/being-a-solution-for-the-earth-an-aime-action-story-in-3-parts-1376269"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                our plan
+              </a>
+              &nbsp;to take our Imagination Factory direct to homes as part of the work towards our
+              3 year strategy.
             </Paragraph>
             <Paragraph>
               - Jack MB, AIME CEO & Founder, 17 March 2020
             </Paragraph>
-
             <br />
 
             <Anchor
@@ -55,11 +70,15 @@ const IntroPanelHomepage = () => (
             <VideoButton
               video="https://player.vimeo.com/external/314670113.m3u8?s=a1753f9ddb12ecce140c479f6bc16ff165ea7589"
             />
-            <div className="welcomeVideo video-banner flex block rounded">
-              <div className="video-banner-overlay center">
-                <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
-              </div>
-            </div>
+            <ImageBanner
+              paragraphStyleClass="videoCaption"
+              bannerContainerClass="welcomeVideo video-banner flex block rounded"
+              bannerContentWrapperClass="video-banner-overlay center"
+              imageClass="center mx-auto mt2"
+              imageAlt=""
+              imageStyle={{ width: '70px' }}
+              imageSrc={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
+            />
             <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
           </div>
         </div>
