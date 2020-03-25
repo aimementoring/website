@@ -39,7 +39,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           </Button>
           <Button
             type="link"
-            text="Donate to [INTV]"
+            text="Donate to IN{TV}"
             theme={process.env.REACT_APP_THEME}
             url="/donate"
             className={`${styles.triBtn} ${styles.imagiDonate}`}
