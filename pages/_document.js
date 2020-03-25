@@ -28,7 +28,6 @@ export default class CustomDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon-16x16.png" />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="mask-icon" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/safari-pinned-tab.svg" color="#9B00FF" />
-          <link rel="preconnect" href={process.env.REACT_APP_CRAFT_API.slice(0, -1)} />
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href={process.env.REACT_APP_ASSETS_URL} />
           <meta name="msapplication-TileColor" content="#9B00FF" />
