@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { getAssetsBaseUrl } from '../../../services/craftAPI';
+import { getAssetsBaseUrl } from '../../../utils/utilities';
 import './customCarousels.scss';
 
 const Carousel = dynamic(() => import('../index'));
