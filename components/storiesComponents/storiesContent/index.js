@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { removeMarkdownLink } from '../../../utils/utilities';
+import { removeMarkdownLink } from '../../../utils/formatting';
 import styles from './storiesContent.module.scss';
 
 const Card = dynamic(() => import('../../card'));
