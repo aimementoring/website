@@ -1,5 +1,7 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, {
+  Html, Head, Main, NextScript,
+} from 'next/document';
 
 const bodyStyles = {
   margin: 0,
@@ -13,12 +15,13 @@ const bodyStyles = {
 export default class CustomDocument extends Document {
   render() {
     return (
-      <html lang="en" dir="ltr">
+      <Html lang="en" dir="ltr">
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
+          <link rel="home" href="/" />
           <link rel="apple-touch-icon" sizes="180x180" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/apple-touch-icon.png" />
           <link rel="icon" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon.ico" />
           <link rel="icon" type="image/png" sizes="32x32" href="https://d2ylaz7bdw65jx.cloudfront.net/assets/images/favicon/favicon-32x32.png" />
@@ -35,7 +38,7 @@ export default class CustomDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
