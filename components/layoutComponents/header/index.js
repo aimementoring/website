@@ -3,7 +3,7 @@ import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { isClientSide } from '../../../utils/utilities';
+import isClientSide from '../../../utils/isClientSide';
 import styles from './header.module.scss';
 
 const TalentHeader = dynamic(() => import('./talentHeader'));
