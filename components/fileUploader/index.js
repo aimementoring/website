@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import UploadedFile from './uploadedFile';
 import handleError from '../../utils/errorHandler';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 
 const hiddenStyle = {
   opacity: 0,
