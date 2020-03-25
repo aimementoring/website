@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+// @TODO: Replace anchor by an element as a Blueprint button
 import React from 'react';
 import PropTypes from 'prop-types';
 
