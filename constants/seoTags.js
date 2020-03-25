@@ -576,7 +576,7 @@ export const SEO_TAGS = {
         {
           width: 1200,
           height: 630,
-          url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
+          url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`,
         },
       ],
     },
@@ -585,7 +585,7 @@ export const SEO_TAGS = {
       image: {
         width: 800,
         height: 800,
-        url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`,
+        url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`,
       },
     },
     jsonLd: [
@@ -599,7 +599,7 @@ export const SEO_TAGS = {
         datePublished: '2018-02-15T10:42:37+11:00',
 
         title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
-        images: [`${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg'`],
+        images: [`${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`],
         additionalMetaTags: [
           {
             property: 'inLanguage',
