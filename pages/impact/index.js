@@ -5,6 +5,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
+import MovingWaves from '../../components/movingWaves';
 import './impact.scss';
 import IntercomChat from '../../components/intercom';
 
@@ -17,6 +18,7 @@ const Impact = () => (
     <div className="impact-page">
       <div className="">
         <div className="full-width-wrap">
+          <MovingWaves />
           <div className="flex flex-wrap items-center">
             <div className="hero-panel banner-wrapper hero-banner--default">
               <Title type="headingLockup" className="bannerHeaderImpact" theme={process.env.REACT_APP_THEME}>
