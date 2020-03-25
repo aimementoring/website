@@ -11,7 +11,6 @@ import './positions.scss';
 
 const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
 const Jobs = dynamic(() => import('../../components/jobs'));
-const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -61,26 +60,15 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
                   </div>
                 </div>
                 <div className="sm-col-12 sm-col-6">
-                  <div className="welcomeVideoWrapper intro-video-wrap">
+                  <div className="welcomeVideoWrapper">
                     <VideoPlayer
                       url="https://player.vimeo.com/external/390403643.m3u8?s=93f254baaef717dc9591e594f84a2367b3d1ce01"
                       imageUrl={`${ASSETS_URL}/assets/images/media/vid-puppets.jpg`}
-                    >                    
-                    <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
+                    >
+                      <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
 
                     </VideoPlayer>
                   </div>
-                
-                  {/* <div className="welcomeVideoWrapper intro-video-wrap">
-                    <VideoButton
-                      video="https://player.vimeo.com/external/390403643.m3u8?s=93f254baaef717dc9591e594f84a2367b3d1ce01"
-                    />
-                    <div className="welcomeVideo video-banner flex block rounded">
-                      <div className="video-banner-overlay center">
-                        <img alt="" className="center mx-auto mt2" style={{ width: '70px' }} src={`${ASSETS_URL}/assets/images/play-btn-white.svg`} />
-                      </div>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
