@@ -1,3 +1,5 @@
+import isClientSide from './isClientSide';
+
 const myOwnStorage = {};
 
 // inspired by this https://michalzalecki.com/why-using-localStorage-directly-is-a-bad-idea/
@@ -17,7 +19,7 @@ function isSupported(storage) {
 }
 
 export function setOnStorage(key, value) {
-  if (isSupported(localStorage)) {
+  if (isClientSide() && isSupported(localStorage)) {
     localStorage.setItem(key, JSON.stringify({
       createdAt: Date.now(),
       value,
@@ -29,7 +31,7 @@ export function setOnStorage(key, value) {
 
 export function getFromStorage(key) {
   try {
-    if (isSupported(localStorage)) {
+    if (isClientSide() && isSupported(localStorage)) {
       const item = JSON.parse(localStorage.getItem(key));
       return item && item.value;
     }
@@ -40,7 +42,7 @@ export function getFromStorage(key) {
 }
 
 export function removeFromStorage(key) {
-  if (isSupported(localStorage)) {
+  if (isClientSide() && isSupported(localStorage)) {
     localStorage.removeItem(key);
   } else {
     delete myOwnStorage.key;
