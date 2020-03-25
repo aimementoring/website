@@ -70,7 +70,7 @@ const ImagiNationTV = () => (
         <Button
           type="link"
           className={`${styles.imagiDonate} ${styles.imagiBtn}`}
-          text="Donate to [INTV]"
+          text="Donate to IN{TV}"
           theme={process.env.REACT_APP_THEME}
           url="/donate"
         />
