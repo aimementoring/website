@@ -11,7 +11,6 @@
     "start": "NODE_ENV=production node server.js",
     "export": "next build && next export",
     "heroku-start": "NODE_ENV=production node server.js -p $PORT",
-    "heroku-postbuild": "yarn build",
     "sync:aws:next:staging": "aws s3 sync .next s3://aimementoring-staging/website/public/_next --acl public-read --delete",
     "sync:aws:next:master": "aws s3 sync .next s3://aimementoring/website/public/_next --acl public-read --delete",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
