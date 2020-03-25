@@ -3,7 +3,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import contentfulServer from '../../api/contentfulPosts';
-import { sortDates } from '../../utils/utilities';
+import { sortDates } from '../../utils/sorting';
 import StoriesCarousel from '../../components/storiesComponents/storiesCarousel';
 import StoriesGrid from '../../components/storiesComponents/storiesGrid';
 import entriesType from '../../components/storiesComponents/entriesType';
