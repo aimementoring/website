@@ -44,9 +44,13 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             url="/donate"
             className={`${styles.triBtn} ${styles.imagiDonate}`}
           />
-          <Button type="link" text="Buy the Imagi-Nation Hoodie"
+          <Button
+            type="link"
+            text="Buy the Imagi-Nation Hoodie"
             className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
-            theme={process.env.REACT_APP_THEME} url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie" />
+            theme={process.env.REACT_APP_THEME}
+            url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
+          />
         </div>
       </div>
       <div className={`${styles.bannerMediaFeature} ${styles.bannerItem}`}>
@@ -72,7 +76,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
         </a>
         <a className={styles.textLinkChannel} href="/imagi-nation-tv">
-          See what it's all about
+          {'See what it\'s all about'}
         </a>
       </div>
     </div>
