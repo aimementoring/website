@@ -1,5 +1,5 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
@@ -8,7 +8,7 @@ import Layout from '../../hocs/basicLayout';
 import './impact.scss';
 import IntercomChat from '../../components/intercom';
 
-const VideoButton = dynamic(() => import('../../components/videoButton'));
+// // const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
