@@ -5,6 +5,8 @@ export function getCountrySite() {
   return getFromStorage('country_code_selected');
 }
 
+export const getAssetsBaseUrl = () => process.env.REACT_APP_ASSETS_URL;
+
 export const sortArrayOfObjectByField = (arrayToSort, field, order = 'desc') => {
   const orderValue = order === 'desc' ? 1 : -1;
   const sortedArray = arrayToSort.sort(
