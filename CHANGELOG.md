@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [5.1.1] 2020-03-25
+### Changed
+- Updated content on /imagi-nation-tv and homepage banner
+
 ## [5.1.0]
 ### Added
 - Added some polyfill for Internet Explorer compatibility
