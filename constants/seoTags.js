@@ -6,7 +6,7 @@ export const GLOBAL_TAGS = {
   },
   openGraph: {
     type: 'website',
-    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
     locale: 'en_001',
     images: [{
       width: 1200,
@@ -17,7 +17,7 @@ export const GLOBAL_TAGS = {
   twitter: {
     site: '@aimementoring',
     cardType: 'summary_large_image',
-    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
     creator: '@aimementoring', // I think we cannot use this one
     image: {
       url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
@@ -96,16 +96,16 @@ export const SEO_TAGS = {
     ],
   },
   '/imagi-nation-tv': {
-    title: 'IMAGI-NATION{TV}',
+    title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
     canonical: 'https://aimementoring.com/imagi-nation-tv',
     languageAlternate: {
       href: 'https://aimementoring.com/imagi-nation-tv',
       hrefLang: 'x-default',
     },
-    description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
+    description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
     openGraph: {
       url: 'https://aimementoring.com/imagi-nation-tv',
-      title: 'IMAGI-NATION{TV}',
+      title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
       images: [{
         width: 1200,
         height: 630,
@@ -114,7 +114,7 @@ export const SEO_TAGS = {
     },
     twitter: {
       site: '@aimementoring',
-      title: 'IMAGI-NATION{TV}',
+      title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
       url: 'https://aimementoring.com/imagi-nation-tv',
       image: {
         url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
@@ -131,8 +131,8 @@ export const SEO_TAGS = {
         creatorName: '#creator',
         dateModified: '2018-09-22T11:52:10+10:00',
         datePublished: '2018-02-15T16:13:50+11:00',
-        description: 'We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.',
-        title: 'IMAGI-NATION{TV}',
+        description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+        title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
         images: [`${ASSETS_URL}/resources/social_share/intv_social_share.jpg`],
         additionalMetaTags: [
           {
