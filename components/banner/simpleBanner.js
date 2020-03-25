@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import MovingWaves from '../movingWaves';
 
 const SimpleBanner = ({
   copy,
@@ -13,9 +14,13 @@ const SimpleBanner = ({
   bannerWrapperClass,
   paragraphStyleClass,
   bannerContainerClass,
+  groovy,
   bannerContentWrapperClass,
 }) => (
   <div className={bannerContainerClass}>
+    {groovy && (
+      <MovingWaves />
+    )}
     <div className={bannerWrapperClass}>
       <div className={bannerContentWrapperClass}>
         <div className={bannerContentClass}>
@@ -47,6 +52,7 @@ SimpleBanner.defaultProps = {
   copy: '',
   title: null || '',
   titleType: '',
+  groovy: false,
   button: null,
   titleStyleClass: '',
   bannerContentClass: '',
@@ -62,6 +68,7 @@ SimpleBanner.propTypes = {
     PropTypes.node,
     PropTypes.string,
   ]),
+  groovy: PropTypes.bool,
   titleType: PropTypes.string,
   button: PropTypes.node,
   bannerContentClass: PropTypes.string,
