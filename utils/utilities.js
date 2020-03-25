@@ -1,8 +1,6 @@
 import moment from 'moment';
 import { getFromStorage } from './localStorage';
 
-export const isClientSide = () => typeof window !== 'undefined';
-
 export function getCountrySite() {
   return getFromStorage('country_code_selected');
 }
@@ -90,3 +88,7 @@ export const sortDates = (dates) => {
 
   return sortedDatesArray;
 };
+
+export const removeMarkdownLink = (stringValue) => (
+  stringValue.replace(/[*_>[^\]0-9]*/g, '')
+);
