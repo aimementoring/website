@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import contentfulServer from '../../api/contentfulPosts';
-import { sortDates } from '../../utils/utilities';
+import { sortDates } from '../../utils/sorting';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
 import styles from './reports.module.scss';
