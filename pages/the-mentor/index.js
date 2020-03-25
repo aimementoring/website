@@ -14,6 +14,7 @@ const TheMentor = () => (
         <div className="flex flex-wrap items-center">
           <SimpleBanner
             title="The Mentor"
+            groovy
             bannerContainerClass="full-width-wrap"
             bannerWrapperClass="flex flex-wrap items-center"
             bannerContentWrapperClass="banner-wrapper full-height section-background-image xs-py4"
@@ -29,6 +30,7 @@ const TheMentor = () => (
                 aria-label="buy-copy"
                 type="link"
                 target="_blank"
+                rel="noopener noreferrer"
                 url="https://shop.aimementoring.com/products/the-mentor"
               >
                 Grab a copy
