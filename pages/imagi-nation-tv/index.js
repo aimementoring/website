@@ -44,8 +44,8 @@ const ImagiNationTV = () => (
       <div className={styles.videoContainerFeature}>
         <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-soon@2x.gif`}
-            alt="Imagi-nation TV"
+            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
         </Anchor>
