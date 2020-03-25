@@ -6,6 +6,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [5.1.1] 2020-03-25
+### Changed
+- Updated content on /imagi-nation-tv and homepage banner
+
+## [5.1.0]
+### Added
+- Added some polyfill for Internet Explorer compatibility
+- Added contentful to terms of service
+- Added contentful to reports
+- Added banner component reused in multiple pages
+- Added card component used in Stories, Imagination TV, and other pages
+
+### Changed
+- Text on Be a mentors page to Applications are now open.
+- Adds next-seo library to handle SEO tags.
+- Update some styles to fix errors in Carousel
+
+### Removed
+- Removed link to be-a-friend from jobs page
+- Removed unused pages in SEO tags and reorder them.
+
 ## [5.0.0]
 ### Added
 
