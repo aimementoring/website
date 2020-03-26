@@ -25,6 +25,7 @@ const Card = (props) => {
     publishDate,
     contentCreator,
     contentPreview,
+    categories,
     type,
   } = props;
   const datePublished = publishDate && formatDate(publishDate, 'short');
@@ -40,6 +41,9 @@ const Card = (props) => {
   return (
     <ContainerComponent {...anchorProps}>
       <div>
+        {categories.map((category) => (
+          <p className={styles.categoryBadge} key={category}>{category}</p>
+        ))}
         {withVideo && (
           <VideoButton video={video} />
         )}
@@ -111,6 +115,7 @@ Card.defaultProps = {
   urlAs: '',
   href: '',
   image: '',
+  categories: [],
   video: '',
   publishDate: '',
   contentCreator: '',
@@ -128,6 +133,7 @@ Card.propTypes = {
   video: PropTypes.string,
   buttonText: PropTypes.string,
   publishDate: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string),
   contentCreator: PropTypes.string,
   contentPreview: PropTypes.oneOfType([
     PropTypes.array,

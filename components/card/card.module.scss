@@ -11,6 +11,18 @@
   }
 }
 
+.categoryBadge {
+  font-family: $body-font-family;
+  font-size: .75em;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  position: absolute;
+  padding: .6em 1.25em;
+  background: $white;
+  margin: .5em;
+  border-radius: 1em;
+}
+
 .bannerVideo {
   border-radius: 3px 3px 0 0;
   width: 100%;
