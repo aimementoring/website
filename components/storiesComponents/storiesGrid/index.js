@@ -4,7 +4,7 @@ import entriesType from '../entriesType';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
-} from '../../../utils/utilities';
+} from '../../../utils/formatting';
 import styles from './storiesGrid.module.scss';
 
 const StoriesGrid = ({ entries }) => (
