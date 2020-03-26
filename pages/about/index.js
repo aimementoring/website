@@ -55,18 +55,20 @@ const About = () => (
         <div className={styles.column}>
           <div className={styles.copy}>
             <Paragraph>
-              In Australia 20,000+ Indigenous youth who have experienced AIME&apos;s Imagination Factory, helping to solve one of Australia&apos;s most complex social challenges - Indigenous inequality.
+              In Australia 20,000+ Indigenous youth have experienced AIME&apos;s
+              Imagination Factory, helping to solve one of Australia&apos;s most
+              complex social challenges - Indigenous inequality.
             </Paragraph>
             <Paragraph>
               In doing so we&apos;ve designed a transferrable solution that works across cultures/ borders,
               <Anchor to="/impact" as="/impact">
                 cost-effectively (SROI of 8.9x) and at scale (7.5k+ kids p.a. across 5 countries)
               </Anchor>
-              . In the process, we&apos;ve also built the largest volunteering movement of University students in Australian history.
+              . In the process, we&apos;ve also built the largest volunteering movement of university students in Australian history.
             </Paragraph>
             <Paragraph>
               Having scaled and proven the model of mentoring in Australia,
-              AIME has now expanded via direct deliver in 6 countries and launched&nbsp;
+              AIME has now expanded via direct delivery in 6 countries and launched&nbsp;
               <a href="http://imagi-nation.tv" target="_blank" rel="noopener noreferrer">IMAGI-NATION TV</a>
               &nbsp;direct to homes.
             </Paragraph>
