@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../../hocs/basicLayout';
 import Anchor from '../../../components/common/link';
-import contentfulServer from '../../../api/contentfulPosts';
+import { getStories } from '../../../api/contentfulPosts';
 import {
   formatDate,
   removeSpecialCharacters,
@@ -94,12 +94,9 @@ const Story = (props) => {
 };
 
 Story.getInitialProps = async ({ query, asPath, pathname }) => {
-  const client = contentfulServer();
   const slug = query.slug || asPath.replace(`${pathname}/`, '');
-  const content = await client.then((response) => response);
-  const getStoryPosts = content.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
-
-  return { content: getStoryPosts, slug };
+  const content = await getStories().then((response) => response);
+  return { content, slug };
 };
 
 Story.propTypes = {
