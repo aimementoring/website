@@ -45,7 +45,6 @@ module.exports = withOffline(
       //   : '',
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
-        GOOGLE_MAPS_API_TOKEN: process.env.GOOGLE_MAPS_API_TOKEN,
         PORT: process.env.PORT,
         REACT_APP_BUGSNAG_KEY: process.env.REACT_APP_BUGSNAG_KEY,
         REACT_APP_HOST_ENV: process.env.REACT_APP_HOST_ENV,
