@@ -1,5 +1,6 @@
 import React from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import styles from './beAMentorForm.module.scss';
 
@@ -10,35 +11,27 @@ const BeAMentorForm = () => (
     <img
       src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
       alt="Listen up"
-      style={{ width: '211px' }}
     />
+    <Title type="h5Title">Mentor applications are now open!</Title>
     <Paragraph>
-      <br />
+      Excited? We are too!&nbsp;
       <mark>
-        Hey you! So you wanna be a mentor?
+        Mentors applications are up and running.
       </mark>
-      <br />
-      <br />
-      {`Mentor applications aren't open just yet as we're
-      updating our processes. However, you should get a head-start by`}
-      &nbsp;
-      <strong>registering your details</strong>
-      &nbsp;
-      {`and creating an AIME account.
-      Once they're open, we'll notify you so you can complete
-      your application.`}
-      <br />
-      <br />
-      {`One by one we'll get it done!`}
-      <br />
-      <br />
+    </Paragraph>
+    <Paragraph>
+      If you are new to mentoring with us, create an AIME account and we'll
+      guide through your application process. If you are a returning mentor,
+      welcome back. Sign in to your account below and finalise your application for
+      this year.
     </Paragraph>
     <Button
       theme={process.env.REACT_APP_THEME}
       type="link"
       target="_blank"
-      url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor">
-      Sign up
+      url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
+    >
+      Apply now
     </Button>
   </div>
 );
