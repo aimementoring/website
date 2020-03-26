@@ -1,3 +1,4 @@
+# https://github.com/ModusCreateOrg/gimbal/blob/master/packages/gimbal/docs/ci/github/workflow.yml
 name: CI
 
 on:
@@ -50,8 +51,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
+      - name: Install npm dependencies
+        run: npm i
       - name: Check environment variables
         run: echo $REACT_APP_BUGSNAG_KEY
       - name: Build
