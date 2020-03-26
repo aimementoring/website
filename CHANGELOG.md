@@ -5,7 +5,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [5.1.2] 2020-03-27
+### Added
+- Added smooth scrolling in home page
+- Added video player component and using it in /positions
+- Added groovy headers
 
+### Changed
+- Updated title inside banner on /the-mentor
+- Updated watch live image link in imagi-nation-tv
+- Updated numbers in about page
+- Update feed messages on stories
+
+### Removed
+- Cleaned up the code
+- Removed Craft (unused)
+- Removed address autocomplete input (unused)
 
 ## [5.1.1] 2020-03-25
 ### Changed
