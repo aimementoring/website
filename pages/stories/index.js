@@ -29,7 +29,7 @@ const Stories = ({ entries }) => {
                 <div className={styles.mobilePanel}>
                   <div className={styles.storiesParagraph}>
                     <Paragraph>
-                      With the force of imagination, mentoring and unlikely alliances between those with power and those without, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.
+                      With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.
                     </Paragraph>
                   </div>
                 </div>
