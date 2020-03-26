@@ -11,7 +11,7 @@ const client = contentful.createClient({
 module.exports = () => (
   client
     .getEntries({
-      content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
+      // content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
       include: 2,
     })
     .then((response) => response.items)

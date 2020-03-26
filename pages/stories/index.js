@@ -51,6 +51,7 @@ Stories.propTypes = { entries: entriesType };
 Stories.getInitialProps = async () => {
   const client = contentfulServer();
   const entries = await client.then((response) => response);
+  console.log({ entries });
   const getStoryPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
 
   return { entries: getStoryPosts };
