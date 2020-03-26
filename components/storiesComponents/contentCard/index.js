@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import {
   formatDate,
-} from '../../../utils/utilities';
+} from '../../../utils/formatting';
 import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
