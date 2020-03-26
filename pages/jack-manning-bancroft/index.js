@@ -19,7 +19,6 @@ const Founder = () => (
       titleType="headingLockup"
       titleStyleClass="founderBannerHeader"
       bannerContainerClass="hero-banner--default hero-banner--founder full-width-wrap"
-      bannerWrapperClass="flex flex-wrap items-center full-height"
       bannerContentWrapperClass="flex flex-wrap items-center full-height"
       bannerContentClass="banner-wrapper"
     />
