@@ -47,12 +47,17 @@ app.prepare().then(() => {
   //   });
   // });
 
+  server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
+  // server.get('/donate', (req, res) => ssrCache({ req, res, pagePath: '/' }));
+
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
       const url = response[i];
-      server.get(url.fields.sourceUrl, (_req, res) => {
-        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-      });
+      if (url.fields.sourceUrl !== '/donate') {
+        server.get(url.fields.sourceUrl, (_req, res) => {
+          res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+        });
+      }
     }
 
     server.get('*', (req, res) => {
