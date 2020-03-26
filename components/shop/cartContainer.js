@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 
 const Cart = dynamic(() => import('./cart'));
 let Client;
