@@ -66,7 +66,6 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
                       imageUrl={`${ASSETS_URL}/assets/images/media/vid-puppets.jpg`}
                     >
                       <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
-
                     </VideoPlayer>
                   </div>
                 </div>
