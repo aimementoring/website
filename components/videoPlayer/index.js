@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
+import CustomPlayIcon from './customPlayIcon';
 import Modal from '../modal';
 import styles from './videoPlayer.module.scss';
 
@@ -10,7 +11,6 @@ const VideoPlayer = (props) => {
     mute,
     loop,
     title,
-    theme,
     byLine,
     listType,
     imageUrl,
@@ -27,18 +27,12 @@ const VideoPlayer = (props) => {
     children,
   } = props;
   const [showModal, setShowModal] = useState(false);
-  const [urlWithModal, setUrlWithModal] = useState(url);
 
   const handleModal = () => {
     setShowModal(!showModal);
-    setUrlWithModal(url);
   };
 
-  const handleContextMenu = (event) => {
-    event.preventDefault();
-  };
-
-  const videoPlayersConfig = {
+  const config = {
     vimeo: {
       playerOptions: {
         loop,
@@ -78,7 +72,6 @@ const VideoPlayer = (props) => {
   };
 
   const lightMode = withModal && !showModal ? withModal : !withModal && !showModal;
-
   const withPlaceHolderImage = imageUrl === '' ? lightMode : !showModal && imageUrl;
 
   const backgroundStyle = {
@@ -86,26 +79,31 @@ const VideoPlayer = (props) => {
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
   };
+
+  const reactPlayerProps = {
+    playsinline: true,
+    volume: 0.7,
+    width: '100%',
+    height: '100%',
+    config,
+    url,
+    onContextMenu: (event) => event.preventDefault(),
+  };
+
   return (
-    <div className={styles[`theme-${theme}`]}>
+    <div>
       {!showModal && (
         <div className={`${styles.containerClassName} ${styles.playerContainer}`}>
           {withModal && (
             <CustomPlayIcon
               onClick={handleModal}
-              withModal={withModal}
               stylesPlayButton={styles.playButton}
+              withModal
             />
           )}
-          {videoTitle && (
-            <span className={styles.videoTitle}>{videoTitle}</span>
-          )}
+          {videoTitle && <span className={styles.videoTitle}>{videoTitle}</span>}
           <ReactPlayer
-            playsinline
-            volume={0.7}
-            width="100%"
-            height="100%"
-            url={url}
+            {...reactPlayerProps}
             light={withPlaceHolderImage}
             playing={!withModal}
             pip={playsInPicture}
@@ -113,13 +111,11 @@ const VideoPlayer = (props) => {
               withPlaceHolderImage && (
                 <CustomPlayIcon
                   onClick={handleModal}
-                  withModal={withModal}
                   stylesPlayButton={styles.playButton}
+                  withModal={withModal}
                 />
               )
             }
-            config={videoPlayersConfig}
-            onContextMenu={handleContextMenu}
           />
           {(children || videoDescription) && (
             <div className={styles.videoDescription}>{children || videoDescription}</div>
@@ -134,15 +130,9 @@ const VideoPlayer = (props) => {
       >
         <div className={`${containerClassName} ${styles.playerContainer}`}>
           <ReactPlayer
-            playsinline
-            volume={0.7}
-            width="100%"
-            height="100%"
+            {...reactPlayerProps}
             playing={showModal}
-            url={urlWithModal}
             style={backgroundStyle}
-            config={videoPlayersConfig}
-            onContextMenu={handleContextMenu}
           />
         </div>
       </Modal>
@@ -166,10 +156,13 @@ VideoPlayer.propTypes = {
   backgroundVimeo: PropTypes.bool,
   url: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
-  videoDescription: PropTypes.string,
+  videoDescription: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.node,
+  ]),
   containerClassName: PropTypes.string,
-  theme: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 VideoPlayer.defaultProps = {
@@ -189,31 +182,7 @@ VideoPlayer.defaultProps = {
   backgroundVimeo: false,
   backgroundColor: 'black',
   containerClassName: '',
-  theme: process.env.REACT_APP_THEME,
   children: null,
 };
 
 export default VideoPlayer;
-
-const CustomPlayIcon = ({ withModal, onClick, stylesPlayButton }) => {
-  const iconProps = {
-    alt: 'play video',
-    src:
-      'https://aime-website.s3.amazonaws.com/assets/images/play-btn-white.svg',
-  };
-  if (withModal) {
-    iconProps.className = stylesPlayButton;
-    iconProps.onClick = onClick;
-  }
-  return <img alt="Play" {...iconProps} />;
-};
-
-CustomPlayIcon.propTypes = {
-  withModal: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  stylesPlayButton: PropTypes.string.isRequired,
-};
-
-CustomPlayIcon.defaultProps = {
-  withModal: false,
-};
