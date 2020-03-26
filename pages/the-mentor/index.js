@@ -14,6 +14,7 @@ const TheMentor = () => (
         <div className="flex flex-wrap items-center">
           <SimpleBanner
             title="The Mentor"
+            titleType="headingLockup"
             groovy
             bannerContainerClass="full-width-wrap"
             bannerWrapperClass="flex flex-wrap items-center"
