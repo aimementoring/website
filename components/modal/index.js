@@ -12,6 +12,7 @@ const Modal = (props) => {
     backgroundColor,
     backGroundStyle,
     hideBodyOverflowY,
+    withCloseIcon,
   } = props;
 
   useEffect(() => {
@@ -35,7 +36,19 @@ const Modal = (props) => {
             onClick={handleModal}
             style={!backGroundStyle ? { backgroundColor } : backGroundStyle}
           />
-          <div className={styles.modalBody}>{children}</div>
+          <div className={styles.modalBody}>
+            {withCloseIcon && (
+              <i
+                className={styles.closeModalIcon}
+                onClick={handleModal}
+                onKeyPress={handleModal}
+                role="presentation"
+              >
+                close
+              </i>
+            )}
+            {children}
+          </div>
         </>
       )}
     </>
@@ -58,6 +71,7 @@ Modal.propTypes = {
   }),
   hideBodyOverflowY: PropTypes.bool,
   backgroundColor: PropTypes.string,
+  withCloseIcon: PropTypes.bool,
 };
 
 Modal.defaultProps = {
@@ -67,6 +81,7 @@ Modal.defaultProps = {
   backGroundStyle: null,
   hideBodyOverflowY: true,
   backgroundColor: 'black',
+  withCloseIcon: false,
 };
 
 export default Modal;
