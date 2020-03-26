@@ -54,7 +54,8 @@ const Stories = (props) => {
       const slugTitle = removeSpecialCharacters(entry.fields.title);
       const slug = replaceWhiteSpace(slugTitle, '-').toLowerCase();
       const creatorName = entry.fields.contentCreator.fields.authorName;
-      const bannerContent = entry.fields.banner && entry.fields.banner;
+      const bannerContent = entry.fields
+        && entry.fields.banner && entry.fields.banner.fields;
       const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
         <StoriesContent
@@ -64,7 +65,7 @@ const Stories = (props) => {
           title={entry.fields.title}
           contentCreator={creatorName}
           contentPreview={contentPreview}
-          bannerContent={bannerContent.fields}
+          bannerContent={bannerContent}
           publishDate={entry.fields.publishDate}
           contentCards={entry.fields.contentCards}
         />
