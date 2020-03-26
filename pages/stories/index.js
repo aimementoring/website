@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
-import contentfulServer from '../../api/contentfulStories';
+import contentfulServer from '../../api/contentfulPosts';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
@@ -34,7 +34,7 @@ const Stories = (props) => {
         && entry.fields.banner.fields.visualMedia
         && entry.fields.banner.fields.visualMedia.fields
         && entry.fields.banner.fields.visualMedia.fields.file.url;
-
+      const contentPreview = entry.fields.contentPreview && entry.fields.contentPreview.fields;
       return (
         <StoriesCarousel
           key={entry.sys.id}
@@ -42,7 +42,7 @@ const Stories = (props) => {
           slugTitle={slug}
           bannerImage={bannerImage}
           title={entry.fields.title && entry.fields.title}
-          contentPreview={entry.fields.contentPreview}
+          contentPreview={contentPreview}
           contentCards={entry.fields.contentCards}
         />
       );
