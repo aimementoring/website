@@ -4,9 +4,12 @@ import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
 import FooterNewsletter from '../../footerNewsletter';
+import useDonate from '../../../hooks/useDonate';
 import styles from './footer.module.scss';
 
 const Footer = ({ location }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [modalVisible, toggleDonateModal] = useDonate();
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   const currentYear = moment().year();
   const FOOTER_LINKS = [
@@ -24,8 +27,7 @@ const Footer = ({ location }) => {
           label: 'Become a Partner',
         },
         {
-          to: 'https://aimedonations.raisely.com',
-          target: '_blank',
+          action: toggleDonateModal,
           label: 'Make a Donation',
         },
       ],
