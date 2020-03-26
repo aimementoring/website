@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import AboutYouSectionForm from './aboutYouSectionForm';
-// import LocationSectionForm from './locationSectionForm';
 // import JobUniAndContactFrom from './jobUniAndContactFrom';
 import JobQuestionAndVideoLink from './jobQuestionAndVideoLink';
 import SupportingDocsSectionForm from './supportingDocsSectionForm';
@@ -42,22 +41,6 @@ const JobForm = ({
           method="POST"
         >
           <AboutYouSectionForm handleChange={handleFormFieldChange} values={values} />
-          {/* <LocationSectionForm
-            onAddressSelected={onAddressSelected}
-            locationError={locationError}
-            streetNumber={streetNumber}
-            streetName={streetName}
-            postCode={postCode}
-            territory={territory}
-            city={city}
-            handleFieldChange={handleFieldChange}
-            countryAddress={countryAddress}
-          /> */}
-          {/* <JobUniAndContactFrom
-            displayCampusSelect={job.displayCampusSelect}
-            handleChange={handleFormFieldChange}
-            values={values}
-          /> */}
           <JobQuestionAndVideoLink
             messageQuestion={job.messageQuestion}
             isThereVideoLink={job.isThereVideoLink}
