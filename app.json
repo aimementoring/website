@@ -33,10 +33,6 @@
       "required": true,
       "value": "aimementoring-staging.auth0.com"
     },
-    "REACT_APP_CRAFT_API": {
-      "required": true,
-      "value": "https://aimeweb-backend-staging.herokuapp.com"
-    },
     "REACT_APP_FILE_UPLOADER_API_KEY": {
       "required": true,
       "value": "AnpTaG2AITvSuOfoenIpKz"
