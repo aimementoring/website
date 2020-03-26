@@ -21,6 +21,7 @@ const Modal = (props) => {
     // fill the page and then adjust the react elements to be able to control
     // overflow-y in css, I think.
     document.body.style.overflowY = showModal && hideBodyOverflowY ? 'hidden' : 'auto';
+    return () => { document.body.style.overflowY = 'auto'; };
   }, [showModal]);
 
   // TODO: Maybe add close X or icon for handleModal and remove from modalBody.
@@ -29,9 +30,7 @@ const Modal = (props) => {
     <>
       {showModal && (
         <>
-
           <div
-
             className={styles.modalOverlay}
             onClick={handleModal}
             style={!backGroundStyle ? { backgroundColor } : backGroundStyle}
