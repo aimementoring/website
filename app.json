@@ -144,11 +144,7 @@
     "REACT_APP_MAILCHIMP_API": {
       "required": true,
       "value": "https://us12.api.mailchimp.com/3.0"
-    },
-    "GOOGLE_MAPS_API_TOKEN": {
-      "required": true,
-      "value": "***REMOVED***"
-    },
+    }
   },
   "formation": {
     "web": {
