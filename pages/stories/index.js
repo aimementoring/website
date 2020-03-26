@@ -29,9 +29,7 @@ const Stories = ({ entries }) => {
                 <div className={styles.mobilePanel}>
                   <div className={styles.storiesParagraph}>
                     <Paragraph>
-                      AIME has been delivering kindness through mentoring for 14 years.
-                      Each year we release a Book of Kindness with tales of human generosity.
-                      Here are some of those stories of hope, positivity and change...
+                      With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.
                     </Paragraph>
                   </div>
                 </div>
