@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
+import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
@@ -54,14 +55,20 @@ const About = () => (
         <div className={styles.column}>
           <div className={styles.copy}>
             <Paragraph>
-              Since it was founded in 2005, AIME has worked with 39,000 Indigenous
-              kids in Australia, who have achieved educational parity and beyond.
-              Over 6,000 university students in Australia have volunteered with
-              AIME since 2005, making it the largest volunteer movement in Australian
-              history. Having scaled and proven its model of mentoring in Australia,
+              In Australia 20,000+ Indigenous youth who have experienced AIME&apos;s Imagination Factory, helping to solve one of Australia&apos;s most complex social challenges - Indigenous inequality.
+            </Paragraph>
+            <Paragraph>
+              In doing so we&apos;ve designed a transferrable solution that works across cultures/ borders,
+              <Anchor to="/impact" as="/impact">
+                cost-effectively (SROI of 8.9x) and at scale (7.5k+ kids p.a. across 5 countries)
+              </Anchor>
+              . In the process, we&apos;ve also built the largest volunteering movement of University students in Australian history.
+            </Paragraph>
+            <Paragraph>
+              Having scaled and proven the model of mentoring in Australia,
               AIME has now expanded via direct deliver in 6 countries and launched&nbsp;
               <a href="http://imagi-nation.tv" target="_blank" rel="noopener noreferrer">IMAGI-NATION TV</a>
-              &nbsp;into the homes.
+              &nbsp;direct to homes.
             </Paragraph>
           </div>
         </div>
