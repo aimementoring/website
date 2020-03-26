@@ -21,14 +21,14 @@ const MENU_LINKS = {
     { url: '/stories', title: 'Stories' },
     { url: '/be-a-mentor', title: 'Be a Mentor' },
     { url: '/positions', title: 'Positions' },
-    { url: 'https://aimedonations.raisely.com/', title: 'Donate', target: '_blank' },
+    { url: 'donate', title: 'Donate' },
     { url: '', title: null },
   ],
 };
 
 const MobileMenu = ({ type, logoIsWhite }) => {
   const [showNavMenu, setShowNavMenu] = useState(false);
-  const [actvieMenuOption, setActvieMenuOption] = useState(() => (
+  const [activeMenuOption, setActiveMenuOption] = useState(() => (
     type === 'going-global'
       ? 'Intro'
       : 'Home'
@@ -36,7 +36,7 @@ const MobileMenu = ({ type, logoIsWhite }) => {
 
   const handleLinkClicked = (linkClicked) => () => {
     setShowNavMenu(false);
-    setActvieMenuOption(linkClicked);
+    setActiveMenuOption(linkClicked);
   };
 
   const mobileHeaderClasses = classNames({
@@ -83,7 +83,7 @@ const MobileMenu = ({ type, logoIsWhite }) => {
         <LinksComponent
           links={MENU_LINKS[type] || MENU_LINKS.default}
           handleLinkClicked={handleLinkClicked}
-          active={actvieMenuOption}
+          active={activeMenuOption}
         />
       </nav>
     </>
