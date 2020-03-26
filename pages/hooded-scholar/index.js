@@ -4,7 +4,7 @@ import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS } from '../../constants';
 import { uploadHoodedScholarEOI } from '../../services/portalApi';
-import { isClientSide } from '../../utils/utilities';
+import isClientSide from '../../utils/isClientSide';
 import './hoodedScholar.scss';
 
 const VideoButton = dynamic(() => import('../../components/videoButton'));
