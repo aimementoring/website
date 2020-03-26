@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from 'aime-blueprint/lib/components/title';
 import PropTypes from 'prop-types';
-import contentfulServer from '../../api/contentfulPosts';
+import { getTerms } from '../../api/contentfulPosts';
 import Layout from '../../hocs/basicLayout';
 
 import TermPhraseCard from '../../components/termPhraseCard';
@@ -24,11 +24,8 @@ const TermsAndConditions = ({ entries }) => (
 );
 
 TermsAndConditions.getInitialProps = async () => {
-  const client = contentfulServer();
-  const entries = await client.then((response) => response);
-  const getReportsPosts = entries.filter((entry) => (entry.fields.contentTag.fields.name === 'terms'));
-
-  return { entries: getReportsPosts };
+  const entries = await getTerms().then((response) => response);
+  return { entries };
 };
 
 const SysShape = PropTypes.shape({
