@@ -40,6 +40,12 @@ const Story = (props) => {
           const author = entry.fields.contentCreator
             && entry.fields.contentCreator.fields.authorName;
           const signature = entry.fields.signature && entry.fields.signature;
+          // TODO: remove once Contentful content model for post is updated for all stories.
+          const postScriptContent = entry.fields.postScriptMessage
+          && entry.fields.postScriptMessage;
+          // TODO: remove once Contentful content model for post is updated for all stories.
+          const buttonProps = entry.fields.callToActionButton
+          && entry.fields.callToActionButton;
 
           return (
             <Fragment key={entry.sys.id}>
@@ -64,6 +70,8 @@ const Story = (props) => {
                               signature={signature}
                               publishDate={entry.fields.publishDate}
                               contentCards={entry.fields.contentCards}
+                              postScriptContent={postScriptContent}
+                              buttonProps={buttonProps}
                             />
                             <Anchor to="/stories" className={styles.articleTileLink}>
                               <i className={styles.materialIcons}>keyboard_backspace</i>
@@ -89,8 +97,9 @@ Story.getInitialProps = async ({ query, asPath, pathname }) => {
   const client = contentfulServer();
   const slug = query.slug || asPath.replace(`${pathname}/`, '');
   const content = await client.then((response) => response);
+  const getStoryPosts = content.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
 
-  return { content, slug };
+  return { content: getStoryPosts, slug };
 };
 
 Story.propTypes = {
