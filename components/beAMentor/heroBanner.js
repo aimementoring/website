@@ -12,9 +12,10 @@ const HeroBanner = () => (
     )}
     titleType="headingLockup"
     titleStyleClass={styles.bannerHeading}
-    bannerWrapperClass={styles.banWrapper}
+    bannerWrapperClass={styles.bannerWrapper}
     bannerContainerClass={styles.heroBannerMentor}
-    bannerContentWrapperClass={styles.banContentWrapper}
+    groovy
+    bannerContentWrapperClass={styles.bannerContentWrapper}
     copy="Welcome to the world of mentoring"
   />
 );
