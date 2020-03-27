@@ -10,10 +10,14 @@ import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
 const CallToActionButton = dynamic(() => import('../callToActionButton'));
+// TODO: remove once Contentful content model for post is updated for all stories.
+const PostScriptMessage = dynamic(() => import('../postScriptMessage'));
 
 const ContentCard = (props) => {
   const {
     author, signature, contentCards, publishDate,
+    // TODO: remove once Contentful content model for post is updated for all stories.
+    buttonProps, postScriptContent,
   } = props;
 
   const content = contentCards
@@ -74,6 +78,16 @@ const ContentCard = (props) => {
             {formatDate(publishDate, 'long')}
           </strong>
         )}
+      {/* TODO: remove once Contentful content model for post is updated for all stories. */}
+      {buttonProps && (
+        <CallToActionButton
+          buttonProps={buttonProps}
+        />
+      )}
+      {postScriptContent && (
+        <PostScriptMessage postScriptContent={postScriptContent} />
+      )}
+      {/* TODO: remove once Contentful content model for post is updated for all stories. */}
     </div>
   );
 };
@@ -81,6 +95,38 @@ const ContentCard = (props) => {
 ContentCard.propTypes = {
   author: PropTypes.string,
   signature: PropTypes.string,
+  // TODO: remove once Contentful content model for post is updated for all stories.
+  buttonProps: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      externalUrl: PropTypes.string,
+    }),
+  ),
+  // TODO: remove once Contentful content model for post is updated for all stories.
+  postScriptContent: PropTypes.arrayOf(
+    PropTypes.shape({
+      Type: PropTypes.string,
+      contentCopy: PropTypes.string,
+      displayType: PropTypes.string,
+      visualMedia: PropTypes.shape({
+        file: PropTypes.shape({
+          contentType: PropTypes.string,
+          fileName: PropTypes.string,
+          url: PropTypes.string,
+          title: PropTypes.string,
+          details: PropTypes.shape({
+            size: PropTypes.number,
+            image: PropTypes.shape({
+              height: PropTypes.number,
+              width: PropTypes.number,
+            }),
+          }),
+        }),
+      }),
+      visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+  ),
+
   publishDate: PropTypes.string.isRequired,
   contentCards: PropTypes.arrayOf(
     PropTypes.shape({
@@ -110,6 +156,8 @@ ContentCard.propTypes = {
 ContentCard.defaultProps = {
   author: '',
   signature: '',
+  buttonProps: null,
+  postScriptContent: null,
 };
 
 export default ContentCard;
