@@ -4,6 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Anchor from '../../components/common/link';
+import MovingWaves from '../../components/movingWaves';
 import Layout from '../../hocs/basicLayout';
 import './knowAime.scss';
 
@@ -47,6 +48,7 @@ const KnowAime = () => (
           </div>
         </div>
       </div>
+      <MovingWaves />
       <div className="grid">
         <div className="baseGrid sidebar">
           <div className="">
