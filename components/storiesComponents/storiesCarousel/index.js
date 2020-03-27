@@ -7,7 +7,7 @@ import {
   removeSpecialCharacters,
   replaceWhiteSpace,
   removeMarkdownLink,
-} from '../../../utils/utilities';
+} from '../../../utils/formatting';
 import styles from './storiesCarousel.module.scss';
 
 const StoriesCarousel = ({ entries }) => (
