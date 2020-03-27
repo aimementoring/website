@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import { StoryBanner } from '../../banner/index';
-import { removeMarkdownLink } from '../../../utils/utilities';
+import { removeMarkdownLink } from '../../../utils/formatting';
 
 const StoriesCarousel = (props) => {
   const {
