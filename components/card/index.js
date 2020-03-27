@@ -5,7 +5,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
-import { formatDate } from '../../utils/utilities';
+import { formatDate } from '../../utils/formatting';
 import Anchor from '../common/link';
 import styles from './card.module.scss';
 
