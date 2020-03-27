@@ -45,7 +45,6 @@ module.exports = withOffline(
       //   : '',
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
-        REACT_APP_CRAFT_API: process.env.REACT_APP_CRAFT_API,
         PORT: process.env.PORT,
         REACT_APP_BUGSNAG_KEY: process.env.REACT_APP_BUGSNAG_KEY,
         REACT_APP_HOST_ENV: process.env.REACT_APP_HOST_ENV,
