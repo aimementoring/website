@@ -18,7 +18,6 @@ const QuicklinksHomepage = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [modalVisible, toggleDonateModal] = useDonate();
 
-  // <a> should be blueprint buttons maybe?
   return (
     <div className="quicklinksPanel" ref={getInvolvedRef}>
       <Title type="h3Title" className="quicklinksHeader">
