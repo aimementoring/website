@@ -2,10 +2,10 @@ import {
   createStore, combineReducers, applyMiddleware, compose,
 } from 'redux';
 import thunk from 'redux-thunk';
-import general from './general/reducers';
+import donation from './donation/reducers';
 
 const rootReducer = combineReducers({
-  general,
+  donation,
 });
 
 const composeEnhacers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
