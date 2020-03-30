@@ -38,38 +38,12 @@ const Home = () => {
     }
   }, [router.query]);
 
-  // useEffect(() => {
-  //   if (router.asPath && router.asPath === '/donate') {
-  //     toggleDonateModal();
-  //   }
-  // }, [router.asPath]);
-
-  // TODO: finish this function for safari smooth scroll and
-  // figure out why it starts from the top of screen each click
-
-  // const smoothScrollTo = (delay, position) => {
-  //   const scrollDelay = delay;
-  //   if (isClientSide()) {
-  //     let i = scrollDelay;
-  //     const int = setInterval(() => {
-  //       window.scrollTo(0, i);
-  //       i += scrollDelay;
-  //       if (Math.abs(window.scrollY) >= Math.abs(position)) {
-  //         clearInterval(int);
-  //       }
-  //     }, 20);
-  //   }
-  // };
-
-
   const scrollToGetInvolved = () => {
     if (isClientSide()) {
       const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
       if (isSmoothScrollSupported) {
         getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
       } else {
-        // const pos = getInvolvedRef.current.getBoundingClientRect();
-        // smoothScrollTo(10, pos.top);
         getInvolvedRef.current.scrollIntoView(false);
       }
     }
@@ -81,8 +55,6 @@ const Home = () => {
       if (isSmoothScrollSupported) {
         partnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        // const pos = partnerRef.current.getBoundingClientRect();
-        // smoothScrollTo(10, pos.top + 500);
         partnerRef.current.scrollIntoView(false);
       }
     }
@@ -92,10 +64,8 @@ const Home = () => {
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      {/* <IntroPanelHomepage /> */}
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
-      {/* <CtaFAQ /> */}
       <FooterBanner />
     </Layout>
   );
