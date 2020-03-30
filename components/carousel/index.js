@@ -32,6 +32,32 @@ const defaultSettings = {
   ],
 };
 
+const centerModeSettings = {
+  centerMode: true,
+  centerPadding: '2em',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '2em',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '2em',
+        slidesToShow: 1
+      }
+    }
+  ]
+};
+
 const Carousel = ({
   children, type, className, settings,
 }) => {
@@ -48,6 +74,7 @@ const Carousel = ({
   };
 
   const newSettings = { ...defaultSettings, ...settings };
+  const centerModeSettings = { ...centerModeSettings, ...settings };
 
   return (
     <div className={className || `${type}-carousel`}>
