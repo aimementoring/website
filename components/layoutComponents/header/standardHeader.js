@@ -15,10 +15,6 @@ const StandardHeader = () => {
   const [modalVisible, toggleDonateModal] = useDonate();
   return (
     <div>
-      {/* <div className={styles.navHiring}>
-        This site’s in draft mode.
-        Please be patient with us while it’s updated to reflect AIME in 2020 & beyond.
-      </div> */}
       <div className={styles.siteHeaderContainer}>
         <div className={styles.logoContainer}>
           <Logo />
