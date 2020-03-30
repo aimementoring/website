@@ -10,6 +10,7 @@ import Anchor from '../../components/common/link';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
+const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ImagiNationTV = () => (
@@ -215,6 +216,7 @@ const ImagiNationTV = () => (
         </ImaginationTvCard>
       </section>
       <DoubleCurvedLine />
+      <IntvPartners />
       <section className={styles.partnersWrapper}>
         <div className={styles.partnersHeader}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
