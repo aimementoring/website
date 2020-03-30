@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from '../modal';
-import { toggleDonateModal } from '../../store/general/actions';
+import { toggleDonateModal } from '../../store/donation/actions';
 import styles from './donateModal.module.scss';
 
 const DonateModal = ({ visible, toggleModal }) => (
@@ -27,7 +27,7 @@ const DonateModal = ({ visible, toggleModal }) => (
 );
 
 const mapStateToProps = (states) => ({
-  visible: states.general.donateModal,
+  visible: states.donation.donateModal,
 });
 
 const mapDispatchToProps = (dispatch) => ({
