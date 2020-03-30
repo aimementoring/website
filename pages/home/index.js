@@ -2,10 +2,12 @@ import React, {
   useEffect, useRef,
 } from 'react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import isClientSide from '../../utils/isClientSide';
+import useDonate from '../../hooks/useDonate';
 import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
@@ -19,6 +21,9 @@ const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 const Home = () => {
   const partnerRef = useRef(null);
   const getInvolvedRef = useRef(null);
+  const router = useRouter();
+  // eslint-disable-next-line no-unused-vars
+  const [modalVisible, toggleDonateModal] = useDonate();
 
   useEffect(() => {
     if (!getFromStorage('home_first_visit')) {
@@ -26,23 +31,12 @@ const Home = () => {
     }
   }, []);
 
-  // TODO: finish this function for safari smooth scroll and
-  // figure out why it starts from the top of screen each click
-
-  // const smoothScrollTo = (delay, position) => {
-  //   const scrollDelay = delay;
-  //   if (isClientSide()) {
-  //     let i = scrollDelay;
-  //     const int = setInterval(() => {
-  //       window.scrollTo(0, i);
-  //       i += scrollDelay;
-  //       if (Math.abs(window.scrollY) >= Math.abs(position)) {
-  //         clearInterval(int);
-  //       }
-  //     }, 20);
-  //   }
-  // };
-
+  useEffect(() => {
+    if (router.query && router.query.donate === 'true') {
+      toggleDonateModal();
+      router.push('/', '/', { shallow: true });
+    }
+  }, [router.query]);
 
   const scrollToGetInvolved = () => {
     if (isClientSide()) {
@@ -50,8 +44,6 @@ const Home = () => {
       if (isSmoothScrollSupported) {
         getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
       } else {
-        // const pos = getInvolvedRef.current.getBoundingClientRect();
-        // smoothScrollTo(10, pos.top);
         getInvolvedRef.current.scrollIntoView(false);
       }
     }
@@ -63,8 +55,6 @@ const Home = () => {
       if (isSmoothScrollSupported) {
         partnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        // const pos = partnerRef.current.getBoundingClientRect();
-        // smoothScrollTo(10, pos.top + 500);
         partnerRef.current.scrollIntoView(false);
       }
     }
@@ -74,10 +64,8 @@ const Home = () => {
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      {/* <IntroPanelHomepage /> */}
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
-      {/* <CtaFAQ /> */}
       <FooterBanner />
     </Layout>
   );
