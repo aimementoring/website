@@ -224,30 +224,46 @@ const ImagiNationTV = () => (
             <IntercomChat label="Become a partner" />
           </div>
         </div>
-        <div className={styles.partnersImagesGroup}>
-          <div className={styles.partnerImage}>
+        <div className={styles.partnersCarousel}>
+          <div className={styles.partnerContainer}>
             <img
               src={`${ASSETS_URL}/assets/images/partners/waverly.png`}
               alt="Imagi-nation TV"
             />
           </div>
-          <div className={styles.partnerImage}>
+          <div className={styles.partnerContainer}>
             <img
               src={`${ASSETS_URL}/assets/images/partners/pedestrian.png`}
               alt="Imagi-nation TV"
             />
+            <Title type="h4Title" className={styles.partnerName}>PEDESTRIAN GROUP</Title>
+            <Title type="h5Title" className={styles.partnerType}>Founding Partner</Title>
+            <Paragraph className={styles.partnerQuote}>
+              “AIME is not only mighty, it is crucial. It has the power
+              to knit the entire global community together through education,
+              and endorses mentorship in the best possible way. It will lift,
+              it will deepen, it will transform”
+            </Paragraph>
           </div>
-          <div className={styles.partnerImage}>
+          <div className={styles.partnerContainer}>
             <img
               src={`${ASSETS_URL}/assets/images/partners/warragul.png`}
               alt="Imagi-nation TV"
             />
           </div>
-          <div className={styles.partnerImage}>
+          <div className={styles.partnerContainer}>
             <img
               src={`${ASSETS_URL}/assets/images/partners/background.png`}
               alt="Imagi-nation TV"
             />
+            <Title type="h4Title" className={styles.partnerName}>PEDESTRIAN GROUP</Title>
+            <Title type="h5Title" className={styles.partnerType}>Founding Partner</Title>
+            <Paragraph className={styles.partnerQuote}>
+              “AIME is not only mighty, it is crucial. It has the power
+              to knit the entire global community together through education,
+              and endorses mentorship in the best possible way. It will lift,
+              it will deepen, it will transform”
+            </Paragraph>
           </div>
         </div>
       </section>
