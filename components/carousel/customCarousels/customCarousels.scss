@@ -90,23 +90,6 @@
   }
 }
 
-.wall {
-
-  &-highlight-text {
-    font-size: calc(#{$base-font-size} + 2rem);
-    padding-bottom: 30px;
-  }
-
-  &-title {
-    color: $white;
-    font-style: normal;
-    font-weight: 900;
-  }
-
-  .video-banner {
-    box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  }
-
   .slick-initialized .slick-slide {
     overflow: hidden;
   }
