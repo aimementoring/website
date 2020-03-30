@@ -25,34 +25,16 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  // // Positions
-  // server.get('/:countryId/positions', (req, res) => {
-  //   const pagePath = '/positions';
-  //   const queryParams = { countryId: req.params.countryId };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
-
-  // // Positions
-  // server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
-  //   const pagePath = '/positionsEntry';
-  //   const queryParams = {
-  //     id: req.params.id,
-  //     jobCategory: req.params.jobCategory,
-  //     countryId: req.params.countryId,
-  //   };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
+  server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
 
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
       const url = response[i];
-      server.get(url.fields.sourceUrl, (_req, res) => {
-        res.redirect(url.fields.redirectType, url.fields.destinationUrl);
-      });
+      if (url.fields.sourceUrl !== '/donate') {
+        server.get(url.fields.sourceUrl, (_req, res) => {
+          res.redirect(url.fields.redirectType, url.fields.destinationUrl);
+        });
+      }
     }
 
     server.get('/contact', (req, res) => {
