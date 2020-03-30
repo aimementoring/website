@@ -1,20 +1,18 @@
 // useStore.js
 import { useState, useEffect, useContext } from 'react';
 import { ReactReduxContext } from 'react-redux';
-import { toggleDonateModal } from '../store/general/actions';
+import { toggleDonateModal } from '../store/donation/actions';
 
 const useDonate = () => {
-  const { store } = useContext(ReactReduxContext);
-  const { getState, dispatch, subscribe } = store;
-  const [storeState, setStoreState] = useState(getState());
+  const { store: { getState, dispatch, subscribe } } = useContext(ReactReduxContext);
+  const [donateModalState, setDonateModalState] = useState(getState().donation.donateModal);
 
   // subscribe only once
   useEffect(() => subscribe(
-    () => setStoreState(getState()),
-    [],
+    () => setDonateModalState(getState().donation.donateModal),
   ));
 
-  return [storeState.general.donateModal, () => dispatch(toggleDonateModal())];
+  return [donateModalState, () => dispatch(toggleDonateModal())];
 };
 
 export default useDonate;
