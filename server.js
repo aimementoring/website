@@ -25,30 +25,7 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  // // Positions
-  // server.get('/:countryId/positions', (req, res) => {
-  //   const pagePath = '/positions';
-  //   const queryParams = { countryId: req.params.countryId };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
-
-  // // Positions
-  // server.get('/:countryId/positions/:id/:jobCategory', (req, res) => {
-  //   const pagePath = '/positionsEntry';
-  //   const queryParams = {
-  //     id: req.params.id,
-  //     jobCategory: req.params.jobCategory,
-  //     countryId: req.params.countryId,
-  //   };
-  //   return ssrCache({
-  //     req, res, pagePath, queryParams,
-  //   });
-  // });
-
   server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
-  // server.get('/donate', (req, res) => ssrCache({ req, res, pagePath: '/' }));
 
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
