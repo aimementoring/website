@@ -38,6 +38,46 @@ const CAROUSEL_SLIDES = [
   the entire global community together through education and endorses 
   mentorship in the best possible way. It will lift, it will deepen, 
   it will transform.`,
+}, {
+  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+  title: '',
+  type: 'Partner',
+  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+the entire global community together through education and endorses 
+mentorship in the best possible way. It will lift, it will deepen, 
+it will transform.`,
+}, {
+  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+  title: '',
+  type: 'Partner',
+  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+the entire global community together through education and endorses 
+mentorship in the best possible way. It will lift, it will deepen, 
+it will transform.`,
+}, {
+  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+  title: '',
+  type: 'Partner',
+  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+the entire global community together through education and endorses 
+mentorship in the best possible way. It will lift, it will deepen, 
+it will transform.`,
+}, {
+  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+  title: '',
+  type: 'Partner',
+  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+the entire global community together through education and endorses 
+mentorship in the best possible way. It will lift, it will deepen, 
+it will transform.`,
+}, {
+  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+  title: '',
+  type: 'Partner',
+  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+the entire global community together through education and endorses 
+mentorship in the best possible way. It will lift, it will deepen, 
+it will transform.`,
   }, {
     image: `${ASSETS_URL}/assets/images/partners/background.png`,
     title: '',
