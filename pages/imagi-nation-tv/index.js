@@ -5,12 +5,15 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
-import styles from './styles.module.scss';
 import Anchor from '../../components/common/link';
+import FeaturedProduct from '../../components/featuredProduct';
+import styles from './styles.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+const FEATURED_PRODUCT_LINK = 'https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie';
+
 
 const ImagiNationTV = () => (
   <Layout>
@@ -92,7 +95,8 @@ const ImagiNationTV = () => (
             great times with a sense of connectedness.
           </Paragraph>
           <Paragraph>
-            The classroom and studio is Google. Guests join from their homes. The broadcast space is YouTube.
+            The classroom and studio is Google. Guests join from their homes.
+            The broadcast space is YouTube.
           </Paragraph>
           {/* <Paragraph>
           The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
@@ -250,6 +254,18 @@ const ImagiNationTV = () => (
             />
           </div>
         </div>
+      </section>
+      <section className={styles.featuredProductWrapper}>
+        <FeaturedProduct
+          imageUrl="https://cdn.shopify.com/s/files/1/0226/0157/products/Screen_Shot_2020-02-17_at_9.54.51_pm_796x884.png?v=1581937021"
+          pretitle="Check it out …"
+          title="Imagi-Nation Hoodie"
+          text="Support INTV, checkout the Imagi-Nation Hoodie for sale over at our
+              apparel shop. Every sale from this hoodie goes towards keeping
+              mentors in our global classrooms, houses, laptops!"
+          linkUrl={FEATURED_PRODUCT_LINK}
+          linkText="Buy a Hoodie"
+        />
       </section>
     </div>
   </Layout>
