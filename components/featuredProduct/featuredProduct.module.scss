@@ -1,0 +1,53 @@
+@import "../../styles/base/variables";
+
+.featuredProductContainer {   
+  display: flex;
+  background-color: $white;
+  max-width: 64em;
+  margin: 0 auto;
+  padding: 3em;
+  border: 1px solid #C6CACC;
+  box-sizing: border-box;
+  border-radius: 3px;
+  @media screen and (max-width: $sm) {
+    width: 100%;
+    padding: 0;
+  }
+  .featuredProductImageContainer, .featuredProductText {
+    flex: 50%;
+  }
+  .featuredProductImageContainer {
+    padding-right: 1em; // to make some space for the scaling
+    @media screen and (max-width: $sm) {
+      // not responsive yet … some work needs to be done here!
+      flex: none;
+      max-width: 100%;
+    }
+  }
+  .featuredProductText {
+    margin-top: 4em;
+    width: 75%;
+  }
+  .featuredProductImage:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+  }
+  .featuredProductTitle {
+    color: $magenta;
+    font-size: 4rem;
+    transform: rotate(-7.02deg);
+    letter-spacing: -0.15em;
+  }
+  .featuredProductPreheader {
+    letter-spacing: -0.13em;
+    font-size: 1.8rem;
+    font-style: normal;
+  }
+  .featuredProductButton {
+    margin-top: 3em;
+    background-color: $magenta;
+  }
+  .featuredProductButton:hover {
+    background-color: $green;
+  }
+}
