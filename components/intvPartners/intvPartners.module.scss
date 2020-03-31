@@ -42,7 +42,83 @@
   }
 }
 
-.mentorsSection {
+
+.partnersWrapper {
+  max-width: 64em;
+  margin: auto;
+
+  .partnersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 1em;
+    flex-direction: row;
+
+    @media screen and (max-width: $sm) {
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .becomeAPartnerBtn {
+    button.navBtn {
+      background-color: $pink;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      transition: $hoverTransition;
+
+      &:hover {
+        background-color: $orange;
+      }
+    }
+
+    @media screen and (max-width: $sm) {
+      width: 100%;
+    }
+  }
+
+  .partnersCarousel {
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 52em;
+    margin: 1em auto;
+    border: 1px solid blue;
+    
+    @media screen and (max-width: $sm) {
+      flex-direction: column;
+      margin: 1em 2em;
+    }
+
+    .partnerContainer {
+      margin: 1em 2em;
+      border: 1px solid $grey40;
+      padding: 3em 3em 1.5em;
+      text-align: center;
+
+      img {
+        max-height: 10em;
+        margin-bottom: 1em;
+      }
+      .partnerName {
+        margin-bottom: 0.5em;
+      }
+      .partnerType {
+        margin-bottom: 1.5em;
+        color: $orange;
+      }
+    }
+  }
+}
+.partnersSection {
   background-color: $white;
   padding: 60px 0 0;
   position: relative;
@@ -53,7 +129,7 @@
     padding: 80px 0 90px;
   }
 
-  .mentorsSectionWrapper {
+  .partnersSectionWrapper {
     max-width: 960px;
     margin: 60px auto 0;
     overflow: visible;
@@ -62,7 +138,7 @@
       margin-top: initial;
     }
 
-    .mentorSlideWrapper {
+    .partnerSlideWrapper {
       align-items: center;
       margin: 0 auto;
       max-width: 1120px;
@@ -111,7 +187,7 @@
     }
   }
 
-  .mentorImageWrapper {
+  .partnerImageWrapper {
     align-items: center;
     position: relative;
     z-index: 3;
@@ -130,7 +206,7 @@
       width: 50%;
     }
 
-    .homepageMentorsImage {
+    .homepagepartnersImage {
       transition: ease-in 0.1s transform;
       clip-path: url(#svgScratchAmbassadorClipPath);
       display: block;
@@ -161,82 +237,7 @@
     }
   }
 
-  .ambassadorName {
-    font-size: 2rem;
-    font-style: normal;
-    margin-bottom: 0.5em;
-  }
-
-  .mentorMakhale {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/people-makhale.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorSherice {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/people-sherice.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorUzo {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/uzo_aduba.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorPatrick {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/patrick_j_adams.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorDarcy {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/people-darcy.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-  .mentorJade {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/people-jade.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorIan {
-    background-image:
-      url($cdnRoot+"assets/images/ambassadors/ian_thorpe.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
-  }
-
-  .mentorContent {
+  .partnerContent {
     padding: 120px 30px 60px;
     position: relative;
     top: -120px;
@@ -268,7 +269,7 @@
       margin-right: 0;
     }
 
-    .mentorContentWrapper {
+    .partnerContentWrapper {
       text-align: center;
 
       @media all and(min-width: $md) {
