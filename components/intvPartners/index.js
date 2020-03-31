@@ -56,11 +56,8 @@ const IntvPartners = () => (
     <section className={styles.partnersWrapper}>
       <div className={styles.partnersHeader}>
         <Title className={styles.subTitle} type="h3Title">
-      Our partners
+          Our partners
         </Title>
-        <div className={styles.becomeAPartnerBtn}>
-          <IntercomChat label="Become a partner" />
-        </div>
       </div>
       <Carousel
         useCenterMode
@@ -69,6 +66,9 @@ const IntvPartners = () => (
       >
         {CAROUSEL_SLIDES.map((slide) => <IntvPartnersSlide {...slide} key={slide.title} />)}
       </Carousel>
+      <div className={styles.becomeAPartnerBtn}>
+        <IntercomChat label="Become a partner" />
+      </div>
     </section>
   </>
 );
