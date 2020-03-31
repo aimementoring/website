@@ -55,6 +55,10 @@ app.prepare().then(() => {
       });
     }
 
+    server.get('/contact', (req, res) => {
+      ssrCache({ req, res, pagePath: '/' });
+    });
+
     server.get('*', (req, res) => {
       if (req.path.substr(-1) === '/' && req.path.length > 1) {
         const query = req.url.slice(req.path.length);
