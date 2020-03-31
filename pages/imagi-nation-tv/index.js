@@ -19,7 +19,7 @@ const ImagiNationTV = () => (
         <div className={styles.bannerContent}>
           <div className={styles.imagiBannerHeader}>
             <Title className={styles.welcomeTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-              Welcome to
+              HEY LAILA
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
               <img
                 src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
@@ -41,6 +41,7 @@ const ImagiNationTV = () => (
           </div>
         </div>
       </div>
+      <IntvPartners />
       <div className={styles.videoContainerFeature}>
         <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
@@ -79,7 +80,7 @@ const ImagiNationTV = () => (
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-            A mentor in the home for every kid, every day.
+            A mentor in the home for every kid, every day. boo boo boo
           </Title>
           <Paragraph>
             This is a show for those kids sitting at the back of the classroom,
@@ -216,7 +217,6 @@ const ImagiNationTV = () => (
         </ImaginationTvCard>
       </section>
       <DoubleCurvedLine />
-      <IntvPartners />
     </div>
   </Layout>
 );
