@@ -4,7 +4,6 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import IntercomChat from '../../components/intercom';
 import styles from './styles.module.scss';
 import Anchor from '../../components/common/link';
 
@@ -93,7 +92,8 @@ const ImagiNationTV = () => (
             great times with a sense of connectedness.
           </Paragraph>
           <Paragraph>
-            The classroom and studio is Google. Guests join from their homes. The broadcast space is YouTube.
+            The classroom and studio is Google. Guests join from their homes.
+            The broadcast space is YouTube.
           </Paragraph>
           {/* <Paragraph>
           The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
@@ -217,58 +217,6 @@ const ImagiNationTV = () => (
       </section>
       <DoubleCurvedLine />
       <IntvPartners />
-      <section className={styles.partnersWrapper}>
-        <div className={styles.partnersHeader}>
-          <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-            Our partners
-          </Title>
-          <div className={styles.becomeAPartnerBtn}>
-            <IntercomChat label="Become a partner" />
-          </div>
-        </div>
-        <div className={styles.partnersCarousel}>
-          <div className={styles.partnerContainer}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/waverly.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-          <div className={styles.partnerContainer}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/pedestrian.png`}
-              alt="Imagi-nation TV"
-            />
-            <Title type="h4Title" className={styles.partnerName}>PEDESTRIAN GROUP</Title>
-            <Title type="h5Title" className={styles.partnerType}>Founding Partner</Title>
-            <Paragraph className={styles.partnerQuote}>
-              “AIME is not only mighty, it is crucial. It has the power
-              to knit the entire global community together through education,
-              and endorses mentorship in the best possible way. It will lift,
-              it will deepen, it will transform”
-            </Paragraph>
-          </div>
-          <div className={styles.partnerContainer}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/warragul.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-          <div className={styles.partnerContainer}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/background.png`}
-              alt="Imagi-nation TV"
-            />
-            <Title type="h4Title" className={styles.partnerName}>PEDESTRIAN GROUP</Title>
-            <Title type="h5Title" className={styles.partnerType}>Founding Partner</Title>
-            <Paragraph className={styles.partnerQuote}>
-              “AIME is not only mighty, it is crucial. It has the power
-              to knit the entire global community together through education,
-              and endorses mentorship in the best possible way. It will lift,
-              it will deepen, it will transform”
-            </Paragraph>
-          </div>
-        </div>
-      </section>
     </div>
   </Layout>
 );
