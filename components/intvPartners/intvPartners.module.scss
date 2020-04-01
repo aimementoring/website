@@ -93,11 +93,17 @@
   .partnersCarousel {
     justify-content: space-evenly;
     align-items: center;
-    width: 120%;
-    left: -10%;
-    // border: 2px solid red;
     position: relative;
     margin: 3em auto;
+
+    @media screen and (min-width: 100em) {
+      max-width: 100em;
+    }
+
+    @media screen and (max-width: 100em) {
+      left: -10%;
+      width: 120%;
+    }
     
     @media screen and (max-width: $sm) {
       flex-direction: column;
@@ -113,6 +119,7 @@
       text-align: center;
       opacity: 50%;
       box-sizing: border-box;
+      padding: 3em 3em 1.5em;
 
       img {
         text-align: center;
@@ -133,13 +140,12 @@
     }
 
     .slick-center {
-      width: 20em !important;
-
       .partnerContainer {
         border: 1px solid $grey40;
         padding: 3em 3em 1.5em;
         opacity: 100%;
         margin: 0;
+        border-radius: 0 0 3px 3px;
       }
       .partnerQuote {
         display: block;
