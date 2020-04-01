@@ -126,7 +126,7 @@
 
   .inTVEpisodesWrapper {
     max-width: $lg;
-    padding: 2em;
+    padding: 2em 2em 0;
     margin: 0 auto;
     width: 100%;
     columns: 20em;
@@ -205,9 +205,5 @@
   }
 }
 .featuredProductWrapper {
-  background-color: $pink;
-
-  @media screen and (min-width: $md) {
-    padding: 5em;
-  }
+  
 }
