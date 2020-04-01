@@ -41,7 +41,7 @@ const FeaturedProduct = ({
         </Button>
       )}
       <Paragraph theme={process.env.REACT_APP_THEME} className={styles.linkGoShop}>
-        <Link url="shop.aimementoring.com">Go to shop.aimementoring.com</Link>
+        <a href="http://shop.aimementoring.com" target="_blank">Go to shop.aimementoring.com</a>
       </Paragraph>
     </div>
   </div>
