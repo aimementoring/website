@@ -2,7 +2,7 @@
 const { exec } = require('child_process');
 const sitemap = require('nextjs-sitemap-generator');
 
-const AWS_ENVIRONMENTS = ['staging', 'master'];
+const AWS_ENVIRONMENTS = ['staging', 'production'];
 
 async function goToRootFolder() {
   return new Promise((resolve, reject) => {
