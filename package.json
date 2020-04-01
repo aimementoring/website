@@ -11,7 +11,7 @@
     "start": "NODE_ENV=production node server.js",
     "export": "next build && next export",
     "heroku-start": "NODE_ENV=production node server.js -p $PORT",
-    "heroku-postbuild": "node scripts/build.js",
+    "heroku-postbuild": "node scripts/build.js --color always",
     "budget": "lighthouse --budget-path=./lighthouse-budget.json --output html --output-path ./performance-artifacts/budget-report.html --save-assets --view",
     "audit": "lighthouse --config-path=lighthouse-config.js --output html --output-path ./performance-artifacts/audit-report.html --save-assets --view",
     "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
