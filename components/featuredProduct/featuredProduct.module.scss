@@ -19,8 +19,11 @@
     align-items: center;
     justify-self: center;
     img {
-      max-width: 20em;
       margin: 0 auto;
+      
+      @media screen and (min-width: $md) {
+        max-width: 20em;
+      }
     }
   }
   .featuredProductText {
