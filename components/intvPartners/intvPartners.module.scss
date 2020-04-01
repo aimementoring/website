@@ -93,9 +93,10 @@
   .partnersCarousel {
     justify-content: space-evenly;
     align-items: center;
-    // width: 120%;
-    // left: -15%;
-    // position: relative;
+    width: 120%;
+    left: -10%;
+    // border: 2px solid red;
+    position: relative;
     margin: 3em auto;
     
     @media screen and (max-width: $sm) {
@@ -108,7 +109,6 @@
     }
 
     .partnerContainer {
-      border: 1px solid salmon;
       padding: 0 1em;
       text-align: center;
       opacity: 50%;
