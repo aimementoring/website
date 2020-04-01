@@ -9,13 +9,14 @@ const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
 const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
 
 const defaultSettings = {
-  dots: true,
+  dots: false,
+  arrows: false,
   infinite: true,
   speed: 1000,
+  autoplaySpeed: 4000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
-  autoplay: false,
+  autoplay: true,
   responsive: [
     {
       breakpoint: 768,
@@ -34,40 +35,39 @@ const centerModeSettings = {
   centerMode: true,
   centerPadding: '2em',
   slidesToShow: 5,
+  autoplay: true,
+  speed: 500,
+  arrows: true,
+  dots: false,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        arrows: false,
         centerMode: true,
         centerPadding: '2em',
         slidesToShow: 5,
         slidesToScroll: 5,
         infinite: true,
-        dots: true,
       },
     },
     {
       breakpoint: 768,
       settings: {
-        arrows: false,
         centerMode: true,
         centerPadding: '2em',
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        arrows: false,
+        arrows: true,
         centerMode: true,
         centerPadding: '2em',
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: false,
       },
     },
   ],
