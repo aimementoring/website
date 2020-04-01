@@ -206,5 +206,8 @@
 }
 .featuredProductWrapper {
   background-color: $pink;
-  padding: 5em;
+
+  @media screen and (min-width: $md) {
+    padding: 5em;
+  }
 }
