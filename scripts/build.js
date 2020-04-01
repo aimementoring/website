@@ -1,5 +1,6 @@
 // const fs = require('fs');
 const { exec } = require('child_process');
+const sitemap = require('nextjs-sitemap-generator');
 
 const AWS_ENVIRONMENTS = ['staging', 'master'];
 
@@ -36,31 +37,45 @@ async function uploadToAWS(buildEnv) {
 
 async function runBuild() {
   const buildEnv = process.env.REACT_APP_HOST_ENV;
-  console.info('BUILD PROCESS STARTED');
+  const goesToAws = AWS_ENVIRONMENTS.indexOf(buildEnv) > -1;
+  const totalActions = goesToAws ? 6 : 4;
+  console.info('\x1b[32m%s\x1b[0m', `• 1 of ${totalActions} -> BUILD PROCESS STARTED`);
   try {
-    console.info('POSITIONING IN ROOT FOLDER');
+    console.info('\x1b[32m%s\x1b[0m', `• 2 of ${totalActions} -> POSITIONING IN ROOT FOLDER`);
     await goToRootFolder();
+    if (goesToAws) {
+      try {
+        console.info('\x1b[32m%s\x1b[0m', `• 3 of ${totalActions} -> GENERATING SITEMAP`);
+        sitemap({
+          baseUrl: 'https://aimementoring.com',
+          pagesDirectory: 'pages',
+          targetDirectory: 'public/static/',
+        });
+      } catch (error) {
+        console.error('\x1b[31m%s\x1b[0m', 'error in sitemap process:', error);
+      }
+    }
     try {
-      console.info('BUILDING PROJECT');
+      console.info('\x1b[32m%s\x1b[0m', `• ${goesToAws ? 4 : 3} of ${totalActions} -> BUILDING PROJECT`);
       const buildStdout = await buildProject();
       console.log(buildStdout);
-      console.log('ENVIRONMENT:', { environment: buildEnv });
-      if (AWS_ENVIRONMENTS.indexOf(buildEnv) > -1) {
+      console.log('\x1b[36m%s\x1b[0m', `ENVIRONMENT: ${buildEnv}`);
+      if (goesToAws) {
         try {
-          console.info('UPLOADING BUILD FOLDER TO AWS S3');
+          console.info('\x1b[32m%s\x1b[0m', `• ${goesToAws ? 5 : 4} of ${totalActions} -> UPLOADING BUILD FOLDER TO AWS S3`);
           const awsStdout = await uploadToAWS(buildEnv);
           console.log(awsStdout);
         } catch (error) {
-          console.error('error in uploadToAWS process:', error);
+          console.error('\x1b[31m%s\x1b[0m', 'error in uploadToAWS process:', error);
         }
       }
     } catch (error) {
-      console.error('error in buildProject process:', error);
+      console.error('\x1b[31m%s\x1b[0m', 'error in buildProject process:', error);
     }
   } catch (error) {
-    console.error('error in goToRootFolder process:', error);
+    console.error('\x1b[31m%s\x1b[0m', 'error in goToRootFolder process:', error);
   }
-  console.info('BUILD PROCESS ENDED');
+  console.info('\x1b[32m%s\x1b[0m', `• ${totalActions} of ${totalActions} -> BUILD PROCESS ENDED`);
 }
 
 runBuild();
