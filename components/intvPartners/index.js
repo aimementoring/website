@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Carousel from '../carousel';
 import IntercomChat from '../intercom';
 import styles from './intvPartners.module.scss';
-
-const {
-  Title,
-} = Components;
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -38,43 +34,43 @@ const CAROUSEL_SLIDES = [
   the entire global community together through education and endorses 
   mentorship in the best possible way. It will lift, it will deepen, 
   it will transform.`,
-}, {
-  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-  title: '',
-  type: 'Partner',
-  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: '',
+    type: 'Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
 the entire global community together through education and endorses 
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
-}, {
-  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-  title: '',
-  type: 'Partner',
-  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: '',
+    type: 'Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
 the entire global community together through education and endorses 
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
-}, {
-  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-  title: '',
-  type: 'Partner',
-  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: '',
+    type: 'Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
 the entire global community together through education and endorses 
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
-}, {
-  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-  title: '',
-  type: 'Partner',
-  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: '',
+    type: 'Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
 the entire global community together through education and endorses 
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
-}, {
-  image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-  title: '',
-  type: 'Partner',
-  paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: '',
+    type: 'Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
 the entire global community together through education and endorses 
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
@@ -87,8 +83,6 @@ the entire global community together through education and endorses
 mentorship in the best possible way. It will lift, it will deepen, 
 it will transform.`,
   },
-
-
 ];
 
 const IntvPartners = () => (
@@ -100,7 +94,7 @@ const IntvPartners = () => (
         </Title>
       </div>
       <Carousel
-        useCenterMode
+        mode="center"
         type="ambassadors"
         className={styles.partnersCarousel}
       >
