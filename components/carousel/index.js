@@ -9,7 +9,7 @@ const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
 const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
 
 const defaultSettings = {
-  dots: false,
+  dots: true,
   arrows: false,
   infinite: true,
   speed: 1000,
@@ -74,7 +74,7 @@ const centerModeSettings = {
 };
 
 const Carousel = ({
-  children, type, className, settings, useCenterMode,
+  children, type, className, settings, mode,
 }) => {
   const sliderRef = useRef(null);
   const ssr = !isClientSide();
@@ -88,7 +88,7 @@ const Carousel = ({
     sliderRef.slickPrev();
   };
 
-  const newSettings = { ...(useCenterMode ? centerModeSettings : defaultSettings), ...settings };
+  const newSettings = { ...(mode === 'center' ? centerModeSettings : defaultSettings), ...settings };
 
   return (
     <div className={className || `${type}-carousel`}>
@@ -113,14 +113,14 @@ Carousel.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
-  useCenterMode: PropTypes.bool,
+  mode: PropTypes.string,
 };
 
 Carousel.defaultProps = {
   className: null,
   type: 'hero',
   settings: {},
-  useCenterMode: false,
+  mode: '',
 };
 
 export default Carousel;
