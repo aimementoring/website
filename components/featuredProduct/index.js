@@ -4,6 +4,7 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './featuredProduct.module.scss';
+import Link from 'next/link';
 
 const FeaturedProduct = ({
   pretitle, title, imageUrl, text, linkUrl, linkText,
@@ -18,21 +19,14 @@ const FeaturedProduct = ({
     </div>
     <div className={styles.featuredProductText}>
       <Title
-        type="h3Title"
-        className={styles.featuredProductPreheader}
-        theme={process.env.REACT_APP_THEME}
-      >
-        {pretitle}
-      </Title>
-      <Title
-        type="h1Title"
+        type="headingLockup"
         className={styles.featuredProductTitle}
         theme={process.env.REACT_APP_THEME}
       >
-        {title}
-
+        {pretitle}
+        <strong>{title}</strong>
       </Title>
-      <Paragraph className={styles.featuredProductText} theme={process.env.REACT_APP_THEME}>
+      <Paragraph theme={process.env.REACT_APP_THEME}>
         {text}
       </Paragraph>
       { linkUrl && (
@@ -46,6 +40,9 @@ const FeaturedProduct = ({
           {linkText}
         </Button>
       )}
+      <Paragraph theme={process.env.REACT_APP_THEME} className={styles.linkGoShop}>
+        <Link url="shop.aimementoring.com">Go to shop.aimementoring.com</Link>
+      </Paragraph>
     </div>
   </div>
 );
