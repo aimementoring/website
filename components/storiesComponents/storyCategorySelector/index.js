@@ -15,7 +15,7 @@ const StoryCategorySelector = ({ categories, selectedCategories, onChangeFunctio
           onChangeFunction={onChangeFunction}
           name={category}
           placeholder={category}
-          value={selectedCategories.includes(category)}
+          value={selectedCategories.indexOf(category) !== -1}
           theme={process.env.REACT_APP_THEME}
         />
       </li>
