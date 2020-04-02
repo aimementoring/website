@@ -2,13 +2,6 @@ require('dotenv').config();
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
-const sitemap = require('nextjs-sitemap-generator');
-
-sitemap({
-  baseUrl: 'https://aimementoring.com',
-  pagesDirectory: `${__dirname}/pages`,
-  targetDirectory: 'public/static/',
-});
 
 module.exports = withOffline(
   withCSS(
@@ -38,11 +31,10 @@ module.exports = withOffline(
         // localIdentName: '[name]__[local]___[hash:base64:5]',
       },
       // https://nextjs.org/docs#cdn-support-with-asset-prefix
-      // assetPrefix: process.env.REACT_APP_HOST !== 'next'
-      //     && (process.env.REACT_APP_HOST_ENV === 'production'
-      //  || process.env.REACT_APP_HOST_ENV === 'staging')
-      //   ? process.env.REACT_APP_ASSETS_URL
-      //   : '',
+      assetPrefix: process.env.REACT_APP_HOST !== 'next'
+          && (['production', 'staging'].indexOf(process.env.REACT_APP_HOST_ENV) > -1)
+        ? process.env.REACT_APP_ASSETS_URL
+        : '',
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
         PORT: process.env.PORT,
