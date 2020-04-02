@@ -41,9 +41,6 @@ const ImagiNationTV = () => (
           </div>
         </div>
       </div>
-      <div className={styles.tempIntvPWrapper}>
-        <IntvPartners />
-      </div>
       <div className={styles.videoContainerFeature}>
         <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
@@ -219,6 +216,9 @@ const ImagiNationTV = () => (
         </ImaginationTvCard>
       </section>
       <DoubleCurvedLine />
+      <div className={styles.tempIntvPWrapper}>
+        <IntvPartners />
+      </div>
     </div>
   </Layout>
 );
