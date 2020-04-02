@@ -1,5 +1,5 @@
 const contentful = require('contentful');
-// const bugsnagClient = require('../utils/bugsnag');
+const bugsnagClient = require('../utils/bugsnag');
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -23,7 +23,7 @@ const getEntriesByContentTag = (contentTag) => client
     include: 2,
     'fields.contentTag.sys.contentType.sys.id': 'contentTag',
     'fields.contentTag.fields.name': contentTag,
-  }).then((response) => response.items);
+  }).then((response) => response.items).catch((e) => bugsnagClient.notify(e));
 
 export const getTerms = () => getEntriesByContentTag(CONTENT_TAGS.terms);
 
