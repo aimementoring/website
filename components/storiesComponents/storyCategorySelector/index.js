@@ -5,15 +5,17 @@ import styles from './storyCategorySelector.module.scss';
 
 const Button = dynamic(() => import('aime-blueprint/lib/components/button'));
 
-const StoryCategorySelector = ({ categories, selectedCategories, onChangeFunction }) => {
-  const allCategoriesSelected = selectedCategories.length === categories.length;
+const StoryCategorySelector = ({
+  categories, selectedCategories, onClickFunction,
+}) => {
+  const noCategoriesSelected = selectedCategories.length === 0;
   return (
     <div className={styles.storyCategorySelectorContainer}>
       <div className={styles.tabContainer} key="All">
         <Button
-          className={`${styles.tab} ${allCategoriesSelected ? styles.activeTab : ''}`}
+          className={`${styles.tab} ${styles.allTab} ${noCategoriesSelected ? styles.activeTab : ''}`}
           name="All"
-          onClickFunction={onChangeFunction()}
+          onClickFunction={onClickFunction()}
           theme={process.env.REACT_APP_THEME}
         >
           <span className={styles.tabText}>All</span>
@@ -22,9 +24,9 @@ const StoryCategorySelector = ({ categories, selectedCategories, onChangeFunctio
       {categories.map((category) => (
         <div className={styles.tabContainer} key={category}>
           <Button
-            className={`${styles.tab} ${!allCategoriesSelected && selectedCategories.indexOf(category) !== -1 ? styles.activeTab : ''}`}
+            className={`${styles.tab} ${selectedCategories.indexOf(category) !== -1 ? styles.activeTab : ''}`}
             name={category}
-            onClickFunction={onChangeFunction(category)}
+            onClickFunction={onClickFunction(category)}
             theme={process.env.REACT_APP_THEME}
           >
             <span className={styles.tabText}>{category}</span>
@@ -39,13 +41,13 @@ const StoryCategorySelector = ({ categories, selectedCategories, onChangeFunctio
 StoryCategorySelector.defaultProps = {
   categories: [],
   selectedCategories: [],
-  onChangeFunction: () => {},
+  onClickFunction: () => {},
 };
 
 StoryCategorySelector.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string),
   selectedCategories: PropTypes.arrayOf(PropTypes.string),
-  onChangeFunction: PropTypes.func,
+  onClickFunction: PropTypes.func,
 };
 
 export default StoryCategorySelector;
