@@ -223,9 +223,7 @@ const ImagiNationTV = () => (
           imageUrl="https://cdn.shopify.com/s/files/1/0226/0157/products/Screen_Shot_2020-02-17_at_9.54.51_pm_796x884.png?v=1581937021"
           pretitle="Check it out …"
           title="Imagi-Nation Hoodie"
-          text="Support INTV, checkout the Imagi-Nation Hoodie for sale over at our
-              apparel shop. Every sale from this hoodie goes towards keeping
-              mentors in our global classrooms, houses, laptops!"
+          text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
           linkUrl={FEATURED_PRODUCT_LINK}
           linkText="Buy a Hoodie"
         />
