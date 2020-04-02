@@ -119,33 +119,43 @@
       text-align: center;
       opacity: 50%;
       box-sizing: border-box;
-      padding: 3em 3em 1.5em;
+      padding: 2em 3.5em 1.5em;
+
+      @media screen and (min-width: $md) {
+        padding: 4em 1.5em 1.5em;
+      }
 
       img {
         text-align: center;
         max-height: 8em;
+        max-width: 14em;
         display: block;
-        margin: 0 auto 2em;
+        margin: 0 auto 3.5em;
       }
       .partnerName {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.15em;
+        font-size: 1.3rem;
       }
       .partnerType {
-        margin-bottom: 1.5em;
+        margin-bottom: 2.5em;
         color: $orange;
+        font-size: 0.85rem;
       }
       .partnerQuote {
         display: none;
+        font-weight: 500;
+        font-size: 0.85rem;
       }
     }
 
     .slick-center {
       .partnerContainer {
-        border: 1px solid $grey40;
-        padding: 3em 3em 1.5em;
         opacity: 100%;
         margin: 0;
         border-radius: 0 0 3px 3px;
+        @media screen and (min-width: $md) {
+          border: 1px solid $grey40;
+        }
       }
       .partnerQuote {
         display: block;
