@@ -211,7 +211,7 @@ const ImagiNationTV = () => (
       </section>
       <section className={styles.featuredProductWrapper}>
         <FeaturedProduct
-          imageUrl="https://cdn.shopify.com/s/files/1/0226/0157/products/Screen_Shot_2020-02-17_at_9.54.51_pm_796x884.png?v=1581937021"
+          imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
           pretitle="Check it out …"
           title="Imagi-Nation Hoodie"
           text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
