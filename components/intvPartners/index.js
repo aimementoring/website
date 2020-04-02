@@ -10,15 +10,6 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const CAROUSEL_SLIDES = [
   {
-    image: `${ASSETS_URL}/assets/images/partners/waverly.png`,
-    title: 'Waverly',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
-  },
-  {
     image: `${ASSETS_URL}/assets/images/partners/pedestrian.png`,
     title: 'Pedestrian Group',
     type: 'Founding Partner',
@@ -26,62 +17,47 @@ const CAROUSEL_SLIDES = [
     the entire global community together through education and endorses 
     mentorship in the best possible way. It will lift, it will deepen, 
     it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-  the entire global community together through education and endorses 
-  mentorship in the best possible way. It will lift, it will deepen, 
-  it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: '',
-    type: 'Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
-  }, {
+  },
+  {
     image: `${ASSETS_URL}/assets/images/partners/background.png`,
-    title: '',
-    type: 'Partner',
+    title: 'Background',
+    type: 'Production Partner',
     paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-the entire global community together through education and endorses 
-mentorship in the best possible way. It will lift, it will deepen, 
-it will transform.`,
+    the entire global community together through education and endorses 
+    mentorship in the best possible way. It will lift, it will deepen, 
+    it will transform.`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
+    title: 'Melbourne International Comedy Festival',
+    type: 'Cancelled not Cancelled Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+    the entire global community together through education and endorses 
+    mentorship in the best possible way. It will lift, it will deepen, 
+    it will transform.`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: 'Grounded Festival',
+    type: 'Cancelled not Cancelled Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+    the entire global community together through education and endorses 
+    mentorship in the best possible way. It will lift, it will deepen, 
+    it will transform.`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/waverly.png`,
+    title: 'Waverly School',
+    type: 'Delivery Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+    the entire global community together through education and endorses 
+    mentorship in the best possible way. It will lift, it will deepen, 
+    it will transform.`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    title: 'Warragul Regional College',
+    type: 'Delivery Partner',
+    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
+    the entire global community together through education and endorses 
+    mentorship in the best possible way. It will lift, it will deepen, 
+    it will transform.`,
   },
 ];
 
