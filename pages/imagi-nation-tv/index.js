@@ -12,8 +12,7 @@ import styles from './styles.module.scss';
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-const FEATURED_PRODUCT_LINK = 'https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie';
-
+const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const ImagiNationTV = () => (
   <Layout>
@@ -215,7 +214,7 @@ const ImagiNationTV = () => (
           pretitle="Check it out …"
           title="Imagi-Nation Hoodie"
           text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
-          linkUrl={FEATURED_PRODUCT_LINK}
+          linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
           linkText="Buy a Hoodie"
         />
       </section>
