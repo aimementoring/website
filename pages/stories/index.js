@@ -12,11 +12,11 @@ import StoryCategorySelector from '../../components/storiesComponents/storyCateg
 import styles from './stories.module.scss';
 
 const Stories = ({ stories, categories }) => {
-  const [selectedCategories, setSelectedCategories] = useState(categories);
-  // if we don't have categories, just display all stories
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  // if we don't have categories or none are selected, just display all stories
   // for a transition to this content model without hiccups
   let filteredStories = stories;
-  if (categories.length > 0) {
+  if (categories.length > 0 && selectedCategories.length === 1) {
     filteredStories = filteredStories.filter(
       (story) => selectedCategories.some(
         (category) => story.fields.postCategories && story.fields.postCategories.includes(category),
@@ -28,18 +28,9 @@ const Stories = ({ stories, categories }) => {
     !filteredDate || entry.fields.publishDate.indexOf(filteredDate) === -1
   ));
 
-  const handleCategorySelect = (clickedCategory) => {
-    // if none is selected, display all
-    if (!clickedCategory) setSelectedCategories([]);
-
-    if (selectedCategories.indexOf(clickedCategory) !== -1) {
-      setSelectedCategories((prevCategories) => [...prevCategories, clickedCategory]);
-    } else {
-      setSelectedCategories(selectedCategories.filter(
-        (category) => category !== clickedCategory,
-      ));
-    }
-  };
+  // calling this with an empty argument resets the categories
+  const handleCategorySelect = (clickedCategory) => () => (clickedCategory
+    ? setSelectedCategories([clickedCategory]) : setSelectedCategories([]));
 
   return (
     <Layout>
@@ -65,7 +56,7 @@ const Stories = ({ stories, categories }) => {
             <StoryCategorySelector
               categories={categories}
               selectedCategories={selectedCategories}
-              onChangeFunction={handleCategorySelect}
+              onClickFunction={handleCategorySelect}
             />
             <StoriesGrid entries={filteredStories} />
           </div>
