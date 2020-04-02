@@ -5,12 +5,14 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
-import styles from './styles.module.scss';
 import Anchor from '../../components/common/link';
+import FeaturedProduct from '../../components/featuredProduct';
+import styles from './styles.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const ImagiNationTV = () => (
   <Layout>
@@ -91,14 +93,6 @@ const ImagiNationTV = () => (
             in one moment so we are not alone, so that we move through tough times and
             great times with a sense of connectedness.
           </Paragraph>
-          <Paragraph>
-            The classroom and studio is Google. Guests join from their homes. The broadcast space is YouTube.
-          </Paragraph>
-          {/* <Paragraph>
-          The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
-          countries who are currently involved in AIME’s Imagination Factory, and a world
-          of people looking to make sense of today in order to imagine tomorrow.
-          </Paragraph> */}
         </div>
         <ImaginationTvCard
           day="Monday"
@@ -214,6 +208,16 @@ const ImagiNationTV = () => (
           </Paragraph>
         </ImaginationTvCard>
       </section>
+      <section className={styles.featuredProductWrapper}>
+        <FeaturedProduct
+          imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
+          pretitle="Check it out …"
+          title="Imagi-Nation Hoodie"
+          text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
+          linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
+          linkText="Buy a Hoodie"
+        />
+      </section>
       <DoubleCurvedLine />
       <section className={styles.partnersWrapper}>
         <div className={styles.partnersHeader}>
@@ -251,6 +255,7 @@ const ImagiNationTV = () => (
           </div>
         </div>
       </section>
+      
     </div>
   </Layout>
 );
