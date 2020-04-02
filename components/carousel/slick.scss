@@ -119,6 +119,7 @@
   outline: none;
   margin: 0 auto;
   transition: $hoverTransition;
+  z-index: 10;
   &:hover,
   &:focus {
     outline: none;
@@ -143,32 +144,17 @@ $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
 
 .slick-prev {
-  left: 8rem;
   background: url($cdnRoot + 'assets/images/carousel/arrow-prev-purple.svg') no-repeat top center / contain transparent;
-
-  // [dir="rtl"] & {
-  //   left: auto;
-  //   right: 1.5em;
-  // }
-  // &:before {
-  //   content: $slick-prev-character;
-  //   [dir="rtl"] & {
-  //     content: $slick-next-character;
-  //   }
-  // }
+  left: 5rem;
+  @media all and(min-width: $md) {
+    left: 8rem;
+  }
 }
 
 .slick-next {
-  right: 8rem;
   background: url($cdnRoot + 'assets/images/carousel/arrow-next-purple.svg') no-repeat top center / contain transparent;
-  // [dir="rtl"] & {
-  //   left: -25px;
-  //   right: auto;
-  // }
-  // &:before {
-  //   content: $slick-next-character;
-  //   [dir="rtl"] & {
-  //     content: $slick-prev-character;
-  //   }
-  // }
+  right: 5rem;
+  @media all and(min-width: $md) {
+    right: 8rem;
+  }
 }
