@@ -37,7 +37,6 @@ const centerModeSettings = {
   slidesToShow: 5,
   autoplay: true,
   speed: 500,
-  arrows: true,
   dots: false,
   responsive: [
     {
@@ -58,12 +57,13 @@ const centerModeSettings = {
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
+        arrows: true,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        arrows: true,
+        arrows: false,
         centerMode: true,
         centerPadding: '2em',
         slidesToShow: 1,
