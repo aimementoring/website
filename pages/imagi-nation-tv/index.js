@@ -94,15 +94,6 @@ const ImagiNationTV = () => (
             in one moment so we are not alone, so that we move through tough times and
             great times with a sense of connectedness.
           </Paragraph>
-          <Paragraph>
-            The classroom and studio is Google. Guests join from their homes.
-            The broadcast space is YouTube.
-          </Paragraph>
-          {/* <Paragraph>
-          The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
-          countries who are currently involved in AIME’s Imagination Factory, and a world
-          of people looking to make sense of today in order to imagine tomorrow.
-          </Paragraph> */}
         </div>
         <ImaginationTvCard
           day="Monday"
