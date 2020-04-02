@@ -28,12 +28,13 @@ const Stories = ({ stories, categories }) => {
     !filteredDate || entry.fields.publishDate.indexOf(filteredDate) === -1
   ));
 
-  const handleCategorySelect = (clickedCategory, checked) => {
-    if (checked) {
+  const handleCategorySelect = (clickedCategory) => {
+    // if none is selected, display all
+    if (!clickedCategory) setSelectedCategories([]);
+
+    if (selectedCategories.indexOf(clickedCategory) !== -1) {
       setSelectedCategories((prevCategories) => [...prevCategories, clickedCategory]);
     } else {
-      // prevent users from de-selecting all categories
-      if (selectedCategories.length <= 1) return;
       setSelectedCategories(selectedCategories.filter(
         (category) => category !== clickedCategory,
       ));
