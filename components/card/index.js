@@ -6,6 +6,7 @@ import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
 import { formatDate } from '../../utils/formatting';
+import BadgeList from '../storiesComponents/badgeList';
 import Anchor from '../common/link';
 import styles from './card.module.scss';
 
@@ -41,9 +42,7 @@ const Card = (props) => {
   return (
     <ContainerComponent {...anchorProps}>
       <div>
-        {categories.map((category) => (
-          <p className={styles.categoryBadge} key={category}>{category}</p>
-        ))}
+        <BadgeList items={categories} />
         {withVideo && (
           <VideoButton video={video} />
         )}
