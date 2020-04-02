@@ -30,7 +30,7 @@ const Stories = ({ stories, categories }) => {
 
   const handleCategorySelect = (clickedCategory, checked) => {
     if (checked) {
-      setSelectedCategories([...selectedCategories, clickedCategory]);
+      setSelectedCategories((prevCategories) => [...prevCategories, clickedCategory]);
     } else {
       // prevent users from de-selecting all categories
       if (selectedCategories.length <= 1) return;
