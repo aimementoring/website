@@ -41,6 +41,7 @@
   margin: 2rem auto;
   padding: 4rem 0;
   display: block;
+  text-align: center;
 
   @media screen and (min-width: $lg) {
     padding-bottom: 2rem;
@@ -70,6 +71,7 @@
 
   .blogPostArticle {
     line-height: 26px;
+    text-align: left;
 
     h4 {
       font-size: 15px;
@@ -221,4 +223,13 @@
   @media screen and (min-width: $md) {
     padding: 0.7rem 2.2rem;
   }
+
+}
+
+.borderedBadge {
+  border: 1px solid $grey40;
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  color: $watermelon;
 }
