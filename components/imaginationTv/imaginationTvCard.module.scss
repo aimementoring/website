@@ -2,6 +2,7 @@
 
 .episodePanel {
   break-inside: avoid-column;
+  page-break-inside: avoid; 
   margin-bottom: 1.5em;
 
   .episodeHeader {
