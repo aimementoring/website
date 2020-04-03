@@ -4,6 +4,7 @@ import React, {
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
+import BecomeAFriend from '../../components/becomeAFriend';
 import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import isClientSide from '../../utils/isClientSide';
@@ -63,6 +64,7 @@ const Home = () => {
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
+      <BecomeAFriend />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
