@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { setOnStorage, getFromStorage } from '../../../utils/localStorage';
+import { SimpleBanner } from '../../../components/banner/index';
 import isClientSide from '../../../utils/isClientSide';
 import Layout from '../../../hocs/basicLayout';
 
@@ -64,25 +65,15 @@ const TheMentorProducts = ({ productHandle }) => {
 
   return (
     <Layout>
-      <div className="hero-banner--default hero-banner--founder full-width-wrap shop-banner">
-        <div className="flex flex-wrap items-center full-height">
-          <div className="banner-wrapper">
-            <h1>
-              <span className="highlight-text">
-                <em>
-                  Products
-                  <br />
-                  <span className="scratch-underline">&nbsp;</span>
-                </em>
-              </span>
-            </h1>
-          </div>
-        </div>
-      </div>
+      <SimpleBanner
+        title={(<strong>Products</strong>)}
+        titleType="headingLockup"
+        bannerWrapperClass="hero-banner--default hero-banner--founder full-width-wrap shop-banner"
+        bannerContentWrapperClass="flex flex-wrap items-center full-height"
+        bannerContentClass="banner-wrapper"
+      />
       <div id="product-full">
-        {state.product && (
-          <ProductFull {...state} />
-        )}
+        {state.product && <ProductFull {...state} />}
       </div>
     </Layout>
   );
