@@ -1,0 +1,15 @@
+.waveForm {
+  width:100vw;
+  height:2.2vw;
+  margin:0;
+  display:block;
+  position: absolute;
+  bottom:0;
+  z-index:10;
+
+}
+
+.topLine, .bottomLine, .middleLine {
+  fill:rgba(255,255,255,.8);
+  stroke:none;
+}
