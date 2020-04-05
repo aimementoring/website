@@ -1,0 +1,119 @@
+@import "../../styles/base/variables";
+
+.bannerImage {
+  border-radius: 3px 3px 0 0;
+  width: 100%;
+
+  @supports (object-fit: cover) {
+    height: 10.5em;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.bannerVideo {
+  border-radius: 3px 3px 0 0;
+  width: 100%;
+
+  @supports (object-fit: cover) {
+    height: 21.75em;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.videoIcon {
+  width: 70px;
+  position: absolute;
+  top: 8.5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.articleLink {
+  padding: 0;
+  text-decoration: none;
+}
+
+.spotlightArticleLink {
+  margin: 0 1.5em;
+  padding: 0;
+  text-decoration: none;
+  box-shadow: 0px 24px 32px rgba(8, 35, 48, 0.12);
+
+  > div:first-of-type {
+    height: 100%;
+    position: relative;
+  }
+
+  .articleDescription {
+    border: 1px solid #C6CACC;
+    border-top: 0;
+    margin-top: -2px;
+    box-sizing: border-box;
+    border-radius: 0 0 3px 3px;
+    height: calc(100% - 10.5em);
+    position: relative;
+
+    &.withVideo {
+      height: calc(100% - 21.75em);
+    }
+
+    .contentPreview {
+      color: $black;
+    }
+
+    .rightButton {
+      position: relative;
+      float: right;
+      margin-top: -3.5em;
+    }
+
+    .spotlightButton {
+      color: $watermelon;
+      text-transform: uppercase;
+      border: 1px solid $watermelon;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: transparent;
+      @media screen and (min-width: $lg) {
+        padding: 1rem 2.5rem;
+      }
+    
+      @media screen and (min-width: $md) {
+        padding: 0.7rem 2.2rem;
+      }
+    }
+  }
+}
+
+.articleDescription {
+  padding: 1.5em;
+  
+  h5 {
+  margin-bottom: 0.5em;
+  color:$black;
+  transition: $hoverTransition;
+  &:hover {
+    color: $purple;
+    }
+  }
+}
+
+.postDate {
+  padding-right: 0.5rem;
+}
+
+.articleTileLink {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+
+  @media screen and (min-width: $lg) {
+    padding: 1rem 2.5rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 0.7rem 2.2rem;
+  }
+}
