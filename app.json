@@ -33,10 +33,6 @@
       "required": true,
       "value": "aimementoring-staging.auth0.com"
     },
-    "REACT_APP_CRAFT_API": {
-      "required": true,
-      "value": "https://aimeweb-backend-staging.herokuapp.com"
-    },
     "REACT_APP_FILE_UPLOADER_API_KEY": {
       "required": true,
       "value": "AnpTaG2AITvSuOfoenIpKz"
@@ -144,6 +140,10 @@
     "REACT_APP_MAILCHIMP_KEY": {
       "required": true,
       "value": "84b0bce41e03945cf599fa0e82780ddb-us12"
+    },
+    "REACT_APP_MAILCHIMP_API": {
+      "required": true,
+      "value": "https://us12.api.mailchimp.com/3.0"
     }
   },
   "formation": {

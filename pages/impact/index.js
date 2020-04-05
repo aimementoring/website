@@ -1,13 +1,15 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
+import MovingWaves from '../../components/movingWaves';
 import './impact.scss';
 import IntercomChat from '../../components/intercom';
 
-const VideoButton = dynamic(() => import('../../components/videoButton'));
+// // const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -16,49 +18,20 @@ const Impact = () => (
     <div className="impact-page">
       <div className="">
         <div className="full-width-wrap">
+          <MovingWaves />
           <div className="flex flex-wrap items-center">
-            <div className="hero-panel banner-wrapper full-height section-background-image section-background-image-purple-smoke">
-              <div className="vid-container">
-                <div className="video-overlay" />
-                <div className="bgVideo-container">
-                  <video autoPlay muted loop preload="true" id="bgVideo">
-                    <source
-                      src={`${ASSETS_URL}/assets/media/PURPLE_SMOKE_BACKGROUND.webm`}
-                      type="video/webm"
-                    />
-                    <source
-                      src={`${ASSETS_URL}/assets/media/PURPLE_SMOKE_BACKGROUND.mp4`}
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-                <div className="vid-headline flex align-items">
-                  <div className="px1 center m3">
-                    <Title type="headingLockup" className="bannerHeaderImpact" theme={process.env.REACT_APP_THEME}>
-                      Our
-                      <strong>
-                        Impact
-                      </strong>
-                    </Title>
-                    <div className="hero-panel-video-button video-button">
-                      <VideoButton video="https://player.vimeo.com/external/291611142.m3u8?s=d8b2918ab04b455016524208a81d89ba2fca166f" />
-                      <div className="video-banner-overlay center">
-                        <img
-                          alt=""
-                          className="center mx-auto"
-                          style={{ width: '70px' }}
-                          src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="hero-panel banner-wrapper hero-banner--default">
+              <Title type="headingLockup" className="bannerHeaderImpact" theme={process.env.REACT_APP_THEME}>
+                Our
+                <strong>
+                  Impact
+                </strong>
+              </Title>
             </div>
           </div>
         </div>
         <section className="section bg-white" id="panel1">
-          <div className="wrap items-center xs-p2 p3">
+          <div className="wrap items-center p3 center">
             <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               We’ve got a story of change that’s lit up the world since 2005, one kid at a time.
               It’s a simple idea, mentoring.
@@ -71,13 +44,8 @@ const Impact = () => (
             </Title>
           </div>
         </section>
-        <section className="section-impact bg-dark-purple-gradient">
-          <div className="pt4 pb2 xs-p2 center c-white">
-            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
-            Quick facts
-            </Title>
-          </div>
-          <div className="wrap">
+        <section className="section-impact">
+          <div className="wrapImpactFacts">
             <section className="section-about">
               <div className="section-about__column p2 xs-p1 items-center">
                 <div className="section-about__copy lg-col-8 section-impact-copy">
@@ -98,8 +66,8 @@ const Impact = () => (
               <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
                 <img
                   className="block"
-                  src={`${ASSETS_URL}/assets/images/impact/edu.png`}
-                  alt="about aime"
+                  src={`${ASSETS_URL}/assets/images/impact/yr12attain.png`}
+                  alt="Year 12 Attainment over the last 5 years"
                 />
               </div>
             </section>
@@ -112,7 +80,7 @@ const Impact = () => (
                     </strong>
                   </Paragraph>
                   <Paragraph>
-                    As at 2018, every $ spent on AIME, $9 worth of benefits are generated for the
+                    As at 2019, every $ spent on AIME, $8.90 worth of benefits are generated for the
                     society.
                   </Paragraph>
                 </div>
@@ -120,8 +88,8 @@ const Impact = () => (
               <div className="section-about__column p2" style={{ alignItems: 'flex-start' }}>
                 <img
                   className="block"
-                  src={`${ASSETS_URL}/assets/images/impact/cost.png`}
-                  alt="about aime"
+                  src={`${ASSETS_URL}/assets/images/impact/dollarinvest.png`}
+                  alt="For every $1 invested, $8.90 return"
                 />
               </div>
             </section>
@@ -143,13 +111,13 @@ const Impact = () => (
               <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
                 <img
                   className="block"
-                  src={`${ASSETS_URL}/assets/images/impact/scale.png`}
-                  alt="about aime"
+                  src={`${ASSETS_URL}/assets/images/impact/100kkids.png`}
+                  alt="100k Kids by 2025"
                 />
               </div>
             </section>
           </div>
-          <div className="wrap items-center xs-p2 sm-p2 md-p4 lg-p4 c-white center">
+          <div className="wrap items-center xs-p2 sm-p2 md-p4 lg-p4 center">
             <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               And most importantly…
               <br />
@@ -157,16 +125,18 @@ const Impact = () => (
             </Title>
           </div>
         </section>
-        <section className="section-impact bg-lavender-light" id="panel4">
+        <section className="section-impact section-impact-caseStudies" id="panel4">
           <div className="wrap xs-p3 sm-p2 md-p4 lg-p4">
             <div className="flex flex-row flex-wrap justify-between pb2">
               <div>
-                <h2 className="f-24 feature-font-family">Don’t just take our word for it…</h2>
+                <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+                  Don’t just take our word for it…
+                </Title>
               </div>
               <div className="buttons-container right">
-                <Anchor to="/reports" className="ghost-btn ghost-btn-alt bg-brand-primary mb2">
-                  <span className="download-btn-text">Our Reports</span>
-                </Anchor>
+                <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/reports">
+                  Our Reports
+                </Button>
               </div>
             </div>
             <div className="main-grid">
@@ -324,7 +294,7 @@ const Impact = () => (
                 </div>
               </div>
               <div className="baseGrid main-content">
-                <div className="section-background-image full-height full-width-wrap flex flex-wrap items-center">
+                <div className="sectionLastQuote full-height full-width-wrap flex flex-wrap items-center">
                   <div className="xs-p2 sm-p2 md-p4 lg-p4">
                     <span className="white center bottom-panel-impact-heading">
                       <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
@@ -344,7 +314,9 @@ const Impact = () => (
             <h2 className="center">
               <span className="f-24 feature-font-family">Want to create change?</span>
             </h2>
-            <IntercomChat classNames="ghost-btn bg-brand-primary center mb2" label="Partner with us" />
+            <div className="intercomBtnWrap center pt2">
+              <IntercomChat className="navBtn" label="Partner with us" />
+            </div>
           </div>
         </section>
       </div>
