@@ -1,186 +1,1282 @@
-const SEO_TAGS = {
-  '/be-a-mentor': {
-    MetaTitleContainer: '<title>Be an AIME Mentor</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="AIME is a mentoring bridge between university and high school. On that bridge, there are two lanes. One lane has university students making their way to high schools to deliver free tutoring. On the other, school buses travel to university campuses where students participate in mentoring workshops."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/be-a-mentor" property="og:url"><meta content="Be an AIME Mentor" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Be an AIME Mentor"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/be-a-mentor" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/be-a-mentor" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-12T15:52:47+11:00","creator":{"@id":"#creator"},"dateModified":"2018-08-20T10:47:16+10:00","datePublished":"2018-02-12T15:52:47+11:00","description":"AIME is a mentoring bridge between university and high school. On that bridge, there are two lanes. One lane has university students making their way to high schools to deliver free tutoring. On the other, school buses travel to university campuses where students participate in mentoring workshops.","headline":"Be an AIME Mentor","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/be-a-mentor","name":"Be an AIME Mentor","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/be-a-mentor"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/be-a-mentor","name":"Be a Mentor"},"position":2}],"name":"Breadcrumbs"}</script>',
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
+export const GLOBAL_TAGS = {
+  facebook: {
+    appId: 'profile_id',
   },
-  '/about': {
-    MetaTitleContainer: '<title>About AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We are driven to unlock the limitless potential of children who have been left behind. We do that by building mentoring bridges between universities and high schools, between the powerful and the powerless, the haves and the have nots."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/about" property="og:url"><meta content="About AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="About AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/about" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/about" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-05T10:24:38+11:00","creator":{"@id":"#creator"},"dateModified":"2018-03-07T11:36:14+11:00","datePublished":"2018-02-05T10:24:38+11:00","description":"We are driven to unlock the limitless potential of children who have been left behind. We do that by building mentoring bridges between universities and high schools, between the powerful and the powerless, the haves and the have nots.","headline":"About AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/about","name":"About AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/about"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/about","name":"About"},"position":2}],"name":"Breadcrumbs"}</script>',
+  openGraph: {
+    type: 'website',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
+    locale: 'en_001',
+    images: [{
+      width: 1200,
+      height: 630,
+      url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
+    }],
   },
-  '/ambassadors': {
-    MetaTitleContainer: '<title>Ambassadors</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/ambassadors" property="og:url"><meta content="Ambassadors" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Ambassadors"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/ambassadors" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/ambassadors" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-21T12:38:51+11:00","creator":{"@id":"#creator"},"dateModified":"2018-03-07T11:33:06+11:00","datePublished":"2018-02-21T12:38:51+11:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Ambassadors","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/ambassadors","name":"Ambassadors","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/ambassadors"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/ambassadors","name":"Ambassadors"},"position":2}],"name":"Breadcrumbs"}</script>',
+  twitter: {
+    site: '@aimementoring',
+    cardType: 'summary_large_image',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
+    creator: '@aimementoring', // I think we cannot use this one
+    image: {
+      url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
+      width: 1200,
+      height: 642,
+    },
   },
-  '/reports/2016-annual-story': {
-    MetaTitleContainer: '<title>2016 Annual Story</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story" property="og:url"><meta content="2016 Annual Story" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="2016 Annual Story"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2016-02-20T19:19:00+11:00","creator":{"@id":"#creator"},"dateModified":"2019-01-09T05:35:36+11:00","datePublished":"2016-02-20T19:19:00+11:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"2016 Annual Story","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story","name":"2016 Annual Story","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/reports","name":"Report Index"},"position":2},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/reports/2016-annual-story","name":"2016 Annual Story"},"position":3}],"name":"Breadcrumbs"}</script>',
-  },
-  '/case-studies': {
-    MetaTitleContainer: '<title>Case Studies</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/case-studies" property="og:url"><meta content="Case Studies" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Case Studies"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/case-studies" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/case-studies" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-09-21T08:23:00+10:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T08:23:49+10:00","datePublished":"2018-09-21T08:23:00+10:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Case Studies","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/case-studies","name":"Case Studies","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/case-studies"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/case-studies","name":"Case Studies"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/coming-soon': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/donate': {
-    MetaTitleContainer: '<title>Donate to AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="To change the world, we need to change the way it works! You have the opportunity to make a difference!"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/donate" property="og:url"><meta content="Donate to AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Donate to AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/donate" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/donate" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-23T12:12:22+11:00","creator":{"@id":"#creator"},"dateModified":"2018-06-19T06:13:41+10:00","datePublished":"2018-02-23T12:12:22+11:00","description":"To change the world, we need to change the way it works! You have the opportunity to make a difference!","headline":"Donate to AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/donate","name":"Donate to AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/donate"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/donate","name":"Donate"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/eoi': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/dynamicEOI': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/jack-manning-bancroft': {
-    MetaTitleContainer: '<title>Jack Manning Bancroft - Founder & CEO of AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft" property="og:url"><meta content="Jack Manning Bancroft - Founder &amp; CEO of AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Jack Manning Bancroft - Founder &amp; CEO of AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_800x800_crop_center-center_82_none/JMB@2x-min.jpg"><meta name="twitter:image:width" content="800"><meta name="twitter:image:height" content="800">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-15T10:42:37+11:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T20:49:48+10:00","datePublished":"2018-02-15T10:42:37+11:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Jack Manning Bancroft - Founder & CEO of AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft","name":"Jack Manning Bancroft - Founder & CEO of AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/jack-manning-bancroft","name":"Founder & CEO"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/global-letter': {
-    MetaTitleContainer: '<title>Global Letter</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/global-letter" property="og:url"><meta content="Global Letter" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Global Letter"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/global-letter" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/global-letter" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-19T18:31:49+11:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T20:49:59+10:00","datePublished":"2018-02-19T18:31:49+11:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Global Letter","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/global-letter","name":"Global Letter","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/global-letter"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/global-letter","name":"Global Letter"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/going-global': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimementoring.com" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_800x800_crop_center-center_82_none/social_share.jpg"><meta name="twitter:image:width" content="800"><meta name="twitter:image:height" content="800">',
-    MetaLinkContainer: '<link href="https://aimementoring.com" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-15T16:13:50+11:00","creator":{"@id":"#creator"},"dateModified":"2018-09-22T11:52:10+10:00","datePublished":"2018-02-15T16:13:50+11:00","description":"We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimementoring.com","name":"AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimementoring.com"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/home': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimementoring.com" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_800x800_crop_center-center_82_none/social_share.jpg"><meta name="twitter:image:width" content="800"><meta name="twitter:image:height" content="800">',
-    MetaLinkContainer: '<link href="https://aimementoring.com" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-15T16:13:50+11:00","creator":{"@id":"#creator"},"dateModified":"2018-09-22T11:52:10+10:00","datePublished":"2018-02-15T16:13:50+11:00","description":"We build mentoring bridges between the powerful and the powerless. We believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimementoring.com","name":"AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimementoring.com"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/hooded-scholar': {
-    MetaTitleContainer: '<title>The Hooded Scholar Scholarship from AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become &quot;The Hooded Scholar&quot; and lead a mentoring movement out of their campus to lift kids out of inequality."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimementoring.com/hooded-scholar/" property="og:url"><meta content="The Hooded Scholar Scholarship from AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="The Hooded Scholar Scholarship from AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimementoring.com/hooded-scholar/" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/hooded-scholar" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-10-01T21:23:00+10:00","creator":{"@id":"#creator"},"dateModified":"2018-10-01T21:23:28+10:00","datePublished":"2018-10-01T21:23:00+10:00","description":"For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become \\"The Hooded Scholar\\" and lead a mentoring movement out of their campus to lift kids out of inequality.","headline":"The Hooded Scholar Scholarship from AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimementoring.com/hooded-scholar/","name":"The Hooded Scholar Scholarship from AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimementoring.com/hooded-scholar/"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/hooded-scholar","name":"Hooded Scholar"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/impact': {
-    MetaTitleContainer: '<title>Impact</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/impact" property="og:url"><meta content="Impact" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Impact"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/impact" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/impact" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-21T16:06:02+11:00","creator":{"@id":"#creator"},"dateModified":"2018-02-21T16:06:02+11:00","datePublished":"2018-02-21T16:06:02+11:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Impact","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/impact","name":"Impact","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/impact"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/impact","name":"Impact"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/know-aime': {
-    MetaTitleContainer: '<title>Know AIME</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/know-aime" property="og:url"><meta content="Know AIME" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Know AIME"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/know-aime" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/know-aime" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-08-20T20:46:00+10:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T20:49:57+10:00","datePublished":"2018-08-20T20:46:00+10:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Know AIME","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/know-aime","name":"Know AIME","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/know-aime"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/know-aime","name":"Know AIME"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/mentors': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/positions': {
-    MetaTitleContainer: '<title>Work at AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We ranked 12th best place to work in Asia for 2016."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/positions" property="og:url"><meta content="Work at AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Work at AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/positions" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/positions" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-04-19T10:16:13+10:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T20:49:45+10:00","datePublished":"2018-04-19T10:16:13+10:00","description":"We ranked 12th best place to work in Asia for 2016.","headline":"Work at AIME Mentoring","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/positions","name":"Work at AIME Mentoring","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/positions"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/positions","name":"Positions"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/quizzes': {
-    MetaTitleContainer: '<title>Quizzes</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/quizzes" property="og:url"><meta content="Quizzes" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Quizzes"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/quizzes" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/quizzes" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-04-09T10:44:58+10:00","creator":{"@id":"#creator"},"dateModified":"2018-04-09T10:46:19+10:00","datePublished":"2018-04-09T10:44:58+10:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Quizzes","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/quizzes","name":"Quizzes","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/quizzes"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/quizzes","name":"Quizzes"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/reports': {
-    MetaTitleContainer: '<title>AIME Reports</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="Read all about the effects and progress that occur in the AIME Program."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/reports" property="og:url"><meta content="AIME Reports" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Reports"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/reports" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/reports" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-21T12:51:52+11:00","creator":{"@id":"#creator"},"dateModified":"2018-03-07T11:32:55+11:00","datePublished":"2018-02-21T12:51:52+11:00","description":"Read all about the effects and progress that occur in the AIME Program.","headline":"AIME Reports","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/reports","name":"AIME Reports","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/reports"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/reports","name":"Report Index"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/stories': {
-    MetaTitleContainer: '<title>AIME Stories of Sunday Kindness</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn&#039;t cost a thing. Let&#039;s sprinkle it everywhere!"><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/stories" property="og:url"><meta content="AIME Stories of Sunday Kindness" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Stories of Sunday Kindness"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/stories" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/stories" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-02-21T11:56:33+11:00","creator":{"@id":"#creator"},"dateModified":"2018-03-07T11:33:16+11:00","datePublished":"2018-02-21T11:56:33+11:00","description":"At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn\'t cost a thing. Let\'s sprinkle it everywhere!","headline":"AIME Stories of Sunday Kindness","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/stories","name":"AIME Stories of Sunday Kindness","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/stories"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/stories","name":"Stories"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/terms-and-conditions': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
-  '/thanks': {
-    MetaTitleContainer: '<title>Thanks</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/thanks" property="og:url"><meta content="Thanks" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="Thanks"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/thanks" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/thanks" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-09-21T08:25:00+10:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T08:25:38+10:00","datePublished":"2018-09-21T08:25:00+10:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"Thanks","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/thanks","name":"Thanks","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/thanks"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/thanks","name":"Thanks"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/the-mentor': {
-    MetaTitleContainer: '<title>The Mentor</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/the-mentor" property="og:url"><meta content="The Mentor" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="The Mentor"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/the-mentor" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/the-mentor" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebPage","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"copyrightYear":"2018-09-21T08:22:00+10:00","creator":{"@id":"#creator"},"dateModified":"2018-09-21T08:22:36+10:00","datePublished":"2018-09-21T08:22:00+10:00","description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","headline":"The Mentor","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"inLanguage":"en-001","mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/the-mentor","name":"The Mentor","publisher":{"@id":"#creator"},"url":"https://aimeweb-backend-production.herokuapp.com/the-mentor"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1},{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/the-mentor","name":"The Mentor"},"position":2}],"name":"Breadcrumbs"}</script>',
-  },
-  '/products': {
-    MetaTitleContainer: '<title>AIME Mentoring</title>',
-    MetaTagContainer: '<meta name="generator" content="SEOmatic"><meta name="description" content="We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage."><meta name="referrer" content="no-referrer-when-downgrade"><meta name="robots" content="all"><meta content="aimementoring" property="fb:profile_id"><meta content="en_001" property="og:locale"><meta content="en_001" property="og:locale:alternate"><meta content="website" property="og:type"><meta content="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" property="og:url"><meta content="AIME Mentoring" property="og:title"><meta content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind." property="og:description"><meta content="https://d2ylaz7bdw65jx.cloudfront.net/resources/_1200x630_crop_center-center_82_none/social_share.jpg" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@aimementoring"><meta name="twitter:creator" content="@aimementoring"><meta name="twitter:title" content="AIME Mentoring"><meta name="twitter:description" content="We build mentoring bridges between the powerful and the powerless and we are driven to unlock the limitless potential of children who have been left behind."><meta name="twitter:image" content="https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"><meta name="twitter:image:width" content="1200"><meta name="twitter:image:height" content="642">',
-    MetaLinkContainer: '<link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="canonical"><link href="/" rel="home"><link href="https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers" rel="alternate" hreflang="x-default">',
-    MetaScriptContainer: '',
-    MetaJsonLdContainer: '<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","author":{"@id":"#identity"},"copyrightHolder":{"@id":"#identity"},"creator":{"@id":"#creator"},"description":"We build mentoring bridges between the powerful and the powerless. We are driven to unlock the limitless potential of children who have been left behind and we believe a permanent shift in mindset can end the cycle of disadvantage.","image":{"@type":"ImageObject","url":"https://d2ylaz7bdw65jx.cloudfront.net/resources/social_share.jpg"},"mainEntityOfPage":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers","name":"AIME Mentoring","url":"https://aimeweb-backend-production.herokuapp.com/actions/seomatic/meta-container/all-meta-containers"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#identity","@type":"NGO","email":"enquiries@aimementoring.com","founder":"Jack Manning Bancroft","foundingLocation":"Sydney, Australia","name":"AIME Mentoring"}</script><script type="application/ld+json">{"@context":"http://schema.org","@id":"#creator","@type":"Organization"}</script><script type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":{"@id":"https://aimeweb-backend-production.herokuapp.com/","name":"Home"},"position":1}],"name":"Breadcrumbs"}</script>',
-  },
+  jsonLd: [
+    {
+      type: 'NGO',
+      id: '#identity',
+      name: 'AIME Mentoring',
+      email: 'enquiries@aimementoring.com',
+      founder: 'Jack Manning Bancroft',
+      foundingLocation: 'Sydney, Australia',
+    },
+    {
+      id: '#creator',
+      type: 'Organization',
+    },
+  ],
 };
 
-export default SEO_TAGS;
+export const SEO_TAGS = {
+  '/': {
+    title: 'AIME Mentoring',
+    canonical: 'https://aimementoring.com',
+    languageAlternate: {
+      href: 'https://aimementoring.com/',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-15T16:13:50+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-22T11:52:10+10:00',
+        datePublished: '2018-02-15T16:13:50+11:00',
+        title: 'AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com',
+          },
+        ],
+        name: 'AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
+  '/imagi-nation-tv': {
+    title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+    canonical: 'https://aimementoring.com/imagi-nation-tv',
+    languageAlternate: {
+      href: 'https://aimementoring.com/imagi-nation-tv',
+      hrefLang: 'x-default',
+    },
+    description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+    openGraph: {
+      url: 'https://aimementoring.com/imagi-nation-tv',
+      title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+      images: [{
+        width: 1200,
+        height: 630,
+        url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
+      }],
+    },
+    twitter: {
+      site: '@aimementoring',
+      title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+      url: 'https://aimementoring.com/imagi-nation-tv',
+      image: {
+        url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
+        width: 1200,
+        height: 642,
+      },
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-15T16:13:50+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-22T11:52:10+10:00',
+        datePublished: '2018-02-15T16:13:50+11:00',
+        description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+        title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+        images: [`${ASSETS_URL}/resources/social_share/intv_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/imagi-nation-tv',
+          },
+        ],
+        name: 'IMAGI-NATION{TV}',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/imagi-nation-tv',
+      },
+    ],
+  },
+  '/ambassadors': {
+    title: 'Ambassadors',
+    canonical: 'https://aimementoring.com/ambassadors',
+    languageAlternate: {
+      href: 'https://aimementoring.com/ambassadors',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/ambassadors',
+      title: 'Ambassadors',
+    },
+    twitter: {
+      title: 'Ambassadors',
+    },
+    jsonLd: [
+      {
+        url: 'https://aimementoring.com/ambassadors',
+        title: 'Ambassadors',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        datePublished: '2018-02-21T12:38:51+11:00',
+        dateModified: '2018-03-07T11:33:06+11:00',
+
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T12:38:51+11:00',
+        creatorName: '#creator',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/ambassadors',
+          },
+        ],
+        name: 'Ambassadors',
+        publisherName: '#creator',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Ambassadors',
+            item: 'https://aimementoring.com/ambassadors',
+          },
+        ],
+      },
+    ],
+  },
+  '/be-a-mentor': {
+    title: 'Be an AIME Mentor',
+    canonical: 'https://aimementoring.com/be-a-mentor',
+    languageAlternate: {
+      href: 'https://aimementoring.com/be-a-mentor',
+      hrefLang: 'x-default',
+    },
+    description: 'AIME is a mentoring bridge between university and high school. On that bridge, there are two lanes. One lane has university students making their way to high schools to deliver free tutoring. On the other, school buses travel to university campuses where students participate in mentoring workshops.',
+    openGraph: {
+      url: 'https://aimementoring.com/be-a-mentor',
+      title: 'Be an AIME Mentor',
+    },
+    twitter: {
+      title: 'Be an AIME Mentor',
+    },
+    jsonLd: [
+      {
+        url: 'https://aimementoring.com/be-a-mentor',
+        title: 'Be an AIME Mentor',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        datePublished: '2018-02-12T15:52:47+11:00',
+        dateModified: '2018-08-20T10:47:16+10:00',
+        description: 'AIME is a mentoring bridge between university and high school. On that bridge, there are two lanes. One lane has university students making their way to high schools to deliver free tutoring. On the other, school buses travel to university campuses where students participate in mentoring workshops.',
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-12T15:52:47+11:00',
+        creatorName: '#creator',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/be-a-mentor',
+          },
+        ],
+        name: 'Be an AIME Mentor',
+        publisherName: '#creator',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Be a Mentor',
+            item: 'https://aimementoring.com/be-a-mentor',
+          },
+        ],
+      },
+    ],
+  },
+  '/about': {
+    title: 'About AIME Mentoring',
+    canonical: 'https://aimementoring.com/about',
+    languageAlternate: {
+      href: 'https://aimementoring.com/about',
+      hrefLang: 'x-default',
+    },
+    description: 'We are driven to unlock the limitless potential of children who have been left behind. We do that by building mentoring bridges between universities and high schools, between the powerful and the powerless, the haves and the have nots.',
+    openGraph: {
+      url: 'https://aimementoring.com/about',
+      title: 'About AIME Mentoring',
+    },
+    twitter: {
+      title: 'About AIME Mentoring',
+    },
+    articleJsonLd: [
+      {
+        url: 'https://aimementoring.com/about',
+        title: 'About AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        datePublished: '2018-02-05T10:24:38+11:00',
+        dateModified: '2018-03-07T11:36:14+11:00',
+        description: 'We are driven to unlock the limitless potential of children who have been left behind. We do that by building mentoring bridges between universities and high schools, between the powerful and the powerless, the haves and the have nots.',
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-05T10:24:38+11:00',
+        creatorName: '#creator',
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/about',
+          },
+        ],
+        name: 'About AIME Mentoring',
+        publisherName: '#creator',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'About',
+            item: 'https://aimementoring.com/about',
+          },
+        ],
+      },
+    ],
+  },
+  '/reports/2016-annual-story': {
+    title: '2016 Annual Story',
+    canonical: 'https://aimementoring.com/reports/2016-annual-story',
+    languageAlternate: {
+      href: 'https://aimementoring.com/reports/2016-annual-story',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/reports/2016-annual-story',
+      title: '2016 Annual Story',
+    },
+    twitter: {
+      title: '2016 Annual Story',
+    },
+    articleJsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2016-02-20T19:19:00+11:00',
+        creatorName: '#creator',
+        dateModified: '2019-01-09T05:35:36+11:00',
+        datePublished: '2016-02-20T19:19:00+11:00',
+
+        title: '2016 Annual Story',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        name: '2016 Annual Story',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/reports/2016-annual-story',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Report Index',
+            item: 'https://aimementoring.com/reports',
+          },
+          {
+            position: 3,
+            name: '2016 Annual Story',
+            item: 'https://aimementoring.com/reports/2016-annual-story',
+          },
+        ],
+      },
+    ],
+  },
+  '/case-studies': {
+    openGraph: {
+      url: 'https://aimementoring.com/case-studies',
+      title: 'Case Studies',
+    },
+    twitter: {
+      title: 'Case Studies',
+    },
+    canonical: 'https://aimementoring.com/case-studies',
+    languageAlternate: {
+      href: 'https://aimementoring.com/case-studies',
+      hrefLang: 'x-default',
+    },
+    title: 'Case Studies',
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-09-21T08:23:00+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T08:23:49+10:00',
+        datePublished: '2018-09-21T08:23:00+10:00',
+
+        title: 'Case Studies',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/case-studies',
+          },
+        ],
+        name: 'Case Studies',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/case-studies',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Ambassadors',
+            item: 'https://aimementoring.com/case-studies',
+          },
+        ],
+      },
+    ],
+  },
+  '/donate': {
+    description: 'To change the world, we need to change the way it works! You have the opportunity to make a difference!',
+    openGraph: {
+      url: 'https://aimementoring.com/donate',
+      title: 'Donate to AIME Mentoring',
+    },
+    twitter: {
+      title: 'Donate to AIME Mentoring',
+    },
+    canonical: 'https://aimementoring.com/donate',
+    languageAlternate: {
+      href: 'https://aimementoring.com/donate',
+      hrefLang: 'x-default',
+    },
+    title: 'Donate to AIME Mentoring',
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-23T12:12:22+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-06-19T06:13:41+10:00',
+        datePublished: '2018-02-23T12:12:22+11:00',
+        description: 'To change the world, we need to change the way it works! You have the opportunity to make a difference!',
+        title: 'Donate to AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/donate',
+          },
+        ],
+        name: 'Donate to AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/donate',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Donate',
+            item: 'https://aimementoring.com/donate',
+          },
+        ],
+      },
+    ],
+  },
+  '/eoi': {
+    title: 'AIME Mentoring',
+    languageAlternate: {
+      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'WebSite',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        creatorName: '#creator',
+
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+        name: 'AIME Mentoring',
+        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
+  '/dynamicEOI': {
+    title: 'AIME Mentoring',
+    languageAlternate: {
+      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'WebSite',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        creatorName: '#creator',
+
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+        name: 'AIME Mentoring',
+        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
+  '/jack-manning-bancroft': {
+    title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
+    canonical: 'https://aimementoring.com/jack-manning-bancroft',
+    languageAlternate: {
+      href: 'https://aimementoring.com/jack-manning-bancroft',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/jack-manning-bancroft',
+      title: 'Jack Manning Bancroft - Founder &amp; CEO of AIME Mentoring',
+      images: [
+        {
+          width: 1200,
+          height: 630,
+          url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`,
+        },
+      ],
+    },
+    twitter: {
+      title: 'Jack Manning Bancroft - Founder &amp; CEO of AIME Mentoring',
+      image: {
+        width: 800,
+        height: 800,
+        url: `${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`,
+      },
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-15T10:42:37+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T20:49:48+10:00',
+        datePublished: '2018-02-15T10:42:37+11:00',
+
+        title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/_1200x630_crop_center-center_82_none/JMB@2x-min.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/jack-manning-bancroft',
+          },
+        ],
+        name: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/jack-manning-bancroft',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Founder & CEO',
+            item: 'https://aimementoring.com/jack-manning-bancroft',
+          },
+        ],
+      },
+    ],
+  },
+  '/global-letter': {
+    title: 'Global Letter',
+    canonical: 'https://aimementoring.com/global-letter',
+    languageAlternate: {
+      href: 'https://aimementoring.com/global-letter',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/global-letter',
+      title: 'Global Letter',
+    },
+    twitter: {
+      title: 'Global Letter',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-19T18:31:49+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T20:49:59+10:00',
+        datePublished: '2018-02-19T18:31:49+11:00',
+
+        title: 'Global Letter',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/global-letter',
+          },
+        ],
+        name: 'Global Letter',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/global-letter',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Global Letter',
+            item: 'https://aimementoring.com/global-letter',
+          },
+        ],
+      },
+    ],
+  },
+  '/going-global': {
+    title: 'AIME Mentoring',
+    languageAlternate: {
+      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'WebSite',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        creatorName: '#creator',
+
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+        name: 'AIME Mentoring',
+        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
+  '/hooded-scholar': {
+    title: 'The Hooded Scholar Scholarship from AIME Mentoring',
+    canonical: 'https://aimementoring.com/hooded-scholar/',
+    languageAlternate: {
+      href: 'https://aimementoring.com/hooded-scholar',
+      hrefLang: 'x-default',
+    },
+    description: 'For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become &quot;The Hooded Scholar&quot; and lead a mentoring movement out of their campus to lift kids out of inequality.',
+    openGraph: {
+      url: 'https://aimementoring.com/hooded-scholar/',
+      title: 'The Hooded Scholar Scholarship from AIME Mentoring',
+    },
+    twitter: {
+      title: 'The Hooded Scholar Scholarship from AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-10-01T21:23:00+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-10-01T21:23:28+10:00',
+        datePublished: '2018-10-01T21:23:00+10:00',
+        description: 'For the first time ever, AIME Mentoring is offering the chance for 200 US College students to have the chance to become "The Hooded Scholar" and lead a mentoring movement out of their campus to lift kids out of inequality.',
+        title: 'The Hooded Scholar Scholarship from AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/hooded-scholar/',
+          },
+        ],
+        name: 'The Hooded Scholar Scholarship from AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/hooded-scholar/',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Hooded Scholar',
+            item: 'https://aimementoring.com/hooded-scholar',
+          },
+        ],
+      },
+    ],
+  },
+  '/impact': {
+    title: 'Impact',
+    canonical: 'https://aimementoring.com/impact',
+    languageAlternate: {
+      href: 'https://aimementoring.com/impact',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/impact',
+      title: 'Impact',
+    },
+    twitter: {
+      title: 'Impact',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T16:06:02+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-02-21T16:06:02+11:00',
+        datePublished: '2018-02-21T16:06:02+11:00',
+
+        title: 'Impact',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/impact',
+          },
+        ],
+        name: 'Impact',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/impact',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Impact',
+            item: 'https://aimementoring.com/impact',
+          },
+        ],
+      },
+    ],
+  },
+  '/know-aime': {
+    title: 'Know AIME',
+    canonical: 'https://aimementoring.com/know-aime',
+    languageAlternate: {
+      href: 'https://aimementoring.com/know-aime',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/know-aime',
+      title: 'Know AIME',
+    },
+    twitter: {
+      title: 'Know AIME',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-08-20T20:46:00+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T20:49:57+10:00',
+        datePublished: '2018-08-20T20:46:00+10:00',
+
+        title: 'Know AIME',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/know-aime',
+          },
+        ],
+        name: 'Know AIME',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/know-aime',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Know AIME',
+            item: 'https://aimementoring.com/know-aime',
+          },
+        ],
+      },
+    ],
+  },
+  '/positions': {
+    title: 'Work at AIME Mentoring',
+    canonical: 'https://aimementoring.com/positions',
+    languageAlternate: {
+      href: 'https://aimementoring.com/positions',
+      hrefLang: 'x-default',
+    },
+    description: 'We ranked 12th best place to work in Asia for 2016.',
+    openGraph: {
+      url: 'https://aimementoring.com/positions',
+      title: 'Work at AIME Mentoring',
+    },
+    twitter: {
+      title: 'Work at AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-04-19T10:16:13+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T20:49:45+10:00',
+        datePublished: '2018-04-19T10:16:13+10:00',
+        description: 'We ranked 12th best place to work in Asia for 2016.',
+        title: 'Work at AIME Mentoring',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/positions',
+          },
+        ],
+        name: 'Work at AIME Mentoring',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/positions',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Positions',
+            item: 'https://aimementoring.com/positions',
+          },
+        ],
+      },
+    ],
+  },
+  '/quizzes': {
+    title: 'Quizzes',
+    canonical: 'https://aimementoring.com/quizzes',
+    languageAlternate: {
+      href: 'https://aimementoring.com/quizzes',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/quizzes',
+      title: 'Quizzes',
+    },
+    twitter: {
+      title: 'Quizzes',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-04-09T10:44:58+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-04-09T10:46:19+10:00',
+        datePublished: '2018-04-09T10:44:58+10:00',
+
+        title: 'Quizzes',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/quizzes',
+          },
+        ],
+        name: 'Quizzes',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/quizzes',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Quizzes',
+            item: 'https://aimementoring.com/quizzes',
+          },
+        ],
+      },
+    ],
+  },
+  '/reports': {
+    title: 'AIME Reports',
+    canonical: 'https://aimementoring.com/reports',
+    languageAlternate: {
+      href: 'https://aimementoring.com/reports',
+      hrefLang: 'x-default',
+    },
+    description: 'Read all about the effects and progress that occur in the AIME Program.',
+    openGraph: {
+      url: 'https://aimementoring.com/reports',
+      title: 'AIME Reports',
+    },
+    twitter: {
+      title: 'AIME Reports',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T12:51:52+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:32:55+11:00',
+        datePublished: '2018-02-21T12:51:52+11:00',
+        description: 'Read all about the effects and progress that occur in the AIME Program.',
+        title: 'AIME Reports',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/reports',
+          },
+        ],
+        name: 'AIME Reports',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/reports',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Report Index',
+            item: 'https://aimementoring.com/reports',
+          },
+        ],
+      },
+    ],
+  },
+  '/stories': {
+    title: 'AIME Stories of Sunday Kindness',
+    canonical: 'https://aimementoring.com/stories',
+    languageAlternate: {
+      href: 'https://aimementoring.com/stories',
+      hrefLang: 'x-default',
+    },
+    description: 'At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn&#039;t cost a thing. Let&#039;s sprinkle it everywhere!',
+    openGraph: {
+      url: 'https://aimementoring.com/stories',
+      title: 'AIME Stories of Sunday Kindness',
+    },
+    twitter: {
+      title: 'AIME Stories of Sunday Kindness',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T11:56:33+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:33:16+11:00',
+        datePublished: '2018-02-21T11:56:33+11:00',
+        description: "At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn't cost a thing. Let's sprinkle it everywhere!",
+        title: 'AIME Stories of Sunday Kindness',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories',
+          },
+        ],
+        name: 'AIME Stories of Sunday Kindness',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/stories',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Stories',
+            item: 'https://aimementoring.com/stories',
+          },
+        ],
+      },
+    ],
+  },
+  '/terms-of-service': {
+    title: 'Terms of Service',
+    languageAlternate: {
+      href: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      title: 'AIME Mentoring',
+    },
+    twitter: {
+      title: 'AIME Mentoring',
+    },
+    jsonLd: [
+      {
+        type: 'WebSite',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        creatorName: '#creator',
+
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        mainEntityOfPage: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+        name: 'AIME Mentoring',
+        url: 'https://aimementoring.com/actions/seomatic/meta-container/all-meta-containers',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+        ],
+      },
+    ],
+  },
+  '/thanks': {
+    title: 'Thanks',
+    canonical: 'https://aimementoring.com/thanks',
+    languageAlternate: {
+      href: 'https://aimementoring.com/thanks',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/thanks',
+      title: 'Thanks',
+    },
+    twitter: {
+      title: 'Thanks',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-09-21T08:25:00+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T08:25:38+10:00',
+        datePublished: '2018-09-21T08:25:00+10:00',
+
+        title: 'Thanks',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/thanks',
+          },
+        ],
+        name: 'Thanks',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/thanks',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Thanks',
+            item: 'https://aimementoring.com/thanks',
+          },
+        ],
+      },
+    ],
+  },
+  '/the-mentor': {
+    title: 'The Mentor',
+    canonical: 'https://aimementoring.com/the-mentor',
+    languageAlternate: {
+      href: 'https://aimementoring.com/the-mentor',
+      hrefLang: 'x-default',
+    },
+    openGraph: {
+      url: 'https://aimementoring.com/the-mentor',
+      title: 'The Mentor',
+    },
+    twitter: {
+      title: 'The Mentor',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-09-21T08:22:00+10:00',
+        creatorName: '#creator',
+        dateModified: '2018-09-21T08:22:36+10:00',
+        datePublished: '2018-09-21T08:22:00+10:00',
+
+        title: 'The Mentor',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/the-mentor',
+          },
+        ],
+        name: 'The Mentor',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/the-mentor',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'The Mentor',
+            item: 'https://aimementoring.com/the-mentor',
+          },
+        ],
+      },
+    ],
+  },
+};
