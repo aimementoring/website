@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { getAssetsBaseUrl } from '../../services/craftAPI';
 import styles from './goingGlobalComp.module.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
 
 const TabComponent = () => {
-  const assetsUrl = getAssetsBaseUrl();
+  const assetsUrl = process.env.REACT_APP_ASSETS_URL;
   const [activeTab, setActiveTab] = useState('tab1');
 
   const onTabClick = (tabName) => () => {
