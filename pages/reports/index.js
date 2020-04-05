@@ -4,9 +4,10 @@ import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import contentfulServer from '../../api/contentfulPosts';
-import { sortDates } from '../../utils/utilities';
+import { sortDates } from '../../utils/sorting';
 import Layout from '../../hocs/basicLayout';
-import styles from './reports.modules.scss';
+import { SimpleBanner } from '../../components/banner/index';
+import styles from './reports.module.scss';
 
 const Report = dynamic(() => import('../../components/report'));
 
@@ -26,9 +27,11 @@ const Reports = ({ entries }) => {
     if (newCategory === categorySelected) {
       return;
     }
-    const reportsToShow = entries.filter(
-      (report) => report.fields.reportType.indexOf(newCategory) > -1,
-    );
+
+
+    const reportsToShow = entries.filter((report) => report.fields
+      && report.fields.reportType
+      && report.fields.reportType.indexOf(newCategory) > -1);
     setReportEntries(reportsToShow);
     setCategorySelected(newCategory);
   };
@@ -68,11 +71,11 @@ const Reports = ({ entries }) => {
 
   return (
     <Layout>
-      <div className={styles.heroBannerReports}>
-        <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
-          <strong>Reports</strong>
-        </Title>
-      </div>
+      <SimpleBanner
+        title={<strong>Reports</strong>}
+        titleType="headingLockup"
+        bannerContainerClass={styles.heroBannerReports}
+      />
       {reports && (
         <>
           <div className={styles.filterListContainer}>
@@ -89,7 +92,6 @@ const Reports = ({ entries }) => {
     </Layout>
   );
 };
-
 
 Reports.getInitialProps = async () => {
   const client = contentfulServer();
