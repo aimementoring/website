@@ -6,7 +6,7 @@ import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
 import { getAllCountries } from '../../utils/country';
-import { sortArrayOfObjectByField } from '../../utils/utilities';
+import { sortArrayOfObjectByField } from '../../utils/sorting';
 import isClientSide from '../../utils/isClientSide';
 
 import Select from '../commonElements/reactSelect';
@@ -178,11 +178,9 @@ const Jobs = ({
               </p>
             ) : (
               <p className="lh-base">
-                {`
-                      We are here to sprint the marathon, think of your time at AIME as 
-                      the hardest, fastest, longest sprint of your life. If you do 3 
-                      years here, flat chat, and pass the baton on, that is success.
-                    `}
+                {`We are here to sprint the marathon, think of your time at AIME as 
+                  the hardest, fastest, longest sprint of your life. If you do 3 
+                  years here, flat chat, and pass the baton on, that is success.`}
               </p>
             )}
           </div>
@@ -224,10 +222,13 @@ const Jobs = ({
           <h1 className="lh-base">We are not hiring.</h1>
           <span className="line bg-brand-tertiary mb3 mt1" />
           <p className="pb1 md-pb3 lg-pb3">
-            {`Sorry, there are no positions available at the moment. You can 
+            {/* {`Sorry, there are no positions available at the moment. You can
             go to the bottom of the page and enter your mail address to
-            become an AIME Friend though – you'll receive updates about 
-            everything that's happening.`}
+            become an AIME Friend though – you'll receive updates about
+            everything that's happening.`} */}
+            {`Sorry, there are no positions available at the moment. 
+            You can sign up to be an AIME Friend at the bottom of this page though, 
+            and receive updates about everything that's happening.`}
           </p>
         </div>
       )}

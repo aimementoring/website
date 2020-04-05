@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import SeoMetadata from '../components/layoutComponents/seoMetaData';
 import ErrorBoundary from '../components/common/errorBoundary';
 import Header from '../components/layoutComponents/header';
 import Footer from '../components/layoutComponents/footer';
 import Logos from '../components/layoutComponents/logos';
-import SEO_TAGS from '../constants/seoTags';
+import isClientSide from '../utils/isClientSide';
 import './basicLayout.scss';
 
 const Layout = ({ router, children }) => {
-  const [seo, setSeo] = useState({});
-
-  const addSeoAndRedirects = () => {
-    const { pathname } = router;
-
-    if (pathname in SEO_TAGS) {
-      setSeo(SEO_TAGS[pathname]);
+  const openIntercomIfContactPath = () => {
+    const { asPath } = router;
+    if (asPath && asPath === '/contact') {
+      if (isClientSide() && window && window.Intercom) {
+        window.Intercom('showNewMessage');
+      }
     }
   };
 
   useEffect(() => {
-    addSeoAndRedirects();
+    openIntercomIfContactPath();
   }, [router]);
 
   useEffect(() => {
@@ -32,10 +30,7 @@ const Layout = ({ router, children }) => {
     <div>
       <ErrorBoundary>
         <Header location={router} />
-        <main role="main">
-          <SeoMetadata seo={seo} />
-          {children}
-        </main>
+        <main role="main">{children}</main>
         <Footer location={router} />
         <Logos />
         <div id="aime-parent-video-box" />
