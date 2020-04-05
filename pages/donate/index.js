@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import { getActiveCampaigns, getCampaignDonations, MAIN_CAMPAIGNS } from '../../services/donations';
+import { SimpleBanner } from '../../components/banner/index';
 import bugsnagClient from '../../utils/bugsnag';
 import isClientSide from '../../utils/isClientSide';
 import './donate.scss';
@@ -186,18 +187,22 @@ class Donate extends PureComponent {
           <div className="donations-page-wrap flex sm-col-12 flex-column">
             <div id="react-donations-index">
               <div className="relative">
-                <div className="matrix-general donation-bg_shape banner-background">
-                  <div className="title-donations-container clearfix wrap-md mb0">
-                    <h1 className="above center c-white w100 donations-title mt4 pt4">
+                <SimpleBanner
+                  title={(
+                    <>
+                      <h1 className="above center c-white w100 donations-title mt4 pt4">
                       To change the world, we need to change the way it works!
-                    </h1>
-                    <h3 className="center c-white w100 mt2">
+                      </h1>
+                      <h3 className="center c-white w100 mt2">
                       You have the oportunity to
-                      {' '}
-                      <span className="text-highlight purple">make a difference!</span>
-                    </h3>
-                  </div>
-                </div>
+                        {' '}
+                        <span className="text-highlight purple">make a difference!</span>
+                      </h3>
+                    </>
+                  )}
+                  bannerContainerClass="matrix-general donation-bg_shape banner-background"
+                  bannerWrapperClass="title-donations-container clearfix wrap-md mb0"
+                />
                 <Trapezoid
                   campaigns={campaigns}
                   selectedCampaign={selectedCampaign}
