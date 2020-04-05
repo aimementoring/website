@@ -4,7 +4,10 @@
 
 .theMentor {
   // TODO: create variables for all the diff banner image urls in the variables file
-
+  .full-width-wrap p {
+    color: $white;
+    max-width: 30em;
+  }
   .section-background-image {
     // background: url($cdnRoot + 'assets/images/banner/mentor_banner.jpg') no-repeat top center / cover #050301;
     background:
