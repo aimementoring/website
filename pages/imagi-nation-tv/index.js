@@ -255,7 +255,6 @@ const ImagiNationTV = () => (
           </div>
         </div>
       </section>
-      
     </div>
   </Layout>
 );
