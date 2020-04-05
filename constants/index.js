@@ -32,52 +32,6 @@ export const AUTH0_STAFF_CONFIG = {
   },
 };
 
-export const BLOG_MATRIX_AVAILABLE_ELEMENTS = [
-  'paragraph',
-  'customImage',
-  'authorName',
-  'blockquote',
-  'heading',
-  'image',
-  'mp4Video',
-  'button',
-  'iframeHeight',
-];
-
-export const GENERAL_MATRIX_AVAILABLE_ELEMENTS = [
-  'paragraph',
-  'heading',
-  'blockquote',
-  'figure',
-  'customImage',
-  'signature',
-  'video',
-  'button',
-  'signature',
-];
-
-export const FORM_MATRIX_AVAILABLE_ELEMENTS = [
-  'input',
-  'datePickerInput',
-  'emailInput',
-  'phoneInput',
-  'countryInput',
-  'limitedCountryInput',
-  'textAreaInput',
-  'becomeAFriend',
-  'whatUniversityCampusAreYouAttending',
-  'howDidYouHearAboutAime',
-  'checkbox',
-  'uploadField',
-  'dropDown',
-  'heading',
-  'paragraph',
-  'paragraphLabel',
-  'addressField',
-  'submit',
-  'video',
-];
-
 export const HEADER_MENU_ITEMS = [
   {
     title: 'About',
@@ -135,7 +89,7 @@ export const CTA_AU_HOMEPAGE = [
     title: 'About AIME',
     link: '/about',
     button: 'See what we\'re about',
-    description: 'We’re a global movement for change.',
+    description: 'We\'re an Imagination Factory aiming to put a mentor in every kid\'s life every day',
   },
   {
     title: 'Shop Apparel',
