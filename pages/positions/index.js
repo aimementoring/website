@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
+import VideoPlayer from '../../components/videoPlayer';
 import isClientSide from '../../utils/isClientSide';
 import './positions.scss';
 
 const JobsBanner = dynamic(() => import('../../components/jobsBanner'));
 const Jobs = dynamic(() => import('../../components/jobs'));
-const VideoButton = dynamic(() => import('../../components/videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
@@ -32,24 +34,41 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
       <div className="positions">
         <JobsBanner />
         <section className="relative">
-          <div
-            className="video-banner-cta hero endorsement-wrap flex flex-column items-center justify-center changed"
-            style={{
-              backgroundImage: `url('${ASSETS_URL}/assets/images/banner/endorsement-video.png')`,
-            }}
-          >
-            <div className="video-button flex items-center p3">
-              <VideoButton video="https://player.vimeo.com/external/220543875.m3u8?s=fef0be1439c6cd9179ade0e502dea995e0a75a8f" />
-              <div className="flex">
-                <img
-                  alt=""
-                  className="video-play-button"
-                  src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
-                />
-                <p className="video-text">
-                  {`AIME ain't the place to come for the big bucks. We aren't here for the money. We are
-                  here to change the planet, yesterday.`}
-                </p>
+          <div className="full-width-wrap content-panel home-intro-panel positionsIntroPanel">
+            <div className="lg-wrap sm-col-12 md-col-10 mx-auto">
+              <div className="home-intro-panel--inner positionsIntroPanelContent">
+                <div className="sm-col-12 sm-col-6 pr2 home-intro-panel-inner-content">
+                  <Title type="headingLockup">
+                    <strong>
+                      Get&nbsp;
+                      <span>involved</span>
+                    </strong>
+                  </Title>
+                  <div className="intro-sub-text">
+                    <Paragraph>
+                      Welcome to AIME. A group that is looking to transform education
+                      from the inside out, through imagination & mentoring in order to
+                      create more educational equality, access to opportunities
+                      and in turn a fairer world.
+                    </Paragraph>
+                    <Paragraph>
+                      If you get the chance to work with us -&nbsp;
+                      <mark>bring everything you have</mark>
+                      , embrace our 21 mentor values,
+                      and enter a world of imagining what’s possible.
+                    </Paragraph>
+                  </div>
+                </div>
+                <div className="sm-col-12 sm-col-6">
+                  <div className="welcomeVideoWrapper">
+                    <VideoPlayer
+                      url="https://player.vimeo.com/external/390403643.m3u8?s=93f254baaef717dc9591e594f84a2367b3d1ce01"
+                      imageUrl={`${ASSETS_URL}/assets/images/media/vid-puppets.jpg`}
+                    >
+                      <Paragraph className="videoCaption">Welcome to AIME</Paragraph>
+                    </VideoPlayer>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
