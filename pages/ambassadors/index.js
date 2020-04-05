@@ -29,13 +29,12 @@ const Ambassadors = () => (
               Meet some of the people of AIME
             </Title>
             <Paragraph>
-              {/* Our ambassadors, mentors, program managers, hooded scholars, friends from around the world */}
-              Meet some people we have connected to AIME from across the world.
+              {`Meet some people we have connected to AIME from across the world.
               Get a sense of the characters we have, from our current volunteering Mentors
               to the 2017 Global Launch Ambasadors. From Program Managers in
               Brisbane Australia to Hooded Scholars in South Africa.
-              We have friends in all corners of the universe, we'll keep updating their profiles here
-              to shine a light on the kindness they bring to the world.
+              We have friends in all corners of the universe, we'll keep updating their profiles
+              here to shine a light on the kindness they bring to the world.`}
             </Paragraph>
           </div>
         </div>
