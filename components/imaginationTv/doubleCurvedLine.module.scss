@@ -1,0 +1,20 @@
+@import "../../styles/base/variables";
+
+.doubleline {
+  width: 100vw; 
+  height: 8vw;
+}
+
+.top, .bottom {
+  fill:none;
+  stroke-width:2px;
+  vector-effect: non-scaling-stroke;
+}
+
+.top {
+  stroke:#9135F0;
+}
+
+.bottom {
+  stroke:#FF91C5;
+}
