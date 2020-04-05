@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
+import isClientSide from '../../utils/isClientSide';
 import './slick.scss';
 
-const Slider = dynamic(() => import('react-slick'));
 const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
 const AimeVideos = dynamic(() => import('./carouselHeaders/aimeVideos'));
 const Testimonials = dynamic(() => import('./carouselHeaders/testimonials'));
@@ -16,7 +16,7 @@ const defaultSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
-  autoplay: true,
+  autoplay: false,
   autoplaySpeed: 6000,
   responsive: [
     {
@@ -35,14 +35,16 @@ const defaultSettings = {
 const Carousel = ({
   children, type, className, settings,
 }) => {
-  let slider;
+  const sliderRef = useRef(null);
+  const ssr = !isClientSide();
+  const Slider = dynamic(import('react-slick'), { ssr });
 
   const next = () => {
-    slider.slickNext();
+    sliderRef.slickNext();
   };
 
   const previous = () => {
-    slider.slickPrev();
+    sliderRef.slickPrev();
   };
 
   const newSettings = { ...defaultSettings, ...settings };
@@ -53,7 +55,12 @@ const Carousel = ({
       {type === 'aimeVideos' && <AimeVideos prev={previous} next={next} />}
       {type === 'testimonials' && <Testimonials prev={previous} next={next} />}
       {type === 'wall' && <Wall prev={previous} next={next} />}
-      <Slider {...newSettings} ref={(c) => { slider = c; }}>
+      <Slider
+        {...newSettings}
+        key={ssr ? 'server' : 'client'}
+        responsive={ssr ? null : newSettings.responsive}
+        ref={sliderRef}
+      >
         {children}
       </Slider>
     </div>
