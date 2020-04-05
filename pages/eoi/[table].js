@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
 import { uploadCustomEOI } from '../../services/portalApi';
-import { firstCharacterToUpperCaseAndSpacesForDivision } from '../../utils/utilities';
+import { firstCharacterToUpperCaseAndSpacesForDivision } from '../../utils/formatting';
 import isClientSide from '../../utils/isClientSide';
 import eoiData from '../../constants/dynamicEOI';
 import './eoi.scss';
