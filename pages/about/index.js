@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
+import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
 
@@ -20,24 +21,29 @@ const About = () => (
     <div className={styles.aboutWrapper}>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          <Title
+            type="headingLockup"
+            className={styles.sectionHeading}
+            theme={process.env.REACT_APP_THEME}
+          >
             About
             <strong>AIME</strong>
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              AIME is a global organisation working to transform education
-              from the inside out, to create equality, more access to opportunities,
-              and a fairer world for marginalised children.
+              AIME is an Imagination Factory that since 2005, has been creating pop-up
+              Imagination Factories on university campuses around the world to unlock
+              the internal narrative of marginalised kids, taking them from a world that
+              tells them they can’t to a world that tells them they can. Kids who experience
+              the Imagination Factory have gone on to achieve educational parity, rise up as
+              entrepreneurs, and take on a whole new mindset that prepares them for success.
             </Paragraph>
             <Paragraph>
-              AIME’s structured mentoring model unlocks the potential of marginalised
-              children to overcome some of the barriers to success they face, by inspiring
-              them and those around them to imagine and create a future different from
-              the predetermined narrative of impending disadvantage that surrounds them.
-              The program also aims to develop a sense of pride in these children,
-              help them see the value education can bring them, and develop
-              leadership skills and ambitions early on.
+              What inspires our Imagination Factory are the mentors throughout human history,
+              the philosophers, artists, inventors and designers who have moved humanity
+              forward in positive ways. With the force of imagination, mentoring and unlikely
+              alliances between those with power and those without, AIME is creating a fairer
+              world.
             </Paragraph>
           </div>
         </div>
@@ -53,13 +59,26 @@ const About = () => (
         <div className={styles.column}>
           <div className={styles.copy}>
             <Paragraph>
-              Since it was founded in 2005, AIME has worked with 39,000 Indigenous
-              kids in Australia, who have achieved educational parity and beyond.
-              Over 6,000 university students in Australia have volunteered with
-              AIME since 2005, making it the largest volunteer movement in Australian
-              history. Having scaled and proven its model of mentoring in Australia,
-              AIME has  now expanded the model across the continents of Africa and
-              the USA.
+              In Australia 20,000+ Indigenous youth have experienced AIME&apos;s
+              Imagination Factory, helping to solve one of Australia&apos;s most
+              complex social challenges - Indigenous inequality.
+            </Paragraph>
+            <Paragraph>
+              In doing so we&apos;ve designed a transferrable solution that works across
+              cultures/ borders,
+              <Anchor to="/impact" as="/impact">
+                cost-effectively (SROI of 8.9x) and at scale (7.5k+ kids p.a. across 5 countries)
+              </Anchor>
+              . In the process, we&apos;ve also built the largest volunteering movement of
+              university students in Australian history.
+            </Paragraph>
+            <Paragraph>
+              Having scaled and proven the model of mentoring in Australia,
+              AIME has now expanded via direct delivery in 6 countries and launched&nbsp;
+              <a href="http://imagi-nation.tv" target="_blank" rel="noopener noreferrer">
+                IMAGI-NATION TV
+              </a>
+              &nbsp;direct to homes.
             </Paragraph>
           </div>
         </div>
