@@ -4,7 +4,6 @@ import Title from 'aime-blueprint/lib/components/title';
 import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './featuredProduct.module.scss';
-import Link from 'next/link';
 
 const FeaturedProduct = ({
   pretitle, title, imageUrl, text, linkUrl, linkText,
@@ -41,7 +40,9 @@ const FeaturedProduct = ({
         </Button>
       )}
       <Paragraph theme={process.env.REACT_APP_THEME} className={styles.linkGoShop}>
-        <a href="http://shop.aimementoring.com" target="_blank">Go to shop.aimementoring.com</a>
+        <a href="http://shop.aimementoring.com" target="_blank" rel="noopener noreferrer">
+          Go to shop.aimementoring.com
+        </a>
       </Paragraph>
     </div>
   </div>
