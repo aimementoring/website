@@ -1,6 +1,10 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
 import App from 'next/app';
 import TagManager from 'react-gtm-module';
+import MainAppComponent from '../components/mainAppComponent';
+import initStore from '../store';
 
 const tagManagerArgs = {
   gtmId: process.env.REACT_APP_GOOGLE_TAG_MANAGER,
@@ -25,9 +29,16 @@ class MyApp extends App {
   // }
 
   render() {
-    const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    const {
+      Component, pageProps, store,
+    } = this.props;
+    return (
+      <Provider store={store}>
+        <MainAppComponent />
+        <Component {...pageProps} />
+      </Provider>
+    );
   }
 }
 
-export default MyApp;
+export default withRedux(initStore, { debug: true })(MyApp);

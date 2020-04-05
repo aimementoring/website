@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
 import Layout from '../../../hocs/basicLayout';
+import { getFromStorage } from '../../../utils/localStorage';
 import {
   capitaliseFirstCharacter,
   removeSpecialCharacters,
-  getCountrySite,
-} from '../../../utils/utilities';
+} from '../../../utils/formatting';
 import isClientSide from '../../../utils/isClientSide';
 import handleError from '../../../utils/errorHandler';
 import request from '../../../utils/request';
@@ -57,7 +57,7 @@ const PositionsEntry = () => {
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
-    const countryId = getCountrySite() || 'global';
+    const countryId = getFromStorage('country_code_selected') || 'global';
     if (positionId) {
       try {
         const job = await findJob(positionId, countryId);
@@ -149,6 +149,7 @@ const PositionsEntry = () => {
         job_name: state.job.name,
         job_location: state.job.city,
         submissionmessage: 'jobs',
+        stage: 'Initial Review',
       },
     });
     if (answer.data === 'OK') {

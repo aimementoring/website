@@ -1,14 +1,10 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-import Title from 'aime-blueprint/lib/components/title';
-import Button from 'aime-blueprint/lib/components/button';
-import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
-import { formatDate, removeMarkdownLink } from '../../../utils/utilities';
-import Anchor from '../../common/link';
+import dynamic from 'next/dynamic';
+import { removeMarkdownLink } from '../../../utils/formatting';
 import styles from './storiesContent.module.scss';
 
-const Picture = dynamic(() => import('../../picture'));
+const Card = dynamic(() => import('../../card'));
 
 const StoriesContent = (props) => {
   const {
@@ -22,62 +18,36 @@ const StoriesContent = (props) => {
     contentPreview,
   } = props;
 
-  const datePublished = formatDate(publishDate, 'short');
   const bannerImage = bannerContent && bannerContent.visualMedia
     && bannerContent.visualMedia.fields
     && bannerContent.visualMedia.fields.file.url;
+  const contentCreatorBy = contentCreator
+    && contentCreator.toLowerCase().indexOf('by') !== -1
+    ? `By ${contentCreator}`
+    : contentCreator;
 
   return (
     <article key={`article-story-${id}`} className={styles.articleTile}>
-      <Anchor
-        to={`/story?slug=${slugTitle}`}
-        as={`/story/${slugTitle}`}
-        className={styles.articleLink}
-      >
-        <div>
-          <Picture
-            className={styles.bannerImage}
-            thumbnail
-            image={{
-              image: `https:${bannerImage}?fl=progressive`,
-              title,
-              thumbnail: `https:${bannerImage}?fl=progressive`,
-            }}
-          />
-          <div
-            key={`article-description-${id}`}
-            className={styles.articleDescription}
-          >
-            <Title type="h5Title">{title}</Title>
-            <Paragraph>
-              <span key={`pr1-story-entry-${id}`} className={styles.postDate}>
-                {datePublished}
-              </span>
-              <span key={`c-light-grey-span-${id}`}>
-                <br />
-              </span>
-              <span key={`px1-span-${id}`}>
-                {`By ${contentCreator}`}
-              </span>
-            </Paragraph>
-            <Paragraph>
-              {contentPreview && contentPreview.previewCopy ? (
-                `${contentPreview.previewCopy.slice(0, 230)}...`
-              )
-                : contentCards && contentCards.slice(0, 1).map((card) => (
-                  card.fields.contentCopy
-                  && (
-                    `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
-                  )))}
-            </Paragraph>
-            <div>
-              <Button theme="rainbow" type="button" className={styles.articleTileLink}>
-                READ MORE
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Anchor>
+      <Card
+        cardId={id}
+        title={title}
+        urlTo={`/story?slug=${slugTitle}`}
+        urlAs={`/story/${slugTitle}`}
+        image={bannerImage}
+        buttonText="READ MORE"
+        publishDate={publishDate}
+        contentCreator={contentCreatorBy}
+        contentPreview={
+          contentPreview && contentPreview.previewCopy ? (
+            `${contentPreview.previewCopy.slice(0, 230)}...`
+          )
+            : contentCards && contentCards.slice(0, 1).map((card) => (
+              card.fields.contentCopy
+            && (
+              `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
+            )))
+        }
+      />
     </article>
   );
 };

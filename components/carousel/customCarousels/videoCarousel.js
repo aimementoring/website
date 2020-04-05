@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { getAssetsBaseUrl } from '../../../services/craftAPI';
 import './customCarousels.scss';
 
 const Carousel = dynamic(() => import('../index'));
 const VideoButton = dynamic(() => import('../../videoButton'));
 
 const AimeVideos = ({ settings, elements, title }) => {
-  const assetsUrl = getAssetsBaseUrl();
+  const assetsUrl = process.env.REACT_APP_ASSETS_URL;
   return (
     <div className="aimeVideos">
       <div className="xs-px2 sm-px3 md-px4 lg-px4">
