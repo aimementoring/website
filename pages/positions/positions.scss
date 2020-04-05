@@ -2,6 +2,13 @@
 
 .positions {
 
+  .home-intro-panel-inner-content {
+    h1 {
+      letter-spacing: -0.15em;
+      color: $orange;
+    }
+  }
+
   .scratch-bg.video-button {
     position: relative;
 
@@ -23,6 +30,29 @@
     &.active:hover {
       background: $brand-secondary;
       opacity: 1;
+    }
+  }
+
+  .videoCaption {
+    text-align: right;
+  }
+}
+
+.positionsIntroPanel {
+  padding: 4em 1em 2em;
+
+  .positionsIntroPanelContent {
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .video-banner {
+    &.welcomeVideo {
+      background: url($cdnRoot + 'assets/images/media/vid-puppets.jpg') no-repeat top center / cover $magenta;
     }
   }
 }
