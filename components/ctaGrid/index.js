@@ -38,7 +38,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
         </div>
       ))}
     </div>
-    <div className={styles.fullWidthPanelWrapper}>
+    <div ref={partnerRef} className={styles.fullWidthPanelWrapper}>
       <div className={styles.partnerPanelWrap}>
         <div className={styles.contentWrap}>
           <img
@@ -53,17 +53,16 @@ const CtaGrid = ({ elements, partnerRef }) => (
             </strong>
           </Title>
           <Paragraph>
-            Do you work for or lead an organisation? Maybe you want to
-            partner with us? We are currently working through our
-            partnership options for 2020 and beyond - We’re open
-            to build partnerships in many areas, and have structures
-            in place for many already.
+            Do you work for or lead an organisation? Maybe you want to partner with us? We are
+            currently working through our partnership options for 2020 and beyond, including
+            specific activations around COVID-19  - We’re open to build partnerships in many areas,
+            and have structures in place for many already.
           </Paragraph>
           <Paragraph>
             If you want to know more get in touch with Helen,
             our Director of Partnering.
           </Paragraph>
-          <div ref={partnerRef} className={styles.intercomBtnWrap}>
+          <div className={styles.intercomBtnWrap}>
             <IntercomChat />
           </div>
         </div>
