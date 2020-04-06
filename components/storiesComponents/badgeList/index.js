@@ -5,7 +5,11 @@ import styles from './badgeList.module.scss';
 const BadgeList = ({ items, itemClass }) => (
   <>
     {items.map((item) => (
-      <p className={`${styles.badge} ${itemClass}`} key={item}>{item}</p>
+      <div className={`${styles.badge} ${itemClass}`} key={item}>
+        <p className={styles.badgeLabel}>
+          {item}
+        </p>
+      </div>
     ))}
   </>
 );
