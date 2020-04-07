@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Title from 'aime-blueprint/lib/components/title';
 import AnimatedCircleText from 'aime-blueprint/lib/components/animatedCircleText';
@@ -9,14 +10,16 @@ import styles from './becomeAFriend.module.scss';
 const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.com/subscribe/post?u=ce86e2fc6ca77a51919157a03&amp;id=30964260b5';
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
-const BecomeAFriend = () => {
+const BecomeAFriend = (props) => {
+
+  const { scrollHandler } = props;
   const [value, setValue] = useState('');
 
   return (
     <div className={styles.beAFriendContainer}>
       <div className={styles.newsletterWrapper}>
         <div className={styles.formContainer}>
-          <div className={styles.beAFriendPopper}>
+          <div onClick={scrollHandler} className={styles.beAFriendPopper}>
             <div className={styles.spinnyWrapper}>
               <AnimatedCircleText text="Board the AIME Rocket Ship &nbsp;" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
               <img
@@ -62,4 +65,7 @@ const BecomeAFriend = () => {
   );
 };
 
+BecomeAFriend.propTypes = {
+  scrollHandler: PropTypes.func.isRequired,
+};
 export default BecomeAFriend;
