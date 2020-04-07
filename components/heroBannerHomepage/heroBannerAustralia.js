@@ -70,12 +70,12 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           rel="noopener noreferrer"
         >
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
-            alt="Imagi-Nation TV"
+            src={`${ASSETS_URL}/assets/images/banner/banner-hoodie-rent.gif`}
+            alt="This Hoodie Pays My Rent"
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} href="/imagi-nation-tv">
+        <a className={styles.textLinkChannel} target="_blank" href="https://shop.aimementoring.com/pages/this-hoodie-pays-rent">
           {'See what it\'s all about'}
         </a>
       </div>
