@@ -3,6 +3,7 @@ import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Title from 'aime-blueprint/lib/components/title';
 import AnimatedCircleText from 'aime-blueprint/lib/components/animatedCircleText';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import ArrowNextIcon from '../../components/layoutComponents/logos';
 import styles from './becomeAFriend.module.scss';
 
 const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.com/subscribe/post?u=ce86e2fc6ca77a51919157a03&amp;id=30964260b5';
@@ -25,9 +26,10 @@ const BecomeAFriend = () => {
             </div>
             <div className={styles.beAFriendPopOut}>
               <Title type="h5Title" theme={process.env.REACT_APP_THEME}>BOARD THE AIME ROCKET SHIP</Title>
+              <ArrowNextIcon />
             </div>
           </div>
-          <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME friend</Title>
+          {/* <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME friend</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>Subscribe to our newsletter</Paragraph>
           <form
             acceptCharset="UTF-8"
@@ -53,7 +55,7 @@ const BecomeAFriend = () => {
               name="subscribe"
               aria-label="Subscribe"
             />
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
