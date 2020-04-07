@@ -19,7 +19,7 @@ const ImagiNationTV = () => (
         <div className={styles.bannerContent}>
           <div className={styles.imagiBannerHeader}>
             <Title className={styles.welcomeTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-              HEY LAILA
+              Welcome to
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
               <img
                 src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
