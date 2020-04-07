@@ -18,14 +18,14 @@ const BecomeAFriend = () => {
         <div className={styles.formContainer}>
           <div className={styles.beAFriendPopper}>
             <div className={styles.spinnyWrapper}>
-              <AnimatedCircleText text="Board the AIME Rocket Ship" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
+              <AnimatedCircleText text="Board the AIME Rocket Ship &nbsp;" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/SMILEY_HAPPY_SMILE_KINDNESS@2x.png`}
                 alt="Smiley"
               />
             </div>
             <div className={styles.beAFriendPopOut}>
-              <Title type="h5Title" theme={process.env.REACT_APP_THEME}>BOARD THE AIME ROCKET SHIP</Title>
+              <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME Friend</Title>
               <ArrowNextIcon />
             </div>
           </div>
