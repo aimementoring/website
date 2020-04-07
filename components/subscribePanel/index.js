@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
@@ -6,13 +7,13 @@ import styles from './subscribePanel.module.scss';
 
 const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.com/subscribe/post?u=ce86e2fc6ca77a51919157a03&amp;id=30964260b5';
 
-const SubscribePanel = () => {
+const SubscribePanel = ({ subscribeRef }) => {
   const [value, setValue] = useState('');
 
   return (
     <div className={styles.newsletterContainer}>
       <div className={styles.newsletterWrapper}>
-        <div className={styles.formContainer}>
+        <div ref={subscribeRef} className={styles.formContainer}>
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>board it</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>Subscribe to our newsletter</Paragraph>
           <form
@@ -44,6 +45,10 @@ const SubscribePanel = () => {
       </div>
     </div>
   );
+};
+
+SubscribePanel.propTypes = {
+  subscribeRef: PropTypes.shape({}).isRequired,
 };
 
 export default SubscribePanel;
