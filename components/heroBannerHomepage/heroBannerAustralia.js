@@ -46,10 +46,10 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
           <Button
             type="link"
-            text="Buy the Imagi-Nation Hoodie"
+            text="Learn about IN{TV}"
             className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
             theme={process.env.REACT_APP_THEME}
-            url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
+            url="/imagi-nation-tv"
           />
         </div>
       </div>
@@ -65,17 +65,17 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
         <a
-          href="https://www.youtube.com/user/aimementoring/live"
+          href="https://shop.aimementoring.com/pages/this-hoodie-pays-rent"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
-            alt="Imagi-Nation TV"
+            src={`${ASSETS_URL}/assets/images/banner/banner-hoodie-rent.gif`}
+            alt="This Hoodie Pays My Rent"
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} href="/imagi-nation-tv">
+        <a className={styles.textLinkChannel} target="_blank" href="https://shop.aimementoring.com/pages/this-hoodie-pays-rent">
           {'See what it\'s all about'}
         </a>
       </div>
