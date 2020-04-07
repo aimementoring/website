@@ -21,7 +21,11 @@ const About = () => (
     <div className={styles.aboutWrapper}>
       <section className={styles.sectionAbout}>
         <div className={styles.column}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          <Title
+            type="headingLockup"
+            className={styles.sectionHeading}
+            theme={process.env.REACT_APP_THEME}
+          >
             About
             <strong>AIME</strong>
           </Title>
@@ -60,16 +64,20 @@ const About = () => (
               complex social challenges - Indigenous inequality.
             </Paragraph>
             <Paragraph>
-              In doing so we&apos;ve designed a transferrable solution that works across cultures/ borders,
+              In doing so we&apos;ve designed a transferrable solution that works across
+              cultures/ borders,
               <Anchor to="/impact" as="/impact">
                 cost-effectively (SROI of 8.9x) and at scale (7.5k+ kids p.a. across 5 countries)
               </Anchor>
-              . In the process, we&apos;ve also built the largest volunteering movement of university students in Australian history.
+              . In the process, we&apos;ve also built the largest volunteering movement of
+              university students in Australian history.
             </Paragraph>
             <Paragraph>
               Having scaled and proven the model of mentoring in Australia,
               AIME has now expanded via direct delivery in 6 countries and launched&nbsp;
-              <a href="http://imagi-nation.tv" target="_blank" rel="noopener noreferrer">IMAGI-NATION TV</a>
+              <a href="http://imagi-nation.tv" target="_blank" rel="noopener noreferrer">
+                IMAGI-NATION TV
+              </a>
               &nbsp;direct to homes.
             </Paragraph>
           </div>
