@@ -6,6 +6,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import styles from './becomeAFriend.module.scss';
 
 const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.com/subscribe/post?u=ce86e2fc6ca77a51919157a03&amp;id=30964260b5';
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const BecomeAFriend = () => {
   const [value, setValue] = useState('');
@@ -14,8 +15,18 @@ const BecomeAFriend = () => {
     <div className={styles.beAFriendContainer}>
       <div className={styles.newsletterWrapper}>
         <div className={styles.formContainer}>
-          <AnimatedCircleText text="Board the AIME Rocket Ship" size={120} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
-
+          <div className={styles.beAFriendPopper}>
+            <div className={styles.spinnyWrapper}>
+              <AnimatedCircleText text="Board the AIME Rocket Ship" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
+              <img
+                src={`${ASSETS_URL}/assets/images/illustrations/SMILEY_HAPPY_SMILE_KINDNESS@2x.png`}
+                alt="Smiley"
+              />
+            </div>
+            <div className={styles.beAFriendPopOut}>
+              <Title type="h5Title" theme={process.env.REACT_APP_THEME}>BOARD THE AIME ROCKET SHIP</Title>
+            </div>
+          </div>
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME friend</Title>
           <Paragraph theme={process.env.REACT_APP_THEME}>Subscribe to our newsletter</Paragraph>
           <form
