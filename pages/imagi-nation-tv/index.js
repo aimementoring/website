@@ -35,10 +35,10 @@ const ImagiNationTV = () => (
               Live every weekday 12pm AEST
             </Title>
             <Paragraph>
-              IMAGI-NATION TV is for marginalised kids across the earth’s
+              {`IMAGI-NATION{TV} is for marginalised kids across the earth’s
               surface to have a daily mentor in their lives. It takes the
               magic of AIME’s Imagination Factory to laptops, phones, and
-              homes across the world.
+              homes across the world.`}
             </Paragraph>
           </div>
         </div>
