@@ -11,11 +11,13 @@ const SubscribePanel = ({ subscribeRef }) => {
   const [value, setValue] = useState('');
 
   return (
-    <div className={styles.newsletterContainer}>
+    <div className={styles.subscribeContainer}>
       <div className={styles.newsletterWrapper}>
         <div ref={subscribeRef} className={styles.formContainer}>
-          <Title type="h5Title" theme={process.env.REACT_APP_THEME}>board it</Title>
-          <Paragraph theme={process.env.REACT_APP_THEME}>Subscribe to our newsletter</Paragraph>
+          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>BOARD THE AIME ROCKET SHIP</Title>
+          <Paragraph theme={process.env.REACT_APP_THEME}>
+            Receive INTV latest, job offers, Hoodies, Sunday Kindness & more
+          </Paragraph>
           <form
             acceptCharset="UTF-8"
             action={AIME_FRIENDS_LIST_MAILCHIMP_URL}
