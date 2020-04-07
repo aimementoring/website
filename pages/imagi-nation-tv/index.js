@@ -32,7 +32,7 @@ const ImagiNationTV = () => (
           </div>
           <div className={styles.imagiBannerInfo}>
             <Title type="h3Title" className={styles.infoTitle} theme={process.env.REACT_APP_THEME}>
-              Live every weekday 12pm AEDT
+              Live every weekday 12pm AEST
             </Title>
             <Paragraph>
               IMAGI-NATION TV is for marginalised kids across the earth’s
@@ -46,7 +46,7 @@ const ImagiNationTV = () => (
       <div className={styles.videoContainerFeature}>
         <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            src={`${ASSETS_URL}/assets/images/banner/imagi-robot-live@2x.gif`}
             alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
