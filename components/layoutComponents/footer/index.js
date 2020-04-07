@@ -4,6 +4,7 @@ import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
 import FooterNewsletter from '../../footerNewsletter';
+import SubscribePanel from '../../subscribePanel';
 import useDonate from '../../../hooks/useDonate';
 import styles from './footer.module.scss';
 
@@ -75,39 +76,42 @@ const Footer = ({ location }) => {
   return (
     <div>
       {!isTalentPage && (
-        <footer role="contentinfo">
-          <div className={styles.footerContainer}>
-            <div className={styles.footerWrapper}>
-              <div className={styles.footerContent}>
-                <div className={styles.linksContainer}>
-                  {FOOTER_LINKS.map((footerList) => (
-                    <NavList {...footerList} key={footerList.title} />
-                  ))}
+        <div>
+          <SubscribePanel />
+          <footer role="contentinfo">
+            <div className={styles.footerContainer}>
+              <div className={styles.footerWrapper}>
+                <div className={styles.footerContent}>
+                  <div className={styles.linksContainer}>
+                    {FOOTER_LINKS.map((footerList) => (
+                      <NavList {...footerList} key={footerList.title} />
+                    ))}
+                  </div>
+                  <FooterNewsletter />
                 </div>
-                <FooterNewsletter />
               </div>
             </div>
-          </div>
-          {/* Footer Copyright Section */}
-          <div className={styles.footerCopyrightContainer}>
-            <div className={styles.footerCopyrightWrapper}>
-              <span className={styles.copyrightText}>{`${currentYear} © AIME`}</span>
-              <ul className={styles.footerList}>
-                <li className={styles.footerListItem}>
-                  <Anchor
-                    to="/terms-of-service"
-                    as="/terms-of-service"
-                    className={styles.footerLink}
-                  >
-                      Terms of Service
-                  </Anchor>
-                </li>
-                <li className={styles.footerListItem}>ABN 31 081 797 652</li>
-                <li className={styles.footerListItem}>ICN 7040</li>
-              </ul>
+            {/* Footer Copyright Section */}
+            <div className={styles.footerCopyrightContainer}>
+              <div className={styles.footerCopyrightWrapper}>
+                <span className={styles.copyrightText}>{`${currentYear} © AIME`}</span>
+                <ul className={styles.footerList}>
+                  <li className={styles.footerListItem}>
+                    <Anchor
+                      to="/terms-of-service"
+                      as="/terms-of-service"
+                      className={styles.footerLink}
+                    >
+                        Terms of Service
+                    </Anchor>
+                  </li>
+                  <li className={styles.footerListItem}>ABN 31 081 797 652</li>
+                  <li className={styles.footerListItem}>ICN 7040</li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       )}
     </div>
   );
