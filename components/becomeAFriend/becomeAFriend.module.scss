@@ -40,23 +40,29 @@
 
   $beAFriendSize: 3.8em;
 
-  @keyframes beAFriendStretch {
-    0% {
-      width: $beAFriendSize;
-    }
-    100% {
-      width: auto;
-    }
-  }
+  // @keyframes beAFriendStretch {
+  //   0% {
+  //     width: $beAFriendSize;
+  //     // display: none;
+  //   }
+  //   100% {
+  //     width: auto;
+  //     // display: block;
+  //   }
+  // }
 
   .beAFriendPopper {
     position: relative;
-    margin: 2em;
     border: 1px solid $grey40;
-    height: $beAFriendSize;
     border-radius: 100px;
+    height: $beAFriendSize;
+    width: $beAFriendSize;
     display: inline-block;
+    margin: 2em;
     cursor: pointer;
+    transition: width 1s ease,
+                display 1s linear;
+  
 
     .spinnyWrapper {
       position: absolute;
@@ -75,16 +81,34 @@
     }
 
     .beAFriendPopOut {
+      // border: 1px solid $cyan;
+      border-radius: 100px;
       height: $beAFriendSize;
-      width: $beAFriendSize;
+      // width: 18em;
       z-index: 1;
+
+      // left: -14em;
+      // position: relative;
+      
       display: flex;
       align-items: center;
       justify-content: center;
+
+      // visibility: hidden;
+
+      transition: width 1s ease,
+                  left 1s linear;
   
       h5 {
+        // transition: width 1s ease,
+        //             left 1s linear,
+        //             display 2s ease;
         color: $orange;
-        display: none;
+        opacity: 0;
+        transition: opacity 1s linear;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
       }
     }
 
@@ -92,18 +116,42 @@
       font-family: $body-font-family;
       font-weight: 900;
     }
-    
-    &:hover {
-      animation: beAFriendStretch 1s ease infinite alternate;
 
+    &:hover { 
+      width: 20em;
       .beAFriendPopOut {
-        width: auto;
-        padding: 0 2em 0 5em;
+        width: 20em;
+
+        left: 3em;
         h5 {
-          display: block;
+          visibility: visible;
+  opacity: 1;
         }
       }
     }
+
+    // &:hover {
+    //   width: auto;
+    //   .beAFriendPopOut {
+    //   width: auto;
+    //   padding: 0 2em 0 5em;
+    //       h5 {
+    //         display: block;
+    //       }
+    //   }
+    // }
+      
+    // &:hover {
+    //   animation: beAFriendStretch 1s ease infinite;
+
+    //   .beAFriendPopOut {
+    //     width: auto;
+    //     padding: 0 2em 0 5em;
+    //     h5 {
+    //       display: block;
+    //     }
+    //   }
+    // }
     
   }
   
