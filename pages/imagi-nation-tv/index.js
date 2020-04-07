@@ -8,6 +8,7 @@ import IntercomChat from '../../components/intercom';
 import Anchor from '../../components/common/link';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
+import DonateToAime from '../../components/donateToAime';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
@@ -77,7 +78,7 @@ const ImagiNationTV = () => (
           url="/donate"
         />
       </section>
-      <DoubleCurvedLine />
+      <DonateToAime />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
