@@ -38,10 +38,12 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
     title: 'Grounded Festival',
     type: 'Cancelled not Cancelled Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
+    paragraph: `Grounded is honoured to be featured on AIME's IMAGI-NATION{TV}
+    alongside Damon Gameau and 2040. Many people hear about the climate crisis
+    and their eyes glaze over. But not young people. They are demanding action
+    from world leaders because they know we are running out of time. Their
+    imagination and determination brings me hope that we can deliver solutions
+    to reverse this crisis and preserve livable parts of our planet.`,
   }, {
     image: `${ASSETS_URL}/assets/images/partners/waverly.png`,
     title: 'Waverly School',
