@@ -17,10 +17,12 @@ const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHome
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import('../../components/ambassadors'));
 // const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
+const SubscribePanel = dynamic(() => import('../../components/subscribePanel'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
   const partnerRef = useRef(null);
+  const subscribeRef = useRef(null);
   const getInvolvedRef = useRef(null);
   const router = useRouter();
   // eslint-disable-next-line no-unused-vars
@@ -61,14 +63,26 @@ const Home = () => {
     }
   };
 
+  const scrollToFooterSubscribe = () => {
+    if (isClientSide()) {
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      if (isSmoothScrollSupported) {
+        subscribeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        subscribeRef.current.scrollIntoView(false);
+      }
+    }
+  };
+
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
-      <BecomeAFriend />
+      <BecomeAFriend scrollHandler={scrollToFooterSubscribe} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
-      <FooterBanner />
+      <SubscribePanel subscribeRef={subscribeRef} />
+      <FooterBanner/>
     </Layout>
   );
 };
