@@ -46,10 +46,10 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           />
           <Button
             type="link"
-            text="Buy the Imagi-Nation Hoodie"
+            text="Learn about IN{TV}"
             className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
             theme={process.env.REACT_APP_THEME}
-            url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
+            url="/imagi-nation-tv"
           />
         </div>
       </div>
