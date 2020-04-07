@@ -7,6 +7,7 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
+import DonateToAime from '../../components/donateToAime';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
@@ -71,8 +72,30 @@ const ImagiNationTV = () => (
       </div>
     </div>
     <div className={styles.inTVContentWrapper}>
-
-      <DoubleCurvedLine />
+      <section className={styles.triBtnSet}>
+        <Button
+          type="link"
+          text="Watch live on YouTube"
+          theme={process.env.REACT_APP_THEME}
+          className={`${styles.imagiBtn}`}
+          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
+        />
+        <Button
+          type="link"
+          className={`${styles.imagiHoodieBtn} ${styles.imagiBtn}`}
+          text="Buy the Imagi-Nation Hoodie"
+          theme={process.env.REACT_APP_THEME}
+          url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
+        />
+        <Button
+          type="link"
+          className={`${styles.imagiDonate} ${styles.imagiBtn}`}
+          text="Donate to IN{TV}"
+          theme={process.env.REACT_APP_THEME}
+          url="/donate"
+        />
+      </section>
+      <DonateToAime />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
