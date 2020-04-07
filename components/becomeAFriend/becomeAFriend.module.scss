@@ -17,14 +17,8 @@
     justify-content: flex-end;
   }
 
-  .spinnySubscribe {
-    font-family: $body-font-family;
-    font-weight: 900;
-  }
-
   .newsletterWrapper {
     width: 100%;
-    max-width: 350px;
     flex-direction: column;
     display: flex;
   }
@@ -42,6 +36,75 @@
         top: 1.22em;
       }
     }
+  }
+
+  $beAFriendSize: 3.8em;
+
+  @keyframes beAFriendStretch {
+    0% {
+      width: $beAFriendSize;
+    }
+    100% {
+      width: auto;
+    }
+  }
+
+  .beAFriendPopper {
+    position: relative;
+    margin: 2em;
+    border: 1px solid $grey40;
+    height: $beAFriendSize;
+    border-radius: 100px;
+    display: inline-block;
+    cursor: pointer;
+
+    .spinnyWrapper {
+      position: absolute;
+      z-index: 2;
+      height: $beAFriendSize;
+      width: $beAFriendSize;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: -0.1em 0 0;
+
+      img {
+        position: absolute;
+        width: 2.5rem;
+      }
+    }
+
+    .beAFriendPopOut {
+      height: $beAFriendSize;
+      width: $beAFriendSize;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      h5 {
+        color: $orange;
+        display: none;
+      }
+    }
+
+    .spinnySubscribe {
+      font-family: $body-font-family;
+      font-weight: 900;
+    }
+    
+    &:hover {
+      animation: beAFriendStretch 1s ease infinite alternate;
+
+      .beAFriendPopOut {
+        width: auto;
+        padding: 0 2em 0 5em;
+        h5 {
+          display: block;
+        }
+      }
+    }
+    
   }
   
   .subscribeInput {
