@@ -18,8 +18,7 @@ const StoriesContent = (props) => {
     contentPreview,
   } = props;
 
-
-  const bannerImage = bannerContent.visualMedia
+  const bannerImage = bannerContent && bannerContent.visualMedia
     && bannerContent.visualMedia.fields
     && bannerContent.visualMedia.fields.file.url;
   const contentCreatorBy = contentCreator
