@@ -44,23 +44,7 @@ const CAROUSEL_SLIDES = [
     from world leaders because they know we are running out of time. Their
     imagination and determination brings me hope that we can deliver solutions
     to reverse this crisis and preserve livable parts of our planet.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/waverly.png`,
-    title: 'Waverly School',
-    type: 'Delivery Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
-  }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
-    title: 'Warragul Regional College',
-    type: 'Delivery Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
-  },
+  }, 
 ];
 
 const IntvPartners = () => (
