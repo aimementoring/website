@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import AnimatedCircleText from 'aime-blueprint/lib/components/animatedCircleText';
-import ArrowNextIcon from '../../components/layoutComponents/logos';
+import ArrowNextIcon from '../layoutComponents/logos';
 import styles from './becomeAFriend.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const BecomeAFriend = (props) => {
-
   const { scrollHandler } = props;
-
   return (
     <div className={styles.beAFriendContainer}>
       <div className={styles.newsletterWrapper}>
         <div className={styles.formContainer}>
-          <div onClick={scrollHandler} className={styles.beAFriendPopper}>
+          {}
+          <div
+            onClick={scrollHandler}
+            className={styles.beAFriendPopper}
+          >
             <div className={styles.spinnyWrapper}>
-              <AnimatedCircleText text="Board the AIME Rocket Ship &nbsp;" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe}/>
+              <AnimatedCircleText text="Board the AIME Rocket Ship &nbsp;" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe} />
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/SMILEY_HAPPY_SMILE_KINDNESS@2x.png`}
                 alt="Smiley"
