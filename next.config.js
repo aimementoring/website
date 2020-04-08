@@ -75,7 +75,7 @@ module.exports = withOffline(
       },
       target: 'serverless',
       transformManifest: (manifest) => ['/'].concat(manifest),
-      // generateInDevMode: true,
+      generateInDevMode: true,
       // workboxOpts: {
       //   swDest: join(__dirname, 'static/service-worker.js'),
       //   runtimeCaching: [
