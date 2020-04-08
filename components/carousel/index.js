@@ -34,7 +34,7 @@ const defaultSettings = {
 const centerModeSettings = {
   centerMode: true,
   centerPadding: '2em',
-  slidesToShow: 5,
+  slidesToShow: 3,
   autoplay: true,
   speed: 500,
   dots: false,
@@ -44,8 +44,8 @@ const centerModeSettings = {
       settings: {
         centerMode: true,
         centerPadding: '2em',
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         infinite: true,
       },
     },
@@ -54,8 +54,8 @@ const centerModeSettings = {
       settings: {
         centerMode: true,
         centerPadding: '2em',
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         infinite: true,
         arrows: true,
       },
