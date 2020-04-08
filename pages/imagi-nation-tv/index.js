@@ -79,7 +79,7 @@ const ImagiNationTV = () => (
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-            A mentor in the home for every kid, every day. boo boo boo
+            A mentor in the home for every kid, every day.
           </Title>
           <Paragraph>
             This is a show for those kids sitting at the back of the classroom,
