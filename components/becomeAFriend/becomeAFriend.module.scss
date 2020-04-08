@@ -6,59 +6,22 @@
 }
 
 .beAFriendContainer {
-  border: 10px solid blue;
-  display: flex;
-  justify-content: flex-start;
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-
-  @media screen and (min-width: $lg) {
-    justify-content: flex-end;
-  }
-
-  .newsletterWrapper {
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-  }
-
-  .formContainer {
-    flex: 1 1 auto;
-    min-width: 0;
-    min-height: 0;
-    margin-bottom: 2rem;
-
-    form {
-      position: relative;
-
-      label {
-        top: 1.22em;
-      }
-    }
-  }
+  position: fixed;
+  bottom: 0em;
+  left: 0em;
+  z-index: 99;
 
   $beAFriendSize: 3.8em;
-
-  // @keyframes beAFriendStretch {
-  //   0% {
-  //     width: $beAFriendSize;
-  //     // display: none;
-  //   }
-  //   100% {
-  //     width: auto;
-  //     // display: block;
-  //   }
-  // }
 
   .beAFriendPopper {
     position: relative;
     border: 1px solid $grey40;
+    background-color: $white;
     border-radius: 100px;
     height: $beAFriendSize;
     width: $beAFriendSize;
     display: inline-block;
-    margin: 2em;
+    margin: 2em 1.5em;
     cursor: pointer;
     transition: width 1s ease,
                 display 1s linear;
