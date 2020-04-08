@@ -27,6 +27,12 @@ app.prepare().then(() => {
 
   server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
 
+  // Offline mode - PWA
+  server.get('/service-worker.js', (req, res) => {
+    const filePath = `${__dirname}/.next/service-worker.js`;
+    app.serveStatic(req, res, filePath);
+  });
+
   fetchContentfulEntries().then((response = []) => {
     for (let i = 0; i < response.length; i += 1) {
       const url = response[i];
