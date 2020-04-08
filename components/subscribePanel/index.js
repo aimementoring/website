@@ -14,25 +14,27 @@ const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.
 const SubscribePanel = ({ subscribeRef }) => {
   const [value, setValue] = useState('');
 
-  // const scrollToFooterSubscribe = () => {
-  //   if (isClientSide()) {
-  //     const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-  //     if (isSmoothScrollSupported) {
-  //       subscribeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  //     } else {
-  //       subscribeRef.current.scrollIntoView(false);
-  //     }
-  //   }
-  // };
+  const scrollToFooterSubscribe = () => {
+    if (isClientSide()) {
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      if (isSmoothScrollSupported) {
+        subscribeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        subscribeRef.current.scrollIntoView(false);
+      }
+    }
+  };
 
   return (
     <div>
-      {/* <BecomeAFriend scrollHandler={scrollToFooterSubscribe}/> */}
+      {/*  */}
+      <BecomeAFriend scrollHandler={scrollToFooterSubscribe} />
       <div className={styles.subscribeContainer}>
         <MovingWaves className={styles.wavySubscribe}/>
-        {/* subscribeRef={subscribeRef} ref={subscribeRef} */}
-        <div className={styles.newsletterWrapper}  >
-          <div ref={subscribeRef} className={styles.formContainer}>
+        {/* ref={subscribeRef} */}
+        <div className={styles.newsletterWrapper} subscribeRef={subscribeRef} >
+          {/* ref={subscribeRef}  */}
+          <div className={styles.formContainer}>
             <Title type="h4Title" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
               BOARD THE AIME ROCKET SHIP
             </Title>
