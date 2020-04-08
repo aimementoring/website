@@ -4,7 +4,6 @@ import React, {
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
-import BecomeAFriend from '../../components/becomeAFriend';
 import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import isClientSide from '../../utils/isClientSide';
@@ -17,12 +16,10 @@ const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHome
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import('../../components/ambassadors'));
 // const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
-const SubscribePanel = dynamic(() => import('../../components/subscribePanel'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
   const partnerRef = useRef(null);
-  const subscribeRef = useRef(null);
   const getInvolvedRef = useRef(null);
   const router = useRouter();
   // eslint-disable-next-line no-unused-vars
@@ -63,26 +60,13 @@ const Home = () => {
     }
   };
 
-  const scrollToFooterSubscribe = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        subscribeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        subscribeRef.current.scrollIntoView(false);
-      }
-    }
-  };
-
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
-      {/* <BecomeAFriend scrollHandler={scrollToFooterSubscribe} /> */}
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
-      {/* <SubscribePanel subscribeRef={subscribeRef} /> */}
-      <FooterBanner/>
+      <FooterBanner />
     </Layout>
   );
 };
