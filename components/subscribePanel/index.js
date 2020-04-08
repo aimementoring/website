@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useRef } from 'react';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
@@ -11,8 +10,9 @@ import styles from './subscribePanel.module.scss';
 
 const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.com/subscribe/post?u=ce86e2fc6ca77a51919157a03&amp;id=30964260b5';
 
-const SubscribePanel = ({ subscribeRef }) => {
+const SubscribePanel = () => {
   const [value, setValue] = useState('');
+  const subscribeRef = useRef(null);
 
   const scrollToFooterSubscribe = () => {
     if (isClientSide()) {
@@ -27,19 +27,16 @@ const SubscribePanel = ({ subscribeRef }) => {
 
   return (
     <div>
-      {/*  */}
       <BecomeAFriend scrollHandler={scrollToFooterSubscribe} />
       <div className={styles.subscribeContainer}>
-        <MovingWaves className={styles.wavySubscribe}/>
-        {/* ref={subscribeRef} */}
-        <div className={styles.newsletterWrapper} subscribeRef={subscribeRef} >
-          {/* ref={subscribeRef}  */}
+        <MovingWaves className={styles.wavySubscribe} />
+        <div className={styles.newsletterWrapper}>
           <div className={styles.formContainer}>
             <Title type="h4Title" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
               BOARD THE AIME ROCKET SHIP
             </Title>
             <Paragraph className={styles.subscribeDetails} theme={process.env.REACT_APP_THEME}>
-              {`Receive IN{TV} latest, job offers, Hoodies, Sunday Kindness & more`}
+              {'Receive IN{TV} latest, job offers, Hoodies, Sunday Kindness & more'}
             </Paragraph>
             <form
               acceptCharset="UTF-8"
@@ -60,6 +57,7 @@ const SubscribePanel = ({ subscribeRef }) => {
                 required
               />
               <button
+                ref={subscribeRef}
                 type="submit"
                 className={styles.submitButton}
                 name="subscribe"
@@ -71,10 +69,6 @@ const SubscribePanel = ({ subscribeRef }) => {
       </div>
     </div>
   );
-};
-
-SubscribePanel.propTypes = {
-  subscribeRef: PropTypes.shape({}).isRequired,
 };
 
 export default SubscribePanel;
