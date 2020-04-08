@@ -77,11 +77,11 @@ const Home = () => {
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
-      <BecomeAFriend scrollHandler={scrollToFooterSubscribe} />
+      {/* <BecomeAFriend scrollHandler={scrollToFooterSubscribe} /> */}
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
       <Ambassadors />
-      <SubscribePanel subscribeRef={subscribeRef} />
+      {/* <SubscribePanel subscribeRef={subscribeRef} /> */}
       <FooterBanner/>
     </Layout>
   );
