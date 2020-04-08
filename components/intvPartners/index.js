@@ -35,7 +35,7 @@ const CAROUSEL_SLIDES = [
     mentorship in the best possible way. It will lift, it will deepen, 
     it will transform.`,
   }, {
-    image: `${ASSETS_URL}/assets/images/partners/warragul.png`,
+    image: `${ASSETS_URL}/assets/images/logos/partners/logo-grounded-festival.jpg`,
     title: 'Grounded Festival',
     type: 'Cancelled not Cancelled Partner',
     paragraph: `Grounded is honoured to be featured on AIME's IMAGI-NATION{TV}
