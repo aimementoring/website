@@ -30,13 +30,17 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
     type: 'Cancelled not Cancelled Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
+    paragraph: `At a time when young people are having to stay at home, it’s
+    fabulous to see organisations like AIME continuing to deliver their programs
+    and mentoring for kids in the virtual world. We are devastated that we were
+    not able to transform our city for this year’s Melbourne International
+    Comedy Festival for the inspiration and entertainment of hundreds of
+    thousands of comedy lovers. It’s a real treat to see Randy Feltface
+    featured as part of the first Cancelled, Not Cancelled segment, delivering
+    a laugh and some inspiration to young people across the globe.`,
   }, {
     image: `${ASSETS_URL}/assets/images/logos/partners/logo-grounded-festival.jpg`,
-    title: 'Grounded Festival',
+    title: 'Grounded Summit',
     type: 'Cancelled not Cancelled Partner',
     paragraph: `Grounded is honoured to be featured on AIME's IMAGI-NATION{TV}
     alongside Damon Gameau and 2040. Many people hear about the climate crisis
