@@ -102,16 +102,14 @@
       font-weight: 900;
     }
 
-    @keyframes spinnoSmiley {
+    @keyframes spinno {
       to {
-        transform: rotate(360deg);
+        transform:rotate(360deg);
       }
     }
 
-    &:active {
-      .spinnyWrapper img {
-        animation: spinnoSmiley 2s forwards;
-      }
+    &:not(:active) img{
+      animation:spinno 3s forwards;
     }
 
     &:hover { 
