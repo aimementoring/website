@@ -11,8 +11,10 @@ import entriesType from '../../components/storiesComponents/entriesType';
 import StoryCategorySelector from '../../components/storiesComponents/storyCategorySelector';
 import styles from './stories.module.scss';
 
+const PRE_SELECTED_CATEGORIES = ['IN{TV}'];
+
 const Stories = ({ stories, categories }) => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(PRE_SELECTED_CATEGORIES);
   // if we don't have categories or none are selected, just display all stories
   // for a transition to this content model without hiccups
   let filteredStories = stories;
