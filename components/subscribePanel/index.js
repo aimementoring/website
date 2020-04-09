@@ -28,7 +28,7 @@ const SubscribePanel = () => {
   return (
     <div>
       <BecomeAFriend scrollHandler={scrollToFooterSubscribe} />
-      <div className={styles.subscribeContainer}>
+      <div className={styles.subscribeContainer} ref={subscribeRef}>
         <MovingWaves className={styles.wavySubscribe} />
         <div className={styles.newsletterWrapper}>
           <div className={styles.formContainer}>
@@ -57,7 +57,6 @@ const SubscribePanel = () => {
                 required
               />
               <button
-                ref={subscribeRef}
                 type="submit"
                 className={styles.submitButton}
                 name="subscribe"
