@@ -30,7 +30,9 @@ const BecomeAFriend = (props) => {
             <div className={styles.beAFriendPopOut}>
               <div className={styles.beAFriendPopOutWrapper}>
                 <div className={styles.beAFriendPopOutContent}>
-                  <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME Friend</Title>
+                  <Title type="h5Title" theme={process.env.REACT_APP_THEME} containerClassName={styles.popOutTitle}>
+                    Become an AIME Friend
+                  </Title>
                   <svg className={styles.friendArrowRight}>
                     <use xlinkHref="#icon-arrow" />
                   </svg>
