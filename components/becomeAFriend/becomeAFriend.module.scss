@@ -39,6 +39,8 @@
       img {
         position: absolute;
         width: 2.5rem;
+        transform: rotate(0deg);
+
       }
     }
 
@@ -62,6 +64,11 @@
 
       .beAFriendPopOutContent {
         overflow: hidden;
+        position: relative;
+        transition: all 1s ease;
+        opacity: 0;
+        visibility: hidden;
+        margin-left: -16em;
       }
 
       .popOutTitle {
@@ -73,20 +80,12 @@
 
       h5 {
         color: $orange;
-        opacity: 0;
-        visibility: hidden;
-        opacity: 0;
-
         display:inline-block;
-        margin-left: -12em;
         position: relative;
-
-        transition: all 1s ease;
       }
 
       .friendArrowRight {
-
-        display:inline-block;
+        display: block;
         float: left;
         clip-path: url(#icon-arrow);
         fill: $orange;
@@ -103,12 +102,24 @@
       font-weight: 900;
     }
 
+    @keyframes spinnoSmiley {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    &:active {
+      .spinnyWrapper img {
+        animation: spinnoSmiley 2s forwards;
+      }
+    }
+
     &:hover { 
       width: 20em;
       .beAFriendPopOut {
         width: 20em;
         
-        h5 {
+        .beAFriendPopOutContent {
           visibility: visible;
           opacity: 1;
           margin-left: initial;
