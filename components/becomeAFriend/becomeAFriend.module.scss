@@ -57,21 +57,27 @@
 
       .beAFriendPopOutWrapper {
         overflow: hidden;
-        padding-left: 1.3em;
+        padding-left: 1em;
       }
 
       .beAFriendPopOutContent {
-        display: flex;
-
-        
+        overflow: hidden;
       }
-  
+
+      .popOutTitle {
+        display:inline-block;
+        display: flex;
+        align-items: center;
+        float: left;
+      }
+
       h5 {
         color: $orange;
         opacity: 0;
         visibility: hidden;
         opacity: 0;
 
+        display:inline-block;
         margin-left: -12em;
         position: relative;
 
@@ -79,12 +85,16 @@
       }
 
       .friendArrowRight {
+
+        display:inline-block;
+        float: left;
         clip-path: url(#icon-arrow);
         fill: $orange;
-        width: 45px;
-        height: 41px;
+        width: 0.98em;
+        height: 0.98em;
         position: relative;
-        top: 10px;
+        padding-left: 0.75em;;
+        top: 0.22em;
       }
     }
 
