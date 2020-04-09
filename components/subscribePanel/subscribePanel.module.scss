@@ -6,8 +6,10 @@
 }
 
 .subscribeContainer {
+  background:
+    url($cdnRoot+"assets/images/banner/bg-pattern-purple-min.jpg") no-repeat
+    bottom center / cover $purple;
   position: relative;
-  background-color: $purple;
   display: flex;
   justify-content: center;
   flex: 1 1 auto;

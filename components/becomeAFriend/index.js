@@ -28,8 +28,10 @@ const BecomeAFriend = (props) => {
               />
             </div>
             <div className={styles.beAFriendPopOut}>
+              <div className={styles.beAFriendPopOutWrapper}>
               <Title type="h5Title" theme={process.env.REACT_APP_THEME}>Become an AIME Friend</Title>
               <ArrowNextIcon />
+              </div>
             </div>
           </div>
         </div>
