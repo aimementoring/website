@@ -59,6 +59,12 @@
         overflow: hidden;
         padding-left: 1.3em;
       }
+
+      .beAFriendPopOutContent {
+        display: flex;
+
+        
+      }
   
       h5 {
         color: $orange;
@@ -70,6 +76,15 @@
         position: relative;
 
         transition: all 1s ease;
+      }
+
+      .friendArrowRight {
+        clip-path: url(#icon-arrow);
+        fill: $orange;
+        width: 45px;
+        height: 41px;
+        position: relative;
+        top: 10px;
       }
     }
 
