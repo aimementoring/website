@@ -87,7 +87,6 @@ const Footer = ({ location }) => {
                       <NavList {...footerList} key={footerList.title} />
                     ))}
                   </div>
-                  <FooterNewsletter />
                 </div>
               </div>
             </div>
