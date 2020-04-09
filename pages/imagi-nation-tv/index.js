@@ -7,7 +7,7 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
-import DonateToAime from '../../components/donateToAime';
+import WavyDonateSection from '../../components/WavyDonateSection';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
@@ -95,7 +95,7 @@ const ImagiNationTV = () => (
           url="/donate"
         />
       </section>
-      <DonateToAime />
+      <WavyDonateSection />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
