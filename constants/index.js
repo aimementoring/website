@@ -60,10 +60,15 @@ export const HEADER_MENU_ITEMS = [
       },
     ],
   }, {
-    title: 'Stories',
-    subTitle: 'Kindness, links & more',
-    description: 'Stories are how we understand and interact with the world around us',
+    title: 'Get Inspired',
+    subTitle: 'Imagi-nation Feed',
+    description: 'Stories, IN{TV}, & more, are creating a Social Network For Good',
     links: [
+      {
+        to: '/imagi-nation-tv',
+        as: '/imagi-nation-tv',
+        linkText: 'IN{TV}',
+      },
       {
         to: '/stories',
         as: '/stories',
@@ -71,15 +76,25 @@ export const HEADER_MENU_ITEMS = [
       },
     ],
   }, {
-    title: 'Be a Mentor',
-    subTitle: 'Be a mentor',
+    title: 'Get Involved',
+    subTitle: 'Build the world you want today, for tomorrow',
     description: 'Want to change the world? Come mentor with us.',
     links: [
       {
-        to: '',
-        as: '',
-        linkText: 'Let\'s change the world',
+        to: '/be-a-mentor',
+        as: '/be-a-mentor',
+        linkText: 'Be a mentor',
       },
+      {
+        to: '/positions',
+        as: '/positions',
+        linkText: 'Work with us',
+      },
+      // {
+      //   to: 'https://shop.aimementoring.com/pages/this-hoodie-pays-rent',
+      //   as: 'https://shop.aimementoring.com/pages/this-hoodie-pays-rent',
+      //   linkText: 'Become a Hoodie Connector',
+      // },
     ],
   },
 ];
