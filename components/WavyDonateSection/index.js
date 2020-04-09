@@ -2,9 +2,9 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React from 'react';
 import useDonate from '../../hooks/useDonate';
-import styles from './donateToAime.module.scss';
+import styles from './wavyDonateSection.module.scss';
 
-const DonateToAime = () => {
+const WavyDonateSection = () => {
   // eslint-disable-next-line no-unused-vars
   const [modalVisible, toggleDonateModal] = useDonate();
 
@@ -41,4 +41,4 @@ const DonateToAime = () => {
   );
 };
 
-export default DonateToAime;
+export default WavyDonateSection;
