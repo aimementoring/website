@@ -25,7 +25,6 @@
     cursor: pointer;
     transition: width 1s ease,
                 display 1s linear;
-  
 
     .spinnyWrapper {
       position: absolute;
@@ -50,23 +49,27 @@
       
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding-left: 3.5em;
+      padding-left: 4.3em;
 
+      overflow: hidden;
       transition: width 1s ease,
                   left 1s linear;
+
+      .beAFriendPopOutWrapper {
+        overflow: hidden;
+        padding-left: 1.3em;
+      }
   
       h5 {
         color: $orange;
         opacity: 0;
-        transition: opacity 1s linear;
         visibility: hidden;
         opacity: 0;
 
         margin-left: -12em;
         position: relative;
 
-        transition: margin-left 1s ease, opacity 0.3s linear;
+        transition: all 1s ease;
       }
     }
 
@@ -76,9 +79,9 @@
     }
 
     &:hover { 
-      width: 18.5em;
+      width: 20em;
       .beAFriendPopOut {
-        width: 18.5em;
+        width: 20em;
         
         h5 {
           visibility: visible;
