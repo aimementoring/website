@@ -13,6 +13,7 @@ const AIME_FRIENDS_LIST_MAILCHIMP_URL = 'https://aimementoring.us12.list-manage.
 const SubscribePanel = () => {
   const [value, setValue] = useState('');
   const subscribeRef = useRef(null);
+  const inputRef = useRef(null);
 
   const scrollToFooterSubscribe = () => {
     if (isClientSide()) {
@@ -22,6 +23,11 @@ const SubscribePanel = () => {
       } else {
         subscribeRef.current.scrollIntoView(false);
       }
+      // TODO: Replace when it is fixed in Blueprint by
+      // if (inputRef.current) inputRef.current.focus();
+      setTimeout(() => {
+        document.getElementById('mce-EMAIL').focus();
+      }, 1000);
     }
   };
 
@@ -55,6 +61,7 @@ const SubscribePanel = () => {
                 theme={process.env.REACT_APP_THEME}
                 className={styles.subscribeInput}
                 required
+                ref={inputRef}
               />
               <button
                 type="submit"
