@@ -155,31 +155,6 @@
       }
     }
 
-    .becomeAPartnerBtn {
-      button.navBtn {
-        background-color: $pink;
-        border-radius: 3px;
-        font-family: $body-font-family-bold;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        color: $white;
-        letter-spacing: 0.13em;
-        padding: 0.85em 1.85em;
-        border: 0;
-        outline: none;
-        cursor: pointer;
-        transition: $hoverTransition;
-  
-        &:hover {
-          background-color: $orange;
-        }
-      }
-
-      @media screen and (max-width: $sm) {
-        width: 100%;
-      }
-    }
-
     .partnersImagesGroup {
       display: flex;
       flex-direction: row;
@@ -204,6 +179,34 @@
     }
   }
 }
-.featuredProductWrapper {
-  
+
+.becomeAPartnerBtn {
+  button.navBtn {
+    background-color: $pink;
+    border-radius: 3px;
+    font-family: $body-font-family-bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 0.13em;
+    padding: 0.85em 1.85em;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: $hoverTransition;
+
+    &:hover {
+      background-color: $orange;
+    }
+  }
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.getInTouchBtn {
+  button.navBtn {
+    background-color: $green;
+  }  
 }

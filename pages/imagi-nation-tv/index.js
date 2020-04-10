@@ -70,13 +70,9 @@ const ImagiNationTV = () => (
           theme={process.env.REACT_APP_THEME}
           url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
         />
-        <Button
-          type="link"
-          className={`${styles.imagiDonate} ${styles.imagiBtn}`}
-          text="Donate to IN{TV}"
-          theme={process.env.REACT_APP_THEME}
-          url="/donate"
-        />
+        <div className={`${styles.becomeAPartnerBtn} ${styles.getInTouchBtn}`}>
+          <IntercomChat label="Get in touch" />
+        </div>
       </section>
       <WavyDonateSection />
       <section className={styles.inTVEpisodesWrapper}>
