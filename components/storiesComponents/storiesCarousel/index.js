@@ -6,7 +6,7 @@ import { StoryBanner } from '../../banner';
 import {
   removeSpecialCharacters,
   replaceWhiteSpace,
-  removeMarkdownLink,
+  removeMarkdown,
 } from '../../../utils/formatting';
 import styles from './storiesCarousel.module.scss';
 
@@ -32,7 +32,7 @@ const StoriesCarousel = ({ entries }) => (
           const copy = previewCopy
             ? `${previewCopy.slice(0, 230)}...`
             : contentCards && contentCards.slice(0, 1).map(({ fields: { contentCopy } }) => (
-              contentCopy && (`${removeMarkdownLink(contentCopy.slice(0, 240))}...`)
+              contentCopy && (`${removeMarkdown(contentCopy).slice(0, 240)}...`)
             ));
           const handleClick = () => Router.push(`/story/${slugTitle}`);
           return (

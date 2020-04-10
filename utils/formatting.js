@@ -45,6 +45,16 @@ export const removeNumbers = (stringValue, replaceValue) => (
   replaceValue ? stringValue.replace(/[0-9\s]+/g, replaceValue) : stringValue.replace(/[0-9]*/g, '')
 );
 
-export const removeMarkdownLink = (stringValue) => (
-  stringValue.replace(/[*_>[^\]0-9]*/g, '')
+const removeMarkdownLink = (string) => (
+  // links look like this [link title](http://url.tld/)
+  string.replace(/\[(?<title>.+)\]\((?<url>.+)\)+/g, '$<title>')
+);
+
+const removeMarkdownFormatting = (string) => (
+  // remove * and _
+  string.replace(/(\*|_)/g, '')
+);
+
+export const removeMarkdown = (string) => (
+  removeMarkdownFormatting(removeMarkdownLink(string))
 );

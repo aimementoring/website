@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { removeMarkdownLink } from '../../../utils/formatting';
+import { removeMarkdown } from '../../../utils/formatting';
 import styles from './storiesContent.module.scss';
 
 const Card = dynamic(() => import('../../card'));
@@ -46,7 +46,7 @@ const StoriesContent = (props) => {
             : contentCards && contentCards.slice(0, 1).map((card) => (
               card.fields.contentCopy
             && (
-              `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
+              `${removeMarkdown(card.fields.contentCopy).slice(0, 230)}...`
             )))
         }
       />
