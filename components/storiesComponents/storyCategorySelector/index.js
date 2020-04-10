@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
+import Button from 'aime-blueprint/lib/components/button';
 import styles from './storyCategorySelector.module.scss';
-
-const Button = dynamic(() => import('aime-blueprint/lib/components/button'));
 
 const StoryCategorySelector = ({
   categories, selectedCategories, onClickFunction,
