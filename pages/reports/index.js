@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
-import contentfulServer from '../../api/contentfulPosts';
+import { getReports } from '../../api/contentfulPosts';
 import { sortDates } from '../../utils/sorting';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
@@ -94,17 +94,15 @@ const Reports = ({ entries }) => {
 };
 
 Reports.getInitialProps = async () => {
-  const client = contentfulServer();
-  const entries = await client.then((response) => response);
+  const entries = await getReports().then((response) => response);
 
   const filteredDate = sortDates(entries);
   const filteredReports = entries.filter((entry) => (
     entry.fields.publishDate.indexOf(filteredDate) === -1
     || !filteredDate
   ));
-  const getReportsPosts = filteredReports.filter((entry) => (entry.fields.contentTag.fields.name === 'report'));
 
-  return { entries: getReportsPosts };
+  return { entries: filteredReports };
 };
 
 const SysShape = PropTypes.shape({
