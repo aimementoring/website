@@ -1,10 +1,7 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import AnimatedCircleText from 'aime-blueprint/lib/components/animatedCircleText';
-import ArrowNextIcon from '../layoutComponents/logos';
 import styles from './becomeAFriend.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -18,7 +15,9 @@ const BecomeAFriend = (props) => {
           {}
           <div
             onClick={scrollHandler}
+            onKeyPress={scrollHandler}
             className={styles.beAFriendPopper}
+            role="presentation"
           >
             <div className={styles.spinnyWrapper}>
               <AnimatedCircleText text="Board the AIME Rocket Ship &nbsp;" size={110} duration={8} fontSize={13} className={styles.spinnySubscribe} />
@@ -36,7 +35,7 @@ const BecomeAFriend = (props) => {
                   <svg className={styles.friendArrowRight}>
                     <use xlinkHref="#icon-arrow" />
                   </svg>
-              </div>
+                </div>
               </div>
             </div>
           </div>
