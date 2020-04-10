@@ -61,7 +61,7 @@ const Story = (props) => {
                           <Title type="h3Title" theme="rainbow">
                             {entry.fields.title && entry.fields.title}
                           </Title>
-                          <BadgeList items={categories} itemClass={styles.borderedBadge} />
+                          <BadgeList items={categories} itemClass={styles.borderedBadge} isLinked />
                           <div>
                             <span className={styles.blogPostTimestamp}>
                               {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}

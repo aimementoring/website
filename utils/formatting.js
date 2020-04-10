@@ -58,3 +58,9 @@ const removeMarkdownFormatting = (string) => (
 export const removeMarkdown = (string) => (
   removeMarkdownFormatting(removeMarkdownLink(string))
 );
+
+export const slugify = (string) => (
+  // remove everything that's not a character or space
+  // then replace spaces with dashes
+  string.replace(/[^a-z|\s]/gi, '').replace(/\s/, '-').toLowerCase()
+);
