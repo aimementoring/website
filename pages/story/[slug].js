@@ -2,19 +2,19 @@ import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
-import Layout from '../../../hocs/basicLayout';
-import Anchor from '../../../components/common/link';
-import MovingWaves from '../../../components/movingWaves';
-import BadgeList from '../../../components/storiesComponents/badgeList';
-import { getStories } from '../../../api/contentfulPosts';
+import Layout from '../../hocs/basicLayout';
+import Anchor from '../../components/common/link';
+import MovingWaves from '../../components/movingWaves';
+import BadgeList from '../../components/storiesComponents/badgeList';
+import { getStories } from '../../api/contentfulPosts';
 import {
   formatDate,
   removeSpecialCharacters,
   replaceWhiteSpace,
-} from '../../../utils/formatting';
+} from '../../utils/formatting';
 import styles from './story.module.scss';
 
-const ContentCard = dynamic(() => import('../../../components/storiesComponents/contentCard'));
+const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
 const Story = (props) => {
   const { content, slug } = props;
