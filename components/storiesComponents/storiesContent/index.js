@@ -13,6 +13,7 @@ const StoriesContent = (props) => {
     slugTitle,
     bannerContent,
     publishDate,
+    categories,
     contentCards,
     contentCreator,
     contentPreview,
@@ -34,6 +35,7 @@ const StoriesContent = (props) => {
         urlTo={`/story?slug=${slugTitle}`}
         urlAs={`/story/${slugTitle}`}
         image={bannerImage}
+        categories={categories}
         buttonText="READ MORE"
         publishDate={publishDate}
         contentCreator={contentCreatorBy}
@@ -54,6 +56,7 @@ const StoriesContent = (props) => {
 
 StoriesContent.defaultProps = {
   contentCards: PropTypes.arrayOf(PropTypes.shape({})),
+  categories: [],
 };
 
 StoriesContent.propTypes = {
@@ -62,6 +65,7 @@ StoriesContent.propTypes = {
   slugTitle: PropTypes.string,
   publishDate: PropTypes.string,
   contentCreator: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string),
   bannerContent: PropTypes.shape({
     displayType: PropTypes.string,
     heading: PropTypes.shape({
