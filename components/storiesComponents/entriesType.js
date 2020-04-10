@@ -7,6 +7,7 @@ const SysShape = PropTypes.shape({
 const entriesType = PropTypes.arrayOf(PropTypes.shape({
   title: PropTypes.string,
   contentType: PropTypes.string,
+  postCategories: PropTypes.arrayOf(PropTypes.string),
   contentTag: PropTypes.shape({
     name: PropTypes.string,
     sys: SysShape,
