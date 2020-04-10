@@ -32,7 +32,7 @@ const StoriesContent = (props) => {
       <Card
         cardId={id}
         title={title}
-        urlTo={`/story?slug=${slugTitle}`}
+        urlTo="/story/[slug]"
         urlAs={`/story/${slugTitle}`}
         image={bannerImage}
         categories={categories}
