@@ -32,13 +32,17 @@ const Stories = ({ stories, categories, presetCategories }) => {
     !filteredDate || entry.fields.publishDate.indexOf(filteredDate) === -1
   ));
 
-  const handleCategorySelect = (clickedCategories) => () => {
-    setSelectedCategories(clickedCategories);
-    if (clickedCategories.length === 1) {
-      const newPath = `/stories/${slugify(clickedCategories[0])}`;
-      Router.replace('/stories/[categorySlug]', newPath, { shallow: true });
+  // calling this with an empty argument resets the categories
+  const handleCategorySelect = (clickedCategory) => () => {
+    if (clickedCategory) {
+      setSelectedCategories([clickedCategory]);
+      const newPath = `/stories/${slugify(clickedCategory)}`;
+      Router.replace(newPath, newPath, { shallow: true });
     } else {
-      Router.replace('/stories/[categorySlug]', '/stories/all', { shallow: true });
+      setSelectedCategories([]);
+      // TODO not entirely sure if this doesn't rerender the page …
+      // it's not supposed to …
+      Router.replace('/stories', '/stories', { shallow: true });
     }
   };
 
