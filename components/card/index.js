@@ -6,6 +6,7 @@ import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import PropTypes from 'prop-types';
 import { formatDate } from '../../utils/formatting';
+import BadgeList from '../storiesComponents/badgeList';
 import Anchor from '../common/link';
 import styles from './card.module.scss';
 
@@ -25,6 +26,7 @@ const Card = (props) => {
     publishDate,
     contentCreator,
     contentPreview,
+    categories,
     type,
   } = props;
   const datePublished = publishDate && formatDate(publishDate, 'short');
@@ -40,6 +42,7 @@ const Card = (props) => {
   return (
     <ContainerComponent {...anchorProps}>
       <div>
+        <BadgeList items={categories} />
         {withVideo && (
           <VideoButton video={video} />
         )}
@@ -111,6 +114,7 @@ Card.defaultProps = {
   urlAs: '',
   href: '',
   image: '',
+  categories: [],
   video: '',
   publishDate: '',
   contentCreator: '',
@@ -128,6 +132,7 @@ Card.propTypes = {
   video: PropTypes.string,
   buttonText: PropTypes.string,
   publishDate: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string),
   contentCreator: PropTypes.string,
   contentPreview: PropTypes.oneOfType([
     PropTypes.array,
