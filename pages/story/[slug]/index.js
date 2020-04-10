@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Layout from '../../../hocs/basicLayout';
 import Anchor from '../../../components/common/link';
-import contentfulServer from '../../../api/contentfulPosts';
+import MovingWaves from '../../../components/movingWaves';
+import BadgeList from '../../../components/storiesComponents/badgeList';
+import { getStories } from '../../../api/contentfulPosts';
 import {
   formatDate,
   removeSpecialCharacters,
@@ -39,26 +41,27 @@ const Story = (props) => {
           const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
           const author = entry.fields.contentCreator
             && entry.fields.contentCreator.fields.authorName;
-          const signature = entry.fields.signature && entry.fields.signature;
-          // TODO: remove once Contentful content model for post is updated for all stories.
-          const postScriptContent = entry.fields.postScriptMessage
-          && entry.fields.postScriptMessage;
-          // TODO: remove once Contentful content model for post is updated for all stories.
-          const buttonProps = entry.fields.callToActionButton
-          && entry.fields.callToActionButton;
+          const { signature } = entry.fields;
+          const postScriptContent = entry.fields.postScriptMessage;
+          const buttonProps = entry.fields.callToActionButton;
+          const categories = entry.fields.postCategories;
 
           return (
             <Fragment key={entry.sys.id}>
               {slug === slugTitle && (
                 <div>
                   <div>
-                    <div className={styles.bannerInStory} style={bannerStyles} />
+
+                    <div className={styles.bannerInStory} style={bannerStyles}>
+                      <MovingWaves />
+                    </div>
                     <div>
                       <div className={styles.entriesContainer}>
                         <article className={styles.blogPost}>
-                          <Title type="h4Title" theme="rainbow">
+                          <Title type="h3Title" theme="rainbow">
                             {entry.fields.title && entry.fields.title}
                           </Title>
+                          <BadgeList items={categories} itemClass={styles.borderedBadge} />
                           <div>
                             <span className={styles.blogPostTimestamp}>
                               {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
@@ -94,12 +97,9 @@ const Story = (props) => {
 };
 
 Story.getInitialProps = async ({ query, asPath, pathname }) => {
-  const client = contentfulServer();
   const slug = query.slug || asPath.replace(`${pathname}/`, '');
-  const content = await client.then((response) => response);
-  const getStoryPosts = content.filter((entry) => (entry.fields.contentTag.fields.name === 'story'));
-
-  return { content: getStoryPosts, slug };
+  const content = await getStories().then((response) => response);
+  return { content, slug };
 };
 
 Story.propTypes = {
