@@ -30,13 +30,11 @@ const Stories = ({
     setSelectedCategories(clickedCategories);
     if (clickedCategories.length === 1) {
       const newPath = `/stories/${slugify(clickedCategories[0])}`;
-      Router.replace(newPath, newPath, { shallow: true });
-    } else {
-      // TODO not entirely sure if this doesn't rerender the page …
-      // it's not supposed to …
-      Router.replace('/stories', '/stories', { shallow: true });
+      Router.replace('/stories/[categorySlug]', newPath, { shallow: true });
+    } else if (clickedCategories.length === categories.length) {
+      Router.replace('/stories/[categorySlug]', '/stories/all', { shallow: true });
     }
-    getStories(selectedCategories).then(({ stories: newStories }) => {
+    getStories(clickedCategories).then(({ stories: newStories }) => {
       setStories(newStories);
     });
   };
@@ -104,8 +102,14 @@ Stories.propTypes = {
 
 Stories.getInitialProps = async ({ query }) => {
   const categories = await getCategories();
-  const categoryFromSlug = categories.find((cat) => slugify(cat) === query.categorySlug);
-  const initialCategories = [categoryFromSlug || PRE_SELECTED_CATEGORY];
+  const getCategoriesFromSlug = () => {
+    if (query.categorySlug === 'all') return categories;
+    const categoryFromSlug = categories.find(
+      (cat) => slugify(cat) === query.categorySlug,
+    );
+    return [categoryFromSlug || PRE_SELECTED_CATEGORY];
+  };
+  const initialCategories = getCategoriesFromSlug();
   const { stories, total } = await getStories(initialCategories);
   return {
     initialStories: stories,
