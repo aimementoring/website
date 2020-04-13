@@ -18,7 +18,7 @@ const MENU_LINKS = {
   default: [
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
-    { url: '/stories', title: 'Stories' },
+    { url: '/stories/intv', title: 'Stories' },
     { url: '/imagi-nation-tv', title: 'IN{TV}' },
     { url: '/be-a-mentor', title: 'Be a mentor' },
     { url: '/positions', title: 'Work with us' },
