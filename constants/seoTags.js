@@ -1071,16 +1071,132 @@ export const SEO_TAGS = {
       },
     ],
   },
-  '/stories': {
-    title: 'AIME Stories of Sunday Kindness',
-    canonical: `${process.env.REACT_APP_CANNONICAL}stories`,
+  '/stories/intv': {
+    title: 'AIME IMAGINATION{TV} News',
+    canonical: 'https://aimementoring.com/stories/intv',
     languageAlternate: {
-      href: 'https://aimementoring.com/stories',
+      href: 'https://aimementoring.com/stories/intv',
+      hrefLang: 'x-default',
+    },
+    description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+    openGraph: {
+      url: 'https://aimementoring.com/stories/intv',
+      title: 'AIME IMAGINATION{TV} News',
+    },
+    twitter: {
+      title: 'AIME IMAGINATION{TV} News',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T11:56:33+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:33:16+11:00',
+        datePublished: '2018-02-21T11:56:33+11:00',
+        description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+        title: 'AIME IMAGINATION{TV} News',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories/intv',
+          },
+        ],
+        name: 'AIME IMAGINATION{TV} News',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/stories/intv',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Stories',
+            item: 'https://aimementoring.com/stories',
+          },
+        ],
+      },
+    ],
+  },
+  '/stories/all': {
+    title: 'AIME Stories',
+    canonical: 'https://aimementoring.com/stories/all',
+    languageAlternate: {
+      href: 'https://aimementoring.com/stories/all',
+      hrefLang: 'x-default',
+    },
+    description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+    openGraph: {
+      url: 'https://aimementoring.com/stories/all',
+      title: 'AIME Stories',
+    },
+    twitter: {
+      title: 'AIME Stories',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T11:56:33+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:33:16+11:00',
+        datePublished: '2018-02-21T11:56:33+11:00',
+        description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+        title: 'AIME Stories',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories/all',
+          },
+        ],
+        name: 'AIME Stories',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/stories/all',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Stories',
+            item: 'https://aimementoring.com/stories',
+          },
+        ],
+      },
+    ],
+  },
+  '/stories/sunday-kindness': {
+    title: 'AIME Stories of Sunday Kindness',
+    canonical: 'https://aimementoring.com/stories/sunday-kindness',
+    languageAlternate: {
+      href: 'https://aimementoring.com/stories/sunday-kindness',
       hrefLang: 'x-default',
     },
     description: 'At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn&#039;t cost a thing. Let&#039;s sprinkle it everywhere!',
     openGraph: {
-      url: 'https://aimementoring.com/stories',
+      url: 'https://aimementoring.com/stories/sunday-kindness',
       title: 'AIME Stories of Sunday Kindness',
     },
     twitter: {
@@ -1105,12 +1221,12 @@ export const SEO_TAGS = {
           },
           {
             property: 'mainEntityOfPage',
-            content: 'https://aimementoring.com/stories',
+            content: 'https://aimementoring.com/stories/sunday-kindness',
           },
         ],
         name: 'AIME Stories of Sunday Kindness',
         publisherName: '#creator',
-        url: 'https://aimementoring.com/stories',
+        url: 'https://aimementoring.com/stories/sunday-kindness',
       },
       {
         type: 'BreadcrumbList',
