@@ -51,7 +51,6 @@ export const getStoryBySlug = (slug) => client.getEntries({
 }).then((response) => response.items).catch((e) => bugsnagClient.notify(e));
 
 export const getTerms = () => getPosts(CONTENT_TAGS.terms);
-
 export const getReports = () => getPosts(CONTENT_TAGS.report);
 
 export const getStories = (categories, page) => getStoryPosts(categories, page).then(
