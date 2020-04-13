@@ -1,16 +1,16 @@
 # Setup environment
 
 1. Clone the repo `git clone git@github.com:aimementoring/website.git`
-1. Open the folder `cd website`
-1. Install dependencies `yarn`
-1. Run the project in development mode `yarn dev`
-1. If you want to test the project in build mode (similar to production mode) you need to run `yarn build && yarn start`
+2. Open the folder `cd website`
+3. Install dependencies `yarn`
+4. Run the project in development mode `yarn dev`
+5. If you want to test the project in build mode (similar to production mode) you need to run `yarn build && yarn start`
 
 # How to create a new page
 
 1. Create a new folder inside **pages** folder, with the name of your page (that page is accessible from URL with exact name by default)
-1. Create a new **index.js** file inside that folder with your React component.
-1. It is really important to add the BasicLayout as a parent component, so you need to add in `render` method something like this:
+2. Create a new **index.js** file inside that folder with your React component.
+3. It is really important to add the BasicLayout as a parent component, so you need to add in `render` method something like this:
 ```jsx
 render() {
   return (
@@ -64,10 +64,10 @@ Instead of adding a long HTML in your render method on your page, you should bre
 
 The main idea with that is:
 1. We can easily reuse code adding the same components on different pages.
-1. We can easily Unit test components and methods.
-1. Refactors and design changes are faster and easier.
-1. First render is faster because we load content asynchronously so we don't need to have the full page when we are navigating.
-1. It is easier to add and update styles with css modules because files are smaller.
+2. We can easily Unit test components and methods.
+3. Refactors and design changes are faster and easier.
+4. First render is faster because we load content asynchronously so we don't need to have the full page when we are navigating.
+5. It is easier to add and update styles with css modules because files are smaller.
 
 # AWS Command line
 
@@ -112,3 +112,26 @@ Now follow next steps:
 # Where to import your assets
 
 There are two folders on AWS where we store all our assets - images, fonts, files, etc. These are `aimementoring-staging` (`d2cl4o0mkg71rr`) and `aimementoring` (`d1muvgoqe3g8vw`).
+
+# Contentful
+
+To manage the content of reports, terms & conditions and stories we use Contentful.
+You can find the login for content editors in 1Password; contact your team leads to get access as a developer.
+
+We use two different environments, `staging` and `master`. 
+(Check your `.env` to make sure you're using `staging` for development.)
+
+## Contentful Migrations
+Contentful has a content model. You can change it in the UI, but if you want to make bigger changes and migrate existing content, you might want to use migrations.
+
+Migrations are written in Javascript. You can find some examples in the `/migrations` folder. 
+You find more info here: https://www.contentful.com/developers/docs/tutorials/cli/scripting-migrations/
+
+### Running Contentful Migrations
+1. To run Contentful migrations, you need to install the Contentful CLI. 
+```$ yarn global add contentful-cli```
+2. Then do `$ contentful login`, log into Contentful in your browser and paste the token.
+3. Finally, run the migration you want to run: 
+```
+contentful space migration --space-id SPACE_ID --environment-id 'staging' migrations/myMigration.js
+```
