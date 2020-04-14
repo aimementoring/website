@@ -86,9 +86,9 @@
      saveOnlyOnSuccess: false
 
    # Save reports to a database. Needed for gimbal-plugin-last-value
-   - plugin: "@modus/gimbal-plugin-sqlite"
-     file: ./gimbal-artifacts/gimbal_tests.db
-     lastValue: true
+  #  - plugin: "@modus/gimbal-plugin-sqlite"
+  #    file: ./gimbal-artifacts/gimbal_tests.db
+  #    lastValue: true
 
    # Axe a11y audits
    - plugin: "@modus/gimbal-plugin-axe"
