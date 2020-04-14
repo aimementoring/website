@@ -17,7 +17,7 @@
     "lhbot": "lighthousebot -- --pwa=95 --perf=95 --seo=95 --a11y=95 --bp=95",
     "gimbal-audit": "gimbal audit --config ./.gimbalrc.yml",
     "precommit": "lint-staged",
-    "lint": "eslint --ext .js src",
+    "lint": "eslint --ext .js .",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
