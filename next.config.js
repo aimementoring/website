@@ -3,6 +3,17 @@ const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
 
+const DAY_SECONDS = 24 * 60 * 60;
+
+function getCannonicalUrl() {
+  if (process.env.REACT_APP_HOST_ENV === 'production') {
+    return 'https://aimementoring.com/';
+  }
+  return process.env.REACT_APP_HOST_ENV === 'staging'
+    ? 'https://staging.aimementoring.com/'
+    : `http://localhost:${process.env.PORT}`;
+}
+
 module.exports = withOffline(
   withCSS(
     withSass({
@@ -37,6 +48,7 @@ module.exports = withOffline(
         : '',
       env: {
         REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
+        REACT_APP_CANNONICAL: getCannonicalUrl(),
         PORT: process.env.PORT,
         REACT_APP_BUGSNAG_KEY: process.env.REACT_APP_BUGSNAG_KEY,
         REACT_APP_HOST_ENV: process.env.REACT_APP_HOST_ENV,
@@ -75,27 +87,74 @@ module.exports = withOffline(
       },
       target: 'serverless',
       transformManifest: (manifest) => ['/'].concat(manifest),
-      // generateInDevMode: true,
-      // workboxOpts: {
-      //   swDest: join(__dirname, 'static/service-worker.js'),
-      //   runtimeCaching: [
-      //     {
-      //       urlPattern: /^https?.*/,
-      //       handler: 'NetworkFirst',
-      //       options: {
-      //         cacheName: 'https-calls',
-      //         networkTimeoutSeconds: 15,
-      //         expiration: {
-      //           maxEntries: 150,
-      //           maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-      //         },
-      //         cacheableResponse: {
-      //           statuses: [0, 200],
-      //         },
-      //       },
-      //     },
-      //   ],
-      // },
+      // Service-worker (Offline mode)
+      generateInDevMode: true,
+      generateSw: true,
+      workboxOpts: {
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:ttf|woff2|otf|woff|eot)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts',
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 30 * DAY_SECONDS,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:png|gif|jpg|jpeg|svg)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: {
+                maxEntries: 150,
+                maxAgeSeconds: 30 * DAY_SECONDS,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'static-resources',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 1 * DAY_SECONDS,
+              },
+            },
+          },
+          {
+            urlPattern: /api/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'apiCalls',
+              cacheableResponse: {
+                statuses: [0, 200],
+                headers: {
+                  'x-test': 'true',
+                },
+              },
+            },
+          },
+          {
+            urlPattern: /^https?.*/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'https-calls',
+              networkTimeoutSeconds: 15,
+              expiration: {
+                maxEntries: 150,
+                maxAgeSeconds: 30 * DAY_SECONDS,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
+      },
     }),
   ),
 );
