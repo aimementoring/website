@@ -34,7 +34,7 @@ env:
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
 
 jobs:
-  Build:
+  dependencies:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -47,57 +47,30 @@ jobs:
           node-version: '12.x'
       - name: Install yarn dependencies
         run: yarn
+  lint:
+    runs-on: ubuntu-latest
+    needs: dependencies
+    steps:
+      - name: Lint
+        run: yarn lint
+  build:
+    runs-on: ubuntu-latest
+    needs: dependencies
+    steps:
       - name: Build
         env:
           CI: ''
         run: yarn build
-  Lint:
+  bundle:
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Lint
-        run: yarn lint
-  Bundle:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
       - name: Analyze
         run: yarn analyze
-  Gimbal:
+  gimbal:
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
       - name: Performance Budgeting Regression Testing
         uses: ModusCreateOrg/gimbal/action@master
         env:
