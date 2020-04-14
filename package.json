@@ -87,6 +87,7 @@
     "shopify-buy": "^2.8.1",
     "slick-carousel": "^1.8.1",
     "spdy": "^4.0.1",
+    "sqlite3": "^4.1.1",
     "video.js": "7.0.5",
     "videojs-contrib-hls": "5.14.1"
   },
