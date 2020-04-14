@@ -15,7 +15,7 @@ const TYPE_MAPPING = {
 
 const { jsonLd, ...defaultSeoProps } = GLOBAL_TAGS;
 
-const MyAppContent = ({ router }) => (
+const MainAppContent = ({ router }) => (
   <>
     <DefaultSeo {...defaultSeoProps} />
     <SeoComponent page={router.asPath} />
@@ -30,7 +30,7 @@ const MyAppContent = ({ router }) => (
   </>
 );
 
-MyAppContent.propTypes = {
+MainAppContent.propTypes = {
   router: PropTypes.shape({
     pathname: PropTypes.string,
     asPath: PropTypes.string,
@@ -38,4 +38,4 @@ MyAppContent.propTypes = {
   }).isRequired,
 };
 
-export default withRouter(MyAppContent);
+export default withRouter(MainAppContent);
