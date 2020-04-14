@@ -6,7 +6,6 @@ import AboutYouSectionForm from './aboutYouSectionForm';
 import JobQuestionAndVideoLink from './jobQuestionAndVideoLink';
 import SupportingDocsSectionForm from './supportingDocsSectionForm';
 // import IndigenousForm from './indigenousForm';
-// import BecomeAFriendSection from './becomeAFriendSection';
 import HiddenFieldsAndSubmitAction from './hiddenFieldsAndSubmitAction';
 
 const JobForm = ({
@@ -53,10 +52,6 @@ const JobForm = ({
             values={values}
           />
           {/* <IndigenousForm
-            handleChange={handleFormFieldChange}
-            values={values}
-          />
-          <BecomeAFriendSection
             handleChange={handleFormFieldChange}
             values={values}
           /> */}
