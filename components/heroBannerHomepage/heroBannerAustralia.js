@@ -75,7 +75,12 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
             className={styles.videoCoverArt}
           />
         </a>
-        <a className={styles.textLinkChannel} target="_blank" href="https://shop.aimementoring.com/pages/this-hoodie-pays-rent">
+        <a
+          className={styles.textLinkChannel}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://shop.aimementoring.com/pages/this-hoodie-pays-rent"
+        >
           {'See what it\'s all about'}
         </a>
       </div>
