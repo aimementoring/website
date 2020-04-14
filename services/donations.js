@@ -21,6 +21,7 @@ export const MAIN_CAMPAIGNS = {
 
 export const getRaiselyToken = async () => {
   const raiselyToken = getFromStorage('raisely_token');
+  // eslint-disable-next-line no-console
   console.log('FROM STORAGE - ', {
     raiselyToken,
     REACT_APP_DONATE_USERNAME: process.env.REACT_APP_DONATE_USERNAME,
@@ -41,6 +42,7 @@ export const getRaiselyToken = async () => {
         },
       })
         .then((jsonData) => {
+          // eslint-disable-next-line no-console
           console.log('FROM LOGIN - ', { jsonData, API });
           const { token } = jsonData;
           setOnStorage('raisely_token', token);
@@ -48,6 +50,7 @@ export const getRaiselyToken = async () => {
         })
         .catch((error) => {
           /* eslint no-param-reassign: "off" */
+          // eslint-disable-next-line no-console
           console.log('FROM LOGIN WITH ERROR - ', { error, API });
           error.message = `Getting Raisely token: ${error.message}`;
           reject(error);
@@ -62,7 +65,6 @@ export async function getActiveCampaigns() {
 
   return new Promise((resolve, reject) => {
     getRaiselyToken().then((token) => {
-      console.log({ token });
       request(url, { headers: { Authorization: `Bearer ${token}` } })
         .then((response) => resolve(response.data))
         .catch((error) => reject(error));
