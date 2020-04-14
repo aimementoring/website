@@ -9,8 +9,6 @@ import MovingWaves from '../../components/movingWaves';
 import './impact.scss';
 import IntercomChat from '../../components/intercom';
 
-// // const VideoButton = dynamic(() => import('../../components/videoButton'));
-
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const Impact = () => (
