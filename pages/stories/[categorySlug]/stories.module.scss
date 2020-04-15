@@ -11,6 +11,16 @@
   margin: 1.5rem 0;
 }
 
+.loadMore {
+  margin-top: 3em;
+  text-align: center;
+  button.loadMoreButton {
+    background-color: $magenta;
+  }
+}
+
+
+
 .refineSearch {
 
   @media screen and (min-width: $sm) {
