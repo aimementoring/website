@@ -1,14 +1,10 @@
 @import "../../styles/base/variables";
 
-//Page specific layout styles
-
 .theMentor {
-  // TODO: create variables for all the diff banner image urls in the variables file
   .full-width-wrap p {
     max-width: 30em;
   }
   .section-background-image {
-    // background: url($cdnRoot + 'assets/images/banner/mentor_banner.jpg') no-repeat top center / cover #050301;
     background:
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
@@ -23,11 +19,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1em;
 
     .mentorPara {
       margin: 2em 0;
       max-width: 30em;
       text-align: center;
+      color: $white;
+    }
+
+    p {
+      color: $white;
     }
   }
 
@@ -37,6 +39,12 @@
     @media screen and (min-width: $sm) {
       height: 80vh;
     }
+  }
+
+  .testimonial-container {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 2em;
   }
 
   .carousel {
