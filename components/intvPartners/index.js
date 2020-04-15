@@ -13,19 +13,13 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/pedestrian.png`,
     title: 'Pedestrian Group',
     type: 'Founding Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
+    paragraph: ` `,
   },
   {
     image: `${ASSETS_URL}/assets/images/partners/background.png`,
     title: 'Background',
     type: 'Production Partner',
-    paragraph: `AIME is not only mighty, it is crucial. It has the power to knit 
-    the entire global community together through education and endorses 
-    mentorship in the best possible way. It will lift, it will deepen, 
-    it will transform.`,
+    paragraph: ` `,
   }, {
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
