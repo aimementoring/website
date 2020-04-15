@@ -27,8 +27,10 @@
 
   &-carousel {
     margin: 0 auto;
-    max-width: 1120px;
+    max-width: 700px;
     width: 100%;
+    display: block;
+    position: relative;
 
     .slick-dots,
     .slick-prev,
