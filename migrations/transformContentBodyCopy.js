@@ -22,12 +22,9 @@ module.exports = async (migration) => {
       return key; // console.log(key);
     });
     if (entriesCraft.post[changeCount - 1].paragraph === undefined) { return null; }
-    // eslint-disable-next-line no-console
-    // console.log(changeCount, 'craft body ---> ', entriesCraft.post.map((ele) => (ele !== 'paragraph' && ele !== undefined ? ele.paragraph : null)));
     const test = entriesCraft.post.map((ele) => (ele.paragraph !== 'paragraph' && ele.paragraph !== undefined ? ele.paragraph : null));
-
-    // console.log('TCL: bodyFromCraft -> test', removeHTML(test[0]), removeHTML(test[1]), removeHTML(test[4]));
     const fullText = `${removeHTML(test[0])}${removeHTML(test[1])}${removeHTML(test[4])}`;
+    // eslint-disable-next-line no-console
     console.log('TCL: bodyFromCraft -> fullText', fullText);
     return fullText;
   };
