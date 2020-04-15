@@ -54,7 +54,7 @@
   #    - path: ./.next/favicon.ico
   #      maxSize: 10 KB
      - path: .next/
-       maxSize: 80 MB
+       maxSize: 300 MB
 
   #  # Unused source settings
   #  unused-source:
