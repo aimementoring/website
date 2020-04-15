@@ -33,10 +33,10 @@
        - uses-text-compression
      outputHtml: ./gimbal-artifacts/lighthouse.html
      threshold:
-       accessibility: 95
-       "best-practices": 95
-       performance: 95
-       pwa: 95
+       accessibility: 80
+       "best-practices": 80
+       performance: 40
+       pwa: 90
        seo: 95
 
    # File and directory size settings
