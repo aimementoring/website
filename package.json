@@ -30,9 +30,6 @@
   "dependencies": {
     "@bugsnag/js": "^6.4.3",
     "@bugsnag/plugin-react": "^6.4.0",
-    "@modus/gimbal-plugin-axe": "^1.2.6",
-    "@modus/gimbal-plugin-last-value": "^1.2.6",
-    "@modus/gimbal-plugin-sqlite": "^1.2.6",
     "@next/bundle-analyzer": "^9.3.4",
     "@uppy/aws-s3": "^1.5.1",
     "@uppy/core": "^1.8.1",
@@ -93,6 +90,9 @@
   },
   "devDependencies": {
     "@modus/gimbal": "^1.2.6",
+    "@modus/gimbal-plugin-sqlite": "^1.2.6",
+    "@modus/gimbal-plugin-axe": "^1.2.6",
+    "@modus/gimbal-plugin-last-value": "^1.2.6",
     "babel-eslint": "^10.0.3",
     "cross-env": "^6.0.3",
     "eslint": "^6.5.1",
