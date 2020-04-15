@@ -11,7 +11,7 @@
    comment:
      # Only show failures in GitHub PR comments.
      # Useful to pinpoint why a build has failed
-     onlyFailures: false
+     onlyFailures: true
 
    # Heap snapshot settings
    heap-snapshot:
@@ -74,7 +74,7 @@
  outputs:
    # Only show failures in CLI
    cli:
-     onlyFailures: false
+     onlyFailures: true
    html: ./gimbal-artifacts/results.html
    json: ./gimbal-artifacts/results.json
    markdown: ./gimbal-artifacts/results.md
@@ -86,9 +86,9 @@
      saveOnlyOnSuccess: false
 
    # Save reports to a database. Needed for gimbal-plugin-last-value
-  #  - plugin: "@modus/gimbal-plugin-sqlite"
-  #    file: ./gimbal-artifacts/gimbal_tests.db
-  #    lastValue: true
+   - plugin: "@modus/gimbal-plugin-sqlite"
+     file: ./gimbal-artifacts/gimbal_tests.db
+     lastValue: true
 
    # Axe a11y audits
    - plugin: "@modus/gimbal-plugin-axe"
