@@ -85,20 +85,3 @@ jobs:
         run: yarn build
       - name: Analyze
         run: yarn analyze
-  gimbal:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Build
-        env:
-          CI: ''
-        run: yarn build
