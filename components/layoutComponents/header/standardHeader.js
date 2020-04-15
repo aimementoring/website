@@ -1,6 +1,5 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
