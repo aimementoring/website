@@ -87,12 +87,14 @@
     "shopify-buy": "^2.8.1",
     "slick-carousel": "^1.8.1",
     "spdy": "^4.0.1",
-    "sqlite3": "^4.1.1",
     "video.js": "7.0.5",
     "videojs-contrib-hls": "5.14.1"
   },
   "devDependencies": {
     "@modus/gimbal": "^1.2.6",
+    "@modus/gimbal-plugin-sqlite": "^1.2.6",
+    "@modus/gimbal-plugin-axe": "^1.2.6",
+    "@modus/gimbal-plugin-last-value": "^1.2.6",
     "babel-eslint": "^10.0.3",
     "cross-env": "^6.0.3",
     "eslint": "^6.5.1",
