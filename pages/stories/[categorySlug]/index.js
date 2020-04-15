@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
-import InfiniteScroll from 'react-infinite-scroller';
 import Layout from '../../../hocs/basicLayout';
 import { getStories, getCategories } from '../../../api/contentfulPosts';
 import { sortDates } from '../../../utils/sorting';
@@ -20,6 +20,7 @@ const Stories = ({
   initialStories, categories, total, initialCategories,
 }) => {
   const [stories, setStories] = useState(initialStories);
+  const [currentPage, setPage] = useState(0);
   const [selectedCategories, setSelectedCategories] = useState(initialCategories);
   const filteredDate = sortDates(initialStories);
   const filteredStories = stories.filter((entry) => (
@@ -39,48 +40,53 @@ const Stories = ({
     });
   };
 
-  const loadMoreStories = async (currentPage) => {
-    const moreStories = await getStories(selectedCategories, currentPage + 1);
+  const loadNextPage = async () => {
+    const newPage = currentPage + 1;
+    setPage(newPage);
+    const moreStories = await getStories(selectedCategories, newPage);
     setStories((prevStories) => [...prevStories, ...moreStories.stories]);
   };
 
   return (
     <Layout>
-      <InfiniteScroll
-        pageStart={0}
-        hasMore={stories.length < total}
-        initialLoad={false}
-        loadMore={loadMoreStories}
-      >
-        {stories && stories.length > 0 && (
-          <>
-            <StoriesCarousel entries={filteredStories.slice(0, 3)} />
-            <div className={styles.storiesContainer}>
-              <aside className={styles.refineSearch}>
-                <div className={styles.refineSection}>
-                  <Title type="h3Title">Imagination</Title>
-                  <Title type="h2Title">Feed</Title>
-                  <div className={styles.mobilePanel}>
-                    <div className={styles.storiesParagraph}>
-                      <Paragraph>
+      {stories && stories.length > 0 && (
+        <>
+          <StoriesCarousel entries={filteredStories.slice(0, 3)} />
+          <div className={styles.storiesContainer}>
+            <aside className={styles.refineSearch}>
+              <div className={styles.refineSection}>
+                <Title type="h3Title">Imagination</Title>
+                <Title type="h2Title">Feed</Title>
+                <div className={styles.mobilePanel}>
+                  <div className={styles.storiesParagraph}>
+                    <Paragraph>
                         With the force of imagination, mentoring and unlikely alliances, AIME is
                         creating a fairer world through a worldwide movement of people that form
                         our Social Network for Good.
-                      </Paragraph>
-                    </div>
+                    </Paragraph>
                   </div>
                 </div>
-              </aside>
-              <StoryCategorySelector
-                categories={categories}
-                selectedCategories={selectedCategories}
-                onClickFunction={handleCategorySelect}
-              />
-              <StoriesGrid entries={filteredStories} />
-            </div>
-          </>
-        )}
-      </InfiniteScroll>
+              </div>
+            </aside>
+            <StoryCategorySelector
+              categories={categories}
+              selectedCategories={selectedCategories}
+              onClickFunction={handleCategorySelect}
+            />
+            <StoriesGrid entries={filteredStories} />
+            { stories.length < total && (
+              <div className={styles.loadMore}>
+                <Button
+                  text="Show me more stories"
+                  onClickFunction={loadNextPage}
+                  className={styles.loadMoreButton}
+                  theme={process.env.REACT_APP_THEME}
+                />
+              </div>
+            )}
+          </div>
+        </>
+      )}
     </Layout>
   );
 };
