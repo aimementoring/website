@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { removeMarkdownLink } from '../../../utils/formatting';
+import { removeMarkdown } from '../../../utils/formatting';
 import styles from './storiesContent.module.scss';
 
 const Card = dynamic(() => import('../../card'));
@@ -10,7 +10,7 @@ const StoriesContent = (props) => {
   const {
     id,
     title,
-    slugTitle,
+    slug,
     bannerContent,
     publishDate,
     categories,
@@ -33,7 +33,7 @@ const StoriesContent = (props) => {
         cardId={id}
         title={title}
         urlTo="/story/[slug]"
-        urlAs={`/story/${slugTitle}`}
+        urlAs={`/story/${slug}`}
         image={bannerImage}
         categories={categories}
         buttonText="READ MORE"
@@ -46,7 +46,7 @@ const StoriesContent = (props) => {
             : contentCards && contentCards.slice(0, 1).map((card) => (
               card.fields.contentCopy
             && (
-              `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
+              `${removeMarkdown(card.fields.contentCopy).slice(0, 230)}...`
             )))
         }
       />
@@ -62,7 +62,7 @@ StoriesContent.defaultProps = {
 StoriesContent.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string,
+  slug: PropTypes.string,
   publishDate: PropTypes.string,
   contentCreator: PropTypes.string,
   categories: PropTypes.arrayOf(PropTypes.string),
@@ -140,7 +140,7 @@ StoriesContent.propTypes = {
 };
 
 StoriesContent.defaultProps = {
-  slugTitle: '',
+  slug: '',
   publishDate: '',
   contentCreator: '',
   contentPreview: null,
