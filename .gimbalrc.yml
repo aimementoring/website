@@ -5,8 +5,9 @@
      - lighthouse
      - heap-snapshot
      - unused-source
-
  configs:
+   logger:
+    level: 1
    buildDir: .next
    comment:
      # Only show failures in GitHub PR comments.
