@@ -6,105 +6,99 @@ import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import MovingWaves from '../../components/movingWaves';
 import BadgeList from '../../components/storiesComponents/badgeList';
-import { getStories } from '../../api/contentfulPosts';
-import {
-  formatDate,
-  removeSpecialCharacters,
-  replaceWhiteSpace,
-} from '../../utils/formatting';
+import { getStoryBySlug } from '../../api/contentfulPosts';
+import bugsnagClient from '../../utils/bugsnag';
+import ErrorPage from '../_error';
+import { formatDate } from '../../utils/formatting';
 import styles from './story.module.scss';
 
 const ContentCard = dynamic(() => import('../../components/storiesComponents/contentCard'));
 
-const Story = (props) => {
-  const { content, slug } = props;
+const Story = ({ content }) => {
+  if (!content) return <ErrorPage />;
+  const {
+    fields: {
+      signature,
+      banner,
+      contentCreator,
+      postScriptMessage,
+      callToActionButton,
+      postCategories,
+      publishDate,
+      title,
+    },
+  } = content;
+
+  const bannerImage = banner && banner.fields.visualMedia
+    && banner.fields.visualMedia.fields.file.url;
+  /*
+   TODO: these params for styling,
+   might need to be added to contentful as overrides for these.
+  */
+  const bannerStyles = {
+    backgroundPosition: '0% 25%',
+    backgroundImage: bannerImage && `url(https:${bannerImage})`,
+    maxWidth: '100%',
+  };
+
+  const author = contentCreator && contentCreator.fields.authorName;
 
   return (
     <Layout>
-      {
-        content && content.map((entry) => {
-          const bannerImage = entry.fields.banner
-          && entry.fields.banner
-          && entry.fields.banner.fields.visualMedia
-          && entry.fields.banner.fields.visualMedia.fields.file.url;
-          /*
-           TODO: these params for styling,
-           might need to be added to contentful as overrides for these.
-          */
-          const bannerStyles = {
-            backgroundPosition: '0% 25%',
-            backgroundImage: bannerImage && `url(https:${bannerImage})`,
-            maxWidth: '100%',
-          };
-
-          const title = removeSpecialCharacters(entry.fields.title && entry.fields.title);
-          const slugTitle = replaceWhiteSpace(title, '-').toLowerCase();
-          const author = entry.fields.contentCreator
-            && entry.fields.contentCreator.fields.authorName;
-          const { signature } = entry.fields;
-          const postScriptContent = entry.fields.postScriptMessage;
-          const buttonProps = entry.fields.callToActionButton;
-          const categories = entry.fields.postCategories;
-
-          return (
-            <Fragment key={entry.sys.id}>
-              {slug === slugTitle && (
-                <div>
+      <Fragment key={content.sys.id}>
+        <div>
+          <div>
+            <div className={styles.bannerInStory} style={bannerStyles}>
+              <MovingWaves />
+            </div>
+            <div>
+              <div className={styles.entriesContainer}>
+                <article className={styles.blogPost}>
+                  <Title type="h3Title" theme="rainbow">
+                    {title}
+                  </Title>
+                  <BadgeList items={postCategories} itemClass={styles.borderedBadge} />
                   <div>
-
-                    <div className={styles.bannerInStory} style={bannerStyles}>
-                      <MovingWaves />
-                    </div>
-                    <div>
-                      <div className={styles.entriesContainer}>
-                        <article className={styles.blogPost}>
-                          <Title type="h3Title" theme="rainbow">
-                            {entry.fields.title && entry.fields.title}
-                          </Title>
-                          <BadgeList items={categories} itemClass={styles.borderedBadge} />
-                          <div>
-                            <span className={styles.blogPostTimestamp}>
-                              {`Posted ${formatDate(entry.fields.publishDate, 'long')}`}
-                            </span>
-                          </div>
-                          <article className={styles.blogPostArticle}>
-                            <ContentCard
-                              author={author}
-                              signature={signature}
-                              publishDate={entry.fields.publishDate}
-                              contentCards={entry.fields.contentCards}
-                              postScriptContent={postScriptContent}
-                              buttonProps={buttonProps}
-                            />
-                            <Anchor to="/stories" className={styles.articleTileLink}>
-                              <i className={styles.materialIcons}>keyboard_backspace</i>
-                              {' '}
-                              Back to Stories
-                            </Anchor>
-                          </article>
-                        </article>
-                      </div>
-                    </div>
+                    <span className={styles.blogPostTimestamp}>
+                      {`Posted ${formatDate(publishDate, 'long')}`}
+                    </span>
                   </div>
-                </div>
-              )}
-            </Fragment>
-          );
-        })
-      }
+                  <article className={styles.blogPostArticle}>
+                    <ContentCard
+                      author={author}
+                      signature={signature}
+                      publishDate={publishDate}
+                      contentCards={content.fields.contentCards}
+                      postScriptContent={postScriptMessage}
+                      buttonProps={callToActionButton}
+                    />
+                    <Anchor to="/stories" className={styles.articleTileLink}>
+                      <i className={styles.materialIcons}>keyboard_backspace</i>
+                      {' '}
+                        Back to Stories
+                    </Anchor>
+                  </article>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Fragment>
     </Layout>
   );
 };
 
+
 Story.getInitialProps = async ({ query, asPath, pathname }) => {
   const slug = query.slug || asPath.replace(`${pathname}/`, '');
-  const content = await getStories().then((response) => response);
-  return { content, slug };
+  const content = await getStoryBySlug(slug)
+    .then((response) => response[0])
+    .catch((e) => bugsnagClient.notify(e));
+  return { content };
 };
 
 Story.propTypes = {
-  slug: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.shape({
+  content: PropTypes.shape({
     fields: PropTypes.shape({
       title: PropTypes.string,
       contentType: PropTypes.string,
@@ -115,8 +109,13 @@ Story.propTypes = {
       contentCards: PropTypes.array,
       signature: PropTypes.string,
       postScriptMessage: PropTypes.array,
+      postCategories: PropTypes.array,
+      callToActionButton: PropTypes.object,
     }),
-  })).isRequired,
+    sys: {
+      id: PropTypes.number,
+    },
+  }).isRequired,
 };
 
 export default Story;
