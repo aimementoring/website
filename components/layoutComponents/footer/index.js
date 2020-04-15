@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
-import FooterNewsletter from '../../footerNewsletter';
 import SubscribePanel from '../../subscribePanel';
 import useDonate from '../../../hooks/useDonate';
 import styles from './footer.module.scss';
