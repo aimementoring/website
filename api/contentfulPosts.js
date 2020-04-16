@@ -1,5 +1,6 @@
+import bugsnagClient from '../utils/bugsnag';
+
 const contentful = require('contentful');
-const bugsnagClient = require('../utils/bugsnag');
 
 const client = contentful.createClient({
   space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
@@ -23,7 +24,16 @@ const getEntriesByContentTag = (contentTag) => client
     include: 2,
     'fields.contentTag.sys.contentType.sys.id': 'contentTag',
     'fields.contentTag.fields.name': contentTag,
+    order: '-fields.publishDate',
   }).then((response) => response.items).catch((e) => bugsnagClient.notify(e));
+
+export const getStoryBySlug = (slug) => client.getEntries({
+  content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
+  include: 2,
+  'fields.contentTag.sys.contentType.sys.id': 'contentTag',
+  'fields.contentTag.fields.name': CONTENT_TAGS.story,
+  'fields.slug': slug,
+}).then((response) => response.items).catch((e) => bugsnagClient.notify(e));
 
 export const getTerms = () => getEntriesByContentTag(CONTENT_TAGS.terms);
 
