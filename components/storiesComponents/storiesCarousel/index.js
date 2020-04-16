@@ -3,11 +3,7 @@ import Router from 'next/router';
 import entriesType from '../entriesType';
 import Carousel from '../../carousel';
 import { StoryBanner } from '../../banner';
-import {
-  removeSpecialCharacters,
-  replaceWhiteSpace,
-  removeMarkdownLink,
-} from '../../../utils/formatting';
+import { removeMarkdown } from '../../../utils/formatting';
 import styles from './storiesCarousel.module.scss';
 
 const StoriesCarousel = ({ entries }) => (
@@ -16,11 +12,10 @@ const StoriesCarousel = ({ entries }) => (
       <Carousel>
         {entries.map(({
           fields: {
-            banner, title, contentPreview, contentCards,
+            banner, title, slug, contentPreview, contentCards,
           },
           sys: { id },
         }) => {
-          const slugTitle = replaceWhiteSpace(removeSpecialCharacters(title), '-').toLowerCase();
           const image = banner
             && banner.fields.visualMedia
             && banner.fields.visualMedia.fields
@@ -32,9 +27,9 @@ const StoriesCarousel = ({ entries }) => (
           const copy = previewCopy
             ? `${previewCopy.slice(0, 230)}...`
             : contentCards && contentCards.slice(0, 1).map(({ fields: { contentCopy } }) => (
-              contentCopy && (`${removeMarkdownLink(contentCopy.slice(0, 240))}...`)
+              contentCopy && (`${removeMarkdown(contentCopy).slice(0, 240)}...`)
             ));
-          const handleClick = () => Router.push(`/story/${slugTitle}`);
+          const handleClick = () => Router.push(`/story/${slug}`);
           return (
             <StoryBanner
               key={id}
