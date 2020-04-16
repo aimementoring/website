@@ -19,9 +19,11 @@ const MENU_LINKS = {
     { url: '/', title: 'Home' },
     { url: '/about', title: 'About' },
     { url: '/stories', title: 'Stories' },
-    { url: '/be-a-mentor', title: 'Be a Mentor' },
-    { url: '/positions', title: 'Positions' },
+    { url: '/imagi-nation-tv', title: 'IN{TV}' },
+    { url: '/be-a-mentor', title: 'Be a mentor' },
+    { url: '/positions', title: 'Work with us' },
     { url: 'donate', title: 'Donate' },
+    // { url: 'https://shop.aimementoring.com/', title: 'Shop' },
     { url: '', title: null },
   ],
 };
