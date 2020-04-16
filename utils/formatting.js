@@ -13,20 +13,6 @@ export const capitaliseFirstCharacter = (stringValue) => (
   stringValue.replace(/\b([a-z\s])/g, (string) => string.toUpperCase())
 );
 
-// removes special characters on standard en-us keyboard config
-export const removeSpecialCharacters = (stringValue, replaceValue) => (
-  replaceValue
-    ? stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}0-9]+/g, replaceValue)
-    : stringValue.replace(/[$&+,:;=?@#|'"‘’<>.^*()%!-._\\/`~[\]{}0-9]*/g, '')
-);
-
-// replace whitespace with any character or no space
-export const replaceWhiteSpace = (stringValue, replaceValue) => (
-  replaceValue
-    ? stringValue.replace(/[\s] */g, replaceValue)
-    : stringValue.replace(/[\s] +/g, '')
-);
-
 export const formatDate = (publishDate, format = 'D.M.YYYY') => {
   const splitDateTime = publishDate.split('T');
   const dateComponent = splitDateTime[0];
@@ -39,12 +25,29 @@ export const formatDate = (publishDate, format = 'D.M.YYYY') => {
   return datePublished.format(DATE_FORMATS[format] || format);
 };
 
-
-// removes all numbers in a string
 export const removeNumbers = (stringValue, replaceValue) => (
   replaceValue ? stringValue.replace(/[0-9\s]+/g, replaceValue) : stringValue.replace(/[0-9]*/g, '')
 );
 
-export const removeMarkdownLink = (stringValue) => (
-  stringValue.replace(/[*_>[^\]0-9]*/g, '')
+
+const removeMarkdownLink = (string) => (
+  // links look like this [link title](http://url.tld/)
+  string.replace(/\[(?<title>.+)\]\((?<url>.+)\)+/g, '$<title>')
 );
+
+const removeMarkdownFormatting = (string) => (
+  // remove * and _
+  string.replace(/(\*|_)/g, '')
+);
+
+export const removeMarkdown = (string) => (
+  removeMarkdownFormatting(removeMarkdownLink(string))
+);
+
+export const slugify = (string) => string.trim().toLowerCase()
+  // replace everything that's not a char or number with -
+  .replace(/[^a-z0-9]+/g, '-')
+  // remove trailing -
+  .replace(/[.]*-$/, '')
+  // remove initial -
+  .replace(/^-[.]*/, '');
