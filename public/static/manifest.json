@@ -7,10 +7,17 @@
       "src": "/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
+    },
+    {
+      "src": "splash.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "theme_color": "#000",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#9135F0",
   "start_url": "/",
-  "display": "fullscreen"
+  "display": "fullscreen",
+  "scope": "/",
+  "prefer_related_applications": true
 }
