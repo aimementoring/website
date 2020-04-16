@@ -1,6 +1,5 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
@@ -24,11 +23,6 @@ const StandardHeader = () => {
             {HEADER_MENU_ITEMS.map((item) => (
               <MenuItem key={item.title.replace(/\s/g, '-')} {...item} />
             ))}
-            <li className={styles.listItem}>
-              <Anchor className={styles.navBtn} to="/positions">
-                Work with us
-              </Anchor>
-            </li>
             <li className={styles.listItem}>
               <IntercomChat />
             </li>
