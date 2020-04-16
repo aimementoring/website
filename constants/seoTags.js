@@ -1,6 +1,7 @@
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 export const GLOBAL_TAGS = {
+  description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
   facebook: {
     appId: 'profile_id',
   },
@@ -44,7 +45,7 @@ export const GLOBAL_TAGS = {
 export const SEO_TAGS = {
   '/': {
     title: 'AIME Mentoring',
-    canonical: 'https://aimementoring.com',
+    canonical: process.env.REACT_APP_CANNONICAL,
     languageAlternate: {
       href: 'https://aimementoring.com/',
       hrefLang: 'x-default',
@@ -95,7 +96,7 @@ export const SEO_TAGS = {
   },
   '/imagi-nation-tv': {
     title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
-    canonical: 'https://aimementoring.com/imagi-nation-tv',
+    canonical: `${process.env.REACT_APP_CANNONICAL}imagi-nation-tv`,
     languageAlternate: {
       href: 'https://aimementoring.com/imagi-nation-tv',
       hrefLang: 'x-default',
@@ -150,7 +151,7 @@ export const SEO_TAGS = {
   },
   '/ambassadors': {
     title: 'Ambassadors',
-    canonical: 'https://aimementoring.com/ambassadors',
+    canonical: `${process.env.REACT_APP_CANNONICAL}ambassadors`,
     languageAlternate: {
       href: 'https://aimementoring.com/ambassadors',
       hrefLang: 'x-default',
@@ -207,7 +208,7 @@ export const SEO_TAGS = {
   },
   '/be-a-mentor': {
     title: 'Be an AIME Mentor',
-    canonical: 'https://aimementoring.com/be-a-mentor',
+    canonical: `${process.env.REACT_APP_CANNONICAL}be-a-mentor`,
     languageAlternate: {
       href: 'https://aimementoring.com/be-a-mentor',
       hrefLang: 'x-default',
@@ -265,7 +266,7 @@ export const SEO_TAGS = {
   },
   '/about': {
     title: 'About AIME Mentoring',
-    canonical: 'https://aimementoring.com/about',
+    canonical: `${process.env.REACT_APP_CANNONICAL}about`,
     languageAlternate: {
       href: 'https://aimementoring.com/about',
       hrefLang: 'x-default',
@@ -323,7 +324,7 @@ export const SEO_TAGS = {
   },
   '/reports/2016-annual-story': {
     title: '2016 Annual Story',
-    canonical: 'https://aimementoring.com/reports/2016-annual-story',
+    canonical: `${process.env.REACT_APP_CANNONICAL}reports/2016-annual-story`,
     languageAlternate: {
       href: 'https://aimementoring.com/reports/2016-annual-story',
       hrefLang: 'x-default',
@@ -381,7 +382,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Case Studies',
     },
-    canonical: 'https://aimementoring.com/case-studies',
+    canonical: `${process.env.REACT_APP_CANNONICAL}case-studies`,
     languageAlternate: {
       href: 'https://aimementoring.com/case-studies',
       hrefLang: 'x-default',
@@ -439,7 +440,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Donate to AIME Mentoring',
     },
-    canonical: 'https://aimementoring.com/donate',
+    canonical: `${process.env.REACT_APP_CANNONICAL}donate`,
     languageAlternate: {
       href: 'https://aimementoring.com/donate',
       hrefLang: 'x-default',
@@ -564,7 +565,7 @@ export const SEO_TAGS = {
   },
   '/jack-manning-bancroft': {
     title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
-    canonical: 'https://aimementoring.com/jack-manning-bancroft',
+    canonical: `${process.env.REACT_APP_CANNONICAL}jack-manning-bancroft`,
     languageAlternate: {
       href: 'https://aimementoring.com/jack-manning-bancroft',
       hrefLang: 'x-default',
@@ -633,7 +634,7 @@ export const SEO_TAGS = {
   },
   '/global-letter': {
     title: 'Global Letter',
-    canonical: 'https://aimementoring.com/global-letter',
+    canonical: `${process.env.REACT_APP_CANNONICAL}global-letter`,
     languageAlternate: {
       href: 'https://aimementoring.com/global-letter',
       hrefLang: 'x-default',
@@ -727,7 +728,7 @@ export const SEO_TAGS = {
   },
   '/hooded-scholar': {
     title: 'The Hooded Scholar Scholarship from AIME Mentoring',
-    canonical: 'https://aimementoring.com/hooded-scholar/',
+    canonical: `${process.env.REACT_APP_CANNONICAL}hooded-scholar/`,
     languageAlternate: {
       href: 'https://aimementoring.com/hooded-scholar',
       hrefLang: 'x-default',
@@ -785,7 +786,7 @@ export const SEO_TAGS = {
   },
   '/impact': {
     title: 'Impact',
-    canonical: 'https://aimementoring.com/impact',
+    canonical: `${process.env.REACT_APP_CANNONICAL}impact`,
     languageAlternate: {
       href: 'https://aimementoring.com/impact',
       hrefLang: 'x-default',
@@ -842,7 +843,7 @@ export const SEO_TAGS = {
   },
   '/know-aime': {
     title: 'Know AIME',
-    canonical: 'https://aimementoring.com/know-aime',
+    canonical: `${process.env.REACT_APP_CANNONICAL}know-aime`,
     languageAlternate: {
       href: 'https://aimementoring.com/know-aime',
       hrefLang: 'x-default',
@@ -899,7 +900,7 @@ export const SEO_TAGS = {
   },
   '/positions': {
     title: 'Work at AIME Mentoring',
-    canonical: 'https://aimementoring.com/positions',
+    canonical: `${process.env.REACT_APP_CANNONICAL}positions`,
     languageAlternate: {
       href: 'https://aimementoring.com/positions',
       hrefLang: 'x-default',
@@ -957,7 +958,7 @@ export const SEO_TAGS = {
   },
   '/quizzes': {
     title: 'Quizzes',
-    canonical: 'https://aimementoring.com/quizzes',
+    canonical: `${process.env.REACT_APP_CANNONICAL}quizzes`,
     languageAlternate: {
       href: 'https://aimementoring.com/quizzes',
       hrefLang: 'x-default',
@@ -1014,7 +1015,7 @@ export const SEO_TAGS = {
   },
   '/reports': {
     title: 'AIME Reports',
-    canonical: 'https://aimementoring.com/reports',
+    canonical: `${process.env.REACT_APP_CANNONICAL}reports`,
     languageAlternate: {
       href: 'https://aimementoring.com/reports',
       hrefLang: 'x-default',
@@ -1072,7 +1073,7 @@ export const SEO_TAGS = {
   },
   '/stories': {
     title: 'AIME Stories of Sunday Kindness',
-    canonical: 'https://aimementoring.com/stories',
+    canonical: `${process.env.REACT_APP_CANNONICAL}stories`,
     languageAlternate: {
       href: 'https://aimementoring.com/stories',
       hrefLang: 'x-default',
@@ -1167,7 +1168,7 @@ export const SEO_TAGS = {
   },
   '/thanks': {
     title: 'Thanks',
-    canonical: 'https://aimementoring.com/thanks',
+    canonical: `${process.env.REACT_APP_CANNONICAL}thanks`,
     languageAlternate: {
       href: 'https://aimementoring.com/thanks',
       hrefLang: 'x-default',
@@ -1224,7 +1225,7 @@ export const SEO_TAGS = {
   },
   '/the-mentor': {
     title: 'The Mentor',
-    canonical: 'https://aimementoring.com/the-mentor',
+    canonical: `${process.env.REACT_APP_CANNONICAL}the-mentor`,
     languageAlternate: {
       href: 'https://aimementoring.com/the-mentor',
       hrefLang: 'x-default',
