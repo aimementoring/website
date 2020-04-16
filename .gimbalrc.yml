@@ -5,8 +5,9 @@
      - lighthouse
      - heap-snapshot
      - unused-source
-
  configs:
+   logger:
+    level: 1
    buildDir: .next
    comment:
      # Only show failures in GitHub PR comments.
@@ -33,14 +34,14 @@
        - uses-text-compression
      outputHtml: ./gimbal-artifacts/lighthouse.html
      threshold:
-       accessibility: 95
-       "best-practices": 95
-       performance: 95
-       pwa: 95
-       seo: 95
+       accessibility: 80
+       "best-practices": 80
+       performance: 40
+       pwa: 52
+       seo: 90
 
    # File and directory size settings
-  #  size:
+   size:
   #    - path: ./.next/precache-*.js
   #      maxSize: 10 KB
   #    - path: ./.next/static/js/[0-9]*.chunk.js
@@ -53,8 +54,8 @@
   #      maxSize: 10 KB
   #    - path: ./.next/favicon.ico
   #      maxSize: 10 KB
-  #    - path: .next/
-  #      maxSize: 18 MB
+     - path: .next/
+       maxSize: 300 MB
 
   #  # Unused source settings
   #  unused-source:
@@ -81,14 +82,14 @@
 
  # Plugins
  plugins:
-   # Compare metrics to last-saved values
-   - plugin: "@modus/gimbal-plugin-last-value"
-     saveOnlyOnSuccess: false
+  #  # Compare metrics to last-saved values
+  #  - plugin: "@modus/gimbal-plugin-last-value"
+  #    saveOnlyOnSuccess: false
 
-   # Save reports to a database. Needed for gimbal-plugin-last-value
-   - plugin: "@modus/gimbal-plugin-sqlite"
-     file: ./gimbal-artifacts/gimbal_tests.db
-     lastValue: true
+  #  # Save reports to a database. Needed for gimbal-plugin-last-value
+  #  - plugin: "@modus/gimbal-plugin-sqlite"
+  #    file: ./gimbal-artifacts/gimbal_tests.db
+  #    lastValue: true
 
    # Axe a11y audits
    - plugin: "@modus/gimbal-plugin-axe"
@@ -99,5 +100,5 @@
        landmark-complementary-is-top-level: moderate
        meta-viewport: critical
        region: moderate
-       page-has-heading-one: moderate
+       page-has-heading-one: moderatec
        scrollable-region-focusable: moderate

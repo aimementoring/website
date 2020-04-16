@@ -19,7 +19,7 @@ module.exports = async (migration) => {
       if (key !== 'paragraph' && key === undefined) {
         return null;
       }
-      return key; // console.log(key);
+      return key;
     });
     if (entriesCraft.post[changeCount - 1].paragraph === undefined) { return null; }
     const test = entriesCraft.post.map((ele) => (ele.paragraph !== 'paragraph' && ele.paragraph !== undefined ? ele.paragraph : null));
