@@ -12,10 +12,8 @@ import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
-// const IntroPanelHomepage = dynamic(() => import('../../components/introPanelHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const Ambassadors = dynamic(() => import('../../components/ambassadors'));
-// const CtaFAQ = dynamic(() => import('../../components/ctaFAQ'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
