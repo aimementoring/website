@@ -1,4 +1,4 @@
-// eslint-disable no-console
+/* eslint-disable no-console */
 const { exec } = require('child_process');
 const sitemap = require('nextjs-sitemap-generator');
 
@@ -27,7 +27,7 @@ async function buildProject() {
 async function uploadToAWS(buildEnv) {
   const environment = buildEnv === 'staging' ? '-staging' : '';
   return new Promise((resolve, reject) => {
-    exec(`aws s3 sync .next "s3://aimementoring${environment}/website/_next" --acl public-read --delete`, (error, stdout, stderr) => {
+    exec(`aws s3 sync .next "s3://aimementoring${environment}/website/_next" --acl public-read --cache-control max-age=31557600,public --delete`, (error, stdout, stderr) => {
       if (error) reject(error);
       if (stderr) console.info(stderr);
       resolve(stdout);
