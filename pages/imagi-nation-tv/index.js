@@ -129,7 +129,7 @@ const ImagiNationTV = () => (
             </strong>
           </Paragraph>
           <Paragraph>
-            Join AIME Founder & CEO Jack Manning Bancroft and 15 students from across
+            Join AIME Founder & CEO Jack Manning Bancroft and students from across
             Australia and around the world who will take part in a 7 minute hyperdrive
             lesson on the topic theme of the week. See a real life case study as to how
             to run a classroom digitally amongst the chaos of today.
