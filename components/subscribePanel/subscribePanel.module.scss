@@ -5,29 +5,31 @@
   left: -5000px;
 }
 
-.newsletterContainer {
+.subscribeContainer {
+  background:
+    url($cdnRoot+"assets/images/banner/bg-pattern-purple-min.jpg") no-repeat
+    bottom center / cover $purple;
+  position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
-
-  @media screen and (min-width: $lg) {
-    justify-content: flex-end;
-  }
+  padding: 6em 1em;
 
   .newsletterWrapper {
     width: 100%;
-    max-width: 350px;
+    max-width: 40em;
     flex-direction: column;
     display: flex;
   }
 
   .formContainer {
     flex: 1 1 auto;
+    align-items: center;
     min-width: 0;
     min-height: 0;
-    margin-bottom: 2rem;
+    text-align: center;
 
     form {
       position: relative;
@@ -36,7 +38,19 @@
         top: 1.22em;
       }
     }
+
+    .subscribeTitle {
+      color: $white;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.8em;
+      padding: 0 1.5em
+    }
+
+    .subscribeDetails {
+      color: $white;
+    }
   }
+
   
   .subscribeInput {
     height: 3rem;
@@ -47,16 +61,18 @@
   }
 
   .submitButton {
-    height: 3em;
+    height: 2.9em;
     width: 3em;
+    margin-top: 0.05em;
     position: absolute;
     top: 0;
     right: 0;
     padding: 0 1.2em;
-    background-color: $purple;
-    border-color: $purple;
+    background-color: $magenta;
+    border-color: $magenta;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    border: none;
     background-image: url($cdnRoot+"assets/images/arrow.svg");
     font-size: 1em;
     background-repeat: no-repeat;
@@ -67,4 +83,7 @@
     justify-content: center;
     cursor: pointer;
   }
+}
+.wavySubscribe {
+  position: relative;
 }
