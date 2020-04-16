@@ -3,10 +3,6 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import StoriesContent from '../storiesContent';
 import entriesType from '../entriesType';
-import {
-  removeSpecialCharacters,
-  replaceWhiteSpace,
-} from '../../../utils/formatting';
 import styles from './storiesGrid.module.scss';
 
 const StoriesGrid = ({ entries }) => (
@@ -22,14 +18,21 @@ const StoriesGrid = ({ entries }) => (
     <div className={styles.storiesGrid}>
       {entries.length > 0 && entries.map(({
         fields: {
-          title, contentCreator, postCategories, contentPreview, banner, publishDate, contentCards,
+          title,
+          slug,
+          contentCreator,
+          postCategories,
+          contentPreview,
+          banner,
+          publishDate,
+          contentCards,
         },
         sys: { id },
       }) => {
         const storiesContentProps = {
           id,
           title,
-          slugTitle: replaceWhiteSpace(removeSpecialCharacters(title), '-').toLowerCase(),
+          slug,
           contentCreator: contentCreator.fields.authorName,
           contentPreview: contentPreview && contentPreview.fields,
           bannerContent: banner && banner.fields,
