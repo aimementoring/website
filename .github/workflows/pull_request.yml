@@ -1,9 +1,9 @@
-name: CI
-
+name: Pull Request Deploy
 on:
   pull_request:
     branches:
-    - staging
+      - staging
+      - master
 
 env:
   REACT_APP_BUGSNAG_KEY: ${{ secrets.REACT_APP_BUGSNAG_KEY }}
@@ -13,7 +13,8 @@ env:
   REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES: ${{ secrets.REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES }}
   REACT_APP_CONTENTFUL_API_KEY: ${{ secrets.REACT_APP_CONTENTFUL_API_KEY }}
   REACT_APP_FILE_UPLOADER_API_KEY: ${{ secrets.REACT_APP_FILE_UPLOADER_API_KEY }}
-  REACT_APP_ASSETS_URL: https://d2cl4o0mkg71rr.cloudfront.net/website
+  REACT_APP_ASSETS_URL: https://d1muvgoqe3g8vw.cloudfront.net/website
+  REACT_APP_CRAFT_API: https://aimeweb-backend-staging.herokuapp.com/
   REACT_APP_HOST_ENV: staging
   REACT_APP_PORTAL_API: https://aime-portal-api-staging.herokuapp.com
   REACT_APP_THEME: rainbow
@@ -33,7 +34,7 @@ env:
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
 
 jobs:
-  Aws:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -46,15 +47,62 @@ jobs:
           node-version: '12.x'
       - name: Install yarn dependencies
         run: yarn
-      - name: Check environment variables
-        run: echo $REACT_APP_BUGSNAG_KEY
-      - name: Build
-        run: yarn build
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Lint
+        run: yarn lint
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-southeast-2
-      # - name: Upload to aws
-      #   run: yarn sync:aws:next:staging
+          fetch-depth: 1
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install yarn dependencies
+        run: yarn
+      - name: Build
+        env:
+          CI: ''
+        run: yarn build
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install yarn dependencies
+        run: yarn
+      - name: Build
+        env:
+          CI: ''
+        run: yarn build
+      - name: Analyze
+        run: yarn analyze
+  gimbal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install yarn dependencies
+        run: yarn
+      - name: Build
+        env:
+          CI: ''
+        run: yarn build
+      - name: Performance Budgeting Regression Testing
+        uses: ModusCreateOrg/gimbal/action@master
+        env:
+          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
