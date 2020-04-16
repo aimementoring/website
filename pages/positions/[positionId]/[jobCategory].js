@@ -5,7 +5,7 @@ import Layout from '../../../hocs/basicLayout';
 import { getFromStorage } from '../../../utils/localStorage';
 import {
   capitaliseFirstCharacter,
-  removeSpecialCharacters,
+  slugify,
 } from '../../../utils/formatting';
 import isClientSide from '../../../utils/isClientSide';
 import handleError from '../../../utils/errorHandler';
@@ -43,7 +43,7 @@ const PositionsEntry = () => {
     isLoading: true,
     redirected: false,
     redirectJobTitle: jobCategory && jobCategory.length && jobCategory.trim()
-      ? removeSpecialCharacters(jobCategory)
+      ? slugify(jobCategory)
       : '',
     jobForm: {},
   });
