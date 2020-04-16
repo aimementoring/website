@@ -17,7 +17,7 @@ module.exports = () => (
     .then((response) => response.items)
     .catch((error) => {
       // eslint-disable-next-line no-console
-      console.log(error);
+      console.log(JSON.stringify(error));
       // bugsnagClient.notify(
       //   new Error(`There was an issue fetching content from Contentful ${error}`),
       //   { context: error }
