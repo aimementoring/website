@@ -10,15 +10,21 @@ import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
 const CallToActionButton = dynamic(() => import('../callToActionButton'));
+// TODO: remove once Contentful content model for post is updated for all stories.
 const PostScriptMessage = dynamic(() => import('../postScriptMessage'));
 
 const ContentCard = (props) => {
   const {
-    author, signature, contentCards, buttonProps, postScriptContent, publishDate,
+    author, signature, contentCards, publishDate,
+    // TODO: remove once Contentful content model for post is updated for all stories.
+    buttonProps, postScriptContent,
   } = props;
 
   const content = contentCards
   && contentCards.map((card) => {
+    const cardType = card.fields.Type;
+    const label = card.fields.contentTitle
+      && card.fields.contentTitle.fields.headingText;
     const isImage = card.fields.visualMedia && card.fields.visualMedia;
     const isVideo = card.fields.videoMedia && card.fields.videoMedia;
     const image = isImage && isImage.fields.file.url;
@@ -30,27 +36,32 @@ const ContentCard = (props) => {
 
     return (
       <Fragment key={card.sys.id}>
-        {isVideo ? (
-          <VideoFormElement
-            formElement={{ videoUrl: video, name: videoPlatform, autoplay: true }}
-          />
-        )
-          : isImage && (
-            <>
-              <Picture
-                image={{
-                  title,
-                  thumbnail: `https:${image}?q=50`,
-                  image: `https:${image}?fl=progressive`,
-                }}
+        {cardType !== 'Call To Action' && (
+          <>
+            {isVideo ? (
+              <VideoFormElement
+                formElement={{ videoUrl: video, name: videoPlatform, autoplay: true }}
               />
-              {imageCaption && <div className="figcaption">{imageCaption}</div>}
-            </>
-          )}
-        <ReactMarkdown
-          source={storyBody}
-          renderers={{ paragraph: Paragraph }}
-        />
+            )
+              : isImage && (
+                <>
+                  <Picture
+                    image={{
+                      title,
+                      thumbnail: `https:${image}?q=50`,
+                      image: `https:${image}?fl=progressive`,
+                    }}
+                  />
+                  {imageCaption && <div className="figcaption">{imageCaption}</div>}
+                </>
+              )}
+            <ReactMarkdown
+              source={storyBody}
+              renderers={{ paragraph: Paragraph }}
+            />
+          </>
+        )}
+        {cardType === 'Call To Action' && (<CallToActionButton label={label} externalUrl={storyBody} />)}
       </Fragment>
     );
   });
@@ -67,7 +78,7 @@ const ContentCard = (props) => {
             {formatDate(publishDate, 'long')}
           </strong>
         )}
-
+      {/* TODO: remove once Contentful content model for post is updated for all stories. */}
       {buttonProps && (
         <CallToActionButton
           buttonProps={buttonProps}
@@ -76,6 +87,7 @@ const ContentCard = (props) => {
       {postScriptContent && (
         <PostScriptMessage postScriptContent={postScriptContent} />
       )}
+      {/* TODO: remove once Contentful content model for post is updated for all stories. */}
     </div>
   );
 };
@@ -83,12 +95,14 @@ const ContentCard = (props) => {
 ContentCard.propTypes = {
   author: PropTypes.string,
   signature: PropTypes.string,
+  // TODO: remove once Contentful content model for post is updated for all stories.
   buttonProps: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
       externalUrl: PropTypes.string,
     }),
   ),
+  // TODO: remove once Contentful content model for post is updated for all stories.
   postScriptContent: PropTypes.arrayOf(
     PropTypes.shape({
       Type: PropTypes.string,
@@ -112,6 +126,7 @@ ContentCard.propTypes = {
       visualMediaCarousel: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   ),
+
   publishDate: PropTypes.string.isRequired,
   contentCards: PropTypes.arrayOf(
     PropTypes.shape({
