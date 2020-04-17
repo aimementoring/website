@@ -36,7 +36,7 @@ export const HEADER_MENU_ITEMS = [
   {
     title: 'About',
     subTitle: 'About AIME',
-    description: 'Who we are and why we do what we do.',
+    description: 'We\'re an Imagination Factory aiming to put a mentor in every kid\'s life every day',
     links: [
       {
         to: '/about',
@@ -61,8 +61,8 @@ export const HEADER_MENU_ITEMS = [
     ],
   }, {
     title: 'Get Inspired',
-    subTitle: 'Imagi-nation Feed',
-    description: 'Stories, IN{TV}, & more, are creating a Social Network For Good',
+    subTitle: 'Visit Imagi-nation',
+    description: 'Read our stories, experience IN{TV} & more',
     links: [
       {
         to: '/imagi-nation-tv',
@@ -72,13 +72,13 @@ export const HEADER_MENU_ITEMS = [
       {
         to: '/stories',
         as: '/stories',
-        linkText: 'See our stories',
+        linkText: 'Read our stories',
       },
     ],
   }, {
     title: 'Get Involved',
-    subTitle: 'Build the world you want today, for tomorrow',
-    description: 'Want to change the world? Come mentor with us.',
+    subTitle: 'Board the AIME Rocket Ship',
+    description: 'As a Social Network 4 Good, together we can change the world!',
     links: [
       {
         to: '/be-a-mentor',
