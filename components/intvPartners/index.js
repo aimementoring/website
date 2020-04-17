@@ -13,13 +13,13 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/pedestrian.png`,
     title: 'Pedestrian Group',
     type: 'Founding Partner',
-    paragraph: ` `,
+    paragraph: ' ',
   },
   {
     image: `${ASSETS_URL}/assets/images/partners/background.png`,
     title: 'Background',
     type: 'Production Partner',
-    paragraph: ` `,
+    paragraph: ' ',
   }, {
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
@@ -55,7 +55,7 @@ const CAROUSEL_SLIDES = [
     on encouraging today’s students to think without a box… and I have no
     doubt they are going to seize all opportunities to do so."
     - Nancy Conrad, Founding Chairman`,
-  }, 
+  },
 ];
 
 const IntvPartners = () => (
