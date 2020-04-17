@@ -1,3 +1,5 @@
+@import "../../styles/base/variables";
+
 .modalOverlay {
   top: 0;
   left: 0;
@@ -14,7 +16,7 @@
   top: 50%;
   left: 50%;
   z-index: 1100;
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
 
   .close {
@@ -23,6 +25,39 @@
     cursor: pointer;
     padding: 20px;
     border-radius: 5px;
+  }
+}
+
+.closeModalIcon {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+  cursor: pointer;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+
+  @media screen and (min-width: $lg) {
+    display: block;
+  }
+
+  @media screen and (max-width: $sm) {
+    display: block;
+    padding: 1rem;
+    top: 0;
+    right: 0;
+    color: rgba(0,0,0,0.8);
   }
 }
 
