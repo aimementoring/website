@@ -4,13 +4,16 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import styles from './styles.module.scss';
+import IntercomChat from '../../components/intercom';
 import Anchor from '../../components/common/link';
+import FeaturedProduct from '../../components/featuredProduct';
+import styles from './styles.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const ImagiNationTV = () => (
   <Layout>
@@ -30,13 +33,13 @@ const ImagiNationTV = () => (
           </div>
           <div className={styles.imagiBannerInfo}>
             <Title type="h3Title" className={styles.infoTitle} theme={process.env.REACT_APP_THEME}>
-              Live every weekday 12pm AEDT
+              Live every weekday 12pm AEST
             </Title>
             <Paragraph>
-              IMAGI-NATION TV is for marginalised kids across the earth’s
+              {`IMAGI-NATION{TV} is for marginalised kids across the earth’s
               surface to have a daily mentor in their lives. It takes the
               magic of AIME’s Imagination Factory to laptops, phones, and
-              homes across the world.
+              homes across the world.`}
             </Paragraph>
           </div>
         </div>
@@ -44,7 +47,7 @@ const ImagiNationTV = () => (
       <div className={styles.videoContainerFeature}>
         <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
           <img
-            src={`${ASSETS_URL}/assets/images/illustrations/imagi-robot-live@2x.gif`}
+            src={`${ASSETS_URL}/assets/images/banner/imagi-robot-live@2x.gif`}
             alt="Imagi-Nation TV"
             className={styles.videoCoverArt}
           />
@@ -91,15 +94,6 @@ const ImagiNationTV = () => (
             in one moment so we are not alone, so that we move through tough times and
             great times with a sense of connectedness.
           </Paragraph>
-          <Paragraph>
-            The classroom and studio is Google. Guests join from their homes.
-            The broadcast space is YouTube.
-          </Paragraph>
-          {/* <Paragraph>
-          The audience is 40+ universities, 300+ schools, 8,000 marginalised kids, across 6
-          countries who are currently involved in AIME’s Imagination Factory, and a world
-          of people looking to make sense of today in order to imagine tomorrow.
-          </Paragraph> */}
         </div>
         <ImaginationTvCard
           day="Monday"
@@ -136,7 +130,7 @@ const ImagiNationTV = () => (
             </strong>
           </Paragraph>
           <Paragraph>
-            Join AIME Founder & CEO Jack Manning Bancroft and 15 students from across
+            Join AIME Founder & CEO Jack Manning Bancroft and students from across
             Australia and around the world who will take part in a 7 minute hyperdrive
             lesson on the topic theme of the week. See a real life case study as to how
             to run a classroom digitally amongst the chaos of today.
@@ -214,6 +208,16 @@ const ImagiNationTV = () => (
             and gigs being cancelled worldwide.
           </Paragraph>
         </ImaginationTvCard>
+      </section>
+      <section className={styles.featuredProductWrapper}>
+        <FeaturedProduct
+          imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
+          pretitle="Check it out …"
+          title="Imagi-Nation Hoodie"
+          text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
+          linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
+          linkText="Buy a Hoodie"
+        />
       </section>
       <DoubleCurvedLine />
       <div className={styles.tempIntvPWrapper}>
