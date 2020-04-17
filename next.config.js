@@ -93,7 +93,7 @@ module.exports = withBundleAnalyzer(
         target: 'serverless',
         transformManifest: (manifest) => ['/'].concat(manifest),
         // Service-worker (Offline mode)
-        generateInDevMode: true,
+        generateInDevMode: false,
         generateSw: true,
         workboxOpts: {
           runtimeCaching: [
@@ -140,21 +140,6 @@ module.exports = withBundleAnalyzer(
                   headers: {
                     'x-test': 'true',
                   },
-                },
-              },
-            },
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'https-calls',
-                networkTimeoutSeconds: 15,
-                expiration: {
-                  maxEntries: 150,
-                  maxAgeSeconds: 30 * DAY_SECONDS,
-                },
-                cacheableResponse: {
-                  statuses: [0, 200],
                 },
               },
             },
