@@ -4,7 +4,6 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import IntercomChat from '../../components/intercom';
 import Anchor from '../../components/common/link';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
