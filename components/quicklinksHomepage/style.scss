@@ -72,12 +72,13 @@
     }
   }
 
-  
-
   .quicklinkTitle {
     text-decoration: none;
-    // max-width: 6em;
     display: block;
     margin: 0 auto;
+    color: $purple;
+    font-weight: bold;
+    letter-spacing: 0.001em;
+    cursor: pointer;
   }
 }
