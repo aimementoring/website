@@ -55,6 +55,10 @@
     height: calc(100% - 10.5em);
     position: relative;
 
+    p {
+      word-break: break-all;
+    }
+
     &.withVideo {
       height: calc(100% - 21.75em);
     }
