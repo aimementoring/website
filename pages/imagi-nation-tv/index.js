@@ -11,6 +11,7 @@ import styles from './styles.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
+const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
@@ -219,42 +220,9 @@ const ImagiNationTV = () => (
         />
       </section>
       <DoubleCurvedLine />
-      <section className={styles.partnersWrapper}>
-        <div className={styles.partnersHeader}>
-          <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-            Our partners
-          </Title>
-          <div className={styles.becomeAPartnerBtn}>
-            <IntercomChat label="Become a partner" />
-          </div>
-        </div>
-        <div className={styles.partnersImagesGroup}>
-          <div className={styles.partnerImage}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/waverly.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-          <div className={styles.partnerImage}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/pedestrian.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-          <div className={styles.partnerImage}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/warragul.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-          <div className={styles.partnerImage}>
-            <img
-              src={`${ASSETS_URL}/assets/images/partners/background.png`}
-              alt="Imagi-nation TV"
-            />
-          </div>
-        </div>
-      </section>
+      <div className={styles.tempIntvPWrapper}>
+        <IntvPartners />
+      </div>
     </div>
   </Layout>
 );
