@@ -25,14 +25,26 @@ const Founder = () => (
     <article>
       <div className="plainContentWrapper">
         <Paragraph>
-        Jack Manning Bancroft is the CEO and Founder of AIME, an
-        award-winning social movement that uses mentoring and imagination
-        to unlock the potential of marginalised youth to create a fairer
-        world.
+          Jack Manning Bancroft is the CEO and Founder of AIME, an award-winning
+          social movement that uses mentoring and imagination to unlock the potential
+          of marginalised youth to create a fairer world. He is also the Founder,
+          Executive Producer and Host of&nbsp;
+          <a
+            href="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {'IMAGI-NATION{TV}'}
+          </a>
+          , and a puppeteer.
         </Paragraph>
         <Paragraph>
-        AIME is an imaginative educational program and a volunteer mentoring
-        movement - a social network for good.
+          AIME, founded in 2005, is an imaginative educational program and
+          a volunteer mentoring movement - a social network for good.
+        </Paragraph>
+        <Paragraph>
+          {`IMAGI-NATION{TV}, founded in March 2020, is a weekday TV
+          show that puts a mentor in the home for every kid, every day.`}
         </Paragraph>
         <Paragraph>
         Jack, a proud Indigenous Australian from the Bundjalung nation,
