@@ -24,24 +24,37 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
     type: 'Cancelled not Cancelled Partner',
-    paragraph: `At a time when young people are having to stay at home, it’s
+    paragraph: `"At a time when young people are having to stay at home, it’s
     fabulous to see organisations like AIME continuing to deliver their programs
     and mentoring for kids in the virtual world. We are devastated that we were
     not able to transform our city for this year’s Melbourne International
     Comedy Festival for the inspiration and entertainment of hundreds of
     thousands of comedy lovers. It’s a real treat to see Randy Feltface
     featured as part of the first Cancelled, Not Cancelled segment, delivering
-    a laugh and some inspiration to young people across the globe.`,
+    a laugh and some inspiration to young people across the globe."
+    - Susan Provan, Festival Director`,
   }, {
     image: `${ASSETS_URL}/assets/images/logos/partners/logo-grounded-festival.jpg`,
     title: 'Grounded Summit',
     type: 'Cancelled not Cancelled Partner',
-    paragraph: `Grounded is honoured to be featured on AIME's IMAGI-NATION{TV}
+    paragraph: `"Grounded is honoured to be featured on AIME's IMAGI-NATION{TV}
     alongside Damon Gameau and 2040. Many people hear about the climate crisis
     and their eyes glaze over. But not young people. They are demanding action
     from world leaders because they know we are running out of time. Their
     imagination and determination brings me hope that we can deliver solutions
-    to reverse this crisis and preserve livable parts of our planet.`,
+    to reverse this crisis and preserve livable parts of our planet."
+    - Julia Jackson, Founder, Grounded`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/logo-conrad-challenge.png`,
+    title: 'Conrad Challenge',
+    type: 'Cancelled not Cancelled Partner',
+    paragraph: `"It was an amazing opportunity to be involved with AIME’s
+    IMAGI-NATION TV. The synergy between the Conrad Foundation and AIME is
+    clear as we both work to create a world with no borders and encourage
+    students to design the future. The future of our planet is dependent
+    on encouraging today’s students to think without a box… and I have no
+    doubt they are going to seize all opportunities to do so."
+    - Nancy Conrad, Founding Chairman`,
   }, 
 ];
 
