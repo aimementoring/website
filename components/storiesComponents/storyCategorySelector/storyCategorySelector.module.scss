@@ -1,0 +1,46 @@
+@import "../../../styles/base/variables";
+
+.storyCategorySelectorContainer {
+  .tabContainer {
+    display: inline-block;
+    
+    .tab  {
+      background-color: $white; 
+      /* Secondary/AIME Watermelon */
+      color: $watermelon;
+      border: 1px solid $watermelon;
+      box-sizing: border-box;
+      border-radius: 3px;
+      margin: 0 2em 2em 0;
+
+      &.allTab {
+        min-width: 8em;
+      }
+
+      &.activeTab {
+        background-color: $watermelon;
+        color: $white;
+        .tabText {
+          font-weight: bold;
+        }
+      }
+      
+      span.tabText {
+        width: 100%;
+        font-family: $body-font-family;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+
+
+
+}
