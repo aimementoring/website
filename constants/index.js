@@ -72,13 +72,13 @@ export const HEADER_MENU_ITEMS = [
       {
         to: '/stories',
         as: '/stories',
-        linkText: 'See our stories',
+        linkText: 'Read our stories',
       },
     ],
   }, {
     title: 'Get Involved',
-    subTitle: 'Build the world you want today, for tomorrow',
-    description: 'Want to change the world? Come mentor with us.',
+    subTitle: 'Make sense of the world today so we can imagine the world tomorrow',
+    description: 'Together we can change the world.',
     links: [
       {
         to: '/be-a-mentor',
