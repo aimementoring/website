@@ -6,7 +6,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import VideoFormElement from '../../commonElements/videoFormElement';
 
 const Picture = dynamic(() => import('../../picture'));
-
+// TODO: remove whole component once Contentful content model for post is updated for all stories.
 const PostScriptMessage = (props) => {
   const {
     postScriptContent,
