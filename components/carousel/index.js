@@ -5,19 +5,18 @@ import isClientSide from '../../utils/isClientSide';
 import './slick.scss';
 
 const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
-const AimeVideos = dynamic(() => import('./carouselHeaders/aimeVideos'));
-const Testimonials = dynamic(() => import('./carouselHeaders/testimonials'));
-const Wall = dynamic(() => import('./carouselHeaders/wall'));
+const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
+const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
 
 const defaultSettings = {
   dots: true,
+  arrows: false,
   infinite: true,
   speed: 1000,
+  autoplaySpeed: 4000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
-  autoplay: false,
-  autoplaySpeed: 6000,
+  autoplay: true,
   responsive: [
     {
       breakpoint: 768,
@@ -32,8 +31,50 @@ const defaultSettings = {
   ],
 };
 
+const centerModeSettings = {
+  centerMode: true,
+  centerPadding: '2em',
+  slidesToShow: 3,
+  autoplay: true,
+  speed: 500,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        centerMode: true,
+        centerPadding: '2em',
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        centerMode: true,
+        centerPadding: '2em',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '2em',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
 const Carousel = ({
-  children, type, className, settings,
+  children, type, className, settings, mode,
 }) => {
   const sliderRef = useRef(null);
   const ssr = !isClientSide();
@@ -47,14 +88,13 @@ const Carousel = ({
     sliderRef.slickPrev();
   };
 
-  const newSettings = { ...defaultSettings, ...settings };
+  const newSettings = { ...(mode === 'center' ? centerModeSettings : defaultSettings), ...settings };
 
   return (
     <div className={className || `${type}-carousel`}>
       {type === 'live' && <LiveHeader prev={previous} next={next} />}
-      {type === 'aimeVideos' && <AimeVideos prev={previous} next={next} />}
-      {type === 'testimonials' && <Testimonials prev={previous} next={next} />}
-      {type === 'wall' && <Wall prev={previous} next={next} />}
+      {type === 'aimeVideos' && <AimeVideosHeader prev={previous} next={next} />}
+      {type === 'testimonials' && <TestimonialsHeader prev={previous} next={next} />}
       <Slider
         {...newSettings}
         key={ssr ? 'server' : 'client'}
@@ -68,16 +108,19 @@ const Carousel = ({
 };
 
 Carousel.propTypes = {
-  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero', 'testimonials']),
+  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero',
+    'testimonials']),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
+  mode: PropTypes.string,
 };
 
 Carousel.defaultProps = {
   className: null,
   type: 'hero',
   settings: {},
+  mode: '',
 };
 
 export default Carousel;
