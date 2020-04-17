@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.1.6] 2020-04-17
+### Added
+- Added IN{TV} Partner carousel
+
+### Changed
+- Fixed language on nav
+
+### Removed
+- Nothing...
+
 ## [5.1.4] 2020-04-08
 ### Added
 - Added "This Hoodie Pays Rent" campaign link and banner image on home
