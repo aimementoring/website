@@ -13,6 +13,7 @@ import {
   MoneyIcon,
   EventIcon,
   ArrowDownIcon,
+  PlainArrow,
   AccessibilityIcon,
   DescriptionNewIcon,
   BookIcon,
@@ -46,6 +47,7 @@ const Logos = () => (
       <Play />
       <PlayFilled />
       <ArrowDownIcon />
+      <PlainArrow />
       <AccessibilityIcon />
       <DescriptionNewIcon />
       <BookIcon />
