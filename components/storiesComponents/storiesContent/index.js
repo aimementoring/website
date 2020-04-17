@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import { removeMarkdownLink } from '../../../utils/formatting';
+import { removeMarkdown } from '../../../utils/formatting';
 import styles from './storiesContent.module.scss';
 
 const Card = dynamic(() => import('../../card'));
@@ -10,16 +10,16 @@ const StoriesContent = (props) => {
   const {
     id,
     title,
-    slugTitle,
+    slug,
     bannerContent,
     publishDate,
+    categories,
     contentCards,
     contentCreator,
     contentPreview,
   } = props;
 
-
-  const bannerImage = bannerContent.visualMedia
+  const bannerImage = bannerContent && bannerContent.visualMedia
     && bannerContent.visualMedia.fields
     && bannerContent.visualMedia.fields.file.url;
   const contentCreatorBy = contentCreator
@@ -32,9 +32,10 @@ const StoriesContent = (props) => {
       <Card
         cardId={id}
         title={title}
-        urlTo={`/story?slug=${slugTitle}`}
-        urlAs={`/story/${slugTitle}`}
+        urlTo="/story/[slug]"
+        urlAs={`/story/${slug}`}
         image={bannerImage}
+        categories={categories}
         buttonText="READ MORE"
         publishDate={publishDate}
         contentCreator={contentCreatorBy}
@@ -45,7 +46,7 @@ const StoriesContent = (props) => {
             : contentCards && contentCards.slice(0, 1).map((card) => (
               card.fields.contentCopy
             && (
-              `${removeMarkdownLink(card.fields.contentCopy.slice(0, 230))}...`
+              `${removeMarkdown(card.fields.contentCopy).slice(0, 230)}...`
             )))
         }
       />
@@ -55,14 +56,16 @@ const StoriesContent = (props) => {
 
 StoriesContent.defaultProps = {
   contentCards: PropTypes.arrayOf(PropTypes.shape({})),
+  categories: [],
 };
 
 StoriesContent.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  slugTitle: PropTypes.string,
+  slug: PropTypes.string,
   publishDate: PropTypes.string,
   contentCreator: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string),
   bannerContent: PropTypes.shape({
     displayType: PropTypes.string,
     heading: PropTypes.shape({
@@ -137,7 +140,7 @@ StoriesContent.propTypes = {
 };
 
 StoriesContent.defaultProps = {
-  slugTitle: '',
+  slug: '',
   publishDate: '',
   contentCreator: '',
   contentPreview: null,
