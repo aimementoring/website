@@ -1,10 +1,10 @@
 # Specify audits to run. Also include any plugins (like axe)
 audits:
-  - axe
-  - size
-  - lighthouse
-  - heap-snapshot
-  - unused-source
+    - axe
+    - size
+    - lighthouse
+    - heap-snapshot
+    - unused-source
 
 configs:
   logger:
@@ -49,48 +49,25 @@ configs:
     - path: ./.next/precache-*.js
       maxSize: 10 KB
 
-  #  # Unused source settings
-  #  unused-source:
-  #    threshold:
-  #      - path: "**/*(private).*.chunk.css"
-  #        maxSize: 60%
-  #      - path: "**/!(private).*.chunk.css"
-  #        maxSize: 60%
-  #      - path: "**/*([0-9]).*.chunk.js"
-  #        maxSize: 90%
-  #      - path: "**/!([0-9]|main).*.chunk.js"
-  #        maxSize: 45%
-  #      - path: "**/(main).*.chunk.js"
-  #        maxSize: 50%
+# Locations of reports. Useful for storing artifacts in CI
+outputs:
+  # Only show failures in CLI
+  cli:
+    onlyFailures: false
+  html: ./gimbal-artifacts/results.html
+  json: ./gimbal-artifacts/results.json
+  markdown: ./gimbal-artifacts/results.md
 
- # Locations of reports. Useful for storing artifacts in CI
- outputs:
-   # Only show failures in CLI
-   cli:
-     onlyFailures: false
-   html: ./gimbal-artifacts/results.html
-   json: ./gimbal-artifacts/results.json
-   markdown: ./gimbal-artifacts/results.md
-
- # Plugins
- plugins:
-  #  # Compare metrics to last-saved values
-  #  - plugin: "@modus/gimbal-plugin-last-value"
-  #    saveOnlyOnSuccess: false
-
-  #  # Save reports to a database. Needed for gimbal-plugin-last-value
-  #  - plugin: "@modus/gimbal-plugin-sqlite"
-  #    file: ./gimbal-artifacts/gimbal_tests.db
-  #    lastValue: true
-
-   # Axe a11y audits
-   - plugin: "@modus/gimbal-plugin-axe"
-     thresholds:
-       aria-allowed-attr: critical
-       color-contrast: serious
-       landmark-one-main: moderate
-       landmark-complementary-is-top-level: moderate
-       meta-viewport: critical
-       region: moderate
-       page-has-heading-one: moderatec
-       scrollable-region-focusable: moderate
+# Plugins
+plugins:
+  # Axe a11y audits
+  - plugin: "@modus/gimbal-plugin-axe"
+    thresholds:
+      aria-allowed-attr: critical
+      color-contrast: serious
+      landmark-one-main: moderate
+      landmark-complementary-is-top-level: moderate
+      meta-viewport: critical
+      region: moderate
+      page-has-heading-one: moderatec
+      scrollable-region-focusable: moderate
