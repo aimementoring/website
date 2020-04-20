@@ -31,8 +31,7 @@ const getStoryPosts = (categories, page = 1, perPage = STORIES_PER_PAGE) => clie
     'fields.postCategories[in]': categories.join(','),
     skip: perPage * (page - 1),
     order: '-fields.publishDate',
-  }).then((response) => response.items)
-  .catch((e) => bugsnagClient.notify(e) );
+  });
 
 const getPosts = (contentTag) => client.getEntries({
   content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
