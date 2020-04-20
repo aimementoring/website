@@ -9,6 +9,7 @@ const JobsBanner = () => (
         <strong>With us</strong>
       </>
     )}
+    groovy
     titleType="headingLockup"
     titleStyleClass="bannerHeadingPositions"
     bannerContainerClass="hero-banner--default hero-banner--jobs full-width-wrap"
