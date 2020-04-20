@@ -17,10 +17,11 @@ import styles from './stories.module.scss';
 const PRE_SELECTED_CATEGORY = 'IN{TV}';
 
 const Stories = ({
-  initialStories, categories, total, initialCategories,
+  initialStories, categories, initialTotal, initialCategories,
 }) => {
   const [stories, setStories] = useState(initialStories);
   const [currentPage, setPage] = useState(0);
+  const [total, setTotal] = useState(initialTotal);
   const [selectedCategories, setSelectedCategories] = useState(initialCategories);
   const filteredDate = sortDates(initialStories);
   const filteredStories = stories.filter((entry) => (
@@ -35,8 +36,9 @@ const Stories = ({
     } else if (clickedCategories.length === categories.length) {
       Router.replace('/stories/[categorySlug]', '/stories/all', { shallow: true });
     }
-    getStories(clickedCategories).then(({ stories: newStories }) => {
+    getStories(clickedCategories).then(({ stories: newStories, total: newTotal }) => {
       setStories(newStories);
+      setTotal(newTotal);
     });
   };
 
@@ -95,14 +97,14 @@ const Stories = ({
 Stories.defaultProps = {
   initialStories: [],
   categories: [],
-  total: 1000,
+  initialTotal: 1000,
   initialCategories: [PRE_SELECTED_CATEGORY],
 };
 
 Stories.propTypes = {
   initialStories: entriesType,
   categories: PropTypes.arrayOf(PropTypes.string),
-  total: PropTypes.number,
+  initialTotal: PropTypes.number,
   initialCategories: PropTypes.arrayOf(PropTypes.string),
 };
 
@@ -120,7 +122,7 @@ Stories.getInitialProps = async ({ query }) => {
   return {
     initialStories: stories,
     categories,
-    total,
+    initialTotal: total,
     initialCategories,
   };
 };
