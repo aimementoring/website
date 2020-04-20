@@ -39,7 +39,7 @@ const getPosts = (contentTag) => client.getEntries({
   'fields.contentTag.sys.contentType.sys.id': 'contentTag',
   'fields.contentTag.fields.name': contentTag,
   order: '-fields.publishDate',
-});
+}).then((response) => response.items).catch((e) => bugsnagClient.notify(e));
 
 export const getStoryBySlug = (slug) => client.getEntries({
   content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
