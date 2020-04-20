@@ -62,7 +62,8 @@ const BeAMentorForm = () => (
       {'If you\'re new to mentoring with us,'}
       {' '}
       <strong>sign up</strong>
-      &nbsp;&#8212;
+.
+      &#8212;&nbsp;
       {`If you've mentored before, sign into your AIME account below and
       we'll guide you through the remainder of your application.
       Good luck!`}
