@@ -6,14 +6,14 @@ import styles from './storyCategorySelector.module.scss';
 const StoryCategorySelector = ({
   categories, selectedCategories, onClickFunction,
 }) => {
-  const noCategoriesSelected = selectedCategories.length === 0;
+  const allCategoriesSelected = selectedCategories.length === categories.length;
   return (
     <div className={styles.storyCategorySelectorContainer}>
       <div className={styles.tabContainer} key="All">
         <Button
-          className={`${styles.tab} ${styles.allTab} ${noCategoriesSelected ? styles.activeTab : ''}`}
+          className={`${styles.tab} ${styles.allTab} ${allCategoriesSelected ? styles.activeTab : ''}`}
           name="All"
-          onClickFunction={onClickFunction()}
+          onClickFunction={onClickFunction(categories)}
           theme={process.env.REACT_APP_THEME}
         >
           <span className={styles.tabText}>All</span>
@@ -22,9 +22,9 @@ const StoryCategorySelector = ({
       {categories.map((category) => (
         <div className={styles.tabContainer} key={category}>
           <Button
-            className={`${styles.tab} ${selectedCategories.indexOf(category) !== -1 ? styles.activeTab : ''}`}
+            className={`${styles.tab} ${(!allCategoriesSelected && selectedCategories.indexOf(category) !== -1) ? styles.activeTab : ''}`}
             name={category}
-            onClickFunction={onClickFunction(category)}
+            onClickFunction={onClickFunction([category])}
             theme={process.env.REACT_APP_THEME}
           >
             <span className={styles.tabText}>{category}</span>
