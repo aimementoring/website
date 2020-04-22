@@ -21,7 +21,7 @@ const CONTENT_TAGS = {
 
 const POST_CATEGORIES_FIELD_NAME = 'postCategories';
 
-const getStoryPosts = (categories, page = 1, perPage = STORIES_PER_PAGE) => client
+const getStoryPosts = (categories, page = 0, perPage = STORIES_PER_PAGE) => client
   .getEntries({
     limit: perPage,
     content_type: process.env.REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES,
@@ -29,7 +29,7 @@ const getStoryPosts = (categories, page = 1, perPage = STORIES_PER_PAGE) => clie
     'fields.contentTag.sys.contentType.sys.id': 'contentTag',
     'fields.contentTag.fields.name': CONTENT_TAGS.story,
     'fields.postCategories[in]': categories.join(','),
-    skip: perPage * (page - 1),
+    skip: perPage * page,
     order: '-fields.publishDate',
   });
 
