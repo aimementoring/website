@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../../styles/base/variables";
 
 .storiesContainer {
   margin: 0 auto;
@@ -10,6 +10,16 @@
 .storiesParagraph {
   margin: 1.5rem 0;
 }
+
+.loadMore {
+  margin-top: 3em;
+  text-align: center;
+  button.loadMoreButton {
+    background-color: $magenta;
+  }
+}
+
+
 
 .refineSearch {
 
