@@ -80,11 +80,13 @@ const Carousel = ({
 
   const next = () => {
     // TODO – this is broken, but it has been broken before :D
+    // only used for Arrows, which is only used on the Hooded Scholar page
     sliderRef.current.slickNext();
   };
 
   const previous = () => {
     // TODO – this is broken, but it has been broken before :D
+    // only used for Arrows, which is only used on the Hooded Scholar page
     sliderRef.current.slickPrev();
   };
 
