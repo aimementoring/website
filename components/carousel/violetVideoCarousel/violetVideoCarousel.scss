@@ -2,6 +2,14 @@
 
 .aimeVideos {
 
+  .carousel {
+    background: transparent;
+  }
+
+  h1 {
+    margin-bottom: 6em;
+  }
+
   &-highlight-text {
     font-size: calc(#{$base-font-size} + 2rem);
     padding-bottom: 30px;
