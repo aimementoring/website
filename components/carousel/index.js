@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import isClientSide from '../../utils/isClientSide';
 import './slick.scss';
 
-const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
 const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
 const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
 
@@ -92,7 +91,6 @@ const Carousel = ({
 
   return (
     <div className={className || `${type}-carousel`}>
-      {type === 'live' && <LiveHeader prev={previous} next={next} />}
       {type === 'aimeVideos' && <AimeVideosHeader prev={previous} next={next} />}
       {type === 'testimonials' && <TestimonialsHeader prev={previous} next={next} />}
       <Slider
@@ -108,8 +106,7 @@ const Carousel = ({
 };
 
 Carousel.propTypes = {
-  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero',
-    'testimonials']),
+  type: PropTypes.oneOf(['ambassadors', 'aimeVideos', 'hero', 'testimonials']),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
