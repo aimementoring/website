@@ -32,7 +32,7 @@ const Testimonials = () => {
         </Title>
 
         <div className="carousel relative xs-px3 sm-px2 md-px3 lg-px3">
-          <Carousel type="testimonials" settings={customCarouselValues}>
+          <Carousel type="singleSlide" className="testimonials-carousel" settings={customCarouselValues}>
             <div className="flex-center flex-wrap">
               <div className="col-12 sm-col-6 mx-auto">
                 <div className="p1">
