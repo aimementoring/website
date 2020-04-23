@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Components } from 'aime-blueprint';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../common/link';
-import styles from './ambassadors.module.scss';
+import styles from './ambassadorsCarousel.module.scss';
 import Carousel from '../carousel';
 
 
@@ -69,7 +69,7 @@ const CAROUSEL_SLIDES = [
   },
 ];
 
-const Ambassadors = () => (
+const AmbassadorsCarousel = () => (
   <div className={styles.mainContainer}>
     <div className={styles.mentorsSection}>
       <div className={styles.mentorsSectionWrapper}>
@@ -78,7 +78,7 @@ const Ambassadors = () => (
           <strong>AIME</strong>
         </Title>
         <div className={styles.carousel}>
-          <Carousel type="ambassadors">
+          <Carousel type="single">
             {CAROUSEL_SLIDES.map((slide) => <AmbassadorSlide {...slide} key={slide.title} />)}
           </Carousel>
         </div>
@@ -123,4 +123,4 @@ AmbassadorSlide.propTypes = {
   paragraph: PropTypes.string.isRequired,
 };
 
-export default Ambassadors;
+export default AmbassadorsCarousel;
