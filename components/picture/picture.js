@@ -16,10 +16,9 @@ const Picture = ({
 }) => {
   const folderPath = src.replace(/\.[^/.]+$/, '');
   const [imageName, extension] = src.substr(src.lastIndexOf('/') + 1).split('.');
-  const webp = SIZES.map((size) => `${folderPath}/${imageName}${size.suffix}.webp ${size.width}px`).join(', ');
-  const srcSet = SIZES.map((size) => `${folderPath}/${imageName}${size.suffix}.${extension} ${size.width}px`).join(', ');
-  const placeholder = `${folderPath}/${imageName}-pl.${extension}`;
-  // console.log({ folderPath, imageName, extension });
+  const webp = SIZES.map((size) => `${folderPath}/${imageName}${extension}${size.suffix}.webp ${size.width}w`).join(', ');
+  const srcSet = SIZES.map((size) => `${folderPath}/${imageName}${extension}${size.suffix}.${extension} ${size.width}w`).join(', ');
+  const placeholder = `${folderPath}/${imageName}${extension}-pl.${extension}`;
 
   return (
     <>
@@ -29,7 +28,6 @@ const Picture = ({
         <img
           className={className}
           src={placeholder}
-          sizes={SIZES.map((size) => `${size.width}px`).join(', ')}
           alt={title}
           srcSet={srcSet}
           style={imageStyle}
