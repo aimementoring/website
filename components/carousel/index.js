@@ -74,7 +74,7 @@ const multipleSlideSettings = {
 const Carousel = ({
   children, type, className, settings, showArrows,
 }) => {
-  const sliderRef = useRef();
+  const sliderRef = useRef(null);
   const ssr = !isClientSide();
   const Slider = dynamic(import('react-slick'), { ssr });
 
