@@ -13,8 +13,9 @@ const WavyDonateSection = () => {
     <div
       role="link"
       onClick={toggleDonateModal}
+      className={styles.donateLink}
     >
-      <svg className={styles.frameSvg} viewBox="0 0 100 14.8" preserveAspectRatio="none">
+      <svg className={styles.frameSvg} viewBox="0 0 100 14.8" preserveAspectRatio="xMinYMid meet">
         <defs>
           <filter id="dropshadow" height="120%">
             <feDropShadow dx="0.1" dy="0.1" stdDeviation="0" floodColor="#9135F0" floodOpacity="1" />
