@@ -1,3 +1,5 @@
+@import "../../styles/base/variables";
+
 .frameSvg {
   width: 100vw; 
   height: 14.8vw;
@@ -8,8 +10,16 @@
   font-family:"GT Pressura Mono";
   font-weight:800;
   cursor: pointer;
+  max-width:1920px;
+  @media screen and (max-width: $md) {
+    transform: scale(1.6);
+}
 }
 
+.donateLink {
+  display:flex;
+  justify-content:center;
+}
 .donateTitleText {
   text-align:center;
  font-size:.08rem;
