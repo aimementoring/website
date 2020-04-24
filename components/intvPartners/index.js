@@ -13,13 +13,23 @@ const CAROUSEL_SLIDES = [
     image: `${ASSETS_URL}/assets/images/partners/pedestrian.png`,
     title: 'Pedestrian Group',
     type: 'Founding Partner',
-    paragraph: ' ',
+    paragraph: `“Pedestrian Group has always been a voice of 
+    young Aussies. This is a particularly important
+    time for PEDESTRIAN.TV to partner with AIME’s
+    mentors as they go digital and drive positive
+    conversation about the future.” - James McManus, Creative Director`,
   },
   {
     image: `${ASSETS_URL}/assets/images/partners/background.png`,
     title: 'Background',
     type: 'Production Partner',
-    paragraph: ' ',
+    paragraph: `“AIME has led the way in adapting and
+    transforming structures, and now more than
+    ever a paradigm shift is on the horizon. We’re
+    excited to bring the insight and knowledge of
+    our networks to the table - to see the power of
+    imagination let loose in every home, and for the
+    youth and fresh ideas this will support.” - Margaret Zhang, Co-Founder`,
   }, {
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
