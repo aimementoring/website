@@ -41,7 +41,7 @@ const sitesConfig = {
 
 export const loadPositions = async (filter, fields) => airtableFetchRecords(config, filter, fields);
 
-export const findJob = async (id, currentSite) => {
+export const findJob = async (id, currentSite = 'global') => {
   const configPosition = config;
   const job = await airtableFetchRecord(configPosition, id);
   const today = new Date();
