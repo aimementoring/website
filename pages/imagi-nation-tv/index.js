@@ -4,7 +4,6 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import Anchor from '../../components/common/link';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
@@ -31,7 +30,8 @@ const ImagiNationTV = () => (
           </Title>
           <Paragraph>
             <strong><mark>&nbsp;Live every weekday 12pm AEST&nbsp;</mark></strong>
-            <br /><br />
+            <br />
+            <br />
             A chance for kids at home to have mentors in their lives to
             {' '}
             <em>Make Sense of Today & Imagine Tomorrow</em>
@@ -71,7 +71,7 @@ const ImagiNationTV = () => (
       </div>
     </div>
     <div className={styles.inTVContentWrapper}>
-     
+
       <DoubleCurvedLine />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
