@@ -37,6 +37,9 @@ stroke-width:2px;
 vector-effect:non-scaling-stroke;
 transition:all .5s;
 filter:url(#dropshadow);
+@media screen and (max-width: $md) {
+  stroke-width:1px;
+}
 }
 
 #donateBottomPath, #donateTopPath {
