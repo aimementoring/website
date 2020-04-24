@@ -1,7 +1,7 @@
 @import "../../styles/base/variables";
 
 .frameSvg {
-  width: 100vw; 
+  width: 108.6vw; 
   height: 14.8vw;
   margin:0;
   transition:all .5s;
@@ -33,7 +33,7 @@
 .donateSvgShape {
 fill:#FFF;
 stroke:#9135F0;
-stroke-width:3px;
+stroke-width:2px;
 vector-effect:non-scaling-stroke;
 transition:all .5s;
 filter:url(#dropshadow);
