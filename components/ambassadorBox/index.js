@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './ambassadorsBox.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const AmbassadorBox = ({
   image, name, type, description,
 }) => (
-  <div className="grid-tile">
-    <div className="campaign-grid--inner-tile">
+  <div className={styles.gridTile}>
+    <div>
       <img
-        className="campaign-grid--image circle mx-auto block grayscale"
+        className={styles.campaignGridImage}
         src={`${ASSETS_URL}/assets/images/ambassadors/${image}`}
         alt={name}
       />
-      <h4 className="c-black campaign-grid--title ambassador-grid--title">{name}</h4>
-      <h3 className="c-grey center ampaign-grid--sub-title">{type}</h3>
-      <p className="c-grey campaign-grid--desc">{description}</p>
+      <h4 className={styles.h4Title}>{name}</h4>
+      <h3 className={styles.h3Title}>{type}</h3>
+      <p className={styles.spanText}>{description}</p>
     </div>
   </div>
 );
