@@ -20,6 +20,7 @@
   display:flex;
   justify-content:center;
 }
+
 .donateTitleText {
   text-align:center;
  font-size:.08rem;
@@ -30,9 +31,9 @@
 }
 
 .donateSvgShape {
-fill:#9135F0;
+fill:#FFF;
 stroke:#9135F0;
-stroke-width:1px;
+stroke-width:3px;
 vector-effect:non-scaling-stroke;
 transition:all .5s;
 filter:url(#dropshadow);
@@ -51,7 +52,7 @@ font-size:0.5em;
 }
 
 .donateSvgText {
-  fill:#fff;
+  fill:#9135F0;
   transform:translateZ(0);
 }
 
@@ -60,14 +61,14 @@ font-size:0.5em;
 }
 
 .donateSvgGroup:hover .donateSvgShape {
-  fill:#FFF;
+  fill:#9135F0;
 }
 
 .donateSvgGroup:hover .donateSvgText {
-  fill:#E82A9E;
+  fill:#FFF;
 }
 
 .donateSvgGroup:hover .donateTitleText {
-  fill:#FFA235;
+  fill:#FFF;
 }
 
