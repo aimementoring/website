@@ -65,6 +65,19 @@ const CAROUSEL_SLIDES = [
     on encouraging today’s students to think without a box… and I have no
     doubt they are going to seize all opportunities to do so."
     - Nancy Conrad, Founding Chairman`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/logo-ais.png`,
+    title: 'Australian Institute of Sports',
+    type: 'Cancelled not Cancelled Partner',
+    paragraph: `"The AIS is proud to be involved with AIME’s IMAGI-NATION{TV}
+    , which seeks to tell important stories to thousands of students around
+    the world. Amanda’s story both as a Paralympian and a proud Wemba-Wemba
+    woman is one such story that should be shared widely. I know Amanda’s
+    story will help create better understanding of indigenous culture and
+    history,  both in sport and the wider community. Equally, her tenacity
+    and passion to achieve what she has and will continue to do despite the
+    recent postponement of the 2020 Paralympic Games is inspiration to us all"
+    - Peter Conde, CEO, AIS`,
   },
 ];
 
