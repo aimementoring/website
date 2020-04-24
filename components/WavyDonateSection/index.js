@@ -18,7 +18,7 @@ const WavyDonateSection = () => {
       <svg className={styles.frameSvg} viewBox="0 0 100 14.8" preserveAspectRatio="xMinYMid meet">
         <defs>
           <filter id="dropshadow" height="120%">
-            <feDropShadow dx="0.1" dy="0.1" stdDeviation="0" floodColor="#9135F0" floodOpacity="1" />
+            <feDropShadow dx="0.1" dy="0.5" stdDeviation="0" floodColor="#9135F0" floodOpacity="1" />
           </filter>
         </defs>
         <g className={styles.donateSvgGroup}>
@@ -31,7 +31,7 @@ const WavyDonateSection = () => {
               <animate attributeName="startOffset" from="100%" to="0%" begin="0s" dur="15s" repeatCount="indefinite" />
             </textPath>
           </text>
-          <text className={`${styles.donateTitleText} ${styles.donateSvgText}`} width="100">
+          <text className={styles.donateTitleText} width="100">
             <textPath href="#donateTopPath" alignmentBaseline="top" startOffset="50%" textAnchor="middle">
         - GET A MENTOR IN THE HOME EVERDAY -
             </textPath>
