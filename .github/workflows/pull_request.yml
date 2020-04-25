@@ -34,7 +34,7 @@ env:
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
 
 jobs:
-  Lint+Analyze:
+  Lint_and_Analyze:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
