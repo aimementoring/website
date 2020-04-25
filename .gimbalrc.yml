@@ -9,7 +9,7 @@ audits:
 configs:
   logger:
     level: 1
-  buildDir: .next
+  buildDir: out
   comment:
     # Only show failures in GitHub PR comments.
     # Useful to pinpoint why a build has failed
@@ -19,11 +19,11 @@ configs:
     threshold:
       Documents: 11
       Frames: 5
-      JSHeapTotalSize: 13356000
-      JSHeapUsedSize: 10068000
-      Nodes: 800
-      RecalcStyleCount: 15
-      LayoutCount: 15
+      JSHeapTotalSize: 21889024
+      JSHeapUsedSize: 13685832
+      Nodes: 1196
+      RecalcStyleCount: 129
+      LayoutCount: 25
 
   # Lighthouse settings
   lighthouse:
@@ -42,12 +42,14 @@ configs:
 
   # File and directory size settings
   size:
-    - path: .next/
-      maxSize: 300 MB
+    - path: out/
+      maxSize: 60 MB
     - path: .next/service-worker.js
       maxSize: 5 KB
-    - path: ./.next/precache-*.js
-      maxSize: 10 KB
+    - path:  out/index.html
+      maxSize: 80 KB
+    - path: out/service-worker.js   
+      maxSize: 8 KB
 
 # Locations of reports. Useful for storing artifacts in CI
 outputs:
@@ -71,3 +73,9 @@ plugins:
       region: moderate
       page-has-heading-one: moderate
       scrollable-region-focusable: moderate
+      heading-order: moderate
+      label: critical
+      landmark-unique: moderate
+      link-name: serious
+      region: moderate
+
