@@ -66,6 +66,7 @@ plugins:
   - plugin: "@modus/gimbal-plugin-axe"
     thresholds:
       aria-allowed-attr: critical
+      aria-hidden-focus: serious
       color-contrast: serious
       landmark-one-main: moderate
       landmark-complementary-is-top-level: moderate
@@ -78,4 +79,6 @@ plugins:
       landmark-unique: moderate
       link-name: serious
       region: moderate
+      list: serious
+      listItem: serious
 
