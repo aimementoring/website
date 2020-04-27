@@ -1,0 +1,13 @@
+@import "../../styles/base/variables";
+@import "../../styles/global/typography.module.scss";
+
+.backActionParagraph {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2em 0 1em;
+}
+
+.materialIcons {
+  @extend %material-icons;
+}
