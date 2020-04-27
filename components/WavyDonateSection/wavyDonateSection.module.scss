@@ -13,7 +13,7 @@
   max-width:1440px;
   @media screen and (max-width: $md) {
     transform: scale(1.6);
-}
+  }
 }
 
 .donateLink {
@@ -23,11 +23,14 @@
 
 .donateTitleText {
   text-align:center;
- font-size:.08rem;
+  font-size:.08rem;
   letter-spacing:0.05rem;
   font-family:"GT Pressura Mono";
   font-weight:800;
   fill:#FFA235;
+  @media screen and (max-width: $md) {
+    font-size: .12rem;
+  }
 }
 
 .donateSvgShape {
