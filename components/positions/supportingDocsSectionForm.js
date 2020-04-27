@@ -4,6 +4,7 @@ import kebabCase from 'lodash/kebabCase';
 import Title from 'aime-blueprint/lib/components/title';
 import Loading from 'aime-blueprint/lib/components/loading';
 import FileUploader from '../uppyFileUploader';
+import styles from './supportingDocsSectionForm.module.scss';
 
 const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, values }) => {
   const [loading, setLoading] = useState(false);
@@ -60,15 +61,15 @@ const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, v
   return (
     <>
       {requiredDocuments && requiredDocuments.length > 0 && (
-        <div className="clearfix my3 sm-col sm-col-12 md-col-12 js-job-documents">
+        <div className={styles.provideSupportingDocsContainer}>
           <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
             Provide Supporting Documents
           </Title>
-          <div className="flex flex-column items-start job-documents js-job-document-container">
+          <div className={styles.requiredDocumentsContainer}>
             {requiredDocuments.map((document, index) => (
               /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
               <label key={document}>
-                <div className={`upload-field ${index < requiredDocuments.length < 1 ? 'mb2' : ''}`}>
+                <div className={index < requiredDocuments.length < 1 ? styles.uploadFieldWithMargin : ''}>
                   <FileUploader
                     name={`job-${kebabCase(document)}`}
                     folderInS3Name="jobs/kevin_test"
