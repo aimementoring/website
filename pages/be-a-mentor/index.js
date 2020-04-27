@@ -12,7 +12,7 @@ import {
   getDataOfUniversity,
 } from '../../utils/expresionOfInterest';
 import COUNTRY_CODES from '../../utils/countryCodes';
-import styles from './styles.module.scss';
+import styles from './be-a-mentor.module.scss';
 
 const Loading = dynamic(() => import('aime-blueprint/lib/components/loading'));
 const UniversityLinks = dynamic(() => import('../../components/beAMentor/universityLinks'));
