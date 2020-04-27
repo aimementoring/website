@@ -1,0 +1,9 @@
+@import "../../styles/base/variables";
+
+.hiddenFieldsAndSubmitActionContainer{
+  @media (min-width: $sm) {
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
