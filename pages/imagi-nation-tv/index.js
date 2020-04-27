@@ -6,8 +6,8 @@ import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
-import styles from './styles.module.scss';
 import WavyDonateSection from '../../components/wavyDonateSection';
+import styles from './styles.module.scss';
 
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
