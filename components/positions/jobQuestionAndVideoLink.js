@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LabeledTextarea from 'aime-blueprint/lib/components/labeledTextarea';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
+import styles from './jobQuestionAndVideoLink.module.scss';
 
 const JobQuestionAndVideoLink = ({
   messageQuestion, isThereVideoLink, handleChange, values,
 }) => (
   <>
-    <div className="sm-col sm-col-12 md-col-12 o7-r o7-b js-message-question-div">
+    <div className={styles.textAreaContainer}>
       {messageQuestion && (
         <LabeledTextarea
           className="input js-message-question"
@@ -19,7 +20,7 @@ const JobQuestionAndVideoLink = ({
         />
       )}
     </div>
-    <div className="sm-col sm-col-12 md-col-12 o7-r o7-b js-video-link">
+    <div className={styles.textAreaContainer}>
       {isThereVideoLink && (
         <LabeledInput
           type="text"
