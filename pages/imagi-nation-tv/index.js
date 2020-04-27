@@ -6,6 +6,7 @@ import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import FeaturedProduct from '../../components/featuredProduct';
+import IntercomChat from '../../components/intercom';
 import styles from './styles.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -77,6 +78,45 @@ const ImagiNationTV = () => (
           url="/donate"
         />
       </section>
+
+      <DoubleCurvedLine />
+
+      <section className={`${styles.partneringCTASection}`}>
+        <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
+        <div className={`${styles.puppetsChatWrapper}`}>
+          <div className={`${styles.puppetChat}`}>
+            <img
+              src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
+              alt="Hope the Puppet"
+              className={styles.puppetTalking}
+            />
+            <div className={styles.puppetWords}>
+              <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
+              <Paragraph>
+                We’re looking for partners of all kinds, whether you’re a company,
+                a school, uni or a future guest - we’d love to talk. This show is
+                not about entertainment to pass the time, your funds and the work
+                we do together will be an investment in providing a stage to
+                elevate knowledge.
+              </Paragraph>
+              <div className={styles.becomeAPartnerBtn}>
+                <IntercomChat label="Get in the game" />
+              </div>
+            </div>
+          </div>
+          <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
+            <div>
+              <Title type="h4Title" className={styles.puppetTitle}>Already a partner? Click here!</Title>
+            </div>
+            <img
+              src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
+              alt="Robo Cat"
+              className={styles.puppetTalking}
+            />
+          </div>         
+        </div>
+      </section>
+
       <DoubleCurvedLine />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
@@ -218,10 +258,10 @@ const ImagiNationTV = () => (
           linkText="Buy a Hoodie"
         />
       </section>
+      
       <DoubleCurvedLine />
-      <div className={styles.tempIntvPWrapper}>
-        <IntvPartners />
-      </div>
+
+      <IntvPartners />
     </div>
   </Layout>
 );

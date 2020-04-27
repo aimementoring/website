@@ -137,3 +137,83 @@
     padding: 2em 3em 3em 0.5em;
   }
 }
+
+.partneringCTASection {
+  padding: 4em 1em 2em;
+  border: 3px solid $magenta;
+
+  .partneringHeading {
+    letter-spacing: -0.1em;
+    color: $purple;
+    text-align: center;
+  }
+
+  .puppetsChatWrapper {
+    border: 3px double $cyan;
+    max-width: $lg;
+    margin: 0 auto;
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .puppetChat {
+    border: 1px solid $pink;
+    display: flex;
+    align-items: center;
+    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top center / contain transparent;
+
+    .puppetTalking {
+      width: 18em;
+    }
+    
+    .puppetWords {
+      width: 50%;
+      padding: 2em 3em;
+    }
+
+    &.puppetChatSmaller {
+      background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top center / contain transparent;
+
+      .puppetTalking {
+        width: 16em;
+      }
+
+      .puppetTitle {
+        text-align: center;
+        text-transform: none;
+        color: $magenta;
+      }
+    }
+  }
+
+  .becomeAPartnerBtn {
+    margin-bottom: 2em;
+    
+    button.navBtn {
+      background-color: $pink;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      transition: $hoverTransition;
+
+      &:hover {
+        background-color: $orange;
+      }
+    }
+
+    @media screen and (max-width: $sm) {
+      width: 100%;
+    }
+  }
+}
