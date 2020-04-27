@@ -1,5 +1,6 @@
 import React from 'react';
 import { SimpleBanner } from '../banner/index';
+import styles from './header.module.scss';
 
 const Header = () => (
   <SimpleBanner
@@ -12,10 +13,10 @@ const Header = () => (
       </>
     )}
     titleType="headingLockup"
-    titleStyleClass="headingJobsSingle"
-    bannerContainerClass="hero-banner--default hero-banner--jobs full-width-wrap job-hero"
-    bannerWrapperClass="flex flex-wrap items-center full-height"
-    bannerContentWrapperClass="banner-wrapper subpage-banner center"
+    titleStyleClass={styles.headingJobsSingle}
+    bannerContainerClass={styles.positionsBannerContainer}
+    bannerWrapperClass={styles.positionsBannerWrapper}
+    bannerContentWrapperClass={styles.positionsBannerContentWrapper}
     bannerContentClass="bannerContent"
   />
 );
