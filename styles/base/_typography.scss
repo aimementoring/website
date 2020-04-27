@@ -134,7 +134,7 @@
   font-weight: 400;
 }
 
-.material-icons {
+%material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -151,6 +151,10 @@
   text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
   -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
   font-feature-settings: 'liga';       // Support for IE.
+}
+
+.material-icons {
+  @extend %material-icons;
 }
 
 // Font Family
