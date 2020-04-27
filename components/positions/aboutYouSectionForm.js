@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
 import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
+import styles from './aboutYouSectionForm.module.scss';
 
 const AboutYouSectionForm = ({ handleChange, values }) => (
-  <div className="clearfix">
-    <div className="inputJobApplicationWrapper">
+  <div className={styles.aboutYouSectionFormContainer}>
+    <div className={styles.jobInputWrapper}>
       <LabeledInput
         type="text"
         name="first_name"
@@ -14,10 +15,10 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         onChangeFunction={handleChange}
         label="First Name"
         theme={process.env.REACT_APP_THEME}
-        className="inputJobApplication"
+        className={styles.inputJobApplication}
       />
     </div>
-    <div className="inputJobApplicationWrapper">
+    <div className={styles.jobInputWrapper}>
       <LabeledInput
         type="text"
         name="last_name"
@@ -25,11 +26,11 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         onChangeFunction={handleChange}
         label="Last Name"
         theme={process.env.REACT_APP_THEME}
-        className="inputJobApplication"
+        className={styles.inputJobApplication}
         required
       />
     </div>
-    <div className="inputJobApplicationWrapper">
+    <div className={styles.jobInputWrapper}>
       <LabeledInput
         type="email"
         name="email"
@@ -37,11 +38,11 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         onChangeFunction={handleChange}
         label="Email"
         theme={process.env.REACT_APP_THEME}
-        className="inputJobApplication"
+        className={styles.inputJobApplication}
         required
       />
     </div>
-    <div className="inputJobApplicationWrapper flex flex-column js-phone-component">
+    <div className={styles.phoneJobInputWrapper}>
       <PhoneInput
         placeholder="Enter phone number"
         theme={process.env.REACT_APP_THEME}
@@ -49,7 +50,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
         value={values.phone || ''}
         defaultCountry="AU"
         onChangeFunction={handleChange}
-        className="inputJobApplication"
+        className={styles.inputJobApplication}
       />
     </div>
   </div>
