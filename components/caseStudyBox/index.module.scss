@@ -4,9 +4,9 @@
   flex: 33.33%;
   margin: 0.5rem;
 
-  // @supports (display: grid) {
-  //   margin: 0;
-  // }
+  @supports (display: grid) {
+    margin: 0;
+  }
 }
 
 .containerVideoPerson {
