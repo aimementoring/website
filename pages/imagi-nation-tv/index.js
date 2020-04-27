@@ -6,7 +6,7 @@ import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import Anchor from '../../components/common/link';
 import FeaturedProduct from '../../components/featuredProduct';
-import styles from './styles.module.scss';
+import styles from './imagi-nation-tv.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
