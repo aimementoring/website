@@ -9,7 +9,6 @@ const WavyDonateSection = () => {
   const [modalVisible, toggleDonateModal] = useDonate();
 
   return (
-
     <div
       role="link"
       onClick={toggleDonateModal}
