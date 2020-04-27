@@ -7,9 +7,8 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import styles from './styles.module.scss';
-import WavyDonateSection from '../../components/WavyDonateSection';
+import WavyDonateSection from '../../components/wavyDonateSection';
 
-const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -71,27 +70,8 @@ const ImagiNationTV = () => (
 
       </div>
     </div>
+    <WavyDonateSection />
     <div className={styles.inTVContentWrapper}>
-      <section className={styles.triBtnSet}>
-        <Button
-          type="link"
-          text="Watch live on YouTube"
-          theme={process.env.REACT_APP_THEME}
-          className={`${styles.imagiBtn}`}
-          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
-        />
-        <Button
-          type="link"
-          className={`${styles.imagiHoodieBtn} ${styles.imagiBtn}`}
-          text="Buy the Imagi-Nation Hoodie"
-          theme={process.env.REACT_APP_THEME}
-          url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
-        />
-        <div className={`${styles.becomeAPartnerBtn} ${styles.getInTouchBtn}`}>
-          <IntercomChat label="Get in touch" />
-        </div>
-      </section>
-      <WavyDonateSection />
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
           <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
@@ -232,7 +212,6 @@ const ImagiNationTV = () => (
           linkText="Buy a Hoodie"
         />
       </section>
-      <DoubleCurvedLine />
       <div className={styles.tempIntvPWrapper}>
         <IntvPartners />
       </div>
