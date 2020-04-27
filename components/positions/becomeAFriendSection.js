@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'aime-blueprint/lib/components/checkbox';
+import styles from './becomeAFriendSection.module.scss';
 
 const BecomeAFriendSection = ({ handleChange, values }) => (
-  <div className="sm-col sm-col-12 md-col-12 f-14 pt1 pb3 flex items-center custom-checkbox custom-checkbox--default">
+  <div className={styles.becomeAFriendContainer}>
     <Checkbox
       id="aime-friend"
       name="be-an-aime-friend"
