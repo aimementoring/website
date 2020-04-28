@@ -1,0 +1,205 @@
+@import "../../styles/base/variables";
+
+.heroBannerImagiTV {
+  background:
+    url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
+  background-size: 100% 40%;
+  position: relative;
+  max-width: 75em;
+  width: 100%;
+  padding: 1em;
+  margin: 6em auto 0;
+
+  @media screen and (min-width: $sm) {
+    background-size: 80% 65%;
+  }
+
+  @media screen and (min-width: $md) {
+    background-position: 90% 80%;
+   
+    background-size: 60% 90%;
+  }
+
+  .bannerWrapper {
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0.5em;
+  
+    @media screen and (min-width: $sm) {
+      display: flex;
+    }
+  
+    @media screen and (min-width: $md) {
+      flex-direction: row;
+      align-items: center;
+      padding: 2em;
+    }
+  
+    .bannerItem {
+      box-sizing: border-box;
+      flex-grow: 1;
+      flex-basis: 0;
+      clear: both;
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $sm) {
+        width: 70%;
+      }
+    }
+  
+    .bannerContent {
+      z-index: 1;
+      justify-content: flex-end;
+  
+      p {
+        color: $black;
+        max-width: 30em;
+        margin: 2em 0;
+      }
+    }
+  
+    .bannerMediaFeature {
+      position: relative;
+      padding: 1em 0;
+      margin-bottom: 2em;
+      align-self: flex-end;
+      text-align: right;
+      font-family: $body-font-family;
+  
+      @media screen and (min-width: $sm) {
+        margin-top: 0;
+      }
+  
+      @media screen and (min-width: $md) {
+        align-self: center;
+        flex-grow: 2;
+      }
+
+      .playerContainer {
+        padding: 0;
+        min-width: auto;
+        height: 18em;
+        @media screen and (min-width: $md) {
+          height: 25em;
+        }
+      }
+  
+      .videoCoverArt {
+        border-radius: 3px;
+      }
+  
+      .textLinkChannel {
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: $black;
+        margin-top: 0.5em;
+        transition: $hoverTransition;
+        cursor: pointer;
+        font-weight: normal;
+        &:hover {
+          color: $magenta;
+        }
+      }
+
+      .videoDescription {
+        text-align: right;
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .welcomeTitle {
+    color: $black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    padding: 0 0.5em;
+    z-index: 10;
+    position: relative;
+
+    @media screen and (min-width: $md) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .logoImagiTV {
+    position: relative;
+    width: 13rem;
+    left: -1em;
+    @media screen and (min-width: $md) {
+      width: 17rem;
+    }
+  }
+
+  .hiddenTitle {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+.inTVContentWrapper {
+  .subTitle {
+    color: $purple;
+    margin-bottom: 1em;
+  }
+
+  .inTVEpisodesWrapper {
+    margin: 4em auto;
+    width: 100%;
+    columns: 20em;
+    column-gap: 1.5em;
+  }
+
+  .featuredProductWrapper {
+    margin-top: 1.5em;
+  }
+
+  .introEpisodes {
+    padding: 2em 3em 3em 0.5em;
+  }
+
+  .partnersWrapper {
+    max-width: 64em;
+    margin: auto;
+
+    .partnersHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 1em;
+      flex-direction: row;
+
+      @media screen and (max-width: $sm) {
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .partnersImagesGroup {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width: 52em;
+      margin: 1em auto;
+
+      @media screen and (max-width: $sm) {
+        flex-direction: column;
+        margin: 1em 2em;
+      }
+
+      .partnerImage {
+        margin: 1em 2em;
+
+        img {
+          max-height: 10em;
+          max-width: 13em;
+        }
+      }
+    }
+  }
+}
