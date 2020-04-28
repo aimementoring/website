@@ -35,7 +35,7 @@ env:
   NEXTJS_TARGET: serverless
 
 jobs:
-  Lint_and_Analyze:
+  Build_and_Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -53,6 +53,3 @@ jobs:
       - name: Build
         env:
             CI: ''
-        run: yarn build
-      - name: Analyze
-        run: yarn analyze
