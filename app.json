@@ -144,6 +144,10 @@
     "REACT_APP_MAILCHIMP_API": {
       "required": true,
       "value": "https://us12.api.mailchimp.com/3.0"
+    },
+    "NEXT_JS_TARGET": {
+      "required": true,
+      "value": "serverless"
     }
   },
   "formation": {
