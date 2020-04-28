@@ -8,11 +8,9 @@
 
 .bannerContent .headingJobsSingle {
   text-align: center;
-  letter-spacing: -0.15em;
   margin-top: 3em;
   strong {
     left: initial;
-    letter-spacing: -0.15em;
     @media screen and (min-width: $md) {
       top: initial;
     }
