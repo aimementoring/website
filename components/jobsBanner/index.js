@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './jobsBanner.module.scss';
 import { SimpleBanner } from '../banner/index';
 
 const JobsBanner = () => (
@@ -11,10 +12,10 @@ const JobsBanner = () => (
     )}
     groovy
     titleType="headingLockup"
-    titleStyleClass="bannerHeadingPositions"
-    bannerContainerClass="hero-banner--default hero-banner--jobs full-width-wrap"
-    bannerWrapperClass="flex flex-wrap items-center full-height"
-    bannerContentWrapperClass="banner-wrapper subpage-banner center pt3"
+    titleStyleClass={styles.bannerHeadingPositions}
+    bannerContainerClass={styles.jobsBanner}
+    bannerWrapperClass={styles.bannerWrapper}
+    bannerContentWrapperClass={styles.bannerContentWrapper}
   />
 );
 
