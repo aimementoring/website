@@ -60,7 +60,7 @@ async function runBuild() {
       const buildStdout = await buildProject();
       console.log(buildStdout);
       console.log('\x1b[36m%s\x1b[0m', `ENVIRONMENT: ${buildEnv}`);
-      exec('cp .next/service-worker.js public/service-worker.js');
+      // exec('cp .next/service-worker.js public/service-worker.js');
       if (goesToAws) {
         try {
           console.info('\x1b[32m%s\x1b[0m', `• ${goesToAws ? 5 : 4} of ${totalActions} -> UPLOADING BUILD FOLDER TO AWS S3`);
