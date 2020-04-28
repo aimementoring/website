@@ -33,7 +33,7 @@ const multipleSlideSettings = {
   centerMode: true,
   centerPadding: '2em',
   slidesToShow: 3,
-  autoplay: true,
+  autoplay: false,
   speed: 500,
   dots: false,
   responsive: [
