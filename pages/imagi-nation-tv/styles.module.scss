@@ -151,24 +151,28 @@
   }
 
   .puppetsChatWrapper {
-    max-width: $lg;
+    // max-width: 40em;
     margin: 0 auto;
 
     @media screen and (min-width: $md) {
       display: flex;
       align-items: center;
       justify-content: center;
+      max-width: $lg;
     }
   }
 
   .puppetChat {
     background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top right / 80% transparent;
+
+    max-width: 20em;
     // background-size: 65%;
     // background-position: top right;
 
     @media screen and (min-width: $md) {
       display: flex;
       align-items: center;
+      max-width: initial;
     }
 
     // .puppetWrap {
@@ -187,14 +191,13 @@
 
       @media screen and (min-width: $md) {
         width: 25em;
-        margin-left: 2em;
         padding: 4em 2em;
       }
     }
 
     &.puppetChatSmaller {
       background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 65% transparent;
-      
+      float: right;
       display: flex;
       align-items: flex-start;
 
@@ -223,7 +226,8 @@
           width: 9em;
           padding: 3em 0;
           font-size: 1.1rem;
-          left: 1em;
+          left: 1.6em;
+          top: 1em;
         }
       }
     }
