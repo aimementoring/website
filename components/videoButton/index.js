@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import videojs from 'video.js';
+import classNames from 'classnames';
 import 'videojs-contrib-hls';
-import './index.scss';
-
 import ReactDOM from 'react-dom';
+import styles from './videoButton.module.scss';
+
 
 const VideoBox = ({ children }) => ReactDOM.createPortal(children, document.getElementById('aime-parent-video-box'));
 class VideoButton extends PureComponent {
@@ -104,22 +105,22 @@ class VideoButton extends PureComponent {
         {didMount && (
           <VideoBox>
             <div
-              className={`container-video ${!showContainer && 'display-none'}`}
+              className={classNames(styles.containerVideo, showContainer ? '' : styles.displayNone)}
               onClick={this.closeVideo}
               onKeyPress={this.closeVideo}
               role="presentation"
             >
-              <svg className="icon icon-close">
+              <svg className={styles.closeIcon}>
                 <use xlinkHref="#icon-close" />
               </svg>
               <video
-                className="video-js"
+                className={styles.videoJs}
                 ref={(node) => { this.video = node; }}
                 playsInline
               >
                 <track kind="captions" />
               </video>
-              {!playing && <div className="video-arrow">▶</div>}
+              {!playing && <div className={styles.videoArrow}>▶</div>}
             </div>
           </VideoBox>
         )}
