@@ -70,7 +70,6 @@ const ImagiNationTV = () => (
 
       </div>
     </div>
-    <WavyDonateSection />
     <div className={styles.inTVContentWrapper}>
       <section className={styles.inTVEpisodesWrapper}>
         <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
@@ -202,6 +201,7 @@ const ImagiNationTV = () => (
           </Paragraph>
         </ImaginationTvCard>
       </section>
+      <WavyDonateSection />
       <section className={styles.featuredProductWrapper}>
         <FeaturedProduct
           imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
