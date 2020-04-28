@@ -90,8 +90,7 @@ const IntvPartners = () => (
         </Title>
       </div>
       <Carousel
-        mode="center"
-        type="ambassadors"
+        type="multipleSlides"
         className={styles.partnersCarousel}
       >
         {CAROUSEL_SLIDES.map((slide) => <IntvPartnersSlide {...slide} key={slide.title} />)}
