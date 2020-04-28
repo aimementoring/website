@@ -1,6 +1,8 @@
 import React from 'react';
 import PropType from 'prop-types';
 
+import styles from './jobs.module.scss';
+
 const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
   const filterJobs = (type) => () => {
     if (!type) filterBy(undefined);
@@ -8,12 +10,12 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
   };
 
   return (
-    <div className="job-grid filter-list-container pt2 pb3">
-      <h4 className="c-brand-primary py2 f-15 px2 border border-radius">Refine</h4>
-      <ul className="flex flex-wrap">
-        <li className="block mr1">
+    <div className={styles.containerJobFilter}>
+      <h4 className={styles.titleJobFilter}>Refine</h4>
+      <ul className={styles.listaJobFilter}>
+        <li className={styles.elemJobFilter}>
           <span
-            className={`filter-list cursor ${!currentFilter ? 'active' : ''}`}
+            className={`${styles.filterList} ${!currentFilter ? styles.active : ''}`}
             onClick={filterJobs(undefined)}
             onKeyPress={filterJobs(undefined)}
             role="presentation"
@@ -22,10 +24,10 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
           </span>
         </li>
         {filtersType.map((type) => (
-          <li className="block mr1" key={type || 'undefined'}>
+          <li className={styles.elemJobFilter} key={type || 'undefined'}>
             {!!type && (
               <span
-                className={`filter-list cursor ${currentFilter === type ? 'active' : ''}`}
+                className={`${styles.filterList} ${currentFilter === type ? styles.active : ''}`}
                 onClick={filterJobs(type)}
                 onKeyPress={filterJobs(type)}
                 role="presentation"
