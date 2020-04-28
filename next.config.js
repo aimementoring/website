@@ -91,7 +91,7 @@ module.exports = withBundleAnalyzer(
           REACT_APP_FILE_UPLOADER_API_KEY: process.env.REACT_APP_FILE_UPLOADER_API_KEY,
           NEXTJS_TARGET: process.env.NEXTJS_TARGET,
         },
-        target: process.env.NEXTJS_TARGET,
+        target: process.env.NEXTJS_TARGET || 'serverless',
         transformManifest: (manifest) => ['/'].concat(manifest),
         // Service-worker (Offline mode)
         generateInDevMode: false,
