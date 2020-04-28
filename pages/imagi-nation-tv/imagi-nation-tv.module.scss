@@ -147,12 +147,10 @@
   }
 
   .inTVEpisodesWrapper {
-    max-width: $lg;
-    padding: 2em 2em 0;
-    margin: 0 auto;
+    margin: 4em auto;
     width: 100%;
-    columns: 20em;
-    column-gap: 1.5em;
+    // columns: 20em;
+    // column-gap: 1.5em;
   }
 
   .featuredProductWrapper {
