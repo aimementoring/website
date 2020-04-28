@@ -120,3 +120,110 @@
   margin-top: 1em;
   background-color: $brand-tertiary;
 }
+
+.containerJobFilter{
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  grid-template-columns: 1fr;
+  @media screen and (min-width: $md) {
+    grid-template-columns: 1fr 1fr;
+  }
+    min-width: 280px;
+
+  @media screen and (min-width: $lg) {
+    h4 {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+
+    ul {
+      display: none;
+      border: 1px solid $brand-primary;
+      margin-top: 0;
+      margin-right: 0;
+      border-radius: 0 0 6px 6px;
+      a {
+        margin: 0;
+        display: block;
+        border-radius: 0;
+        padding: 1rem;
+        border:0;
+        border-bottom: 1px solid $brand-primary;
+        &:hover {
+          background: $white;
+          border-radius:0;
+          color: $brand-primary;
+        }
+        &:last-child {
+          border-bottom:0;
+          border-radius: 0 0 6px 6px;
+        }
+      }
+    }
+
+    &.active ul  {
+      display: block;
+    }
+
+    &.active h4 {
+      border-radius: 6px 6px 0 0;
+      border-bottom: 0;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}
+
+.titleJobFilter{
+  color: $brand-primary;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: $border-radius;
+
+}
+
+.listaJobFilter{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+.elemJobFilter{
+  display: block;
+  margin-right: .5rem;
+}
+
+.filterList{
+  font-size: 14px;
+  padding: 0.5rem 0.8rem 0.3rem 0.8rem;
+  margin: 0.5rem 0;
+  transition: .1s ease all;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;  
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active{
+  font-family: $feature-font-family;
+  font-weight: 400;
+}
+
+.active:hover{
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $white;
+  opacity: 1;
+}
