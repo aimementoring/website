@@ -4,11 +4,11 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import Anchor from '../../components/common/link';
+import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
-import styles from './styles.module.scss';
+import WavyDonateSection from '../../components/wavyDonateSection';
+import styles from './imagi-nation-tv.module.scss';
 
-const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -17,70 +17,64 @@ const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 const ImagiNationTV = () => (
   <Layout>
     <div className={styles.heroBannerImagiTV}>
-      <div className={styles.subpageBannerWrapper}>
-        <div className={styles.bannerContent}>
-          <div className={styles.imagiBannerHeader}>
-            <Title className={styles.welcomeTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
-              Welcome to
-              <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
-              <img
-                src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
-                alt="Imagi-Nation TV"
-                className={styles.logoImagiTV}
-              />
-            </Title>
-          </div>
-          <div className={styles.imagiBannerInfo}>
-            <Title type="h3Title" className={styles.infoTitle} theme={process.env.REACT_APP_THEME}>
-              Live every weekday 12pm AEST
-            </Title>
-            <Paragraph>
-              {`IMAGI-NATION{TV} is for marginalised kids across the earth’s
-              surface to have a daily mentor in their lives. It takes the
-              magic of AIME’s Imagination Factory to laptops, phones, and
-              homes across the world.`}
-            </Paragraph>
-          </div>
+      <div className={styles.bannerWrapper}>
+        <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
+          <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+            Introducing
+            <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
+            <img
+              src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+              alt="Imagi-Nation TV"
+              className={styles.logoImagiTV}
+            />
+          </Title>
+          <Paragraph>
+            <strong><mark>&nbsp;Live every weekday 12pm AEST&nbsp;</mark></strong>
+            <br />
+            <br />
+            A chance for kids at home to have mentors in their lives to
+            {' '}
+            <em>Make Sense of Today & Imagine Tomorrow</em>
+  .
+          </Paragraph>
+
+          <Button
+            theme={process.env.REACT_APP_THEME}
+            // onClickFunction={scrollHandler}
+            className={`${styles.watchBtn}`}
+            url="https://www.youtube.com/user/aimementoring/live"
+            target="_blank"
+            type="link"
+          >
+            Watch live on YouTube
+          </Button>
         </div>
-      </div>
-      <div className={styles.videoContainerFeature}>
-        <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
-          <img
-            src={`${ASSETS_URL}/assets/images/banner/imagi-robot-live@2x.gif`}
-            alt="Imagi-Nation TV"
-            className={styles.videoCoverArt}
-          />
-        </Anchor>
+
+        <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
+          <VideoPlayer
+            url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
+            imageUrl={`${ASSETS_URL}/assets/images/illustrations/intv-hosts@2x.jpg`}
+          >
+            <Paragraph className="videoCaption">
+              <a
+                className={styles.textLinkChannel}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCDL9R_msvYDyHF7lx0NEyow?sub_confirmation=1"
+              >
+              Subscribe to our channel
+              </a>
+            </Paragraph>
+          </VideoPlayer>
+        </div>
+
       </div>
     </div>
     <div className={styles.inTVContentWrapper}>
-      <section className={styles.triBtnSet}>
-        <Button
-          type="link"
-          text="Watch live on YouTube"
-          theme={process.env.REACT_APP_THEME}
-          className={`${styles.imagiBtn}`}
-          url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTTMNfKomUHtgdjliQ2iW80"
-        />
-        <Button
-          type="link"
-          className={`${styles.imagiHoodieBtn} ${styles.imagiBtn}`}
-          text="Buy the Imagi-Nation Hoodie"
-          theme={process.env.REACT_APP_THEME}
-          url="https://shop.aimementoring.com/collections/all-products/products/imagi-nation-hoodie"
-        />
-        <Button
-          type="link"
-          className={`${styles.imagiDonate} ${styles.imagiBtn}`}
-          text="Donate to IN{TV}"
-          theme={process.env.REACT_APP_THEME}
-          url="/donate"
-        />
-      </section>
-      <DoubleCurvedLine />
       <section className={styles.inTVEpisodesWrapper}>
         <ImaginationTvCarousel />
       </section>
+      <WavyDonateSection />
       <section className={styles.featuredProductWrapper}>
         <FeaturedProduct
           imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
@@ -91,7 +85,6 @@ const ImagiNationTV = () => (
           linkText="Buy a Hoodie"
         />
       </section>
-      <DoubleCurvedLine />
       <div className={styles.tempIntvPWrapper}>
         <IntvPartners />
       </div>
