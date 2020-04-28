@@ -85,11 +85,14 @@ const ImagiNationTV = () => (
         <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
         <div className={`${styles.puppetsChatWrapper}`}>
           <div className={`${styles.puppetChat}`}>
-            <img
-              src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
-              alt="Hope the Puppet"
-              className={styles.puppetTalking}
-            />
+            <div className={styles.puppetWrap}>
+              <img
+                src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
+                alt="Hope the Puppet"
+                className={styles.puppetTalking}
+              />
+              {/* <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title> */}
+            </div>
             <div className={styles.puppetWords}>
               <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
               <Paragraph>

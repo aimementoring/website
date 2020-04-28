@@ -139,17 +139,18 @@
 }
 
 .partneringCTASection {
-  padding: 4em 1em 2em;
-  border: 3px solid $magenta;
+  padding: 2em 0;
+
+  @media screen and (min-width: $md) {
+    padding: 4em 1em 2em;
+  }
 
   .partneringHeading {
-    letter-spacing: -0.1em;
     color: $purple;
     text-align: center;
   }
 
   .puppetsChatWrapper {
-    border: 3px double $cyan;
     max-width: $lg;
     margin: 0 auto;
 
@@ -161,37 +162,77 @@
   }
 
   .puppetChat {
-    border: 1px solid $pink;
-    display: flex;
-    align-items: center;
-    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top center / contain transparent;
+    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top right / 80% transparent;
+    // background-size: 65%;
+    // background-position: top right;
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      align-items: center;
+    }
+
+    // .puppetWrap {
+    //   display: flex;
+    // }
 
     .puppetTalking {
-      width: 18em;
+      width: 9em;
+      @media screen and (min-width: $md) {
+        width: 16em;
+      }
     }
     
     .puppetWords {
-      width: 50%;
-      padding: 2em 3em;
+      padding: 1em;
+
+      @media screen and (min-width: $md) {
+        width: 25em;
+        margin-left: 2em;
+        padding: 4em 2em;
+      }
     }
 
     &.puppetChatSmaller {
-      background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top center / contain transparent;
+      background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 65% transparent;
+      
+      display: flex;
+      align-items: flex-start;
 
       .puppetTalking {
-        width: 16em;
+        position: relative;
+        width: 12em;
+        top: 4em;
+
+        @media screen and (min-width: $md) {
+          width: 16em;
+          left: -1em;
+        }
       }
 
       .puppetTitle {
         text-align: center;
         text-transform: none;
         color: $magenta;
+        position: relative;
+            
+        width: 7em;
+        padding: 3em 0;
+        font-size: 1.1rem;
+        left: 1.3em;
+        @media screen and (min-width: $md) {
+          width: 9em;
+          padding: 3em 0;
+          font-size: 1.1rem;
+          left: 1em;
+        }
       }
     }
   }
 
   .becomeAPartnerBtn {
-    margin-bottom: 2em;
+    @media screen and (min-width: $md) {
+      margin-bottom: 2em;
+    }
     
     button.navBtn {
       background-color: $pink;
