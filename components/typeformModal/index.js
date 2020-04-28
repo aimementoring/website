@@ -10,6 +10,7 @@ const TypeformModal = ({ visible, toggleModal }) => (
     showModal={visible}
     handleModal={toggleModal}
     hideBodyOverflowY
+    type="drawer"
     backgroundColor="rgba(0,0,0, 0.6)"
     withCloseIcon
   >
@@ -18,7 +19,7 @@ const TypeformModal = ({ visible, toggleModal }) => (
         title="Typeform"
         src={TYPEFORM_URL}
         width="100%"
-        height="512"
+        height="100%"
         border="0"
         className={styles.typeformIframe}
       />
