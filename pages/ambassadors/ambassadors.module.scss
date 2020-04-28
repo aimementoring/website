@@ -2,7 +2,6 @@
 
 .bannerHeadingAmbassadors {
   text-align: center;
-  letter-spacing: -0.15em;
   @media screen and (min-width: $md) {
     margin-top: 2em;
 
@@ -34,7 +33,6 @@
     text-align: center;
     strong {
       left: initial;
-      letter-spacing: -0.1em;
     }
   }
   
@@ -48,7 +46,6 @@
   }
   .bannerHeadingAmbassadors {
     text-align: center;
-    letter-spacing: -0.15em;
     @media screen and (min-width: $md) {
       margin-top: 2em;
 
