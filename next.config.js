@@ -89,8 +89,9 @@ module.exports = withBundleAnalyzer(
           REACT_APP_MAILCHIMP_KEY: process.env.REACT_APP_MAILCHIMP_KEY,
           REACT_APP_MAILCHIMP_API: process.env.REACT_APP_MAILCHIMP_API,
           REACT_APP_FILE_UPLOADER_API_KEY: process.env.REACT_APP_FILE_UPLOADER_API_KEY,
+          NEXTJS_TARGET: process.env.NEXTJS_TARGET,
         },
-        target: 'serverless',
+        target: process.env.NEXTJS_TARGET,
         transformManifest: (manifest) => ['/'].concat(manifest),
         // Service-worker (Offline mode)
         generateInDevMode: false,
