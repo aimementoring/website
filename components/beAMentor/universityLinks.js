@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './universityLinks.module.scss';
 
 const UniversityLinks = ({ options }) => (
-  <div className={styles.dispayNone}>
+  <div className={styles.displayNone}>
     {options && (
       <div>
         {options.map((university) => (
