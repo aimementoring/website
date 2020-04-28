@@ -3,12 +3,12 @@ import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import scrollToComponent from '../../utils/scrollToComponent';
 import { STUDENT_CHAPTER_FIRST_VIDEO_CAROUSEL_ELEMENTS } from '../../constants';
-import { uploadHoodedScholarEOI } from '../../services/portalApi';
+// import { uploadHoodedScholarEOI } from '../../services/portalApi';
 import isClientSide from '../../utils/isClientSide';
 import './hoodedScholar.scss';
 
 const VideoButton = dynamic(() => import('../../components/videoButton'));
-const HoodedScholarForm = dynamic(() => import('../../components/eoiForm'));
+// const HoodedScholarForm = dynamic(() => import('../../components/eoiForm'));
 const VioletVideoCarousel = dynamic(() => import('../../components/carousel/customCarousels/violetCarousel'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -217,7 +217,7 @@ and
                       we’ll email you when applications are open again.`}
                     </h5>
                   </div>
-                  <HoodedScholarForm uploadData={uploadHoodedScholarEOI} />
+                  {/* <HoodedScholarForm uploadData={uploadHoodedScholarEOI} /> */}
                 </div>
               </div>
             </section>
