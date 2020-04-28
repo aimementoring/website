@@ -48,11 +48,9 @@
     transition: 1s ease-in-out;
   }
   .featuredProductTitle {
-    letter-spacing: -0.15em;
     margin-bottom: 0.7em;
 
     strong {
-      letter-spacing: -0.15em;
       color: $magenta;
       font-size: 2.5rem;
       line-height: 0.75em;
@@ -64,7 +62,6 @@
     }
   }
   .featuredProductPreheader {
-    letter-spacing: -0.13em;
     font-size: 1.8rem;
     font-style: normal;
   }
