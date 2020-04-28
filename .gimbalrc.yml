@@ -38,7 +38,7 @@ configs:
       "best-practices": 80
       performance: 40
       pwa: 52
-      seo: 90
+      seo: 85
 
   # File and directory size settings
   size:
