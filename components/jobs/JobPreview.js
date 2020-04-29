@@ -23,35 +23,35 @@ const JobPreview = ({
 
   if (location) {
     details.push(
-      <p key={location} className={styles.detailsContainerOnlyDisplay}>
+      <p key={location} className={styles.customDetails}>
         {location}
       </p>,
     );
   }
   if (term.length) {
     details.push(
-      <p key={name} className={styles.detailsContainerWithPx1}>
+      <p key={name} className={styles.details}>
         -
       </p>,
     );
   }
   if (term) {
     details.push(
-      <p key={term} className={styles.detailsContainerOnlyDisplay}>
+      <p key={term} className={styles.customDetails}>
         {term}
       </p>,
     );
   }
   if (salaryRange) {
     details.push(
-      <p key={`${name}--`} className={styles.detailsContainerWithPx1}>
+      <p key={`${name}--`} className={styles.details}>
         -
       </p>,
     );
   }
   if (salaryRange) {
     details.push(
-      <p key={salaryRange} className={styles.detailsContainer}>
+      <p key={salaryRange} className={styles.customDetails}>
         {salaryRange}
       </p>,
     );
