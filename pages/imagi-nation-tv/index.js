@@ -8,6 +8,7 @@ import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import TypeformModal from '../../components/typeformModal';
+import IntercomChat from '../../components/intercom';
 import styles from './styles.module.scss';
 
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
@@ -75,10 +76,64 @@ const ImagiNationTV = () => {
 
         </div>
       </div>
-      <div className={styles.inTVContentWrapper}>
-        <section className={styles.inTVEpisodesWrapper}>
-          <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
-            <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
+      <div className={styles.videoContainerFeature}>
+        <Anchor href="https://www.youtube.com/user/aimementoring/live" target="_blank">
+          <img
+            src={`${ASSETS_URL}/assets/images/banner/imagi-robot-live@2x.gif`}
+            alt="Imagi-Nation TV"
+            className={styles.videoCoverArt}
+          />
+        </Anchor>
+      </div>
+    </div>
+    <div className={styles.inTVContentWrapper}>
+
+      <DoubleCurvedLine />
+
+      <section className={`${styles.partneringCTASection}`}>
+        <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
+        <div className={`${styles.puppetsChatWrapper}`}>
+          <div className={`${styles.puppetChat}`}>
+            <div className={styles.puppetWrap}>
+              <img
+                src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
+                alt="Hope the Puppet"
+                className={styles.puppetTalking}
+              />
+            </div>
+            <div className={styles.puppetWords}>
+              <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
+              <Paragraph>
+                We’re looking for partners of all kinds, whether
+                you’re a <strong>company</strong>, 
+                a <strong>school</strong>, <strong>uni</strong> or a
+                future <strong>guest</strong> - we’d love to talk. This show is
+                not about entertainment to pass the time, your funds and the work
+                we do together will be an investment in providing a stage to
+                elevate knowledge.
+              </Paragraph>
+              <div className={styles.becomeAPartnerBtn}>
+                <IntercomChat label="Get in the game" />
+              </div>
+            </div>
+          </div>
+          <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
+            <div>
+              <Title type="h4Title" className={styles.puppetTitle}>Already a partner? <span>Click here</span></Title>
+            </div>
+            <img
+              src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
+              alt="Robo Cat"
+              className={styles.puppetTalking}
+            />
+          </div>         
+        </div>
+      </section>
+
+      <DoubleCurvedLine />
+      <section className={styles.inTVEpisodesWrapper}>
+        <div className={`${styles.introEpisodes} ${styles.episodePanel}`}>
+          <Title className={styles.subTitle} type="h3Title" theme={process.env.REACT_APP_THEME}>
             A mentor in the home for every kid, every day.
             </Title>
             <Paragraph>
