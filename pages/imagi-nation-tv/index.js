@@ -12,6 +12,7 @@ import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import styles from './imagi-nation-tv.module.scss';
 
+const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -144,6 +145,8 @@ const ImagiNationTV = () => {
             </div>         
           </div>
         </section>
+        <DoubleCurvedLine />
+
       <div className={styles.tempIntvPWrapper}>
         <IntvPartners />
       </div>
