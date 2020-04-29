@@ -1,0 +1,145 @@
+@import "../../styles/base/variables";
+
+.bannerHeadingAmbassadors {
+  text-align: center;
+  @media screen and (min-width: $md) {
+    margin-top: 2em;
+
+  }
+  strong {
+    left: initial;
+  }
+}
+
+.heroBanner {
+  height: 50vh;
+  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  padding: 35px 0;
+
+  @media screen and (min-width: $sm) {
+    padding: 0;
+    height: 62vh;
+  }
+  // Stop fixed on tablets & phones as it doesn't work
+  @media screen and (max-device-width: 1024px){
+    background-attachment: scroll;
+  }
+  
+  .highlight-text {
+    transform: rotate(-3deg);
+  }
+
+  h1 {
+    text-align: center;
+    strong {
+      left: initial;
+    }
+  }
+  
+  //// hero-banner--case-studies
+  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
+  max-height: 50vh;
+  // Stop fixed on tablets & phones as it doesn't work
+  @media screen and (max-device-width: 1024px){
+    background-attachment: scroll;
+    padding-top: 8em;
+  }
+  .bannerHeadingAmbassadors {
+    text-align: center;
+    @media screen and (min-width: $md) {
+      margin-top: 2em;
+
+    }
+    strong {
+      left: initial;
+    }
+  }
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.bannerWrapperClass {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: $white;
+  }
+}
+
+.sectionContainer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.divFirstContainer {
+  margin: 0 auto; 
+  max-width: 1120px; 
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divSecondContainer {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  display: flex;
+  padding-top: .5rem;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    padding-top: 2rem;
+    margin-top: 4rem;
+  }
+  @media screen and (min-width: $lg) {
+    padding-top: 2rem;
+    margin-top: 4rem;
+  }
+}
+
+.emptySpan {
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+  display: inline-block;
+  margin-right: 1rem;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-right: 2rem;
+  }
+  @media screen and (min-width: $lg) {
+    margin-right: 2rem;
+  }
+}
+
+.divThirdContainer {
+  display: inline-block;
+  padding-right: 2em;
+
+  h4 {
+    margin-bottom: 1em;
+  }
+
+  p {
+    max-width: 48em;
+    margin-bottom: 3em;
+  } 
+}
+
+.divFouthContainer {
+  display: grid;
+  grid-gap: 1rem;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
