@@ -40,7 +40,7 @@
     .bannerItem {
       box-sizing: border-box;
       flex-grow: 1;
-      flex-basis: 0;
+      flex-basis: auto;
       clear: both;
       display: flex;
       flex-direction: column;
