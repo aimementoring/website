@@ -13,7 +13,7 @@ import './home.scss';
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
-const Ambassadors = dynamic(() => import('../../components/ambassadors'));
+const AmbassadorsCarousel = dynamic(() => import('../../components/ambassadorsCarousel'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
@@ -63,7 +63,7 @@ const Home = () => {
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
       <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
-      <Ambassadors />
+      <AmbassadorsCarousel />
       <FooterBanner />
     </Layout>
   );
