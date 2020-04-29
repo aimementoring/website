@@ -8,7 +8,7 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const ImaginationTvCard = ({
   day, title, image, children, color,
 }) => (
-  <div className={`${styles.episodePanel}`}>
+  <div className={styles.episodePanel}>
     <div
       className={styles.episodeHeader}
       style={{
