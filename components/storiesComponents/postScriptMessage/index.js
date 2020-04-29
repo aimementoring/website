@@ -14,6 +14,7 @@ const PostScriptMessage = (props) => {
 
   const content = postScriptContent
   && postScriptContent.map((ps) => {
+    if (!ps.fields) return null;
     const isImage = ps.fields.visualMedia && ps.fields.visualMedia;
     const isVideo = ps.fields.videoMedia && ps.fields.videoMedia;
     const image = isImage && isImage.fields.file.url;
