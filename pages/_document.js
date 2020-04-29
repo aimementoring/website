@@ -31,7 +31,7 @@ export default class CustomDocument extends Document {
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="preconnect" href="https://storage.googleapis.com" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
-          <link rel="canonical" href={process.env.REACT_APP_CANNONICAL} />
+          <link rel="canonical" href={process.env.REACT_APP_CANONICAL} />
           <link rel="preconnect" href={process.env.REACT_APP_ASSETS_URL} />
           <meta name="msapplication-TileColor" content="#9B00FF" />
           <meta name="theme-color" content="#ffffff" />
