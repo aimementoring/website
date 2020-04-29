@@ -45,7 +45,7 @@ export const GLOBAL_TAGS = {
 export const SEO_TAGS = {
   '/': {
     title: 'AIME Mentoring',
-    canonical: process.env.REACT_APP_CANNONICAL,
+    canonical: process.env.REACT_APP_CANONICAL,
     languageAlternate: {
       href: 'https://aimementoring.com/',
       hrefLang: 'x-default',
@@ -96,7 +96,7 @@ export const SEO_TAGS = {
   },
   '/imagi-nation-tv': {
     title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
-    canonical: `${process.env.REACT_APP_CANNONICAL}imagi-nation-tv`,
+    canonical: `${process.env.REACT_APP_CANONICAL}imagi-nation-tv`,
     languageAlternate: {
       href: 'https://aimementoring.com/imagi-nation-tv',
       hrefLang: 'x-default',
@@ -151,7 +151,7 @@ export const SEO_TAGS = {
   },
   '/ambassadors': {
     title: 'Ambassadors',
-    canonical: `${process.env.REACT_APP_CANNONICAL}ambassadors`,
+    canonical: `${process.env.REACT_APP_CANONICAL}ambassadors`,
     languageAlternate: {
       href: 'https://aimementoring.com/ambassadors',
       hrefLang: 'x-default',
@@ -208,7 +208,7 @@ export const SEO_TAGS = {
   },
   '/be-a-mentor': {
     title: 'Be an AIME Mentor',
-    canonical: `${process.env.REACT_APP_CANNONICAL}be-a-mentor`,
+    canonical: `${process.env.REACT_APP_CANONICAL}be-a-mentor`,
     languageAlternate: {
       href: 'https://aimementoring.com/be-a-mentor',
       hrefLang: 'x-default',
@@ -266,7 +266,7 @@ export const SEO_TAGS = {
   },
   '/about': {
     title: 'About AIME Mentoring',
-    canonical: `${process.env.REACT_APP_CANNONICAL}about`,
+    canonical: `${process.env.REACT_APP_CANONICAL}about`,
     languageAlternate: {
       href: 'https://aimementoring.com/about',
       hrefLang: 'x-default',
@@ -324,7 +324,7 @@ export const SEO_TAGS = {
   },
   '/reports/2016-annual-story': {
     title: '2016 Annual Story',
-    canonical: `${process.env.REACT_APP_CANNONICAL}reports/2016-annual-story`,
+    canonical: `${process.env.REACT_APP_CANONICAL}reports/2016-annual-story`,
     languageAlternate: {
       href: 'https://aimementoring.com/reports/2016-annual-story',
       hrefLang: 'x-default',
@@ -382,7 +382,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Case Studies',
     },
-    canonical: `${process.env.REACT_APP_CANNONICAL}case-studies`,
+    canonical: `${process.env.REACT_APP_CANONICAL}case-studies`,
     languageAlternate: {
       href: 'https://aimementoring.com/case-studies',
       hrefLang: 'x-default',
@@ -440,7 +440,7 @@ export const SEO_TAGS = {
     twitter: {
       title: 'Donate to AIME Mentoring',
     },
-    canonical: `${process.env.REACT_APP_CANNONICAL}donate`,
+    canonical: `${process.env.REACT_APP_CANONICAL}donate`,
     languageAlternate: {
       href: 'https://aimementoring.com/donate',
       hrefLang: 'x-default',
@@ -565,7 +565,7 @@ export const SEO_TAGS = {
   },
   '/jack-manning-bancroft': {
     title: 'Jack Manning Bancroft - Founder & CEO of AIME Mentoring',
-    canonical: `${process.env.REACT_APP_CANNONICAL}jack-manning-bancroft`,
+    canonical: `${process.env.REACT_APP_CANONICAL}jack-manning-bancroft`,
     languageAlternate: {
       href: 'https://aimementoring.com/jack-manning-bancroft',
       hrefLang: 'x-default',
@@ -634,7 +634,7 @@ export const SEO_TAGS = {
   },
   '/global-letter': {
     title: 'Global Letter',
-    canonical: `${process.env.REACT_APP_CANNONICAL}global-letter`,
+    canonical: `${process.env.REACT_APP_CANONICAL}global-letter`,
     languageAlternate: {
       href: 'https://aimementoring.com/global-letter',
       hrefLang: 'x-default',
@@ -728,7 +728,7 @@ export const SEO_TAGS = {
   },
   '/hooded-scholar': {
     title: 'The Hooded Scholar Scholarship from AIME Mentoring',
-    canonical: `${process.env.REACT_APP_CANNONICAL}hooded-scholar/`,
+    canonical: `${process.env.REACT_APP_CANONICAL}hooded-scholar/`,
     languageAlternate: {
       href: 'https://aimementoring.com/hooded-scholar',
       hrefLang: 'x-default',
@@ -786,7 +786,7 @@ export const SEO_TAGS = {
   },
   '/impact': {
     title: 'Impact',
-    canonical: `${process.env.REACT_APP_CANNONICAL}impact`,
+    canonical: `${process.env.REACT_APP_CANONICAL}impact`,
     languageAlternate: {
       href: 'https://aimementoring.com/impact',
       hrefLang: 'x-default',
@@ -843,7 +843,7 @@ export const SEO_TAGS = {
   },
   '/know-aime': {
     title: 'Know AIME',
-    canonical: `${process.env.REACT_APP_CANNONICAL}know-aime`,
+    canonical: `${process.env.REACT_APP_CANONICAL}know-aime`,
     languageAlternate: {
       href: 'https://aimementoring.com/know-aime',
       hrefLang: 'x-default',
@@ -900,7 +900,7 @@ export const SEO_TAGS = {
   },
   '/positions': {
     title: 'Work at AIME Mentoring',
-    canonical: `${process.env.REACT_APP_CANNONICAL}positions`,
+    canonical: `${process.env.REACT_APP_CANONICAL}positions`,
     languageAlternate: {
       href: 'https://aimementoring.com/positions',
       hrefLang: 'x-default',
@@ -958,7 +958,7 @@ export const SEO_TAGS = {
   },
   '/quizzes': {
     title: 'Quizzes',
-    canonical: `${process.env.REACT_APP_CANNONICAL}quizzes`,
+    canonical: `${process.env.REACT_APP_CANONICAL}quizzes`,
     languageAlternate: {
       href: 'https://aimementoring.com/quizzes',
       hrefLang: 'x-default',
@@ -1015,7 +1015,7 @@ export const SEO_TAGS = {
   },
   '/reports': {
     title: 'AIME Reports',
-    canonical: `${process.env.REACT_APP_CANNONICAL}reports`,
+    canonical: `${process.env.REACT_APP_CANONICAL}reports`,
     languageAlternate: {
       href: 'https://aimementoring.com/reports',
       hrefLang: 'x-default',
@@ -1071,16 +1071,132 @@ export const SEO_TAGS = {
       },
     ],
   },
-  '/stories': {
-    title: 'AIME Stories of Sunday Kindness',
-    canonical: `${process.env.REACT_APP_CANNONICAL}stories`,
+  '/stories/intv': {
+    title: 'AIME IMAGINATION{TV} News',
+    canonical: `${process.env.REACT_APP_CANONICAL}stories/intv`,
     languageAlternate: {
-      href: 'https://aimementoring.com/stories',
+      href: 'https://aimementoring.com/stories/intv',
+      hrefLang: 'x-default',
+    },
+    description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+    openGraph: {
+      url: 'https://aimementoring.com/stories/intv',
+      title: 'AIME IMAGINATION{TV} News',
+    },
+    twitter: {
+      title: 'AIME IMAGINATION{TV} News',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T11:56:33+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:33:16+11:00',
+        datePublished: '2018-02-21T11:56:33+11:00',
+        description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+        title: 'AIME IMAGINATION{TV} News',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories/intv',
+          },
+        ],
+        name: 'AIME IMAGINATION{TV} News',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/stories/intv',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Stories',
+            item: 'https://aimementoring.com/stories',
+          },
+        ],
+      },
+    ],
+  },
+  '/stories/all': {
+    title: 'AIME Stories',
+    canonical: `${process.env.REACT_APP_CANONICAL}stories/all`,
+    languageAlternate: {
+      href: 'https://aimementoring.com/stories/all',
+      hrefLang: 'x-default',
+    },
+    description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+    openGraph: {
+      url: 'https://aimementoring.com/stories/all',
+      title: 'AIME Stories',
+    },
+    twitter: {
+      title: 'AIME Stories',
+    },
+    jsonLd: [
+      {
+        type: 'Article',
+        authorName: '#identity',
+        copyrightHolder: '#identity',
+        copyrightYear: '2018-02-21T11:56:33+11:00',
+        creatorName: '#creator',
+        dateModified: '2018-03-07T11:33:16+11:00',
+        datePublished: '2018-02-21T11:56:33+11:00',
+        description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+        title: 'AIME Stories',
+        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
+        additionalMetaTags: [
+          {
+            property: 'inLanguage',
+            content: 'en-001',
+          },
+          {
+            property: 'mainEntityOfPage',
+            content: 'https://aimementoring.com/stories/all',
+          },
+        ],
+        name: 'AIME Stories',
+        publisherName: '#creator',
+        url: 'https://aimementoring.com/stories/all',
+      },
+      {
+        type: 'BreadcrumbList',
+        itemListElement: [
+          {
+            position: 1,
+            name: 'Home',
+            item: 'https://aimementoring.com/',
+          },
+          {
+            position: 2,
+            name: 'Stories',
+            item: 'https://aimementoring.com/stories',
+          },
+        ],
+      },
+    ],
+  },
+  '/stories/sunday-kindness': {
+    title: 'AIME Stories of Sunday Kindness',
+    canonical: `${process.env.REACT_APP_CANONICAL}stories/sunday-kindness`,
+    languageAlternate: {
+      href: 'https://aimementoring.com/stories/sunday-kindness',
       hrefLang: 'x-default',
     },
     description: 'At AIME we are confusingly kind. Deal with it! Every Sunday we share stories of hope, positivity and change. Kindness doesn&#039;t cost a thing. Let&#039;s sprinkle it everywhere!',
     openGraph: {
-      url: 'https://aimementoring.com/stories',
+      url: 'https://aimementoring.com/stories/sunday-kindness',
       title: 'AIME Stories of Sunday Kindness',
     },
     twitter: {
@@ -1105,12 +1221,12 @@ export const SEO_TAGS = {
           },
           {
             property: 'mainEntityOfPage',
-            content: 'https://aimementoring.com/stories',
+            content: 'https://aimementoring.com/stories/sunday-kindness',
           },
         ],
         name: 'AIME Stories of Sunday Kindness',
         publisherName: '#creator',
-        url: 'https://aimementoring.com/stories',
+        url: 'https://aimementoring.com/stories/sunday-kindness',
       },
       {
         type: 'BreadcrumbList',
@@ -1168,7 +1284,7 @@ export const SEO_TAGS = {
   },
   '/thanks': {
     title: 'Thanks',
-    canonical: `${process.env.REACT_APP_CANNONICAL}thanks`,
+    canonical: `${process.env.REACT_APP_CANONICAL}thanks`,
     languageAlternate: {
       href: 'https://aimementoring.com/thanks',
       hrefLang: 'x-default',
@@ -1225,7 +1341,7 @@ export const SEO_TAGS = {
   },
   '/the-mentor': {
     title: 'The Mentor',
-    canonical: `${process.env.REACT_APP_CANNONICAL}the-mentor`,
+    canonical: `${process.env.REACT_APP_CANONICAL}the-mentor`,
     languageAlternate: {
       href: 'https://aimementoring.com/the-mentor',
       hrefLang: 'x-default',
