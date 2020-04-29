@@ -53,10 +53,36 @@
       padding: 0 !important;
     }
   }
+  // temporarily commenting out but will need once we figure out issue #379
+  // .slick-slide {
+  //   &:nth-child(2){
+  //     .headingLockup {
+  //       color: #004B60;
+  //     }
+  //   }
+  
+  //   &:nth-child(3){
+  //     .headingLockup {
+  //       color: #93520D;
+  //     }
+  //   }
+  
+  //   &:nth-child(4){
+  //     .headingLockup {
+  //       color: #300666;
+  //     }
+  //   }
+  
+  //   &:nth-child(5){
+  //     .headingLockup {
+  //       color: #95185B;
+  //     }
+  //   }
+  // }
 }
 
 .episodePanel {
-  padding: 4em 1.5em 1.5em;
+  // padding: 4em 1.5em 1.5em;
   opacity: 50%;
 }
 
