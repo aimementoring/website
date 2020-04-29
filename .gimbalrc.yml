@@ -1,104 +1,84 @@
 # Specify audits to run. Also include any plugins (like axe)
- audits:
-     - axe
-     - size
-     - lighthouse
-     - heap-snapshot
-     - unused-source
- configs:
-   logger:
+audits:
+    - axe
+    - size
+    - lighthouse
+    - heap-snapshot
+    - unused-source
+
+configs:
+  logger:
     level: 1
-   buildDir: .next
-   comment:
-     # Only show failures in GitHub PR comments.
-     # Useful to pinpoint why a build has failed
-     onlyFailures: false
+  buildDir: out
+  comment:
+    # Only show failures in GitHub PR comments.
+    # Useful to pinpoint why a build has failed
+    onlyFailures: false
+  # Heap snapshot settings
+  heap-snapshot:
+    threshold:
+      Documents: 11
+      Frames: 5
+      JSHeapTotalSize: 21889024
+      JSHeapUsedSize: 13685832
+      Nodes: 1196
+      RecalcStyleCount: 129
+      LayoutCount: 25
 
-   # Heap snapshot settings
-   heap-snapshot:
-     threshold:
-       Documents: 11
-       Frames: 5
-       JSHeapTotalSize: 13356000
-       JSHeapUsedSize: 10068000
-       Nodes: 800
-       RecalcStyleCount: 15
-       LayoutCount: 15
+  # Lighthouse settings
+  lighthouse:
+    skipAudits:
+      - uses-http2
+      - redirects-http
+      - uses-long-cache-ttl
+      - uses-text-compression
+    outputHtml: ./gimbal-artifacts/lighthouse.html
+    threshold:
+      accessibility: 80
+      "best-practices": 80
+      performance: 40
+      pwa: 52
+      seo: 85
 
-   # Lighthouse settings
-   lighthouse:
-     skipAudits:
-       - uses-http2
-       - redirects-http
-       - uses-long-cache-ttl
-       - uses-text-compression
-     outputHtml: ./gimbal-artifacts/lighthouse.html
-     threshold:
-       accessibility: 80
-       "best-practices": 80
-       performance: 40
-       pwa: 52
-       seo: 90
+  # File and directory size settings
+  size:
+    - path: out/
+      maxSize: 60 MB
+    - path: .next/service-worker.js
+      maxSize: 5 KB
+    - path:  out/index.html
+      maxSize: 80 KB
+    - path: out/service-worker.js   
+      maxSize: 8 KB
 
-   # File and directory size settings
-   size:
-  #    - path: ./.next/precache-*.js
-  #      maxSize: 10 KB
-  #    - path: ./.next/static/js/[0-9]*.chunk.js
-  #      maxSize: 1 MB
-  #    - path: ./.next/static/js/*.chunk.js
-  #      maxSize: 1 MB
-  #    - path: ./.next/static/js/runtime*.js
-  #      maxSize: 10 KB
-  #    - path: ./.next/index.html
-  #      maxSize: 10 KB
-  #    - path: ./.next/favicon.ico
-  #      maxSize: 10 KB
-     - path: .next/
-       maxSize: 300 MB
+# Locations of reports. Useful for storing artifacts in CI
+outputs:
+  # Only show failures in CLI
+  cli:
+    onlyFailures: false
+  html: ./gimbal-artifacts/results.html
+  json: ./gimbal-artifacts/results.json
+  markdown: ./gimbal-artifacts/results.md
 
-  #  # Unused source settings
-  #  unused-source:
-  #    threshold:
-  #      - path: "**/*(private).*.chunk.css"
-  #        maxSize: 60%
-  #      - path: "**/!(private).*.chunk.css"
-  #        maxSize: 60%
-  #      - path: "**/*([0-9]).*.chunk.js"
-  #        maxSize: 90%
-  #      - path: "**/!([0-9]|main).*.chunk.js"
-  #        maxSize: 45%
-  #      - path: "**/(main).*.chunk.js"
-  #        maxSize: 50%
+# Plugins
+plugins:
+  # Axe a11y audits
+  - plugin: "@modus/gimbal-plugin-axe"
+    thresholds:
+      aria-allowed-attr: critical
+      aria-hidden-focus: serious
+      color-contrast: serious
+      landmark-one-main: moderate
+      landmark-complementary-is-top-level: moderate
+      meta-viewport: critical
+      region: moderate
+      page-has-heading-one: moderate
+      scrollable-region-focusable: moderate
+      heading-order: moderate
+      label: critical
+      landmark-unique: moderate
+      link-name: serious
+      region: moderate
+      list: serious
+      listItem: serious
 
- # Locations of reports. Useful for storing artifacts in CI
- outputs:
-   # Only show failures in CLI
-   cli:
-     onlyFailures: false
-   html: ./gimbal-artifacts/results.html
-   json: ./gimbal-artifacts/results.json
-   markdown: ./gimbal-artifacts/results.md
-
- # Plugins
- plugins:
-  #  # Compare metrics to last-saved values
-  #  - plugin: "@modus/gimbal-plugin-last-value"
-  #    saveOnlyOnSuccess: false
-
-  #  # Save reports to a database. Needed for gimbal-plugin-last-value
-  #  - plugin: "@modus/gimbal-plugin-sqlite"
-  #    file: ./gimbal-artifacts/gimbal_tests.db
-  #    lastValue: true
-
-   # Axe a11y audits
-   - plugin: "@modus/gimbal-plugin-axe"
-     thresholds:
-       aria-allowed-attr: critical
-       color-contrast: serious
-       landmark-one-main: moderate
-       landmark-complementary-is-top-level: moderate
-       meta-viewport: critical
-       region: moderate
-       page-has-heading-one: moderatec
-       scrollable-region-focusable: moderate
