@@ -13,6 +13,8 @@ import isClientSide from '../../utils/isClientSide';
 
 import Select from '../commonElements/reactSelect';
 
+import styles from './jobs.module.scss';
+
 
 const JobFilter = dynamic(() => import('./JobFilter'));
 const JobPreview = dynamic(() => import('./JobPreview'));
@@ -157,13 +159,11 @@ const Jobs = ({
     <div>
       {state.jobsLoaded && state.jobs.length > 0 ? (
         <div>
-          <div className="md-wrap mx-auto center mt0 pt0 mb2 md-mb3 lg-mb3">
+          <div className={styles.componentJob}>
             <span
-              className="line
-                bg-brand-tertiary mx-auto mt1
-                mb2 md-mb3 md-mt4 lg-mb3 lg-mt4"
+              className={styles.lineJob}
             />
-            <h1 className="lh-base mb2" id="opportunity-list">
+            <h1 className={styles.titleJobs} id="opportunity-list">
               All aboard the AIME Train.
             </h1>
             {state.countrySelected === 'US' ? (
@@ -179,14 +179,14 @@ const Jobs = ({
                   life's energy into it!`}
               </p>
             ) : (
-              <p className="lh-base">
+              <p className={styles.descriptionJobs}>
                 {`We are here to sprint the marathon, think of your time at AIME as 
                   the hardest, fastest, longest sprint of your life. If you do 3 
                   years here, flat chat, and pass the baton on, that is success.`}
               </p>
             )}
           </div>
-          <div className="flex justify-between items-center">
+          <div className={styles.componentJobFilter}>
             <JobFilter
               currentFilter={state.currentFilter}
               filterBy={setFilter}
@@ -195,7 +195,6 @@ const Jobs = ({
             <div>
               <Select
                 placeholder="Select your country"
-                className="select-auto-complete-country"
                 name="countrySelected"
                 onChangeFunction={handleCountryChange}
                 value={state.countrySelected}
@@ -206,7 +205,7 @@ const Jobs = ({
               />
             </div>
           </div>
-          <div className="job-grid mb4 grid">
+          <div className={styles.positionMessage}>
             {isRedirect && (
               <PositionsRedirectMessage
                 jobTitle={jobTitle}
@@ -220,12 +219,12 @@ const Jobs = ({
           </div>
         </div>
       ) : (
-        <div className="mt0 pt1 md-pt3 lg-pt3 md-mt2 lg-mt4">
+        <div className={styles.noJobContainer}>
           <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
             We are not hiring.
           </Title>
-          <span className="line bg-brand-tertiary mb3 mt1" />
-          <Paragraph className="pb1 md-pb3 lg-pb3">
+          <span className={styles.titleNoJobContainer} />
+          <Paragraph className={styles.paragraphNoJobContainer}>
             Sorry, there are no positions available at the moment.
           </Paragraph>
           <Paragraph>
