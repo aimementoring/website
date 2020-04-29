@@ -5,7 +5,8 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
 import AMBASSADORS_LIST from '../../constants/ambassadorsList';
-import './style.scss';
+import styles from './ambassadors.module.scss';
+
 
 const AmbassadorBox = dynamic(() => import('../../components/ambassadorBox'));
 
@@ -14,17 +15,17 @@ const Ambassadors = () => (
     <SimpleBanner
       title={<strong>People of AIME</strong>}
       titleType="headingLockup"
-      titleStyleClass="bannerHeadingAmbassadors"
-      bannerContainerClass="hero-banner--default hero-banner--case-studies full-width-wrap"
-      bannerWrapperClass="flex flex-wrap items-center full-height"
-      bannerContentWrapperClass="banner-wrapper"
+      titleStyleClass={styles.bannerHeadingAmbassadors}
+      bannerContainerClass={styles.heroBanner}
+      bannerWrapperClass={styles.bannerWrapperClass}
+      bannerContentWrapperClass={styles.bannerWrapper}
       bannerContentClass="bannerContent"
     />
-    <section className="py3 relative">
-      <div className="wrap mx-auto">
-        <div className="mb2 mt0 pt1 md-pt3 lg-pt3 md-mt4 lg-mt4 flex">
-          <span className="line bg-brand-tertiary inline-block mr2 md-mr3 lg-mr3" />
-          <div className="inline-block ambassadorIntroContent">
+    <section className={styles.sectionContainer}>
+      <div className={styles.divFirstContainer}>
+        <div className={styles.divSecondContainer}>
+          <span className={styles.emptySpan} />
+          <div className={styles.divThirdContainer}>
             <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               Meet some of the people of AIME
             </Title>
@@ -38,7 +39,7 @@ const Ambassadors = () => (
             </Paragraph>
           </div>
         </div>
-        <div className="grid about-grid">
+        <div className={styles.divFouthContainer}>
           {AMBASSADORS_LIST.map((ambassador) => (
             <AmbassadorBox {...ambassador} key={ambassador.name} />
           ))}
