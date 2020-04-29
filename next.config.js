@@ -8,7 +8,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const DAY_SECONDS = 24 * 60 * 60;
 
-function getCannonicalUrl() {
+function getCanonicalUrl() {
   if (process.env.REACT_APP_HOST_ENV === 'production') {
     return 'https://aimementoring.com/';
   }
@@ -52,7 +52,7 @@ module.exports = withBundleAnalyzer(
           : '',
         env: {
           REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
-          REACT_APP_CANNONICAL: getCannonicalUrl(),
+          REACT_APP_CANONICAL: getCanonicalUrl(),
           PORT: process.env.PORT,
           REACT_APP_BUGSNAG_KEY: process.env.REACT_APP_BUGSNAG_KEY,
           REACT_APP_HOST_ENV: process.env.REACT_APP_HOST_ENV,
@@ -89,11 +89,12 @@ module.exports = withBundleAnalyzer(
           REACT_APP_MAILCHIMP_KEY: process.env.REACT_APP_MAILCHIMP_KEY,
           REACT_APP_MAILCHIMP_API: process.env.REACT_APP_MAILCHIMP_API,
           REACT_APP_FILE_UPLOADER_API_KEY: process.env.REACT_APP_FILE_UPLOADER_API_KEY,
+          NEXTJS_TARGET: process.env.NEXTJS_TARGET,
         },
-        target: 'serverless',
+        target: process.env.NEXTJS_TARGET || 'serverless',
         transformManifest: (manifest) => ['/'].concat(manifest),
         // Service-worker (Offline mode)
-        generateInDevMode: true,
+        generateInDevMode: false,
         generateSw: true,
         workboxOpts: {
           runtimeCaching: [
@@ -140,21 +141,6 @@ module.exports = withBundleAnalyzer(
                   headers: {
                     'x-test': 'true',
                   },
-                },
-              },
-            },
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'https-calls',
-                networkTimeoutSeconds: 15,
-                expiration: {
-                  maxEntries: 150,
-                  maxAgeSeconds: 30 * DAY_SECONDS,
-                },
-                cacheableResponse: {
-                  statuses: [0, 200],
                 },
               },
             },
