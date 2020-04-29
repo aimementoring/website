@@ -78,7 +78,8 @@
   .bannerItem {
     box-sizing: border-box;
     flex-grow: 1;
-    flex-basis: 0;
+    // @TODO: Review why it is failing on iOS device, it should be flex-basis: 0;
+    flex-basis: 1;
     clear: both;
     display: flex;
     flex-direction: column;

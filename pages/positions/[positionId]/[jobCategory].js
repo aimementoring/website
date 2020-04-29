@@ -3,7 +3,6 @@ import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
 import Loading from 'aime-blueprint/lib/components/loading';
 import Layout from '../../../hocs/basicLayout';
-import { getFromStorage } from '../../../utils/localStorage';
 import {
   capitaliseFirstCharacter,
   slugify,
@@ -57,7 +56,8 @@ const PositionsEntry = () => {
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
-    const countryId = getFromStorage('country_code_selected') || 'global';
+    // TODO this needs fixing to make filtering work again
+    const countryId = 'global';
     if (positionId) {
       try {
         const job = await findJob(positionId, countryId);
