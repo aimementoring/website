@@ -1,9 +1,6 @@
-name: Pull Request Deploy
-on:
-  pull_request:
-    branches:
-      - staging
-      - master
+name: Gimbal Lighthouse Test
+
+on: [push]
 
 env:
   REACT_APP_BUGSNAG_KEY: ${{ secrets.REACT_APP_BUGSNAG_KEY }}
@@ -32,10 +29,10 @@ env:
   REACT_APP_GOOGLE_TAG_MANAGER: GTM-NK5SFHW
   REACT_APP_CDN_ROOT: https://d2ylaz7bdw65jx.cloudfront.net
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
-  NEXTJS_TARGET: serverless
+  NEXTJS_TARGET: server
 
 jobs:
-  Build_and_Lint:
+  Gimbal:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -48,8 +45,9 @@ jobs:
           node-version: '12.x'
       - name: Install yarn dependencies
         run: yarn
-      - name: Lint
-        run: yarn lint
       - name: Build
+        run: yarn run export
+      - name: Performance Budgeting Regression Testing
+        uses: ModusCreateOrg/gimbal/action@master
         env:
-            CI: ''
+          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
