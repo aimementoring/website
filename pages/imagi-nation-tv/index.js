@@ -148,6 +148,6 @@ const ImagiNationTV = () => {
       </div>
     </Layout>
   );
-}
+};
 
 export default ImagiNationTV;
