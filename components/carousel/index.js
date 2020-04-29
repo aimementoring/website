@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import isClientSide from '../../utils/isClientSide';
 import './slick.scss';
 
-const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
-const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
-const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
+const CarouselArrows = dynamic(() => import('./carouselArrows'));
 
 const defaultSettings = {
   dots: true,
@@ -31,7 +29,7 @@ const defaultSettings = {
   ],
 };
 
-const centerModeSettings = {
+const multipleSlideSettings = {
   centerMode: true,
   centerPadding: '2em',
   slidesToShow: 3,
@@ -74,27 +72,32 @@ const centerModeSettings = {
 };
 
 const Carousel = ({
-  children, type, className, settings, mode,
+  children, type, className, settings, showArrows,
 }) => {
   const sliderRef = useRef(null);
   const ssr = !isClientSide();
   const Slider = dynamic(import('react-slick'), { ssr });
 
   const next = () => {
-    sliderRef.slickNext();
+    // TODO – this is broken, but it has been broken before :D
+    // only used for Arrows, which is only used on the Hooded Scholar page
+    sliderRef.current.slickNext();
   };
 
   const previous = () => {
-    sliderRef.slickPrev();
+    // TODO – this is broken, but it has been broken before :D
+    // only used for Arrows, which is only used on the Hooded Scholar page
+    sliderRef.current.slickPrev();
   };
 
-  const newSettings = { ...(mode === 'center' ? centerModeSettings : defaultSettings), ...settings };
+  const newSettings = { ...(type === 'multipleSlides' ? multipleSlideSettings : defaultSettings), ...settings };
 
   return (
-    <div className={className || `${type}-carousel`}>
-      {type === 'live' && <LiveHeader prev={previous} next={next} />}
-      {type === 'aimeVideos' && <AimeVideosHeader prev={previous} next={next} />}
-      {type === 'testimonials' && <TestimonialsHeader prev={previous} next={next} />}
+    <div className={className}>
+      {showArrows && (
+        // only used on the Hooded Scholar Page right now
+        <CarouselArrows prev={previous} next={next} />
+      )}
       <Slider
         {...newSettings}
         key={ssr ? 'server' : 'client'}
@@ -108,19 +111,18 @@ const Carousel = ({
 };
 
 Carousel.propTypes = {
-  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero',
-    'testimonials']),
+  showArrows: PropTypes.bool,
+  type: PropTypes.oneOf(['singleSlide', 'multipleSlides']),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
-  mode: PropTypes.string,
 };
 
 Carousel.defaultProps = {
+  showArrows: false,
   className: null,
-  type: 'hero',
+  type: 'singleSlide',
   settings: {},
-  mode: '',
 };
 
 export default Carousel;
