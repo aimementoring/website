@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
@@ -8,6 +8,7 @@ import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import TypeformModal from '../../components/typeformModal';
+import IntercomChat from '../../components/intercom';
 import styles from './imagi-nation-tv.module.scss';
 
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
