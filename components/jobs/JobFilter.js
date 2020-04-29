@@ -12,7 +12,7 @@ const JobFilter = ({ currentFilter, filtersType, filterBy }) => {
   return (
     <div className={styles.containerJobFilter}>
       <h4 className={styles.titleJobFilter}>Refine</h4>
-      <ul className={styles.listaJobFilter}>
+      <ul className={styles.listJobFilter}>
         <li className={styles.elemJobFilter}>
           <span
             className={`${styles.filterList} ${!currentFilter ? styles.active : ''}`}
