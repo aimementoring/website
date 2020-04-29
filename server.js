@@ -27,7 +27,7 @@ app.prepare().then(() => {
 
   server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
 
-  // Offline mode - PWA
+  // // Offline mode - PWA
   // server.get('/service-worker.js', (req, res) => {
   //   const filePath = `${__dirname}/.next/service-worker.js`;
   //   app.serveStatic(req, res, filePath);
