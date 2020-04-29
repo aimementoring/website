@@ -1,0 +1,126 @@
+@import "../../styles/base/variables";
+
+.aboutInTVSection {
+  padding: 2em 0;
+  @media screen and (min-width: $md) {
+    padding: 4em 1em 2em;
+  }
+  @media screen and (max-width: $sm) {
+    margin-bottom: 10em;
+  }
+}
+
+.aboutInTVTitle {
+  color: $orange;
+}
+
+.aboutInTVWrapper {
+  margin: 0 auto;
+  @media screen and (min-width: $md) {
+    display: flex;
+    align-items: center; 
+    max-width: $lg;
+    flex-direction: row;
+    padding: 2em;
+  }
+}
+
+.aboutParagraphColumn {
+  flex: 1;
+  max-width: 25em;
+  margin: 0 auto;
+  @media screen and (min-width: $md) {
+    align-items: center;
+  }
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
+.aboutCyclopsColumn {
+  flex: 1;
+}
+
+.cyclopsSpeechBubble {
+  text-align: center;
+  max-width: 20em;
+  background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 60% transparent;
+  display: flex;
+  margin: 0 auto;
+
+  button.speechButtonContent {
+    text-align: center;
+    text-transform: none;
+    color: $magenta;
+    position: relative;
+    width: 7em;
+    padding: 3em 0 1.5em;
+    font-size: 1.1rem;
+    left: 1.5em; 
+    top: -0.5em;
+    line-height: 1.5;
+    background-color: transparent;
+    letter-spacing: initial;
+  
+    @media screen and (min-width: $md) {
+      width: 6.3em;
+      padding: 2em 0;
+      font-size: 1.1rem;
+      left: 1.5em;
+      top: 0.5em;
+    }
+    @media screen and (min-width: $lg) {
+      width: 7em;
+      padding: 2em 0 1.5em;
+    }
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.cyclopsImage {
+  position: relative;
+  width: 12em;
+  height: 18em;
+  top: 6em;
+  @media screen and (min-width: $md) {
+    width: 8em;
+    left: 3em;
+    height: 12em;
+  } 
+  @media screen and (max-width: $sm) {
+    width: 8em;
+    height: 12em;
+    left: 1.5em;
+  } 
+}
+
+.becomeAPartnerBtn {
+  @media screen and (min-width: $md) {
+    margin-bottom: 2em;
+  }
+
+  button.navBtn {
+    background-color: $cyan;
+    border-radius: 3px;
+    font-family: $body-font-family-bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 0.13em;
+    padding: 0.85em 1.85em;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: $hoverTransition;
+
+    &:hover {
+      background-color: $purple;
+    }	     
+  }	  
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
