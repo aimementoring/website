@@ -5,13 +5,13 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import bugsnagClient from '../../utils/bugsnag';
 import IntercomChat from '../intercom';
-import './styles.scss';
+import styles from './errorBoundary.module.scss';
 
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasError: false,
+      hasError: true,
     };
   }
 
@@ -30,12 +30,12 @@ class ErrorBoundary extends Component {
     if (hasError) {
       return (
         <div>
-          <div className="full-width-wrap">
-            <div className="hero-banner--default hero-banner--404 full-width-wrap">
-              <div className="flex flex-wrap items-center full-height">
-                <div className="banner-wrapper subpage-banner center">
-                  <div className="bannerContent">
-                    <Title type="headingLockup" className="headingJobsSingle" theme={process.env.REACT_APP_THEME}>
+          <div className={styles.errorBoundaryWrapper}>
+            <div className={styles.errorHeroBanner}>
+              <div className={styles.bannerContainer}>
+                <div className={styles.subpageBanner}>
+                  <div>
+                    <Title type="headingLockup" className={styles.headingJobsSingle} theme={process.env.REACT_APP_THEME}>
                       <strong>
                         Uh Oh
                       </strong>
@@ -44,8 +44,8 @@ class ErrorBoundary extends Component {
                 </div>
               </div>
             </div>
-            <div className="md-wrap mx-auto p3 page-404-container">
-              <div className="justify-center items-center sm-flex">
+            <div className={styles.page404Container}>
+              <div className={styles.page404Content}>
                 <div>
                   <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                     {'Oops, this wasn\'t meant to happen.'}
@@ -53,7 +53,7 @@ class ErrorBoundary extends Component {
                   <Paragraph>
                     {'Sorry for any inconvenience. If you\'re seeing this often, please'}
                   </Paragraph>
-                  <div className="errorInterComWrapper">
+                  <div className={styles.errorInterComWrapper}>
                     <IntercomChat />
                   </div>
                   <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
