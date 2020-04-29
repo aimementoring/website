@@ -3,6 +3,7 @@
 .episodePanel {
   break-inside: avoid-column;
   margin-bottom: 1.5em;
+  margin: 0 1em;
 
   .episodeHeader {
     background-color: $white;
@@ -30,7 +31,6 @@
       position: relative;
       color: #024646;
       transform: matrix(0.99, -0.12, 0.15, 0.99, 0, 0);
-      letter-spacing: -0.1em;
 
       strong {
         color: $white;
