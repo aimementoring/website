@@ -168,18 +168,12 @@
     float: left;
     max-width: 20em;
     position: relative;
-    // background-size: 65%;
-    // background-position: top right;
 
     @media screen and (min-width: $md) {
       display: flex;
       align-items: center;
       max-width: initial;
     }
-
-    // .puppetWrap {
-    //   display: flex;
-    // }
 
     .puppetTalking {
       width: 9em;

@@ -91,7 +91,6 @@ const ImagiNationTV = () => (
                 alt="Hope the Puppet"
                 className={styles.puppetTalking}
               />
-              {/* <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title> */}
             </div>
             <div className={styles.puppetWords}>
               <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
