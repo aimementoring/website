@@ -9,7 +9,7 @@ import './hoodedScholar.scss';
 
 const VideoButton = dynamic(() => import('../../components/videoButton'));
 const HoodedScholarForm = dynamic(() => import('../../components/eoiForm'));
-const VioletVideoCarousel = dynamic(() => import('../../components/carousel/customCarousels/violetCarousel'));
+const VioletVideoCarousel = dynamic(() => import('../../components/carousel/violetVideoCarousel/violetVideoCarousel'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
