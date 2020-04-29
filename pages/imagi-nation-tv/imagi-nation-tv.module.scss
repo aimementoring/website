@@ -161,47 +161,6 @@
     padding: 2em 3em 3em 0.5em;
   }
 
-  .partnersWrapper {
-    max-width: 64em;
-    margin: auto;
-
-    .partnersHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin: 1em;
-      flex-direction: row;
-
-      @media screen and (max-width: $sm) {
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .partnersImagesGroup {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      max-width: 52em;
-      margin: 1em auto;
-
-      @media screen and (max-width: $sm) {
-        flex-direction: column;
-        margin: 1em 2em;
-      }
-
-      .partnerImage {
-        margin: 1em 2em;
-
-        img {
-          max-height: 10em;
-          max-width: 13em;
-        }
-      }
-    }
-  }
 }
 
 .partneringCTASection {
@@ -299,20 +258,22 @@
         position: relative;
        
         width: 7em;
-        padding: 3em 0;
+        padding: 3em 0 1.5em;
         font-size: 1.1rem;
-        left: 1.3em;
+        left: 1.5em; 
+        top: -0.5em;
+        line-height: 1.5;
 
         @media screen and (min-width: $md) {
           width: 6.3em;
-          padding: 1.5em 0;
+          padding: 2em 0;
           font-size: 1.1rem;
-          left: 1.6em;
-          top: 1em;
+          left: 1.5em;
+          top: 0.5em;
         }
         @media screen and (min-width: $lg) {
           width: 9em;
-          padding: 3em 0;
+          padding: 3em 0 1.5em;
         }
 
         span {
@@ -320,6 +281,17 @@
           display: block;
         }
       }
+    }
+
+    .typeformAction {
+      color: $magenta;
+      background-color: transparent;
+      text-transform: none;
+      padding: 0;
+      margin: 0;
+      letter-spacing: initial;
+      // font-size: 1.1rem;
+      text-align: center;
     }
   }
 
@@ -329,7 +301,7 @@
     }
     
     button.navBtn {
-      background-color: $pink;
+      background-color: $orange;
       border-radius: 3px;
       font-family: $body-font-family-bold;
       font-size: 0.85rem;
@@ -343,7 +315,7 @@
       transition: $hoverTransition;
 
       &:hover {
-        background-color: $orange;
+        background-color: $purple;
       }
     }
 
