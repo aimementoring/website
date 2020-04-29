@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Testimonials = ({ prev, next }) => (
-  <div className="border-none aimeVideos-buttons">
+const CarouselArrows = ({ prev, next }) => (
+  <div className="border-none carousel-buttons">
     <button
       type="button"
       className="border-none"
       onClick={prev}
       aria-label="previous"
-      style={{ color: '#000000', backgroundColor: 'transparent' }}
+      style={{ color: '#ffffff', backgroundColor: 'transparent' }}
     >
       <svg className="icon icon-arrow-prev">
         <use xlinkHref="#icon-arrow-prev" />
@@ -17,7 +17,7 @@ const Testimonials = ({ prev, next }) => (
     <button
       type="button"
       className="border-none"
-      style={{ color: '#000000', backgroundColor: 'transparent' }}
+      style={{ color: '#ffffff', backgroundColor: 'transparent' }}
       aria-label="next"
       onClick={next}
     >
@@ -28,9 +28,9 @@ const Testimonials = ({ prev, next }) => (
   </div>
 );
 
-Testimonials.propTypes = {
+CarouselArrows.propTypes = {
   prev: PropTypes.func.isRequired,
   next: PropTypes.func.isRequired,
 };
 
-export default Testimonials;
+export default CarouselArrows;
