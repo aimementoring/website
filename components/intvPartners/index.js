@@ -86,8 +86,11 @@ const IntvPartners = () => (
     <section className={styles.partnersWrapper}>
       <div className={styles.partnersHeader}>
         <Title className={styles.subTitle} type="h3Title">
-          Our partners
+          Who’s already in the game
         </Title>
+        <div className={styles.becomeAPartnerBtn}>
+          <IntercomChat label="Become a partner" />
+        </div>
       </div>
       <Carousel
         type="multipleSlides"
@@ -95,9 +98,7 @@ const IntvPartners = () => (
       >
         {CAROUSEL_SLIDES.map((slide) => <IntvPartnersSlide {...slide} key={slide.title} />)}
       </Carousel>
-      <div className={styles.becomeAPartnerBtn}>
-        <IntercomChat label="Become a partner" />
-      </div>
+      
     </section>
   </>
 );
