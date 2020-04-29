@@ -2,21 +2,22 @@
 
 .heroBannerHomepage {
   background:
-    url($cdnRoot+"assets/images/decorative/bg-dotties@2x.jpg") no-repeat 100% 100% transparent;
-  background-size: 100% 60%;
+    url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
+  background-size: 100% 40%;
   position: relative;
-  max-width: 100%;
+  max-width: 75em;
   width: 100%;
   padding: 1em;
-  margin-top: 6em;
+  margin: 6em auto 0;
 
   @media screen and (min-width: $sm) {
-    background-size: 80% 70%;
+    background-size: 80% 65%;
   }
 
   @media screen and (min-width: $md) {
-    background-position: top right;
-    background-size: contain;
+    background-position: 90% 80%;
+   
+    background-size: 60% 90%;
   }
   
   .welcomeTitle {
@@ -77,7 +78,7 @@
   .bannerItem {
     box-sizing: border-box;
     flex-grow: 1;
-    flex-basis: 0;
+    flex-basis: auto;
     clear: both;
     display: flex;
     flex-direction: column;
