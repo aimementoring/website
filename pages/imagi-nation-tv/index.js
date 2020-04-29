@@ -11,6 +11,7 @@ import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import styles from './imagi-nation-tv.module.scss';
 
+const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -92,6 +93,7 @@ const ImagiNationTV = () => {
             linkText="Buy a Hoodie"
           />
         </section>
+        <DoubleCurvedLine />
         <section className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
           {/* <div>
