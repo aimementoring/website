@@ -70,8 +70,8 @@ export const HEADER_MENU_ITEMS = [
         linkText: 'IN{TV}',
       },
       {
-        to: '/stories',
-        as: '/stories',
+        to: '/stories/[categorySlug]',
+        as: '/stories/intv',
         linkText: 'Read our stories',
       },
     ],
