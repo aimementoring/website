@@ -164,7 +164,7 @@
   }
 
   .puppetChat {
-    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top right / 80% transparent;
+    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top right / 85% transparent;
     float: left;
     max-width: 20em;
     position: relative;
@@ -202,9 +202,9 @@
 
         @media screen and (max-width: $md) {
           position: absolute;
-          top: 1.5em;
+          top: 1.8em;
           right: 0;
-          width: 7em;
+          width: 7.3em;
         }
       }
     }
@@ -247,6 +247,11 @@
         @media screen and (min-width: $lg) {
           width: 9em;
           padding: 3em 0;
+        }
+
+        span {
+          text-decoration: underline;
+          display: block;
         }
       }
     }

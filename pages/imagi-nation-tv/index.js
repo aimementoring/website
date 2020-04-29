@@ -95,8 +95,10 @@ const ImagiNationTV = () => (
             <div className={styles.puppetWords}>
               <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
               <Paragraph>
-                We’re looking for partners of all kinds, whether you’re a company,
-                a school, uni or a future guest - we’d love to talk. This show is
+                We’re looking for partners of all kinds, whether
+                you’re a <strong>company</strong>, 
+                a <strong>school</strong>, <strong>uni</strong> or a
+                future <strong>guest</strong> - we’d love to talk. This show is
                 not about entertainment to pass the time, your funds and the work
                 we do together will be an investment in providing a stage to
                 elevate knowledge.
@@ -108,7 +110,7 @@ const ImagiNationTV = () => (
           </div>
           <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
             <div>
-              <Title type="h4Title" className={styles.puppetTitle}>Already a partner? Click here!</Title>
+              <Title type="h4Title" className={styles.puppetTitle}>Already a partner? <span>Click here</span></Title>
             </div>
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
