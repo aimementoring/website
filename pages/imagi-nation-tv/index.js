@@ -96,13 +96,6 @@ const ImagiNationTV = () => {
         <DoubleCurvedLine />
         <section className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
-          {/* <div>
-            Already a partner?
-            <Button type="text" onClickFunction={toggleModal}>
-              Click here!
-            </Button>
-            
-          </div> */}
           <div className={`${styles.puppetsChatWrapper}`}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
             <div className={`${styles.puppetChat}`}>
@@ -131,8 +124,11 @@ const ImagiNationTV = () => {
             </div>
             <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
               <div>
-                <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title>
-                <Button type="text" className={styles.typeformAction} onClickFunction={toggleModal}>Click here</Button>
+                {/* <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title> */}
+                <Button type="text" className={`${styles.typeformAction} ${styles.puppetTitle}`} onClickFunction={toggleModal}>
+                  Already a partner? 
+                  <span>Click here</span>
+                </Button>
                
               </div>
               <img
@@ -144,6 +140,7 @@ const ImagiNationTV = () => {
           </div>
         </section>
 
+        <DoubleCurvedLine />
         <div className={styles.tempIntvPWrapper}>
           <IntvPartners />
         </div>
