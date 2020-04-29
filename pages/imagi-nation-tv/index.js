@@ -89,14 +89,15 @@ const ImagiNationTV = () => {
 
         <section className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
-          <div>
+          {/* <div>
             Already a partner?
             <Button type="text" onClickFunction={toggleModal}>
               Click here!
             </Button>
-            <TypeformModal visible={showModal} toggleModal={toggleModal} />
-          </div>
+            
+          </div> */}
           <div className={`${styles.puppetsChatWrapper}`}>
+            <TypeformModal visible={showModal} toggleModal={toggleModal} />
             <div className={`${styles.puppetChat}`}>
               <div className={styles.puppetWrap}>
                 <img
@@ -123,7 +124,9 @@ const ImagiNationTV = () => {
             </div>
             <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
               <div>
-                <Title type="h4Title" className={styles.puppetTitle}>Already a partner? <span>Click here</span></Title>
+                <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title>
+                <Button type="text" className={styles.typeformAction} onClickFunction={toggleModal}>Click here</Button>
+               
               </div>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
