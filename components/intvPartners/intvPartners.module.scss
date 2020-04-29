@@ -103,6 +103,7 @@
     @media screen and (max-width: 100em) {
       left: -10%;
       width: 120%;
+      margin: 3em 0;
     }
     
     @media screen and (max-width: $sm) {
@@ -366,6 +367,31 @@
       display: inline-block;
       margin: 0px 5px;
       padding: 0px;
+    }
+  }
+}
+.partnersCarousel {
+  .slick-prev {
+    background: url($cdnRoot + 'assets/images/carousel/arrow-prev-purple.svg') no-repeat top center / contain transparent;
+    left: 5rem;
+    margin: 0;
+    @media all and(min-width: $md) {
+      left: 8rem;
+    }
+    @media all and(min-width: $lg) {
+      left: 10rem;
+    }
+  }
+
+  .slick-next {
+    background: url($cdnRoot + 'assets/images/carousel/arrow-next-purple.svg') no-repeat top center / contain transparent;
+    right: 5rem;
+    margin: 0;
+    @media all and(min-width: $md) {
+      right: 8rem;
+    }
+    @media all and(min-width: $lg) {
+      right: 10rem;
     }
   }
 }
