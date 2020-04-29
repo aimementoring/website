@@ -42,6 +42,11 @@
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: $md) {
+    padding: 0.5rem 0rem;
+    .line { margin-top: 1.5rem; }
+  }
   
   @media screen and (min-width: $md) {
     flex-direction: row;
@@ -106,7 +111,6 @@
   color: $grey;
   line-height: 1.5;
   font-size: 14px;
-  display: -webkit-box;
   text-overflow: ellipsis;
   overflow:hidden;
 }
@@ -213,17 +217,136 @@
   border-width: 1px;
   display: inline-block;  
   text-decoration: none;
+  border-color: $blue-light;
   cursor: pointer;
 }
 
 .active{
   font-family: $feature-font-family;
   font-weight: 400;
-}
-
-.active:hover{
   background-color: $brand-primary;
   border-color: $brand-primary;
   color: $white;
   opacity: 1;
+}
+
+.filterList:hover{
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $white;
+  opacity: 1;
+}
+
+.componentJob{  
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 1rem;
+  
+  @media screen and (min-width: $lg) {
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-bottom: 2rem;
+  }
+}
+
+.lineJob{
+  display: block;
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-bottom: 1rem;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-top: 4rem;
+  }
+  @media screen and (min-width: $lg) {
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: $lg) {
+    margin-top: 4rem;
+  }
+
+}
+
+.titleJobs {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.descriptionJobs{
+  line-height: 1.5;
+}
+
+.componentJobFilter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionMessage {
+  grid-template-columns: 1fr;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 1rem;
+
+  @media screen and (min-width: $md) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+
+.noJobContainer{
+  margin-top: 0;
+  padding-top: .5rem;
+
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    padding-top: 2rem; 
+  }
+  @media screen and (min-width: $lg) {
+    padding-top: 2rem;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-top: 1rem;
+  }
+  @media screen and (min-width: $lg) {
+    margin-top: 4rem;
+  }
+}
+
+.titleNoJobContainer{
+  display: block;
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+  margin-bottom: 2rem;
+  margin-top: .5rem;
+}
+
+
+.paragraphNoJobContainer{
+  padding-bottom: .5rem;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    padding-bottom: 2rem;
+  }
+  @media screen and (min-width: $lg) {
+    padding-bottom: 2rem; 
+  }
 }
