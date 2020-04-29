@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropType from 'prop-types';
 import dynamic from 'next/dynamic';
 import compact from 'lodash/compact';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
 import { loadPositions } from '../../services/positions';
 import { formatJobs } from '../../utils/positions';
 import { COUNTRIES_WHERE_AIME_ACCEPT_JOBS } from '../../constants';
@@ -219,17 +221,19 @@ const Jobs = ({
         </div>
       ) : (
         <div className="mt0 pt1 md-pt3 lg-pt3 md-mt2 lg-mt4">
-          <h1 className="lh-base">We are not hiring.</h1>
+          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+            We are not hiring.
+          </Title>
           <span className="line bg-brand-tertiary mb3 mt1" />
-          <p className="pb1 md-pb3 lg-pb3">
-            {/* {`Sorry, there are no positions available at the moment. You can
-            go to the bottom of the page and enter your mail address to
-            become an AIME Friend though – you'll receive updates about
-            everything that's happening.`} */}
-            {`Sorry, there are no positions available at the moment. 
-            You can sign up to be an AIME Friend at the bottom of this page though, 
-            and receive updates about everything that's happening.`}
-          </p>
+          <Paragraph className="pb1 md-pb3 lg-pb3">
+            Sorry, there are no positions available at the moment.
+          </Paragraph>
+          <Paragraph>
+            {`You can sign up to be an AIME Friend at the bottom of this page though – 
+            you'll receive updates about everything that's happening.`}
+          </Paragraph>
+          <br />
+          <br />
         </div>
       )}
     </div>
