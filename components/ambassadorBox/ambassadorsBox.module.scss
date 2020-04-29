@@ -1,0 +1,41 @@
+@import "../../styles/base/variables";
+
+.gridTile {
+  flex: 33.33%;
+  margin: 0.5rem;
+
+  @supports (display: grid) {
+    margin: 0;
+  }
+}
+
+.campaignGridImage {
+  height: 17em;
+  clip-path: url(#svgScratchAmbassadorClipPath);
+  // .circle
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  // .block
+  display: block;
+  filter: grayscale(1);
+}
+
+.h4Title {
+  color: $black;
+  margin: 1rem 0 .7rem 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  font-family: $signature-font-family;
+  margin-bottom: 0 !important;
+}
+
+.h3Title {
+  color: $grey;
+  text-align: center;
+}
+
+.spanText {
+  color: $grey;
+}
