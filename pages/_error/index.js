@@ -5,8 +5,10 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import { SimpleBanner } from '../../components/banner/index';
+import IntercomChat from '../../components/intercom';
 import bugsnagClient from '../../utils/bugsnag';
 import isClientSide from '../../utils/isClientSide';
+import styles from './error.module.scss';
 
 import './index.scss';
 
@@ -36,7 +38,7 @@ const ErrorPage = () => {
         <meta name="description" content="Helmet application" />
         <meta name="prerender-status-code" content="404" />
       </Helmet>
-      <div id="404page" className="full-width-wrap">
+      <div id="404page" className={styles.errorBoundaryWrapper}>
         <SimpleBanner
           title={(
             <strong>
@@ -44,14 +46,14 @@ const ErrorPage = () => {
             </strong>
           )}
           titleType="headingLockup"
-          titleStyleClass="headingJobsSingle"
-          bannerContainerClass="hero-banner--default hero-banner--404 full-width-wrap"
-          bannerWrapperClass="flex flex-wrap items-center full-height"
-          bannerContentWrapperClass="banner-wrapper subpage-banner center"
-          bannerContentClass="banner-wrapper"
+          titleStyleClass={styles.headingJobsSingle}
+          bannerContainerClass={styles.errorHeroBanner}
+          bannerWrapperClass={styles.bannerContainer}
+          bannerContentWrapperClass={styles.subpageBanner}
+          bannerContentClass={styles.subpageBanner}
         />
-        <div className="md-wrap mx-auto p3 page-404-container">
-          <div className="justify-center items-center sm-flex">
+        <div className={styles.page404Container}>
+          <div className={styles.page404Content}>
             <div>
               <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                 {'Oops, this wasn\'t meant to happen.'}
@@ -59,12 +61,15 @@ const ErrorPage = () => {
               <Paragraph>
                 Sorry for any inconvenience.
               </Paragraph>
+              <div className={styles.errorInterComWrapper}>
+                <IntercomChat />
+              </div>
               <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
                 Back to home
               </Button>
             </div>
             <div>
-              <img className="w85 p2 xs-hide sm-hide" src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
+              <img className={styles.sadFaceError} src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
             </div>
           </div>
         </div>
