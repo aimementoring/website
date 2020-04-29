@@ -142,19 +142,3 @@
 
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
-
-.slick-prev {
-  background: url($cdnRoot + 'assets/images/carousel/arrow-prev-purple.svg') no-repeat top center / contain transparent;
-  left: 5rem;
-  @media all and(min-width: $md) {
-    left: 8rem;
-  }
-}
-
-.slick-next {
-  background: url($cdnRoot + 'assets/images/carousel/arrow-next-purple.svg') no-repeat top center / contain transparent;
-  right: 5rem;
-  @media all and(min-width: $md) {
-    right: 8rem;
-  }
-}
