@@ -27,9 +27,9 @@ const AboutImaginationTv = (props) => {
             {'We created IMAGI-NATION{TV} & the IMAGI-NATION{CLASSROOM} experience to put a mentor in the home every day during the tough times of COVID-19 and beyond. It’s a daily TV show broadcast live on the Internet, and it’s a gift for teachers, parents and kids to help make sense of today & imagine tomorrow.'}
           </Paragraph>
           <div className={styles.becomeAPartnerBtn}>
-            <IntercomChat label="Partner with us" />
-            {/*  onClick={scrollHandler} */}
-            <Button onClick={scrollHandler} theme={process.env.REACT_APP_THEME}>Partner with  us</Button>
+            <Button onClick={scrollHandler} theme={process.env.REACT_APP_THEME}>
+              Partner with  us
+            </Button>
           </div>
         </div>
         <div className={styles.aboutCyclopsColumn}>
