@@ -169,11 +169,19 @@
 
 .partneringCTASection {
   padding: 2em 0;
+<<<<<<< HEAD
 
   @media screen and (min-width: $md) {
     padding: 4em 1em 2em;
   }
 
+=======
+
+  @media screen and (min-width: $md) {
+    padding: 4em 1em 2em;
+  }
+
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
   .partneringHeading {
     color: $purple;
     text-align: center;
@@ -243,12 +251,21 @@
       float: right;
       display: flex;
       align-items: flex-start;
+<<<<<<< HEAD
 
       .puppetTalking {
         position: relative;
         width: 12em;
         top: 4em;
 
+=======
+
+      .puppetTalking {
+        position: relative;
+        width: 12em;
+        top: 4em;
+
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
         @media screen and (min-width: $md) {
           width: 16em;
           left: -1em;
@@ -267,6 +284,7 @@
         left: 1.5em; 
         top: -0.5em;
         line-height: 1.5;
+<<<<<<< HEAD
 
         @media screen and (min-width: $md) {
           width: 6.3em;
@@ -278,6 +296,24 @@
         @media screen and (min-width: $lg) {
           width: 9em;
           padding: 3em 0 1.5em;
+        }
+
+        span {
+          text-decoration: underline;
+          display: block;
+=======
+
+        @media screen and (min-width: $md) {
+          width: 6.3em;
+          padding: 2em 0;
+          font-size: 1.1rem;
+          left: 1.5em;
+          top: 0.5em;
+        }
+        @media screen and (min-width: $lg) {
+          width: 9em;
+          padding: 3em 0 1.5em;
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
         }
 
         span {
@@ -323,6 +359,45 @@
       }
     }
 
+<<<<<<< HEAD
+    .typeformAction {
+      color: $magenta;
+      background-color: transparent;
+      text-transform: none;
+      padding: 0;
+      margin: 0;
+      letter-spacing: initial;
+      // font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+
+  .becomeAPartnerBtn {
+    @media screen and (min-width: $md) {
+      margin-bottom: 2em;
+    }
+    
+    button.navBtn {
+      background-color: $orange;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      transition: $hoverTransition;
+
+      &:hover {
+        background-color: $purple;
+      }
+    }
+
+=======
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
     @media screen and (max-width: $sm) {
       width: 100%;
     }
