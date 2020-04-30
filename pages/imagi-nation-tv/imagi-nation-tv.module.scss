@@ -80,9 +80,13 @@
       .playerContainer {
         padding: 0;
         min-width: auto;
-        height: 18em;
+        height: 13em;
+
+        @media screen and (min-width: $sm) {
+          height: 18em;
+        }
         @media screen and (min-width: $md) {
-          height: 25em;
+          height: 23em;
         }
       }
   
