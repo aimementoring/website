@@ -1,62 +1,62 @@
-@import "../../styles/base/variables";
+// @import "../../styles/base/variables";
 
-.custom-form-input-container {
-  z-index: 1;
-}
+// .custom-form-input-container {
+//   z-index: 1;
+// }
 
-//TODO: I'll set this up with CSS modules with more time tomorrow
-.form-light {
-  .custom-form-input-container,
-  .textarea-wrapper {
-    padding: 0 0.5em 1em;
-    .input,
-    select,
-    textarea {
-      border: 1px solid #e3e5e5;
+// //TODO: I'll set this up with CSS modules with more time tomorrow
+// .form-light {
+//   .custom-form-input-container,
+//   .textarea-wrapper {
+//     padding: 0 0.5em 1em;
+//     .input,
+//     select,
+//     textarea {
+//       border: 1px solid #e3e5e5;
 
-      &:focus {
-        border-color: $purple;
-      }
+//       &:focus {
+//         border-color: $purple;
+//       }
 
-      &::placeholder {
-        color: $purple;
-      }
-    }
-  }
-  .input,
-  select,
-  textarea {
-    border: 1px solid #e3e5e5;
+//       &::placeholder {
+//         color: $purple;
+//       }
+//     }
+//   }
+//   .input,
+//   select,
+//   textarea {
+//     border: 1px solid #e3e5e5;
 
-    &:focus {
-      border-color: $purple;
-    }
+//     &:focus {
+//       border-color: $purple;
+//     }
 
-    &::placeholder {
-      color: $purple;
-    }
-  }
-  .submit {
-    background-color: $green;
-    border-radius: 3px;
-    border: none;
-    color: $white;
-    cursor: pointer;
-    font-family: $feature-font-family-bold;
-    font-size: 0.9rem;
-    font-style: normal;
-    letter-spacing: 0.1em;
-    display: block;
-    margin: 0 auto;
-    opacity: 1;
-    padding: 0.8em 2em;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.1s linear;
-    pointer-events: auto;
+//     &::placeholder {
+//       color: $purple;
+//     }
+//   }
+//   .submit {
+//     background-color: $green;
+//     border-radius: 3px;
+//     border: none;
+//     color: $white;
+//     cursor: pointer;
+//     font-family: $feature-font-family-bold;
+//     font-size: 0.9rem;
+//     font-style: normal;
+//     letter-spacing: 0.1em;
+//     display: block;
+//     margin: 0 auto;
+//     opacity: 1;
+//     padding: 0.8em 2em;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     transition: all 0.1s linear;
+//     pointer-events: auto;
 
-    &:hover {
-      background-color: $cyan;
-    }
-  }
-}
+//     &:hover {
+//       background-color: $cyan;
+//     }
+//   }
+// }
