@@ -35,13 +35,17 @@ const AboutImaginationTv = (props) => {
         <div className={styles.aboutCyclopsColumn}>
           <div className={styles.cyclopsSpeechBubble}>
             <div>
-              <Button type="text" className={styles.speechButtonContent} onClickFunction={() => {}}>
+              {/* <Button type="text" className={styles.speechButtonContent} onClickFunction={() => {}}>
                 Read the full
                 story
                 <br />
                 <span>here</span>
-              </Button>
-
+              </Button> */}
+              <Title type="h5Title" className={styles.speechButtonContent}>
+                More partner
+                options
+                on the way
+              </Title>
             </div>
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/kyle-cyclops@2x.png`}
