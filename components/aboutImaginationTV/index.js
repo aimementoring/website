@@ -24,6 +24,8 @@ const AboutImaginationTv = () => (
         </Paragraph>
         <div className={styles.becomeAPartnerBtn}>
           <IntercomChat label="Partner with us" />
+          {/*  onClick={scrollHandler} */}
+          {/* <Button theme={process.env.REACT_APP_THEME}>Partner with  us</Button> */}
         </div>
       </div>
       <div className={styles.aboutCyclopsColumn}>
