@@ -9,7 +9,6 @@
   width: 100%;
   padding: 1em;
   margin: 6em auto 0;
-  border: 1px dashed $cyan;
 
   @media screen and (min-width: $sm) {
     background-size: 80% 65%;
@@ -22,7 +21,6 @@
   }
 
   .bannerWrapper {
-    border: 1px solid $orange;
     position: relative;
     box-sizing: border-box;
     flex-direction: column;
@@ -82,9 +80,13 @@
       .playerContainer {
         padding: 0;
         min-width: auto;
-        height: 18em;
+        height: 13em;
+
+        @media screen and (min-width: $sm) {
+          height: 18em;
+        }
         @media screen and (min-width: $md) {
-          height: 25em;
+          height: 23em;
         }
       }
   
