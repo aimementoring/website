@@ -1,0 +1,349 @@
+@import '../../styles/base/variables';
+
+
+.customDetails { display: inline-block; }
+
+.details {
+  display: inline-block;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.containerHomePage {
+  margin-bottom: 1em;
+
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+}
+
+.anchorClass {
+  border-color: $accent-purple;
+  width: 100%;
+  transition: ease-in .1s all;
+  border-color: $blue-light;
+  padding: 0;
+  justify-content: left;
+  border-radius: $border-radius-large;
+  color: $black;
+  border-style: solid;
+  border-width: 1px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  display: flex;
+  margin-right: auto;
+  text-decoration: none;
+
+  border: 1px solid $brand-primary;
+  opacity: 1;
+  &:hover {
+    .homepage-main-actions--arrow {
+      right: -10px;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    padding: 0.5em 0em;
+    .line { margin-top: 1.5em; }
+  }
+  
+  @media screen and (min-width: $md) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+
+  img {
+    opacity: 0;
+    transition: .2s ease all;
+    position: absolute;
+    right: 0;
+    bottom: -15px ;
+  }
+  
+  &:hover img {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  &:hover .line {
+    background-color: $purple;
+  }
+
+  &:hover{
+    border-color: $purple;
+    background-color: $white;
+  }
+}
+
+
+.containerDetails {
+  position: relative;
+  margin: 2em;
+}
+
+.nameStyles{
+  font-family: $feature-font-family;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.detailsStyles{
+  display: block;
+  padding-top: .5em;
+  font-size: 14px;
+  font-weight: 300;
+  color: $brand-primary;
+}
+
+.expireStyles{
+  display: block;
+  padding-top: .5em;
+  padding-bottom: 2em;
+  font-size: 14px;
+  font-weight: 300;
+  color: $brand-primary;
+}
+
+.descriptionStyles{
+  font-weight: 300;
+  color: $grey;
+  line-height: 1.5;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+
+.lineStyle{
+  display: block;
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+}
+
+.containerJobFilter{
+  padding-top: 1em;
+  padding-bottom: 2em;
+  margin-bottom: 0;
+  grid-template-columns: 1fr;
+  @media screen and (min-width: $md) {
+    grid-template-columns: 1fr 1fr;
+  }
+    min-width: 280px;
+
+  @media screen and (min-width: $lg) {
+    h4 {
+      display:none;
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+
+    ul {
+      display: none;
+      border: 1px solid $brand-primary;
+      margin-top: 0;
+      margin-right: 0;
+      border-radius: 0 0 6px 6px;
+      a {
+        margin: 0;
+        display: block;
+        border-radius: 0;
+        padding: 1em;
+        border:0;
+        border-bottom: 1px solid $brand-primary;
+        &:hover {
+          background: $white;
+          border-radius:0;
+          color: $brand-primary;
+        }
+        &:last-child {
+          border-bottom:0;
+          border-radius: 0 0 6px 6px;
+        }
+      }
+    }
+
+    &.active ul  {
+      display: block;
+    }
+
+    &.active h4 {
+      border-radius: 6px 6px 0 0;
+      border-bottom: 0;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}
+
+.titleJobFilter{
+  color: $brand-primary;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: $border-radius;
+
+}
+
+.listJobFilter{
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+.elemJobFilter{
+  display: block;
+  margin-right: .5em;
+}
+
+.filterList{
+  font-size: 14px;
+  padding: 0.5em 0.8em 0.3em 0.8em;
+  margin: 0.5em 0;
+  transition: .1s ease all;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;  
+  text-decoration: none;
+  border-color: $blue-light;
+  cursor: pointer;
+}
+
+.active{
+  font-family: $feature-font-family;
+  font-weight: 400;
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $white;
+  opacity: 1;
+}
+
+.filterList:hover{
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $white;
+  opacity: 1;
+}
+
+.componentJob{  
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 1em;
+  
+  @media screen and (min-width: $lg) {
+    margin-bottom: 2em;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-bottom: 2em;
+  }
+}
+
+.lineJob{
+  display: block;
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-bottom: 2em;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-top: 4em;
+  }
+  @media screen and (min-width: $lg) {
+    margin-bottom: 2em;
+  }
+  @media screen and (min-width: $lg) {
+    margin-top: 4em;
+  }
+
+}
+
+.titleJobs {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.descriptionJobs{
+  line-height: 1.5;
+}
+
+.componentJobFilter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.positionMessage {
+  grid-template-columns: 1fr;
+  margin-bottom: 4em;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 1em;
+
+  @media screen and (min-width: $md) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+
+.noJobContainer{
+  margin-top: 0;
+  padding-top: .5em;
+
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    padding-top: 2em; 
+  }
+  @media screen and (min-width: $lg) {
+    padding-top: 2em;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    margin-top: 1em;
+  }
+  @media screen and (min-width: $lg) {
+    margin-top: 4em;
+  }
+}
+
+.titleNoJobContainer{
+  display: block;
+  width: 9%;
+  height: 3px;
+  border-radius: 3px;
+  transition: .2s ease all;
+  margin-top: 1em;
+  background-color: $brand-tertiary;
+  margin-bottom: 2em;
+  margin-top: .5em;
+}
+
+
+.paragraphNoJobContainer{
+  padding-bottom: .5em;
+  @media screen and (min-width: $md) and (max-width: $lg) {
+    padding-bottom: 2em;
+  }
+  @media screen and (min-width: $lg) {
+    padding-bottom: 2em; 
+  }
+}
