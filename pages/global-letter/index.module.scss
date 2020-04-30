@@ -63,7 +63,7 @@
 
 }
 
-.matrixGeneral{
+.containerGeneral{
   max-width: 720px;
   margin-right: auto;
   margin-left: auto;
@@ -102,19 +102,36 @@
   height: 65vh;
   background-size: cover;
   background-position: center;
-  position: relative;
-  min-height: 44vh;  
-  cursor: pointer; 
-
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  cursor: pointer;  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;  
+  min-height: 44vh;  
+  position: relative;
 
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    display: block;
+  }
+
+    &:after{
+    position: absolute;
+    content: "";
+    background: rgba(000,000,000,0.3);
+    width: 100%;
+    height: 100%;
+  }
   @media screen and (max-width: $md ) {
     margin-bottom: 3rem;
   }
@@ -124,14 +141,26 @@
 
 }
 
+.description {
+  color: $white;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  font-size: 30px !important;
+  font-family: $feature-font-family;
+  max-width: 600px;
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+}
+
 
 .containerFirm {
   max-width: 720px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 100%;
 }
 
 .firm{
@@ -143,42 +172,56 @@
   font-size: 14px;
 }
 
-.containerAnchor{
-  background-color: $brand-tertiary;
-  transition: all 100ms linear !important;
-  color: $white;
+.buttonTellMe{
+  color: white; 
   font-weight: 500;
-  padding: 1em 2.5em;
   cursor: pointer;
+  padding: 1em 2.5em;
   transition: .3s ease all;
+  background-color: $brand-tertiary;
   text-align: center;
-  font-size: 14px;
+  font-size: 14px;  
   font-family: $feature-font-family;
-  border-radius: $border-radius-button;
-  text-decoration: none;
+  transition: all 100ms linear !important;
+  border-radius: 3px; 
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: inline-block;
-
-  @media screen and (min-width: $lg) { 
-    padding: 1rem 2.5rem;
+  text-decoration: none;
+  &:hover {
+    background-color: $magenta;
+    color: $white;
   }
-  @media screen and (min-width: $md) { 
+/*   @media screen and (min-width: $md) { 
     padding: 0.7rem 2.2rem;
-  }
+  } */
+
 }
 
-.buttonTellMeUs{
+.containerAnchor {
   max-width: 720px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  width: 100%;
+
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
 }
 
-.intercomChat{
+.intercomChatContainer{
   color: $white;  
   font-weight: 500;
   cursor: pointer;  
-  background-color: $brand-tertiary;
+  background-color: $accent-blue;
   text-align: center;
   font-size: 14px;
   font-family: $feature-font-family;
@@ -188,11 +231,17 @@
   margin-bottom: 1em;  
   display: inline-block;
   text-decoration: none;
+  padding: 1rem 2.5rem; 
+
+  &:hover {
+    background-color: $brand-secondary;
+    color: $white;
+  }
 
   @media screen and (min-width: $lg) { 
     padding: 1rem 2.5rem;
   }
-  @media screen and (min-width: $md) { 
+/*   @media screen and (min-width: $md) { 
     padding: 0.7rem 2.2rem;
-  }   
+  }   */ 
 }

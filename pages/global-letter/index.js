@@ -41,7 +41,7 @@ const GlobalLetter = () => (
       bannerContentWrapperClass="banner-wrapper subpage-banner center"
     />
     <div className="matrix-general">
-      <div className={styles.matrixGeneral}>
+      <div className={styles.containerGeneral}>
         <p className={styles.matrix}>
           It’s not every day that an idea that can change the world comes across your desk.
           Today we wanted to share one we’ve kept secret in Australia for the last 12 years.
@@ -50,17 +50,17 @@ const GlobalLetter = () => (
 
       {/* <!-- H2 --> */}
       <div
-        className="about-banner video-button  overlay-dark"
+        className={styles.containerBanner}
         data-video=""
         style={styling[0]}
       >
-        <p className="destroy-p">
+        <p className={styles.description}>
           We’ve found a solution to ending inequality for the most disadvantaged kids.
         </p>
       </div>
 
       {/* <!-- Draws attention to a quote or subtance text piece --> */}
-      <div className="wrap-md">
+      <div className={styles.wrapMd}>
         <p>
           In our nation, those kids are the children of the first sunrise, our Indigenous young
           people. Many of us across the globe have population groups who have landed on the
@@ -84,15 +84,15 @@ const GlobalLetter = () => (
 
       {/* <!-- H1 (also page title) --> */}
       <div
-        className="about-banner video-button overlay-dark"
+        className={styles.containerBanner}
         data-video=""
         style={styling[1]}
       >
-        <p className="destroy-p">And from that moment, things started to change.</p>
+        <p className={styles.description}>And from that moment, things started to change.</p>
       </div>
 
       {/* <!-- Draws attention to a quote or subtance text piece --> */}
-      <div className="wrap-md">
+      <div className={styles.wrapMd}>
         <p>
           The kids on the other side started to follow their lead. They reversed the trends
           around school completion. At first as a group of 25, and then there was a hundred, and
@@ -121,15 +121,15 @@ const GlobalLetter = () => (
 
       {/* <!-- H1 (also page title) --> */}
       <div
-        className="about-banner video-button  overlay-dark"
+        className={styles.containerBanner}
         data-video=""
         style={styling[2]}
       >
-        <p className="destroy-p">Today we share our secret with you.</p>
+        <p className={styles.description}>Today we share our secret with you.</p>
       </div>
 
       {/* <!-- Draws attention to a quote or subtance text piece --> */}
-      <div className="wrap-md">
+      <div className={styles.wrapMd}>
         <p>
           On June 7, we join our friends at AIME to launch a competition across the globe to
           offer the chance for 10 young people to take the model potentially to your university
@@ -157,25 +157,25 @@ const GlobalLetter = () => (
       </div>
 
       {/* <!-- H1 (also page title) --> */}
-      <div className="wrap-md mb3">
-        <h3 className="signature-font-family f-24">Jack Manning Bancroft</h3>
-        <span className="f-14">
+      <div className={styles.containerFirm}>
+        <h3 className={styles.firm}>Jack Manning Bancroft</h3>
+        <span className={styles.f14}>
           <strong>AIME Founder &amp; CEO</strong>
         </span>
       </div>
 
-      <div className="wrap-md w100 clearfix">
+      <div className={styles.containerAnchor}>
         <Anchor
           to="/know-aime"
-          className="bg-brand-tertiary left basic-btn bold my2"
+          className={styles.buttonTellMe}
           style={{ border: '0' }}
         >
           Tell me more
         </Anchor>
       </div>
 
-      <div className="wrap-md w100 clearfix">
-        <IntercomChat classNames="bg-blue left basic-btn bold my2" style={{ border: '0' }} label="I&#039;d like AIME at my University" />
+      <div className={styles.containerAnchor}>
+        <IntercomChat classNames={styles.intercomChatContainer} style={{ border: '0' }} label="I&#039;d like AIME at my University" />
       </div>
 
       <div className="references">
