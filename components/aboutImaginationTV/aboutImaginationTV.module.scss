@@ -28,6 +28,11 @@
     flex-direction: row;
     padding: 2em;
   }
+  .becomeAPartnerBtn {
+    button {
+      background-color: $cyan;
+    }
+  }
 }
 
 .aboutParagraphColumn {
@@ -109,33 +114,4 @@
     height: 12em;
     left: 1.5em;
   } 
-}
-
-.becomeAPartnerBtn {
-  @media screen and (min-width: $md) {
-    margin-bottom: 2em;
-  }
-
-  button.navBtn {
-    background-color: $cyan;
-    border-radius: 3px;
-    font-family: $body-font-family-bold;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: $white;
-    letter-spacing: 0.13em;
-    padding: 0.85em 1.85em;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    transition: $hoverTransition;
-
-    &:hover {
-      background-color: $purple;
-    }	     
-  }	  
-
-  @media screen and (max-width: $sm) {
-    width: 100%;
-  }
 }
