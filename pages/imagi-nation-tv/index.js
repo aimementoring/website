@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
@@ -19,8 +19,20 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const ImagiNationTV = () => {
+  const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
+
+  const scrollToPanel = () => {
+    if (isClientSide()) {
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      if (isSmoothScrollSupported) {
+        scrollToThisRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        scrollToThisRef.current.scrollIntoView(false);
+      }
+    }
+  };
 
   return (
       
@@ -78,7 +90,7 @@ const ImagiNationTV = () => {
 
         </div>
       </div>
-      <AboutImaginationTV />
+      <AboutImaginationTV scrollHandler={scrollToPanel} />
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
           <ImaginationTvCarousel />
@@ -95,7 +107,7 @@ const ImagiNationTV = () => {
           />
         </section>
         <DoubleCurvedLine />
-        <section className={`${styles.partneringCTASection}`}>
+        <section ref={scrollToThisRef} className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
           <div className={`${styles.puppetsChatWrapper}`}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
