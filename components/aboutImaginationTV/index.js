@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
-import IntercomChat from '../intercom';
 import styles from './aboutImaginationTV.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const AboutImaginationTv = (props) => {
   const { scrollHandler } = props;
-
   return (
     <section className={styles.aboutInTVSection}>
       <div className={styles.aboutInTVWrapper}>
@@ -27,7 +25,7 @@ const AboutImaginationTv = (props) => {
             {'We created IMAGI-NATION{TV} & the IMAGI-NATION{CLASSROOM} experience to put a mentor in the home every day during the tough times of COVID-19 and beyond. It’s a daily TV show broadcast live on the Internet, and it’s a gift for teachers, parents and kids to help make sense of today & imagine tomorrow.'}
           </Paragraph>
           <div className={styles.becomeAPartnerBtn}>
-            <Button onClick={scrollHandler} theme={process.env.REACT_APP_THEME}>
+            <Button onClickFunction={scrollHandler} theme={process.env.REACT_APP_THEME}>
               Partner with  us
             </Button>
           </div>
@@ -35,7 +33,9 @@ const AboutImaginationTv = (props) => {
         <div className={styles.aboutCyclopsColumn}>
           <div className={styles.cyclopsSpeechBubble}>
             <div>
-              {/* <Button type="text" className={styles.speechButtonContent} onClickFunction={() => {}}>
+              {/* <Button type="text"
+              className={styles.speechButtonContent}
+              onClickFunction={() => {}}>
                 Read the full
                 story
                 <br />
