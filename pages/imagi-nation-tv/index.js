@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
@@ -7,6 +8,7 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
+import AboutImaginationTV from '../../components/aboutImaginationTV';
 import styles from './imagi-nation-tv.module.scss';
 
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
@@ -18,7 +20,7 @@ const ImagiNationTV = () => (
   <Layout>
     <div className={styles.heroBannerImagiTV}>
       <div className={styles.bannerWrapper}>
-        <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
+        <div className={classNames(styles.bannerContent, styles.bannerItem)}>
           <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
             Introducing
             <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
@@ -40,8 +42,7 @@ const ImagiNationTV = () => (
 
           <Button
             theme={process.env.REACT_APP_THEME}
-            // onClickFunction={scrollHandler}
-            className={`${styles.watchBtn}`}
+            className={styles.watchBtn}
             url="https://www.youtube.com/user/aimementoring/live"
             target="_blank"
             type="link"
@@ -50,12 +51,12 @@ const ImagiNationTV = () => (
           </Button>
         </div>
 
-        <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
+        <div className={classNames(styles.bannerMediaFeature, styles.bannerItem)}>
           <VideoPlayer
             url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
             imageUrl={`${ASSETS_URL}/assets/images/illustrations/intv-hosts@2x.jpg`}
           >
-            <Paragraph className="videoCaption">
+            <Paragraph>
               <a
                 className={styles.textLinkChannel}
                 target="_blank"
@@ -70,6 +71,7 @@ const ImagiNationTV = () => (
 
       </div>
     </div>
+    <AboutImaginationTV />
     <div className={styles.inTVContentWrapper}>
       <section className={styles.inTVEpisodesWrapper}>
         <ImaginationTvCarousel />
