@@ -139,8 +139,9 @@ const ImagiNationTV = () => {
               <div>
                 {/* <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title> */}
                 <Button type="text" className={`${styles.typeformAction} ${styles.puppetTitle}`} onClickFunction={toggleModal}>
-                  Already a partner? 
-                  <span>Click here</span>
+                  Already a partner?
+                  {/* <span>Click here</span> */}
+                  &nbsp;We appreciate you
                 </Button>
               
               </div>
