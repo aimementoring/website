@@ -28,6 +28,26 @@
   }
 }
 
+.modalDrawerBody {
+  top: 0;
+  left: 100%;
+  width: 75%;
+  bottom: 0;
+  z-index: 1100;
+  position: fixed;
+  transition: 1s transform;
+  animation: slideIn 1s forwards;
+  .closeModalIcon {
+    cursor: pointer;
+    right: .5em;
+    top: .5em;
+    color: grey;
+  }
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+
 .closeModalIcon {
   position: absolute;
   top: -2rem;
@@ -62,12 +82,14 @@
 }
 
 @keyframes fadein {
-
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
+}
+
+@keyframes slideIn {
+  100% { transform: translateX(-100%); }
 }
