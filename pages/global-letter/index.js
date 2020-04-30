@@ -4,6 +4,8 @@ import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
 import { SimpleBanner } from '../../components/banner/index';
 
+import styles from './index.module.scss';
+
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const styling = [];
@@ -19,8 +21,8 @@ const GlobalLetter = () => (
     <SimpleBanner
       title={(
         <h1>
-          <span className="pre-text">Open letter to</span>
-          <span className="highlight-text">
+          <span className={styles.preTextOpenLetter}>Open letter to</span>
+          <span className={styles.titleGlobalLetter}>
             <em>
                 Universities
               {' '}
@@ -29,7 +31,7 @@ const GlobalLetter = () => (
                 Around the World
             </em>
           </span>
-          <span className="sm-col-2 mx-auto block pt1 border-bottom border-gradient">
+          <span className={styles.lineUnderTitle}>
               &nbsp;
           </span>
         </h1>
@@ -39,8 +41,8 @@ const GlobalLetter = () => (
       bannerContentWrapperClass="banner-wrapper subpage-banner center"
     />
     <div className="matrix-general">
-      <div className="wrap-md mb0 md-my3 lg-my3 clearfix">
-        <p className="destroy-p subtitle-basic center mx-auto">
+      <div className={styles.matrixGeneral}>
+        <p className={styles.matrix}>
           It’s not every day that an idea that can change the world comes across your desk.
           Today we wanted to share one we’ve kept secret in Australia for the last 12 years.
         </p>
