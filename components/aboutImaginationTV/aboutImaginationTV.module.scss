@@ -4,7 +4,6 @@
   max-width: 75em;
   width: 100%;
   padding: 2em 1em;
-  border: 1px dashed $yellow;
   margin: 0 auto;
 
   @media screen and (min-width: $md) {
@@ -21,7 +20,6 @@
 
 .aboutInTVWrapper {
   margin: 0 auto;
-  border: 1px solid $pink;
   padding: 0 0.5em;
 
   @media screen and (min-width: $md) {
@@ -41,19 +39,36 @@
 
   h3 {
     margin-bottom: 0.5em;
+    @media screen and (min-width: $sm) {
+      padding-right: 2em;
+    }
   }
 }
 
 .aboutCyclopsColumn {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  @media screen and (min-width: $md) {
+    display: inline-block;
+  }
 }
 
 .cyclopsSpeechBubble {
   text-align: center;
   max-width: 20em;
-  background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 60% transparent;
+  background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 80% transparent;
   display: flex;
-  margin: 0 auto;
+
+  @media screen and (min-width: $sm) {
+    background-size: 60%;
+  }
+  @media screen and (min-width: $md) {
+    margin: 0 auto;
+  }
+  span {
+    text-decoration: underline;
+  }
 
   button.speechButtonContent {
     text-align: center;
@@ -75,13 +90,6 @@
       font-size: 1.1rem;
       left: 1.5em;
       top: 0.5em;
-    }
-    @media screen and (min-width: $lg) {
-      width: 7em;
-      padding: 2em 0 1.5em;
-    }
-    span {
-      text-decoration: underline;
     }
   }
 }
