@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
 import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import isClientSide from '../../utils/isClientSide';
 import useDonate from '../../hooks/useDonate';
+import scrollToComponent from '../../utils/scrollToComponent';
 import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
@@ -36,27 +36,8 @@ const Home = () => {
     }
   }, [router.query]);
 
-  const scrollToGetInvolved = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        getInvolvedRef.current.scrollIntoView(false);
-      }
-    }
-  };
-
-  const scrollToPartnerBanner = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        partnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        partnerRef.current.scrollIntoView(false);
-      }
-    }
-  };
+  const scrollToGetInvolved = () => scrollToComponent(getInvolvedRef);
+  const scrollToPartnerBanner = () => scrollToComponent(partnerRef);
 
   return (
     <Layout>
