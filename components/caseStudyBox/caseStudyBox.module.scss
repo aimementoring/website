@@ -12,6 +12,8 @@
     text-align: center;
     text-decoration: none;
     display: block;
+    cursor: pointer;
+    position: relative;
 
     &:hover .watchPrompt {
       opacity: 1;
@@ -34,7 +36,6 @@
   .campaignGridTitle {
     color: $black;
     margin: 1rem 0 .7rem 0;
-    font-size: 15px;
     font-weight: 400;
     line-height: 1.3;
     font-size: 18px;
@@ -45,12 +46,14 @@
     opacity: 0;
     position: absolute;
     top: 34%;
-    left: 31%;
+    left: 50%;
     font-weight: 500;
-    color: white;
+    color: $white;
     font-family: $feature-font-family;
     font-size: 20px;
     transition: 0.2s ease all;
+    transform: translateX(-50%);
+
     @media screen and (max-width: $lg) {
       left: 33%;
     }
