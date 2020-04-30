@@ -3,6 +3,8 @@ import PropType from 'prop-types';
 import compact from 'lodash/compact';
 import Anchor from '../common/link';
 
+import styles from './jobs.module.scss';
+
 const JobPreview = ({
   name,
   id,
@@ -21,51 +23,51 @@ const JobPreview = ({
 
   if (location) {
     details.push(
-      <p key={location} className="inline-block">
+      <p key={location} className={styles.customDetails}>
         {location}
       </p>,
     );
   }
   if (term.length) {
     details.push(
-      <p key={name} className="inline-block px1">
+      <p key={name} className={styles.details}>
         -
       </p>,
     );
   }
   if (term) {
     details.push(
-      <p key={term} className="inline-block">
+      <p key={term} className={styles.customDetails}>
         {term}
       </p>,
     );
   }
   if (salaryRange) {
     details.push(
-      <p key={`${name}--`} className="inline-block px1">
+      <p key={`${name}--`} className={styles.details}>
         -
       </p>,
     );
   }
   if (salaryRange) {
     details.push(
-      <p key={salaryRange} className="inline-block">
+      <p key={salaryRange} className={styles.customDetails}>
         {salaryRange}
       </p>,
     );
   }
 
   return (
-    <div className="homepage-main-actions mb2">
+    <div className={styles.containerHomePage}>
       <Anchor
         to="/positions/[positionId]/[jobCategory]"
         as={`/positions/${id}/${nameAsLink}`}
-        className="homepage-main-actions--inner"
+        className={styles.anchorClass}
       >
-        <div className="relative m3">
-          <h4 className="feature-font-family regular f-15">{name}</h4>
-          <div className="block pt1 f-14 light c-brand-primary">{details}</div>
-          <div className="block pt1 pb3 f-14 light c-brand-primary">
+        <div className={styles.containerDetails}>
+          <h4 className={styles.nameStyles}>{name}</h4>
+          <div className={styles.detailsStyles}>{details}</div>
+          <div className={styles.expireStyles}>
             {expire && (
               <span>
                 Applications close
@@ -74,8 +76,8 @@ const JobPreview = ({
               </span>
             )}
           </div>
-          <p className="light c-grey lh-base f-14 job-description">{description}</p>
-          <span className="line bg-brand-tertiary" />
+          <p className={styles.descriptionStyles}>{description}</p>
+          <span className={styles.lineStyle} />
           <img alt="Small arrow" src={`${cdnUrl}/assets/images/sm-arrow.svg`} />
         </div>
       </Anchor>
