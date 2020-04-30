@@ -7,7 +7,10 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
+<<<<<<< HEAD
 import AboutImaginationTV from '../../components/aboutImaginationTV';
+=======
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import styles from './imagi-nation-tv.module.scss';
@@ -44,6 +47,10 @@ const ImagiNationTV = () => {
               A chance for kids at home to have mentors in their lives to
               {' '}
               <em>Make Sense of Today & Imagine Tomorrow</em>
+<<<<<<< HEAD
+=======
+    .
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
             </Paragraph>
 
             <Button
@@ -78,7 +85,10 @@ const ImagiNationTV = () => {
 
         </div>
       </div>
+<<<<<<< HEAD
       <AboutImaginationTV />
+=======
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
           <ImaginationTvCarousel />
@@ -94,7 +104,10 @@ const ImagiNationTV = () => {
             linkText="Buy a Hoodie"
           />
         </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
         <DoubleCurvedLine />
         <section className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
@@ -131,7 +144,11 @@ const ImagiNationTV = () => {
                   Already a partner? 
                   <span>Click here</span>
                 </Button>
+<<<<<<< HEAD
               
+=======
+               
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
               </div>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
@@ -141,8 +158,13 @@ const ImagiNationTV = () => {
             </div>         
           </div>
         </section>
+<<<<<<< HEAD
         <DoubleCurvedLine />
 
+=======
+
+        <DoubleCurvedLine />
+>>>>>>> a956423d66a6185760f641b24747acf47865b5ab
         <div className={styles.tempIntvPWrapper}>
           <IntvPartners />
         </div>
