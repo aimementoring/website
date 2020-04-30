@@ -107,11 +107,11 @@ const ImagiNationTV = () => {
           />
         </section>
         <DoubleCurvedLine />
-        <section ref={scrollToThisRef} className={`${styles.partneringCTASection}`}>
+        <section ref={scrollToThisRef} className={styles.partneringCTASection}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
-          <div className={`${styles.puppetsChatWrapper}`}>
+          <div className={styles.puppetsChatWrapper}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
-            <div className={`${styles.puppetChat}`}>
+            <div className={styles.puppetChat}>
               <div className={styles.puppetWrap}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
@@ -135,7 +135,7 @@ const ImagiNationTV = () => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.puppetChat} ${styles.puppetChatSmaller}`}>
+            <div className={styles.puppetChatSmaller}>
               <div>
                 {/* <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title> */}
                 <Button type="text" className={`${styles.typeformAction} ${styles.puppetTitle}`} onClickFunction={toggleModal}>
@@ -148,7 +148,7 @@ const ImagiNationTV = () => {
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
                 alt="Robo Cat"
-                className={styles.puppetTalking}
+                className={styles.smlPuppetTalking}
               />
             </div>         
           </div>
