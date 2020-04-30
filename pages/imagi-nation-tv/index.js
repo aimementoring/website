@@ -7,6 +7,7 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
+import AboutImaginationTV from '../../components/aboutImaginationTV';
 import styles from './imagi-nation-tv.module.scss';
 
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
@@ -70,6 +71,7 @@ const ImagiNationTV = () => (
 
       </div>
     </div>
+    <AboutImaginationTV />
     <div className={styles.inTVContentWrapper}>
       <section className={styles.inTVEpisodesWrapper}>
         <ImaginationTvCarousel />
