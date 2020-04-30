@@ -2,7 +2,7 @@ import React from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
-import './styles.module.scss';
+import styles from './styles.module.scss';
 
 const Founder = () => (
   <Layout>
@@ -17,13 +17,13 @@ const Founder = () => (
       )}
       groovy
       titleType="headingLockup"
-      titleStyleClass="founderBannerHeader"
-      bannerContainerClass="hero-banner--default hero-banner--founder full-width-wrap"
-      bannerContentWrapperClass="flex flex-wrap items-center full-height"
-      bannerContentClass="banner-wrapper"
+      titleStyleClass={styles.founderBannerHeader}
+      bannerContainerClass={`${styles.heroBannerDefault} ${styles.heroBannerFounder}`}
+      bannerContentWrapperClass={styles.bannerContentWrapperClass}
+      bannerContentClass={styles.bannerWrapper}
     />
     <article>
-      <div className="plainContentWrapper">
+      <div className={styles.plainContentWrapper}>
         <Paragraph>
           Jack Manning Bancroft is the CEO and Founder of AIME, an award-winning
           social movement that uses mentoring and imagination to unlock the potential
