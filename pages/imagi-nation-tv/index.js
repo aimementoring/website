@@ -10,6 +10,7 @@ import WavyDonateSection from '../../components/wavyDonateSection';
 import AboutImaginationTV from '../../components/aboutImaginationTV';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
+import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './imagi-nation-tv.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -22,20 +23,9 @@ const ImagiNationTV = () => {
   const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
-
-  const scrollToPanel = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        scrollToThisRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        scrollToThisRef.current.scrollIntoView(false);
-      }
-    }
-  };
+  const scrollToPanel = () => scrollToComponent(scrollToThisRef);
 
   return (
-      
     <Layout>
       <div className={styles.heroBannerImagiTV}>
         <div className={styles.bannerWrapper}>
@@ -108,7 +98,7 @@ const ImagiNationTV = () => {
         </section>
         <DoubleCurvedLine />
         <section ref={scrollToThisRef} className={styles.partneringCTASection}>
-          <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
+          <Title type="h3Title" className={styles.partneringHeading}>{'PARTNERING WITH IN{TV}'}</Title>
           <div className={styles.puppetsChatWrapper}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
             <div className={styles.puppetChat}>
@@ -123,9 +113,23 @@ const ImagiNationTV = () => {
                 <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
                 <Paragraph>
                   We’re looking for partners of all kinds, whether
-                  you’re a <strong>company</strong>, 
-                  a <strong>school</strong>, <strong>uni</strong> or a
-                  future <strong>guest</strong> - we’d love to talk. This show is
+                  you’re a
+                  {' '}
+                  <strong>company</strong>
+,
+                  a
+                  {' '}
+                  <strong>school</strong>
+,
+                  {' '}
+                  <strong>uni</strong>
+                  {' '}
+or a
+                  future
+                  {' '}
+                  <strong>guest</strong>
+                  {' '}
+- we’d love to talk. This show is
                   not about entertainment to pass the time, your funds and the work
                   we do together will be an investment in providing a stage to
                   elevate knowledge.
@@ -137,20 +141,25 @@ const ImagiNationTV = () => {
             </div>
             <div className={styles.puppetChatSmaller}>
               <div>
-                {/* <Title type="h4Title" className={styles.puppetTitle}>Already a partner? </Title> */}
-                <Button type="text" className={`${styles.typeformAction} ${styles.puppetTitle}`} onClickFunction={toggleModal}>
+                {/* <Title type="h4Title" className={styles.puppetTitle}>
+                  Already a partner? </Title> */}
+                <Button
+                  type="text"
+                  className={`${styles.typeformAction} ${styles.puppetTitle}`}
+                // onClickFunction={toggleModal}
+                >
                   Already a partner?
                   {/* <span>Click here</span> */}
                   &nbsp;We appreciate you
                 </Button>
-              
+
               </div>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
                 alt="Robo Cat"
                 className={styles.smlPuppetTalking}
               />
-            </div>         
+            </div>
           </div>
         </section>
         <DoubleCurvedLine />
