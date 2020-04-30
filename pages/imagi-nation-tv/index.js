@@ -44,7 +44,6 @@ const ImagiNationTV = () => {
               A chance for kids at home to have mentors in their lives to
               {' '}
               <em>Make Sense of Today & Imagine Tomorrow</em>
-    .
             </Paragraph>
 
             <Button
@@ -79,24 +78,25 @@ const ImagiNationTV = () => {
 
         </div>
       </div>
-    </div>
-    <AboutImaginationTV />
-    <div className={styles.inTVContentWrapper}>
-      <section className={styles.inTVEpisodesWrapper}>
-        <ImaginationTvCarousel />
-      </section>
-      <WavyDonateSection />
-      <section className={styles.featuredProductWrapper}>
-        <FeaturedProduct
-          imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
-          pretitle="Check it out …"
-          title="Imagi-Nation Hoodie"
-          text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
-          linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
-          linkText="Buy a Hoodie"
-        />
-      </section>
-      <section className={`${styles.partneringCTASection}`}>
+      <AboutImaginationTV />
+      <div className={styles.inTVContentWrapper}>
+        <section className={styles.inTVEpisodesWrapper}>
+          <ImaginationTvCarousel />
+        </section>
+        <WavyDonateSection />
+        <section className={styles.featuredProductWrapper}>
+          <FeaturedProduct
+            imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
+            pretitle="Check it out …"
+            title="Imagi-Nation Hoodie"
+            text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
+            linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
+            linkText="Buy a Hoodie"
+          />
+        </section>
+
+        <DoubleCurvedLine />
+        <section className={`${styles.partneringCTASection}`}>
           <Title type="h3Title" className={styles.partneringHeading}>{`PARTNERING WITH IN{TV}`}</Title>
           <div className={`${styles.puppetsChatWrapper}`}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
@@ -131,7 +131,7 @@ const ImagiNationTV = () => {
                   Already a partner? 
                   <span>Click here</span>
                 </Button>
-               
+              
               </div>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
@@ -143,7 +143,6 @@ const ImagiNationTV = () => {
         </section>
         <DoubleCurvedLine />
 
-        <DoubleCurvedLine />
         <div className={styles.tempIntvPWrapper}>
           <IntvPartners />
         </div>
