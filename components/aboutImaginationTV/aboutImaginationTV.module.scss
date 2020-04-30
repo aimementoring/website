@@ -1,7 +1,12 @@
 @import "../../styles/base/variables";
 
 .aboutInTVSection {
-  padding: 2em 0;
+  max-width: 75em;
+  width: 100%;
+  padding: 2em 1em;
+  border: 1px dashed $yellow;
+  margin: 0 auto;
+
   @media screen and (min-width: $md) {
     padding: 4em 1em 2em;
   }
@@ -16,10 +21,12 @@
 
 .aboutInTVWrapper {
   margin: 0 auto;
+  border: 1px solid $pink;
+  padding: 0 0.5em;
+
   @media screen and (min-width: $md) {
     display: flex;
     align-items: center; 
-    max-width: $lg;
     flex-direction: row;
     padding: 2em;
   }
@@ -27,13 +34,13 @@
 
 .aboutParagraphColumn {
   flex: 1;
-  max-width: 25em;
   margin: 0 auto;
   @media screen and (min-width: $md) {
     align-items: center;
   }
-  @media screen and (max-width: $sm) {
-    width: 100%;
+
+  h3 {
+    margin-bottom: 0.5em;
   }
 }
 
