@@ -9,6 +9,7 @@
   width: 100%;
   padding: 1em;
   margin: 6em auto 0;
+  border: 1px dashed $cyan;
 
   @media screen and (min-width: $sm) {
     background-size: 80% 65%;
@@ -21,6 +22,7 @@
   }
 
   .bannerWrapper {
+    border: 1px solid $orange;
     position: relative;
     box-sizing: border-box;
     flex-direction: column;
