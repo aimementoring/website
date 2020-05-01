@@ -40,8 +40,7 @@
     will-change: border-radius, transform;
     transform-origin: 55% 55%;
     pointer-events: none;
-    border-color: $magenta;
-    border-width: 1px;
+    border: 1px solid $green;
     border-radius: 40% 60% 70% 30% / 51% 46% 54% 49%;
     z-index: -1;
   }
