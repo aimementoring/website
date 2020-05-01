@@ -1,25 +1,26 @@
 @import "../../styles/base/variables";
 
-.gridTile {
+.ambassadorsGridTile {
   flex: 33.33%;
   margin: 0.5rem;
 
   @supports (display: grid) {
     margin: 0;
   }
+
+  .campaignGridImage {
+    height: 17em;
+    clip-path: url(#svgScratchAmbassadorClipPath);
+    // .circle
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    // .block
+    display: block;
+    filter: grayscale(1);
+  }
 }
 
-.campaignGridImage {
-  height: 17em;
-  clip-path: url(#svgScratchAmbassadorClipPath);
-  // .circle
-  border-radius: 50%;
-  margin-right: auto;
-  margin-left: auto;
-  // .block
-  display: block;
-  filter: grayscale(1);
-}
 
 .h4Title {
   color: $black;
