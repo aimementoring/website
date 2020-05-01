@@ -57,117 +57,118 @@
     }
   }
 }
-
-.bannerWrapper {
-  position: relative;
-  box-sizing: border-box;
-  flex-direction: column;
-  width: 100%;
-  padding: 1em;
-
-  @media screen and (min-width: $sm) {
-    display: flex;
-  }
-
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    align-items: center;
-    padding: 2em;
-  }
-
-  .bannerItem {
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-basis: auto;
-    clear: both;
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width: $sm) {
-      width: 50%;
-    }
-  }
-
-  .bannerContent {
-    z-index: 1;
-    justify-content: flex-end;
-
-    @media screen and (min-width: $sm) {
-      padding-right: 3em;
-    }
-
-    p {
-      color: $black;
-      max-width: 30em;
-      margin: 2em 0;
-    }
-
-    &.bannerItem {
-      align-self: flex-start;
-    }
-  }
-
-  .bannerMediaFeature {
+.heroBannerHomepage {
+  .bannerWrapper {
     position: relative;
-    padding-top: 1.5em;
-    align-self: flex-end;
-    text-align: right;
-    font-family: $body-font-family;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
 
     @media screen and (min-width: $sm) {
-      padding: 2em;
-      margin-top: -5em;
-      min-width: 28em;
+      display: flex;
     }
 
     @media screen and (min-width: $md) {
-      align-self: center;
-      flex-grow: 1.33;
-      margin-top: 0;
-      top: 2em;
+      flex-direction: row;
+      align-items: center;
+      padding: 2em;
     }
 
-    .dancingIllo {
-      width: 7em;
-      position: absolute;
-      top: -2em;
-      right: 0;
+    .bannerItem {
+      box-sizing: border-box;
+      flex-grow: 1;
+      flex-basis: auto;
+      clear: both;
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $sm) {
+        width: 50%;
+      }
+    }
+
+    .bannerContent {
+      z-index: 1;
+      justify-content: flex-end;
 
       @media screen and (min-width: $sm) {
-        right: 2em;
+        padding-right: 3em;
+      }
+
+      p {
+        color: $black;
+        max-width: 30em;
+        margin: 2em 0;
+      }
+
+      &.bannerItem {
+        align-self: flex-start;
+      }
+    }
+
+    .bannerMediaFeature {
+      position: relative;
+      padding-top: 1.5em;
+      align-self: flex-end;
+      text-align: right;
+      font-family: $body-font-family;
+
+      @media screen and (min-width: $sm) {
+        padding: 2em;
+        margin-top: -5em;
+        min-width: 28em;
       }
 
       @media screen and (min-width: $md) {
-        width: 13em;
-        top: -5em;
-        right: 1em;
+        align-self: center;
+        flex-grow: 1.33;
+        margin-top: 0;
+        top: 2em;
       }
 
-      &.dancingIlloBtm {
-        top: initial;
-        bottom: 0;
-        right: initial;
-        left: -4em;
+      .dancingIllo {
+        width: 7em;
+        position: absolute;
+        top: -2em;
+        right: 0;
+
+        @media screen and (min-width: $sm) {
+          right: 2em;
+        }
 
         @media screen and (min-width: $md) {
-          left: -7em;
+          width: 13em;
+          top: -5em;
+          right: 1em;
+        }
+
+        &.dancingIlloBtm {
+          top: initial;
+          bottom: 0;
+          right: initial;
+          left: -4em;
+
+          @media screen and (min-width: $md) {
+            left: -7em;
+          }
         }
       }
-    }
 
-    .videoCoverArt {
-      border-radius: 3px;
-    }
+      .videoCoverArt {
+        border-radius: 3px;
+      }
 
-    .textLinkChannel {
-      text-decoration: none;
-      font-size: 0.85rem;
-      color: $black;
-      margin-top: 0.5em;
-      transition: $hoverTransition;
-      cursor: pointer;
+      .textLinkChannel {
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: $black;
+        margin-top: 0.5em;
+        transition: $hoverTransition;
+        cursor: pointer;
 
-      &:hover {
-        color: $magenta;
+        &:hover {
+          color: $magenta;
+        }
       }
     }
   }
