@@ -15,10 +15,10 @@
   }
   @keyframes morph {
     0% {
-      border-radius:  20% 60% 10% 40% / 70% 30% 70% 30%;
+      border-radius:  20% 60% 80% 40% / 70% 30% 70% 30%;
     }
     100%{
-      border-radius: 51% 49% 45% 55% / 28% 56% 44% 72%;
+      border-radius: 50% 55% 45% 55% / 25% 56% 44% 72%;
     }
   }
   // @keyframes spin {
@@ -29,20 +29,19 @@
   &:before {
     content: "";
     box-sizing: border-box;
-    width: 70vmax;
-    height: 70vmax;
     position: absolute;
+    z-index: -10;
+    width: 70vmin;
+    height: 70vmin;
+    right: -10vmin;
+    bottom: -30vmin;
     background: rgba(9, 205, 123, 0.2);
-    left: -20vmin;
-    top: -20vmin;
-    animation: morph 5s linear infinite alternate, spin 30s linear infinite;
-    z-index: 1;
-    will-change: border-radius, transform;
-    transform-origin: 55% 55%;
-    pointer-events: none;
     border: 1px solid $green;
     border-radius: 40% 60% 70% 30% / 51% 46% 54% 49%;
-    z-index: -1;
+    animation: morph 5s linear infinite alternate, spin 100s linear infinite;
+    // will-change: border-radius, transform;
+    // transform-origin: 55% 55%;
+    // pointer-events: none;
   }
 }
 
@@ -94,7 +93,7 @@
 .cyclopsSpeechBubble {
   text-align: center;
   max-width: 20em;
-  background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 80% transparent;
+  background: url($cdnRoot + 'assets/images/illustrations/mini-speech@2x.png') no-repeat top left / 80% transparent;
   display: flex;
 
   @media screen and (min-width: $sm) {
