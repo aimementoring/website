@@ -151,7 +151,6 @@ select.sort {
 
   &:after {
     @extend
-    .select-arrow,
     .c-lavender;
     content: 'keyboard_arrow_up';
     top: 5%;
