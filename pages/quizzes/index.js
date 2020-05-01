@@ -13,7 +13,6 @@ const Quizzes = () => {
 
   return (
     <Layout>
-      <div className="theMentor">
         <div className="full-width-wrap">
           <div className="flex flex-wrap items-center"></div>
           <SimpleBanner
@@ -36,7 +35,6 @@ const Quizzes = () => {
             <div id="random-quiz" style={{ minHeight: '600px' }} />
           </section>
         </div>
-      </div>
     </Layout>
   );
 };
