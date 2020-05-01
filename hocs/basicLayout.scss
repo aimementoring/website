@@ -23,14 +23,10 @@
 @import '../styles/base/matrix';
 
 // Page Specific
-@import '../styles/view/homepage';
-@import '../styles/view/contact';
 @import '../styles/view/mentor-application';
-@import '../styles/view/faq';
 @import '../styles/view/stories';
 @import '../styles/view/shop';
 @import '../styles/view/about-pages';
-@import '../styles/view/reports';
 @import '../styles/view/jobs';
 @import '../styles/view/the-mentor';
 @import '../styles/view/donations';
@@ -47,8 +43,6 @@ body {
   }
 
   nav a {
-    // margin-bottom: 30px;
-
     &.active {
       color: $black;
       text-decoration: none;
