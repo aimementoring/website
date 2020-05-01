@@ -19,24 +19,23 @@
     display: block;
     filter: grayscale(1);
   }
-}
 
-
-.h4Title {
-  color: $black;
-  margin: 1rem 0 .7rem 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.3;
-  font-family: $signature-font-family;
-  margin-bottom: 0 !important;
-}
-
-.h3Title {
-  color: $grey;
-  text-align: center;
-}
-
-.spanText {
-  color: $grey;
+  .h4Title {
+    color: $black;
+    margin: 1rem 0 .7rem 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: $signature-font-family;
+    margin-bottom: 0 !important;
+  }
+  
+  .h3Title {
+    color: $grey;
+    text-align: center;
+  }
+  
+  .spanText {
+    color: $grey;
+  }
 }
