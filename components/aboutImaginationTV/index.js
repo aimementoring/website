@@ -42,9 +42,7 @@ const AboutImaginationTv = (props) => {
                 <span>here</span>
               </Button> */}
               <Title type="h5Title" className={styles.speechButtonContent}>
-                More partner
-                options
-                on the way
+                Come join us &amp; watch the show!
               </Title>
             </div>
             <img
