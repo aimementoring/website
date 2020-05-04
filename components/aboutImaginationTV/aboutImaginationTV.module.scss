@@ -65,10 +65,7 @@
   background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 80% transparent;
   display: flex;
   background-size: 12em;
-
-  @media screen and (min-width: $sm) {
-    // background-size: 60%;
-  }
+  
   @media screen and (min-width: $md) {
     margin: 0 auto;
   }
