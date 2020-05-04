@@ -36,16 +36,12 @@
 
   border: 1px solid $brand-primary;
   opacity: 1;
-  &:hover {
-    .homepage-main-actions--arrow {
-      right: -10px;
-      opacity: 1;
-    }
-  }
 
   @media screen and (max-width: $md) {
     padding: 0.5em 0em;
-    .line { margin-top: 1.5em; }
+    .line {
+      margin-top: 1.5em;
+    }
   }
   
   @media screen and (min-width: $md) {
@@ -53,13 +49,12 @@
     align-items: center;
   }
 
-
   img {
     opacity: 0;
     transition: .2s ease all;
     position: absolute;
     right: 0;
-    bottom: -15px ;
+    bottom: -15px;
   }
   
   &:hover img {
@@ -71,25 +66,24 @@
     background-color: $purple;
   }
 
-  &:hover{
+  &:hover {
     border-color: $purple;
     background-color: $white;
   }
 }
-
 
 .containerDetails {
   position: relative;
   margin: 2em;
 }
 
-.nameStyles{
+.nameStyles {
   font-family: $feature-font-family;
   font-weight: 400;
   font-size: 15px;
 }
 
-.detailsStyles{
+.detailsStyles {
   display: block;
   padding-top: .5em;
   font-size: 14px;
@@ -97,7 +91,7 @@
   color: $brand-primary;
 }
 
-.expireStyles{
+.expireStyles {
   display: block;
   padding-top: .5em;
   padding-bottom: 2em;
@@ -106,7 +100,7 @@
   color: $brand-primary;
 }
 
-.descriptionStyles{
+.descriptionStyles {
   font-weight: 300;
   color: $grey;
   line-height: 1.5;
@@ -115,7 +109,7 @@
   overflow:hidden;
 }
 
-.lineStyle{
+.lineStyle {
   display: block;
   width: 9%;
   height: 3px;
@@ -125,15 +119,16 @@
   background-color: $brand-tertiary;
 }
 
-.containerJobFilter{
+.containerJobFilter {
   padding-top: 1em;
   padding-bottom: 2em;
   margin-bottom: 0;
   grid-template-columns: 1fr;
+  min-width: 280px;
+
   @media screen and (min-width: $md) {
     grid-template-columns: 1fr 1fr;
   }
-    min-width: 280px;
 
   @media screen and (min-width: $lg) {
     h4 {
@@ -142,7 +137,6 @@
   }
 
   @media screen and (max-width: $lg) {
-
     ul {
       display: none;
       border: 1px solid $brand-primary;
@@ -156,11 +150,13 @@
         padding: 1em;
         border:0;
         border-bottom: 1px solid $brand-primary;
+
         &:hover {
           background: $white;
           border-radius:0;
           color: $brand-primary;
         }
+
         &:last-child {
           border-bottom:0;
           border-radius: 0 0 6px 6px;
@@ -168,7 +164,7 @@
       }
     }
 
-    &.active ul  {
+    &.active ul {
       display: block;
     }
 
@@ -181,7 +177,7 @@
   }
 }
 
-.titleJobFilter{
+.titleJobFilter {
   color: $brand-primary;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -191,20 +187,19 @@
   border-style: solid;
   border-width: 1px;
   border-radius: $border-radius;
-
 }
 
-.listJobFilter{
-  display: flex;  
+.listJobFilter {
+  display: flex;
   flex-wrap: wrap;
 }
 
-.elemJobFilter{
+.elemJobFilter {
   display: block;
   margin-right: .5em;
 }
 
-.filterList{
+.filterList {
   font-size: 14px;
   padding: 0.5em 0.8em 0.3em 0.8em;
   margin: 0.5em 0;
@@ -218,7 +213,7 @@
   cursor: pointer;
 }
 
-.active{
+.active {
   font-family: $feature-font-family;
   font-weight: 400;
   background-color: $brand-primary;
@@ -227,14 +222,14 @@
   opacity: 1;
 }
 
-.filterList:hover{
+.filterList:hover {
   background-color: $brand-primary;
   border-color: $brand-primary;
   color: $white;
   opacity: 1;
 }
 
-.componentJob{  
+.componentJob {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
@@ -242,16 +237,17 @@
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 1em;
-  
+
   @media screen and (min-width: $lg) {
     margin-bottom: 2em;
   }
+
   @media screen and (min-width: $md) and (max-width: $lg) {
     margin-bottom: 2em;
   }
 }
 
-.lineJob{
+.lineJob {
   display: block;
   width: 9%;
   height: 3px;
@@ -263,19 +259,22 @@
   margin-left: auto;
   margin-top: 1em;
   margin-bottom: 1em;
+
   @media screen and (min-width: $md) and (max-width: $lg) {
     margin-bottom: 2em;
   }
+
   @media screen and (min-width: $md) and (max-width: $lg) {
-    margin-top: 4em;
-  }
-  @media screen and (min-width: $lg) {
-    margin-bottom: 2em;
-  }
-  @media screen and (min-width: $lg) {
     margin-top: 4em;
   }
 
+  @media screen and (min-width: $lg) {
+    margin-bottom: 2em;
+  }
+
+  @media screen and (min-width: $lg) {
+    margin-top: 4em;
+  }
 }
 
 .titleJobs {
@@ -283,11 +282,11 @@
   margin-bottom: 1em;
 }
 
-.descriptionJobs{
+.descriptionJobs {
   line-height: 1.5;
 }
 
-.componentJobFilter{
+.componentJobFilter {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -307,25 +306,28 @@
   
 }
 
-.noJobContainer{
+.noJobContainer {
   margin-top: 0;
   padding-top: .5em;
 
   @media screen and (min-width: $md) and (max-width: $lg) {
     padding-top: 2em; 
   }
+
   @media screen and (min-width: $lg) {
     padding-top: 2em;
   }
+
   @media screen and (min-width: $md) and (max-width: $lg) {
     margin-top: 1em;
   }
+
   @media screen and (min-width: $lg) {
     margin-top: 4em;
   }
 }
 
-.titleNoJobContainer{
+.titleNoJobContainer {
   display: block;
   width: 9%;
   height: 3px;
@@ -337,12 +339,13 @@
   margin-top: .5em;
 }
 
-
-.paragraphNoJobContainer{
+.paragraphNoJobContainer {
   padding-bottom: .5em;
+
   @media screen and (min-width: $md) and (max-width: $lg) {
     padding-bottom: 2em;
   }
+
   @media screen and (min-width: $lg) {
     padding-bottom: 2em; 
   }
