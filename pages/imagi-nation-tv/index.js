@@ -50,7 +50,6 @@ const ImagiNationTV = () => {
 
             <Button
               theme={process.env.REACT_APP_THEME}
-              // onClickFunction={scrollHandler}
               className={`${styles.watchBtn}`}
               url="https://www.youtube.com/user/aimementoring/live"
               target="_blank"
@@ -141,12 +140,9 @@ or a
             </div>
             <div className={styles.puppetChatSmaller}>
               <div>
-                {/* <Title type="h4Title" className={styles.puppetTitle}>
-                  Already a partner? </Title> */}
                 <Button
                   type="text"
                   className={`${styles.typeformAction} ${styles.puppetTitle}`}
-                // onClickFunction={toggleModal}
                 >
                   Already a partner?
                   <br />
