@@ -1,34 +1,44 @@
 import React from 'react';
-// import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import MovingWaves from '../../components/movingWaves';
-import styles from './impact.scss';
 import IntercomChat from '../../components/intercom';
+import styles from './impact.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
+const DownloadImage = () => (
+  <img
+    alt="Download"
+    src={`${ASSETS_URL}/assets/images/Download.svg`}
+  />
+);
 
 const Impact = () => (
   <Layout>
     <div>
       <div className={styles.bannerWrap}>
         <MovingWaves />
-        <div className="flex flex-wrap items-center">
-          <div className="hero-panel banner-wrapper hero-banner--default">
-            <Title type="headingLockup" className={styles.bannerHeaderImpact} theme={process.env.REACT_APP_THEME}>
-                Our
+        <div className={styles.titleWrapper}>
+          <div className={styles.titleContainer}>
+            <Title
+              type="headingLockup"
+              className={styles.impactHeaderTitle}
+              theme={process.env.REACT_APP_THEME}
+            >
+              Our
               <strong>
-                  Impact
+                Impact
               </strong>
             </Title>
           </div>
         </div>
       </div>
-      <section className="section bg-white" id="panel1">
-        <div className="wrap items-center p3 center">
+      <section>
+        <div className={styles.introText}>
           <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               We’ve got a story of change that’s lit up the world since 2005, one kid at a time.
               It’s a simple idea, mentoring.
@@ -41,11 +51,11 @@ const Impact = () => (
           </Title>
         </div>
       </section>
-      <section className="section-impact">
-        <div className="wrapImpactFacts">
-          <section className="section-about">
-            <div className="section-about__column p2 xs-p1 items-center">
-              <div className="section-about__copy lg-col-8 section-impact-copy">
+      <section>
+        <div className={styles.impactFactsContainer}>
+          <section className={styles.impactSectionRow}>
+            <div className={styles.impactSectionColumn}>
+              <div className={styles.impactSectionCopy}>
                 <Paragraph>
                   <strong>
                       We&apos;ve ended educational inequality
@@ -60,17 +70,16 @@ const Impact = () => (
                 </Paragraph>
               </div>
             </div>
-            <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
+            <div className={styles.impactSectionImageContainer}>
               <img
-                className="block"
                 src={`${ASSETS_URL}/assets/images/impact/yr12attain.png`}
                 alt="Year 12 Attainment over the last 5 years"
               />
             </div>
           </section>
-          <section className="section-about">
-            <div className="section-about__column p2">
-              <div className="section-about__copy lg-col-8 section-impact-copy">
+          <section className={styles.impactSectionRow}>
+            <div className={styles.impactSectionColumn}>
+              <div className={styles.impactSectionCopy}>
                 <Paragraph>
                   <strong>
                       We’re cost-effective
@@ -82,17 +91,16 @@ const Impact = () => (
                 </Paragraph>
               </div>
             </div>
-            <div className="section-about__column p2" style={{ alignItems: 'flex-start' }}>
+            <div className={styles.impactSectionImageContainer}>
               <img
-                className="block"
                 src={`${ASSETS_URL}/assets/images/impact/dollarinvest.png`}
                 alt="For every $1 invested, $8.90 return"
               />
             </div>
           </section>
-          <section className="section-about">
-            <div className="section-about__column p2">
-              <div className="section-about__copy lg-col-8 section-impact-copy">
+          <section className={styles.impactSectionRow}>
+            <div className={styles.impactSectionColumn}>
+              <div className={styles.impactSectionCopy}>
                 <Paragraph>
                   <strong>
                       We&apos;re scalable
@@ -105,16 +113,15 @@ const Impact = () => (
                 </Paragraph>
               </div>
             </div>
-            <div className="section-about__column p2" style={{ alignItems: 'flex-end' }}>
+            <div className={styles.impactSectionImageContainer}>
               <img
-                className="block"
                 src={`${ASSETS_URL}/assets/images/impact/100kkids.png`}
                 alt="100k Kids by 2025"
               />
             </div>
           </section>
         </div>
-        <div className="wrap items-center xs-p2 sm-p2 md-p4 lg-p4 center">
+        <div className={styles.mostImportantly}>
           <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               And most importantly…
             <br />
@@ -122,137 +129,109 @@ const Impact = () => (
           </Title>
         </div>
       </section>
-      <section className="section-impact section-impact-caseStudies" id="panel4">
-        <div className="wrap xs-p3 sm-p2 md-p4 lg-p4">
-          <div className="flex flex-row flex-wrap justify-between pb2">
+      <section>
+        <div className={styles.caseStudiesContainer}>
+          <div className={styles.caseStudiesContent}>
             <div>
               <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
                   Don’t just take our word for it…
               </Title>
             </div>
-            <div className="buttons-container right">
+            <div className={styles.caseStudiesButtonContainer}>
               <Button theme={process.env.REACT_APP_THEME} aria-label="cta" type="link" url="/reports">
                   Our Reports
               </Button>
             </div>
           </div>
-          <div className="main-grid">
-            <div className="tile">
-              <div className="">
+          <div className={styles.mainGrid}>
+            <div className={styles.tile}>
+              <div>
                 <a
                   href="https://www.dropbox.com/s/1uxaohjfrtaled7/Economic%20Evaluation%20of%20AIME%20Mentoring%20by%20KPMG.pdf?dl=0"
                   aria-label="Economic evaluation"
                 >
                   <div
-                    className="flex items-center video-button rounded"
+                    className={styles.imageButton}
                     style={{
                       backgroundImage: `url('${ASSETS_URL}/assets/images/impact/kpmg-ecom.jpg')`,
-                      backgroundSize: 'cover',
-                      width: '100%',
                     }}
                   >
-                    <img
-                      alt=""
-                      className="center mx-auto"
-                      style={{ width: '50px' }}
-                      src={`${ASSETS_URL}/assets/images/Download.svg`}
-                    />
+                    <DownloadImage />
                   </div>
                 </a>
               </div>
-              <div className="">
-                <h3 className="tile-title">Economic Evaluation of AIME Mentoring by KPMG</h3>
-                <p className="tile-copy">
+              <div>
+                <h3 className={styles.tileTitle}>Economic Evaluation of AIME Mentoring by KPMG</h3>
+                <p className={styles.tileCopy}>
                     This evaluation by KPMG shows that AIME returns $8 back into the economy for
                     every $1 invested, and most importantly the program has literally closed the
                     education gap for 10,000+ Indigenous Australian kids who have been through it
                 </p>
               </div>
             </div>
-            <div className="tile">
-              <div className="">
+            <div className={styles.tile}>
+              <div>
                 <a href="global-letter" target="_blank" aria-label="global letter">
                   <div
-                    className="flex items-center video-button rounded"
+                    className={styles.imageButton}
                     style={{
                       backgroundImage: `url('${ASSETS_URL}/resources/no-shame.jpg')`,
-                      backgroundSize: 'cover',
-                      width: '100%',
                     }}
                   >
-                    <img
-                      alt=""
-                      className="center mx-auto"
-                      style={{ width: '50px' }}
-                      src={`${ASSETS_URL}/assets/images/Download.svg`}
-                    />
+                    <DownloadImage />
                   </div>
                 </a>
               </div>
-              <div className="">
-                <h3 className="tile-title">Open Letter to Universities</h3>
-                <p className="tile-copy">
+              <div>
+                <h3 className={styles.tileTitle}>Open Letter to Universities</h3>
+                <p className={styles.tileCopy}>
                     An open letter from University & business leaders across Australia in support
                     of AIME
                 </p>
               </div>
             </div>
-            <div className="tile">
-              <div className="">
+            <div className={styles.tile}>
+              <div>
                 <a
                   href="https://www.dropbox.com/s/2flcrg5q7i57bhb/AIME%20Mentoring-A%20Solution%20for%20Educational%20Inequality%20%20.pdf?dl=0"
                   aria-label="AIME Mentoring solution for education inequality"
                 >
                   <div
-                    className="flex items-center video-button rounded"
+                    className={styles.imageButton}
                     style={{
                       backgroundImage: `url('${ASSETS_URL}/resources/white-paper.jpg')`,
-                      backgroundSize: 'cover',
-                      width: '100%',
                     }}
                   >
-                    <img
-                      alt=""
-                      className="center mx-auto"
-                      style={{ width: '50px' }}
-                      src={`${ASSETS_URL}/assets/images/Download.svg`}
-                    />
+                    <DownloadImage />
                   </div>
                 </a>
               </div>
-              <div className="">
-                <h3 className="tile-title">
+              <div>
+                <h3 className={styles.tileTitle}>
                     AIME Mentoring - A Solution for Educational Inequality
                 </h3>
-                <p className="tile-copy">
+                <p className={styles.tileCopy}>
                     This White Paper explores issues of educational inequality in the U.S. and
                     presents an evidence-based case for AIME.
                 </p>
               </div>
             </div>
-            <div className="tile">
-              <div className="">
+            <div className={styles.tile}>
+              <div>
                 <a href="https://aimementoring.com/reports/2016-annual-story" aria-label="2016 annual story">
                   <div
-                    className="flex items-center video-button rounded"
+                    className={styles.imageButton}
                     style={{
                       backgroundImage: `url('${ASSETS_URL}/resources/annual-report_180219_073230.jpg')`,
-                      backgroundSize: 'cover',
-                      width: '100%',
                     }}
                   >
-                    <img
-                      alt=""
-                      className="center mx-auto"
-                      style={{ width: '50px' }}
-                      src={`${ASSETS_URL}/assets/images/Download.svg`}
-                    />
+                    <DownloadImage />
                   </div>
                 </a>
               </div>
-              <div className="">
-                <h3 className="tile-title">2016 Annual Story</h3>
-                <p className="tile-copy">
+              <div>
+                <h3 className={styles.tileTitle}>2016 Annual Story</h3>
+                <p className={styles.tileCopy}>
                     2016 was another year of transformational education and wonderful outcomes for
                     the Indigenous kids participating in AIME across Australia. It was also a year
                     of exploring new evolutionary pathways for the AIME model.
@@ -262,38 +241,39 @@ const Impact = () => (
           </div>
         </div>
       </section>
-      <section className="section more-info" id="panel5">
-        <div className="">
-          <div className="grid">
-            <div className="baseGrid sidebar">
-              <div className="">
-                <h2 className="sidebarTitle feature-font-family">More info</h2>
-                <hr className="sidebarTitle-hr gradient-purple" />
+      <section>
+        <div>
+          <div className={styles.grid}>
+            <div className={styles.sidebar}>
+              <div className={styles.moreInfoTitleContainer}>
+                <Title type="h3Title" theme={process.env.REACT_APP_THEME}>
+                  More info
+                </Title>
               </div>
-              <div className="buttons-container pt2">
+              <div className={styles.moreInfoContainer}>
                 <Anchor
                   to="/jack-manning-bancroft"
                   as="/jack-manning-bancroft"
-                  className="ghost-btn bg-brand-primary c-white mb2"
+                  className={styles.moreInfoButton}
                   aria-label="jack manning bancroft"
                 >
-                  <span className=" download-btn-text">Meet our Founder & CEO</span>
+                  <span className={styles.moreInfoButtonText}>Meet our Founder &amp; CEO</span>
                 </Anchor>
-                <Anchor to="/about" className="ghost-btn bg-brand-primary c-white mb2">
-                  <span className=" download-btn-text">Learn more about AIME</span>
+                <Anchor to="/about" className={styles.moreInfoButton}>
+                  <span className={styles.moreInfoButtonText}>Learn more about AIME</span>
                 </Anchor>
-                <Anchor to="/case-studies" as="/case-studies" className="ghost-btn bg-brand-primary c-white mb2">
-                  <span className=" download-btn-text">AIME Classroom</span>
+                <Anchor to="/case-studies" as="/case-studies" className={styles.moreInfoButton}>
+                  <span className={styles.moreInfoButtonText}>AIME Classroom</span>
                 </Anchor>
-                <Anchor to="/global-letter" as="/global-letter" className="ghost-btn bg-brand-primary c-white mb2">
-                  <span className=" download-btn-text">Global Letter</span>
+                <Anchor to="/global-letter" as="/global-letter" className={styles.moreInfoButton}>
+                  <span className={styles.moreInfoButtonText}>Global Letter</span>
                 </Anchor>
               </div>
             </div>
-            <div className="baseGrid main-content">
-              <div className="sectionLastQuote full-height full-width-wrap flex flex-wrap items-center">
-                <div className="xs-p2 sm-p2 md-p4 lg-p4">
-                  <span className="white center bottom-panel-impact-heading">
+            <div className={styles.quoteContainer}>
+              <div className={styles.quoteWrapper}>
+                <div className={styles.quoteContent}>
+                  <span className={styles.quoteText}>
                     <Title type="headingLockup" theme={process.env.REACT_APP_THEME}>
                         AIME achieves the Holy Grail of educational interventions
                       <br />
@@ -306,13 +286,13 @@ const Impact = () => (
           </div>
         </div>
       </section>
-      <section className="section bg-lavender-light" id="panel6">
-        <div className="wrap items-center xs-px2 sm-px2 xs-py4 sm-py4 md-p4 lg-p4">
-          <h2 className="center">
-            <span className="f-24 feature-font-family">Want to create change?</span>
+      <section className={styles.partnerSection}>
+        <div className={styles.partnerSectionContent}>
+          <h2>
+            <span className={styles.createChangeText}>Want to create change?</span>
           </h2>
-          <div className="intercomBtnWrap center pt2">
-            <IntercomChat className="navBtn" label="Partner with us" />
+          <div className={styles.intercomButtonWrap}>
+            <IntercomChat label="Partner with us" />
           </div>
         </div>
       </section>
