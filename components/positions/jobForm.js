@@ -2,25 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import AboutYouSectionForm from './aboutYouSectionForm';
-// import JobUniAndContactFrom from './jobUniAndContactFrom';
 import JobQuestionAndVideoLink from './jobQuestionAndVideoLink';
 import SupportingDocsSectionForm from './supportingDocsSectionForm';
-// import IndigenousForm from './indigenousForm';
 import HiddenFieldsAndSubmitAction from './hiddenFieldsAndSubmitAction';
+import styles from './jobForm.module.scss';
 
 const JobForm = ({
   showForm,
   job,
   values,
-  // onAddressSelected,
-  // locationError,
-  // streetNumber,
-  // streetName,
-  // postCode,
-  // territory,
-  // city,
-  // handleFieldChange,
-  // countryAddress,
   handleFormFieldChange,
   onSubmit,
 }) => (
@@ -28,7 +18,7 @@ const JobForm = ({
     {showForm && Object.keys(job).length > 0 && (
       <div
         id="jobApplicationReveal"
-        className="job-application--reveal flex flex-column border-top b-light-blue pt4 js-non-unavailable-position"
+        className={styles.jobApplicationReveal}
       >
         <Title type="h5Title" theme={process.env.REACT_APP_THEME}>
           Apply now
@@ -51,10 +41,6 @@ const JobForm = ({
             handleFormFieldChange={handleFormFieldChange}
             values={values}
           />
-          {/* <IndigenousForm
-            handleChange={handleFormFieldChange}
-            values={values}
-          /> */}
           <HiddenFieldsAndSubmitAction type={job.type} name={job.name} onSubmit={onSubmit} />
         </form>
       </div>
@@ -74,15 +60,6 @@ JobForm.propTypes = {
     country: PropTypes.string,
   }),
   values: PropTypes.shape({}),
-  // onAddressSelected: PropTypes.func,
-  // locationError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  // streetNumber: PropTypes.string,
-  // streetName: PropTypes.string,
-  // postCode: PropTypes.string,
-  // territory: PropTypes.string,
-  // city: PropTypes.string,
-  // countryAddress: PropTypes.string,
-  // handleFieldChange: PropTypes.func,
   handleFormFieldChange: PropTypes.func,
   onSubmit: PropTypes.func,
 };
@@ -91,15 +68,6 @@ JobForm.defaultProps = {
   showForm: false,
   job: {},
   values: {},
-  // onAddressSelected: () => {},
-  // locationError: null,
-  // streetNumber: '',
-  // streetName: '',
-  // postCode: '',
-  // territory: '',
-  // city: '',
-  // countryAddress: null,
-  // handleFieldChange: () => {},
   handleFormFieldChange: () => {},
   onSubmit: () => {},
 };
