@@ -56,7 +56,7 @@ const ImagiNationTV = () => {
               target="_blank"
               type="link"
             >
-              Watch live on YouTube
+              Watch live
             </Button>
           </div>
 
@@ -149,8 +149,8 @@ or a
                 // onClickFunction={toggleModal}
                 >
                   Already a partner?
-                  {/* <span>Click here</span> */}
-                  &nbsp;We appreciate you
+                  <br />
+                  Talk soon :)
                 </Button>
 
               </div>
