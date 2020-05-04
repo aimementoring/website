@@ -33,14 +33,6 @@ const AboutImaginationTv = (props) => {
         <div className={styles.aboutCyclopsColumn}>
           <div className={styles.cyclopsSpeechBubble}>
             <div>
-              {/* <Button type="text"
-              className={styles.speechButtonContent}
-              onClickFunction={() => {}}>
-                Read the full
-                story
-                <br />
-                <span>here</span>
-              </Button> */}
               <Title type="h5Title" className={styles.speechButtonContent}>
                 Come join us &amp; watch the show!
               </Title>
