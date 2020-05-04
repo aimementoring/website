@@ -3,7 +3,7 @@
 .heroBannerImagiTV {
   background:
     url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
-  background-size: 100% 40%;
+  background-size: 100%;
   position: relative;
   max-width: 75em;
   width: 100%;
@@ -11,13 +11,16 @@
   margin: 6em auto 0;
 
   @media screen and (min-width: $sm) {
-    background-size: 80% 65%;
+    background-size: 75%;
   }
 
   @media screen and (min-width: $md) {
     background-position: 90% 80%;
-   
-    background-size: 60% 90%;
+    background-size: auto 68%;
+  }
+
+  @media screen and (min-width: $lg) {
+    background-size: auto 90%;
   }
 
   .bannerWrapper {
@@ -31,7 +34,7 @@
       display: flex;
     }
   
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $lg) {
       flex-direction: row;
       align-items: center;
       padding: 2em;
@@ -73,14 +76,14 @@
       align-self: flex-end;
       text-align: right;
       font-family: $body-font-family;
-      min-width: 28em;
+      min-width: 100%;
   
       @media screen and (min-width: $sm) {
         margin-top: 0;
+        min-width: 28em;
       }
   
       @media screen and (min-width: $md) {
-        align-self: center;
         flex-grow: 2;
       }
 
