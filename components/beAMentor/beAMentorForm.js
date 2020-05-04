@@ -8,47 +8,21 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const BeAMentorForm = () => (
   <div className={styles.beAMentorFormWrapper}>
-    {/* <img
-      src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
-      alt="Listen up"
-    />
-    <Title type="h5Title">Mentor applications are now open!</Title>
-    <Paragraph>
-      Excited? We are too!&nbsp;
-      <mark>
-        Mentors applications are up and running.
-      </mark>
-    </Paragraph>
-    <Paragraph>
-      If you are new to mentoring with us, create an AIME account and we'll
-      guide through your application process. If you are a returning mentor,
-      welcome back. Sign in to your account below and finalise your application for
-      this year.
-    </Paragraph> */}
     <div className={styles.mentorNotification}>
       <img
         src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
         alt="Listen up"
       />
-      <Title type="h5Title">Going Digital</Title>
+      <Title type="h5Title">Mentor applications are open!</Title>
       <Paragraph>
-        Please note that&nbsp;
+        Due to COVID-19, the delivery of our physical programs is a little different
+        this year. Non-the-less, we're still gearing up to deliver the best program yet and
+        &nbsp;
         <mark>
-          due to COVID-19 at this stage we are pausing the delivery of our physical
-          programs until&nbsp;
-          <strong>June 1</strong>
+        we need mentors
         </mark>
-      .
+        &nbsp;more than ever! 
       </Paragraph>
-      <Paragraph>
-        You can still sign up but we won&apos;t be processing applications and our teams won&apos;t
-        be conducting interviews until further notice. Our attention will be on taking our program
-        digital with the launch of a daily mentoring TV show IMAGI-NATION starting Monday 23 March
-        - we&apos;d love you to&nbsp;
-        <a href="https://www.youtube.com/user/aimementoring" target="_blank" rel="noopener noreferrer">subscribe to our YouTube channel</a>
-        &nbsp;and hopefully we can share some love with you during this isolated time.
-      </Paragraph>
-      <Paragraph>By all means sign up for both and we&apos;ll keep you updated.</Paragraph>
     </div>
     <br />
     <Paragraph>
@@ -62,10 +36,13 @@ const BeAMentorForm = () => (
       {'If you\'re new to mentoring with us,'}
       {' '}
       <strong>sign up</strong>
-.
-      &#8212;&nbsp;
-      {`If you've mentored before, sign into your AIME account below and
-      we'll guide you through the remainder of your application.
+      &nbsp;below.&nbsp;
+      {`If you've mentored before, `}
+      <strong>sign in</strong>
+      &nbsp;
+      {`to your AIME account below. Either way,
+      enter the AIME Universe through the button below and
+      we'll guide you through your mentor application process.
       Good luck!`}
     </Paragraph>
     <br />
@@ -76,7 +53,7 @@ const BeAMentorForm = () => (
       url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
     >
       {/* Apply now */}
-      Sign up
+      Start now
     </Button>
 
   </div>
