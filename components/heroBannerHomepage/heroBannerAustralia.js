@@ -40,7 +40,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => {
               target="_blank"
               type="link"
             >
-            Watch live on YouTube
+            Watch live
             </Button>
             <Button
               type="link"
