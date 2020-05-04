@@ -163,8 +163,6 @@
   .inTVEpisodesWrapper {
     margin: 4em auto;
     width: 100%;
-    // columns: 20em;
-    // column-gap: 1.5em;
   }
 
   .featuredProductWrapper {
@@ -191,7 +189,6 @@
   }
 
   .puppetsChatWrapper {
-    // max-width: 40em;
     margin: 0 auto;
 
     @media screen and (min-width: $md) {
@@ -255,7 +252,6 @@
       padding: 0;
       margin: 0;
       letter-spacing: initial;
-      // font-size: 1.1rem;
       text-align: center;
     }
   }
@@ -266,6 +262,7 @@
     float: right;
     display: flex;
     align-items: flex-start;
+    background-size: 12.5em;
 
     .smlPuppetTalking {
       position: relative;
@@ -285,24 +282,16 @@
       position: relative;
       background-color: transparent;
       letter-spacing: initial;
-      width: 7em;
-      padding: 3em 0 1.5em;
-      font-size: 1.1rem;
-      left: 1.5em; 
-      top: -0.5em;
+      width:  7.5em;
+      height: 8em;  
+      font-size: 1rem;
+      left: 1.7em;
+      top: 1.2em;
       line-height: 1.5;
-
-      @media screen and (min-width: $md) {
-        width: 6.3em;
-        padding: 2em 0;
-        font-size: 1.1rem;
-        left: 1.5em;
-        top: 0.5em;
-      }
-      @media screen and (min-width: $lg) {
-        width: 9em;
-        padding: 3em 0 1.5em;
-      }
+      cursor: default;
+      display: flex;
+      align-items: center;
+      padding: 0;
 
       span {
         text-decoration: underline;
@@ -342,7 +331,6 @@
       padding: 0;
       margin: 0;
       letter-spacing: initial;
-      // font-size: 1.1rem;
       text-align: center;
     }
   }
