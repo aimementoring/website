@@ -13,11 +13,19 @@ const BeAMentorForm = () => (
         src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
         alt="Listen up"
       />
-      <Title type="h5Title">Mentor applications are open!</Title>
+      <Title type="h5Title">Mentor applications are open again!</Title>
       <Paragraph>
-        Due to COVID-19, the delivery of our physical programs is a little different
-        this year. Non-the-less, we're still gearing up to deliver the best program yet and
-        &nbsp;
+        {`We've created `}
+        <a href="/imagi-nation-tv" target="_blank" rel="noopener noreferrer">
+        {`IMAGI-NATION{TV}`}
+        </a>
+        {` & the IMAGI-NATION{CLASSROOM} experience to put a mentor in
+        the home every day during the tough times of COVID-19 and beyond.
+        It’s a daily TV show broadcast live on the internet, and it’s a
+        gift for teachers, parents and kids to help make sense of today
+        & imagine tomorrow. Mentoring will naturally be a little different
+        in this environment but
+        `}
         <mark>
         we need mentors
         </mark>
