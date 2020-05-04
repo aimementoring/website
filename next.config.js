@@ -8,7 +8,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const DAY_SECONDS = 24 * 60 * 60;
 
-function getCanonicalUrl() {
+function getCannonicalUrl() {
   if (process.env.REACT_APP_HOST_ENV === 'production') {
     return 'https://aimementoring.com/';
   }
@@ -52,7 +52,7 @@ module.exports = withBundleAnalyzer(
           : '',
         env: {
           REACT_APP_ASSETS_URL: process.env.REACT_APP_ASSETS_URL,
-          REACT_APP_CANONICAL: getCanonicalUrl(),
+          REACT_APP_CANNONICAL: getCannonicalUrl(),
           PORT: process.env.PORT,
           REACT_APP_BUGSNAG_KEY: process.env.REACT_APP_BUGSNAG_KEY,
           REACT_APP_HOST_ENV: process.env.REACT_APP_HOST_ENV,
