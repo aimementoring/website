@@ -7,7 +7,6 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import isClientSide from '../../utils/isClientSide';
-import './positions.scss';
 
 import styles from './positions.module.scss';
 
