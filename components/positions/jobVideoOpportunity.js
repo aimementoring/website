@@ -1,21 +1,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import styles from './jobVideoOpportunity.module.scss';
 
 const JobVideoOpportunity = ({ id, embedVideoId, description }) => (
   <>
     <div
-      className={`mb4 js-video-container ${
-        id !== 'recqdjbXEa2ipFqlR' ? 'hide' : ''
-      }`}
+      className={classNames(styles.jobVideoContainer, {
+        [styles.hidden]: id !== 'recqdjbXEa2ipFqlR',
+      })}
     >
       {embedVideoId && (
-        <div
-          className="js-job-embed-videos video-container"
-          style={{ paddingTop: '0' }}
-        >
+        <div className={styles.videoContainer}>
           <iframe
             title="video-container-position-entry"
             src={`https://player.vimeo.com/video/${embedVideoId}`}
@@ -32,9 +31,7 @@ const JobVideoOpportunity = ({ id, embedVideoId, description }) => (
     <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
       The Opportunity
     </Title>
-    <Paragraph>
-      {description}
-    </Paragraph>
+    <Paragraph>{description}</Paragraph>
   </>
 );
 
