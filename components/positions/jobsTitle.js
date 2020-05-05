@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
+import styles from './jobsTitle.module.scss';
 
 const JobsTitle = ({ id, name }) => (
-  <Title type="h4Title" className="headingJobContent" theme={process.env.REACT_APP_THEME}>
+  <Title type="h4Title" className={styles.headingJobContent} theme={process.env.REACT_APP_THEME}>
     Hello, are you the
-    <span className="c-purple js-job-name">
+    <span className={styles.headingJobRole}>
       {id === process.env.REACT_APP_PITCH_YOURSELF_TO_AIME_ID
         ? ' Person '
         : name && ` ${name.replace('-', '')} `}
