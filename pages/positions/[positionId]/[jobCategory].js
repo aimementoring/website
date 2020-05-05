@@ -20,7 +20,6 @@ import JobApplyAction from '../../../components/positions/jobApplyAction';
 import JobExpired from '../../../components/positions/jobExpired';
 import BackAction from '../../../components/positions/backAction';
 import JobForm from '../../../components/positions/jobForm';
-// import './positionsEntry.scss';
 
 import styles from './positionsEntry.module.scss';
 
