@@ -7,7 +7,7 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const AmbassadorBox = ({
   image, name, type, description,
 }) => (
-  <div className={styles.gridTile}>
+  <div className={styles.ambassadorsGridTile}>
     <div>
       <img
         className={styles.campaignGridImage}
