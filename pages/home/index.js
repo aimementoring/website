@@ -8,7 +8,6 @@ import { CTA_AU_HOMEPAGE } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import useDonate from '../../hooks/useDonate';
 import scrollToComponent from '../../utils/scrollToComponent';
-import './home.scss';
 
 const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
