@@ -9,7 +9,7 @@ import styles from './termsOfService.module.scss';
 const TermsAndConditions = ({ entries }) => (
   <Layout>
     {entries && entries.map(({ fields, sys }) => (
-      <div key={sys.id} className="matrix-general">
+      <div key={sys.id} className={styles.termsAndConditions}>
         <SimpleBanner
           title={(
             <strong>
@@ -18,12 +18,12 @@ const TermsAndConditions = ({ entries }) => (
           )}
           groovy
           titleType="headingLockup"
-          titleStyleClass={styles.bannerHeadingTermsOfServicex}
+          titleStyleClass={styles.bannerHeadingTermsOfService}
           bannerContainerClass={styles.termsOfServiceBanner}
           bannerWrapperClass={styles.bannerWrapper}
           bannerContentWrapperClass={styles.bannerContentWrapper}
         />
-        <div className="wrap-md">
+        <div className={styles.termsSection}>
           <TermPhraseCard contentCards={fields.contentCards} />
         </div>
       </div>
