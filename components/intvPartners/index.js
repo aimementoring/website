@@ -98,7 +98,6 @@ const IntvPartners = () => (
       >
         {CAROUSEL_SLIDES.map((slide) => <IntvPartnersSlide {...slide} key={slide.title} />)}
       </Carousel>
-      
     </section>
   </>
 );
