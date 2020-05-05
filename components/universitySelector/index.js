@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Select from 'aime-blueprint/lib/components/select';
 import { loadUniversities } from '../../services/positions';
 import isClientSide from '../../utils/isClientSide';
-import './styles.scss';
 
 const UniversitySelector = ({
   placeholder, classNames, containerClassNames, onChangeFunction, value,
