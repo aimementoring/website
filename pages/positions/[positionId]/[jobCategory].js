@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
+import Loading from 'aime-blueprint/lib/components/loading';
 import Layout from '../../../hocs/basicLayout';
 import {
   capitaliseFirstCharacter,
@@ -11,7 +12,6 @@ import handleError from '../../../utils/errorHandler';
 import request from '../../../utils/request';
 import { findJob } from '../../../services/positions';
 import Header from '../../../components/positions/header';
-import Loading from '../../../components/positions/loading';
 import JobsTitle from '../../../components/positions/jobsTitle';
 import JobsDetail from '../../../components/positions/jobsDetail';
 import SupportingDocs from '../../../components/positions/supportingDocs';
@@ -185,7 +185,7 @@ const PositionsEntry = () => {
     redirectJobTitle,
   } = state;
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading loading={isLoading} theme={process.env.REACT_APP_THEME} />;
 
   if (!displayError) {
     return (
