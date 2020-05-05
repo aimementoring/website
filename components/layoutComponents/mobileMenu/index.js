@@ -60,8 +60,8 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
   ];
 
   return (
-    <>
-      <div className={styles.mobileMenuContainer}>
+    <div className={styles.mobileMenuContainer}>
+      <div>
         <i
           id="mobileMenu"
           className={classNames(styles.mobileMenuIcon, ...customColorClasses)}
@@ -94,7 +94,7 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
           active={activeMenuOption}
         />
       </nav>
-    </>
+    </div>
   );
 };
 
