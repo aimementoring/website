@@ -1,10 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import isClientSide from '../../utils/isClientSide';
-import './slick.scss';
-
-const CarouselArrows = dynamic(() => import('./carouselArrows'));
+import styles from './carousel.module.scss';
 
 const defaultSettings = {
   dots: true,
@@ -72,37 +70,21 @@ const multipleSlideSettings = {
 };
 
 const Carousel = ({
-  children, type, className, settings, showArrows,
+  children, type, className, settings, showArrows, carouselClassName,
 }) => {
-  const sliderRef = useRef(null);
   const ssr = !isClientSide();
   const Slider = dynamic(import('react-slick'), { ssr });
 
-  const next = () => {
-    // TODO – this is broken, but it has been broken before :D
-    // only used for Arrows, which is only used on the Hooded Scholar page
-    sliderRef.current.slickNext();
-  };
-
-  const previous = () => {
-    // TODO – this is broken, but it has been broken before :D
-    // only used for Arrows, which is only used on the Hooded Scholar page
-    sliderRef.current.slickPrev();
-  };
-
   const newSettings = { ...(type === 'multipleSlides' ? multipleSlideSettings : defaultSettings), ...settings };
+  if (showArrows) newSettings.arrows = true;
 
   return (
     <div className={className}>
-      {showArrows && (
-        // only used on the Hooded Scholar Page right now
-        <CarouselArrows prev={previous} next={next} />
-      )}
       <Slider
         {...newSettings}
         key={ssr ? 'server' : 'client'}
         responsive={ssr ? null : newSettings.responsive}
-        ref={sliderRef}
+        className={`${styles.carouselComponent} ${carouselClassName}`}
       >
         {children}
       </Slider>
@@ -116,6 +98,7 @@ Carousel.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
+  carouselClassName: PropTypes.string,
 };
 
 Carousel.defaultProps = {
@@ -123,6 +106,7 @@ Carousel.defaultProps = {
   className: null,
   type: 'singleSlide',
   settings: {},
+  carouselClassName: '',
 };
 
 export default Carousel;
