@@ -7,10 +7,9 @@ import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
-import AboutImaginationTV from '../../components/aboutImaginationTV';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
-import scrollToComponent from '../../utils/scrollToComponent';
+// import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './style.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -23,7 +22,7 @@ const ImagiNationTV = () => {
   const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
-  const scrollToPanel = () => scrollToComponent(scrollToThisRef);
+  // const scrollToPanel = () => scrollToComponent(scrollToThisRef);
 
   return (
     <Layout>
@@ -35,27 +34,25 @@ const ImagiNationTV = () => {
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
               <img
                 src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
-                alt="Imagi-Nation TV"
+                alt="Imagine"
                 className={styles.logoImagiTV}
               />
             </Title>
             <Paragraph>
-              <strong><mark>&nbsp;Live every weekday 12pm AEST&nbsp;</mark></strong>
-              <br />
-              <br />
-              A chance for kids at home to have mentors in their lives to
-              {' '}
-              <em>Make Sense of Today & Imagine Tomorrow</em>
+              What happens when you combine a pandemic,
+              a live YouTube TV show, an open Google Doc and a hoodie?
+              <br /><br />
+              <strong><mark>&nbsp;A feature film, of course.&nbsp;</mark></strong>
             </Paragraph>
 
             <Button
               theme={process.env.REACT_APP_THEME}
               className={`${styles.watchBtn}`}
-              url="https://www.youtube.com/user/aimementoring/live"
+              url="/"
               target="_blank"
               type="link"
             >
-              Watch live
+              Get Involved
             </Button>
           </div>
 
@@ -71,7 +68,7 @@ const ImagiNationTV = () => {
                   rel="noopener noreferrer"
                   href="https://www.youtube.com/channel/UCDL9R_msvYDyHF7lx0NEyow?sub_confirmation=1"
                 >
-                Subscribe to our channel
+                ~~~~
                 </a>
               </Paragraph>
             </VideoPlayer>
@@ -79,7 +76,48 @@ const ImagiNationTV = () => {
 
         </div>
       </div>
-      <AboutImaginationTV scrollHandler={scrollToPanel} />
+      
+      <section className={styles.aboutImagineSection}>
+        <div className={styles.aboutInTVWrapper}>
+          <div className={styles.aboutParagraphColumn}>
+            <Title type="h3Title" className={styles.aboutInTVTitle}>
+              Welcome to the latest initiative from AIME
+            </Title>
+            <Paragraph>
+              {`
+                Live on IMAGI-NATION{TV} from May 11, we will share a Google Doc
+                with the world with the title ‘IMAGINE’, and those in and outside
+                of the AIME orbit will be able to come together and write a feature
+                film script. Guests on IN{TV} over the four weeks will have the
+                chance to engage in the writing experience. So will kids AIME mentors
+                across 6 countries. 
+              `}
+            </Paragraph>
+            <Paragraph>
+              {`
+                Also launching on May 11 will be over 500 creator grants in the shape
+                of a hoodie. Those who want to create a scene for the film ‘IMAGINE’ 
+                will be able to apply at aimementoring.com to secure themselves an official
+                “This Hoodie is a Film” hoodie. This will be their key to submitting a creation into ‘IMAGINE’. 
+              `}
+            </Paragraph>
+          </div>
+          <div className={styles.aboutCyclopsColumn}>
+            <div className={styles.cyclopsSpeechBubble}>
+              <div>
+                <Title type="h5Title" className={styles.speechButtonContent}>
+                  Come join us &amp; watch the show!
+                </Title>
+              </div>
+              <img
+                src={`${ASSETS_URL}/assets/images/illustrations/kyle-cyclops@2x.png`}
+                alt="Kyle the Cyclops"
+                className={styles.cyclopsImage}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
           <ImaginationTvCarousel />
