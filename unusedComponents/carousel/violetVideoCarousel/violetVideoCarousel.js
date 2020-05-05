@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import Anchor from '../../common/link';
+import Anchor from '../../../components/common/link';
 import './violetVideoCarousel.scss';
 
 const Carousel = dynamic(() => import('../index'));
