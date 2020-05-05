@@ -3,7 +3,7 @@
 .heroBannerImagiTV {
   background:
     url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
-  background-size: 100% 40%;
+  background-size: 100%;
   position: relative;
   max-width: 75em;
   width: 100%;
@@ -11,13 +11,16 @@
   margin: 6em auto 0;
 
   @media screen and (min-width: $sm) {
-    background-size: 80% 65%;
+    background-size: 75%;
   }
 
   @media screen and (min-width: $md) {
     background-position: 90% 80%;
-   
-    background-size: 60% 90%;
+    background-size: auto 68%;
+  }
+
+  @media screen and (min-width: $lg) {
+    background-size: auto 90%;
   }
 
   .bannerWrapper {
@@ -31,7 +34,7 @@
       display: flex;
     }
   
-    @media screen and (min-width: $md) {
+    @media screen and (min-width: $lg) {
       flex-direction: row;
       align-items: center;
       padding: 2em;
@@ -47,16 +50,22 @@
       @media screen and (min-width: $sm) {
         width: 70%;
       }
+
+      @media screen and (min-width: $lg) {
+        width: 50%;
+      }
     }
   
     .bannerContent {
       z-index: 1;
       justify-content: flex-end;
+      align-self: flex-start;
   
       p {
         color: $black;
         max-width: 30em;
         margin: 2em 0;
+        padding-right: 1em;
       }
     }
   
@@ -67,20 +76,21 @@
       align-self: flex-end;
       text-align: right;
       font-family: $body-font-family;
+      min-width: 100%;
   
       @media screen and (min-width: $sm) {
         margin-top: 0;
+        min-width: 28em;
       }
   
       @media screen and (min-width: $md) {
-        align-self: center;
         flex-grow: 2;
       }
 
       .playerContainer {
         padding: 0;
         min-width: auto;
-        height: 13em;
+        height: 15em;
 
         @media screen and (min-width: $sm) {
           height: 18em;
@@ -153,8 +163,6 @@
   .inTVEpisodesWrapper {
     margin: 4em auto;
     width: 100%;
-    // columns: 20em;
-    // column-gap: 1.5em;
   }
 
   .featuredProductWrapper {
@@ -181,7 +189,6 @@
   }
 
   .puppetsChatWrapper {
-    // max-width: 40em;
     margin: 0 auto;
 
     @media screen and (min-width: $md) {
@@ -245,7 +252,6 @@
       padding: 0;
       margin: 0;
       letter-spacing: initial;
-      // font-size: 1.1rem;
       text-align: center;
     }
   }
@@ -256,6 +262,7 @@
     float: right;
     display: flex;
     align-items: flex-start;
+    background-size: 12.5em;
 
     .smlPuppetTalking {
       position: relative;
@@ -275,24 +282,16 @@
       position: relative;
       background-color: transparent;
       letter-spacing: initial;
-      width: 7em;
-      padding: 3em 0 1.5em;
-      font-size: 1.1rem;
-      left: 1.5em; 
-      top: -0.5em;
+      width:  7.5em;
+      height: 8em;  
+      font-size: 1rem;
+      left: 1.7em;
+      top: 1.2em;
       line-height: 1.5;
-
-      @media screen and (min-width: $md) {
-        width: 6.3em;
-        padding: 2em 0;
-        font-size: 1.1rem;
-        left: 1.5em;
-        top: 0.5em;
-      }
-      @media screen and (min-width: $lg) {
-        width: 9em;
-        padding: 3em 0 1.5em;
-      }
+      cursor: default;
+      display: flex;
+      align-items: center;
+      padding: 0;
 
       span {
         text-decoration: underline;
@@ -332,7 +331,6 @@
       padding: 0;
       margin: 0;
       letter-spacing: initial;
-      // font-size: 1.1rem;
       text-align: center;
     }
   }
