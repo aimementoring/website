@@ -31,28 +31,6 @@ const TalentHeader = ({ location, handleTalentItemClicked }) => {
         </div>
         <nav id="nav-talent" className={classNames(styles.navMenuLinks, styles.navTalent)}>
           <ul className={styles.list}>
-            {/* {TALENT_HEADER_MENU_ITEMS.map((headerItem) => {
-              const item = headerItem.replace(' ', '');
-              return (
-                <li
-                  className={styles.listItem}
-                  onClick={handleTalentItemAction(item)}
-                  onKeyPress={handleTalentItemAction(item)}
-                  role="presentation"
-                  key={item}
-                >
-                  {`#${item.toLowerCase()}` === hash ? (
-                    <a className={classNames(styles.navBtn, styles.activeItem)} href="#">
-                      {headerItem}
-                    </a>
-                  ) : (
-                    <a className={styles.navBtn} href="#">
-                      {headerItem}
-                    </a>
-                  )}
-                </li>
-              );
-            })} */}
             <li className={styles.inlineListItem}>
               <Anchor
                 className={styles.donateBtn}
