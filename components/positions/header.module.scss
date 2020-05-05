@@ -24,6 +24,11 @@
     letter-spacing: -0.15em;
     margin-top: 3em;
     line-height: 3rem;
+
+    strong {
+      top: initial;
+      left: initial;
+    }
   }
 
   .positionsBannerWrapper {
