@@ -13,28 +13,27 @@ const Quizzes = () => {
 
   return (
     <Layout>
-        <div className="full-width-wrap">
-          <div className="flex flex-wrap items-center"></div>
-          <SimpleBanner
-            title={(
-              <>
-                Tutor Squad
-            <strong>Quizzes</strong>
-              </>
-            )}
-            titleType="headingLockup"
-            groovy
-            copy="Below you'll find thousands of quizzes. Pick your year level, select a topic and then
-            away you go. If you want to start over just reload the page."
-            titleStyleClass={styles.bannerHeadingQuizzes}
-            bannerContainerClass={styles.quizzesBanner}
-            bannerWrapperClass={styles.bannerWrapper}
-            bannerContentWrapperClass={styles.bannerContentWrapper}
-          />
-          <section className="wrap mx-auto px3">
-            <div id="random-quiz" style={{ minHeight: '600px' }} />
-          </section>
-        </div>
+      <div className={styles.quizzesContainer}>
+        <SimpleBanner
+          title={(
+            <>
+              Tutor Squad
+              <strong>Quizzes</strong>
+            </>
+          )}
+          titleType="headingLockup"
+          groovy
+          copy="Below you'll find thousands of quizzes. Pick your year level, select a topic and then
+          away you go. If you want to start over just reload the page."
+          titleStyleClass={styles.bannerHeadingQuizzes}
+          bannerContainerClass={styles.quizzesBanner}
+          bannerWrapperClass={styles.bannerWrapper}
+          bannerContentWrapperClass={styles.bannerContentWrapper}
+        />
+        <section className={styles.quizzesIframeContainer}>
+          <div id="random-quiz" className={styles.quizzesIframe} />
+        </section>
+      </div>
     </Layout>
   );
 };
