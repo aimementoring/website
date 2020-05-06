@@ -1,0 +1,10 @@
+@import "../../styles/base/variables";
+
+.jobExpiredContainer {
+  display: block;
+  margin-bottom: 2rem;
+  
+  @media screen and (min-width: $md) {
+    margin-bottom: 4rem;
+  }
+}
