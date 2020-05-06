@@ -1,15 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import dynamic from 'next/dynamic';
 import Anchor from '../common/link';
-// import { uploadCustomEOI } from '../../services/portalApi';
 import styles from './goingGlobalIndex.module.scss';
 
-// const EoiForm = dynamic(() => import('../../components/eoiForm/goingGlobalEOIForm'));
-
-// const TABLE_NAME = 'Going Global';
-
-// add the prop handleReloadData if you need to add the component EOI Form
 const Register = ({ setReference }) => (
   <section
     className={styles.eoiSection}
@@ -164,19 +157,12 @@ const Register = ({ setReference }) => (
         {`You'll receive an email with guiding questions and the process
         to submit your application before the deadline of 29th of November, 5 PM AEST.`}
       </p>
-      {/* <EoiForm
-        uploadData={uploadCustomEOI}
-        tableName={TABLE_NAME}
-        showBeAFriendCheckbox
-        handleReloadData={handleReloadData}
-      /> */}
     </div>
   </section>
 );
 
 Register.propTypes = {
   setReference: PropTypes.func.isRequired,
-  // handleReloadData: PropTypes.func.isRequired,
 };
 
 export default Register;
