@@ -1,0 +1,94 @@
+@import "../../styles/base/variables";
+
+.errorBoundaryWrapper {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  .errorHeroBanner {
+    height: 50vh;
+    background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+    padding: 35px 0;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+
+    @media screen and (min-width: $sm) {
+      padding: 0;
+      height: 62vh;
+    }
+
+    // Stop fixed on tablets & phones as it doesn't work
+    @media screen and (max-device-width: 1024px){
+      background-attachment: scroll;
+    }
+  }
+
+  .bannerContainer {
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .subpageBanner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .headingJobsSingle {
+    line-height: 3rem;
+    text-align: center;
+    color: $white;
+
+    strong {
+      left: initial;
+    }
+  }
+
+  .page404Container {
+    max-width: 720px;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page404Content {
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: $sm) {
+      display: flex;
+    }
+  }
+
+  .errorInterComWrapper {
+    button {
+      border: none;
+      outline: none;
+      font-family: $body-font-family-bold;
+      color: $brand-primary;
+      font-size: 1em;
+      cursor: pointer;
+      padding: 0 0 2em;
+  
+      &:hover {
+        color: $brand-secondary;
+      }
+    }
+  }
+
+  .sadFaceError {
+    width: 85%;
+    padding: 1rem;
+    max-width: 100%;
+
+    @media (max-width: $md) {
+      display: none !important;
+    }
+  }
+}
