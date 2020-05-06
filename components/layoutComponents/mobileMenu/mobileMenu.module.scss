@@ -6,14 +6,13 @@
   margin-left: auto;
   float: right;
   box-sizing: border-box;
+  @media screen and (min-width: $md) {
+    display: none;
+  }
 
   .mobileMenu {
     @media screen and (min-width: $md) {
       display: none;
-  
-      &.flex {
-        display: none;
-      }
     }
   }
   .whiteText { color: $white; }
