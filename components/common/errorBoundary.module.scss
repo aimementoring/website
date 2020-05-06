@@ -18,14 +18,9 @@
       height: 62vh;
     }
 
-    // Stop fixed on tablets & phones as it doesn't work
     @media screen and (max-device-width: 1024px){
       background-attachment: scroll;
     }
-    
-    // .highlight-text {
-    //   transform: rotate(-3deg);
-    // }
   }
 
   .bannerContainer {
