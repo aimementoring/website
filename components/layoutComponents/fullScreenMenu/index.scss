@@ -50,10 +50,12 @@
 				}
       }
       .fullScreenLogo {
-        fill:#fff;
         visibility: visible;
         transition-delay: .4s;
-        opacity:1;
+				opacity:1;
+				svg {
+					fill:#fff;
+				}
       }
 		}
 		+ {
