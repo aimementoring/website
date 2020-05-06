@@ -57,14 +57,12 @@ const JobUniAndContactFrom = ({ displayCampusSelect, handleChange, values }) => 
         <UniversitySelector
           placeholder="Choose site of desired position"
           name="uni-campus-attending"
-          containerClassNames="sm-col sm-col-6 md-col-6 o7-r o7-b js-campus-select"
           onChangeFunction={handleChange}
           value={values['uni-campus-attending']}
         />
       )}
     </div>
-
-    <div className="sm-col sm-col-6 md-col-6 o7-r o7-b">
+    <div>
       <Select
         id="referral-source"
         name="referral-source"
