@@ -8,6 +8,7 @@ const Modal = (props) => {
   const {
     children,
     showModal,
+    type,
     handleModal,
     backgroundColor,
     backGroundStyle,
@@ -36,7 +37,9 @@ const Modal = (props) => {
             onClick={handleModal}
             style={!backGroundStyle ? { backgroundColor } : backGroundStyle}
           />
-          <div className={styles.modalBody}>
+          <div
+            className={type === 'drawer' ? styles.modalDrawerBody : styles.modalBody}
+          >
             {withCloseIcon && (
               <i
                 className={styles.closeModalIcon}
@@ -69,6 +72,7 @@ Modal.propTypes = {
     backgroundRepeat: PropTypes.string,
     backgroundAttachment: PropTypes.string,
   }),
+  type: PropTypes.oneOf(['window', 'drawer']),
   hideBodyOverflowY: PropTypes.bool,
   backgroundColor: PropTypes.string,
   withCloseIcon: PropTypes.bool,
@@ -81,6 +85,7 @@ Modal.defaultProps = {
   backGroundStyle: null,
   hideBodyOverflowY: true,
   backgroundColor: 'black',
+  type: 'window',
   withCloseIcon: false,
 };
 
