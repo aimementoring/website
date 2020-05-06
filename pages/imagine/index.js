@@ -13,7 +13,7 @@ import IntercomChat from '../../components/intercom';
 import styles from './style.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
-const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
+const ImagineCarousel = dynamic(() => import('../../components/imagine/imagineCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
@@ -120,7 +120,7 @@ const ImagiNationTV = () => {
       </section>
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
-          <ImaginationTvCarousel />
+          <ImagineCarousel />
         </section>
         <WavyDonateSection />
         <section className={styles.featuredProductWrapper}>
