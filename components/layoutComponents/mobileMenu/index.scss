@@ -2,21 +2,21 @@
 
 .mobile-menu {
 
-  @media screen and (min-width: $md) {
-    display: none;
+  // @media screen and (min-width: $md) {
+  //   display: none;
 
-    &.flex {
-      display: none;
-    }
-  }
+  //   &.flex {
+  //     display: none;
+  //   }
+  // }
 
   .mobile-menu-icon {
     display: block;
     color:$black;
 
-    @media screen and (min-width: $lg) {
-      display: none;
-    }
+    // @media screen and (min-width: $lg) {
+    //   display: none;
+    // }
   }
 }
 

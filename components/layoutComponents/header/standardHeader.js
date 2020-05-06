@@ -8,7 +8,7 @@ import useDonate from '../../../hooks/useDonate';
 
 const Logo = dynamic(() => import('./logo'));
 const MenuItem = dynamic(() => import('./menuItem'));
-const MobileMenu = dynamic(() => import('../mobileMenu'));
+const FullScreenMenu = dynamic(() => import('../fullScreenMenu'));
 
 const StandardHeader = () => {
   // eslint-disable-next-line no-unused-vars
@@ -49,7 +49,7 @@ const StandardHeader = () => {
             </li>
           </ul>
         </nav>
-        <MobileMenu />
+        <FullScreenMenu />
       </div>
     </div>
   );
