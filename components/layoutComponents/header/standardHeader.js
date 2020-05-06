@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Anchor from '../../common/link';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
@@ -7,7 +8,7 @@ import useDonate from '../../../hooks/useDonate';
 
 const Logo = dynamic(() => import('./logo'));
 const MenuItem = dynamic(() => import('./menuItem'));
-const MobileMenu = dynamic(() => import('../mobileMenu'));
+const FullScreenMenu = dynamic(() => import('../fullScreenMenu'));
 
 const StandardHeader = () => {
   // eslint-disable-next-line no-unused-vars
@@ -23,6 +24,11 @@ const StandardHeader = () => {
             {HEADER_MENU_ITEMS.map((item) => (
               <MenuItem key={item.title.replace(/\s/g, '-')} {...item} />
             ))}
+            <li className={styles.listItem}>
+              <Anchor className={styles.navBtn} to="/positions">
+                Work with us
+              </Anchor>
+            </li>
             <li className={styles.listItem}>
               <IntercomChat />
             </li>
@@ -43,7 +49,7 @@ const StandardHeader = () => {
             </li>
           </ul>
         </nav>
-        <MobileMenu />
+        <FullScreenMenu />
       </div>
     </div>
   );
