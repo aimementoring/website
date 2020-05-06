@@ -6,9 +6,9 @@
     "node": "12.x"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "export": "next build && next export",
     "heroku-start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "node scripts/build.js --color always",
