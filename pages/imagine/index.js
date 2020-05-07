@@ -9,7 +9,7 @@ import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
-// import scrollToComponent from '../../utils/scrollToComponent';
+import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './style.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -18,17 +18,18 @@ const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
-const ImagiNationTV = () => {
+const ImagiNationTV = (props) => {
   const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
-  // const scrollToPanel = () => scrollToComponent(scrollToThisRef);
+  const scrollToPanel = () => scrollToComponent(scrollToThisRef);
+  const { scrollHandler } = props;
 
   return (
     <Layout>
       <div className={styles.heroBannerImagiTV}>
         <div className={styles.bannerWrapper}>
-          <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
+          <div className={`${styles.bannerContent} ${styles.bannerItem}`} >
             <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
               Introducing
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
@@ -48,9 +49,10 @@ const ImagiNationTV = () => {
             <Button
               theme={process.env.REACT_APP_THEME}
               className={`${styles.watchBtn}`}
-              url="/"
               target="_blank"
               type="link"
+              scrollHandler={scrollToPanel}
+              onClickFunction={scrollHandler}
             >
               Get Involved
             </Button>
@@ -110,7 +112,7 @@ const ImagiNationTV = () => {
       </section>
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
-          <ImagineCarousel />
+          <ImagineCarousel ref={scrollToThisRef} />
         </section>
 
         <section ref={scrollToThisRef} className={styles.chattyPuppetsSection}>
@@ -131,9 +133,9 @@ const ImagiNationTV = () => {
                   It will be one of the films that captures the essence of
                   isolation and creation in 2020. 
                 </Paragraph>
-                {/* <div className={styles.becomeAPartnerBtn}>
-                  <IntercomChat label="Get in the game" />
-                </div> */}
+                <div className={styles.becomeAPartnerBtn}>
+                  <IntercomChat label="Chat with us" />
+                </div>
               </div>
             </div>
             <div className={styles.puppetChatSmaller}>
