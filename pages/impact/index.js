@@ -19,7 +19,7 @@ const DownloadImage = () => (
 
 const Impact = () => (
   <Layout>
-    <div>
+    <div className={styles.impactPage}>
       <div className={styles.bannerWrap}>
         <MovingWaves />
         <div className={styles.titleWrapper}>
