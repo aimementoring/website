@@ -152,6 +152,8 @@
   justify-content: center;
 }
 .menuBg {
+	backface-visibility: hidden;
+	visibility: hidden;
 	width: 300vw;
 	height: 300vw;
   min-height:200vh;
@@ -162,8 +164,6 @@
 	transition: all .75s ease;
 	flex: none;
 	transform: scale(0) translateZ(0);
-	backface-visibility: hidden;
-	visibility: hidden;
 	overflow: hidden;
 	transform-origin: top right;
 	display: flex;
