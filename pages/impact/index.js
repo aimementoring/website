@@ -6,7 +6,7 @@ import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import MovingWaves from '../../components/movingWaves';
 import IntercomChat from '../../components/intercom';
-import styles from './impact.scss';
+import styles from './impact.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
