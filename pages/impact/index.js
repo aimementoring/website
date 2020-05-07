@@ -143,7 +143,7 @@ const Impact = () => (
               </Button>
             </div>
           </div>
-          <div className={styles.mainGrid}>
+          <div className={styles.impactGrid}>
             <div className={styles.tile}>
               <div>
                 <a
