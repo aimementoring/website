@@ -133,17 +133,6 @@
   }
 }
 
-.sidebarTitleHr {
-  height: 3px;
-  width: 30px;
-  background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
-  display: block;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
 .impactSectionImageContainer {
   flex: 1;
   display: flex;
@@ -324,6 +313,9 @@
   @media screen and (max-width: $sm) {
     margin: 2rem auto;
   }
+}
+.moreInfoTitleContainer {
+  margin-bottom: 1.5em;
 }
 
 .moreInfoContainer {
