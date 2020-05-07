@@ -174,14 +174,14 @@
 .menuContent {
 	text-align: center;
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	opacity: 0;
 	transition: opacity 0.4s ease;
 	overflow-y: auto;
-	flex: none;
 	display: flex;
 	position: absolute;
-  z-index: 3;
+	z-index: 3;
+	justify-content: center;
   a {
     color: rgba(255,255,255,1);
     text-decoration: none;
@@ -201,16 +201,13 @@
 }
 .menuMain {
 	list-style: none;
-	width: 100%;
-	height: 120%;
-	padding: 0 1em;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	max-height: 100vh;
 	align-items: center;
 	overflow: auto;
-  justify-content: center;
+	justify-content: center;
+	flex-wrap:wrap;
 }
 .listItem {
 	width: 100%;
@@ -222,6 +219,11 @@
 	flex-direction: column;
 	align-items: center;
 	flex-wrap: wrap;
+
+	@media screen and (max-width: $sm) {
+		margin: 1em 0em 0em 0em;
+	}
+
 	&:hover {
 		.subMenu {
 			visibility: visible;
@@ -259,7 +261,7 @@
 	font-weight: 100;
 	border: 0;
 	background: none;
-	font-size: 1em;
+	font-size: 2rem;
 	color: #fff;
 	outline: none;
 		
@@ -278,6 +280,10 @@
 		background: #e5e5e5;
 		transition: transform 0.4s ease;
 	}
+
+	@media screen and (max-width: $sm) {
+		font-size:1.5rem;
+	}
 }
 .subMenu {
 	width: 100%;
@@ -295,16 +301,28 @@
 		width: 100%;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		@media screen and (max-width: $sm) {
+			flex-direction: column;
+
+			li {
+				.subLink {
+					&:before {
+					display:none;
+					}
+				}
+			}
+		}
 	}
+
 	li {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		flex-basis: 4em;
 		.subLink {
 			flex-direction: column;
 			display: inline-flex;
-			padding: 1em;
+			// padding: 1em;
 			align-items: center;
 			font-family: "GT Pressura Mono", "Univers Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-size: 0.8rem;
