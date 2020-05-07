@@ -16,7 +16,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Can you help us"
         title="Fund it?"
-        image="thinkers_computer"
+        image="shake_hands@2x"
         color="lightblue"
       >
         <Paragraph>
@@ -33,7 +33,7 @@ const ImagineCarousel = () => {
         <div className={styles.intercomBtnWrap}>
           <IntercomChat label="Let's chat" />
         </div>
-        <Paragraph>
+        <Paragraph className={styles.paraOrCenter}>
           or
         </Paragraph>
         <Button
@@ -49,7 +49,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Write it"
         title="with us"
-        image="youngsters_mobile"
+        image="handwriting@2x"
         color="aquamarine"
       >
         <Paragraph>
@@ -75,7 +75,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Or do you wanna"
         title="Film it?"
-        image="designers_tv"
+        image="filmcamera@2x"
         color="orange"
       >
         <Paragraph>
@@ -104,7 +104,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Can you help us"
         title="Fund it?"
-        image="thinkers_computer"
+        image="shake_hands@2x"
         color="lightblue"
       >
         <Paragraph>
@@ -121,7 +121,7 @@ const ImagineCarousel = () => {
         <div className={styles.intercomBtnWrap}>
           <IntercomChat label="Let's chat" />
         </div>
-        <Paragraph>
+        <Paragraph className={styles.paraOrCenter}>
           or
         </Paragraph>
         <Button
@@ -136,7 +136,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Write it"
         title="with us"
-        image="youngsters_mobile"
+        image="handwriting@2x"
         color="aquamarine"
       >
         <Paragraph>
@@ -162,7 +162,7 @@ const ImagineCarousel = () => {
       <ImaginationTvCard
         day="Or do you wanna"
         title="Film it?"
-        image="designers_tv"
+        image="filmcamera@2x"
         color="orange"
         >
         <Paragraph>
