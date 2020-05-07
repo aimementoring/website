@@ -76,6 +76,12 @@
       }
     }
   }
+  .secondaryBtn, .paraOrCenter {
+    text-align: center;
+  }
+  .paraOrCenter {
+    margin: 0.5em 0;
+  }
   .secondaryBtn .imagineCTABtn {
     background-color: $white;
     border: 1px solid $watermelon;
@@ -83,11 +89,14 @@
     margin: 0 auto;
     display: inline-block;
   }
-}
 
-.episodePanel {
-  // padding: 4em 1.5em 1.5em;
-  opacity: 50%;
+  .episodePanel {
+    opacity: 50%;
+
+    .episodeHeader .headingLockup {
+      max-width: initial;
+    }
+  }
 }
 
 .slick-slide .episodePanel .episodeContentInfo {
