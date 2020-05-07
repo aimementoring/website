@@ -57,21 +57,11 @@ const ImagiNationTV = () => {
           </div>
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
-            <VideoPlayer
-              url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
-              imageUrl={`${ASSETS_URL}/assets/images/illustrations/intv-hosts@2x.jpg`}
-            >
-              <Paragraph className="videoCaption">
-                <a
-                  className={styles.textLinkChannel}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.youtube.com/channel/UCDL9R_msvYDyHF7lx0NEyow?sub_confirmation=1"
-                >
-                ~~~~
-                </a>
-              </Paragraph>
-            </VideoPlayer>
+            <img
+              src={`${ASSETS_URL}/assets/images/illustrations/imagi-splosion.png`}
+              alt="IMAGI-SPLOSION"
+              className={styles.videoCoverArt}
+            />
           </div>
 
         </div>
