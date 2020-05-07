@@ -175,8 +175,14 @@
 
 }
 
-.partneringCTASection {
+.chattyPuppetsSection {
   padding: 2em 0;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
 
   @media screen and (min-width: $md) {
     padding: 4em 1em 2em;
@@ -208,7 +214,7 @@
     @media screen and (min-width: $md) {
       display: flex;
       align-items: center;
-      max-width: initial;
+      max-width: 35em;
     }
 
     .puppetTalking {
@@ -226,6 +232,7 @@
         margin: 4em 2em;
         background-color: $white;
         border-radius: 50%;
+        padding-right: 2em;
       }
 
       @media screen and (min-width: $lg) {
