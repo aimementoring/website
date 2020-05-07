@@ -175,10 +175,6 @@ const ImagiNationTV = () => {
             linkText="Buy a Hoodie"
           />
         </section>
-        <DoubleCurvedLine />
-        <div className={styles.tempIntvPWrapper}>
-          <IntvPartners />
-        </div>
       </div>
     </Layout>
   );
