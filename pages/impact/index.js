@@ -249,7 +249,6 @@ const Impact = () => (
                 <Title type="h3Title" theme={process.env.REACT_APP_THEME}>
                   More info
                 </Title>
-                <hr className={styles.sidebarTitleHr} />
               </div>
               <div className={styles.moreInfoContainer}>
                 <Anchor
