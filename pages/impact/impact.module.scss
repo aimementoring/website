@@ -74,6 +74,7 @@
 
     @media screen and (min-width: $sm) {
       display: flex;
+      padding-top: 2em;
     }
 
     @media screen and (min-width: $md) {
@@ -141,6 +142,9 @@
     align-items: flex-end;
     padding: 0 2rem 1rem;
     justify-content: center;
+    @media screen and (max-width: $md) {
+      align-items: center;
+    }
   }
 
   .impactSectionImageContainer img {
@@ -159,7 +163,7 @@
     text-align: center;
 
     @media screen and (min-width: $sm) and (max-width: $md) {
-      padding: 1rem;
+      padding: 2rem;
     }
 
     @media screen and (min-width: $md) {
