@@ -24,7 +24,7 @@
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
   padding: 35px 0;
   h1 {
-    color: #fff;
+    color: $white;
     text-align: center;
     strong {
       left: initial;
@@ -35,7 +35,7 @@
     height: 62vh;
   }
   // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
+  @media screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
 }
@@ -60,56 +60,104 @@
 .impactFactsContainer {
   background-color: $watermelon;
   margin: 1em;
+
+  @media screen and (max-width: $sm) {
+    padding-top: 2rem;
+  }
 }
 
 .impactSectionRow {
   width: 100%;
   max-width: 60em;
   margin: 0 auto;
-  @media screen and (min-width: 52em){
+
+  @media screen and (min-width: $sm) {
     display: flex;
   }
-  .impactSectionCopy {
-    width: 66.66667%;
+
+  @media screen and (min-width: $md) {
+    &:nth-child(even) .impactSectionColumn .impactSectionCopy {
+      text-align: right;
+    }
+
+    &:nth-child(odd) .impactSectionColumn {
+      align-items: flex-start;
+    }
   }
+
+  &:nth-child(2) .impactSectionColumn {
+    align-items: flex-end;
+  }
+
+  &:nth-child(1) .impactSectionColumn,
+  &:nth-child(3) .impactSectionColumn {
+    order: 2;
+    justify-content: center;
+  
+    .impactSectionImageContainer {
+      align-items: flex-end;
+    }
+  
+    .impactSectionCopy {
+      @media screen and (min-width: $md) {
+        padding: 40px 0;
+      }
+    }
+  }
+
+  .impactSectionCopy {
+    @media screen and (min-width: $lg) {
+      width: 66.66667%;
+    }
+  }
+
   .impactSectionColumn {
-    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 1rem;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $md) {
+      padding: 1rem;
+
+      .impactSectionCopy {
+        padding: 0 0 4rem;
+      }
+    }
+
     p {
-      color: white;
+      color: $white;
     }
   }
 }
 
-.impactSectionRow:nth-child(1) .impactSectionColumn, .impactSectionRow:nth-child(3) .impactSectionColumn {
-  order: 2;
-  align-items: flex-start;
-  @media screen and (max-width: $sm) { 
-    padding: .5rem; 
-  }
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 2rem 1rem;
-  .impactSectionImageContainer {
-    align-items: flex-end;
-  }
-}
-
-.impactSectionRow:nth-child(2) .impactSectionColumn {
-  text-align: right;
+.sidebarTitleHr {
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
+  display: block;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 .impactSectionImageContainer {
-  align-items: flex-start;
-  padding: 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 2rem 1rem;
+  justify-content: center;
 }
 
 .impactSectionImageContainer img {
   max-width: 25em;
   width: 100%;
   object-fit: contain;
-  padding: 1em;
+  border-radius: 2px;
   display: block;
 }
 
@@ -119,9 +167,14 @@
   overflow: visible;
   align-items: center;
   text-align: center;
-  @media screen and (min-width: $sm) and (max-width: $md) { padding: 1rem; }
-  @media screen and (min-width: $md) { padding: 4rem; }
 
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: $md) {
+    padding: 4rem;
+  }
 }
 
 .grid {
@@ -190,6 +243,7 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0.5rem;
+  margin-bottom: 2em;
 
   @supports (display: grid) {
     display: grid;
@@ -208,7 +262,7 @@
 }
 
 .tileCopy {
-  font-size: 0.9em;
+  font-size: 0.75em;
   font-family: $body-font-family;
   margin-top: 0.5em;
 }
@@ -224,6 +278,7 @@
   align-items: center;
   background-size: cover;
   width: 100%;
+
   img {
     opacity: 0.8;
     position: absolute;
@@ -235,17 +290,26 @@
     margin-right: auto;
     margin-left: auto;
   }
+
   &:hover img {
     opacity: 1;
   }
 }
 
 .caseStudiesContainer {
-  flex-wrap: wrap;
-  @media screen and (min-width: $lg) { padding: 4rem; }
-  @media screen and (min-width: $md) and (max-width: $lg) { padding: 4rem; }
-  @media screen and (min-width: $sm) and (max-width: $md) { padding: 1rem; }
-  @media screen and (max-width: $sm) { padding: 2rem; }
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
+
+  @media screen and (min-width: $md) {
+    padding: 4rem;
+  }
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: $sm) {
+    padding: 2rem;
+  }
 }
 
 .caseStudiesContent {
@@ -255,19 +319,17 @@
   justify-content: space-between;
   padding-bottom: 1rem;
 }
-  
 
 .caseStudiesButtonContainer {
-  text-align: right;
-}
-
-.moreInfoTitleContainer {
-  margin-bottom: 1.5em;
+  @media screen and (max-width: $sm) {
+    margin: 2rem auto;
+  }
 }
 
 .moreInfoContainer {
   display: block;
   padding-top: 1rem;
+
   @supports (display: grid) {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -303,6 +365,7 @@
   height: 20px;
   float: right;
   margin: 0 0 0 0.5rem;
+
   @media screen and (min-width: $md) {
     margin: 0 0 0 1rem;
   }
@@ -311,7 +374,6 @@
 .quoteContainer {
   flex: 3;
   grid-area: content;
-  background-color: $orange;
 }
 
 .quoteWrapper {
@@ -321,20 +383,15 @@
   position: relative;
   max-width: 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-color: $orange;
 }
 
 .quoteContent {
-  @media screen and (min-width: $lg) {
+  @media screen and (min-width: $md) {
     padding: 4rem; 
   }
-  @media screen and (min-width: $md) and (max-width: $lg) {
-    padding: 4rem; 
-  }
-  @media screen and (min-width: $sm) and (max-width: $md) {
-    padding: 1rem; 
-  }
-  @media screen and (max-width: $sm) {
+  @media screen and (max-width: $md) {
     padding: 1rem; 
   }
 }
@@ -346,9 +403,9 @@
   }
 }
 
-
 .partnerSection {
   background-color: $lavender-light;
+
   h2 {
     text-align: center;
   }
@@ -356,6 +413,7 @@
   .intercomButtonWrap {
     text-align: center;
     padding-top: 1rem;
+
     button {
       background-color: $watermelon;
       border-radius: 3px;
@@ -379,22 +437,12 @@
   .partnerSectionContent {
     flex-wrap: wrap;
     align-items: center;
-    @media screen and (max-width: $sm) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+
+    @media screen and (max-width: $md) {
+      padding: 4rem 1rem;
     }
-    @media screen and (min-width: $sm) and (max-width: $md) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-    }
-    @media screen and (min-width: $md) and (max-width: $lg) {
-      padding: 4rem;
-    }
-    @media screen and (min-width: $lg) {
+
+    @media screen and (min-width: $md) {
       padding: 4rem;
     }
   }
