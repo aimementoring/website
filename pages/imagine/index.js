@@ -33,7 +33,7 @@ const ImagiNationTV = () => {
               Introducing
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
               <img
-                src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+                src={`${ASSETS_URL}/assets/images/logos/logo_imagine@2x.jpg`}
                 alt="Imagine"
                 className={styles.logoImagiTV}
               />
@@ -106,7 +106,7 @@ const ImagiNationTV = () => {
             <div className={styles.cyclopsSpeechBubble}>
               <div>
                 <Title type="h5Title" className={styles.speechButtonContent}>
-                  Come join us &amp; watch the show!
+                  Let's create together!
                 </Title>
               </div>
               <img
@@ -122,58 +122,28 @@ const ImagiNationTV = () => {
         <section className={styles.inTVEpisodesWrapper}>
           <ImagineCarousel />
         </section>
-        <WavyDonateSection />
-        <section className={styles.featuredProductWrapper}>
-          <FeaturedProduct
-            imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
-            pretitle="Check it out …"
-            title="Imagi-Nation Hoodie"
-            text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
-            linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
-            linkText="Buy a Hoodie"
-          />
-        </section>
-        <DoubleCurvedLine />
-        <section ref={scrollToThisRef} className={styles.partneringCTASection}>
-          <Title type="h3Title" className={styles.partneringHeading}>{'PARTNERING WITH IN{TV}'}</Title>
+
+        <section ref={scrollToThisRef} className={styles.chattyPuppetsSection}>
           <div className={styles.puppetsChatWrapper}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
             <div className={styles.puppetChat}>
               <div className={styles.puppetWrap}>
                 <img
-                  src={`${ASSETS_URL}/assets/images/illustrations/puppet-hope@2x.png`}
-                  alt="Hope the Puppet"
+                  src={`${ASSETS_URL}/assets/images/illustrations/robo_red@2x.png`}
+                  alt="Robo Red"
                   className={styles.puppetTalking}
                 />
               </div>
               <div className={styles.puppetWords}>
-                <Title type="h4Title">Hello, I’m hope, let’s make magic together!</Title>
+                <Title type="h4Title">Hey hey hey, are you up for it? </Title>
                 <Paragraph>
-                  We’re looking for partners of all kinds, whether
-                  you’re a
-                  {' '}
-                  <strong>company</strong>
-,
-                  a
-                  {' '}
-                  <strong>school</strong>
-,
-                  {' '}
-                  <strong>uni</strong>
-                  {' '}
-or a
-                  future
-                  {' '}
-                  <strong>guest</strong>
-                  {' '}
-- we’d love to talk. This show is
-                  not about entertainment to pass the time, your funds and the work
-                  we do together will be an investment in providing a stage to
-                  elevate knowledge.
+                  This is an experiment that requires ultimate imagination.
+                  It will be one of the films that captures the essence of
+                  isolation and creation in 2020. 
                 </Paragraph>
-                <div className={styles.becomeAPartnerBtn}>
+                {/* <div className={styles.becomeAPartnerBtn}>
                   <IntercomChat label="Get in the game" />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className={styles.puppetChatSmaller}>
@@ -182,22 +152,30 @@ or a
                   type="text"
                   className={`${styles.typeformAction} ${styles.puppetTitle}`}
                 >
-                  Already a partner?
-                  <br />
-                  Talk soon :)
+                  Your contribution would be truly spectacular
                 </Button>
 
               </div>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
-                alt="Robo Cat"
+                src={`${ASSETS_URL}/assets/images/illustrations/queen_lizzy@2x.png`}
+                alt="Queen Lizzy"
                 className={styles.smlPuppetTalking}
               />
             </div>
           </div>
         </section>
+        <WavyDonateSection />
+        <section className={styles.featuredProductWrapper}>
+          <FeaturedProduct
+            imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie_imagine@2x.jpg`}
+            pretitle="Check it out …"
+            title="Imagine Hoodie"
+            text={'Support the making of this film, checkout the Imagine Hoodie for sale over at our apparel shop. Every sale from this hoodie will help bring people together from all walks of life to co-create something wonderful!'}
+            linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
+            linkText="Buy a Hoodie"
+          />
+        </section>
         <DoubleCurvedLine />
-
         <div className={styles.tempIntvPWrapper}>
           <IntvPartners />
         </div>
