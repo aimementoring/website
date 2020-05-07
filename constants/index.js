@@ -126,6 +126,33 @@ export const CTA_AU_HOMEPAGE = [
   },
 ];
 
+export const CTA_GRID_CAMPAIGNS = [
+  {
+    title: 'IMAGINE FILM',
+    link: '/imagine',
+    button: 'See what it\'s about',
+    description: 'We\'re creating a feature film, with you!',
+  },
+  {
+    title: 'This Hoodie Pays Rent',
+    link: 'https://shop.aimementoring.com',
+    button: 'Grab some gear',
+    description: 'The home of the hoodie that changed the world',
+  },
+  {
+    title: 'Partner with us',
+    link: '/imagi-nation-tv',
+    button: 'Let\'s change the world',
+    description: 'Want to change the world? It\'s time to walk the talk!',
+  },
+  {
+    title: 'Work with us',
+    link: '/positions',
+    button: 'Make change!',
+    description: 'Get involved with us!',
+  },
+];
+
 export const CTA_US_HOMEPAGE = [
   {
     title: 'College Students',
