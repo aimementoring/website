@@ -140,10 +140,10 @@ export const CTA_GRID_CAMPAIGNS = [
     description: 'The home of the hoodie that changed the world',
   },
   {
-    title: 'Partner with us',
+    title: 'IN{TV}',
     link: '/imagi-nation-tv',
-    button: 'Let\'s change the world',
-    description: 'Want to change the world? It\'s time to walk the talk!',
+    button: 'Watch it',
+    description: 'Putting a mentor in the home every day!',
   },
   {
     title: 'Work with us',
