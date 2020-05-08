@@ -56,7 +56,6 @@ const ImagiNationTV = (props) => {
             <div className="triBtnSet">
               <Button
                 theme={process.env.REACT_APP_THEME}
-                // onClickFunction={scrollHandler}
                 className={`${styles.triBtn} ${styles.watchBtn}`}
                 url="https://docs.google.com/document/d/1MyE1Xv8OSsFnJLEL2WNhLL0DbsKJfMtmcrrUUa7BOh8/edit"
                 target="_blank"
@@ -88,7 +87,10 @@ const ImagiNationTV = (props) => {
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <div className={styles.bannerImageRotate}>
-              &nbsp;
+              <img
+                src={`${ASSETS_URL}/assets/images/banner/partnering.webp`}
+                alt="Write it, Film it, Fund it"
+              />
             </div>
           </div>
 
