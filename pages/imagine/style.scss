@@ -91,9 +91,12 @@
           padding: 1.1em 5em;
           width: 100%;
           @media screen and (min-width: $md) {
-            width: initial;
+            width: 20em;
           }
 
+          &:hover {
+            background-color: $watermelon;
+          }
         }
         .watchBtn {
           background-color: $orange;
