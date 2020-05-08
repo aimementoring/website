@@ -178,6 +178,12 @@
 .partneringCTASection {
   padding: 2em 0;
 
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  
   @media screen and (min-width: $md) {
     padding: 4em 1em 2em;
   }
