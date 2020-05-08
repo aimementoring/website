@@ -60,6 +60,11 @@
       z-index: 1;
       justify-content: flex-end;
       align-self: flex-start;
+
+
+      @media screen and (min-width: $lg) {
+        width: 30%;
+      }
   
       p {
         color: $black;
@@ -120,11 +125,12 @@
   
       @media screen and (min-width: $sm) {
         margin-top: 0;
-        min-width: 40em;
+        min-width: 20em;
       }
   
       @media screen and (min-width: $md) {
         flex-grow: 2;
+        min-width: auto;
       }
 
       .bannerImageRotate {
