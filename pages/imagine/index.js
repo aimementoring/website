@@ -79,10 +79,11 @@ const ImagiNationTV = (props) => {
                 onClickFunction={toggleDonateModal}
 
               />
-              <div className={styles.triBtn}>
-                <IntercomChat label="Chat with us" />
-              </div>
             </div>
+            <Paragraph>
+              Or if you have any questions,&nbsp;
+              <IntercomChat label="chat with us" />
+            </Paragraph>
           </div>
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
