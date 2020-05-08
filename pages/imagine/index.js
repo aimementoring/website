@@ -10,6 +10,8 @@ import WavyDonateSection from '../../components/wavyDonateSection';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import scrollToComponent from '../../utils/scrollToComponent';
+import useDonate from '../../hooks/useDonate';
+
 import styles from './style.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -23,6 +25,7 @@ const ImagiNationTV = (props) => {
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
   const scrollToPanel = () => scrollToComponent(scrollToThisRef);
+  const [modalVisible, toggleDonateModal] = useDonate();
 
   return (
     <Layout>
@@ -65,7 +68,7 @@ const ImagiNationTV = (props) => {
                 theme={process.env.REACT_APP_THEME}
                 // onClickFunction={scrollHandler}
                 className={`${styles.triBtn} ${styles.watchBtn}`}
-                url="https://www.youtube.com/user/aimementoring/live"
+                url="https://docs.google.com/document/d/1MyE1Xv8OSsFnJLEL2WNhLL0DbsKJfMtmcrrUUa7BOh8/edit"
                 target="_blank"
                 type="link"
               >
@@ -76,14 +79,14 @@ const ImagiNationTV = (props) => {
                 text="Film"
                 theme={process.env.REACT_APP_THEME}
                 className={`${styles.triBtn} ${styles.imagiDonate}`}
-                // onClickFunction={toggleDonateModal}
               />
               <Button
                 type="link"
                 text="Fund"
                 className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
                 theme={process.env.REACT_APP_THEME}
-                url="/imagi-nation-tv"
+                onClickFunction={toggleDonateModal}
+
               />
             </div>
           </div>
