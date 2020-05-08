@@ -23,11 +23,10 @@ const ImagiNationTV = (props) => {
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
   const scrollToPanel = () => scrollToComponent(scrollToThisRef);
-  const { scrollHandler } = props;
 
   return (
     <Layout>
-      <div className={styles.heroBannerImagiTV}>
+      <div className={styles.heroBannerImagine}>
         <div className={styles.bannerWrapper}>
           <div className={`${styles.bannerContent} ${styles.bannerItem}`} >
             <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
@@ -44,18 +43,49 @@ const ImagiNationTV = (props) => {
               a live YouTube TV show, an open Google Doc and a hoodie?
               <br /><br />
               <strong><mark>&nbsp;A feature film, of course.&nbsp;</mark></strong>
+              <br /><br />
+              {`Live on IMAGI-NATION{TV} from May 11, we will share a Google Doc with the
+              world with the title ‘IMAGINE’, and those in and outside of the AIME orbit
+              will be able to come together and write a feature film script. Guests on IN{TV}
+              over the four weeks will have the chance to engage in the writing experience.
+              So will kids AIME mentors across 6 countries.`}
             </Paragraph>
 
-            <Button
+            {/* <Button
               theme={process.env.REACT_APP_THEME}
               className={`${styles.watchBtn}`}
               target="_blank"
               type="link"
-              scrollHandler={scrollToPanel}
-              onClickFunction={scrollHandler}
+              onClickFunction={scrollToPanel}
             >
               Get Involved
-            </Button>
+            </Button> */}
+            <div className="triBtnSet">
+              <Button
+                theme={process.env.REACT_APP_THEME}
+                // onClickFunction={scrollHandler}
+                className={`${styles.triBtn} ${styles.watchBtn}`}
+                url="https://www.youtube.com/user/aimementoring/live"
+                target="_blank"
+                type="link"
+              >
+              Write
+              </Button>
+              <Button
+                type="link"
+                text="Film"
+                theme={process.env.REACT_APP_THEME}
+                className={`${styles.triBtn} ${styles.imagiDonate}`}
+                // onClickFunction={toggleDonateModal}
+              />
+              <Button
+                type="link"
+                text="Fund"
+                className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
+                theme={process.env.REACT_APP_THEME}
+                url="/imagi-nation-tv"
+              />
+            </div>
           </div>
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
@@ -69,7 +99,7 @@ const ImagiNationTV = (props) => {
         </div>
       </div>
       
-      <section className={styles.aboutImagineSection}>
+      {/* <section className={styles.aboutImagineSection}>
         <div className={styles.aboutInTVWrapper}>
           <div className={styles.aboutParagraphColumn}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
@@ -109,7 +139,7 @@ const ImagiNationTV = (props) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <div className={styles.inTVContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
           <ImagineCarousel ref={scrollToThisRef} />
@@ -157,7 +187,8 @@ const ImagiNationTV = (props) => {
           </div>
         </section>
         <WavyDonateSection />
-        <section className={styles.featuredProductWrapper}>
+        <br /> <br />
+        {/* <section className={styles.featuredProductWrapper}>
           <FeaturedProduct
             imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie_imagine@2x.jpg`}
             pretitle="Check it out …"
@@ -166,7 +197,7 @@ const ImagiNationTV = (props) => {
             linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
             linkText="Buy a Hoodie"
           />
-        </section>
+        </section> */}
       </div>
     </Layout>
   );
