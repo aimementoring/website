@@ -135,8 +135,8 @@ export const CTA_GRID_CAMPAIGNS = [
   },
   {
     title: 'This Hoodie Pays Rent',
-    link: 'https://shop.aimementoring.com',
-    button: 'Grab some gear',
+    link: 'https://shop.aimementoring.com/pages/this-hoodie-pays-rent',
+    button: 'Grab it',
     description: 'The home of the hoodie that changed the world',
   },
   {
