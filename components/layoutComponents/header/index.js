@@ -48,21 +48,16 @@ const Header = ({ location }) => {
   };
 
   const isClient = isClientSide();
-  useEffect(() => {
+  const scrolling = () => {
     if (isClient) window.addEventListener('scroll', handleScroll);
     const cleanup = () => {
       if (isClient) window.removeEventListener('scroll', handleScroll);
     };
     return cleanup;
-  }, []);
+  };
 
-  useEffect(() => {
-    if (isClient) window.addEventListener('scroll', handleScroll);
-    const cleanup = () => {
-      if (isClient) window.removeEventListener('scroll', handleScroll);
-    };
-    return cleanup;
-  }, [isClient]);
+  useEffect(() => scrolling(), []);
+  useEffect(() => scrolling(), [isClient]);
 
   useEffect(() => {
     setHeaderComponent(getHeaderComponent(location.pathname));
