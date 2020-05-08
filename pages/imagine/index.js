@@ -18,12 +18,11 @@ const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
-const ImagiNationTV = (props) => {
+const ImagiNationTV = () => {
   const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
   const scrollToPanel = () => scrollToComponent(scrollToThisRef);
-  const { scrollHandler } = props;
 
   return (
     <Layout>
@@ -51,8 +50,7 @@ const ImagiNationTV = (props) => {
               className={`${styles.watchBtn}`}
               target="_blank"
               type="link"
-              scrollHandler={scrollToPanel}
-              onClickFunction={scrollHandler}
+              onClickFunction={scrollToPanel}
             >
               Get Involved
             </Button>
