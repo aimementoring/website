@@ -4,7 +4,7 @@ import React, {
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import Layout from '../../hocs/basicLayout';
-import { CTA_AU_HOMEPAGE } from '../../constants';
+import { CTA_GRID_CAMPAIGNS } from '../../constants';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import useDonate from '../../hooks/useDonate';
 import scrollToComponent from '../../utils/scrollToComponent';
@@ -42,7 +42,7 @@ const Home = () => {
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
+      <CtaGrid elements={CTA_GRID_CAMPAIGNS} partnerRef={partnerRef} />
       <AmbassadorsCarousel />
       <FooterBanner />
     </Layout>
