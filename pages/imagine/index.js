@@ -14,6 +14,7 @@ const ImagiNationTV = () => {
   // const [showModal, setModal] = useState(false);
   // const toggleModal = () => setModal(!showModal);
 
+  // eslint-disable-next-line no-unused-vars
   const [modalVisible, toggleDonateModal] = useDonate();
 
   return (
@@ -78,10 +79,11 @@ const ImagiNationTV = () => {
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <div className={styles.bannerImageRotate}>
-              <img
-                src={`${ASSETS_URL}/assets/images/banner/partnering.webp`}
-                alt="Write it, Film it, Fund it"
-              />
+              <picture alt="Write it, Film it, Fund it">
+                <source srcSet={`${ASSETS_URL}/assets/images/banner/partnering.webp`} type="image/webp" />
+                <source srcSet={`${ASSETS_URL}/assets/images/banner/partnering-min.gif`} type="image/gif" />
+                <img src={`${ASSETS_URL}/assets/images/banner/partnering-min.gif`} alt="Write it, Film it, Fund it" />
+              </picture>
             </div>
           </div>
 
