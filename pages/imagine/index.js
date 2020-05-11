@@ -79,7 +79,7 @@ const ImagiNationTV = () => {
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <div className={styles.bannerImageRotate}>
               <img
-                src={`${ASSETS_URL}/assets/images/banner/partnering.webp`}
+                src={`${ASSETS_URL}/assets/images/banner/partnering-min.gif`}
                 alt="Write it, Film it, Fund it"
               />
             </div>
