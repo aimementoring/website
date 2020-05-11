@@ -57,6 +57,16 @@ const ImagiNationTV = () => {
             >
               Watch live
             </Button>
+
+<Button
+  theme={process.env.REACT_APP_THEME}
+  className={`${styles.watchBtn} ${styles.imagineFilmBtn}`}
+  url="/imagine"
+  target="_blank"
+  type="link"
+>
+  IMAGINE the film
+</Button>
           </div>
 
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
