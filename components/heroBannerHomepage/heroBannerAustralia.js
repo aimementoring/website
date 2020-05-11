@@ -48,7 +48,6 @@ const HeroBannerAustralia = ({ scrollHandler }) => {
               url="/imagi-nation-tv"
               theme={process.env.REACT_APP_THEME}
               className={`${styles.triBtn} ${styles.imagiDonate}`}
-              // onClickFunction={toggleDonateModal}
             />
             <Button
               type="link"
