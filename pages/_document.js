@@ -2,6 +2,12 @@ import React from 'react';
 import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
+import {
+  SheetsRegistry,
+  JssProvider,
+  ThemeProvider,
+} from 'react-jss';
+import theme from '../styles/theme';
 
 const bodyStyles = {
   margin: 0,
@@ -13,6 +19,18 @@ const bodyStyles = {
 };
 
 export default class CustomDocument extends Document {
+  static getInitialProps(ctx) {
+    const registry = new SheetsRegistry();
+    const page = ctx.renderPage((App) => (props) => (
+      <JssProvider registry={registry}>
+        <ThemeProvider theme={theme}>
+          <App {...props} />
+        </ThemeProvider>
+      </JssProvider>
+    ));
+    return { ...page, registry };
+  }
+
   render() {
     return (
       <Html lang="en" dir="ltr">
@@ -35,6 +53,9 @@ export default class CustomDocument extends Document {
           <link rel="preconnect" href={process.env.REACT_APP_ASSETS_URL} />
           <meta name="msapplication-TileColor" content="#9B00FF" />
           <meta name="theme-color" content="#ffffff" />
+          <style id="server-side-styles">
+            {this.props.registry.toString()}
+          </style>
         </Head>
         <body style={bodyStyles}>
           <Main />

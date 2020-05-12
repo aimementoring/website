@@ -3,9 +3,11 @@ import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import App from 'next/app';
 import TagManager from 'react-gtm-module';
+import { ThemeProvider } from 'react-jss';
 import MainAppComponent from '../components/mainAppComponent';
 import initStore from '../store';
 import isClientSide from '../utils/isClientSide';
+import theme from '../styles/theme';
 
 // @TODO: Remove these imports when they fix this issue: https://github.com/zeit/next.js/issues/12079
 // Also reported here https://github.com/zeit/next.js/issues/10059
@@ -20,8 +22,14 @@ const tagManagerArgs = {
 
 class MyApp extends App {
   componentDidMount() {
+    const style = document.getElementById('server-side-styles');
+
     TagManager.initialize(tagManagerArgs);
     this.unregisterServiceWorker();
+
+    if (style) {
+      style.parentNode.removeChild(style);
+    }
   }
 
   componentDidUpdate() {
@@ -54,8 +62,10 @@ class MyApp extends App {
     } = this.props;
     return (
       <Provider store={store}>
-        <MainAppComponent />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <MainAppComponent />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Provider>
     );
   }
