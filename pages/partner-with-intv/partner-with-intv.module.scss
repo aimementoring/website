@@ -283,3 +283,175 @@
     }
   }
 }
+
+.panelTwoCol {
+  border: 1px solid red;
+  display: flex;
+  max-width: $lg;
+}
+
+
+.sectionAbout {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  max-width: 90em;
+  margin: 0 auto;
+
+  @media screen and (min-width: $md) { 
+    padding-top: 3em;
+  }
+
+  @media screen and (min-width: $md) { 
+    padding-top: 3em;
+  }
+
+  .imageBlock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 24em;
+  }
+
+  .column {
+    flex: 1;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-direction: column;
+    
+    @media screen and (min-width: $md) { 
+      padding: 0 2rem 1rem;
+    }
+
+    &:first-child {
+      padding: 1em;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $md) { 
+      padding: 1rem;
+    }
+
+    .sectionHeading {
+      margin: 1.5em 0 0.8em;
+
+      strong {
+        top: 0;
+        left: -0.2em;
+      } 
+    }
+  }
+
+  .copy {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    @media screen and (min-width: 47em) { 
+      padding:0 3em 3em;
+    }
+
+    @media screen and (min-width: $md) { 
+      padding:0 0 4rem;
+    }
+
+    @media screen and (min-width: $lg) {
+      width: 66.66667%;
+    }
+
+    .btnWrap {
+      a {
+        margin-bottom: 1em;
+      }
+    }
+
+    ul li {
+      font-size: 0.875rem;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+      font-weight: 100;
+    }
+  }
+
+  @media screen and (min-width: $md) {
+    display: flex;
+
+    &:nth-child(1) {
+      .column {
+        justify-content: flex-start;
+      }
+
+      .copy {
+        padding: 2em 0;
+  
+        h3 {
+          position: relative;
+          left: 0%;
+        }
+      }
+    }
+  
+    &:nth-child(n+2) {
+      margin-top: -7rem;
+    }
+  
+    &:nth-child(odd) {
+      .column {
+        align-items: flex-start;
+        justify-content: center;
+  
+        &:nth-child(1) {
+          order: 2;
+        }
+      }
+    }
+  
+    &:nth-child(even) {
+      .column {
+        align-items: flex-end;
+        padding-right: 1em;
+
+        .copy {
+          text-align: right;
+  
+          .positionsButton {
+            float: right;
+          }
+        }
+
+        img {
+          padding-bottom: 4em;
+          max-width: 20em;
+        }
+      }
+    }
+  }
+
+  // @media screen and (min-width: $lg) { 
+  //   &:nth-child(n+2) {
+  //     margin-top: -10rem;
+  //   }
+  // }
+
+
+  .fullWidthPanel {
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      strong {
+        left: initial;
+      }
+    }
+
+    .copy {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 40em;
+    }
+  }
+
+  &:last-child {
+    margin: 0 auto;
+  }
+}
