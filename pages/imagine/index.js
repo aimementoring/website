@@ -4,32 +4,28 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import VideoPlayer from '../../components/videoPlayer';
 import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import scrollToComponent from '../../utils/scrollToComponent';
-import styles from './style.scss';
+import styles from './imagine.module.scss';
 
-const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const ImagineCarousel = dynamic(() => import('../../components/imagine/imagineCarousel'));
-const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
-const ImagiNationTV = (props) => {
+const ImagiNationTV = () => {
   const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
   const scrollToPanel = () => scrollToComponent(scrollToThisRef);
-  const { scrollHandler } = props;
 
   return (
     <Layout>
       <div className={styles.heroBannerImagiTV}>
         <div className={styles.bannerWrapper}>
-          <div className={`${styles.bannerContent} ${styles.bannerItem}`} >
+          <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
             <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
               Introducing
               <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
@@ -42,22 +38,20 @@ const ImagiNationTV = (props) => {
             <Paragraph>
               What happens when you combine a pandemic,
               a live YouTube TV show, an open Google Doc and a hoodie?
-              <br /><br />
+              <br />
+              <br />
               <strong><mark>&nbsp;A feature film, of course.&nbsp;</mark></strong>
             </Paragraph>
-
             <Button
               theme={process.env.REACT_APP_THEME}
               className={`${styles.watchBtn}`}
               target="_blank"
               type="link"
-              scrollHandler={scrollToPanel}
-              onClickFunction={scrollHandler}
+              onClickFunction={scrollToPanel}
             >
               Get Involved
             </Button>
           </div>
-
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/imagi-splosion.png`}
@@ -65,10 +59,8 @@ const ImagiNationTV = (props) => {
               className={styles.videoCoverArt}
             />
           </div>
-
         </div>
       </div>
-      
       <section className={styles.aboutImagineSection}>
         <div className={styles.aboutInTVWrapper}>
           <div className={styles.aboutParagraphColumn}>
@@ -98,7 +90,7 @@ const ImagiNationTV = (props) => {
             <div className={styles.cyclopsSpeechBubble}>
               <div>
                 <Title type="h5Title" className={styles.speechButtonContent}>
-                  Let's create together!
+                  Let&apos;s create together!
                 </Title>
               </div>
               <img
@@ -114,7 +106,6 @@ const ImagiNationTV = (props) => {
         <section className={styles.inTVEpisodesWrapper}>
           <ImagineCarousel ref={scrollToThisRef} />
         </section>
-
         <section ref={scrollToThisRef} className={styles.chattyPuppetsSection}>
           <div className={styles.puppetsChatWrapper}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
@@ -131,7 +122,7 @@ const ImagiNationTV = (props) => {
                 <Paragraph>
                   This is an experiment that requires ultimate imagination.
                   It will be one of the films that captures the essence of
-                  isolation and creation in 2020. 
+                  isolation and creation in 2020.
                 </Paragraph>
                 <div className={styles.becomeAPartnerBtn}>
                   <IntercomChat label="Chat with us" />
@@ -146,7 +137,6 @@ const ImagiNationTV = (props) => {
                 >
                   Your contribution would be truly spectacular
                 </Button>
-
               </div>
               <img
                 src={`${ASSETS_URL}/assets/images/illustrations/queen_lizzy@2x.png`}
@@ -162,7 +152,11 @@ const ImagiNationTV = (props) => {
             imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie_imagine@2x.jpg`}
             pretitle="Check it out …"
             title="Imagine Hoodie"
-            text={'Support the making of this film, checkout the Imagine Hoodie for sale over at our apparel shop. Every sale from this hoodie will help bring people together from all walks of life to co-create something wonderful!'}
+            text={`
+              Support the making of this film, checkout the Imagine Hoodie for sale over at our apparel shop.
+              Every sale from this hoodie will help bring people together from all walks of life to
+              co-create something wonderful!
+            `}
             linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
             linkText="Buy a Hoodie"
           />
