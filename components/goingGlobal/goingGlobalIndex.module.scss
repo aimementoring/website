@@ -701,7 +701,7 @@
   }
 }
 
-:global {
+:global() {
   .intl-tel-input {
     .selected-dial-code {
       text-align: left;
