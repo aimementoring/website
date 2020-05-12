@@ -75,7 +75,7 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
       <nav id="mobileHeader" className={mobileHeaderClasses}>
         <div
           className={styles.closeIconContainer}
-          style={{ flexDirection: 'column', alignItems: 'flex-start' }}
+          style={{ flexDirection: 'column', alignItems: 'flex-end' }}
         >
           <div className="flex flex-column items-start" />
           <i
