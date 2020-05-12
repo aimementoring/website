@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Anchor from '../../common/link';
 import useDonate from '../../../hooks/useDonate';
 import IntercomChat from '../../intercom';
-import styles from './mobileMenu.module.scss';
+import './mobileMenu.module.scss';
 
 const LinksComponent = ({
   links, handleLinkClicked, active,
@@ -18,11 +17,9 @@ const LinksComponent = ({
   };
 
   const renderLink = (link) => {
-    const navLinkClassNames = classNames(styles.menuNavLink,
-      link.class, (active === link.title ? styles.active : ''));
-    if (link.title === 'Get in touch') {
+    if (!link.title && link.url === '') {
       return (
-        <IntercomChat classNames={navLinkClassNames} />
+        <IntercomChat classNames={`text-decoration-none menuNavLink ${link.class || 'c-black'}${active === link.title ? 'active' : ''}`} />
       );
     }
     if (link.url === 'donate') {
@@ -31,7 +28,8 @@ const LinksComponent = ({
           onClick={showDonate(link)}
           onKeyPress={showDonate(link)}
           role="presentation"
-          className={navLinkClassNames}
+          className={`text-decoration-none menuNavLink ${link.class || 'c-black'} 
+            ${active === link.title ? 'active' : ''}`}
         >
           {link.title}
         </div>
@@ -39,7 +37,8 @@ const LinksComponent = ({
     }
     return (
       <Anchor
-        className={navLinkClassNames}
+        className={`text-decoration-none menuNavLink ${link.class || 'c-black'} 
+            ${active === link.title ? 'active' : ''}`}
         onClick={handleLinkClicked(link.title)}
         to={link.url}
         target={link.target || null}
@@ -50,10 +49,10 @@ const LinksComponent = ({
   };
 
   return (
-    <ul className={styles.mobileMenuList}>
+    <ul className="overflow-scroll list-reset pl3 pb3 pt2 flex flex-column items-start flex-auto">
       <div>
         {links.map((link) => (
-          <li key={link.title} className={styles.mobileMenuListItem}>
+          <li key={link.title} className="py2">
             {renderLink(link)}
           </li>
         ))}
