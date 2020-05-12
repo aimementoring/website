@@ -31,7 +31,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => {
 .
           </Paragraph>
 
-          <div className="triBtnSet">
+          <div className={styles.triBtnSet}>
             <Button
               theme={process.env.REACT_APP_THEME}
               onClickFunction={scrollHandler}
@@ -40,7 +40,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => {
               target="_blank"
               type="link"
             >
-            Watch live
+              Watch live
             </Button>
             <Button
               type="link"
