@@ -51,8 +51,8 @@ const Header = ({ location }) => {
     return cleanup;
   };
 
-  useEffect(() => scrolling, []);
-  useEffect(() => scrolling, [isClient]);
+  useEffect(() => scrolling(), []);
+  useEffect(() => scrolling(), [isClient]);
 
   useEffect(() => {
     setHeaderComponent(getHeaderComponent(location.pathname));
