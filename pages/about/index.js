@@ -144,6 +144,7 @@ const About = () => (
             </Paragraph>
           </div>
           <img
+            className={styles.defaultImage}
             alt="AIME's 21 Values"
             src={`${ASSETS_URL}/assets/images/illustrations/21Values%402x+(1).jpg`}
           />
