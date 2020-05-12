@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { withRouter } from 'next/router';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
-import styles from './mobileMenu.module.scss';
+import './mobileMenu.module.scss';
 
 const LinksComponent = dynamic(() => import('./linksComponent'));
 
@@ -12,9 +11,9 @@ const MENU_LINKS = {
     { url: '/going-global#intro', title: 'Intro' },
     { url: '/going-global#casestudies', title: 'Case Studies' },
     { url: '/going-global#results', title: 'Results' },
-    { url: '/going-global#philosophies', title: 'Philosophies' },
+    { url: '/going-global#philosophies', title: 'Philosohiies' },
     { url: '/going-global#resources', title: 'Resources' },
-    { url: '/going-global#enquire', title: 'Enquire', class: styles.purpleText },
+    { url: '/going-global#enquire', title: 'Enquire', class: 'c-purple' },
   ],
   default: [
     { url: '/', title: 'Home' },
@@ -25,11 +24,11 @@ const MENU_LINKS = {
     { url: '/positions', title: 'Work with us' },
     { url: 'donate', title: 'Donate' },
     // { url: 'https://shop.aimementoring.com/', title: 'Shop' },
-    { url: '', title: 'Get in touch' }, // Intercom link
+    { url: '', title: null },
   ],
 };
 
-const MobileMenu = ({ type, logoIsWhite, router }) => {
+const MobileMenu = ({ type, logoIsWhite }) => {
   const [showNavMenu, setShowNavMenu] = useState(false);
   const [activeMenuOption, setActiveMenuOption] = useState(() => (
     type === 'going-global'
@@ -37,34 +36,29 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
       : 'Home'
   ));
 
-  useEffect(() => {
-    if (type && router.asPath) {
-      const activeMenuItem = MENU_LINKS[type].find((element) => element.url === router.asPath);
-      if (activeMenuItem) setActiveMenuOption(activeMenuItem.title);
-    }
-  }, []);
-
   const handleLinkClicked = (linkClicked) => () => {
     setShowNavMenu(false);
     setActiveMenuOption(linkClicked);
   };
 
-  const mobileHeaderClasses = classNames(
-    styles.mobileHeader,
-    showNavMenu ? styles.active : '',
-  );
+  const mobileHeaderClasses = classNames({
+    'mobile-header': true,
+    active: showNavMenu,
+  });
 
-  const customColorClasses = [
-    logoIsWhite ? styles.whiteText : styles.blackText,
-    styles.materialIcons,
-  ];
+  const customColorClass = {
+    'c-white': logoIsWhite,
+    'c-black': !logoIsWhite,
+    'material-icons': true,
+    cursor: true,
+  };
 
   return (
-    <div className={styles.mobileMenuContainer}>
-      <div>
+    <>
+      <div className="sm-col-right ml-auto flex mobile-menu">
         <i
           id="mobileMenu"
-          className={classNames(styles.mobileMenuIcon, ...customColorClasses)}
+          className={classNames('mobile-menu-icon', customColorClass)}
           onClick={() => setShowNavMenu(true)}
           onKeyPress={() => setShowNavMenu(true)}
           role="presentation"
@@ -74,13 +68,13 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
       </div>
       <nav id="mobileHeader" className={mobileHeaderClasses}>
         <div
-          className={styles.closeIconContainer}
+          className="flex justify-between items-center pt2 px3 pb0 sm-col-12"
           style={{ flexDirection: 'column', alignItems: 'flex-start' }}
         >
           <div className="flex flex-column items-start" />
           <i
             id="mobileMenuClose"
-            className={classNames(styles.mobileMenuClose, styles.closeIcon, ...customColorClasses)}
+            className={classNames('mobileMenuClose icon-close', customColorClass)}
             onClick={() => setShowNavMenu(false)}
             onKeyPress={() => setShowNavMenu(false)}
             role="presentation"
@@ -94,18 +88,13 @@ const MobileMenu = ({ type, logoIsWhite, router }) => {
           active={activeMenuOption}
         />
       </nav>
-    </div>
+    </>
   );
 };
 
 MobileMenu.propTypes = {
   type: PropTypes.string,
   logoIsWhite: PropTypes.bool,
-  router: PropTypes.shape({
-    pathname: PropTypes.string,
-    asPath: PropTypes.string,
-    query: PropTypes.shape({}),
-  }).isRequired,
 };
 
 MobileMenu.defaultProps = {
@@ -113,4 +102,4 @@ MobileMenu.defaultProps = {
   logoIsWhite: true,
 };
 
-export default withRouter(MobileMenu);
+export default MobileMenu;
