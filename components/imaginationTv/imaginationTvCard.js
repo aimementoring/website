@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
-import styles from './imaginationTvCard.module.scss';
+import styles from './imaginationTvCarousel.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
