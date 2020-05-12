@@ -69,7 +69,7 @@ const MobileMenu = ({ type, logoIsWhite }) => {
       <nav id="mobileHeader" className={mobileHeaderClasses}>
         <div
           className="flex justify-between items-center pt2 px3 pb0 sm-col-12"
-          style={{ flexDirection: 'column', alignItems: 'flex-start' }}
+          style={{ flexDirection: 'column', alignItems: 'flex-end' }}
         >
           <div className="flex flex-column items-start" />
           <i
