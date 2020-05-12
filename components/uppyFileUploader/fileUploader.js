@@ -7,9 +7,6 @@ import DashboardModal from '@uppy/react/lib/DashboardModal';
 import Dashboard from '@uppy/react/lib/Dashboard';
 import Button from 'aime-blueprint/lib/components/button';
 import { checkValidations } from 'aime-blueprint/lib/utils/validation';
-import '@uppy/core/dist/style.css';
-import '@uppy/dashboard/dist/style.css';
-
 
 import styles from './fileUploader.module.scss';
 
