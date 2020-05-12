@@ -54,46 +54,104 @@ const PartnerWithIntv = () => {
       </div>
       {/* <AboutImaginationTV scrollHandler={scrollToPanel} /> */}
 
+      <DoubleCurvedLine />
       {/* name this two-column layout */}
-      <section className={styles.aboutInTVSection}>
-        <div className={styles.aboutInTVWrapper}>
-          <div className={styles.aboutParagraphColumn}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
-              A mentor in the home for every kid, every day.
-            </Title>
+      <section className={`${styles.aboutInTVSection} ${styles.panelTwoCol}`}>
+        <div className={styles.aboutParagraphColumn}>
+          <Title type="h4Title" className={styles.aboutInTVTitle}>
+          {`
+            WELCOME TO AIME’S IMAGI-NATION{TV}
+            & IMAGI-NATION{CLASSROOM} EXPERIENCE
+            FOR KIDS ACROSS THE EARTH’S SURFACE
+          `}
+          </Title>
+          
+        </div>
+        <div className={styles.aboutCyclopsColumn}>
+          <div className={styles.cyclopsSpeechBubble}>
+            <div>
+              <Title type="h5Title" className={styles.speechButtonContent}>
+                Come join us &amp; watch the show!
+              </Title>
+            </div>
+            <img
+              src={`${ASSETS_URL}/assets/images/illustrations/kyle-cyclops@2x.png`}
+              alt="Kyle the Cyclops"
+              className={styles.cyclopsImage}
+            />
+          </div>
+        </div>
+      </section>
+
+      <DoubleCurvedLine />
+      <section className={styles.sectionAbout}>
+        <div className={styles.column}>
+          <Title
+            type="headingLockup"
+            className={styles.sectionHeading}
+            theme={process.env.REACT_APP_THEME}
+          >
+            {`Welcome to the IMAGI-NATION {TV} Partner Pack`}
+            
+          </Title>
+          <div className={styles.copy}>
             <Paragraph>
-              AIME was founded in 2005 to bring mentors into the lives of kids left behind.
-              Since then we’ve grown to become global experts in mentoring - last year
-              being awarded one of the top 50 education groups in the world.
+              AIME is an Imagination Factory that since 2005, has been creating pop-up
+              Imagination Factories on university campuses around the world to unlock
+              the internal narrative of marginalised kids, taking them from a world that
+              tells them they can’t to a world that tells them they can. Kids who experience
+              the Imagination Factory have gone on to achieve educational parity, rise up as
+              entrepreneurs, and take on a whole new mindset that prepares them for success.
             </Paragraph>
             <Paragraph>
-              {'We created IMAGI-NATION{TV} & the IMAGI-NATION{CLASSROOM} experience to put a mentor in the home every day during the tough times of COVID-19 and beyond. It’s a daily TV show broadcast live on the Internet, and it’s a gift for teachers, parents and kids to help make sense of today & imagine tomorrow.'}
+              What inspires our Imagination Factory are the mentors throughout human history,
+              the philosophers, artists, inventors and designers who have moved humanity
+              forward in positive ways. With the force of imagination, mentoring and unlikely
+              alliances between those with power and those without, AIME is creating a fairer
+              world.
             </Paragraph>
-            <div className={styles.becomeAPartnerBtn}>
-              <Button theme={process.env.REACT_APP_THEME}>
-                Partner with  us
-              </Button>
-            </div>
           </div>
-          <div className={styles.aboutCyclopsColumn}>
-            <div className={styles.cyclopsSpeechBubble}>
-              <div>
-                <Title type="h5Title" className={styles.speechButtonContent}>
-                  Come join us &amp; watch the show!
-                </Title>
-              </div>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/kyle-cyclops@2x.png`}
-                alt="Kyle the Cyclops"
-                className={styles.cyclopsImage}
-              />
-            </div>
+        </div>
+        <div className={styles.column}>
+          <img
+            className={styles.imageBlock}
+            src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
+            alt="about aime"
+          />
+        </div>
+      </section>
+      <section className={styles.sectionAbout}>
+        <div className={styles.column}>
+          <div className={styles.copy}>
+            <Paragraph>
+              AIME is an Imagination Factory that since 2005, has been creating pop-up
+              Imagination Factories on university campuses around the world to unlock
+              the internal narrative of marginalised kids, taking them from a world that
+              tells them they can’t to a world that tells them they can. Kids who experience
+              the Imagination Factory have gone on to achieve educational parity, rise up as
+              entrepreneurs, and take on a whole new mindset that prepares them for success.
+            </Paragraph>
+            <Paragraph>
+              What inspires our Imagination Factory are the mentors throughout human history,
+              the philosophers, artists, inventors and designers who have moved humanity
+              forward in positive ways. With the force of imagination, mentoring and unlikely
+              alliances between those with power and those without, AIME is creating a fairer
+              world.
+            </Paragraph>
           </div>
+        </div>
+        <div className={styles.column}>
+          <img
+            className={styles.imageBlock}
+            src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
+            alt="about aime"
+          />
         </div>
       </section>
 
       <div className={styles.intvPartneringContentWrapper}>
         <section className={styles.inTVEpisodesWrapper}>
+          {/* what's the best way for this thing... creating a new component every time... really? shouldn't we be able to use the one comp and replace the content... don't know if that will work though... tbc */}
           <ImaginationTvCarousel />
         </section>
         <WavyDonateSection />
