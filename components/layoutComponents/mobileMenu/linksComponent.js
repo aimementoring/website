@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Anchor from '../../common/link';
 import useDonate from '../../../hooks/useDonate';
 import IntercomChat from '../../intercom';
-import './mobileMenu.module.scss';
+import styles from './mobileMenu.module.scss';
 
 const LinksComponent = ({
   links, handleLinkClicked, active,
@@ -17,9 +18,11 @@ const LinksComponent = ({
   };
 
   const renderLink = (link) => {
-    if (!link.title && link.url === '') {
+    const navLinkClassNames = classNames(styles.menuNavLink,
+      link.class, (active === link.title ? styles.active : ''));
+    if (link.title === 'Get in touch') {
       return (
-        <IntercomChat classNames={`text-decoration-none menuNavLink ${link.class || 'c-black'}${active === link.title ? 'active' : ''}`} />
+        <IntercomChat classNames={navLinkClassNames} />
       );
     }
     if (link.url === 'donate') {
@@ -28,8 +31,7 @@ const LinksComponent = ({
           onClick={showDonate(link)}
           onKeyPress={showDonate(link)}
           role="presentation"
-          className={`text-decoration-none menuNavLink ${link.class || 'c-black'} 
-            ${active === link.title ? 'active' : ''}`}
+          className={navLinkClassNames}
         >
           {link.title}
         </div>
@@ -37,8 +39,7 @@ const LinksComponent = ({
     }
     return (
       <Anchor
-        className={`text-decoration-none menuNavLink ${link.class || 'c-black'} 
-            ${active === link.title ? 'active' : ''}`}
+        className={navLinkClassNames}
         onClick={handleLinkClicked(link.title)}
         to={link.url}
         target={link.target || null}
@@ -49,10 +50,10 @@ const LinksComponent = ({
   };
 
   return (
-    <ul className="overflow-scroll list-reset pl3 pb3 pt2 flex flex-column items-start flex-auto">
+    <ul className={styles.mobileMenuList}>
       <div>
         {links.map((link) => (
-          <li key={link.title} className="py2">
+          <li key={link.title} className={styles.mobileMenuListItem}>
             {renderLink(link)}
           </li>
         ))}
