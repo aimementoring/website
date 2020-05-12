@@ -1,6 +1,6 @@
 @import "../../styles/global.module.scss";
 
-.heroBannerImagiTV {
+.heroBannerImagine {
   background:
     url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
   background-size: 100%;
@@ -60,19 +60,64 @@
       z-index: 1;
       justify-content: flex-end;
       align-self: flex-start;
+
+
+      @media screen and (min-width: $lg) {
+        width: 30%;
+      }
   
       p {
         color: $black;
         max-width: 30em;
         margin: 2em 0;
         padding-right: 1em;
+
+        button.navBtn {
+          background-color: transparent;
+          border-radius: 0;
+          font-family: $body-font-family-bold;
+          font-size: 0.875rem;
+          line-height: 1.5em;
+          color: $black;
+          border: 0;
+          outline: none;
+          cursor: pointer;
+          transition: $hoverTransition;
+          padding: 0;
+          display: inline-block;
+          &:hover {
+            box-shadow: inset 0 -5px 0px -1px $yellow;
+          }
+        }
+      }
+      .triBtnSet {
+        .triBtn {
+          margin-bottom: 1em;
+          padding: 1.1em 5em;
+          width: 100%;
+          @media screen and (min-width: $md) {
+            width: 20em;
+          }
+
+          &:hover {
+            background-color: $watermelon;
+          }
+        }
+        .watchBtn {
+          background-color: $orange;
+        }
+        .imagiDonate {
+          background-color: $purple;
+        }
+        .imagiHoodieBtn {
+          background-color: $cyan;
+        }
+      
       }
     }
   
     .bannerMediaFeature {
       position: relative;
-      padding: 1em 0;
-      margin-bottom: 2em;
       align-self: flex-end;
       text-align: right;
       font-family: $body-font-family;
@@ -80,46 +125,22 @@
   
       @media screen and (min-width: $sm) {
         margin-top: 0;
-        min-width: 28em;
+        min-width: 20em;
       }
   
       @media screen and (min-width: $md) {
         flex-grow: 2;
-      }
-
-      .playerContainer {
-        padding: 0;
         min-width: auto;
-        height: 15em;
+      }
 
-        @media screen and (min-width: $sm) {
-          height: 18em;
-        }
+      .bannerImageRotate {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: block;
         @media screen and (min-width: $md) {
-          height: 23em;
+          min-height: 35em;
         }
-      }
-  
-      .videoCoverArt {
-        border-radius: 3px;
-      }
-  
-      .textLinkChannel {
-        text-decoration: none;
-        font-size: 0.85rem;
-        color: $black;
-        margin-top: 0.5em;
-        transition: $hoverTransition;
-        cursor: pointer;
-        font-weight: normal;
-        &:hover {
-          color: $magenta;
-        }
-      }
-
-      .videoDescription {
-        text-align: right;
-        padding-right: 1em;
       }
     }
   }
@@ -151,352 +172,5 @@
   .hiddenTitle {
     position: absolute;
     left: -9999px;
-  }
-}
-
-.inTVContentWrapper {
-  .subTitle {
-    color: $purple;
-    margin-bottom: 1em;
-  }
-
-  .inTVEpisodesWrapper {
-    margin: 4em auto;
-    width: 100%;
-  }
-
-  .featuredProductWrapper {
-    margin-top: 1.5em;
-  }
-
-  .introEpisodes {
-    padding: 2em 3em 3em 0.5em;
-  }
-
-}
-
-.chattyPuppetsSection {
-  padding: 2em 0;
-
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-
-  @media screen and (min-width: $md) {
-    padding: 4em 1em 2em;
-  }
-
-  .partneringHeading {
-    color: $purple;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-
-  .puppetsChatWrapper {
-    margin: 0 auto;
-
-    @media screen and (min-width: $md) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: $lg;
-    }
-  }
-
-  .puppetChat {
-    background: url($cdnRoot + 'assets/images/illustrations/speech-right@2x.jpg') no-repeat top right / 70% transparent;
-    float: left;
-    max-width: 23em;
-    position: relative;
-
-    @media screen and (min-width: $md) {
-      display: flex;
-      align-items: center;
-      max-width: 30em;
-    }
-
-    @media screen and (min-width: $lg) {
-      max-width: 35em;
-      background-size: 74%;
-    }
-
-    .puppetTalking {
-      width: 12em;
-      @media screen and (min-width: $md) {
-        width: 38em;
-        top: -3em;
-        position: relative;
-      }
-      @media screen and (min-width: $lg) {
-        top: initial;
-      }
-    }
-    
-    .puppetWords {
-      padding: 1em;
-
-      @media screen and (min-width: $md) {
-        width: 35em;
-        margin: 1.5em;
-        background-color: $white;
-        border-radius: 50%;
-        padding-right: 2em;
-      }
-
-      @media screen and (min-width: $lg) {
-        background-color: transparent;
-        margin: 1.5em 2em;
-      }
-
-      h4 {
-        color: $magenta;
-        margin-bottom: 0.5em;
-
-        @media screen and (max-width: $md) {
-          position: absolute;
-          top: 1.8em;
-          right: 0;
-          width: 7.3em;
-        }
-      }
-    }
-
-    .typeformAction {
-      color: $magenta;
-      background-color: transparent;
-      text-transform: none;
-      padding: 0;
-      margin: 0;
-      letter-spacing: initial;
-      text-align: center;
-    }
-  }
-
-
-  .puppetChatSmaller {
-    background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 80% transparent;
-    float: right;
-    display: flex;
-    justify-content: flex-end;
-    width: 17em;
-
-    @media screen and (min-width: $lg) {
-      width: 18em;
-      top: 5em;
-      position: relative;
-      background-size: 73%;
-    }
-
-    .smlPuppetTalking {
-      position: relative;
-      width: 6.5em;
-      margin-top: 4em;
-      @media screen and (min-width: $lg) {
-        width: 8em;
-        top: 2em;
-      }
-    }
-
-    .puppetTitle {
-      text-align: center;
-      text-transform: none;
-      color: $magenta;
-      position: relative;
-      background-color: transparent;
-      letter-spacing: initial;
-      width: 9em;
-      height: 9em;
-      font-size: 1rem;
-      
-      top: 1em;
-      line-height: 1.5;
-      cursor: default;
-      display: flex;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-
-      span {
-        text-decoration: underline;
-        display: block;
-      }
-    }
-  }
-
-  .becomeAPartnerBtn {
-    @media screen and (min-width: $md) {
-      margin-bottom: 2em;
-    }
-    
-    button.navBtn {
-      background-color: $orange;
-      border-radius: 3px;
-      font-family: $body-font-family-bold;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      color: $white;
-      letter-spacing: 0.13em;
-      padding: 0.85em 1.85em;
-      border: 0;
-      outline: none;
-      cursor: pointer;
-      transition: $hoverTransition;
-
-      &:hover {
-        background-color: $purple;
-      }
-    }
-
-    .typeformAction {
-      color: $magenta;
-      background-color: transparent;
-      text-transform: none;
-      padding: 0;
-      margin: 0;
-      letter-spacing: initial;
-      text-align: center;
-    }
-  }
-
-  .becomeAPartnerBtn {
-    @media screen and (min-width: $md) {
-      margin-bottom: 2em;
-    }
-    
-    button.navBtn {
-      background-color: $orange;
-      border-radius: 3px;
-      font-family: $body-font-family-bold;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      color: $white;
-      letter-spacing: 0.13em;
-      padding: 0.85em 1.85em;
-      border: 0;
-      outline: none;
-      cursor: pointer;
-      transition: $hoverTransition;
-
-      &:hover {
-        background-color: $purple;
-      }
-    }
-
-    @media screen and (max-width: $sm) {
-      width: 100%;
-    }
-  }
-}
-
-
-
-.aboutImagineSection {
-  max-width: 75em;
-  width: 100%;
-  padding: 2em 1em;
-  margin: 0 auto;
-
-  @media screen and (min-width: $md) {
-    padding: 4em 1em 2em;
-  }
-  @media screen and (max-width: $sm) {
-    margin-bottom: 10em;
-  }
-
-  .aboutInTVTitle {
-    color: $orange;
-  }
-
-  .aboutInTVWrapper {
-    margin: 0 auto;
-    padding: 0 0.5em;
-
-    @media screen and (min-width: $md) {
-      display: flex;
-      align-items: center; 
-      flex-direction: row;
-      padding: 2em;
-    }
-    .becomeAPartnerBtn {
-      button {
-        background-color: $cyan;
-      }
-    }
-  }
-
-  .aboutParagraphColumn {
-    flex: 1;
-    margin: 0 auto;
-    @media screen and (min-width: $md) {
-      align-items: center;
-    }
-
-    h3 {
-      margin-bottom: 0.5em;
-      @media screen and (min-width: $sm) {
-        padding-right: 2em;
-      }
-    }
-  }
-
-  .aboutCyclopsColumn {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    @media screen and (min-width: $md) {
-      display: inline-block;
-    }
-  }
-
-  .cyclopsSpeechBubble {
-    text-align: center;
-    max-width: 20em;
-    background: url($cdnRoot + 'assets/images/illustrations/speech-left@2x.jpg') no-repeat top left / 80% transparent;
-    display: flex;
-    background-size: 12em;
-    
-    @media screen and (min-width: $md) {
-      margin: 0 auto;
-    }
-    span {
-      text-decoration: underline;
-    }
-
-    .speechButtonContent {
-      text-align: center;
-      text-transform: none;
-      color: $magenta;
-      position: relative;
-      width: 6.3em;
-      height: 7em;
-      padding: 0;
-      font-size: 1.1rem;
-      left: 1.5em;
-      top: 1em;
-      line-height: 1.5;
-      background-color: transparent;
-      letter-spacing: initial;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .cyclopsImage {
-    position: relative;
-    width: 12em;
-    height: 18em;
-    top: 6em;
-    @media screen and (min-width: $md) {
-      width: 8em;
-      left: 3em;
-      height: 12em;
-    } 
-    @media screen and (max-width: $sm) {
-      width: 8em;
-      height: 12em;
-      left: 1.5em;
-    } 
   }
 }
