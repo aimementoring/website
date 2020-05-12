@@ -1,8 +1,5 @@
 @import '../../styles/global.module.scss';
 
-@import '~@uppy/core/dist/style.css';
-@import '~@uppy/dashboard/dist/style.css';
-
 .uppyUploadContainer {
   :global(.uppy-Dashboard-innerWrap) {
     overflow: visible !important;
