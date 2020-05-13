@@ -1,6 +1,6 @@
 @import "../../styles/base/variables";
 
-.heroBannerImagine {
+.heroBannerPartnerIntv {
   background-color: $pink;
   position: relative;
   max-width: 75em;
@@ -67,7 +67,73 @@
   }
 }
 
-.sectionAbout {
+.sectionPanel {
+  display: flex;
+  flex-direction: column;
+  max-width: $lg;
+  margin: 0 auto;
+  padding: 2em;
+
+  @media screen and (min-width: $md) {
+    flex-direction: row;
+  }
+
+  h3 {
+    margin: 1em 0;
+  }
+}
+
+.panelOneCol {
+  flex-direction: column;
+  text-align: center;
+}
+.panelTwoCol {
+
+  .panelCol {
+    flex: 1 1 0;
+    padding: 1em;
+    align-self: center;
+  }
+}
+
+.detailListsPanel {
+  text-align: center;
+  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+
+  .panelCol {
+    margin: 2em;
+    padding: 1em;
+    background-color: $white;
+    border-radius: 3px;
+    align-self: stretch;
+  }
+}
+
+.flexGridLayout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+
+  .flexGridItem {
+    max-width: 12em;
+    margin: 0.5em;
+  }
+}
+
+.zigZagImageFlow {
+  display: flex;
+  flex-flow: column wrap;
+
+  img {
+  max-width: 15em;
+
+    &:nth-child(even) {
+      align-self: flex-end;
+    }
+  }
+}
+.sectionImageParaFlow {
   display: block;
   width: 100%;
   padding: 1em;
@@ -197,65 +263,4 @@
     }
   }
 
-}
-
-.sectionPanel {
-  display: flex;
-  max-width: $lg;
-  margin: 0 auto;
-  border: 1px dashed orange;
-
-  h3 {
-    margin: 1em 0;
-  }
-}
-
-.panelOneCol {
-  border: 1px solid blue;
-  flex-direction: column;
-  text-align: center;
-}
-.panelTwoCol {
-  border: 1px solid red;
-
-  .panelCol {
-    flex: 1 1 0;
-  }
-}
-
-.detailListsPanel {
-  text-align: center;
-  background-color: $pink;
-
-  .panelCol {
-    margin: 2em;
-    padding: 1em;
-    background-color: $white;
-  }
-}
-
-.flexGridLayout {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  border: 1px dashed red;
-  justify-content: center;
-
-  .flexGridItem {
-    max-width: 12em;
-    margin: 0.5em;
-  }
-}
-
-.zigZagImageFlow {
-  display: flex;
-  flex-flow: column wrap;
-
-  img {
-  max-width: 15em;
-
-    &:nth-child(even) {
-      align-self: flex-end;
-    }
-  }
 }
