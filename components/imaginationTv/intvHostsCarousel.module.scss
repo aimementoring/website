@@ -1,0 +1,72 @@
+@import "../../styles/base/variables";
+
+.intvHostsCarousel {
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+
+  @media screen and (min-width: 100em) {
+    max-width: 100em;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 100em) {
+    left: -10%;
+    width: 120%;
+  }
+
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  :global() {
+    .slick-center .episodePanel {
+      opacity: 100%;
+    }
+
+    .slick-list {
+      padding: 0 !important;
+    }
+
+    .slick-slide .episodePanel .episodeContentInfo {
+      display: none;
+    }
+    
+    .slick-center .episodePanel .episodeContentInfo {
+      display: block;
+    }
+
+    .slick-center .episodePanel {
+      border: 1px solid $yellow;
+    }
+  }
+  .episodePanel {
+    opacity: 50%;
+
+    .episodeHeader  {
+      background-image: none !important;
+      background-color: transparent;
+      flex-direction: column;
+      padding-bottom: 0;
+      height: auto;
+
+      .headingLockup {
+        transform: none;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-top: 0.5em;
+        
+          strong {
+          color: $black;
+          font-family: $body-font-family;
+        }
+      }
+    }
+    .episodeContentInfo {
+      border: none;
+      text-align: center;
+    }
+  }
+}
+
