@@ -39,11 +39,14 @@ const ImagiNationTV = () => {
               <strong><mark>&nbsp;A feature film, of course.&nbsp;</mark></strong>
               <br />
               <br />
-              {`Live on IMAGI-NATION{TV} from May 11, we will share a Google Doc with the
-              world with the title ‘IMAGINE’, and those in and outside of the AIME orbit
-              will be able to come together and write a feature film script. Guests on IN{TV}
-              over the four weeks will have the chance to engage in the writing experience.
-              So will kids AIME mentors across 6 countries.`}
+              {`Live on IMAGI-NATION{TV} from May 11, we're sharing an open Google Doc with the
+              world, and with the kids AIME mentors across 6 countries, titled ‘IMAGINE’. Together,
+              we're inviting you to flip the script and encourage kids who have
+              been told that their future is set in stone, to grab the pen and write
+              the next chapter.`}
+              <br />
+              <br />
+              Writing live now.
             </Paragraph>
             <div className="triBtnSet">
               <Button
