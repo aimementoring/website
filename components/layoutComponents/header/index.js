@@ -51,8 +51,8 @@ const Header = ({ location }) => {
     return cleanup;
   };
 
-  useEffect(() => scrolling(), []);
-  useEffect(() => scrolling(), [isClient]);
+  useEffect(scrolling, []);
+  useEffect(scrolling, [isClient]);
 
   useEffect(() => {
     setHeaderComponent(getHeaderComponent(location.pathname));
@@ -62,11 +62,7 @@ const Header = ({ location }) => {
   return (
     <div>
       <header className={headerClass}>
-        {headerComponent && (
-          <HeaderComponent
-            location={location}
-          />
-        )}
+        {headerComponent && <HeaderComponent location={location} />}
       </header>
     </div>
   );
