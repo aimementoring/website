@@ -78,7 +78,7 @@ const AmbassadorsCarousel = () => (
           <strong>AIME</strong>
         </Title>
         <div className={styles.carousel}>
-          <Carousel type="single">
+          <Carousel type="singleSlide">
             {CAROUSEL_SLIDES.map((slide) => <AmbassadorSlide {...slide} key={slide.title} />)}
           </Carousel>
         </div>
