@@ -78,14 +78,12 @@
     pointer-events: none;
     transition: ease-in 0.2s all;
     z-index: 99;
-  
     &.active {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
     }
-  
     .menuNavLink {
       position: relative;
       display: block;
@@ -98,17 +96,16 @@
       padding: 0.5em;
       border: none;
       cursor: pointer;
-  
       &.active {
         border-bottom: 2px solid $purple;
         color: $purple;
       }
     }
-  
+
     ul ul a {
       font-weight: 200;
     }
-  
+ 
     .closeIcon {
       color: $black;
       top: 1em;
@@ -120,7 +117,7 @@
       font-weight: 900;
     }
   }
-  
+
   .purpleText {
     color: $purple;
   }
