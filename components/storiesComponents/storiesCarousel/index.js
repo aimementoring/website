@@ -8,8 +8,8 @@ import styles from './storiesCarousel.module.scss';
 
 const StoriesCarousel = ({ entries }) => (
   <div className={styles.carouselContainer}>
-    <div className={styles.carousel}>
-      <Carousel>
+    <div className={styles.storyCarousel}>
+      <Carousel carouselClassName={styles.storyHeaderCarousel}>
         {entries.map(({
           fields: {
             banner, title, slug, contentPreview, contentCards,
