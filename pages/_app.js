@@ -6,6 +6,7 @@ import TagManager from 'react-gtm-module';
 import MainAppComponent from '../components/mainAppComponent';
 import initStore from '../store';
 import isClientSide from '../utils/isClientSide';
+import './_app.scss';
 
 // @TODO: Remove these imports when they fix this issue: https://github.com/zeit/next.js/issues/12079
 // Also reported here https://github.com/zeit/next.js/issues/10059
