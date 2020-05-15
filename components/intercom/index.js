@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import bugsnagClient from '../../utils/bugsnag';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
 
@@ -58,6 +59,8 @@ const IntercomChat = (props) => {
 
   const handleShowIntercom = () => {
     window.Intercom('showNewMessage');
+    const intercomWasBlocked = document.getElementById('intercom-container') === null;
+    if (intercomWasBlocked) bugsnagClient.notify('Intercom was blocked', { severity: 'info' });
   };
 
   return (
