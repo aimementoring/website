@@ -44,10 +44,8 @@
       width: 20px;
       padding: 0;
 
-      &:global(.slick-active) {
-        button::before {
-          opacity: .75;
-        }
+      &:global(.slick-active > button::before) {
+        opacity: .75;
       }
 
       button {
