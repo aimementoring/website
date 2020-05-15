@@ -23,9 +23,9 @@ const MENU_LINKS = {
     { url: '/imagi-nation-tv', title: 'IN{TV}' },
     { url: '/be-a-mentor', title: 'Be a mentor' },
     { url: '/positions', title: 'Work with us' },
-    { url: 'donate', title: 'Donate' },
-    // { url: 'https://shop.aimementoring.com/', title: 'Shop' },
-    { url: '', title: 'Get in touch' }, // Intercom link
+    { url: 'donate', title: 'Donate', type: 'donate' },
+    { url: 'https://shop.aimementoring.com/', title: 'Shop', type: 'external' },
+    { url: '', title: 'Get in touch', type: 'intercom' },
   ],
 };
 
