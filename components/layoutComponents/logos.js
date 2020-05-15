@@ -26,9 +26,10 @@ import {
   EmailIcon,
   CloseIcon,
 } from './symbolIcons';
+import styles from './logos.module.scss';
 
 const Logos = () => (
-  <svg height="0" width="0" className="absolute">
+  <svg height="0" width="0" className={styles.absolute}>
     <defs>
       <SiteLogo />
       <ArrowNextIcon />
