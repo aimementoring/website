@@ -114,7 +114,7 @@
       margin: 1em 0;
     }
 
-    .slick-list {
+    :global(.slick-list) {
       padding: 0 !important;
     }
 
