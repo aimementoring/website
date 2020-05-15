@@ -3,15 +3,6 @@ import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
 
-const bodyStyles = {
-  margin: 0,
-  padding: 0,
-  fontFamily: '\'Open Sans\', sans-serif',
-  WebkitFontSmoothing: 'antialiased',
-  MozOsxFontSmoothing: 'grayscale',
-  fontSize: '16px',
-};
-
 export default class CustomDocument extends Document {
   render() {
     return (
@@ -36,7 +27,7 @@ export default class CustomDocument extends Document {
           <meta name="msapplication-TileColor" content="#9B00FF" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body style={bodyStyles}>
+        <body>
           <Main />
           <NextScript />
         </body>
