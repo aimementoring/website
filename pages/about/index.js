@@ -1,15 +1,11 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
 import styles from './about.module.scss';
-
-const {
-  Title,
-} = Components;
 
 const HeroBannerAbout = dynamic(() => import('../../components/heroBannerAbout'));
 
