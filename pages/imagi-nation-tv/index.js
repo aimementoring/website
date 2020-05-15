@@ -141,7 +141,7 @@ or a
                   elevate knowledge.
                 </Paragraph>
                 <div className={styles.becomeAPartnerBtn}>
-                  <IntercomChat label="Get in the game" />
+                  <IntercomChat label="Get in the game" classNames={styles.navBtn} />
                 </div>
               </div>
             </div>
