@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import HeroBannerHomepage from '../../components/heroBannerHomepage';
 import Layout from '../../hocs/basicLayout';
 import { CTA_GRID_CAMPAIGNS } from '../../constants';
 import WavyDonateSection from '../../components/wavyDonateSection';
@@ -11,7 +12,6 @@ import useDonate from '../../hooks/useDonate';
 import scrollToComponent from '../../utils/scrollToComponent';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
-const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
 const AmbassadorsCarousel = dynamic(() => import('../../components/ambassadorsCarousel'));
