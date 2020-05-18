@@ -25,7 +25,7 @@
   }
   :global(.slick-slide.slick-center) {
     .episodePanel {
-      opacity: 100%;
+      opacity: 1;
 
       .episodeContentInfo {
         display: block;
@@ -45,7 +45,7 @@
 }
 
 .episodePanel {
-  opacity: 50%;
+  opacity: 0.5;
   break-inside: avoid-column;
   margin-bottom: 1.5em;
   margin: 0 auto;
