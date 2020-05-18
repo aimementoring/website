@@ -1,12 +1,174 @@
 @import "../../styles/base/variables";
 
+.drawerToggle,
+.drawerToggleLabel,
+.drawerToggleLabel:before {
+  height: 4rem; 
+  width: 4rem; 
+  left: 0; 
+  top: 200px; 
+  border: 2px solid red;
+}
+.drawerToggle { 
+  border: 2px solid orange;
+  position: fixed; 
+  opacity: 1; 
+  z-index: 999;
+  
+  &:checked {
+    left: 300px; 
+    ~ .drawerToggleLabel, header { 
+      left: 300px; 
+    } 
+    ~ .sideDrawerNav { 
+      left: 0; 
+    } 
+    ~ .mainSectionWrapper { 
+      margin-left: 300px; 
+    }
+  }
+}
+.drawerToggleLabel { 
+  border: 2px solid yellow;
+  -webkit-touch-callout: none; 
+  user-select: none; 
+  // left: 0px; 
+  // height:50px; 
+  // width: 50px; 
+  display: block; 
+  position: fixed; 
+  background: pink; 
+  z-index: 1; 
+
+  // &:before {
+  //   content: ''; 
+  //   display: block; 
+  //   position: absolute; 
+  //   // height: 2px; 
+  //   // width: 24px; 
+  //   background: yellowgreen; 
+  //   // left: 13px; 
+  //   top: 0; 
+  //   // box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d; 
+    
+  // } 
+}
+.sideDrawerNav { 
+  z-index: 999;
+  position: fixed; 
+  top: 200px; 
+  left:-300px; 
+  height: 100%; 
+  width: 300px; 
+  overflow-x: hidden; 
+  overflow-y: scroll; 
+  padding: 20px; 
+  -webkit-overflow-scrolling: touch; 
+} 
+
+
+
+// .sectionNavToggles {
+//   transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);
+  
+// }
+// .sideBarWrapper {
+//   position: fixed;
+//   border: 1px dashed black;
+//   left: 0.5em;
+//   top: 12em;
+//   width: 12em;
+//   height: 70vh;
+// }
+// .sectionSideMenu {
+//   // border: 15px solid orange;
+//   // position: fixed;
+//   // z-index: 22;
+//   // left: 0.5em;
+//   // top: 12em;
+//   // width: 12em;
+//   // height: 70vh;
+//   // display: none;
+
+//   .sideDrawerNav { 
+
+//     border: 15px solid orange;
+//     position: fixed; 
+//     top: 0; 
+//     left:-300px; 
+//     height: 100%; 
+//     width: 300px; 
+//     background: #2f2f2f; 
+//     overflow-x: hidden; 
+//     overflow-y: scroll; 
+//     padding: 20px; 
+//     -webkit-overflow-scrolling: touch; 
+//   }
+// }
+// .sectionNavToggles {
+//   border: 1px solid blue !important;
+// }
+
+// .sectionNavToggles,
+// .sideMenuToggle {
+// // .closeSideMenuToggle {
+//   position: fixed;
+//   margin: 12em auto 0;
+//   top: 5em;
+//   margin-left: -3em;
+//   border: 5px solid blue;
+//   z-index: 10;
+//   width: 12em;
+//   height: auto;
+//   transform: rotate(-90deg);
+//   transform-origin: bottom center;
+//   .sideMenuBtnWrapper .sideMenuBtn {
+//     color: $black;
+//     background-color: blue;
+//   }
+// }
+
+// .sideMenuToggle {
+// // .closeSideMenuToggle {
+//   z-index: 11;
+//   top: 16em;
+// }
+
+// .closeSideMenuToggle {
+//   display: none;
+//   left: 5em;
+//   z-index: 33;
+// }
+// .sideMenuToggle:checked ~ .mainSectionWrapper
+.sideMenuToggle:checked ~ {
+  .sectionSideMenu,
+  .sideDrawerNav {
+    // , .closeSideMenuToggle
+    display: block;
+    left: 0;
+  }
+  .mainSectionWrapper .sectionPanel {
+    padding-left: 10em;
+  }
+}
+
+// .closeSideMenuToggle:checked ~ {
+//   .sectionSideMenu {
+//     display: none;
+//   }
+//   .mainSectionWrapper .sectionPanel {
+//     padding-left: 0;
+//   }
+// }
+
 .heroBannerPartnerIntv {
   background-color: $pink;
   position: relative;
   max-width: 75em;
   width: 100%;
-  padding: 1em;
-  margin: 6em auto 0;
+  padding: 6em 1em 1em;
+  margin: 0 auto;
+  border: 5px solid red;
 
   .bannerWrapper {
     position: relative;
@@ -72,10 +234,10 @@
   flex-direction: column;
   max-width: $lg;
   margin: 0 auto;
-  padding: 2em;
 
   @media screen and (min-width: $md) {
     flex-direction: row;
+    padding: 2em;
   }
 
   h3 {
@@ -262,5 +424,4 @@
       }
     }
   }
-
 }
