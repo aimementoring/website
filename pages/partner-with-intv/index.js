@@ -28,41 +28,19 @@ const PartnerWithIntv = () => {
 
   return (
     <Layout>
-      {/* <div className={styles.sideBarWrapper}>
-        <input class="sideMenuToggle" type="checkbox" />
-        <div className={styles.sectionNavToggles}>
-          <Button
-            theme={process.env.REACT_APP_THEME}
-            className={styles.sideMenuBtn}
-            containerClassName={styles.sideMenuBtnWrapper}
-          >
-            Go to section
-          </Button>
-        </div>
-        <div className={styles.sectionSideMenu}>
-          <h1>showing it</h1>
-          <nav className={styles.sideDrawerNav}>
-              <ul>
-                <li><a href="#">Menu Item</a></li>
-                <li><a href="#">Menu Item</a></li>
-                <li><a href="#">Menu Item</a></li>
-                <li><a href="#">Menu Item</a></li>
-              </ul>
-          </nav>
-        </div>
-      </div> */}
-      {/* <input class="closeSideMenuToggle" type="checkbox" /> */}
 
       <input type="checkbox" className={styles.drawerToggle} name="drawerToggle"/>
       <label for="drawerToggle" className={styles.drawerToggleLabel}>Go to section</label>
       <nav className={styles.sideDrawerNav}>
-          <ul>
-            <li><a href="#">Menu Item</a></li>
-            <li><a href="#">Menu Item</a></li>
-            <li><a href="#">Menu Item</a></li>
-            <li><a href="#">Menu Item</a></li>
-          </ul>
+        <ul className={styles.sideMenu}>
+          <li><Title type="h5Title">Heading here</Title></li>
+          <li><a href="#">The hosts</a></li>
+          <li><a href="#">The format</a></li>
+          <li><a href="#">The mentors</a></li>
+          <li><a href="#">Background</a></li>
+        </ul>
       </nav>
+
       <div className={styles.mainSectionWrapper}>
         <div className={styles.heroBannerPartnerIntv}>
           <div className={styles.bannerWrapper}>
