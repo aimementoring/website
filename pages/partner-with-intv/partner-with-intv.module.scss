@@ -185,16 +185,32 @@
   }
 }
 
+.whiteWaveTop {
+  position: absolute;
+  margin-bottom: 12em;
+  margin-top: -4em;
+}
+
+.withWhiteWave {
+  padding: 0;
+}
+
 .detailListsPanel {
   text-align: center;
-  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  background: url($cdnRoot + 'assets/images/pink-scribbly-background@2x.png') no-repeat top center / cover fixed $magenta;
 
   .panelCol {
-    margin: 2em;
+    margin: 8em 2em;
     padding: 1em;
     background-color: $white;
     border-radius: 3px;
     align-self: stretch;
+  }
+
+  @media screen and (max-width: $md) {
+    .secondPanelCol {
+      margin: 2em;
+    }
   }
 }
 
