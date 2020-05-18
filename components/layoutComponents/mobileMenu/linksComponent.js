@@ -20,12 +20,12 @@ const LinksComponent = ({
   const renderLink = (link) => {
     const navLinkClassNames = classNames(styles.menuNavLink,
       link.class, (active === link.title ? styles.active : ''));
-    if (link.title === 'Get in touch') {
+    if (link.type === 'intercom') {
       return (
         <IntercomChat classNames={navLinkClassNames} />
       );
     }
-    if (link.url === 'donate') {
+    if (link.type === 'donate') {
       return (
         <div
           onClick={showDonate(link)}
@@ -35,6 +35,18 @@ const LinksComponent = ({
         >
           {link.title}
         </div>
+      );
+    }
+    if (link.type === 'external') {
+      return (
+        <Anchor
+          className={navLinkClassNames}
+          onClick={handleLinkClicked(link.title)}
+          href={link.url}
+          target="_blank"
+        >
+          {link.title}
+        </Anchor>
       );
     }
     return (
@@ -68,6 +80,7 @@ LinksComponent.propTypes = {
     url: PropTypes.string,
     class: PropTypes.string,
     action: PropTypes.func,
+    type: PropTypes.string,
   })).isRequired,
   handleLinkClicked: PropTypes.func.isRequired,
   active: PropTypes.string,
