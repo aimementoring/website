@@ -121,7 +121,7 @@
     .partnerContainer {
       padding: 0 1em;
       text-align: center;
-      opacity: 50%;
+      opacity: 0.5;
       box-sizing: border-box;
       padding: 2em 3.5em 1.5em;
 
@@ -158,7 +158,7 @@
 
     :global(.slick-center) {
       .partnerContainer {
-        opacity: 100%;
+        opacity: 1;
         margin: 0;
         border-radius: 0 0 3px 3px;
         @media screen and (min-width: $md) {
