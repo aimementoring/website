@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
@@ -210,12 +211,12 @@ const PartnerWithIntv = () => {
               The show is broadcast live on YouTube daily, Monday to Friday,
               5 days a week. Our studio is the virtual world. Feedback happens
               live on Youtube.
-              • 5 X 25 min daily episodes at least 21 weeks of content
-              (based on AIME 21 values).
-              • Audio and podcast in production.
-              • Impact production in progress, including education resources for
-              teachers around the world to use
             </Paragraph>
+            <List type="ulList" list={[
+              '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).', 
+              'Audio and podcast in production.', 
+              'Impact production in progress, including education resources for teachers around the world to use'
+            ]} />
           </div>
           <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
@@ -223,25 +224,29 @@ const PartnerWithIntv = () => {
               Weekly themes
             `}
             </Title>
-            <Paragraph>
-              Forgiveness [13th April]
-              • Empathy [20th April]
-              • Listening [27th April]
-              • Asking Questions [4th May]
-              • Flip the Script [11th May]
-              • Initiative [18th May]
-              • Know Yourself [25th May]
-              • Kindness [1st June]
-              • Rebelliousness [8th June]
-              • Change [15th June]
-            </Paragraph>
+
+            <List type="ulList" list={[
+              'Imagination [23rd March]', 
+              'Hope [30th March]',
+              'Trust [6th April]',
+              'Forgiveness [13th April]', 
+              'Empathy [20th April]', 
+              'Listening [27th April]', 
+              'Asking Questions [4th May]', 
+              'Flip the Script [11th May]', 
+              'Initiative [18th May]', 
+              'Know Yourself [25th May]', 
+              'Kindness [1st June]', 
+              'Rebelliousness [8th June]', 
+              'Change [15th June]', 
+            ]} />
           </div>
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
               {`
-              How it works
+              Ingredients
             `}
             </Title>
             <img
