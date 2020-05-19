@@ -520,9 +520,7 @@ const PartnerWithIntv = () => {
         </section>
 
         <DoubleCurvedLine />
-        <section className={styles.tempIntvPWrapper}>
-          <IntvPartners />
-        </section>
+        <IntvPartners />
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
