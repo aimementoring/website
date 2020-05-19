@@ -10,7 +10,7 @@
 .drawerToggle,
 .drawerToggleLabel {
   height: 1.5rem;
-  width: 9rem; 
+  width: 9.5rem; 
   left: -3.5em;
   top: 200px; 
   transform: rotate(-90deg);
@@ -19,38 +19,11 @@
   justify-content: center;
 }
 
-.drawerToggle { 
-  position: fixed; 
-  opacity: 0; 
-  z-index: 999;
-  left: -4.5em;
-  
-  &:checked {
-    left: 17em; 
-    ~ .drawerToggleLabel { 
-      left: 14em; 
-    } 
-    ~ .sideDrawerNav { 
-      left: 1em; 
-    } 
-    ~ .mainSectionWrapper { 
-      left: 0; 
-    }
-    ~ .mainSectionWrapper .sectionPanel {
-      padding-left: 18em;
-    }
-  }
-
-  &:hover ~ .drawerToggleLabel { 
-    color: $cyan;
-    background-color: $white;
-  }
-}
 .drawerToggleLabel { 
   -webkit-touch-callout: none; 
   user-select: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 18; 
   font-family: $body-font-family;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -59,22 +32,30 @@
   border-radius: 3px;
   cursor: pointer;
   background-color: $cyan; 
+  &:before {
+    content: "Go to section";
+  }
 }
 
 .sideDrawerNav { 
-  z-index: 10;
+  z-index: 15;
   position: fixed; 
   overflow-x: hidden; 
   overflow-y: scroll; 
   -webkit-overflow-scrolling: touch; 
   top: 8em; 
-  left: -18em; 
-  width: 17em; 
+  left: -101%; 
+  width: 90%; 
   height: 70%; 
   padding: 2em 1em; 
   border: 1px solid $purple;
   box-shadow: 2px 2px 0 0 $purple;
+  background-color: $white;
   border-radius: 3px;
+  @media screen and (min-width: $md) {
+    left: -18em; 
+    width: 16em; 
+  }
 
   .sideMenu li a {
     width: 70%;
@@ -87,6 +68,56 @@
     display: block;
   }
 } 
+
+.drawerToggle { 
+  position: fixed; 
+  opacity: 0; 
+  z-index: 20;
+  left: -4.5em;
+
+  &:hover ~ .drawerToggleLabel { 
+    color: $cyan;
+    background-color: $white;
+  }
+
+  &:checked {
+    right: -2em;
+    left: inherit;
+
+    ~ .drawerToggleLabel { 
+      right: -2em;
+      left: inherit;
+
+      &:before {
+        content: "Close this menu";
+      }
+    }
+    ~ .sideDrawerNav { 
+      left: 5%; 
+    } 
+    ~ .mainSectionWrapper { 
+      left: 0; 
+    }
+
+    @media screen and (min-width: $md) {
+      left: 16em; 
+      right: inherit;
+      ~ .drawerToggleLabel { 
+        left: 13em; 
+        right: inherit;
+      } 
+      ~ .sideDrawerNav { 
+        left: 1em; 
+      } 
+      ~ .mainSectionWrapper { 
+        left: 0; 
+      }
+      ~ .mainSectionWrapper section {
+        padding-left: 18em;
+      }
+    }
+  }
+}
 
 
 .heroBannerPartnerIntv {
@@ -136,7 +167,7 @@
     flex-direction: column;
     font-size: 1.4rem;
     padding: 0 0.5em;
-    z-index: 10;
+    z-index: 1;
     position: relative;
 
     @media screen and (min-width: $md) {
