@@ -216,6 +216,13 @@
     flex: 1 1 0;
     padding: 1em;
     align-self: center;
+
+    ul li {
+      font-size: 0.875rem;
+      line-height: 1.5em;
+      list-style-position: inside;
+      margin: 0 0 0.5em;
+    }
   }
 }
 
