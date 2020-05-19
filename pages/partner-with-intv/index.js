@@ -6,13 +6,11 @@ import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
-import FeaturedProduct from '../../components/featuredProduct';
+// import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
-import AboutImaginationTV from '../../components/aboutImaginationTV';
-import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
 import MovingWaves from '../../components/movingWaves';
-// import scrollToComponent from '../../utils/scrollToComponent';
+import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './partner-with-intv.module.scss';
 
 const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
@@ -20,13 +18,19 @@ const IntvHostsCarousel = dynamic(() => import('../../components/imaginationTv/i
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
+// const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const PartnerWithIntv = () => {
-  // const scrollToThisRef = useRef(null);
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
-  // const scrollToPanel = () => scrollToComponent(scrollToThisRef);
+  const scrollToHosts = useRef(null);
+  const scrollHandlerHosts = () => scrollToComponent(scrollToHosts);
+  const scrollToHow = useRef(null);
+  const scrollHandlerHow = () => scrollToComponent(scrollToHow);
+  const scrollToMentors = useRef(null);
+  const scrollHandlerMentors = () => scrollToComponent(scrollToMentors);
+  const scrollToStory = useRef(null);
+  const scrollHandlerStory = () => scrollToComponent(scrollToStory);
 
   return (
     <Layout>
@@ -35,11 +39,11 @@ const PartnerWithIntv = () => {
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
-          <li><Title type="h5Title">Heading here</Title></li>
-          <li><a href="#">The hosts</a></li>
-          <li><a href="#">The format</a></li>
-          <li><a href="#">The mentors</a></li>
-          <li><a href="#">Background</a></li>
+          <li><Title type="h5Title">{`Imagination {TV}`}</Title></li>
+          <li><a onClick={scrollHandlerHosts}>Meet the hosts</a></li>
+          <li><a onClick={scrollHandlerHow}>The format</a></li>
+          <li><a onClick={scrollHandlerMentors}>The mentors</a></li>
+          <li><a onClick={scrollHandlerStory}>Background</a></li>
         </ul>
       </nav>
 
@@ -67,6 +71,7 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
+        {/* todo: hi rin, i commented this out because it was appearing over the sidemenu but in just a white line... i'm not sure what it's meant to be... */}
         {/* <MovingWaves /> */}
         <section className={`${styles.sectionPanel} ${styles.panelTwoCol}`}>
           <div className={`${styles.panelCol}`}>
@@ -183,7 +188,7 @@ const PartnerWithIntv = () => {
           </div>
         </section>
         <DoubleCurvedLine />
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
+        <section ref={scrollToHosts} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
           {/* what's the best way for this thing... creating a new component every time... really?
           shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
@@ -197,7 +202,7 @@ const PartnerWithIntv = () => {
           <br />
         </section>
 
-        <section className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.withWhiteWave}`}>
+        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.withWhiteWave}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -270,7 +275,7 @@ const PartnerWithIntv = () => {
 
         <DoubleCurvedLine />
 
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
+        <section ref={scrollToMentors} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title" className={styles.aboutInTVTitle}>
             {`
             Our Guests (so far)
@@ -412,7 +417,7 @@ const PartnerWithIntv = () => {
 
         </section>
         <DoubleCurvedLine />
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
+        <section ref={scrollToStory} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
               {`
