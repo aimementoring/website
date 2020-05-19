@@ -447,18 +447,47 @@ const PartnerWithIntv = () => {
 
         </section>
         <DoubleCurvedLine />
-        <section ref={scrollToStory} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
+        <section ref={scrollToStory} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage} ${styles.aimeStory}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-              {`
               Story of AIME
-            `}
             </Title>
-            <img
-              src={`${ASSETS_URL}/assets/images/banner/banner-hoodie-rent.gif`}
-              alt="This Hoodie Pays My Rent"
-              className={styles.videoCoverArt}
-            />
+          </div>
+          <div className={styles.storyFirstPanel}>
+            <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-1.png`} alt="I am AIME" />
+          </div>
+          {/* Hey Lara! This needs to be responsive! Sorry, didn't get to it! */}
+          <div className={styles.panelTwoCol}>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-2.png`} alt="I come from the land of Imagi-Nation" />
+            </div>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-3.png`} alt="I was born in the dream of a 19 year old student" />
+            </div>
+          </div>
+          <div className={styles.panelTwoCol}>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-4.png`} alt="Our journey started with small steps." />
+            </div>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-5.png`} alt="Our movement grew." />
+            </div>
+          </div>
+          <div className={styles.panelTwoCol}>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-6.png`} alt="We mentored 20.000+ kids." />
+            </div>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-7.png`} alt="Then COVID happened." />
+            </div>
+          </div>
+          <div className={styles.panelTwoCol}>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-8.png`} alt="from 2005 to 2020" />
+            </div>
+            <div className={styles.panelCol}>
+              <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-9.png`} alt="to IN{TV} going live" />
+            </div>
           </div>
         </section>
 
