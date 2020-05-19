@@ -18,7 +18,7 @@ const IntvHostsCarousel = () => (
     </ImaginationTvCard>
     <ImaginationTvCard
       title="JMB"
-      image="puppet-hope@2x"
+      image="puppet-jmb"
     >
       <Paragraph>
         Jack Manning Bancroft.
