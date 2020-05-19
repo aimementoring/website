@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './movingWaves.module.scss';
 
-const MovingWaves = () => (
-  <svg viewBox="0 0 100 2.2" xmlns="http://www.w3.org/2000/svg" className={styles.waveForm}>
+const MovingWaves = ({ svgClass }) => (
+  <svg viewBox="0 0 100 2.2" xmlns="http://www.w3.org/2000/svg" className={`${svgClass} ${styles.waveForm}`}>
     <path
       className={styles.topLine}
       d="M100,2.2C87.5,2.2,87.5,0,75,0S62.5,2.2,50,2.2S37.5,0,25,0S12.5,2.2,0,2.2C-12.5,2.2-12.5,0-25,0
@@ -56,5 +57,13 @@ const MovingWaves = () => (
     </path>
   </svg>
 );
+
+MovingWaves.propTypes = {
+  svgClass: PropTypes.string,
+};
+
+MovingWaves.defaultProps = {
+  svgClass: '',
+};
 
 export default MovingWaves;
