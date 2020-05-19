@@ -17,27 +17,46 @@ const IntvHostsCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
-      title="Hope"
+      title="JMB"
       image="puppet-hope@2x"
     >
       <Paragraph>
-        She is slow, thoughtful and kind to all. Full of wisdom. Always finding the silver lining.
+        Jack Manning Bancroft.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
-      title="Hope"
+      title="Asterix"
       image="puppet-hope@2x"
     >
       <Paragraph>
-        She is slow, thoughtful and kind to all. Full of wisdom. Always finding the silver lining.
+        A quiet, kind, British gender-nuetral youngster. Holds the moment. Insightful interviewer - finds strength in silence.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
-      title="Hope"
+      title="Blue"
       image="puppet-hope@2x"
     >
       <Paragraph>
-        She is slow, thoughtful and kind to all. Full of wisdom. Always finding the silver lining.
+        Brashy Californian guy, totally radical, fast-paced in life. High energy host. 
+      </Paragraph>
+    </ImaginationTvCard>
+    <ImaginationTvCard
+      title="Panga"
+      image="puppet-hope@2x"
+    >
+      <Paragraph>
+        Stuck in the chaos. Her father was a pangolin - the creatures now
+        feelings the brunt of COVID-19 &mdash; Her mother an American
+        long-eared bat. Panga is a plucky young Aussie woman, ready
+        to go and get into the world. 
+      </Paragraph>
+    </ImaginationTvCard>
+    <ImaginationTvCard
+      title="Mystery Guest Co Hosts &amp; Kid Co Hosts"
+      image="puppet-hope@2x"
+    >
+      <Paragraph>
+        -
       </Paragraph>
     </ImaginationTvCard>
    
