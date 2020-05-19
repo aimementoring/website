@@ -129,7 +129,6 @@
   background-color: $pink;
   background: url($cdnRoot + 'assets/images/brushstrokes-background@2x.png') no-repeat top center / cover fixed $pink;
   position: relative;
-  max-width: 75em;
   width: 100%;
   padding: 6em 1em 1em;
   margin: 0 auto;
@@ -140,7 +139,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    max-width: 75em;
+    margin: 0 auto;
     padding: 0 0.5em;
   
     .bannerItem {
@@ -200,6 +200,21 @@
   flex-direction: column;
   max-width: $lg;
   margin: 0 auto;
+
+  &.sectionWithBg {
+   max-width: none; 
+   width: 100%;
+
+   .sectionWrapper {
+      max-width: $lg;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $md) {
+        flex-direction: row;
+      }
+   }
+  }
 
   @media screen and (min-width: $md) {
     flex-direction: row;
@@ -297,6 +312,10 @@
 
   @media screen and (min-width: $md) { 
     padding-top: 3em;
+  }
+
+  .sectionHeading {
+    text-align: right;
   }
 
   .imageBlock {
