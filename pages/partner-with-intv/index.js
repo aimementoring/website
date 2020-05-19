@@ -436,35 +436,43 @@ const PartnerWithIntv = () => {
           </Title>
           <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel}`}>
             <div className={styles.panelCol}>
-              <Paragraph>
-              2740 Program Days run (since 2015)
-              45278 Total mentee experiences
-              35189 Engaged mentee experiences
-              13686 Total mentor experiences
-              92.6% of students with Year 12 attainment
-              94.8% Average mentee progression rate across all grades
-              21 University partnerships (AUS + AFRICA)
-              430 School partnerships since 2017
-              155235 Total volunteer mentor hours donated
-              8991 Tutor squads run (since 2015)
-              91 equivalent full time staff employed as of March 2020
-              </Paragraph>
+            <List type="ulList" list={[
+              '2740 Program Days run (since 2015)',
+              '45278 Total mentee experiences',
+              '35189 Engaged mentee experiences',
+              '13686 Total mentor experiences',
+              '92.6% of students with Year 12 attainment',
+              '94.8% Average mentee progression rate across all grades',
+              '21 University partnerships (AUS + AFRICA)',
+              '430 School partnerships since 2017',
+              '155235 Total volunteer mentor hours donated',
+              '8991 Tutor squads run (since 2015)',
+              '91 equivalent full time staff employed as of March 2020',
+            ]} />
+            <br /><br />
+            <Title type="h5Title">AIME APPAREL STATS</Title>
+            <List type="ulList" list={[
+              '31 countries shipped to',
+              '5116 hoodies sold',
+              '18 of new apparel styles produced',
+              '1864 hoodies donated',
+              '13 sites submitted artworks',
+              '4 international artists',
+              '15 mentee artists',
+            ]} />
             </div>
             <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/1dollar89.png`}
+                alt="For every $1, $8.90 return"
               />
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/12-attainment.png`}
+                alt="Year 12 Attainment"
               />
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
+                alt="Post school transitions"
               />
             </div>
           </div>
