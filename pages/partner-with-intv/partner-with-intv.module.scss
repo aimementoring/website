@@ -126,7 +126,10 @@
 
 .bannerBottom {
   position: relative;
-  margin-top: -1.25em;
+  margin-top: -15px;
+  @media screen and (max-width: $md) {
+    margin-top: -12px;
+  }
 }
 
 .heroBannerPartnerIntv {
@@ -159,7 +162,7 @@
   
       img {
         width: 10em;
-        margin-bottom: -4em;        
+        margin-bottom: -4.5em;       
         @media screen and (min-width: $md) {
           width: 20em;
           margin-bottom: -1em;
@@ -250,10 +253,23 @@
   }
 }
 
-.whiteWaveTop {
+.whiteWaveTop, .whiteWaveBottom {
   position: absolute;
+  left: 0;
+}
+
+.whiteWaveTop {
   margin-bottom: 12em;
   margin-top: -4em;
+  transform: scaleX(1.5);
+}
+
+.whiteWaveBottom {
+  transform: rotate(180deg) scaleX(1.5);
+  margin-top: 42em;
+  @media screen and (max-width: $md) {
+    margin-top: 74em;
+  }
 }
 
 .withWhiteWave {
@@ -275,6 +291,7 @@
   @media screen and (max-width: $md) {
     .secondPanelCol {
       margin: 2em;
+      margin-bottom: 12em;
     }
   }
 }
