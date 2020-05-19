@@ -39,13 +39,14 @@ const PartnerWithIntv = () => {
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
-          <li><Title type="h5Title">{`Imagination {TV}`}</Title></li>
+          <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
           <li><a onClick={scrollHandlerHosts}>Meet the hosts</a></li>
           <li><a onClick={scrollHandlerHow}>The format</a></li>
           <li><a onClick={scrollHandlerMentors}>The mentors</a></li>
           <li><a onClick={scrollHandlerStory}>Background</a></li>
-          <br /><br />
-          <li><Title type="h5Title">{`Partnership Opportunities`}</Title></li>
+          <br />
+          <br />
+          <li><Title type="h5Title">Partnership Opportunities</Title></li>
           <li><a>Production</a></li>
           <li><a>School Partners</a></li>
           <li><a>University Partners</a></li>
@@ -63,31 +64,34 @@ const PartnerWithIntv = () => {
       </nav>
 
       <div className={styles.mainSectionWrapper}>
-        <section className={`${styles.heroBannerPartnerIntv}`}>
-          <div className={styles.bannerWrapper}>
-            <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
-              <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
+        <div>
+          <section className={`${styles.heroBannerPartnerIntv}`}>
+            <div className={styles.bannerWrapper}>
+              <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
+                <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
                 Partnering with
-                <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
-                <img
-                  src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
-                  alt="Imagi-Nation TV"
-                  className={styles.logoImagiTV}
-                />
-              </Title>
-            </div>
+                  <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
+                  <img
+                    src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
+                    alt="Imagi-Nation TV"
+                    className={styles.logoImagiTV}
+                  />
+                </Title>
+              </div>
 
-            <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/red-hooded-robot@2x.png`}
-                alt="Red Hooded Robot Friend"
-                className={styles.smlPuppetTalking}
-              />
+              <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/red-hooded-robot@2x.png`}
+                  alt="Red Hooded Robot Friend"
+                  className={styles.smlPuppetTalking}
+                />
+              </div>
             </div>
-          </div>
-        </section>
-        {/* todo: hi rin, i commented this out because it was appearing over the sidemenu but in just a white line... i'm not sure what it's meant to be... */}
-        {/* <MovingWaves /> */}
+          </section>
+          <MovingWaves svgClass={styles.bannerBottom} />
+        </div>
+
+
         <section className={`${styles.sectionPanel} ${styles.panelTwoCol}`}>
           <div className={`${styles.panelCol}`}>
             <Title type="h4Title" className={styles.aboutInTVTitle}>
@@ -109,7 +113,7 @@ const PartnerWithIntv = () => {
 
         <DoubleCurvedLine />
         <section className={`${styles.sectionImageParaFlow} ${styles.sectionPanel}`}>
-          
+
           <div className={styles.column}>
             <Title
               type="headingLockup"
@@ -126,7 +130,8 @@ const PartnerWithIntv = () => {
                 mentoring, last year being honoured as one of the&nbsp;
                 <a href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232" target="_blank">
                   top 50 education groups in the world
-                </a>.
+                </a>
+.
               </Paragraph>
               <Paragraph>
                 {`We created IMAGI-NATION{TV} to put a mentor in the home every day
@@ -188,8 +193,8 @@ const PartnerWithIntv = () => {
                 <br />
                 <strong>
                 Jack Manning Bancroft
-                <br />
-                {`IN{TV} EP & Founder, AIME CEO & Founder`}
+                  <br />
+                  {'IN{TV} EP & Founder, AIME CEO & Founder'}
                 </strong>
               </Paragraph>
             </div>
@@ -233,11 +238,14 @@ const PartnerWithIntv = () => {
                 5 days a week. Our studio is the virtual world. Feedback happens
                 live on Youtube.
               </Paragraph>
-              <List type="ulList" list={[
-                '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).', 
-                'Audio and podcast in production.', 
-                'Impact production in progress, including education resources for teachers around the world to use'
-              ]} />
+              <List
+                type="ulList"
+                list={[
+                  '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).',
+                  'Audio and podcast in production.',
+                  'Impact production in progress, including education resources for teachers around the world to use',
+                ]}
+              />
             </div>
             <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
               <Title type="h3Title" className={styles.aboutInTVTitle}>
@@ -246,21 +254,24 @@ const PartnerWithIntv = () => {
               `}
               </Title>
 
-              <List type="ulList" list={[
-                'Imagination [23rd March]', 
-                'Hope [30th March]',
-                'Trust [6th April]',
-                'Forgiveness [13th April]', 
-                'Empathy [20th April]', 
-                'Listening [27th April]', 
-                'Asking Questions [4th May]', 
-                'Flip the Script [11th May]', 
-                'Initiative [18th May]', 
-                'Know Yourself [25th May]', 
-                'Kindness [1st June]', 
-                'Rebelliousness [8th June]', 
-                'Change [15th June]', 
-              ]} />
+              <List
+                type="ulList"
+                list={[
+                  'Imagination [23rd March]',
+                  'Hope [30th March]',
+                  'Trust [6th April]',
+                  'Forgiveness [13th April]',
+                  'Empathy [20th April]',
+                  'Listening [27th April]',
+                  'Asking Questions [4th May]',
+                  'Flip the Script [11th May]',
+                  'Initiative [18th May]',
+                  'Know Yourself [25th May]',
+                  'Kindness [1st June]',
+                  'Rebelliousness [8th June]',
+                  'Change [15th June]',
+                ]}
+              />
             </div>
           </div>
         </section>
@@ -408,19 +419,22 @@ const PartnerWithIntv = () => {
                 mentees.`}
               </Paragraph>
               <Paragraph>
-                {`They run for 30 minutes.`}
+                They run for 30 minutes.
               </Paragraph>
               <Paragraph>
                 {`The format of each
                 IMAGI-NATION{CLASSROOM} is:`}
               </Paragraph>
-              <List type="ulList" list={[
-                '5 minute reflection on what we learned from IN{TV}', 
-                '5 minute meditation',
-                '5 minute school questions',
-                '5 minute life questions',
-                '10 minutes failure time*',
-              ]} />
+              <List
+                type="ulList"
+                list={[
+                  '5 minute reflection on what we learned from IN{TV}',
+                  '5 minute meditation',
+                  '5 minute school questions',
+                  '5 minute life questions',
+                  '10 minutes failure time*',
+                ]}
+              />
               <Paragraph>
                 {`*Failure Time is AIME’s original
                 creation. It provides a learning
@@ -459,30 +473,37 @@ const PartnerWithIntv = () => {
           <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg}`}>
             <div className={styles.sectionWrapper}>
               <div className={styles.panelCol}>
-                <List type="ulList" list={[
-                  '2740 Program Days run (since 2015)',
-                  '45278 Total mentee experiences',
-                  '35189 Engaged mentee experiences',
-                  '13686 Total mentor experiences',
-                  '92.6% of students with Year 12 attainment',
-                  '94.8% Average mentee progression rate across all grades',
-                  '21 University partnerships (AUS + AFRICA)',
-                  '430 School partnerships since 2017',
-                  '155235 Total volunteer mentor hours donated',
-                  '8991 Tutor squads run (since 2015)',
-                  '91 equivalent full time staff employed as of March 2020',
-                ]} />
-                <br /><br />
+                <List
+                  type="ulList"
+                  list={[
+                    '2740 Program Days run (since 2015)',
+                    '45278 Total mentee experiences',
+                    '35189 Engaged mentee experiences',
+                    '13686 Total mentor experiences',
+                    '92.6% of students with Year 12 attainment',
+                    '94.8% Average mentee progression rate across all grades',
+                    '21 University partnerships (AUS + AFRICA)',
+                    '430 School partnerships since 2017',
+                    '155235 Total volunteer mentor hours donated',
+                    '8991 Tutor squads run (since 2015)',
+                    '91 equivalent full time staff employed as of March 2020',
+                  ]}
+                />
+                <br />
+                <br />
                 <Title type="h5Title">AIME APPAREL STATS</Title>
-                <List type="ulList" list={[
-                  '31 countries shipped to',
-                  '5116 hoodies sold',
-                  '18 of new apparel styles produced',
-                  '1864 hoodies donated',
-                  '13 sites submitted artworks',
-                  '4 international artists',
-                  '15 mentee artists',
-                ]} />
+                <List
+                  type="ulList"
+                  list={[
+                    '31 countries shipped to',
+                    '5116 hoodies sold',
+                    '18 of new apparel styles produced',
+                    '1864 hoodies donated',
+                    '13 sites submitted artworks',
+                    '4 international artists',
+                    '15 mentee artists',
+                  ]}
+                />
               </div>
               <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
                 <img
@@ -497,7 +518,7 @@ const PartnerWithIntv = () => {
                   src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
                   alt="Post school transitions"
                 />
-                </div>
+              </div>
             </div>
           </div>
         </section>
