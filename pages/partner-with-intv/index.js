@@ -222,6 +222,9 @@ const PartnerWithIntv = () => {
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
+          <svg className={styles.whiteWaveBottom} width="1438" height="152" viewBox="0 0 1438 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
+          </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
               <Title type="h3Title" className={styles.aboutInTVTitle}>
