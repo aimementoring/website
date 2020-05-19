@@ -369,19 +369,43 @@ const PartnerWithIntv = () => {
             </Title>
             <div className={styles.copy}>
               <Paragraph>
-                AIME is an Imagination Factory that since 2005, has been creating pop-up
-                Imagination Factories on university campuses around the world to unlock
-                the internal narrative of marginalised kids, taking them from a world that
-                tells them they can’t to a world that tells them they can. Kids who experience
-                the Imagination Factory have gone on to achieve educational parity, rise up as
-                entrepreneurs, and take on a whole new mindset that prepares them for success.
+                {`Daily after IMAGI-NATION{TV},
+                we run simultaneous classrooms
+                locally guided by AIME mentors.`}
               </Paragraph>
               <Paragraph>
-                What inspires our Imagination Factory are the mentors throughout human history,
-                the philosophers, artists, inventors and designers who have moved humanity
-                forward in positive ways. With the force of imagination, mentoring and unlikely
-                alliances between those with power and those without, AIME is creating a fairer
-                world.
+                {`In Australia, we run them after the live show at
+                12 noon AEST.`}
+              </Paragraph>
+              <Paragraph>
+                {`Globally, our mentors replay the
+                show and then host our live IMAGI-
+                NATION{CLASSROOMS}.The classrooms have
+                university volunteer mentors and a lead
+                AIME mentor leading and supporting the
+                mentees.`}
+              </Paragraph>
+              <Paragraph>
+                {`They run for 30 minutes.`}
+              </Paragraph>
+              <Paragraph>
+                {`The format of each
+                IMAGI-NATION{CLASSROOM} is:`}
+              </Paragraph>
+              <List type="ulList" list={[
+                '5 minute reflection on what we learned from IN{TV}', 
+                '5 minute meditation',
+                '5 minute school questions',
+                '5 minute life questions',
+                '10 minutes failure time*',
+              ]} />
+              <Paragraph>
+                {`*Failure Time is AIME’s original
+                creation. It provides a learning
+                framework for mentees to embrace any
+                possible learning activity through
+                the lens of seeing failure as a
+                pathway to learning.`}
               </Paragraph>
             </div>
           </div>
