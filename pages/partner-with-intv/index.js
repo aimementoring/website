@@ -10,6 +10,7 @@ import WavyDonateSection from '../../components/wavyDonateSection';
 import AboutImaginationTV from '../../components/aboutImaginationTV';
 import TypeformModal from '../../components/typeformModal';
 import IntercomChat from '../../components/intercom';
+import MovingWaves from '../../components/movingWaves';
 // import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './partner-with-intv.module.scss';
 
@@ -29,8 +30,8 @@ const PartnerWithIntv = () => {
   return (
     <Layout>
 
-      <input type="checkbox" className={styles.drawerToggle} name="drawerToggle"/>
-      <label for="drawerToggle" className={styles.drawerToggleLabel}>Go to section</label>
+      <input type="checkbox" className={styles.drawerToggle} name="drawerToggle" />
+      <label htmlFor="drawerToggle" className={styles.drawerToggleLabel}>Go to section</label>
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">Heading here</Title></li>
@@ -54,29 +55,28 @@ const PartnerWithIntv = () => {
                   className={styles.logoImagiTV}
                 />
               </Title>
-            
             </div>
 
             <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/cat@2x.png`}
-                alt="Robo Cat"
+                src={`${ASSETS_URL}/assets/images/illustrations/red-hooded-robot@2x.png`}
+                alt="Red Hooded Robot Friend"
                 className={styles.smlPuppetTalking}
               />
             </div>
-
           </div>
         </section>
+        <MovingWaves />
         <section className={`${styles.sectionPanel} ${styles.panelTwoCol}`}>
           <div className={`${styles.panelCol}`}>
             <Title type="h4Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               WELCOME TO AIME’S IMAGI-NATION{TV}
               & IMAGI-NATION{CLASSROOM} EXPERIENCE
               FOR KIDS ACROSS THE EARTH’S SURFACE
             `}
             </Title>
-            
+
           </div>
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.panelCol}`}>
             <VideoPlayer
@@ -94,8 +94,8 @@ const PartnerWithIntv = () => {
               className={styles.sectionHeading}
               theme={process.env.REACT_APP_THEME}
             >
-              {`Welcome to the IMAGI-NATION {TV} Partner Pack`}
-              
+              {'Welcome to the IMAGI-NATION {TV} Partner Pack'}
+
             </Title>
             <div className={styles.copy}>
               <Paragraph>
@@ -153,22 +153,26 @@ const PartnerWithIntv = () => {
         </section>
         <DoubleCurvedLine />
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
-          {/* what's the best way for this thing... creating a new component every time... really? 
-          shouldn't we be able to use the one comp and replace the content... 
+          {/* what's the best way for this thing... creating a new component every time... really?
+          shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
           <Title type="h3Title" className={styles.aboutInTVTitle}>
-          {`
+            {`
             Meet the hosts
           `}
           </Title>
           <IntvHostsCarousel />
-          <br /><br />
+          <br />
+          <br />
         </section>
 
-        <section className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel}`}>
+        <section className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.withWhiteWave}`}>
+          <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
+          </svg>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               How it works
             `}
             </Title>
@@ -180,12 +184,12 @@ const PartnerWithIntv = () => {
               (based on AIME 21 values).
               • Audio and podcast in production.
               • Impact production in progress, including education resources for
-              teachers around the world to use 
+              teachers around the world to use
             </Paragraph>
           </div>
-          <div className={styles.panelCol}>
+          <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               Weekly themes
             `}
             </Title>
@@ -199,14 +203,14 @@ const PartnerWithIntv = () => {
               • Know Yourself [25th May]
               • Kindness [1st June]
               • Rebelliousness [8th June]
-              • Change [15th June] 
+              • Change [15th June]
             </Paragraph>
           </div>
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               How it works
             `}
             </Title>
@@ -222,7 +226,7 @@ const PartnerWithIntv = () => {
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
           <Title type="h3Title" className={styles.aboutInTVTitle}>
-          {`
+            {`
             About Each Day
           `}
           </Title>
@@ -230,10 +234,10 @@ const PartnerWithIntv = () => {
         </section>
 
         <DoubleCurvedLine />
-        
+
         <section className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title" className={styles.aboutInTVTitle}>
-          {`
+            {`
             Our Guests (so far)
           `}
           </Title>
@@ -290,8 +294,8 @@ const PartnerWithIntv = () => {
               className={styles.sectionHeading}
               theme={process.env.REACT_APP_THEME}
             >
-              {`IMAGI-NATION {CLASSROOM}`}
-              
+              {'IMAGI-NATION {CLASSROOM}'}
+
             </Title>
             <div className={styles.copy}>
               <Paragraph>
@@ -311,13 +315,13 @@ const PartnerWithIntv = () => {
               </Paragraph>
             </div>
           </div>
-          
+
         </section>
         <DoubleCurvedLine />
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               Story of AIME
             `}
             </Title>
@@ -332,7 +336,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} `}>
           <Title type="h3Title" className={styles.aboutInTVTitle}>
-          {`
+            {`
             AIME PROGRAM STATS
           `}
           </Title>
@@ -349,7 +353,7 @@ const PartnerWithIntv = () => {
               430 School partnerships since 2017
               155235 Total volunteer mentor hours donated
               8991 Tutor squads run (since 2015)
-              91 equivalent full time staff employed as of March 2020 
+              91 equivalent full time staff employed as of March 2020
               </Paragraph>
             </div>
             <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
@@ -379,18 +383,20 @@ const PartnerWithIntv = () => {
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               Partner opps ?
             `}
             </Title>
-            <br /><br /><br />
+            <br />
+            <br />
+            <br />
           </div>
         </section>
         <DoubleCurvedLine />
         <section className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <div className={styles.panelCol}>
             <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
+              {`
               Appendix ?
             `}
             </Title>
