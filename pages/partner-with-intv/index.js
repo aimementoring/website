@@ -279,37 +279,72 @@ const PartnerWithIntv = () => {
           <div className={`${styles.flexGridLayout}`}>
             <div className={styles.flexGridItem}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-benlee.png`}
+                alt="Ben Lee"
+                className={styles.intvGuestImg}
               />
             </div>
             <div className={styles.flexGridItem}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-daisyjefferys.png`}
+                alt="Daisy Jefferys"
+                className={styles.intvGuestImg}
               />
             </div>
             <div className={styles.flexGridItem}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-damongameau.png`}
+                alt="Damon Gameau"
+                className={styles.intvGuestImg}
               />
             </div>
             <div className={styles.flexGridItem}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-jodeeknowles.png`}
+                alt="Jodee Knowles"
+                className={styles.intvGuestImg}
               />
             </div>
             <div className={styles.flexGridItem}>
               <img
-                src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
-                alt="ATOM"
-                className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-jordanwatson.png`}
+                alt="Jordan Watson"
+                className={styles.intvGuestImg}
+              />
+            </div>
+            <div className={styles.flexGridItem}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-natvazer.png`}
+                alt="Nat Vazer"
+                className={styles.intvGuestImg}
+              />
+            </div>
+            <div className={styles.flexGridItem}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-sachem.png`}
+                alt="Sachem"
+                className={styles.intvGuestImg}
+              />
+            </div>
+            <div className={styles.flexGridItem}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-shanprimrose.png`}
+                alt="Shan Primrose"
+                className={styles.intvGuestImg}
+              />
+            </div>
+            <div className={styles.flexGridItem}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-stangrant.png`}
+                alt="Stan Grant"
+                className={styles.intvGuestImg}
+              />
+            </div>
+            <div className={styles.flexGridItem}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/guests/intv-guest-tommyfranklin.png`}
+                alt="Tommy Franklin"
+                className={styles.intvGuestImg}
               />
             </div>
           </div>
