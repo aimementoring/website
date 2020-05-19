@@ -24,13 +24,9 @@ const PartnerWithIntv = () => {
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
   const scrollToHosts = useRef(null);
-  const scrollHandlerHosts = () => scrollToComponent(scrollToHosts);
   const scrollToHow = useRef(null);
-  const scrollHandlerHow = () => scrollToComponent(scrollToHow);
   const scrollToMentors = useRef(null);
-  const scrollHandlerMentors = () => scrollToComponent(scrollToMentors);
   const scrollToStory = useRef(null);
-  const scrollHandlerStory = () => scrollToComponent(scrollToStory);
 
   return (
     <Layout>
@@ -40,10 +36,10 @@ const PartnerWithIntv = () => {
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
-          <li><a onClick={scrollHandlerHosts}>Meet the hosts</a></li>
-          <li><a onClick={scrollHandlerHow}>The format</a></li>
-          <li><a onClick={scrollHandlerMentors}>The mentors</a></li>
-          <li><a onClick={scrollHandlerStory}>Background</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToHosts)}>Meet the hosts</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToHow)}>The format</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToMentors)}>The mentors</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToStory)}>Background</a></li>
           <br />
           <br />
           <li><Title type="h5Title">Partnership Opportunities</Title></li>
