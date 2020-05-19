@@ -31,7 +31,7 @@ const PartnerWithIntv = () => {
     <Layout>
 
       <input type="checkbox" className={styles.drawerToggle} name="drawerToggle" />
-      <label htmlFor="drawerToggle" className={styles.drawerToggleLabel}>Go to section</label>
+      <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">Heading here</Title></li>
@@ -43,7 +43,7 @@ const PartnerWithIntv = () => {
       </nav>
 
       <div className={styles.mainSectionWrapper}>
-        <section className={`${styles.heroBannerPartnerIntv} ${styles.sectionPanel}`}>
+        <section className={`${styles.heroBannerPartnerIntv}`}>
           <div className={styles.bannerWrapper}>
             <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
               <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
@@ -66,7 +66,7 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
-        <MovingWaves />
+        {/* <MovingWaves /> */}
         <section className={`${styles.sectionPanel} ${styles.panelTwoCol}`}>
           <div className={`${styles.panelCol}`}>
             <Title type="h4Title" className={styles.aboutInTVTitle}>
