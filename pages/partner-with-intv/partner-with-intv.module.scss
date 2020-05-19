@@ -34,7 +34,10 @@
       left: 1em; 
     } 
     ~ .mainSectionWrapper { 
-      margin-left: 18em; 
+      left: 0; 
+    }
+    ~ .mainSectionWrapper .sectionPanel {
+      padding-left: 18em;
     }
   }
 
