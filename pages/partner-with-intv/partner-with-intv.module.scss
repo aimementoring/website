@@ -43,10 +43,10 @@
   overflow-x: hidden; 
   overflow-y: scroll; 
   -webkit-overflow-scrolling: touch; 
-  top: 8em; 
+  top: 6em; 
   left: -101%; 
   width: 90%; 
-  height: 70%; 
+  height: 80%; 
   padding: 2em 1em; 
   border: 1px solid $purple;
   box-shadow: 2px 2px 0 0 $purple;
@@ -58,7 +58,7 @@
   }
 
   .sideMenu li a {
-    width: 70%;
+    width: 85%;
     font-family: $body-font-family;
     text-decoration: none;
     color: $grey90;
