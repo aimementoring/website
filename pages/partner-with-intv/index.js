@@ -217,49 +217,51 @@ const PartnerWithIntv = () => {
           <br />
         </section>
 
-        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.withWhiteWave}`}>
+        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.withWhiteWave} ${styles.sectionWithBg}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
-          <div className={styles.panelCol}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
-              {`
-              How it works
-            `}
-            </Title>
-            <Paragraph>
-              The show is broadcast live on YouTube daily, Monday to Friday,
-              5 days a week. Our studio is the virtual world. Feedback happens
-              live on Youtube.
-            </Paragraph>
-            <List type="ulList" list={[
-              '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).', 
-              'Audio and podcast in production.', 
-              'Impact production in progress, including education resources for teachers around the world to use'
-            ]} />
-          </div>
-          <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
-              {`
-              Weekly themes
-            `}
-            </Title>
+          <div className={styles.sectionWrapper}>
+            <div className={styles.panelCol}>
+              <Title type="h3Title" className={styles.aboutInTVTitle}>
+                {`
+                How it works
+              `}
+              </Title>
+              <Paragraph>
+                The show is broadcast live on YouTube daily, Monday to Friday,
+                5 days a week. Our studio is the virtual world. Feedback happens
+                live on Youtube.
+              </Paragraph>
+              <List type="ulList" list={[
+                '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).', 
+                'Audio and podcast in production.', 
+                'Impact production in progress, including education resources for teachers around the world to use'
+              ]} />
+            </div>
+            <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
+              <Title type="h3Title" className={styles.aboutInTVTitle}>
+                {`
+                Weekly themes
+              `}
+              </Title>
 
-            <List type="ulList" list={[
-              'Imagination [23rd March]', 
-              'Hope [30th March]',
-              'Trust [6th April]',
-              'Forgiveness [13th April]', 
-              'Empathy [20th April]', 
-              'Listening [27th April]', 
-              'Asking Questions [4th May]', 
-              'Flip the Script [11th May]', 
-              'Initiative [18th May]', 
-              'Know Yourself [25th May]', 
-              'Kindness [1st June]', 
-              'Rebelliousness [8th June]', 
-              'Change [15th June]', 
-            ]} />
+              <List type="ulList" list={[
+                'Imagination [23rd March]', 
+                'Hope [30th March]',
+                'Trust [6th April]',
+                'Forgiveness [13th April]', 
+                'Empathy [20th April]', 
+                'Listening [27th April]', 
+                'Asking Questions [4th May]', 
+                'Flip the Script [11th May]', 
+                'Initiative [18th May]', 
+                'Know Yourself [25th May]', 
+                'Kindness [1st June]', 
+                'Rebelliousness [8th June]', 
+                'Change [15th June]', 
+              ]} />
+            </div>
           </div>
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
@@ -448,52 +450,54 @@ const PartnerWithIntv = () => {
         </section>
 
         <DoubleCurvedLine />
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} `}>
+        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionWithBg}`}>
           <Title type="h3Title" className={styles.aboutInTVTitle}>
             {`
             AIME PROGRAM STATS
           `}
           </Title>
-          <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel}`}>
-            <div className={styles.panelCol}>
-            <List type="ulList" list={[
-              '2740 Program Days run (since 2015)',
-              '45278 Total mentee experiences',
-              '35189 Engaged mentee experiences',
-              '13686 Total mentor experiences',
-              '92.6% of students with Year 12 attainment',
-              '94.8% Average mentee progression rate across all grades',
-              '21 University partnerships (AUS + AFRICA)',
-              '430 School partnerships since 2017',
-              '155235 Total volunteer mentor hours donated',
-              '8991 Tutor squads run (since 2015)',
-              '91 equivalent full time staff employed as of March 2020',
-            ]} />
-            <br /><br />
-            <Title type="h5Title">AIME APPAREL STATS</Title>
-            <List type="ulList" list={[
-              '31 countries shipped to',
-              '5116 hoodies sold',
-              '18 of new apparel styles produced',
-              '1864 hoodies donated',
-              '13 sites submitted artworks',
-              '4 international artists',
-              '15 mentee artists',
-            ]} />
-            </div>
-            <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/1dollar89.png`}
-                alt="For every $1, $8.90 return"
-              />
-              <img
-                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/12-attainment.png`}
-                alt="Year 12 Attainment"
-              />
-              <img
-                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
-                alt="Post school transitions"
-              />
+          <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg}`}>
+            <div className={styles.sectionWrapper}>
+              <div className={styles.panelCol}>
+                <List type="ulList" list={[
+                  '2740 Program Days run (since 2015)',
+                  '45278 Total mentee experiences',
+                  '35189 Engaged mentee experiences',
+                  '13686 Total mentor experiences',
+                  '92.6% of students with Year 12 attainment',
+                  '94.8% Average mentee progression rate across all grades',
+                  '21 University partnerships (AUS + AFRICA)',
+                  '430 School partnerships since 2017',
+                  '155235 Total volunteer mentor hours donated',
+                  '8991 Tutor squads run (since 2015)',
+                  '91 equivalent full time staff employed as of March 2020',
+                ]} />
+                <br /><br />
+                <Title type="h5Title">AIME APPAREL STATS</Title>
+                <List type="ulList" list={[
+                  '31 countries shipped to',
+                  '5116 hoodies sold',
+                  '18 of new apparel styles produced',
+                  '1864 hoodies donated',
+                  '13 sites submitted artworks',
+                  '4 international artists',
+                  '15 mentee artists',
+                ]} />
+              </div>
+              <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/1dollar89.png`}
+                  alt="For every $1, $8.90 return"
+                />
+                <img
+                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/12-attainment.png`}
+                  alt="Year 12 Attainment"
+                />
+                <img
+                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
+                  alt="Post school transitions"
+                />
+                </div>
             </div>
           </div>
         </section>
