@@ -124,6 +124,10 @@
   }
 }
 
+.bannerBottom {
+  position: relative;
+  margin-top: -1.25em;
+}
 
 .heroBannerPartnerIntv {
   background-color: $pink;
@@ -164,7 +168,7 @@
 
     }
   }
-
+  
   .welcomeTitle {
     color: $black;
     text-align: left;
