@@ -31,6 +31,7 @@
 
     .slick-slide .episodePanel .episodeContentInfo {
       display: none;
+
     }
     
     .slick-center .episodePanel .episodeContentInfo {
@@ -41,4 +42,5 @@
 
 .episodePanel {
   opacity: 50%;
+  min-height: 60em;
 }
