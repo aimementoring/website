@@ -44,6 +44,21 @@ const PartnerWithIntv = () => {
           <li><a onClick={scrollHandlerHow}>The format</a></li>
           <li><a onClick={scrollHandlerMentors}>The mentors</a></li>
           <li><a onClick={scrollHandlerStory}>Background</a></li>
+          <br /><br />
+          <li><Title type="h5Title">{`Partnership Opportunities`}</Title></li>
+          <li><a>Production</a></li>
+          <li><a>School Partners</a></li>
+          <li><a>University Partners</a></li>
+          <li><a>Global</a></li>
+          <li><a>National</a></li>
+          <li><a>State/Provincial</a></li>
+          <li><a>Imagination Investors</a></li>
+          <li><a>Content</a></li>
+          <li><a>Puppets</a></li>
+          <li><a>Corporate Wellbeing</a></li>
+          <li><a>Sponsoring a week</a></li>
+          <li><a>Sponsoring an episode</a></li>
+          <li><a>Sponsoring a song</a></li>
         </ul>
       </nav>
 
