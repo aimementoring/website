@@ -88,6 +88,7 @@ const PartnerWithIntv = () => {
 
         <DoubleCurvedLine />
         <section className={`${styles.sectionImageParaFlow} ${styles.sectionPanel}`}>
+          
           <div className={styles.column}>
             <Title
               type="headingLockup"
@@ -99,19 +100,33 @@ const PartnerWithIntv = () => {
             </Title>
             <div className={styles.copy}>
               <Paragraph>
-                AIME is an Imagination Factory that since 2005, has been creating pop-up
-                Imagination Factories on university campuses around the world to unlock
-                the internal narrative of marginalised kids, taking them from a world that
-                tells them they can’t to a world that tells them they can. Kids who experience
-                the Imagination Factory have gone on to achieve educational parity, rise up as
-                entrepreneurs, and take on a whole new mindset that prepares them for success.
+                I founded AIME 16 years ago to bring mentors into the lives of kids
+                left behind. Since then we’ve grown to become global experts in
+                mentoring, last year being honoured as one of the&nbsp;
+                <a href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232" target="_blank">
+                  top 50 education groups in the world
+                </a>.
               </Paragraph>
               <Paragraph>
-                What inspires our Imagination Factory are the mentors throughout human history,
-                the philosophers, artists, inventors and designers who have moved humanity
-                forward in positive ways. With the force of imagination, mentoring and unlikely
-                alliances between those with power and those without, AIME is creating a fairer
-                world.
+                {`We created IMAGI-NATION{TV} to put a mentor in the home every day
+                during the tough times of COVID-19 and beyond. It’s a daily TV show
+                broadcast live on YouTube, and it’s a gift for teachers, parents
+                and kids to help make sense of today and imagine tomorrow.`}
+              </Paragraph>
+              <Paragraph>
+                {`For the sake of clarity and ease, we’ve listed all the potential
+                partnership opportunities in one pack. You can find your way through
+                it via the table of contents on the next page.`}
+              </Paragraph>
+              <Paragraph>
+                {`For all partnership options, the funds and work we do together will
+                be employing our team and creating the best and most engaging show.
+                It will allow for partnerships with curriculum designers to create
+                curriculum content for teachers to incorporate IN{TV} into their
+                daily lesson plans. It will allow us to have our best shot together
+                to get a mentor into every kid’s life every single day - the number
+                of kids affected by COVID-19 school closures stood at almost almost
+                1.5 billion as of 28 March.`}
               </Paragraph>
             </div>
           </div>
@@ -127,19 +142,34 @@ const PartnerWithIntv = () => {
           <div className={styles.column}>
             <div className={styles.copy}>
               <Paragraph>
-                AIME is an Imagination Factory that since 2005, has been creating pop-up
-                Imagination Factories on university campuses around the world to unlock
-                the internal narrative of marginalised kids, taking them from a world that
-                tells them they can’t to a world that tells them they can. Kids who experience
-                the Imagination Factory have gone on to achieve educational parity, rise up as
-                entrepreneurs, and take on a whole new mindset that prepares them for success.
+                Our show is also relevant for university students whom we’ve
+                trained to be mentors for the last 16 years. We can help
+                motivate them as they make their way through these times as
+                well.
               </Paragraph>
               <Paragraph>
-                What inspires our Imagination Factory are the mentors throughout human history,
-                the philosophers, artists, inventors and designers who have moved humanity
-                forward in positive ways. With the force of imagination, mentoring and unlikely
-                alliances between those with power and those without, AIME is creating a fairer
-                world.
+                {`Our pursuit is to elevate knowledge. Every guest we bring on
+                knows something; they have wisdom to share. This show is not
+                about entertainment to pass the time. We want to remake the
+                mould for the modern hero - from beauty to brains, from selfies
+                to self knowledge, from hashtags to hope. IMAGI-NATION {TV}
+                is surging to unlock the best in every single one of us, to
+                release a generation of heroes in the form of mentors who fight
+                for a fairer world.`}
+              </Paragraph>
+              <Paragraph>
+                {`I know we are short for time so let’s get into it. Let’s make
+                the most important TV show the world has ever seen.`}
+              </Paragraph>
+              <Paragraph>
+                Yours in Imagination,
+                <br />
+                <br />
+                <strong>
+                Jack Manning Bancroft
+                <br />
+                {`IN{TV} EP & Founder, AIME CEO & Founder`}
+                </strong>
               </Paragraph>
             </div>
           </div>
