@@ -244,7 +244,7 @@ const PartnerWithIntv = () => {
           <br />
         </section>
 
-        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg}`}>
+        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionWithWaves}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -272,7 +272,7 @@ const PartnerWithIntv = () => {
                 ]}
               />
             </div>
-            <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
+            <div className={`${styles.panelCol}`}>
               <Title type="h3Title">
                 {`
                 Weekly themes
@@ -512,64 +512,66 @@ const PartnerWithIntv = () => {
           </div>
         </section>
 
-        <DoubleCurvedLine />
-
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionWithBg}`}>
-          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
-            AIME PROGRAM STATS
-          </Title>
-          <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg}`}>
-            <div className={styles.sectionWrapper}>
-              <div className={styles.panelCol}>
-                <List
-                  type="ulList"
-                  list={[
-                    '2740 Program Days run (since 2015)',
-                    '45278 Total mentee experiences',
-                    '35189 Engaged mentee experiences',
-                    '13686 Total mentor experiences',
-                    '92.6% of students with Year 12 attainment',
-                    '94.8% Average mentee progression rate across all grades',
-                    '21 University partnerships (AUS + AFRICA)',
-                    '430 School partnerships since 2017',
-                    '155235 Total volunteer mentor hours donated',
-                    '8991 Tutor squads run (since 2015)',
-                    '91 equivalent full time staff employed as of March 2020',
-                  ]}
-                />
-                <br />
-                <br />
-                <Title type="h5Title">AIME APPAREL STATS</Title>
-                <List
-                  type="ulList"
-                  list={[
-                    '31 countries shipped to',
-                    '5116 hoodies sold',
-                    '18 of new apparel styles produced',
-                    '1864 hoodies donated',
-                    '13 sites submitted artworks',
-                    '4 international artists',
-                    '15 mentee artists',
-                  ]}
-                />
-              </div>
-              <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
-                <img
-                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/1dollar89.png`}
-                  alt="For every $1, $8.90 return"
-                />
-                <img
-                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/12-attainment.png`}
-                  alt="Year 12 Attainment"
-                />
-                <img
-                  src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
-                  alt="Post school transitions"
-                />
-              </div>
+        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionProgramStats} ${styles.sectionWithWaves}`}>
+          <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
+          </svg>
+          <svg className={styles.whiteWaveBottom} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
+          </svg>
+          <div className={styles.sectionWrapper}>
+            <div className={styles.panelCol}>
+              <Title type="h4Title">AIME PROGRAM STATS</Title>
+              <List
+                type="ulList"
+                list={[
+                  '2740 Program Days run (since 2015)',
+                  '45278 Total mentee experiences',
+                  '35189 Engaged mentee experiences',
+                  '13686 Total mentor experiences',
+                  '92.6% of students with Year 12 attainment',
+                  '94.8% Average mentee progression rate across all grades',
+                  '21 University partnerships (AUS + AFRICA)',
+                  '430 School partnerships since 2017',
+                  '155235 Total volunteer mentor hours donated',
+                  '8991 Tutor squads run (since 2015)',
+                  '91 equivalent full time staff employed as of March 2020',
+                ]}
+              />
+              <Title type="h4Title">AIME APPAREL STATS</Title>
+              <List
+                type="ulList"
+                list={[
+                  '31 countries shipped to',
+                  '5116 hoodies sold',
+                  '18 of new apparel styles produced',
+                  '1864 hoodies donated',
+                  '13 sites submitted artworks',
+                  '4 international artists',
+                  '15 mentee artists',
+                ]}
+              />
+            </div>
+            <div className={`${styles.panelCol} ${styles.zigZagImageFlow}`}>
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/1dollar89.png`}
+                alt="For every $1, $8.90 return"
+              />
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/12-attainment.png`}
+                alt="Year 12 Attainment"
+              />
+              <img
+                src={`${ASSETS_URL}/assets/images/imagi-nation-tv/stats/post-transitions.png`}
+                alt="Post school transitions"
+              />
             </div>
           </div>
         </section>
+        
+        <br />
+        <br />
+        <br />
         <IntvPartners />
         <DoubleCurvedLine />
 
