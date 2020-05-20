@@ -31,6 +31,9 @@ const PartnerWithIntv = () => {
 
   return (
     <Layout>
+      <div className={`${styles.intercomBtnWrap}`}>
+        <IntercomChat label="Let's chat" />
+      </div>
       <Button
         type="text"
         containerClassName={styles.typeformToggleContainer}
