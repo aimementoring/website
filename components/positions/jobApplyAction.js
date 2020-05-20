@@ -10,7 +10,6 @@ const JobApplyAction = ({ showForm, showApplicationForm, job }) => (
         id="applyNowButton"
         type="button"
         onClickFunction={showApplicationForm}
-        className="basic-btn border-none submit bold bg-purple c-white regular js-non-unavailable-position"
         aria-label="apply now"
       >
         Apply now

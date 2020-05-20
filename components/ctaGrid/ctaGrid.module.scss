@@ -1,4 +1,4 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
 .ctaGridContainer {
   position: relative;
@@ -144,6 +144,43 @@
     padding: 0 0.5em;
     line-height: 1em;
   }
+
+  // Left the above styles as is if we want to revert bck to using the CTA Grid for important web pages. 
+  &.ctaCampaigns {
+    .ctaItem {
+      &:nth-child(1) {
+        background-color: $purple;
+
+        .itemContentImage {
+          background-image: url($cdnRoot + 'assets/images/illustrations/filmcamera@2x.png');
+        }
+      }
+      &:nth-child(2) {
+
+        .itemContentImage {
+          background-image: url($cdnRoot + 'assets/images/illustrations/hoodie-grey.png');
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: $orange;
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/bg-orange-pups@2x.jpg');
+
+        .itemContentImage {
+          background-image: url($cdnRoot + 'assets/images/illustrations/puppet-tv@2x.png');
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: $yellow;
+        background-image: url($cdnRoot + 'assets/images/homepage-grid/bg-yellow-values@2x.jpg');
+
+        .itemContentImage {
+          background-image: url($cdnRoot + 'assets/images/illustrations/shake_hands@2x.png');
+        }
+      }
+    }
+  }
 }
 
 .partnerPanelWrap {
@@ -189,6 +226,7 @@
       border-radius: 3px;
       font-family: $body-font-family-bold;
       font-size: 0.9rem;
+      font-weight: bold;
       text-transform: uppercase;
       color: $white;
       letter-spacing: 0.13em;

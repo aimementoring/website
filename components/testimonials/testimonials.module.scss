@@ -1,31 +1,49 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .testimonials {
+
+  .testimonialsContainer {
+    @media screen and (max-width: $sm) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @media screen and (min-width: $sm) and (max-width: $md) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media screen and (min-width: $md) {
+      padding: 4rem;
+    }
+  }
 
   .testiHeader {
     text-align: center;
   }
 
-  &-highlight-text {
-    font-size: calc(#{$base-font-size} + 2rem);
-    padding-bottom: 30px;
+  .carouselContainer {
+    position: relative;
+    margin-top: initial;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin: 0 0 1rem 0;
+    background-color: $white;
+
+    @media screen and (max-width: $sm) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media screen and (min-width: $sm) and (max-width: $md) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @media screen and (min-width: $md) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
-  &-title {
-    color: $white;
-    font-style: normal;
-    font-weight: 900;
-  }
-
-  .video-banner {
-    box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  .slick-initialized .slick-slide {
-    overflow: hidden;
-  }
-
-  &-carousel {
+  .testimonialsCarousel {
     margin: 0 auto;
     max-width: 700px;
     width: 100%;
@@ -33,55 +51,40 @@
     position: relative;
   }
 
-  .icon-arrow-prev,
-  .icon-arrow-next {
-    width: 50px;
-    height: 50px;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    padding: 0;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    cursor: pointer;
-    border: none;
+  .carouselCardContainer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    width: 100%;
+  }
 
-    @media screen and (max-width: $md) {
-      width: 30px;
-      height: 30px;
+  .carouselCard {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $sm) {
+      width: 50%;
     }
   }
 
-  .icon-arrow-prev {
-    left: -3rem;
-
-    @media screen and (max-width: $md) {
-      left: -1.4rem;
-    }
-
-    @media screen and (max-width: $sm) {
-      left: -0.5rem;
-    }
+  .carouselContent {
+    padding: .5rem;
   }
 
-  .icon-arrow-next {
-    right: -3rem;
-
-    @media screen and (max-width: $md) {
-      right: -1.4rem;
-    }
-
-    @media screen and (max-width: $sm) {
-      right: -0.5rem;
-    }
+  .signatureText {
+    margin-top: 1rem;
+    font-size: 20px;
+    font-family: $signature-font-family;
+    max-width: 30em;
   }
 
-  @media screen and (max-width: $md) {
+  :global(.slick-initialized .slick-slide) {
+    overflow: hidden;
+  }
 
-    .xs-text-wrap {
-      max-width: 100%;
-    }
+  :global(.slick-dots) {
+    display: none !important;
   }
 }

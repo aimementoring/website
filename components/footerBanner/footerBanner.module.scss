@@ -1,4 +1,4 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
 .footerBannerContainer {
   position: relative;
@@ -37,3 +37,4 @@
   }
 }
 
+.center { text-align: center; }

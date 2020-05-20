@@ -1,0 +1,18 @@
+@import "../../styles/global.module.scss";
+
+.jobVideoContainer {
+  margin-bottom: 4rem;
+
+  &.hidden {
+    display: none;
+  }
+
+  .videoContainer {
+    position: relative;
+    padding-bottom: 45%;
+    padding-top: 0;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+}

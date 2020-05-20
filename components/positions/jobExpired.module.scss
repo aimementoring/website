@@ -1,0 +1,10 @@
+@import "../../styles/global.module.scss";
+
+.jobExpiredContainer {
+  display: block;
+  margin-bottom: 2rem;
+  
+  @media screen and (min-width: $md) {
+    margin-bottom: 4rem;
+  }
+}

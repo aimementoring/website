@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'aime-blueprint/lib/components/checkbox';
+import styles from './indigenousForm.module.scss';
 
 const IndigenousForm = ({ handleChange, values }) => (
   <div>
-    <div className="sm-col sm-col-12 md-col-12 f-14 pt1 pb1 flex items-center custom-checkbox custom-checkbox--default">
+    <div className={styles.indigenousFormContainer}>
       <Checkbox
         id="indigenous"
         placeholder="I identify as an Aboriginal and/or Torres Strait Islander person."

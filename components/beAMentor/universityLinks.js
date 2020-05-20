@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './universityLinks.module.scss';
 
 const UniversityLinks = ({ options }) => (
-  <div className="display-none">
+  <div className={styles.displayNone}>
     {options && (
       <div>
         {options.map((university) => (

@@ -1,21 +1,29 @@
 import React from 'react';
-import Title from 'aime-blueprint/lib/components/title';
 import PropTypes from 'prop-types';
 import { getTerms } from '../../api/contentfulPosts';
 import Layout from '../../hocs/basicLayout';
-
 import TermPhraseCard from '../../components/termPhraseCard';
+import { SimpleBanner } from '../../components/banner/index';
+import styles from './termsOfService.module.scss';
 
 const TermsAndConditions = ({ entries }) => (
   <Layout>
-    <div style={{ height: `${120}px`, backgroundColor: 'black' }} />
     {entries && entries.map(({ fields, sys }) => (
-      <div key={sys.id} className="matrix-general">
-        <div className="wrap-md mb0 md-mb3 lg-mb3 clearfix">
-          <span className="line above" />
-          <Title type="h5Title">{fields.title}</Title>
-        </div>
-        <div className="wrap-md">
+      <div key={sys.id} className={styles.termsAndConditions}>
+        <SimpleBanner
+          title={(
+            <strong>
+              {fields.title}
+            </strong>
+          )}
+          groovy
+          titleType="headingLockup"
+          titleStyleClass={styles.bannerHeadingTermsOfService}
+          bannerContainerClass={styles.termsOfServiceBanner}
+          bannerWrapperClass={styles.bannerWrapper}
+          bannerContentWrapperClass={styles.bannerContentWrapper}
+        />
+        <div className={styles.termsSection}>
           <TermPhraseCard contentCards={fields.contentCards} />
         </div>
       </div>

@@ -1,0 +1,9 @@
+@import "../../styles/global.module.scss";
+
+.headingJobContent {
+  margin: 1.5em 0 0.5em;
+
+  .headingJobRole{
+    color: $accent-purple;
+  }
+}

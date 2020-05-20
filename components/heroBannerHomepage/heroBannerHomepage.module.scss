@@ -1,9 +1,9 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroBannerHomepage {
   background:
     url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
-  background-size: 100% 40%;
+  background-size: 100%;
   position: relative;
   max-width: 75em;
   width: 100%;
@@ -11,13 +11,16 @@
   margin: 6em auto 0;
 
   @media screen and (min-width: $sm) {
-    background-size: 80% 65%;
+    background-size: 75%;
   }
 
   @media screen and (min-width: $md) {
     background-position: 90% 80%;
-   
-    background-size: 60% 90%;
+    background-size: 70%;
+  }
+
+  @media screen and (min-width: $lg) {
+    background-size: 50%;
   }
   
   .welcomeTitle {
@@ -41,6 +44,7 @@
       width: 17rem;
     }
   }
+
   .triBtnSet {
     .triBtn {
       margin-bottom: 1em;
@@ -57,112 +61,125 @@
     }
   }
 }
-
-.bannerWrapper {
-  position: relative;
-  box-sizing: border-box;
-  flex-direction: column;
-  width: 100%;
-  padding: 1em;
-
-  @media screen and (min-width: $sm) {
-    display: flex;
-  }
-
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    align-items: center;
-    padding: 2em;
-  }
-
-  .bannerItem {
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-basis: 0;
-    clear: both;
-    display: flex;
-    flex-direction: column;
-    @media screen and (min-width: $sm) {
-      width: 70%;
-    }
-  }
-
-  .bannerContent {
-    z-index: 1;
-    justify-content: flex-end;
-
-    @media screen and (min-width: $sm) {
-      padding-right: 3em;
-    }
-
-    p {
-      color: $black;
-      max-width: 30em;
-      margin: 2em 0;
-    }
-  }
-
-  .bannerMediaFeature {
+.heroBannerHomepage {
+  .bannerWrapper {
     position: relative;
-    padding-top: 1.5em;
-    align-self: flex-end;
-    text-align: right;
-    font-family: $body-font-family;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
 
     @media screen and (min-width: $sm) {
+      display: flex;
+    }
+
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+      align-items: center;
       padding: 2em;
-      margin-top: -5em;
     }
 
-    @media screen and (min-width: $md) {
-      align-self: center;
-      flex-grow: 1.33;
-      margin-top: 0;
-      top: 2em;
+    .bannerItem {
+      box-sizing: border-box;
+      flex-grow: 1;
+      flex-basis: auto;
+      clear: both;
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $sm) {
+        width: 50%;
+      }
     }
 
-    .dancingIllo {
-      width: 7em;
-      position: absolute;
-      top: -2em;
-      right: 0;
+    .bannerContent {
+      z-index: 1;
+      justify-content: flex-end;
 
       @media screen and (min-width: $sm) {
-        right: 2em;
+        padding-right: 3em;
+      }
+
+      p {
+        color: $black;
+        max-width: 30em;
+        margin: 2em 0;
+      }
+
+      &.bannerItem {
+        align-self: flex-start;
+      }
+    }
+
+    .bannerMediaFeature {
+      position: relative;
+      padding-top: 1.5em;
+      align-self: flex-end;
+      text-align: right;
+      font-family: $body-font-family;
+
+      @media screen and (min-width: $sm) {
+        padding: 2em;
+        margin-top: -5em;
+        min-width: 28em;
       }
 
       @media screen and (min-width: $md) {
-        width: 13em;
-        top: -5em;
-        right: 1em;
+        flex-grow: 1.33;
+        margin-top: -5em;
+        min-width: 35em;
+      }
+      @media screen and (min-width: $lg) {
+        margin-top: 0;
+        min-width: unset;
       }
 
-      &.dancingIlloBtm {
-        top: initial;
-        bottom: 0;
-        right: initial;
-        left: -4em;
+      .dancingIllo {
+        width: 7em;
+        position: absolute;
+        top: -2em;
+        right: 0;
+
+        @media screen and (min-width: $sm) {
+          right: 2em;
+        }
 
         @media screen and (min-width: $md) {
-          left: -7em;
+          width: 13em;
+          top: -5em;
+          right: 1em;
+        }
+
+        &.dancingIlloBtm {
+          top: initial;
+          bottom: 0;
+          right: initial;
+          left: -4em;
+
+          @media screen and (min-width: $md) {
+            left: -7em;
+          }
         }
       }
-    }
 
-    .videoCoverArt {
-      border-radius: 3px;
-    }
+      .videoCoverArt {
+        border-radius: 3px;
+        max-width: 100%;
+      }
 
-    .textLinkChannel {
-      text-decoration: none;
-      font-size: 0.85rem;
-      color: $black;
-      margin-top: 0.5em;
-      transition: $hoverTransition;
-      cursor: pointer;
+      .textLinkChannel {
+        text-decoration: none;
+        font-size: 0.85rem;
+        color: $black;
+        margin-top: 0.5em;
+        transition: $hoverTransition;
+        cursor: pointer;
 
-      &:hover {
-        color: $magenta;
+        &:hover {
+          color: $magenta;
+        }
       }
     }
   }

@@ -1,12 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import isClientSide from '../../utils/isClientSide';
-import './slick.scss';
-
-const LiveHeader = dynamic(() => import('./carouselHeaders/liveHeader'));
-const AimeVideosHeader = dynamic(() => import('./carouselHeaders/aimeVideos'));
-const TestimonialsHeader = dynamic(() => import('./carouselHeaders/testimonials'));
+import styles from './carousel.module.scss';
 
 const defaultSettings = {
   dots: true,
@@ -31,7 +27,7 @@ const defaultSettings = {
   ],
 };
 
-const centerModeSettings = {
+const multipleSlideSettings = {
   centerMode: true,
   centerPadding: '2em',
   slidesToShow: 3,
@@ -74,32 +70,21 @@ const centerModeSettings = {
 };
 
 const Carousel = ({
-  children, type, className, settings, mode,
+  children, type, className, settings, showArrows, carouselClassName,
 }) => {
-  const sliderRef = useRef(null);
   const ssr = !isClientSide();
   const Slider = dynamic(import('react-slick'), { ssr });
 
-  const next = () => {
-    sliderRef.slickNext();
-  };
-
-  const previous = () => {
-    sliderRef.slickPrev();
-  };
-
-  const newSettings = { ...(mode === 'center' ? centerModeSettings : defaultSettings), ...settings };
+  const newSettings = { ...(type === 'multipleSlides' ? multipleSlideSettings : defaultSettings), ...settings };
+  if (showArrows) newSettings.arrows = true;
 
   return (
-    <div className={className || `${type}-carousel`}>
-      {type === 'live' && <LiveHeader prev={previous} next={next} />}
-      {type === 'aimeVideos' && <AimeVideosHeader prev={previous} next={next} />}
-      {type === 'testimonials' && <TestimonialsHeader prev={previous} next={next} />}
+    <div className={className}>
       <Slider
         {...newSettings}
         key={ssr ? 'server' : 'client'}
         responsive={ssr ? null : newSettings.responsive}
-        ref={sliderRef}
+        className={`${styles.carouselComponent} ${carouselClassName}`}
       >
         {children}
       </Slider>
@@ -108,19 +93,20 @@ const Carousel = ({
 };
 
 Carousel.propTypes = {
-  type: PropTypes.oneOf(['ambassadors', 'live', 'aimeVideos', 'hero',
-    'testimonials']),
+  showArrows: PropTypes.bool,
+  type: PropTypes.oneOf(['singleSlide', 'multipleSlides']),
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   settings: PropTypes.shape({}),
-  mode: PropTypes.string,
+  carouselClassName: PropTypes.string,
 };
 
 Carousel.defaultProps = {
+  showArrows: false,
   className: null,
-  type: 'hero',
+  type: 'singleSlide',
   settings: {},
-  mode: '',
+  carouselClassName: '',
 };
 
 export default Carousel;

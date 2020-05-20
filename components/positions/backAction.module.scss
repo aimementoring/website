@@ -1,0 +1,12 @@
+@import "../../styles/global.module.scss";
+
+.backActionParagraph {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 2em 0 1em;
+}
+
+.materialIcons {
+  @extend %materialIcons;
+}

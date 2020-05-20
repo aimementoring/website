@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .beAMentorFormWrapper {
   background-color: $lilac;
@@ -8,13 +8,17 @@
 
   h5 {
     margin-bottom: 1em;
+    text-align: center;
+    padding: 0 1em;
+
+    @media only screen and (min-width: $md) {
+      text-align: left;
+      padding: 0;
+    }
   }
 
   img{
-    // width: 211px;
-    // margin-bottom: 1.5em;
-    width: 11em;
-    float: left;
+    width: 10em;
     padding: 1em;
   }
 
@@ -29,4 +33,18 @@
   background: #ffffff;
   margin: 1em 0;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  @media only screen and (min-width: $md) {
+    padding:2em 1em 1em;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 1em;
+
+    @media only screen and (min-width: $md) {
+      float: left;
+      margin: initial;
+    }
+  }
 }

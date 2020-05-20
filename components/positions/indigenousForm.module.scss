@@ -1,0 +1,15 @@
+@import "../../styles/global.module.scss";
+
+.indigenousFormContainer {
+  font-size: 14px;
+  display: flex;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  align-items: center;
+
+  @media (min-width: $sm) {
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

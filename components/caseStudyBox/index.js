@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
+import styles from './caseStudyBox.module.scss';
 
 const VideoButton = dynamic(() => import('../videoButton'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const CaseStudyBox = ({ video, image, name }) => (
-  <div className="video-button grid-tile">
+  <div className={styles.caseStudyVideo}>
     <VideoButton video={`https://player.vimeo.com/external/${video}`} />
-    <div className="campaign-grid--inner-tile">
-      <div className="center anchor">
+    <div>
+      <div className={styles.campaignGrid}>
         <img
-          className="campaign-grid--image"
+          className={styles.campaignGridImage}
           src={`${ASSETS_URL}/assets/images/case-studies/${image}`}
           alt={name}
         />
-        <h4 className="c-black campaign-grid--title">{name}</h4>
-        <div className="watch-prompt">Watch video</div>
+        <h4 className={styles.campaignGridTitle}>{name}</h4>
+        <div className={styles.watchPrompt}>Watch video</div>
       </div>
     </div>
   </div>

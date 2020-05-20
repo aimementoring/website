@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'aime-blueprint/lib/components/button';
+import styles from './hiddenFieldsAndSubmitAction.module.scss';
 
 const HiddenFieldsAndSubmitAction = ({ type, name, onSubmit }) => (
   <>
@@ -13,24 +14,16 @@ const HiddenFieldsAndSubmitAction = ({ type, name, onSubmit }) => (
     <input
       type="hidden"
       name="job_type"
-      className="js-job-type-submit-value"
       value={type}
     />
     <input
       type="hidden"
       name="jobs_role_applying_for"
-      className="js-jobs-role-applying-for"
       value={name}
     />
-    <div className="sm-col sm-col-12 md-col-12">
-      {/* <input
-        type="submit"
-        className=""
-        value="Submit Application"
-      /> */}
+    <div className={styles.hiddenFieldsAndSubmitActionContainer}>
       <Button
         theme={process.env.REACT_APP_THEME}
-        // className="submit submit-button bold bg-purple mt3 mb4"
         aria-label="submit"
         type="button"
         value="Submit Application"

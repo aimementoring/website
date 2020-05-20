@@ -1,18 +1,45 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .theMentor {
-  .full-width-wrap p {
-    max-width: 30em;
+
+  .fullWidthWrap {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
   }
-  .section-background-image {
+ 
+  .containerTheMentor{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .componentSimpleBanner{
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    height: auto;
+  
     background:
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
       #050301;
-  }
-
-  .banner-wrapper {
-    background-size: cover;
+    h1 {
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+    @media screen and (min-width: $sm) {
+      height: 80vh;
+    }
+    padding-top: 4em;
+    padding-bottom: 4em;
   }
   .mentorBannerContent {
     display: flex;
@@ -20,6 +47,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 1em;
+    width: 28.25em;
 
     .mentorPara {
       margin: 2em 0;
@@ -33,132 +61,10 @@
     }
   }
 
-  .full-height {
-    height: auto;
-
-    @media screen and (min-width: $sm) {
-      height: 80vh;
-    }
-  }
-
-  .testimonial-container {
+  .testimonials{
     margin: 0 auto;
     width: 100%;
     margin-top: 2em;
+    position: relative;
   }
-
-  .carousel {
-    margin-top: initial;
-  }
-
-  .section-hoodedScholar-title {
-    color: $white;
-    font-family: $feature-font-family;
-    font-weight: 900;
-  }
-
-  &-highlight-text {
-    margin: 0 auto;
-    padding: 1rem;
-    font-size: $highlight-text-font-size;
-
-    @media screen and (min-width: $sm) {
-      font-size: calc(#{$highlight-text-font-size} + 1.5rem);
-    }
-
-    @media screen and (min-width: $md) {
-      font-size: calc(#{$highlight-text-font-size} + 2.5rem);
-    }
-
-    @media all and(min-width: $lg) {
-      font-size: calc(#{$highlight-text-font-size} + 3.5rem);
-    }
-  }
-
-  &-content {
-    display: flex;
-  }
-
-  .icon-container {
-    display: flex;
-    align-items: flex-start;
-
-    .icon {
-      margin-top: 4px;
-      margin-right: 16px;
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-
-  .download-btn {
-    padding: 1rem 1rem;
-
-    @media screen and (min-width: $md) {
-      padding: 1rem 2rem;
-    }
-  }
-
-  .download-btn-text {
-    float: left;
-  }
-
-  .download-btn-text:after {
-    content: "";
-    display: block;
-    background:
-      url($cdnRoot+"assets/images/Download.svg") no-repeat center
-      center;
-    width: 20px;
-    height: 20px;
-    float: right;
-    margin: 0 0 0 0.5rem;
-
-    @media screen and (min-width: $md) {
-      margin: 0 0 0 1rem;
-    }
-  }
-
-  //TODO: Find better place for this variant styles
-
-  .pre-text.center,
-  .post-text.center {
-    padding-left: 0;
-    display: block;
-
-    @media screen and (max-width: $md) {
-      font-size: 1rem;
-    }
-  }
-
-  .video-banner {
-    clip-path: none;
-
-    &-overlay {
-      margin: 0 auto;
-    }
-  }
-
-  .absolute-wrapper {
-    width: 40px;
-    height: 20px;
-    margin-bottom: -4.7rem;
-    background: #18001d;
-  }
-
-  .absolute-text {
-    font-family: $feature-font-family;
-    font-weight: 900;
-    left: 35%;
-  }
-
-  .aimeVideos-buttons button {
-    color: $white !important;
-  }
-}
-
-//TODO: Find better place for these styles for tab component
-
-.gradient-purple {
-  background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
 }

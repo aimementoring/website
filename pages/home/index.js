@@ -3,17 +3,18 @@ import React, {
 } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import HeroBannerHomepage from '../../components/heroBannerHomepage';
 import Layout from '../../hocs/basicLayout';
-import { CTA_AU_HOMEPAGE } from '../../constants';
+import { CTA_GRID_CAMPAIGNS } from '../../constants';
+import WavyDonateSection from '../../components/wavyDonateSection';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import isClientSide from '../../utils/isClientSide';
 import useDonate from '../../hooks/useDonate';
-import './home.scss';
+import scrollToComponent from '../../utils/scrollToComponent';
 
-const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
+const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
 const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
 const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
-const Ambassadors = dynamic(() => import('../../components/ambassadors'));
+const AmbassadorsCarousel = dynamic(() => import('../../components/ambassadorsCarousel'));
 const FooterBanner = dynamic(() => import('../../components/footerBanner'));
 
 const Home = () => {
@@ -36,34 +37,19 @@ const Home = () => {
     }
   }, [router.query]);
 
-  const scrollToGetInvolved = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        getInvolvedRef.current.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        getInvolvedRef.current.scrollIntoView(false);
-      }
-    }
-  };
-
-  const scrollToPartnerBanner = () => {
-    if (isClientSide()) {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
-      if (isSmoothScrollSupported) {
-        partnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        partnerRef.current.scrollIntoView(false);
-      }
-    }
-  };
+  const scrollToGetInvolved = () => scrollToComponent(getInvolvedRef);
+  const scrollToPartnerBanner = () => scrollToComponent(partnerRef);
 
   return (
     <Layout>
       <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
+      <CtaGrid elements={CTA_GRID_CAMPAIGNS} partnerRef={partnerRef} />
+      <br />
+      <DoubleCurvedLine />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
-      <Ambassadors />
+
+      <WavyDonateSection />
+      <AmbassadorsCarousel />
       <FooterBanner />
     </Layout>
   );

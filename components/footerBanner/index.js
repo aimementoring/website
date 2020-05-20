@@ -6,7 +6,7 @@ const FooterBanner = () => (
   <div className={styles.footerBannerContainer}>
     <div className={styles.footerBannerWrapper}>
       <div className={styles.bannerWrapper}>
-        <div className="panel__title-lockup center">
+        <div className={styles.center}>
           <Title className={styles.headingLockup} type="headingLockup" theme={process.env.REACT_APP_THEME}>
             <strong>Imagine</strong>
             What&apos;s possible

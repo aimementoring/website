@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import scrollToComponent from '../../utils/scrollToComponent';
 import isClientSide from '../../utils/isClientSide';
 import Layout from '../../hocs/basicLayout';
-import styles from './goingGlobal.module.scss';
+import styles from './going-global.module.scss';
 
 const Intro = dynamic(() => import('../../components/goingGlobal/introSection'));
 const CaseStudies = dynamic(() => import('../../components/goingGlobal/caseStudiesSection'));

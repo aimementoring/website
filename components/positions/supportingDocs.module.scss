@@ -1,0 +1,45 @@
+@import "../../styles/global.module.scss";
+
+.supportingDocsContainer {
+  display: block;
+  margin-bottom: 2rem;
+  
+  @media screen and (min-width: $md) {
+    margin-bottom: 4rem;
+  }
+
+  .headingJobContent {
+    margin: 1.5em 0 0.5em;
+  }
+
+  .jobDocumentsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .jobDownloadLink {
+    display: flex;
+    font-weight: 700;
+    color: $grey;
+    font-family: $feature-font-family;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    margin-right: 4rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fileDownloadIcon {
+    margin-right: 1rem;
+    @extend %materialIcons;
+  }
+
+  .truncateFileName {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

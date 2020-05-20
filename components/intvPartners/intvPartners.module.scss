@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .fullWidthWrap {
   max-width: 100%;
@@ -44,14 +44,14 @@
 
 
 .partnersWrapper {
+  max-width: 64em;
   width: 100%;
   margin: auto;
 
   .partnersHeader {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    text-align: center;
     margin: 1em;
     flex-direction: row;
 
@@ -60,11 +60,14 @@
       flex-direction: column;
       text-align: center;
     }
+
+    h3 {
+      margin-bottom: 0.5em;
+    }
   }
 
   .becomeAPartnerBtn {
     text-align: center;
-    margin-bottom: 2em;
     
     button.navBtn {
       background-color: $pink;
@@ -81,7 +84,7 @@
       transition: $hoverTransition;
 
       &:hover {
-        background-color: $orange;
+        background-color: $purple;
       }
     }
 
@@ -103,6 +106,7 @@
     @media screen and (max-width: 100em) {
       left: -10%;
       width: 120%;
+      margin: 3em 0;
     }
     
     @media screen and (max-width: $sm) {
@@ -110,14 +114,14 @@
       margin: 1em 0;
     }
 
-    .slick-list {
+    :global(.slick-list) {
       padding: 0 !important;
     }
 
     .partnerContainer {
       padding: 0 1em;
       text-align: center;
-      opacity: 50%;
+      opacity: 0.5;
       box-sizing: border-box;
       padding: 2em 3.5em 1.5em;
 
@@ -152,9 +156,9 @@
       }
     }
 
-    .slick-center {
+    :global(.slick-center) {
       .partnerContainer {
-        opacity: 100%;
+        opacity: 1;
         margin: 0;
         border-radius: 0 0 3px 3px;
         @media screen and (min-width: $md) {
@@ -328,7 +332,6 @@
       }
 
       .titleContainer {
-
         @media all and(min-width: $md) {
           width: 100%;
         }
@@ -366,6 +369,32 @@
       display: inline-block;
       margin: 0px 5px;
       padding: 0px;
+    }
+  }
+}
+
+.partnersCarousel {
+  :global(.slick-prev) {
+    background: url($cdnRoot + 'assets/images/carousel/arrow-prev-purple.svg') no-repeat top center / contain transparent;
+    left: 5rem;
+    margin: 0;
+    @media all and(min-width: $md) {
+      left: 8rem;
+    }
+    @media all and(min-width: $lg) {
+      left: 10rem;
+    }
+  }
+  
+  :global(.slick-next) {
+    background: url($cdnRoot + 'assets/images/carousel/arrow-next-purple.svg') no-repeat top center / contain transparent;
+    right: 5rem;
+    margin: 0;
+    @media all and(min-width: $md) {
+      right: 8rem;
+    }
+    @media all and(min-width: $lg) {
+      right: 10rem;
     }
   }
 }

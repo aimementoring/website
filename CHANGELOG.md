@@ -4,6 +4,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.2.4] 2020-05-11
+### Added
+- New IMAGINE CTA on INTV
+
+### Changed
+- Homepage hero & CTAs focusing on IMAGINE the film
+
+### Removed
+
+## [5.2.3] 2020-05-11
+### Added
+- New Homepage CTAs
+
+### Changed
+- Imagine page simplified
+
+### Removed
+
+## [5.2.2] 2020-05-08
+### Added
+- Imagine Page
+
+### Changed
+- Migrating many files to CSS Modules
+
+### Removed
+
+## [5.2.1] 2020-05-04
+### Added
+- Intro info panel on INTV
+- Adding Typeform modal functionality
+
+### Changed
+- Migrating many files to CSS Modules
+- Refactored scrollTo functionality
+
+### Removed
+- Deleted unneccessary files (via css modules migration)
+
+## [5.2] 2020-04-27
+### Added
+- New NextJS version
+- Gimbal Lighthouse notification
+- New IN{TV} partner quotes
+
+### Changed
+- Responsiveness of home banner
+- Partner carousel buttons
+
+### Removed
+- Service worker until is fixed
+
 ## [5.1.6] 2020-04-17
 ### Added
 - Added IN{TV} Partner carousel

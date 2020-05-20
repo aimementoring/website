@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/router';
 import compact from 'lodash/compact';
+import Loading from 'aime-blueprint/lib/components/loading';
 import Layout from '../../../hocs/basicLayout';
-import { getFromStorage } from '../../../utils/localStorage';
 import {
   capitaliseFirstCharacter,
   slugify,
@@ -12,7 +12,6 @@ import handleError from '../../../utils/errorHandler';
 import request from '../../../utils/request';
 import { findJob } from '../../../services/positions';
 import Header from '../../../components/positions/header';
-import Loading from '../../../components/positions/loading';
 import JobsTitle from '../../../components/positions/jobsTitle';
 import JobsDetail from '../../../components/positions/jobsDetail';
 import SupportingDocs from '../../../components/positions/supportingDocs';
@@ -21,7 +20,8 @@ import JobApplyAction from '../../../components/positions/jobApplyAction';
 import JobExpired from '../../../components/positions/jobExpired';
 import BackAction from '../../../components/positions/backAction';
 import JobForm from '../../../components/positions/jobForm';
-import './positionsEntry.scss';
+
+import styles from './positionsEntry.module.scss';
 
 
 const PositionsEntry = () => {
@@ -57,7 +57,8 @@ const PositionsEntry = () => {
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
-    const countryId = getFromStorage('country_code_selected') || 'global';
+    // TODO this needs fixing to make filtering work again
+    const countryId = 'global';
     if (positionId) {
       try {
         const job = await findJob(positionId, countryId);
@@ -183,45 +184,47 @@ const PositionsEntry = () => {
     redirectJobTitle,
   } = state;
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading loading={isLoading} theme={process.env.REACT_APP_THEME} />;
 
   if (!displayError) {
     return (
       <Layout>
         <div id="positions-entry">
           <Header />
-          <div className="job-description md-wrap mx-auto px3 pb3 pt3 js-job-application">
-            <JobsTitle {...job} />
-            <JobsDetail {...job} location={location} />
-            <JobVideoOpportunity
-              id={positionId}
-              embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
-              description={job ? job.description : ''}
-            />
-            <SupportingDocs jobPacks={job && job.jobPacks ? job.jobPacks : []} />
-            <JobApplyAction
-              showForm={showForm}
-              showApplicationForm={showApplicationForm}
-              job={job}
-            />
-            <JobExpired positionExpired={positionExpired} />
-            <JobForm
-              job={job}
-              onAddressSelected={onAddressSelected}
-              locationError={locationError}
-              showForm={showForm}
-              streetNumber={streetNumber}
-              streetName={streetName}
-              postCode={postCode}
-              territory={territory}
-              city={city}
-              handleFieldChange={handleFieldChange}
-              handleFormFieldChange={handleFormFieldChange}
-              countryAddress={countryAddress}
-              values={state.jobForm}
-              onSubmit={handleSubmit}
-            />
-            <BackAction />
+          <div className={styles.positionsJobCategory}>
+            <div className={styles.jobCategory}>
+              <JobsTitle {...job} />
+              <JobsDetail {...job} location={location} />
+              <JobVideoOpportunity
+                id={positionId}
+                embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
+                description={job ? job.description : ''}
+              />
+              <SupportingDocs jobPacks={job && job.jobPacks ? job.jobPacks : []} />
+              <JobApplyAction
+                showForm={showForm}
+                showApplicationForm={showApplicationForm}
+                job={job}
+              />
+              <JobExpired positionExpired={positionExpired} />
+              <JobForm
+                job={job}
+                onAddressSelected={onAddressSelected}
+                locationError={locationError}
+                showForm={showForm}
+                streetNumber={streetNumber}
+                streetName={streetName}
+                postCode={postCode}
+                territory={territory}
+                city={city}
+                handleFieldChange={handleFieldChange}
+                handleFormFieldChange={handleFormFieldChange}
+                countryAddress={countryAddress}
+                values={state.jobForm}
+                onSubmit={handleSubmit}
+              />
+              <BackAction />
+            </div>
           </div>
         </div>
       </Layout>

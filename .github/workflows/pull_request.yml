@@ -32,9 +32,10 @@ env:
   REACT_APP_GOOGLE_TAG_MANAGER: GTM-NK5SFHW
   REACT_APP_CDN_ROOT: https://d2ylaz7bdw65jx.cloudfront.net
   REACT_APP_CONTENTFUL_API_ENVIRONMENT: master
+  NEXTJS_TARGET: serverless
 
 jobs:
-  lint:
+  Build_and_Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -49,60 +50,6 @@ jobs:
         run: yarn
       - name: Lint
         run: yarn lint
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
       - name: Build
         env:
-          CI: ''
-        run: yarn build
-  bundle:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Build
-        env:
-          CI: ''
-        run: yarn build
-      - name: Analyze
-        run: yarn analyze
-  gimbal:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Install yarn dependencies
-        run: yarn
-      - name: Build
-        env:
-          CI: ''
-        run: yarn build
-      - name: Performance Budgeting Regression Testing
-        uses: ModusCreateOrg/gimbal/action@master
-        env:
-          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
+            CI: ''

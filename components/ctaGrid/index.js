@@ -10,7 +10,7 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const CtaGrid = ({ elements, partnerRef }) => (
   <div className={styles.ctaGridContainer}>
-    <div className={styles.ctaWrapper}>
+    <div className={`${styles.ctaWrapper} ${styles.ctaCampaigns}`}>
       {elements.map((cta) => (
         <div key={`${cta.title}-${cta.description}`} className={styles.ctaItem}>
           <div className={styles.itemContents}>
@@ -63,7 +63,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
             our Director of Partnering.
           </Paragraph>
           <div className={styles.intercomBtnWrap}>
-            <IntercomChat />
+            <IntercomChat classNames={styles.navBtn} />
           </div>
         </div>
       </div>

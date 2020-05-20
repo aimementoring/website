@@ -1,0 +1,16 @@
+@import "../../styles/global.module.scss";
+
+.jobApplicationReveal {
+  display: flex;
+  flex-direction: column;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-color: $blue-light;
+  padding-top: 4rem;
+  visibility: visible;
+  opacity: 1;
+
+  h5 {
+    margin-bottom: 1em;
+  }
+}
