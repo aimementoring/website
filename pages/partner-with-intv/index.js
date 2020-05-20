@@ -28,6 +28,7 @@ const PartnerWithIntv = () => {
   const scrollToHow = useRef(null);
   const scrollToMentors = useRef(null);
   const scrollToStory = useRef(null);
+  const scrollToPartnerProd = useRef(null);
 
   return (
     <Layout>
@@ -54,7 +55,7 @@ const PartnerWithIntv = () => {
           <br />
           <br />
           <li><Title type="h5Title">Partnership Opportunities</Title></li>
-          <li><a>Production</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToPartnerProd)}>Production</a></li>
           <li><a>School Partners</a></li>
           <li><a>University Partners</a></li>
           <li><a>Global</a></li>
@@ -101,7 +102,7 @@ const PartnerWithIntv = () => {
 
         <section className={`${styles.sectionPanel} ${styles.panelTwoCol}`}>
           <div className={`${styles.panelCol}`}>
-            <Title type="h4Title" className={styles.aboutInTVTitle}>
+            <Title type="h4Title">
               {`
               WELCOME TO AIME’S IMAGI-NATION{TV}
               & IMAGI-NATION{CLASSROOM} EXPERIENCE
@@ -126,7 +127,7 @@ const PartnerWithIntv = () => {
           <div className={styles.column}>
             <Title
               type="headingLockup"
-              className={styles.sectionHeading}
+              className={`${styles.sectionHeading} ${styles.titleInTVPartnerPanel}`}
               theme={process.env.REACT_APP_THEME}
             >
               {'Welcome to the IMAGI-NATION {TV} Partner Pack'}
@@ -221,7 +222,7 @@ const PartnerWithIntv = () => {
           {/* what's the best way for this thing... creating a new component every time... really?
           shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
-          <Title type="h3Title" className={styles.aboutInTVTitle}>
+          <Title type="h3Title">
             {`Meet the hosts`}
           </Title>
           <IntvHostsCarousel />
@@ -238,7 +239,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h3Title" className={styles.aboutInTVTitle}>
+              <Title type="h3Title">
                 {`
                 How it works
               `}
@@ -258,7 +259,7 @@ const PartnerWithIntv = () => {
               />
             </div>
             <div className={`${styles.panelCol} ${styles.secondPanelCol}`}>
-              <Title type="h3Title" className={styles.aboutInTVTitle}>
+              <Title type="h3Title">
                 {`
                 Weekly themes
               `}
@@ -287,7 +288,7 @@ const PartnerWithIntv = () => {
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
+            <Title type="h3Title">
               {`
               Ingredients
             `}
@@ -303,7 +304,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
-          <Title type="h3Title" className={styles.aboutInTVTitle}>
+          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
             {`
             About Each Day
           `}
@@ -314,7 +315,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
 
         <section ref={scrollToMentors} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
-          <Title type="h3Title" className={styles.aboutInTVTitle}>
+          <Title type="h3Title">
             {`
             Our Guests (so far)
           `}
@@ -404,7 +405,7 @@ const PartnerWithIntv = () => {
           <div className={styles.column}>
             <Title
               type="headingLockup"
-              className={styles.sectionHeading}
+              className={`${styles.sectionHeading} ${styles.titleInTVPartnerPanel}`}
               theme={process.env.REACT_APP_THEME}
             >
               {'IMAGI-NATION {CLASSROOM}'}
@@ -457,13 +458,9 @@ const PartnerWithIntv = () => {
           </div>
 
         </section>
-        <DoubleCurvedLine />
+        <WavyDonateSection />
         <section ref={scrollToStory} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage} ${styles.aimeStory}`}>
-          <div className={styles.panelCol}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
-              Story of AIME
-            </Title>
-          </div>
+          <br /><br />
           <div className={styles.storyFirstPanel}>
             <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-1.png`} alt="I am AIME" />
           </div>
@@ -503,11 +500,10 @@ const PartnerWithIntv = () => {
         </section>
 
         <DoubleCurvedLine />
+        
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionWithBg}`}>
-          <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
-            AIME PROGRAM STATS
-          `}
+          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
+            {`AIME PROGRAM STATS`}
           </Title>
           <div className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg}`}>
             <div className={styles.sectionWrapper}>
@@ -561,32 +557,114 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
-
-        <DoubleCurvedLine />
         <IntvPartners />
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
+        <DoubleCurvedLine />
+
+        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionPartnerOpps}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
-              {`
-              Partner opps ?
-            `}
+            <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
+              {'Partnership opportunities'}
             </Title>
-            <br />
-            <br />
-            <br />
+            {/* partnering option */}
+            <div ref={scrollToPartnerProd} className={`${styles.panelPartneringOption}`}>
+              <img src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
+                alt="ATOM"
+                className={styles.imgPartnerType}
+              />
+              <Title type="h3Title">Production Partners</Title>
+              <div className={`${styles.panelTwoCol}`}>
+                <div className={styles.panelCol}>
+                  <Paragraph>
+                    {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
+                  </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+            {/* partnering option */}
+            <div ref={scrollToPartnerProd} className={`${styles.panelPartneringOption}`}>
+              <img src={`${ASSETS_URL}/assets/images/illustrations/ATOM-min@2x.gif`}
+                alt="ATOM"
+                className={styles.imgPartnerType}
+              />
+              <Title type="h3Title">Schools partners</Title>
+              <div className={`${styles.panelTwoCol}`}>
+                <div className={styles.panelCol}>
+                  <Paragraph>
+                    {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily. For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020. '}
+                  </Paragraph>
+                  <Paragraph>
+                    {'And specifically for AIME IN{​TV} partner schools: '}
+                  </Paragraph>
+                  <List
+                    type="ulList"
+                    list={[
+                      'AIME will give direct access to Imagination Curriculum resources for teachers to teach with IN{​TV}.',
+                      'AIME will ensure over 100 mentors are in the chat room for every live episode, providing a space for the students to engage during the show.',
+                      'AIME will provide access to AIMEs Social Network for Good - based on Slack - for every student to have access to registered AIME mentors for guidance, tutoring, and year 12 transition support',
+                      'Year 12 Special - all Year 12 students will be invited on the ‘Jobs of the Future’ IN{​TV} special which will feature corporate partners offering jobs to kids on the spot, live job interview coaching and a suite of resources to make the next step into employment or university.',
+                    ]}
+                  />
+                </div>
+                <div className={styles.panelCol}>
+                  <Paragraph>
+                    {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
+                  </Paragraph>
+                  <List
+                    type="ulList"
+                    list={[
+                      '1500 profile mentors (30 mentors a week across 50 weeks) directly into kids lives with over 250 hours of mentoring throughout the year',
+                      'Over 3000 university mentors available as mentors in the live tutoring session online with over 100 hours of free tutoring and mentoring available (based off 30 minute after each show per day, across 50 weeks)',
+                      'A stage for 300 kids to co-Host',
+                      'A stage for over 300 number of kids in the IMAGI-NATION {Classroom}',
+                      'A stage for 150 number of president speeches',
+                      'A stage for 50 number of artists to be profiled',
+                      'A focused Year 12 transition week to work on jobs and university opportunities bringing some of the worlds biggest employers and universities direct to the students',
+                    ]}
+                  />
+                  <Paragraph>
+                    School Partners will commit to:
+                  </Paragraph>
+                  <List
+                    type="ulList"
+                    list={[
+                      'Sharing a press release when the partnership is formed to the school network.',
+                      'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IN{​TV} to all students, staff and friends of the school.',
+                      'Working with AIME on implementing IN{​TV} into the curriculum.',
+                      'Working on how to feature IN{​TV} as a mentoring service for all their students in an ongoing fashion.',
+                      'For the show on which it is a featured partner, the school will ensure:',
+                      '10 students in live audience',
+                      '1 Student Co-Host',
+                      'Principal on the show for the 60 second challenge',
+                    ]}
+                  />
+                </div>
+              </div>
+
+              {/* partnering option ...*/}
+
+            </div>
           </div>
         </section>
-        <DoubleCurvedLine />
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
+
+       
+
+        
+        {/* <section className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title" className={styles.aboutInTVTitle}>
+            <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
               {`
               Appendix ?
             `}
             </Title>
           </div>
-        </section>
+        </section> */}
         <WavyDonateSection />
+        <br />
+        <br />
+        <br />
       </div>
     </Layout>
   );
