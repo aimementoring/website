@@ -282,8 +282,8 @@ const PartnerWithIntv = () => {
             `}
             </Title>
             <img
-              src={`${ASSETS_URL}/assets/images/banner/banner-hoodie-rent.gif`}
-              alt="This Hoodie Pays My Rent"
+              src={`${ASSETS_URL}/assets/images/imagi-nation-tv/Ingredients.png`}
+              alt="Imagi-Nation{TV} Ingredients"
               className={styles.videoCoverArt}
             />
           </div>
