@@ -558,6 +558,26 @@
       font-size: 2em;
     }
   }
+
+  .intercomBtnWrap.btnPartnerOp {
+    text-align: left;
+
+    button.navBtn {
+      position: relative;
+      right: inherit;
+      bottom: inherit;
+      margin-bottom: 2em;
+      padding: 0.75em 2em;
+      height: auto;
+      background-color: $magenta;
+
+      &:hover {
+        background-color: $orange;
+        color: $white;
+        border: none;
+      }
+    }
+  } 
 }
 
 .titleLockup {
