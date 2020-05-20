@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Components } from 'aime-blueprint';
+import Title from 'aime-blueprint/lib/components/title';
+import Button from 'aime-blueprint/lib/components/button';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Anchor from '../common/link';
 import styles from './ambassadorsCarousel.module.scss';
 import Carousel from '../carousel';
-
-
-const {
-  Title,
-  Button,
-} = Components;
 
 const CAROUSEL_SLIDES = [
   {
