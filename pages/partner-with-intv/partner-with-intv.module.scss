@@ -201,6 +201,14 @@
   }
 }
 
+.react-player__preview {
+  background-size: contain !important;
+
+  img {
+    display: none;
+  }
+}
+
 .sectionPanel {
   display: flex;
   flex-direction: column;
