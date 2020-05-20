@@ -292,6 +292,7 @@
   text-align: center;
 }
 .panelTwoCol {
+  display: flex;
 
   .panelCol {
     flex: 1 1 0;
@@ -529,5 +530,23 @@
         }
       }
     }
+  }
+}
+
+.titleInTVPartnerPanel {
+  color: $purple;
+}
+
+.imgPartnerType {
+  width: 10em;
+}
+
+.sectionPartnerOpps {
+  .panelCol {
+    text-align: left;
+    align-self: flex-start;
+  }
+  .panelPartneringOption h3 {
+    margin: 0 0 1em;
   }
 }
