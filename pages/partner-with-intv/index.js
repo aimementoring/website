@@ -595,6 +595,12 @@ const PartnerWithIntv = () => {
                   <Paragraph>
                     {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
                   </Paragraph>
+                  <Paragraph>
+                    So, are you intrigued? Do you want to become a Production Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
                 <div className={styles.panelCol}>
                   &nbsp;
