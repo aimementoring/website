@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import bugsnagClient from '../../utils/bugsnag';
+import styles from './intercom.module.scss';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
 
@@ -84,7 +85,7 @@ IntercomChat.propTypes = {
 
 IntercomChat.defaultProps = {
   label: 'Get in Touch',
-  classNames: 'navBtn',
+  classNames: styles.navBtn,
 };
 
 export default IntercomChat;
