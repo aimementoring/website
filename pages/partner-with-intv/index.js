@@ -567,7 +567,7 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
-        
+
         <br />
         <br />
         <br />
@@ -667,6 +667,22 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                 </div>
+                <div className={styles.panelTwoCol}>
+                  <div className={styles.panelCol}>
+                    <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                      <IntercomChat label="Let's chat" />
+                    </div>
+                    <div className={styles.btnPartnerOp}>
+                      <Button
+                        type="text"
+                        className={styles.existingPartnerBtn}
+                        onClickFunction={toggleModal}
+                      >
+                      I'm an existing partner school
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             {/* partnering option ... */}
@@ -703,6 +719,22 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                 </div>
+                <div className={styles.panelTwoCol}>
+                  <div className={styles.panelCol}>
+                    <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                      <IntercomChat label="Let's chat" />
+                    </div>
+                    <div className={styles.btnPartnerOp}>
+                      <Button
+                        type="text"
+                        className={styles.existingPartnerBtn}
+                        onClickFunction={toggleModal}
+                      >
+                      I'm an existing partner university
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             {/* partnering option ... */}
@@ -737,11 +769,15 @@ const PartnerWithIntv = () => {
                   />
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Sounds good? Do you want to become a Global Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={nationalPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -770,7 +806,12 @@ const PartnerWithIntv = () => {
                   />
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Are you excited to help? Do you want to become a National Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -803,7 +844,12 @@ const PartnerWithIntv = () => {
                   />
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Is that something you'd love to support? Do you want to become a State or Provincial Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -826,7 +872,12 @@ const PartnerWithIntv = () => {
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Are you keen to inspire? Do you want to become an Imagination Investor?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -849,7 +900,12 @@ const PartnerWithIntv = () => {
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Are you looking to share stories? Do you want to become a Content Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -872,7 +928,12 @@ const PartnerWithIntv = () => {
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Wanna help spread the magic of puppets? Do you want to become a Puppet Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -904,7 +965,12 @@ const PartnerWithIntv = () => {
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
-                  &nbsp;
+                  <Paragraph>
+                    Do you care? Do you want to become a Corporate Wellbeing Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" />
+                  </div>
                 </div>
               </div>
             </div>
