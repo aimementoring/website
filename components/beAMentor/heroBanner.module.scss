@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroBannerMentor {
   background: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
