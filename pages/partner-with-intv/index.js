@@ -577,12 +577,14 @@ const PartnerWithIntv = () => {
             </Title>
             {/* partnering option */}
             <div ref={scrollToProductionPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/production-partners.png`}
-                alt="Production Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Production Partners</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/production-partners.png`}
+                  alt="Production Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Production Partners</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -596,12 +598,14 @@ const PartnerWithIntv = () => {
             </div>
             {/* partnering option */}
             <div ref={scrollToSchoolPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/school-partners.png`}
-                alt="School Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Schools partners</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/school-partners.png`}
+                  alt="School Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Schools partners</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -659,12 +663,14 @@ const PartnerWithIntv = () => {
 
             {/* partnering option */}
             <div ref={scrollToUniversityPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/uni-partners.png`}
-                alt="University Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">University partners</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/uni-partners.png`}
+                  alt="University Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">University partners</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -693,12 +699,14 @@ const PartnerWithIntv = () => {
 
             {/* partnering option */}
             <div ref={scrollToGlobalPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/global-partners.png`}
-                alt="Global Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Global partners $1m+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/global-partners.png`}
+                  alt="Global Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Global partners $1m+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -718,18 +726,23 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                 </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
+                </div>
               </div>
             </div>
             {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={scrollToNationalPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/national-partners.png`}
-                alt="National Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">National partners $500k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/national-partners.png`}
+                  alt="National Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">National partners $500k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -746,18 +759,23 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                 </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
+                </div>
               </div>
             </div>
             {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={scrollToStateProvincialPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/state-partners.png`}
-                alt="State/Provincial Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">State/Provincial partners $250k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/state-partners.png`}
+                  alt="State/Provincial Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">State/Provincial partners $250k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -774,23 +792,31 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                 </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
+                </div>
               </div>
             </div>
             {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={scrollToImaginationInvestors} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/imagination-investors.png`}
-                alt="Imagination Investors"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Imagination Investors $200k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/imagination-investors.png`}
+                  alt="Imagination Investors"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Imagination Investors $200k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     If you want to see a mentor in every kid’s life every single day, someone who teaches them how to think, not what to think, then invest in an Imagination Agenda to transform the world. If you believe that marginalised kids aren’t the problem but are the solution if given the stage; if you know the power of entrepreneurs to change the world; if you know imagination is critical to change the world, then this is the investor section that says: ‘Hey you guys - I’m here and on your team - let’s do this! Use this funding for anything you need to bring this show to life, to amplify it and light up kids’ minds. This is your untied Imagination Fund.’ In this space we’d imagine philanthropists who have rocked the world would donate funds to work with us; this is for the investors who have made their way and who know that with a little rocket fuel, you can go to the moon.
                   </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
                 </div>
               </div>
             </div>
@@ -798,17 +824,22 @@ const PartnerWithIntv = () => {
 
             {/* partnering option */}
             <div ref={scrollToContentPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/content-creators.png`}
-                alt="Content Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Content Partners $100k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/content-creators.png`}
+                  alt="Content Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Content Partners $100k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                   For organizations looking to reach youngsters, we are open to exploring classy content partnerships. Let’s get it out there. This is a form of advertising… and we’d wanna do it in a ballistically classy way. For example, we’d be up for having your smartest designer on our design show talking about the positive work you and your team are doing and then exploring a potential Q&A with one of our hosts/puppets. We can find classy ways to tell stories together around our 21 values. We can make videos together, write stories, and we may even, if it’s really classy, create a collab piece of AIME apparel together.
                   </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
                 </div>
               </div>
             </div>
@@ -816,17 +847,22 @@ const PartnerWithIntv = () => {
 
             {/* partnering option */}
             <div ref={scrollToPuppetPartners} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/puppet-partners.png`}
-                alt="Puppet Partners"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Puppet Partners $50k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/puppet-partners.png`}
+                  alt="Puppet Partners"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Puppet Partners $50k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                   Invest in the development of our puppets for the show. We want to develop puppets that have all the characteristics of our 21 values. This funding will support employment of our puppet maker and puppeteers. It will allow us to employ writers to work on the puppets and help produce scripts for the show every day. Surely you wanna create a puppet? Maybe we can look at something that’s important to you or your organisation and build a puppet around that?
                   </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
                 </div>
               </div>
             </div>
@@ -834,12 +870,14 @@ const PartnerWithIntv = () => {
 
             {/* partnering option */}
             <div ref={scrollToCorporateWellbeing} className={`${styles.panelPartneringOption}`}>
-              <img
-                src={`${ASSETS_URL}/assets/images/illustrations/corporate-wellbeing.png`}
-                alt="Corporate Wellbeing"
-                className={styles.imgPartnerType}
-              />
-              <Title type="h3Title">Corporate Wellbeing $50k+</Title>
+              <div className={styles.titleLockup}>
+                <img
+                  src={`${ASSETS_URL}/assets/images/illustrations/corporate-wellbeing.png`}
+                  alt="Corporate Wellbeing"
+                  className={styles.imgPartnerType}
+                />
+                <Title type="h3Title">Corporate Wellbeing $50k+</Title>
+              </div>
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
@@ -854,6 +892,9 @@ const PartnerWithIntv = () => {
                   <Paragraph>
                     {'With IMAGI-NATION{TV}, the focus is on our inner child, on unlocking that curiosity and joy to fuel hope, inspiration and action. Considering the challenges that many of us are facing with kids at home, IMAGI-NATION{TV} is a gift for all parents to sit down with their kids for an hour a day. And if you don’t have kids, it’s a gift for the kid inside you! Check out this article in Harvard Business Review from 2 BCG thinkers explaining how imagination helps businesses succeed and why it’s even more critical in the current climate.'}
                   </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  &nbsp;
                 </div>
               </div>
             </div>
