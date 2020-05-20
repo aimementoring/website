@@ -26,7 +26,7 @@ const IntvHostsCarousel = () => (
     </ImaginationTvCard>
     <ImaginationTvCard
       title="Asterix"
-      image="puppet-hope@2x"
+      image="puppet-asterix"
     >
       <Paragraph>
         A quiet, kind, British gender-nuetral youngster. Holds the moment. Insightful interviewer - finds strength in silence.
@@ -34,21 +34,21 @@ const IntvHostsCarousel = () => (
     </ImaginationTvCard>
     <ImaginationTvCard
       title="Blue"
-      image="puppet-hope@2x"
+      image="puppet-blue"
     >
       <Paragraph>
-        Brashy Californian guy, totally radical, fast-paced in life. High energy host. 
+        Brashy Californian guy, totally radical, fast-paced in life. High energy host.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
       title="Panga"
-      image="puppet-hope@2x"
+      image="puppet-panger"
     >
       <Paragraph>
         Stuck in the chaos. Her father was a pangolin - the creatures now
         feelings the brunt of COVID-19 &mdash; Her mother an American
         long-eared bat. Panga is a plucky young Aussie woman, ready
-        to go and get into the world. 
+        to go and get into the world.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
@@ -59,7 +59,7 @@ const IntvHostsCarousel = () => (
         -
       </Paragraph>
     </ImaginationTvCard>
-   
+
   </Carousel>
 );
 
