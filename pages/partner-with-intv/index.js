@@ -6,7 +6,7 @@ import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
-// import FeaturedProduct from '../../components/featuredProduct';
+import useDonate from '../../hooks/useDonate';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
 import TypeformModal from '../../components/typeformModal';
@@ -19,10 +19,12 @@ const IntvHostsCarousel = dynamic(() => import('../../components/imaginationTv/i
 const ImaginationTvCarousel = dynamic(() => import('../../components/imaginationTv/imaginationTvCarousel'));
 const IntvPartners = dynamic(() => import('../../components/intvPartners'));
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-// const SHOP_PRODUCT_LINK = process.env.REACT_APP_SHOP_PRODUCT_LINK;
 
 const PartnerWithIntv = () => {
   const [showModal, setModal] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [donateModalVisible, toggleDonateModal] = useDonate();
+
   const toggleModal = () => setModal(!showModal);
   const hostsRef = useRef(null);
   const howRef = useRef(null);
@@ -978,7 +980,7 @@ const PartnerWithIntv = () => {
 
             {/* sponsour options */}
 
-            <div className={`${styles.panelTwoCol}`}>
+            <div className={`${styles.sponsoring} ${styles.panelTwoCol}`}>
               <div className={styles.panelCol}>
                 <div ref={sponsorWeekRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
@@ -994,6 +996,9 @@ const PartnerWithIntv = () => {
                       <Paragraph>
                         Pick a week - any week - get a credit on the show for each day of the week and know you’ve helped change the world with us.
                       </Paragraph>
+                      <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                        <IntercomChat label="Let's chat" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1013,6 +1018,9 @@ const PartnerWithIntv = () => {
                       <Paragraph>
                         Pick a day and help us bring that day to life! And get a credit on the show!
                       </Paragraph>
+                      <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                        <IntercomChat label="Let's chat" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1033,6 +1041,11 @@ const PartnerWithIntv = () => {
                         $100 will allow us to sponsor artists to share a song with us each Friday!
                       </Paragraph>
                     </div>
+                    <Button
+                      className={styles.sponsorBtn}
+                      onClickFunction={toggleDonateModal}
+                      text="Bring the music"
+                    />
                   </div>
                 </div>
               </div>
