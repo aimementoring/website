@@ -102,7 +102,7 @@ const PartnerWithIntv = () => {
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.panelCol}`}>
             <VideoPlayer
               url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
-              imageUrl={`${ASSETS_URL}/assets/images/illustrations/intv-hosts@2x.jpg`}
+              imageUrl={`${ASSETS_URL}/assets/images/imagi-nation-tv/tv_full.png`}
             />
           </div>
         </section>
