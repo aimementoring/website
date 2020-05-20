@@ -526,3 +526,16 @@
     margin: 0 0 1em;
   }
 }
+
+.titleLockup {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0 0 0 1em !important;
+  }
+}
+
+.titleLockupStack {
+  flex-direction: column;
+}
