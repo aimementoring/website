@@ -1,4 +1,4 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
 .quicklinksPanel {
   max-width: 60em;
@@ -60,6 +60,7 @@
       img {
         display: block;
         padding: 1em;
+        max-width: 100%;
       }
     }
 
