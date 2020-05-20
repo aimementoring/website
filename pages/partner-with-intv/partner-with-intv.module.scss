@@ -584,6 +584,11 @@
   } 
 }
 
+.sponsoring .panelPartneringOption .sponsorBtn {
+  border-radius: 3px;
+  background-color: $watermelon;
+}
+
 .titleLockup {
   // this padding is to make sure that scrolling goes to the right position
   // it basically "balances out" the height of the menu bar
