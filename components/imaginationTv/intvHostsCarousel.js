@@ -29,7 +29,7 @@ const IntvHostsCarousel = () => (
       image="puppet-asterix"
     >
       <Paragraph>
-        A quiet, kind, British gender-nuetral youngster. Holds the moment. Insightful interviewer - finds strength in silence.
+        A quiet, kind, British gender-neutral youngster. Holds the moment. Insightful interviewer - finds strength in silence.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
