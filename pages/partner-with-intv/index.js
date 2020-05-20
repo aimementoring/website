@@ -24,23 +24,23 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const PartnerWithIntv = () => {
   const [showModal, setModal] = useState(false);
   const toggleModal = () => setModal(!showModal);
-  const scrollToHosts = useRef(null);
-  const scrollToHow = useRef(null);
-  const scrollToMentors = useRef(null);
-  const scrollToStory = useRef(null);
-  const scrollToProductionPartners = useRef(null);
-  const scrollToSchoolPartners = useRef(null);
-  const scrollToUniversityPartners = useRef(null);
-  const scrollToGlobalPartners = useRef(null);
-  const scrollToNationalPartners = useRef(null);
-  const scrollToStateProvincialPartners = useRef(null);
-  const scrollToImaginationInvestors = useRef(null);
-  const scrollToContentPartners = useRef(null);
-  const scrollToPuppetPartners = useRef(null);
-  const scrollToCorporateWellbeing = useRef(null);
-  const scrollToSponsorWeek = useRef(null);
-  const scrollToSponsorEp = useRef(null);
-  const scrollToSponsorSong = useRef(null);
+  const hostsRef = useRef(null);
+  const howRef = useRef(null);
+  const mentorsRef = useRef(null);
+  const storyRef = useRef(null);
+  const productionPartnersRef = useRef(null);
+  const schoolsPartnersRef = useRef(null);
+  const universityPartnersRef = useRef(null);
+  const globalPartnersRef = useRef(null);
+  const nationalPartnersRef = useRef(null);
+  const stateProvincialPartnersRef = useRef(null);
+  const imaginationsInvestorRef = useRef(null);
+  const contentPartnersRef = useRef(null);
+  const puppetPartnersRef = useRef(null);
+  const corporateWellbeingRef = useRef(null);
+  const sponsorWeekRef = useRef(null);
+  const sponsorEpisodeRef = useRef(null);
+  const sponsorSongRef = useRef(null);
 
   return (
     <Layout>
@@ -60,26 +60,26 @@ const PartnerWithIntv = () => {
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
-          <li><a onClick={() => scrollToComponent(scrollToHosts)}>Meet the hosts</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToHow)}>The format</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToMentors)}>The mentors</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToStory)}>Background</a></li>
+          <li><a onClick={() => scrollToComponent(hostsRef)}>Meet the hosts</a></li>
+          <li><a onClick={() => scrollToComponent(howRef)}>The format</a></li>
+          <li><a onClick={() => scrollToComponent(mentorsRef)}>The mentors</a></li>
+          <li><a onClick={() => scrollToComponent(storyRef)}>Background</a></li>
           <br />
           <br />
           <li><Title type="h5Title">Partnership Opportunities</Title></li>
-          <li><a onClick={() => scrollToComponent(scrollToProductionPartners)}>Production Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToSchoolPartners)}>School Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToUniversityPartners)}>University Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToGlobalPartners)}>Global Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToNationalPartners)}>National Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToStateProvincialPartners)}>State/Provincial</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToImaginationInvestors)}>Imagination Investors</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToContentPartners)}>Content Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToPuppetPartners)}>Puppet Partners</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToCorporateWellbeing)}>Corporate Wellbeing</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToSponsorWeek)}>Sponsor a week</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToSponsorEp)}>Sponsor an episode</a></li>
-          <li><a onClick={() => scrollToComponent(scrollToSponsorSong)}>Sponsor a song</a></li>
+          <li><a onClick={() => scrollToComponent(productionPartnersRef)}>Production Partners</a></li>
+          <li><a onClick={() => scrollToComponent(schoolsPartnersRef)}>School Partners</a></li>
+          <li><a onClick={() => scrollToComponent(universityPartnersRef)}>University Partners</a></li>
+          <li><a onClick={() => scrollToComponent(globalPartnersRef)}>Global Partners</a></li>
+          <li><a onClick={() => scrollToComponent(nationalPartnersRef)}>National Partners</a></li>
+          <li><a onClick={() => scrollToComponent(stateProvincialPartnersRef)}>State/Provincial Partners</a></li>
+          <li><a onClick={() => scrollToComponent(imaginationsInvestorRef)}>Imagination Investors</a></li>
+          <li><a onClick={() => scrollToComponent(contentPartnersRef)}>Content Partners</a></li>
+          <li><a onClick={() => scrollToComponent(puppetPartnersRef)}>Puppet Partners</a></li>
+          <li><a onClick={() => scrollToComponent(corporateWellbeingRef)}>Corporate Wellbeing</a></li>
+          <li><a onClick={() => scrollToComponent(sponsorWeekRef)}>Sponsor a week</a></li>
+          <li><a onClick={() => scrollToComponent(sponsorEpisodeRef)}>Sponsor an episode</a></li>
+          <li><a onClick={() => scrollToComponent(sponsorSongRef)}>Sponsor a song</a></li>
         </ul>
       </nav>
 
@@ -232,7 +232,7 @@ const PartnerWithIntv = () => {
           </div>
         </section>
         <DoubleCurvedLine />
-        <section ref={scrollToHosts} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
+        <section ref={hostsRef} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
           {/* what's the best way for this thing... creating a new component every time... really?
           shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
@@ -244,7 +244,7 @@ const PartnerWithIntv = () => {
           <br />
         </section>
 
-        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionWithWaves}`}>
+        <section ref={howRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionWithWaves}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -266,7 +266,7 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  '5 X 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).',
+                  '5 x 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).',
                   'Audio and podcast in production.',
                   'Impact production in progress, including education resources for teachers around the world to use',
                 ]}
@@ -328,7 +328,7 @@ const PartnerWithIntv = () => {
 
         <DoubleCurvedLine />
 
-        <section ref={scrollToMentors} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
+        <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title">
             {`
             Our Guests (so far)
@@ -471,13 +471,12 @@ const PartnerWithIntv = () => {
           </div>
         </section>
         <WavyDonateSection />
-        <section ref={scrollToStory} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage} ${styles.aimeStory}`}>
+        <section ref={storyRef} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage} ${styles.aimeStory}`}>
           <br />
           <br />
           <div className={styles.storyFirstPanel}>
             <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-1.png`} alt="I am AIME" />
           </div>
-          {/* Hey Lara! This needs to be responsive! Sorry, didn't get to it! */}
           <div className={styles.panelTwoCol}>
             <div className={styles.panelCol}>
               <img src={`${ASSETS_URL}/assets/images/partner-with-intv/aime-story-2.png`} alt="I come from the land of Imagi-Nation" />
@@ -512,7 +511,7 @@ const PartnerWithIntv = () => {
           </div>
         </section>
 
-        <section ref={scrollToHow} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionProgramStats} ${styles.sectionWithWaves}`}>
+        <section ref={howRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionProgramStats} ${styles.sectionWithWaves}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -581,7 +580,7 @@ const PartnerWithIntv = () => {
               Partnership opportunities
             </Title>
             {/* partnering option */}
-            <div ref={scrollToProductionPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={productionPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/production-partners.png`}
@@ -608,7 +607,7 @@ const PartnerWithIntv = () => {
               </div>
             </div>
             {/* partnering option */}
-            <div ref={scrollToSchoolPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={schoolsPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/school-partners.png`}
@@ -673,7 +672,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToUniversityPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={universityPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/uni-partners.png`}
@@ -709,7 +708,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToGlobalPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={globalPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/global-partners.png`}
@@ -745,7 +744,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToNationalPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={nationalPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/national-partners.png`}
@@ -778,7 +777,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToStateProvincialPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={stateProvincialPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/state-partners.png`}
@@ -811,7 +810,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToImaginationInvestors} className={`${styles.panelPartneringOption}`}>
+            <div ref={imaginationsInvestorRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/imagination-investors.png`}
@@ -834,7 +833,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToContentPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={contentPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/content-creators.png`}
@@ -857,7 +856,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToPuppetPartners} className={`${styles.panelPartneringOption}`}>
+            <div ref={puppetPartnersRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/puppet-partners.png`}
@@ -880,7 +879,7 @@ const PartnerWithIntv = () => {
             {/* partnering option ... */}
 
             {/* partnering option */}
-            <div ref={scrollToCorporateWellbeing} className={`${styles.panelPartneringOption}`}>
+            <div ref={corporateWellbeingRef} className={`${styles.panelPartneringOption}`}>
               <div className={styles.titleLockup}>
                 <img
                   src={`${ASSETS_URL}/assets/images/illustrations/corporate-wellbeing.png`}
@@ -892,7 +891,7 @@ const PartnerWithIntv = () => {
               <div className={`${styles.panelTwoCol}`}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    FOR Large Organisations (Free packages available for small to medium organisations with donations welcome)
+                    For Large Organisations (Free packages available for small to medium organisations with donations welcome)
                   </Paragraph>
                   <Paragraph>
                     {'To recognise the challenges of this current time, AIME is offering a subsidised corporate wellbeing package. This gives the chance for corporates to use IN{TV} as an official wellbeing offer for their staff and bring over 1,500 world class mentors into their lives per year. This package allows an organisation to provide guidance and motivation to its staff during the times of COVID-19 and beyond, with a commitment to give staff an official 30 minutes a day to recharge with their friends, family and colleagues by joining the mentors on IMAGI-NATION{TV}.'}
@@ -915,7 +914,7 @@ const PartnerWithIntv = () => {
 
             <div className={`${styles.panelTwoCol}`}>
               <div className={styles.panelCol}>
-                <div ref={scrollToSponsorWeek} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorWeekRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-week.png`}
@@ -934,7 +933,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={scrollToSponsorEp} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorEpisodeRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-ep.png`}
@@ -953,7 +952,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={scrollToSponsorSong} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorSongRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-song.png`}
