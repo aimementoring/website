@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroBannerFounder {
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
@@ -6,19 +6,19 @@
   position: relative;
   max-width: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   @media all and(min-width: $md) {
     background-size: contain;
   }
 
   .founderBannerHeader {
-    margin-top: 4em;
+    margin-top: 2em;
 
     strong {
       left: initial;
-    }
-    @media all and(min-width: $md) {
-      margin-top: 2em;
     }
   }
 
