@@ -52,6 +52,7 @@
     &:hover {
       background-color: $white;
       color: $watermelon;
+      border: 1px solid $watermelon;
     }
   }
 }
@@ -103,6 +104,7 @@
   &:hover ~ .drawerToggleLabel { 
     color: $cyan;
     background-color: $white;
+    border: 1px solid $cyan;
   }
 
   &:checked {
