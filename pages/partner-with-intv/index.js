@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
@@ -44,6 +47,8 @@ const PartnerWithIntv = () => {
   const sponsorEpisodeRef = useRef(null);
   const sponsorSongRef = useRef(null);
 
+  const scrollTo = scrollToComponent; // just an alias
+
   return (
     <Layout>
       <div className={`${styles.intercomBtnWrap}`}>
@@ -58,30 +63,35 @@ const PartnerWithIntv = () => {
         Already a partner?
       </Button>
       <input type="checkbox" className={styles.drawerToggle} name="drawerToggle" />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
-          <li><a onClick={() => scrollToComponent(hostsRef)}>Meet the hosts</a></li>
-          <li><a onClick={() => scrollToComponent(howRef)}>The format</a></li>
-          <li><a onClick={() => scrollToComponent(mentorsRef)}>The mentors</a></li>
-          <li><a onClick={() => scrollToComponent(storyRef)}>Background</a></li>
+          <li><a onClick={() => scrollTo(hostsRef)}>Meet the hosts</a></li>
+          <li><a onClick={() => scrollTo(howRef)}>The format</a></li>
+          <li><a onClick={() => scrollTo(mentorsRef)}>The mentors</a></li>
+          <li><a onClick={() => scrollTo(storyRef)}>Background</a></li>
           <br />
           <br />
           <li><Title type="h5Title">Partnership Opportunities</Title></li>
-          <li><a onClick={() => scrollToComponent(productionPartnersRef)}>Production Partners</a></li>
-          <li><a onClick={() => scrollToComponent(schoolsPartnersRef)}>School Partners</a></li>
-          <li><a onClick={() => scrollToComponent(universityPartnersRef)}>University Partners</a></li>
-          <li><a onClick={() => scrollToComponent(globalPartnersRef)}>Global Partners</a></li>
-          <li><a onClick={() => scrollToComponent(nationalPartnersRef)}>National Partners</a></li>
-          <li><a onClick={() => scrollToComponent(stateProvincialPartnersRef)}>State/Provincial Partners</a></li>
-          <li><a onClick={() => scrollToComponent(imaginationsInvestorRef)}>Imagination Investors</a></li>
-          <li><a onClick={() => scrollToComponent(contentPartnersRef)}>Content Partners</a></li>
-          <li><a onClick={() => scrollToComponent(puppetPartnersRef)}>Puppet Partners</a></li>
-          <li><a onClick={() => scrollToComponent(corporateWellbeingRef)}>Corporate Wellbeing</a></li>
-          <li><a onClick={() => scrollToComponent(sponsorWeekRef)}>Sponsor a week</a></li>
-          <li><a onClick={() => scrollToComponent(sponsorEpisodeRef)}>Sponsor an episode</a></li>
-          <li><a onClick={() => scrollToComponent(sponsorSongRef)}>Sponsor a song</a></li>
+          <li><a onClick={() => scrollTo(productionPartnersRef)}>Production Partners</a></li>
+          <li><a onClick={() => scrollTo(schoolsPartnersRef)}>School Partners</a></li>
+          <li><a onClick={() => scrollTo(universityPartnersRef)}>University Partners</a></li>
+          <li><a onClick={() => scrollTo(globalPartnersRef)}>Global Partners</a></li>
+          <li><a onClick={() => scrollTo(nationalPartnersRef)}>National Partners</a></li>
+          <li>
+            <a onClick={() => scrollTo(stateProvincialPartnersRef)}>
+              State/Provincial Partners
+            </a>
+          </li>
+          <li><a onClick={() => scrollTo(imaginationsInvestorRef)}>Imagination Investors</a></li>
+          <li><a onClick={() => scrollTo(contentPartnersRef)}>Content Partners</a></li>
+          <li><a onClick={() => scrollTo(puppetPartnersRef)}>Puppet Partners</a></li>
+          <li><a onClick={() => scrollTo(corporateWellbeingRef)}>Corporate Wellbeing</a></li>
+          <li><a onClick={() => scrollTo(sponsorWeekRef)}>Sponsor a week</a></li>
+          <li><a onClick={() => scrollTo(sponsorEpisodeRef)}>Sponsor an episode</a></li>
+          <li><a onClick={() => scrollTo(sponsorSongRef)}>Sponsor a song</a></li>
         </ul>
       </nav>
 
@@ -154,7 +164,11 @@ const PartnerWithIntv = () => {
                 I founded AIME 16 years ago to bring mentors into the lives of kids
                 left behind. Since then we’ve grown to become global experts in
                 mentoring, last year being honoured as one of the&nbsp;
-                <a href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232" target="_blank">
+                <a
+                  href="https://medium.com/@gfelworld/aime-honored-with-the-top-50-organisations-in-education-award-at-gfel-dubai-2019-6a962b1af232"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   top 50 education groups in the world
                 </a>
 .
@@ -591,7 +605,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Production Partners</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
@@ -618,7 +632,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Schools partners</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily. For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020. '}
@@ -680,7 +694,7 @@ const PartnerWithIntv = () => {
                         className={styles.existingPartnerBtn}
                         onClickFunction={toggleModal}
                       >
-                      I'm an existing partner school
+                      I&apos;m an existing partner school
                       </Button>
                     </div>
                   </div>
@@ -699,7 +713,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">University partners</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     {'IMAGI-NATION{TV} is a live weekday show bringing over 1,500 world class mentors into people’s lives through the year. The university partnership with IN{TV} is to provide guidance and motivation to its students during the times of COVID-19 and beyond. The university works with AIME to explore embedding IN{TV} into courses as curriculum and publishing the opportunity for students far and wide. For existing AIME university partners and the first 100 new university partners that sign on, the partnership will be for free for 2020. AIME will provide: - A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom. - The chance for education students to gain practicum experience through the show.'}
@@ -732,7 +746,7 @@ const PartnerWithIntv = () => {
                         className={styles.existingPartnerBtn}
                         onClickFunction={toggleModal}
                       >
-                      I'm an existing partner university
+                      I&apos;m an existing partner university
                       </Button>
                     </div>
                   </div>
@@ -751,7 +765,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Global partners $1m+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     Your funding will allow us to:
@@ -791,7 +805,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">National partners $500k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     Your funding will allow us to:
@@ -829,7 +843,7 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">State/Provincial partners $250k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
                     Your funding will allow us to:
@@ -847,7 +861,8 @@ const PartnerWithIntv = () => {
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    Is that something you'd love to support? Do you want to become a State or Provincial Partner?
+                    Is that something you&apos;d love to support? Do you want to become a State or
+                    Provincial Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" />
@@ -867,10 +882,22 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Imagination Investors $200k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    If you want to see a mentor in every kid’s life every single day, someone who teaches them how to think, not what to think, then invest in an Imagination Agenda to transform the world. If you believe that marginalised kids aren’t the problem but are the solution if given the stage; if you know the power of entrepreneurs to change the world; if you know imagination is critical to change the world, then this is the investor section that says: ‘Hey you guys - I’m here and on your team - let’s do this! Use this funding for anything you need to bring this show to life, to amplify it and light up kids’ minds. This is your untied Imagination Fund.’ In this space we’d imagine philanthropists who have rocked the world would donate funds to work with us; this is for the investors who have made their way and who know that with a little rocket fuel, you can go to the moon.
+                    If you want to see a mentor in every kid’s life every single day,
+                    someone who teaches them how to think, not what to think, then invest
+                    in an Imagination Agenda to transform the world.
+                    If you believe that marginalised kids aren’t the problem but are the
+                    solution if given the stage; if you know the power of entrepreneurs to
+                    change the world; if you know imagination is critical to change the world,
+                    then this is the investor section that says: ‘Hey you guys - I’m here and on
+                    your team - let’s do this! Use this funding for anything you need to bring
+                    this show to life, to amplify it and light up kids’ minds. This is your untied
+                    Imagination Fund.’ In this space we’d imagine philanthropists who have rocked
+                    the world would donate funds to work with us; this is for the investors who
+                    have made their way and who know that with a little rocket fuel, you can go to
+                    the moon.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -895,10 +922,18 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Content Partners $100k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                  For organizations looking to reach youngsters, we are open to exploring classy content partnerships. Let’s get it out there. This is a form of advertising… and we’d wanna do it in a ballistically classy way. For example, we’d be up for having your smartest designer on our design show talking about the positive work you and your team are doing and then exploring a potential Q&A with one of our hosts/puppets. We can find classy ways to tell stories together around our 21 values. We can make videos together, write stories, and we may even, if it’s really classy, create a collab piece of AIME apparel together.
+                  For organizations looking to reach youngsters, we are open to
+                  exploring classy content partnerships. Let’s get it out there.
+                  This is a form of advertising… and we’d wanna do it in a ballistically
+                  classy way. For example, we’d be up for having your smartest designer
+                  on our design show talking about the positive work you and your team
+                  are doing and then exploring a potential Q&A with one of our hosts/puppets.
+                  We can find classy ways to tell stories together around our 21 values.
+                  We can make videos together, write stories, and we may even, if it’s really
+                  classy, create a collab piece of AIME apparel together.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -923,10 +958,15 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Puppet Partners $50k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                  Invest in the development of our puppets for the show. We want to develop puppets that have all the characteristics of our 21 values. This funding will support employment of our puppet maker and puppeteers. It will allow us to employ writers to work on the puppets and help produce scripts for the show every day. Surely you wanna create a puppet? Maybe we can look at something that’s important to you or your organisation and build a puppet around that?
+                  Invest in the development of our puppets for the show. We want to develop
+                   puppets that have all the characteristics of our 21 values. This funding will
+                   support employment of our puppet maker and puppeteers. It will allow us to
+                   employ writers to work on the puppets and help produce scripts for the show
+                   every day. Surely you wanna create a puppet? Maybe we can look at something
+                   that’s important to you or your organisation and build a puppet around that?
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -951,16 +991,24 @@ const PartnerWithIntv = () => {
                 />
                 <Title type="h3Title">Corporate Wellbeing $50k+</Title>
               </div>
-              <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    For Large Organisations (Free packages available for small to medium organisations with donations welcome)
+                    for large organisations (free packages available for small to
+                    medium organisations with donations welcome)
                   </Paragraph>
                   <Paragraph>
                     {'To recognise the challenges of this current time, AIME is offering a subsidised corporate wellbeing package. This gives the chance for corporates to use IN{TV} as an official wellbeing offer for their staff and bring over 1,500 world class mentors into their lives per year. This package allows an organisation to provide guidance and motivation to its staff during the times of COVID-19 and beyond, with a commitment to give staff an official 30 minutes a day to recharge with their friends, family and colleagues by joining the mentors on IMAGI-NATION{TV}.'}
                   </Paragraph>
                   <Paragraph>
-                    This is your chance to act on your commitment to health and wellbeing. A chance to send your staff a message about the value of giving space for parents to have a moment during the day with their kids to bring mentors into their lives. And to make it part of the daily diet by scheduling it as a meeting invite for all staff to bring mentors into your teams’ lives every single day. Our core focus is imagination, and we’ve been in the game of behaviour change for marginalised kids and university students for 16 years.
+                    This is your chance to act on your commitment to health and
+                    wellbeing. A chance to send your staff a message about the
+                    value of giving space for parents to have a moment during the day
+                    with their kids to bring mentors into their lives. And to make it
+                     part of the daily diet by scheduling it as a meeting invite for all
+                     staff to bring mentors into your teams’ lives every single day. Our
+                     core focus is imagination, and we’ve been in the game of behaviour
+                     change for marginalised kids and university students for 16 years.
                   </Paragraph>
                   <Paragraph>
                     {'With IMAGI-NATION{TV}, the focus is on our inner child, on unlocking that curiosity and joy to fuel hope, inspiration and action. Considering the challenges that many of us are facing with kids at home, IMAGI-NATION{TV} is a gift for all parents to sit down with their kids for an hour a day. And if you don’t have kids, it’s a gift for the kid inside you! Check out this article in Harvard Business Review from 2 BCG thinkers explaining how imagination helps businesses succeed and why it’s even more critical in the current climate.'}
@@ -991,10 +1039,11 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor a week - $10k+</Title>
                   </div>
-                  <div className={`${styles.panelTwoCol}`}>
+                  <div className={styles.panelTwoCol}>
                     <div className={styles.panelCol}>
                       <Paragraph>
-                        Pick a week - any week - get a credit on the show for each day of the week and know you’ve helped change the world with us.
+                        Pick a week - any week - get a credit on the show for each day
+                        of the week and know you’ve helped change the world with us.
                       </Paragraph>
                       <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                         <IntercomChat label="Let's chat" />
@@ -1004,7 +1053,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={sponsorEpisodeRef} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorEpisodeRef} className={styles.panelPartneringOption}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-ep.png`}
@@ -1013,10 +1062,11 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor an episode - $5k+</Title>
                   </div>
-                  <div className={`${styles.panelTwoCol}`}>
+                  <div className={styles.panelTwoCol}>
                     <div className={styles.panelCol}>
                       <Paragraph>
-                        Pick a day and help us bring that day to life! And get a credit on the show!
+                        Pick a day and help us bring that day to life! And get a
+                        credit on the show!
                       </Paragraph>
                       <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                         <IntercomChat label="Let's chat" />
@@ -1026,7 +1076,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={sponsorSongRef} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorSongRef} className={styles.panelPartneringOption}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-song.png`}
@@ -1035,10 +1085,11 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor a song - $100</Title>
                   </div>
-                  <div className={`${styles.panelTwoCol}`}>
+                  <div className={styles.panelTwoCol}>
                     <div className={styles.panelCol}>
                       <Paragraph>
-                        $100 will allow us to sponsor artists to share a song with us each Friday!
+                        $100 will allow us to sponsor artists to share a song with
+                        us each Friday!
                       </Paragraph>
                     </div>
                     <Button
