@@ -511,6 +511,7 @@
 
 .titleInTVPartnerPanel {
   color: $purple;
+  margin-bottom: 1.5em;
 }
 
 .imgPartnerType {
@@ -518,10 +519,18 @@
 }
 
 .sectionPartnerOpps {
+  text-align: left;
+
+  .titleInTVPartnerPanel {
+    margin-bottom: 2em;
+  }
+
   .panelCol {
     text-align: left;
     align-self: flex-start;
+    margin: 0 1em 1em 0;
   }
+
   .panelPartneringOption h3 {
     margin: 0 0 1em;
   }
