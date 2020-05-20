@@ -1,4 +1,4 @@
-@import "../../../styles/base/variables";
+@import "../../../styles/global.module.scss";
 
 .iconAimeLogo {
   color: $white;
@@ -340,7 +340,6 @@
   .inlineListItem:hover .navBtn {
     border-bottom: 2px solid $purple;
   }
-
 }
 
 .navLink {
