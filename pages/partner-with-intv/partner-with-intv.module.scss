@@ -12,7 +12,7 @@
   height: 1.5rem;
   width: 9.5rem; 
   left: -3.5em;
-  top: 200px; 
+  top: 12.5em; 
   transform: rotate(-90deg);
   display: flex; 
   align-items: center;
@@ -34,6 +34,25 @@
   background-color: $cyan; 
   &:before {
     content: "Go to section";
+  }  
+}
+
+.typeformToggleContainer .drawerToggleLabel{
+  &.typeformAction {
+    top: 30em;
+    width: auto;
+    padding: 0 1.5em;
+    left: -5.75em;
+    background-color: $watermelon;
+    border-radius: 3px;
+    z-index: 11;
+    &:before {
+      content: none;
+    }
+    &:hover {
+      background-color: $white;
+      color: $watermelon;
+    }
   }
 }
 
@@ -79,6 +98,7 @@
   opacity: 0; 
   z-index: 20;
   left: -4.5em;
+  top: 15em;
 
   &:hover ~ .drawerToggleLabel { 
     color: $cyan;
