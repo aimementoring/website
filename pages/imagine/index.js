@@ -6,14 +6,12 @@ import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
 import useDonate from '../../hooks/useDonate';
 
-import styles from './style.scss';
+import styles from './imagine.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ImagiNationTV = () => {
-  // const [showModal, setModal] = useState(false);
-  // const toggleModal = () => setModal(!showModal);
-
+  // eslint-disable-next-line no-unused-vars
   const [modalVisible, toggleDonateModal] = useDonate();
 
   return (
@@ -47,7 +45,7 @@ const ImagiNationTV = () => {
               <br />
               Writing live now.
             </Paragraph>
-            <div className="triBtnSet">
+            <div className={styles.triBtnSet}>
               <Button
                 theme={process.env.REACT_APP_THEME}
                 className={`${styles.triBtn} ${styles.watchBtn}`}
@@ -55,7 +53,7 @@ const ImagiNationTV = () => {
                 target="_blank"
                 type="link"
               >
-              Write
+                Write
               </Button>
               <Button
                 type="link"
@@ -71,14 +69,12 @@ const ImagiNationTV = () => {
                 theme={process.env.REACT_APP_THEME}
                 onClickFunction={toggleDonateModal}
               />
-
             </div>
             <Paragraph>
               Or if you have any questions,&nbsp;
               <IntercomChat label="chat with us" />
             </Paragraph>
           </div>
-
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <div className={styles.bannerImageRotate}>
               <img
@@ -87,10 +83,8 @@ const ImagiNationTV = () => {
               />
             </div>
           </div>
-
         </div>
       </div>
-
     </Layout>
   );
 };
