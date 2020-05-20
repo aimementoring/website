@@ -89,7 +89,7 @@ const IntvPartners = () => (
           Who’s already in the game
         </Title>
         <div className={styles.becomeAPartnerBtn}>
-          <IntercomChat label="Become a partner" />
+          <IntercomChat label="Become a partner" classNames={styles.navBtn} />
         </div>
       </div>
       <Carousel
