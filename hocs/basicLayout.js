@@ -6,7 +6,6 @@ import Header from '../components/layoutComponents/header';
 import Footer from '../components/layoutComponents/footer';
 import Logos from '../components/layoutComponents/logos';
 import isClientSide from '../utils/isClientSide';
-import './basicLayout.scss';
 
 const Layout = ({ router, children }) => {
   const openIntercomIfContactPath = () => {
