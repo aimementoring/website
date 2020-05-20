@@ -1,0 +1,31 @@
+@import "../../styles/global.module.scss";
+
+.navBtn {
+  padding: 0.15em 0;
+  color: $black;
+  display: block;
+  font-family: $body-font-family;
+  font-size: 0.9em;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  margin-right: 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  cursor: pointer;
+  
+  &.active {
+    border-bottom: 2px solid $white;
+    color: $brand-primary;
+    font-weight: 500;
+  }
+
+  &.activeItem, 
+  &:hover {
+    border-bottom: 2px solid $white;
+  }
+}
