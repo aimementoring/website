@@ -9,6 +9,7 @@ import VideoPlayer from '../../components/videoPlayer';
 // import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
+import TypeformModal from '../../components/typeformModal';
 import MovingWaves from '../../components/movingWaves';
 import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './partner-with-intv.module.scss';
@@ -30,7 +31,14 @@ const PartnerWithIntv = () => {
 
   return (
     <Layout>
-
+      <Button
+        type="text"
+        containerClassName={styles.typeformToggleContainer}
+        className={`${styles.typeformAction} ${styles.drawerToggleLabel}`}
+        onClickFunction={toggleModal}
+      >
+        I'm a school or uni
+      </Button>
       <input type="checkbox" className={styles.drawerToggle} name="drawerToggle" />
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
@@ -109,6 +117,8 @@ const PartnerWithIntv = () => {
 
         <DoubleCurvedLine />
         <section className={`${styles.sectionImageParaFlow} ${styles.sectionPanel}`}>
+          {/* temp putting this here */}
+          <TypeformModal visible={showModal} toggleModal={toggleModal} />
 
           <div className={styles.column}>
             <Title
@@ -209,9 +219,7 @@ const PartnerWithIntv = () => {
           shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
           <Title type="h3Title" className={styles.aboutInTVTitle}>
-            {`
-            Meet the hosts
-          `}
+            {`Meet the hosts`}
           </Title>
           <IntvHostsCarousel />
           <br />
