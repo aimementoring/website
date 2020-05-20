@@ -1,5 +1,36 @@
 @import "../../styles/base/variables";
 
+.intercomBtnWrap {
+  text-align: center;
+  
+  button.navBtn {
+    position: fixed;
+    z-index: 11;
+    bottom: 1em;
+    right: 1em;
+    background-color: $purple;
+    border-radius: 3px;
+    font-family: $body-font-family-bold;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    letter-spacing: 0.13em;
+    height: 1.5rem;
+    padding: 0 1.2em;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    transition: $hoverTransition;
+
+    &:hover {
+      background-color: $white;
+      color: $purple;
+      border: 1px solid $purple;
+    }
+  }
+}
+
 .drawerToggleLabel,
 .sideDrawerNav,
 .mainSectionWrapper {
