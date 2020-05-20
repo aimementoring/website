@@ -53,7 +53,7 @@ const PartnerWithIntv = () => {
         className={`${styles.typeformAction} ${styles.drawerToggleLabel}`}
         onClickFunction={toggleModal}
       >
-        I'm a school or uni
+        Already a partner?
       </Button>
       <input type="checkbox" className={styles.drawerToggle} name="drawerToggle" />
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
