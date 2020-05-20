@@ -38,6 +38,9 @@ const PartnerWithIntv = () => {
   const scrollToContentPartners = useRef(null);
   const scrollToPuppetPartners = useRef(null);
   const scrollToCorporateWellbeing = useRef(null);
+  const scrollToSponsorWeek = useRef(null);
+  const scrollToSponsorEp = useRef(null);
+  const scrollToSponsorSong = useRef(null);
 
   return (
     <Layout>
@@ -74,9 +77,9 @@ const PartnerWithIntv = () => {
           <li><a onClick={() => scrollToComponent(scrollToContentPartners)}>Content Partners</a></li>
           <li><a onClick={() => scrollToComponent(scrollToPuppetPartners)}>Puppet Partners</a></li>
           <li><a onClick={() => scrollToComponent(scrollToCorporateWellbeing)}>Corporate Wellbeing</a></li>
-          <li><a>Sponsoring a week</a></li>
-          <li><a>Sponsoring an episode</a></li>
-          <li><a>Sponsoring a song</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToSponsorWeek)}>Sponsor a week</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToSponsorEp)}>Sponsor an episode</a></li>
+          <li><a onClick={() => scrollToComponent(scrollToSponsorSong)}>Sponsor a song</a></li>
         </ul>
       </nav>
 
@@ -899,6 +902,68 @@ const PartnerWithIntv = () => {
               </div>
             </div>
             {/* partnering option ... */}
+
+            {/* sponsour options */}
+
+            <div className={`${styles.panelTwoCol}`}>
+              <div className={styles.panelCol}>
+                <div ref={scrollToSponsorWeek} className={`${styles.panelPartneringOption}`}>
+                  <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
+                    <img
+                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-week.png`}
+                      alt="Sponsor a week"
+                      className={styles.imgPartnerType}
+                    />
+                    <Title type="h3Title">Sponsor a week - $10k+</Title>
+                  </div>
+                  <div className={`${styles.panelTwoCol}`}>
+                    <div className={styles.panelCol}>
+                      <Paragraph>
+                        Pick a week - any week - get a credit on the show for each day of the week and know you’ve helped change the world with us.
+                      </Paragraph>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.panelCol}>
+                <div ref={scrollToSponsorEp} className={`${styles.panelPartneringOption}`}>
+                  <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
+                    <img
+                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-ep.png`}
+                      alt="Sponsor an episode"
+                      className={styles.imgPartnerType}
+                    />
+                    <Title type="h3Title">Sponsor an episode - $5k+</Title>
+                  </div>
+                  <div className={`${styles.panelTwoCol}`}>
+                    <div className={styles.panelCol}>
+                      <Paragraph>
+                        Pick a day and help us bring that day to life! And get a credit on the show!
+                      </Paragraph>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.panelCol}>
+                <div ref={scrollToSponsorSong} className={`${styles.panelPartneringOption}`}>
+                  <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
+                    <img
+                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-song.png`}
+                      alt="Sponsor a song"
+                      className={styles.imgPartnerType}
+                    />
+                    <Title type="h3Title">Sponsor a song - $100</Title>
+                  </div>
+                  <div className={`${styles.panelTwoCol}`}>
+                    <div className={styles.panelCol}>
+                      <Paragraph>
+                        $100 will allow us to sponsor artists to share a song with us each Friday!
+                      </Paragraph>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
         </section>
