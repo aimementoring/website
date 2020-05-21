@@ -5,12 +5,6 @@
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
 }
 
-// @todo refactor founder banner
-// all above banner styles can be refactored into simpleBanner componenet
-
 .plainContentWrapper {
   composes: wrapper from '../../styles/patterns.module.scss';
 }
-
-// @todo refactor founder content 
-// This should use blueprint heading & paragraph styles + global content wrapper consistent across pages
