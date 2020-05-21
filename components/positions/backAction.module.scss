@@ -1,5 +1,4 @@
-@import "../../styles/base/variables";
-@import "../../styles/global/typography.module.scss";
+@import "../../styles/global.module.scss";
 
 .backActionParagraph {
   display: flex;
@@ -9,5 +8,5 @@
 }
 
 .materialIcons {
-  @extend %material-icons;
+  @extend %materialIcons;
 }

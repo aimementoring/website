@@ -1,8 +1,11 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Layout from '../../hocs/basicLayout';
 import { SimpleBanner } from '../../components/banner/index';
 import CASE_STUDIES from '../../constants/caseStudiesList';
+import styles from './case-studies.module.scss';
 
 const CaseStudyBox = dynamic(() => import('../../components/caseStudyBox'));
 
@@ -11,49 +14,38 @@ const CaseStudies = () => (
     <SimpleBanner
       title={(<strong>Case Studies</strong>)}
       titleType="headingLockup"
-      titleStyleClass="bannerHeadingAmbassadors"
-      bannerContainerClass="hero-banner--default hero-banner--case-studies full-width-wrap"
-      bannerWrapperClass="flex flex-wrap items-center full-height"
+      titleStyleClass={styles.bannerHeadingAmbassadors}
+      bannerContainerClass={styles.bannerContainerClass}
+      bannerWrapperClass={styles.bannerWrapperClass}
+      groovy
     />
-    <section className="py3 relative">
-      <div className="scratch-overlay-wrapper top-scratch bg-white" />
-
-      <div className="wrap mx-auto">
-        <div className="mt0 pt1 mb3 flex items-center">
-          <span className="line bg-brand-tertiary inline-block mr2 md-mr3 lg-mr3" />
-          <div className="inline-block">
-            <h1 id="classroom-video" className="inline-block lh-base">
-              Classroom Interview
-            </h1>
-            <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">
-              Award-winning journalist and human rights campaigner, Jeff McMullen got together
-              with a group of AIME mentors and alumni to chat about their experiences with the
-              program and what they gained from it.
-            </p>
+    <section className={styles.mainSection}>
+      <div className={styles.mainSectionWrapper}>
+        <div className={styles.flexWrapper}>
+          <Title id="classroom-video" type="h3Title">
+            Classroom Interview
+          </Title>
+          <Paragraph>
+            Award-winning journalist and human rights campaigner, Jeff McMullen got together
+            with a group of AIME mentors and alumni to chat about their experiences with the
+            program and what they gained from it.
+          </Paragraph>
+          <div className={styles.videoContainer}>
+            <iframe
+              title="case-studies-video-container"
+              src="https://player.vimeo.com/video/219339041?title=0&amp;byline=0&amp;portrait=0"
+              width="640"
+              height="360"
+              frameBorder="0"
+              webkitallowfullscreen=""
+              mozallowfullscreen=""
+              allowFullScreen=""
+            />
           </div>
+          <Title type="h3Title">Case Studies</Title>
+          <Paragraph>THe AIME Classroom</Paragraph>
         </div>
-        <div className="video-container">
-          <iframe
-            title="case-studies-video-container"
-            src="https://player.vimeo.com/video/219339041?title=0&amp;byline=0&amp;portrait=0"
-            width="640"
-            height="360"
-            frameBorder="0"
-            webkitallowfullscreen=""
-            mozallowfullscreen=""
-            allowFullScreen=""
-          />
-        </div>
-
-        <div className="mb2 mt0 pt1 md-pt3 lg-pt3 md-mt4 lg-mt4 flex items-center">
-          <span className="line bg-brand-tertiary inline-block mr2 md-mr3 lg-mr3" />
-          <div className="inline-block">
-            <h1 className="inline-block lh-base">Case Studies</h1>
-            <p className="f-16 light c-grey block pt0 md-pt1 lg-pt1">THe AIME Classroom</p>
-          </div>
-        </div>
-
-        <div className="grid about-grid">
+        <div className={styles.aboutGrid}>
           {CASE_STUDIES.map((caseStudy) => <CaseStudyBox {...caseStudy} key={caseStudy.name} />)}
         </div>
       </div>

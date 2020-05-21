@@ -1,0 +1,153 @@
+@import "../../../styles/global.module.scss";
+
+.mobileMenuContainer {
+  display: flex;
+  margin-left: auto;
+  float: right;
+  box-sizing: border-box;
+  @media screen and (min-width: $md) {
+    display: none;
+  }
+
+  .mobileMenu {
+    @media screen and (min-width: $md) {
+      display: none;
+    }
+  }
+  
+  .whiteText {
+    color: $white;
+  }
+  
+  .blackText {
+    color: $black;
+  }
+
+  .closeIconContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileMenuIcon {
+    color: $black;
+    cursor: pointer;
+    display: block;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
+    text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
+    -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
+    font-feature-settings: 'liga';       // Support for IE.
+
+    @media screen and (min-width: $lg) {
+      display: none;
+    }
+  }
+  
+  .materialIcons {
+    @extend %materialIcons;
+  }
+
+  .headerFilled .mobileMenu {
+    color: $black;
+  }
+
+  .mobileHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-50px);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: ease-in 0.2s all;
+    z-index: 99;
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .menuNavLink {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      font-family: $body-font-family;
+      font-size: 1em;
+      font-weight: 900;
+      background-color: transparent;
+      color: $black;
+      padding: 0.5em;
+      border: none;
+      cursor: pointer;
+      &.active {
+        border-bottom: 2px solid $purple;
+        color: $purple;
+      }
+    }
+
+    ul ul a {
+      font-weight: 200;
+    }
+ 
+    .closeIcon {
+      color: $black;
+      top: 1em;
+      right: 1em;
+      width: auto;
+      height: auto;
+      font-size: 1.5em;
+      padding: 0.5em;
+      font-weight: 900;
+    }
+  }
+
+  .purpleText {
+    color: $purple;
+  }
+
+  .mobileMenuList {
+    overflow: scroll;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 0;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .mobileMenuListItem {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
