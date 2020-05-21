@@ -1058,16 +1058,12 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor a week - $10k+</Title>
                   </div>
-                  <div className={styles.panelTwoCol}>
-                    <div className={styles.panelCol}>
-                      <Paragraph>
-                        Pick a week - any week - get a credit on the show for each day
-                        of the week and know you’ve helped change the world with us.
-                      </Paragraph>
-                      <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                        <IntercomChat label="Let's chat" classNames={styles.navBtn} />
-                      </div>
-                    </div>
+                  <Paragraph>
+                    Pick a week - any week - get a credit on the show for each day
+                    of the week and know you’ve helped change the world with us.
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -1081,16 +1077,12 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor an ep - $5k+</Title>
                   </div>
-                  <div className={styles.panelTwoCol}>
-                    <div className={styles.panelCol}>
-                      <Paragraph>
-                        Pick a day and help us bring that episode to life! And get a
-                        credit on the show!
-                      </Paragraph>
-                      <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                        <IntercomChat label="Let's chat" classNames={styles.navBtn} />
-                      </div>
-                    </div>
+                  <Paragraph>
+                    Pick a day and help us bring that episode to life! And get a
+                    credit on the show!
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -1104,20 +1096,16 @@ const PartnerWithIntv = () => {
                     />
                     <Title type="h3Title">Sponsor a song - $100</Title>
                   </div>
-                  <div className={styles.panelTwoCol}>
-                    <div className={styles.panelCol}>
-                      <Paragraph>
-                        $100 will allow us to sponsor artists to share a song with
-                        us each Friday! Let us know that your donation is
-                        for a song in your message.
-                      </Paragraph>
-                      <Button
-                        className={styles.sponsorBtn}
-                        onClickFunction={toggleDonateModal}
-                        text="Donate"
-                      />
-                    </div>
-                  </div>
+                  <Paragraph>
+                    $100 will allow us to sponsor artists to share a song with
+                    us each Friday! Let us know that your donation is
+                    for a song in your message.
+                  </Paragraph>
+                  <Button
+                    className={styles.sponsorBtn}
+                    onClickFunction={toggleDonateModal}
+                    text="Donate"
+                  />
                 </div>
               </div>
             </div>
