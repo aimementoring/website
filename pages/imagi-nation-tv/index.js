@@ -57,8 +57,16 @@ const ImagiNationTV = () => {
             >
               Watch live
             </Button>
+            <Button
+              theme={process.env.REACT_APP_THEME}
+              className={`${styles.watchBtn} ${styles.imagineFilmBtn}`}
+              url="/imagine"
+              target="_blank"
+              type="link"
+            >
+              IMAGINE the film
+            </Button>
           </div>
-
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <VideoPlayer
               url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
@@ -76,7 +84,6 @@ const ImagiNationTV = () => {
               </Paragraph>
             </VideoPlayer>
           </div>
-
         </div>
       </div>
       <AboutImaginationTV scrollHandler={scrollToPanel} />
@@ -134,7 +141,7 @@ or a
                   elevate knowledge.
                 </Paragraph>
                 <div className={styles.becomeAPartnerBtn}>
-                  <IntercomChat label="Get in the game" />
+                  <IntercomChat label="Get in the game" classNames={styles.navBtn} />
                 </div>
               </div>
             </div>
