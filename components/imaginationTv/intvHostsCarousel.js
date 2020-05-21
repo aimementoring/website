@@ -9,6 +9,10 @@ const ImaginationTvCard = dynamic(() => import('./imaginationTvCard'));
 const IntvHostsCarousel = () => (
   <Carousel type="multipleSlides" className={styles.intvHostsCarousel}>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="Hope"
       image="puppet-hope@2x"
     >
@@ -17,6 +21,10 @@ const IntvHostsCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="JMB"
       image="puppet-jmb"
     >
@@ -25,14 +33,23 @@ const IntvHostsCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="Asterix"
       image="puppet-asterix"
     >
       <Paragraph>
-        A quiet, kind, British gender-neutral youngster. Holds the moment. Insightful interviewer - finds strength in silence.
+        A quiet, kind, British gender-neutral youngster. Holds the moment.
+        Insightful interviewer - finds strength in silence.
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="Blue"
       image="puppet-blue"
     >
@@ -41,6 +58,10 @@ const IntvHostsCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="Panga"
       image="puppet-panger"
     >
@@ -52,6 +73,10 @@ const IntvHostsCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
+      episodePanelClass={styles.episodePanel}
+      episodeHeaderClass={styles.episodeHeader}
+      headingLockupClass={styles.headingLockup}
+      episodeContentInfoClass={styles.episodeContentInfo}
       title="Mystery Guest Co Hosts &amp; Kid Co Hosts"
       image="puppet-hope@2x"
     >
