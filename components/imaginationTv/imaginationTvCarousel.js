@@ -93,26 +93,22 @@ const ImaginationTvCarousel = () => (
       color="pink"
     >
       <Paragraph>
-        <strong>
-              What can we create in 25 minutes?
-        </strong>
+        <strong>What can we create in 25 minutes?</strong>
       </Paragraph>
       <Paragraph>
-            Up to 5 artists will join us for 25 minutes to set out on a creative
-            adventure. To make something from nothing. To show us that we all have
-            art in us, we can all create, if only we begin to imagine.
+        Up to 5 artists will join us for 25 minutes to set out on a creative
+        adventure. To make something from nothing. To show us that we all have
+        art in us, we can all create, if only we begin to imagine.
       </Paragraph>
       <Paragraph>
-        <strong>
-              Musician performance &quot;Let the music play&quot;
-        </strong>
+        <strong>Musician performance &quot;Let the music play&quot;</strong>
       </Paragraph>
       <Paragraph>
-            Each week, AIME will profile musicians who will have the chance to play
-            a song live on IMAGI-NATION TV. We see the value of music to bring people
-            together, to inspire us in dark times, to give us love and hope. This
-            segment is to keep the music playing in the face of concerts, festivals
-            and gigs being cancelled worldwide.
+        Each week, AIME will profile musicians who will have the chance to play
+        a song live on IMAGI-NATION TV. We see the value of music to bring people
+        together, to inspire us in dark times, to give us love and hope. This
+        segment is to keep the music playing in the face of concerts, festivals
+        and gigs being cancelled worldwide.
       </Paragraph>
     </ImaginationTvCard>
   </Carousel>
