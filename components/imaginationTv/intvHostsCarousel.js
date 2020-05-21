@@ -72,7 +72,8 @@ const IntvHostsCarousel = () => (
         to go and get into the world.
       </Paragraph>
     </ImaginationTvCard>
-    <ImaginationTvCard
+    {/* TODO: hiding until we have an image / more detail
+      <ImaginationTvCard
       episodePanelClass={styles.episodePanel}
       episodeHeaderClass={styles.episodeHeader}
       headingLockupClass={styles.headingLockup}
@@ -83,7 +84,7 @@ const IntvHostsCarousel = () => (
       <Paragraph>
         -
       </Paragraph>
-    </ImaginationTvCard>
+    </ImaginationTvCard> */}
 
   </Carousel>
 );
