@@ -53,8 +53,7 @@ const KnowAime = () => (
       <div className={styles.knowAimeGrid}>
         <div className={styles.sidebar}>
           <div>
-            <h2 className={styles.featureSidebarTitle}>An intro to AIME</h2>
-            <hr className={styles.purpleSidebarHr} />
+            <Title className={styles.featureSidebarTitle} type="h2Title">An intro to AIME</Title>
           </div>
           <Paragraph>
             The purpose of these resources is to provide a space for you to get to know AIME and
