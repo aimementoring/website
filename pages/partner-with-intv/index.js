@@ -650,8 +650,6 @@ const PartnerWithIntv = () => {
                       'Year 12 Special - all Year 12 students will be invited on the ‘Jobs of the Future’ IN{​TV} special which will feature corporate partners offering jobs to kids on the spot, live job interview coaching and a suite of resources to make the next step into employment or university.',
                     ]}
                   />
-                </div>
-                <div className={styles.panelCol}>
                   <Paragraph>
                     {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
                   </Paragraph>
@@ -661,6 +659,13 @@ const PartnerWithIntv = () => {
                       '1500 profile mentors (30 mentors a week across 50 weeks) directly into kids lives with over 250 hours of mentoring throughout the year',
                       'Over 3000 university mentors available as mentors in the live tutoring session online with over 100 hours of free tutoring and mentoring available (based off 30 minute after each show per day, across 50 weeks)',
                       'A stage for 300 kids to co-Host',
+                    ]}
+                  />
+                </div>
+                <div className={styles.panelCol}>
+                  <List
+                    type="ulList"
+                    list={[
                       'A stage for over 300 number of kids in the IMAGI-NATION {Classroom}',
                       'A stage for 150 number of president speeches',
                       'A stage for 50 number of artists to be profiled',
@@ -683,26 +688,24 @@ const PartnerWithIntv = () => {
                       'Principal on the show for the 60 second challenge',
                     ]}
                   />
-                </div>
-                <div className={styles.panelTwoCol}>
-                  <div className={styles.panelCol}>
-                    <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                      <IntercomChat label="Let's chat" classNames={styles.navBtn} />
-                    </div>
-                    <div className={styles.btnPartnerOp}>
-                      <Button
-                        type="text"
-                        className={styles.existingPartnerBtn}
-                        onClickFunction={toggleModal}
-                      >
-                      I&apos;m an existing partner school
-                      </Button>
-                    </div>
+                  <Paragraph>
+                    So, are you intrigued? Do you want to become a School Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
+                  </div>
+                  <div className={styles.btnPartnerOp}>
+                    <Button
+                      type="text"
+                      className={styles.existingPartnerBtn}
+                      onClickFunction={toggleModal}
+                    >
+                    I&apos;m an existing partner school
+                    </Button>
                   </div>
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={universityPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -719,8 +722,6 @@ const PartnerWithIntv = () => {
                   <Paragraph>
                     {'IMAGI-NATION{TV} is a live weekday show bringing over 1,500 world class mentors into people’s lives through the year. The university partnership with IN{TV} is to provide guidance and motivation to its students during the times of COVID-19 and beyond. The university works with AIME to explore embedding IN{TV} into courses as curriculum and publishing the opportunity for students far and wide. For existing AIME university partners and the first 100 new university partners that sign on, the partnership will be for free for 2020. AIME will provide: - A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom. - The chance for education students to gain practicum experience through the show.'}
                   </Paragraph>
-                </div>
-                <div className={styles.panelCol}>
                   <Paragraph>
                     Universities commit to:
                   </Paragraph>
@@ -729,32 +730,36 @@ const PartnerWithIntv = () => {
                     list={[
                       'Sharing a press release when the partnership is formed to the university network, including all students and teachers.',
                       'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IN{TV} to all students, staff and friends of the university.',
+                    ]}/>
+                </div>
+                <div className={styles.panelCol}>
+                  <List
+                    type="ulList"
+                    list={[
                       'Working with AIME on implementing IN{TV} into the curriculum.',
                       'Working with AIME to promote the opportunity for all students to become mentors on the show. For the show on which it is a featured partner, the university will ensure:',
                       'Vice-Chancellor available for 60-second challenge',
                       'One candidate available for the 180-second Wizard segment',
                     ]}
                   />
-                </div>
-                <div className={styles.panelTwoCol}>
-                  <div className={styles.panelCol}>
-                    <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                      <IntercomChat label="Let's chat" classNames={styles.navBtn} />
-                    </div>
-                    <div className={styles.btnPartnerOp}>
-                      <Button
-                        type="text"
-                        className={styles.existingPartnerBtn}
-                        onClickFunction={toggleModal}
-                      >
-                      I&apos;m an existing partner university
-                      </Button>
-                    </div>
+                  <Paragraph>
+                    So, are you intrigued? Do you want to become a University Partner?
+                  </Paragraph>
+                  <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
+                  </div>
+                  <div className={styles.btnPartnerOp}>
+                    <Button
+                      type="text"
+                      className={styles.existingPartnerBtn}
+                      onClickFunction={toggleModal}
+                    >
+                    I&apos;m an existing partner university
+                    </Button>
                   </div>
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={globalPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -780,14 +785,18 @@ const PartnerWithIntv = () => {
                       'Develop puppets with localised values for different countries and localised voices',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions',
                       'Build, manage and foster sideways partnerships across the system to lift up education departments, NGOs and other key players in the sector around children',
-                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
-                      'Create a daily TV show that puts a mentor in every kid’s life, every single day And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.',
                     ]}
                   />
                 </div>
                 <div className={styles.panelCol}>
+                  <List
+                    type="ulList"
+                    list={[
+                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
+                      'Create a daily TV show that puts a mentor in every kid’s life, every single day And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.',
+                    ]}/>
                   <Paragraph>
-                    Sounds good? Do you want to become a Global Partner?
+                    Does this sound good to you? Do you want to become a Global Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -817,14 +826,18 @@ const PartnerWithIntv = () => {
                       'Develop a national curriculum alongside IN{TV} for all teachers across the country',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions and develop curriculum resources for IMAGI-NATION{RADIO}',
                       'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
-                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
-                      'Create a daily TV show that puts a mentor in every kid’s life, every single day',
                     ]}
                   />
                 </div>
                 <div className={styles.panelCol}>
+                  <List
+                    type="ulList"
+                    list={[
+                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
+                      'Create a daily TV show that puts a mentor in every kid’s life, every single day',
+                    ]}/>
                   <Paragraph>
-                    Are you excited to help? Do you want to become a National Partner?
+                    Does this sound like the opportunity that's right for you? Do you want to become a National Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -832,7 +845,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={stateProvincialPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -855,14 +867,18 @@ const PartnerWithIntv = () => {
                       'Develop a curriculum for all teachers in your state/province',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions and develop curriculum resources for IMAGI-NATION{RADIO}',
                       'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
-                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
-                      'Create a daily TV show that puts a mentor in every kid’s life, every single day',
                     ]}
                   />
                 </div>
                 <div className={styles.panelCol}>
+                  <List
+                    type="ulList"
+                    list={[
+                      'Create a set of ‘How to’ resources for teachers looking at how to go digital',
+                      'Create a daily TV show that puts a mentor in every kid’s life, every single day',
+                    ]}/>
                   <Paragraph>
-                    Is that something you&apos;d love to support? Do you want to become a State or
+                    Is that something you would love to support? Do you want to become a State or
                     Provincial Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
@@ -871,7 +887,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={imaginationsInvestorRef} className={`${styles.panelPartneringOption}`}>
@@ -895,13 +910,16 @@ const PartnerWithIntv = () => {
                     then this is the investor section that says: ‘Hey you guys - I’m here and on
                     your team - let’s do this! Use this funding for anything you need to bring
                     this show to life, to amplify it and light up kids’ minds. This is your untied
-                    Imagination Fund.’ In this space we’d imagine philanthropists who have rocked
+                    Imagination Fund.’ 
+                  </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
+                  <Paragraph>
+                    In this space we’d imagine philanthropists who have rocked
                     the world would donate funds to work with us; this is for the investors who
                     have made their way and who know that with a little rocket fuel, you can go to
                     the moon.
                   </Paragraph>
-                </div>
-                <div className={styles.panelCol}>
                   <Paragraph>
                     Are you keen to inspire? Do you want to become an Imagination Investor?
                   </Paragraph>
@@ -911,7 +929,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={contentPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -932,14 +949,13 @@ const PartnerWithIntv = () => {
                   classy way. For example, we’d be up for having your smartest designer
                   on our design show talking about the positive work you and your team
                   are doing and then exploring a potential Q&A with one of our hosts/puppets.
-                  We can find classy ways to tell stories together around our 21 values.
-                  We can make videos together, write stories, and we may even, if it’s really
-                  classy, create a collab piece of AIME apparel together.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    Are you looking to share stories? Do you want to become a Content Partner?
+                    We can find classy ways to tell stories together around our 21 values.
+                    We can make videos together, write stories, and we may even, if it’s really
+                    classy, create a collab piece of AIME apparel together. Are you in?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -947,7 +963,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={puppetPartnersRef} className={`${styles.panelPartneringOption}`}>
@@ -962,17 +977,17 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                  Invest in the development of our puppets for the show. We want to develop
-                   puppets that have all the characteristics of our 21 values. This funding will
-                   support employment of our puppet maker and puppeteers. It will allow us to
-                   employ writers to work on the puppets and help produce scripts for the show
-                   every day. Surely you wanna create a puppet? Maybe we can look at something
-                   that’s important to you or your organisation and build a puppet around that?
+                    Invest in the development of our puppets for the show. We want to develop
+                    puppets that have all the characteristics of our 21 values. This funding will
+                    support employment of our puppet maker and puppeteers. It will allow us to
+                    employ writers to work on the puppets and help produce scripts for the show
+                    every day.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    Wanna help spread the magic of puppets? Do you want to become a Puppet Partner?
+                   Surely you wanna create a puppet? Maybe we can look at something
+                   that’s important to you or your organisation and build a puppet around that?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -980,7 +995,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* partnering option */}
             <div ref={corporateWellbeingRef} className={`${styles.panelPartneringOption}`}>
@@ -1011,11 +1025,11 @@ const PartnerWithIntv = () => {
                      core focus is imagination, and we’ve been in the game of behaviour
                      change for marginalised kids and university students for 16 years.
                   </Paragraph>
+                </div>
+                <div className={styles.panelCol}>
                   <Paragraph>
                     {'With IMAGI-NATION{TV}, the focus is on our inner child, on unlocking that curiosity and joy to fuel hope, inspiration and action. Considering the challenges that many of us are facing with kids at home, IMAGI-NATION{TV} is a gift for all parents to sit down with their kids for an hour a day. And if you don’t have kids, it’s a gift for the kid inside you! Check out this article in Harvard Business Review from 2 BCG thinkers explaining how imagination helps businesses succeed and why it’s even more critical in the current climate.'}
                   </Paragraph>
-                </div>
-                <div className={styles.panelCol}>
                   <Paragraph>
                     Do you care? Do you want to become a Corporate Wellbeing Partner?
                   </Paragraph>
@@ -1025,7 +1039,6 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
             </div>
-            {/* partnering option ... */}
 
             {/* sponsour options */}
 
