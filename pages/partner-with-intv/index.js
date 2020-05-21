@@ -591,7 +591,7 @@ const PartnerWithIntv = () => {
         </div>
         <DoubleCurvedLine />
 
-        <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionPartnerOpps}`}>
+        <section className={`${styles.sectionPanel} ${styles.sectionPartnerOpps}`}>
           <div className={`${styles.sectionWrapper}`}>
             <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
               Partnership opportunities
@@ -1045,7 +1045,7 @@ const PartnerWithIntv = () => {
               </div>
             </div>
 
-            {/* sponsour options */}
+            {/* sponsor options */}
 
             <div className={`${styles.sponsoring} ${styles.panelTwoCol}`}>
               <div className={styles.panelCol}>
