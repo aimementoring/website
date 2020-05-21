@@ -14,6 +14,7 @@ const Ambassadors = () => (
   <Layout>
     <SimpleBanner
       title={<strong>People of AIME</strong>}
+      groovy
       titleType="headingLockup"
       titleStyleClass={styles.bannerHeadingAmbassadors}
       bannerContainerClass={styles.heroBanner}
