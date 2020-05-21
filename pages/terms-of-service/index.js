@@ -9,7 +9,7 @@ import styles from './termsOfService.module.scss';
 const TermsAndConditions = ({ entries }) => (
   <Layout>
     {entries && entries.map(({ fields, sys }) => (
-      <div key={sys.id} className={styles.termsAndConditions}>
+      <div key={sys.id}>
         <SimpleBanner
           title={(
             <strong>
