@@ -18,8 +18,8 @@ const Founder = () => (
       groovy
       titleType="headingLockup"
       titleStyleClass={styles.founderBannerHeader}
-      bannerContainerClass={`${styles.heroBannerDefault} ${styles.heroBannerFounder}`}
-      bannerContentWrapperClass={styles.bannerContentWrapperClass}
+      bannerContainerClass={styles.banner}
+      bannerContentWrapperClass={styles.contentWrapper}
       bannerContentClass={styles.bannerWrapper}
     />
     <article className={styles.plainContentWrapper}>
