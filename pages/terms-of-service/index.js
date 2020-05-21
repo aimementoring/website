@@ -21,7 +21,7 @@ const TermsAndConditions = ({ entries }) => (
           titleStyleClass={styles.bannerHeadingTermsOfService}
           bannerContainerClass={styles.termsOfServiceBanner}
           bannerWrapperClass={styles.bannerWrapper}
-          bannerContentWrapperClass={styles.bannerContentWrapper}
+          bannerContentWrapperClass={styles.contentWrapper}
         />
         <div className={styles.termsSection}>
           <TermPhraseCard contentCards={fields.contentCards} />
