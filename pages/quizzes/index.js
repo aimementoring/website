@@ -13,7 +13,7 @@ const Quizzes = () => {
 
   return (
     <Layout>
-      <div className={styles.quizzesContainer}>
+      <div>
         <SimpleBanner
           title={(
             <>
@@ -30,8 +30,8 @@ const Quizzes = () => {
           bannerWrapperClass={styles.bannerWrapper}
           bannerContentWrapperClass={styles.bannerContentWrapper}
         />
-        <section className={styles.quizzesIframeContainer}>
-          <div id="random-quiz" className={styles.quizzesIframe} />
+        <section className={styles.iframeContainer}>
+          <div id="random-quiz" className={styles.iframe} />
         </section>
       </div>
     </Layout>
