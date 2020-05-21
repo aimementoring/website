@@ -26,7 +26,7 @@ const MainAppContent = ({ router }) => (
       }
       return null;
     })}
-    <DonateModal />
+    {/* <DonateModal /> */}
   </>
 );
 

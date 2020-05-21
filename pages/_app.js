@@ -5,7 +5,6 @@ import App from 'next/app';
 import TagManager from 'react-gtm-module';
 import MainAppComponent from '../components/mainAppComponent';
 import initStore from '../store';
-import isClientSide from '../utils/isClientSide';
 import './_app.scss';
 
 // @TODO: Remove these imports when they fix this issue: https://github.com/zeit/next.js/issues/12079
@@ -29,12 +28,12 @@ class MyApp extends App {
       Component, pageProps, store,
     } = this.props;
     return (
-      <Provider store={store}>
+      <>
         <MainAppComponent />
         <Component {...pageProps} />
-      </Provider>
+      </>
     );
   }
 }
-
-export default withRedux(initStore, { debug: true })(MyApp);
+export default MyApp;
+// export default withRedux(initStore, { debug: true })(MyApp);
