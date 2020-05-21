@@ -10,8 +10,6 @@ import bugsnagClient from '../../utils/bugsnag';
 import isClientSide from '../../utils/isClientSide';
 import styles from './error.module.scss';
 
-import './index.scss';
-
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ErrorPage = () => {
