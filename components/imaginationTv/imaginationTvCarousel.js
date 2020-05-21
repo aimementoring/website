@@ -93,45 +93,6 @@ const ImaginationTvCarousel = () => (
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
-      day="Wednesday"
-      title="Designers"
-      image="designers_tv"
-      color="orange"
-    >
-      <Paragraph>
-            Those building the world today and tomorrow.
-            There’s no limit to what we believe is “design”.
-      </Paragraph>
-      <Paragraph>
-            You’ll have the chance to dance around a big picture topic with 2
-            other panelists. We are elevating the knowledge of designers who have
-            got us here today, who have created the world we live in. We are
-            exploring the mindsets, processes, philosophy and thinking patterns
-            that have taken you to where you are now.
-      </Paragraph>
-    </ImaginationTvCard>
-    <ImaginationTvCard
-      day="Thursday"
-      title="Keynote"
-      image="keynote_tablet"
-      color="purple"
-    >
-      <Paragraph>
-        <strong>
-              &quot;Cancelled, not cancelled&quot;
-        </strong>
-      </Paragraph>
-      <Paragraph>
-            Each week AIME gives the stage to a festival or conference that has been
-            cancelled to have some level of publicity and promotion.
-      </Paragraph>
-      <Paragraph>
-            To inspire marginalised kids to rise up and change their world.
-            To inspire us all to seek knowledge, to find inspiration in ideas, and
-            embrace the kindness of someone sharing what they know with us.
-      </Paragraph>
-    </ImaginationTvCard>
-    <ImaginationTvCard
       day="Friday"
       title="Artists"
       image="artists_tv"
