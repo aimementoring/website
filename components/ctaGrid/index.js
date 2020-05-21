@@ -63,7 +63,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
             our Director of Partnering.
           </Paragraph>
           <div className={styles.intercomBtnWrap}>
-            <IntercomChat />
+            <IntercomChat classNames={styles.navBtn} />
           </div>
         </div>
       </div>
