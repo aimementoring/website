@@ -586,7 +586,9 @@ const PartnerWithIntv = () => {
         <br />
         <br />
         <br />
-        <IntvPartners />
+        <div className={`${styles.sectionPartnersCarousel}`} >
+          <IntvPartners />
+        </div>
         <DoubleCurvedLine />
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionPartnerOpps}`}>
