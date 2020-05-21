@@ -283,7 +283,7 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  '5 x 25 min daily episodes at least 21 weeks of content (based on AIME 21 values).',
+                  "5 x 25 min daily episodes at least 21 weeks of content (based on AIME's 21 values).",
                   'Audio and podcast in production.',
                   'Impact production in progress, including education resources for teachers around the world to use',
                 ]}
@@ -455,8 +455,8 @@ const PartnerWithIntv = () => {
               </Paragraph>
               <Paragraph>
                 {`Globally, our mentors replay the
-                show and then host our live IMAGI-
-                NATION{CLASSROOMS}.The classrooms have
+                show and then host our live IMAGI-NATION{CLASSROOMS}.
+                The classrooms have
                 university volunteer mentors and a lead
                 AIME mentor leading and supporting the
                 mentees.`}
@@ -724,8 +724,24 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {'IMAGI-NATION{TV} is a live weekday show bringing over 1,500 world class mentors into people’s lives through the year. The university partnership with IN{TV} is to provide guidance and motivation to its students during the times of COVID-19 and beyond. The university works with AIME to explore embedding IN{TV} into courses as curriculum and publishing the opportunity for students far and wide. For existing AIME university partners and the first 100 new university partners that sign on, the partnership will be for free for 2020. AIME will provide: - A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom. - The chance for education students to gain practicum experience through the show.'}
+                    {`IMAGI-NATION{TV} is a live weekday show bringing over 1,500 world class mentors into people’s 
+                    lives through the year. The university partnership with IN{TV} is to provide guidance and 
+                    motivation to its students during the times of COVID-19 and beyond. 
+                    The university works with AIME to explore embedding IN{TV} into courses as 
+                    curriculum and publishing the opportunity for students far and wide. 
+                    For existing AIME university partners and the first 100 new university partners that sign on, 
+                    the partnership will be for free for 2020.`}
                   </Paragraph>
+                  <Paragraph>
+                    AIME will provide:
+                  </Paragraph>
+                  <List
+                  type="ulList"
+                  list={[
+                    'A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom',
+                    'The chance for education students to gain practicum experience through the show.',
+                  ]}
+                />
                   <Paragraph>
                     Universities commit to:
                   </Paragraph>
@@ -784,7 +800,8 @@ const PartnerWithIntv = () => {
                   <List
                     type="ulList"
                     list={[
-                      'Employ the staff working on IN{TV} - Create partnerships with curriculum development organisations to give teachers the ability to teach with IN{TV}',
+                      'Employ the staff working on IN{TV}',
+                      'Create partnerships with curriculum development organisations to give teachers the ability to teach with IN{TV}',
                       'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
                       'Develop our tech team and tech partners for the live stream',
                       'Develop puppets with localised values for different countries and localised voices',
@@ -1018,7 +1035,7 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    for large organisations (free packages available for small to
+                    For large organisations (free packages available for small to
                     medium organisations with donations welcome)
                   </Paragraph>
                   <Paragraph>
@@ -1037,7 +1054,16 @@ const PartnerWithIntv = () => {
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {'With IMAGI-NATION{TV}, the focus is on our inner child, on unlocking that curiosity and joy to fuel hope, inspiration and action. Considering the challenges that many of us are facing with kids at home, IMAGI-NATION{TV} is a gift for all parents to sit down with their kids for an hour a day. And if you don’t have kids, it’s a gift for the kid inside you! Check out this article in Harvard Business Review from 2 BCG thinkers explaining how imagination helps businesses succeed and why it’s even more critical in the current climate.'}
+                    {`With IMAGI-NATION{TV}, the focus is on our inner child, 
+                    on unlocking that curiosity and joy to fuel hope, inspiration and 
+                    action. Considering the challenges that many of us are facing 
+                    with kids at home, IMAGI-NATION{TV} is a gift for all parents 
+                    to sit down with their kids for an hour a day. 
+                    And if you don’t have kids, it’s a gift for the kid inside you! Check out `}
+                    <a target="_blank" href="https://hbr.org/2020/04/we-need-imagination-now-more-than-ever">
+                      this article in Harvard Business Review</a> from 2 BCG thinkers 
+                      explaining how imagination helps businesses succeed and why it’s even 
+                      more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
                     Do you care? Do you want to become a Corporate Wellbeing Partner?
