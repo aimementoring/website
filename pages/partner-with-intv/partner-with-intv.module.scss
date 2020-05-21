@@ -469,6 +469,12 @@
 
     .sectionHeading {
       margin: 1.5em 0 0.8em;
+      max-width: 8em;
+
+      @media screen and (min-width: $md) {
+        max-width: 14em;
+        text-align: right;
+      }
 
       strong {
         top: 0;
