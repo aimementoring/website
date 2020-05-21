@@ -346,7 +346,7 @@ const PartnerWithIntv = () => {
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title">
             {`
-            Our Guests (so far)
+            Some of Our Guests
           `}
           </Title>
           <div className={`${styles.flexGridLayout}`}>
