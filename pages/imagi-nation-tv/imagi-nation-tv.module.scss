@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroBannerImagiTV {
   background:
@@ -66,6 +66,11 @@
         max-width: 30em;
         margin: 2em 0;
         padding-right: 1em;
+      }
+
+      .imagineFilmBtn {
+        background-color: $cyan;
+        margin-top: 1em;
       }
     }
   
