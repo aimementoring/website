@@ -1,12 +1,10 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
-.footerContent {
-  .listItem {
-    margin-bottom: 1rem;
+.listItem {
+  margin-bottom: 1rem;
 
-    &:nth-child(1){
-      margin-top: 1em;
-    }
+  &:nth-child(1) {
+    margin-top: 1em;
   }
 }
 
