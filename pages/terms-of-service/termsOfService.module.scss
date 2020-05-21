@@ -1,76 +1,16 @@
 @import "../../styles/global.module.scss";
 
 .termsOfServiceBanner {
-  position: relative;
+  composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  height: 60vh;
-  padding: 35px 0;
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-  }
-
-  @media screen and (min-width: $sm) {
-    padding: 0;
-    height: 62vh;
-  }
-
-  h1 {
-    text-align: center;
-    color: $white;
-    strong {
-      left: initial;
-    }
-  }
 }
-
-.bannerWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-}
-
-.bannerContentWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  align-items: center;
-  text-align: center;
-  padding-top: 2em;
-}
-
-.bannerHeadingTermsOfService {
-  strong {
-    left: initial;
-  }
-}
-
-// @todo terms of service banner
-// all above banner styles can be refactored into simpleBanner componenet
 
 .termsSection {
   
-  padding: 3em 1.5em;
-  margin: 0 auto;
-  max-width: 45em;
-
-  @media all and(min-width: $md) {
-    padding: 5em 3em;
-  }
+  composes: wrapper from '../../styles/patterns.module.scss';
 
   h2 {
     margin: 0 0 1.5em 0;
   }
 
 }
-
-// @todo refactor terms content 
-// This should use blueprint heading & paragraph styles + global content wrapper consistent across pages
-
-
-
-
