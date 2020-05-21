@@ -200,7 +200,7 @@ const PartnerWithIntv = () => {
           <div className={styles.column}>
             <img
               className={styles.imageBlock}
-              src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
+              src={`${ASSETS_URL}/assets/images/illustrations/welcome-1.png`}
               alt="about aime"
             />
           </div>
@@ -243,7 +243,7 @@ const PartnerWithIntv = () => {
           <div className={styles.column}>
             <img
               className={styles.imageBlock}
-              src={`${ASSETS_URL}/assets/images/illustrations/creative-spark-person.png`}
+              src={`${ASSETS_URL}/assets/images/illustrations/welcome-2.png`}
               alt="about aime"
             />
           </div>
