@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
@@ -247,10 +248,14 @@ const PartnerWithIntv = () => {
           </div>
         </section>
         <DoubleCurvedLine />
-        <section ref={hostsRef} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionHostsWrapper}`}>
-          {/* TODO: what's the best way for this thing... creating a new component every time... really?
-          shouldn't we be able to use the one comp and replace the content...
-          don't know if that will work though... tbc */}
+        <section
+          ref={hostsRef}
+          className={classNames(styles.sectionPanel, styles.panelOneCol,
+            styles.sectionHostsWrapper)}
+        >
+          {/* TODO: what's the best way for this thing... creating a new component
+          every time... really? shouldn't we be able to use the one comp
+          and replace the content... don't know if that will work though... tbc */}
           <Title type="h3Title">
             Meet some hosts
           </Title>
@@ -584,11 +589,10 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
-
         <br />
         <br />
         <br />
-        <div className={`${styles.sectionPartnersCarousel}`} >
+        <div className={`${styles.sectionPartnersCarousel}`}>
           <IntvPartners />
         </div>
         <DoubleCurvedLine />
@@ -734,12 +738,12 @@ const PartnerWithIntv = () => {
                     AIME will provide:
                   </Paragraph>
                   <List
-                  type="ulList"
-                  list={[
-                    'A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom',
-                    'The chance for education students to gain practicum experience through the show.',
-                  ]}
-                />
+                    type="ulList"
+                    list={[
+                      'A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom',
+                      'The chance for education students to gain practicum experience through the show.',
+                    ]}
+                  />
                   <Paragraph>
                     Universities commit to:
                   </Paragraph>
@@ -1058,10 +1062,15 @@ const PartnerWithIntv = () => {
                     with kids at home, IMAGI-NATION{TV} is a gift for all parents 
                     to sit down with their kids for an hour a day. 
                     And if you don’t have kids, it’s a gift for the kid inside you! Check out `}
-                    <a target="_blank" href="https://hbr.org/2020/04/we-need-imagination-now-more-than-ever">
-                      this article in Harvard Business Review</a> from 2 BCG thinkers 
-                      explaining how imagination helps businesses succeed and why it’s even 
-                      more critical in the current climate.
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://hbr.org/2020/04/we-need-imagination-now-more-than-ever"
+                    >
+                      this article in Harvard Business Review
+                    </a>
+                      &bsp;from 2 BCG thinkers explaining how imagination helps businesses
+                      succeed and why it’s even more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
                     Do you care? Do you want to become a Corporate Wellbeing Partner?
