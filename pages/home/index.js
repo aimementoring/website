@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import HeroBannerHomepage from '../../components/heroBannerHomepage';
+import HeroBannerAustralia from '../../components/heroBannerHomepage/HeroBannerAustralia';
 import Layout from '../../hocs/basicLayout';
 import { CTA_GRID_CAMPAIGNS } from '../../constants';
 import WavyDonateSection from '../../components/wavyDonateSection';
@@ -42,7 +42,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
+      <HeroBannerAustralia scrollHandler={scrollToGetInvolved} />
       <CtaGrid elements={CTA_GRID_CAMPAIGNS} partnerRef={partnerRef} />
       <br />
       <DoubleCurvedLine />
