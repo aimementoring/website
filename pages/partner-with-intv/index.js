@@ -124,7 +124,7 @@ const PartnerWithIntv = () => {
         </div>
 
 
-        <section className={`${styles.sectionPanel}`}>
+        <section className={`${styles.sectionPanel} ${styles.sectionWelcomPanel}`}>
           <div className={`${styles.sectionWrapper} ${styles.panelTwoCol}`}>
             <div className={`${styles.panelCol}`}>
               <Title type="h4Title" className={`${styles.titleWelcomeIntro}`}>
@@ -249,12 +249,12 @@ const PartnerWithIntv = () => {
           </div>
         </section>
         <DoubleCurvedLine />
-        <section ref={hostsRef} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.intvHostsWrapper}`}>
-          {/* what's the best way for this thing... creating a new component every time... really?
+        <section ref={hostsRef} className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.sectionHostsWrapper}`}>
+          {/* TODO: what's the best way for this thing... creating a new component every time... really?
           shouldn't we be able to use the one comp and replace the content...
           don't know if that will work though... tbc */}
           <Title type="h3Title">
-            Meet the hosts
+            Meet some hosts
           </Title>
           <IntvHostsCarousel />
           <br />
@@ -341,13 +341,15 @@ const PartnerWithIntv = () => {
           <ImaginationTvCarousel />
         </section>
 
+        <br />
+        <br />
         <DoubleCurvedLine />
 
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title">
-            {`
-            Some of Our Guests
-          `}
+            Our Guests & Mentors
+            <br />
+            (So Far)
           </Title>
           <div className={`${styles.flexGridLayout}`}>
             <div className={styles.flexGridItem}>
@@ -422,6 +424,8 @@ const PartnerWithIntv = () => {
             </div>
           </div>
         </section>
+        <br />
+        <br />
         <DoubleCurvedLine />
         <section className={`${styles.sectionImageParaFlow} ${styles.sectionPanel}`}>
           <div className={styles.column}>
