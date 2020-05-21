@@ -29,6 +29,7 @@
 
       .episodeContentInfo {
         display: block;
+        visibility: visible;
       }
     }    
   }
@@ -39,7 +40,8 @@
   
   :global(.slick-slide) {
     .episodePanel .episodeContentInfo {
-      display: none;
+      // display: none;
+      visibility: hidden;
     }
   }
 }
