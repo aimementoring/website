@@ -1,4 +1,4 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
 
 .customDetails { display: inline-block; }
@@ -197,6 +197,15 @@
 .elemJobFilter {
   display: block;
   margin-right: .5em;
+
+  .active {
+    font-family: $feature-font-family;
+    font-weight: 400;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: $white;
+    opacity: 1;
+  }
 }
 
 .filterList {
@@ -211,15 +220,6 @@
   text-decoration: none;
   border-color: $blue-light;
   cursor: pointer;
-}
-
-.active {
-  font-family: $feature-font-family;
-  font-weight: 400;
-  background-color: $brand-primary;
-  border-color: $brand-primary;
-  color: $white;
-  opacity: 1;
 }
 
 .filterList:hover {
