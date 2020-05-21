@@ -145,7 +145,7 @@
   }
 
   &:checked {
-    right: -2em;
+    right: -3em;
     left: inherit;
 
     ~ .drawerToggleLabel { 
@@ -320,20 +320,17 @@
   text-align: center;
 }
 .panelTwoCol {
+  box-sizing: border-box;
 
   @media screen and (min-width: $md) {
     display: flex;
   }
 
   .panelCol {
+    box-sizing: border-box;
     flex: 1 1 0;
     padding: 1em;
     align-self: center;
-    padding-left: 3em;
-    @media screen and (min-width: $lg) {
-      padding-left: inherit;
-      
-    }
 
     ul li {
       font-size: 0.875rem;
@@ -360,14 +357,25 @@
 }
 
 .whiteWaveBottom {
-  transform: rotate(180deg);
+  transform: rotate(180deg) scaleY(0.5);
   bottom: -3em;
+
+  @media screen and (min-width: $md) {
+    transform: rotate(180deg);
+  }
 }
 
 .sectionWithWaves {
   padding: 6em 0;
   @media screen and (min-width: $md) {
     padding: 8em 0;
+  }
+}
+
+.sectionWelcomPanel {
+  padding: 0 3.5em;
+  .panelCol {
+    padding: 0;
   }
 }
 
@@ -563,6 +571,12 @@
 
   @media screen and (min-width: $md) {
     width: 10em;
+  }
+}
+
+.sectionHostsWrapper {
+  @media screen and (max-width: $md) {
+    padding: 0 3em;
   }
 }
 
