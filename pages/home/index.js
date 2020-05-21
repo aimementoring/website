@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import HeroBannerAustralia from '../../components/heroBannerHomepage/HeroBannerAustralia';
+import HeroBannerAustralia from '../../components/heroBannerHomepage/heroBannerAustralia';
 import Layout from '../../hocs/basicLayout';
 import { CTA_GRID_CAMPAIGNS } from '../../constants';
 import WavyDonateSection from '../../components/wavyDonateSection';
@@ -11,11 +11,11 @@ import { setOnStorage, getFromStorage } from '../../utils/localStorage';
 import useDonate from '../../hooks/useDonate';
 import scrollToComponent from '../../utils/scrollToComponent';
 
-const DoubleCurvedLine = dynamic(() => import('../../components/imaginationTv/doubleCurvedLine'));
-const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
-const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
-const AmbassadorsCarousel = dynamic(() => import('../../components/ambassadorsCarousel'));
-const FooterBanner = dynamic(() => import('../../components/footerBanner'));
+import DoubleCurvedLine from '../../components/imaginationTv/doubleCurvedLine';
+import QuicklinksHomepage from '../../components/quicklinksHomepage';
+import CtaGrid from '../../components/ctaGrid';
+import AmbassadorsCarousel from '../../components/ambassadorsCarousel';
+import FooterBanner from '../../components/footerBanner';
 
 const Home = () => {
   const partnerRef = useRef(null);
@@ -47,7 +47,6 @@ const Home = () => {
       <br />
       <DoubleCurvedLine />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-
       <WavyDonateSection />
       <AmbassadorsCarousel />
       <FooterBanner />
