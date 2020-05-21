@@ -26,7 +26,7 @@ const StandardHeader = () => {
             <li className={styles.listItem}>
               <IntercomChat />
             </li>
-            <li className={styles.inlineListItem}>
+            <li className={styles.listItem}>
               <a
                 className={styles.navBtn}
                 target="_blank"
