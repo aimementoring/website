@@ -46,7 +46,7 @@ const FullScreenMenu = () => {
 
       <div className={styles.menuContainer}>
         <div className={styles.menuBg}>
-          <div className={styles.menuContent}>
+          <nav className={styles.menuContent}>
             <ul className={styles.menuMain}>
               <li className={styles.listItem}>
                 <Anchor to="/home" as="/" className={styles.listLink}>
@@ -131,7 +131,7 @@ const FullScreenMenu = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
     </>
