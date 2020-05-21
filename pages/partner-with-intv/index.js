@@ -127,7 +127,7 @@ const PartnerWithIntv = () => {
         <section className={`${styles.sectionPanel}`}>
           <div className={`${styles.sectionWrapper} ${styles.panelTwoCol}`}>
             <div className={`${styles.panelCol}`}>
-              <Title type="h4Title">
+              <Title type="h4Title" className={`${styles.titleWelcomeIntro}`}>
                 {`
                 WELCOME TO AIME’S IMAGI-NATION{TV}
                 & IMAGI-NATION{CLASSROOM} EXPERIENCE
@@ -332,8 +332,6 @@ const PartnerWithIntv = () => {
           </div>
         </section>
 
-        <DoubleCurvedLine />
-
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
           <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
             {`
@@ -433,15 +431,15 @@ const PartnerWithIntv = () => {
               alt="about aime"
             />
           </div>
-          <div className={styles.column}>
+          <div className={`${styles.column} ${styles.copyLeftAlign}`}>
             <Title
               type="headingLockup"
-              className={`${styles.sectionHeading} ${styles.titleInTVPartnerPanel}`}
+              className={`${styles.sectionHeading} ${styles.titleInTVPartnerPanel} ${styles.copyLeftAlign}`}
               theme={process.env.REACT_APP_THEME}
             >
               {'IMAGI-NATION {CLASSROOM}'}
             </Title>
-            <div className={styles.copy}>
+            <div className={`${styles.copy} ${styles.copyLeftAlign}`}>
               <Paragraph>
                 {`Daily after IMAGI-NATION{TV},
                 we run simultaneous classrooms
@@ -607,7 +605,7 @@ const PartnerWithIntv = () => {
                 <Title type="h3Title">Production Partners</Title>
               </div>
               <div className={styles.panelTwoCol}>
-                <div className={styles.panelCol}>
+                <div className={`${styles.panelCol} ${styles.panelColContent}`}>
                   <Paragraph>
                     {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
                   </Paragraph>
