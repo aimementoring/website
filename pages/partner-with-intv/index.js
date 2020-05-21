@@ -728,7 +728,8 @@ const PartnerWithIntv = () => {
                     list={[
                       'Sharing a press release when the partnership is formed to the university network, including all students and teachers.',
                       'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IN{TV} to all students, staff and friends of the university.',
-                    ]}/>
+                    ]}
+                  />
                 </div>
                 <div className={styles.panelCol}>
                   <List
@@ -792,7 +793,8 @@ const PartnerWithIntv = () => {
                     list={[
                       'Create a set of ‘How to’ resources for teachers looking at how to go digital',
                       'Create a daily TV show that puts a mentor in every kid’s life, every single day And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.',
-                    ]}/>
+                    ]}
+                  />
                   <Paragraph>
                     Does this sound good to you? Do you want to become a Global Partner?
                   </Paragraph>
@@ -833,9 +835,11 @@ const PartnerWithIntv = () => {
                     list={[
                       'Create a set of ‘How to’ resources for teachers looking at how to go digital',
                       'Create a daily TV show that puts a mentor in every kid’s life, every single day',
-                    ]}/>
+                    ]}
+                  />
                   <Paragraph>
-                    Does this sound like the opportunity that's right for you? Do you want to become a National Partner?
+                    Does this sound like the opportunity that&apos;s right for you?
+                    Do you want to become a National Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -874,7 +878,8 @@ const PartnerWithIntv = () => {
                     list={[
                       'Create a set of ‘How to’ resources for teachers looking at how to go digital',
                       'Create a daily TV show that puts a mentor in every kid’s life, every single day',
-                    ]}/>
+                    ]}
+                  />
                   <Paragraph>
                     Is that something you would love to support? Do you want to become a State or
                     Provincial Partner?
@@ -908,7 +913,7 @@ const PartnerWithIntv = () => {
                     then this is the investor section that says: ‘Hey you guys - I’m here and on
                     your team - let’s do this! Use this funding for anything you need to bring
                     this show to life, to amplify it and light up kids’ minds. This is your untied
-                    Imagination Fund.’ 
+                    Imagination Fund.’
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -1045,7 +1050,7 @@ const PartnerWithIntv = () => {
                 <div ref={sponsorWeekRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
-                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-week.png`}
+                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-week-2.png`}
                       alt="Sponsor a week"
                       className={styles.imgPartnerType}
                     />
@@ -1068,16 +1073,16 @@ const PartnerWithIntv = () => {
                 <div ref={sponsorEpisodeRef} className={styles.panelPartneringOption}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
-                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-ep.png`}
+                      src={`${ASSETS_URL}/assets/images/illustrations/sponsor-day-2.png`}
                       alt="Sponsor an episode"
                       className={styles.imgPartnerType}
                     />
-                    <Title type="h3Title">Sponsor an episode - $5k+</Title>
+                    <Title type="h3Title">Sponsor an ep - $5k+</Title>
                   </div>
                   <div className={styles.panelTwoCol}>
                     <div className={styles.panelCol}>
                       <Paragraph>
-                        Pick a day and help us bring that day to life! And get a
+                        Pick a day and help us bring that episode to life! And get a
                         credit on the show!
                       </Paragraph>
                       <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
@@ -1101,14 +1106,15 @@ const PartnerWithIntv = () => {
                     <div className={styles.panelCol}>
                       <Paragraph>
                         $100 will allow us to sponsor artists to share a song with
-                        us each Friday!
+                        us each Friday! Let us know that your donation is
+                        for a song in your message.
                       </Paragraph>
+                      <Button
+                        className={styles.sponsorBtn}
+                        onClickFunction={toggleDonateModal}
+                        text="Donate"
+                      />
                     </div>
-                    <Button
-                      className={styles.sponsorBtn}
-                      onClickFunction={toggleDonateModal}
-                      text="Bring the music"
-                    />
                   </div>
                 </div>
               </div>
