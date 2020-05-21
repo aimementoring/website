@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .intercomBtnWrap {
   text-align: center;
@@ -255,11 +255,13 @@
   }
 }
 
-.react-player__preview {
-  background-size: contain !important;
+.partnerVideoContainer {
+  :global(.react-player__preview) {
+    background-size: contain !important;
 
-  img {
-    display: none;
+    img {
+      display: none;
+    }
   }
 }
 
