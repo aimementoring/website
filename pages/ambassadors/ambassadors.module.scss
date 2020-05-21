@@ -1,84 +1,9 @@
 @import "../../styles/global.module.scss";
 
-.bannerHeadingAmbassadors {
-  text-align: center;
-  @media screen and (min-width: $md) {
-    margin-top: 2em;
-
-  }
-  strong {
-    left: initial;
-  }
-}
-
 .heroBanner {
-  height: 50vh;
-  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  padding: 35px 0;
-
-  @media screen and (min-width: $sm) {
-    padding: 0;
-    height: 62vh;
-  }
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-  }
-  
-  .highlight-text {
-    transform: rotate(-3deg);
-  }
-
-  h1 {
-    text-align: center;
-    strong {
-      left: initial;
-    }
-  }
-  
-  //// hero-banner--case-studies
+  composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
-  max-height: 50vh;
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-    padding-top: 8em;
-  }
-  .bannerHeadingAmbassadors {
-    text-align: center;
-    @media screen and (min-width: $md) {
-      margin-top: 2em;
-
-    }
-    strong {
-      left: initial;
-    }
-  }
-  position: relative;
-  max-width: 100%;
-  width: 100%;
 }
-
-.bannerWrapperClass {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-}
-
-.bannerWrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    color: $white;
-  }
-}
-
-// @todo refactor ambassador banner styles
-// all above banner styles can be refactored into simpleBanner componenet
 
 .container {
   padding: 2rem 0;
