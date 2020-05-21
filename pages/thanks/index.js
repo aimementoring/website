@@ -16,23 +16,20 @@ const ThanksPage = ({ query }) => {
   }
   return (
     <Layout>
-      <div className={styles.thanksContainer}>
-        <div className={styles.thanksWrapper}>
-          <div className={styles.thanksContent}>
-            <div>
-              <Title type="h4Title" theme={process.env.REACT_APP_THEME}>Thank you!</Title>
-              <Paragraph>{message}</Paragraph>
-              <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
-                Back to home
-              </Button>
-            </div>
-            <div>
-              <img
-                className={styles.thanksImage}
-                alt="Support Group"
-                src={`${ASSETS_URL}/assets/images/illustrations/thumbsup-smiley/thumbsup-smiley_1080vw.png`}
-              />
-            </div>
+      <div className={styles.wrapper}>
+        <div className={styles.content}>
+          <div>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>Thank you!</Title>
+            <Paragraph>{message}</Paragraph>
+            <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
+              Back to home
+            </Button>
+          </div>
+          <div>
+            <img
+              alt="Support Group"
+              src={`${ASSETS_URL}/assets/images/illustrations/thumbsup-smiley/thumbsup-smiley_1080vw.png`}
+            />
           </div>
         </div>
       </div>
