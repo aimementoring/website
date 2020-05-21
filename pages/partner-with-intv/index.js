@@ -52,7 +52,7 @@ const PartnerWithIntv = () => {
   return (
     <Layout>
       <div className={`${styles.intercomBtnWrap}`}>
-        <IntercomChat label="Let's chat" />
+        <IntercomChat label="Let's chat" classNames={styles.navBtn} />
       </div>
       <Button
         type="text"
@@ -140,6 +140,7 @@ const PartnerWithIntv = () => {
               <VideoPlayer
                 url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
                 imageUrl={`${ASSETS_URL}/assets/images/imagi-nation-tv/tv_full.png`}
+                containerClassName={styles.partnerVideoContainer}
               />
             </div>
           </div>
@@ -614,7 +615,7 @@ const PartnerWithIntv = () => {
                     So, are you intrigued? Do you want to become a Production Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
                 <div className={styles.panelCol}>
@@ -686,7 +687,7 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelTwoCol}>
                   <div className={styles.panelCol}>
                     <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                      <IntercomChat label="Let's chat" />
+                      <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                     </div>
                     <div className={styles.btnPartnerOp}>
                       <Button
@@ -738,7 +739,7 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelTwoCol}>
                   <div className={styles.panelCol}>
                     <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                      <IntercomChat label="Let's chat" />
+                      <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                     </div>
                     <div className={styles.btnPartnerOp}>
                       <Button
@@ -789,7 +790,7 @@ const PartnerWithIntv = () => {
                     Sounds good? Do you want to become a Global Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -826,7 +827,7 @@ const PartnerWithIntv = () => {
                     Are you excited to help? Do you want to become a National Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -865,7 +866,7 @@ const PartnerWithIntv = () => {
                     Provincial Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -905,7 +906,7 @@ const PartnerWithIntv = () => {
                     Are you keen to inspire? Do you want to become an Imagination Investor?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -941,7 +942,7 @@ const PartnerWithIntv = () => {
                     Are you looking to share stories? Do you want to become a Content Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -974,7 +975,7 @@ const PartnerWithIntv = () => {
                     Wanna help spread the magic of puppets? Do you want to become a Puppet Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -1019,7 +1020,7 @@ const PartnerWithIntv = () => {
                     Do you care? Do you want to become a Corporate Wellbeing Partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                    <IntercomChat label="Let's chat" />
+                    <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
                 </div>
               </div>
@@ -1046,7 +1047,7 @@ const PartnerWithIntv = () => {
                         of the week and know you’ve helped change the world with us.
                       </Paragraph>
                       <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                        <IntercomChat label="Let's chat" />
+                        <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                       </div>
                     </div>
                   </div>
@@ -1069,7 +1070,7 @@ const PartnerWithIntv = () => {
                         credit on the show!
                       </Paragraph>
                       <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
-                        <IntercomChat label="Let's chat" />
+                        <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                       </div>
                     </div>
                   </div>
