@@ -22,27 +22,10 @@
     }
   }
 
-  // &:before {
-  //   position: absolute;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   background: rgba(0, 0, 0, 0.15);
-  // }
-}
-.plainContentWrapper {
-  padding: 3em 1.5em;
-  margin: 0 auto;
-  max-width: 45em;
-
-  @media all and(min-width: $md) {
-    padding: 5em 3em;
-  }
 }
 
 .heroBannerDefault {
   height: 50vh;
-  // background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
   padding: 35px 0;
 
   @media screen and (min-width: $sm) {
@@ -83,3 +66,19 @@
     color: $white;
   }
 }
+
+// @todo refactor founder banner
+// all above banner styles can be refactored into simpleBanner componenet
+
+.plainContentWrapper {
+  padding: 3em 1.5em;
+  margin: 0 auto;
+  max-width: 45em;
+
+  @media all and(min-width: $md) {
+    padding: 5em 3em;
+  }
+}
+
+// @todo refactor founder content 
+// This should use blueprint heading & paragraph styles + global content wrapper consistent across pages
