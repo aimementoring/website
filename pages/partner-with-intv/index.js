@@ -30,8 +30,9 @@ const PartnerWithIntv = () => {
 
   const toggleModal = () => setModal(!showModal);
   const hostsRef = useRef(null);
-  const howRef = useRef(null);
+  const formatRef = useRef(null);
   const mentorsRef = useRef(null);
+  const statsRef = useRef(null);
   const storyRef = useRef(null);
   const productionPartnersRef = useRef(null);
   const schoolsPartnersRef = useRef(null);
@@ -43,9 +44,7 @@ const PartnerWithIntv = () => {
   const contentPartnersRef = useRef(null);
   const puppetPartnersRef = useRef(null);
   const corporateWellbeingRef = useRef(null);
-  const sponsorWeekRef = useRef(null);
-  const sponsorEpisodeRef = useRef(null);
-  const sponsorSongRef = useRef(null);
+  const sponsorRef = useRef(null);
 
   const scrollTo = scrollToComponent; // just an alias
 
@@ -69,9 +68,10 @@ const PartnerWithIntv = () => {
         <ul className={styles.sideMenu}>
           <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
           <li><a onClick={() => scrollTo(hostsRef)}>Meet the hosts</a></li>
-          <li><a onClick={() => scrollTo(howRef)}>The format</a></li>
+          <li><a onClick={() => scrollTo(formatRef)}>The format</a></li>
           <li><a onClick={() => scrollTo(mentorsRef)}>The mentors</a></li>
           <li><a onClick={() => scrollTo(storyRef)}>Background</a></li>
+          <li><a onClick={() => scrollTo(statsRef)}>Stats</a></li>
           <br />
           <br />
           <li><Title type="h5Title">Partnership Opportunities</Title></li>
@@ -89,9 +89,7 @@ const PartnerWithIntv = () => {
           <li><a onClick={() => scrollTo(contentPartnersRef)}>Content Partners</a></li>
           <li><a onClick={() => scrollTo(puppetPartnersRef)}>Puppet Partners</a></li>
           <li><a onClick={() => scrollTo(corporateWellbeingRef)}>Corporate Wellbeing</a></li>
-          <li><a onClick={() => scrollTo(sponsorWeekRef)}>Sponsor a week</a></li>
-          <li><a onClick={() => scrollTo(sponsorEpisodeRef)}>Sponsor an episode</a></li>
-          <li><a onClick={() => scrollTo(sponsorSongRef)}>Sponsor a song</a></li>
+          <li><a onClick={() => scrollTo(sponsorRef)}>Sponsor a week, episode or song</a></li>
         </ul>
       </nav>
 
@@ -261,7 +259,7 @@ const PartnerWithIntv = () => {
           <br />
         </section>
 
-        <section ref={howRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionWithWaves}`}>
+        <section ref={formatRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionWithWaves}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -530,7 +528,7 @@ const PartnerWithIntv = () => {
           </div>
         </section>
 
-        <section ref={howRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionProgramStats} ${styles.sectionWithWaves}`}>
+        <section ref={statsRef} className={`${styles.sectionPanel} ${styles.panelTwoCol} ${styles.detailListsPanel} ${styles.sectionWithBg} ${styles.sectionProgramStats} ${styles.sectionWithWaves}`}>
           <svg className={styles.whiteWaveTop} width="1438" height="152" viewBox="0 0 1438 152" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M361.051 76.0001C179.485 76.0001 177.324 152 -1 152L-0.999987 0.000148682L361.051 0.000180334L723.103 0.000227244L1080.65 0.000258502L1440 0.000274658L1440 152C1259.88 152 1257.17 76.0003 1080.65 76.0002C904.128 76.0002 904.128 152 723.103 152C542.077 152 542.617 76.0002 361.051 76.0001Z" fill="white" />
           </svg>
@@ -1079,7 +1077,7 @@ const PartnerWithIntv = () => {
 
             <div className={`${styles.sponsoring} ${styles.panelTwoCol}`}>
               <div className={styles.panelCol}>
-                <div ref={sponsorWeekRef} className={`${styles.panelPartneringOption}`}>
+                <div ref={sponsorRef} className={`${styles.panelPartneringOption}`}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-week-2.png`}
@@ -1098,7 +1096,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={sponsorEpisodeRef} className={styles.panelPartneringOption}>
+                <div className={styles.panelPartneringOption}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-day-2.png`}
@@ -1117,7 +1115,7 @@ const PartnerWithIntv = () => {
                 </div>
               </div>
               <div className={styles.panelCol}>
-                <div ref={sponsorSongRef} className={styles.panelPartneringOption}>
+                <div className={styles.panelPartneringOption}>
                   <div className={`${styles.titleLockup} ${styles.titleLockupStack}`}>
                     <img
                       src={`${ASSETS_URL}/assets/images/illustrations/sponsor-song.png`}
