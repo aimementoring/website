@@ -22,31 +22,6 @@ const tagManagerArgs = {
 class MyApp extends App {
   componentDidMount() {
     TagManager.initialize(tagManagerArgs);
-    this.unregisterServiceWorker();
-  }
-
-  componentDidUpdate() {
-    this.unregisterServiceWorker();
-  }
-
-  unregisterServiceWorker = () => {
-    if (isClientSide()) {
-      let unregistered = 0;
-      navigator.serviceWorker.getRegistrations().then((registrations) => {
-        // eslint-disable-next-line no-restricted-syntax
-        for (const registration of registrations) {
-          registration.unregister();
-          unregistered += 1;
-        }
-      });
-      if ('caches' in window) {
-        caches.keys()
-          .then((keyList) => Promise.all(keyList.map((key) => caches.delete(key))));
-      }
-      if (unregistered > 0) {
-        window.location.reload();
-      }
-    }
   }
 
   render() {
