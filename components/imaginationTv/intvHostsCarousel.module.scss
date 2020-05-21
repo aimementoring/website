@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .intvHostsCarousel {
   justify-content: space-evenly;
@@ -20,27 +20,6 @@
     margin: 0;
   }
 
-  :global() {
-    .slick-center .episodePanel {
-      opacity: 100%;
-    }
-
-    .slick-list {
-      padding: 0 !important;
-    }
-
-    .slick-slide .episodePanel .episodeContentInfo {
-      display: none;
-    }
-    
-    .slick-center .episodePanel .episodeContentInfo {
-      display: block;
-    }
-
-    .slick-center .episodePanel {
-      border: 1px solid $yellow;
-    }
-  }
   .episodePanel {
     opacity: 50%;
 
@@ -57,16 +36,42 @@
         text-transform: uppercase;
         margin-top: 0.5em;
         
-          strong {
+        strong {
           color: $black;
           font-family: $body-font-family;
         }
       }
     }
+
     .episodeContentInfo {
       border: none;
       text-align: center;
     }
   }
-}
 
+  :global(.slick-center) {
+    .episodePanel {
+      opacity: 100%;
+    }
+  }
+
+  :global(.slick-list) {
+    padding: 0 !important;
+  }
+
+  :global(.slick-slide) {
+    .episodePanel .episodeContentInfo {
+      display: none;
+    }
+  }
+    
+  :global(.slick-center) {
+    .episodePanel {
+      border: 1px solid $yellow;
+
+      .episodeContentInfo {
+        display: block;
+      }
+    }
+  }
+}
