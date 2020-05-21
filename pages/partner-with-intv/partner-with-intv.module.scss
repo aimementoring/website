@@ -599,10 +599,10 @@
   .panelCol {
     text-align: left;
     align-self: flex-start;
-    padding-left: 3em;
+    padding-left: 2em;
 
     @media screen and (max-width: $md) {
-      padding: 0 0 0 2em;
+      padding: 0 1em 0 3.3em;
     }
   }
 
