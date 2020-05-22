@@ -25,11 +25,13 @@ const IntvHostsCarousel = () => (
       episodeHeaderClass={styles.episodeHeader}
       headingLockupClass={styles.headingLockup}
       episodeContentInfoClass={styles.episodeContentInfo}
-      title="JMB"
+      title="Jack Manning Bancroft"
       image="puppet-jmb"
     >
       <Paragraph>
-        Jack Manning Bancroft.
+        {'Executive Producer & Founder of IN{TV}.'}
+        <br />
+        {'CEO & Founder of AIME'}
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
@@ -67,7 +69,7 @@ const IntvHostsCarousel = () => (
     >
       <Paragraph>
         Stuck in the chaos. Her father was a pangolin - the creatures now
-        feelings the brunt of COVID-19 &mdash; Her mother an American
+        feelings the brunt of COVID-19. Her mother was an American
         long-eared bat. Panga is a plucky young Aussie woman, ready
         to go and get into the world.
       </Paragraph>
@@ -78,11 +80,11 @@ const IntvHostsCarousel = () => (
       episodeHeaderClass={styles.episodeHeader}
       headingLockupClass={styles.headingLockup}
       episodeContentInfoClass={styles.episodeContentInfo}
-      title="Mystery Guest Co Hosts &amp; Kid Co Hosts"
+      title="Mystery Guest Co-Hosts &amp; Kid Co-Hosts"
       image="puppet-hope@2x"
     >
       <Paragraph>
-        -
+        &nbsp;
       </Paragraph>
     </ImaginationTvCard> */}
 
