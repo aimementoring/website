@@ -69,7 +69,7 @@ const IntercomChat = (props) => {
       <button
         type="button"
         aria-label={label}
-        className={classNames}
+        className={`${classNames} triggerIntercom`}
         onClick={handleShowIntercom}
       >
         {label}
