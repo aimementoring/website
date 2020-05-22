@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 //Page specific layout styles
 
@@ -94,6 +94,7 @@
   }
 
   .knowAimeBannerHeader {
+    color: $white;
     strong {
       left: initial
     }
@@ -129,21 +130,10 @@
   }
 
   .featureSidebarTitle {
-    font-family: $feature-font-family;
-    font-size: 3rem;
-    line-height: 1;
+    font-size: 4em;
+    margin-bottom: .5em;
   }
 
-  .purpleSidebarHr {
-    height: 3px;
-    width: 30px;
-    background: linear-gradient(to right, #c24bcb 0%, #64249b 100%);
-    display: block;
-    border: 0;
-    border-top: 1px solid #cccccc;
-    margin: 1em 0;
-    padding: 0;
-  }
 
   .sidebarButtons {
     display: block;
@@ -177,7 +167,12 @@
     @media screen and (min-width: $lg) { 
       padding: 1em 2.5em;
     }
+    &:hover {
+      background-color: $magenta;
+      color: $white;
+    }
   }
+
 
   .downloadAction {
     font-family: $feature-font-family;
@@ -193,6 +188,7 @@
       float: right;
       margin: 0 0 0 0.5em;
     }
+
   }
 
   .mainContent {

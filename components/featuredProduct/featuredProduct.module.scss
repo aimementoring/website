@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .featuredProductContainer {   
   background-color: $white;
@@ -18,8 +18,10 @@
     display: flex;
     align-items: center;
     justify-self: center;
+
     img {
       margin: 0 auto;
+      max-width: 100%;
       
       @media screen and (min-width: $md) {
         max-width: 20em;
@@ -49,6 +51,7 @@
   }
   .featuredProductTitle {
     margin-bottom: 0.7em;
+    display: inline-block;
 
     strong {
       color: $magenta;

@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .thanksContainer {
   position: relative;
@@ -26,6 +26,10 @@
     @media screen and (max-width: $sm) {
       text-align: center;
     }
+  }
+
+  .thanksImage {
+    max-width: 100%;
   }
 }
 

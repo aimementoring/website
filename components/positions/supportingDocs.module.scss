@@ -1,5 +1,4 @@
-@import "../../styles/base/variables";
-@import "../../styles/global/typography.module.scss";
+@import "../../styles/global.module.scss";
 
 .supportingDocsContainer {
   display: block;
@@ -34,7 +33,7 @@
 
   .fileDownloadIcon {
     margin-right: 1rem;
-    @extend %material-icons;
+    @extend %materialIcons;
   }
 
   .truncateFileName {

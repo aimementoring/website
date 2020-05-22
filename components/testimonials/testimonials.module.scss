@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .testimonials {
 
@@ -80,13 +80,11 @@
     max-width: 30em;
   }
 
-  :global() {
-    .slick-initialized .slick-slide {
-      overflow: hidden;
-    }
+  :global(.slick-initialized .slick-slide) {
+    overflow: hidden;
+  }
 
-    .slick-dots {
-      display: none !important;
-    }
+  :global(.slick-dots) {
+    display: none !important;
   }
 }

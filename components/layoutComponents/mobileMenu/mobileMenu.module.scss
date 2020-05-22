@@ -1,5 +1,4 @@
-@import "../../../styles/base/variables";
-@import "../../../styles/baseClasses/materialIcons";
+@import "../../../styles/global.module.scss";
 
 .mobileMenuContainer {
   display: flex;
@@ -15,8 +14,15 @@
       display: none;
     }
   }
-  .whiteText { color: $white; }
-  .blackText { color: $black; }
+  
+  .whiteText {
+    color: $white;
+  }
+  
+  .blackText {
+    color: $black;
+  }
+
   .closeIconContainer {
     display: flex;
     justify-content: space-between;
@@ -28,6 +34,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .mobileMenuIcon {
     color: $black;
     cursor: pointer;
@@ -47,18 +54,20 @@
     text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
     -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
     font-feature-settings: 'liga';       // Support for IE.
+
     @media screen and (min-width: $lg) {
       display: none;
     }
   }
+  
   .materialIcons {
     @extend %materialIcons;
-    // vertical-align: middle; TODO
-    // font-size: 15px;
   }
+
   .headerFilled .mobileMenu {
     color: $black;
   }
+
   .mobileHeader {
     position: fixed;
     top: 0;
@@ -121,6 +130,7 @@
   .purpleText {
     color: $purple;
   }
+
   .mobileMenuList {
     overflow: scroll;
     display: flex;
@@ -135,6 +145,7 @@
     list-style: none;
     padding-left: 0;
   }
+
   .mobileMenuListItem {
     padding-top: 1rem;
     padding-bottom: 1rem;
