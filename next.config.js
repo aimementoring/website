@@ -30,7 +30,7 @@ module.exports = withBundleAnalyzer(
         }
         return entries;
       };
-      if (config.optimization.splitChunks) {
+      if (config.optimization.splitChunks && config.optimization.splitChunks.cacheGroups.shared) {
         // eslint-disable-next-line no-param-reassign
         config.optimization.splitChunks.cacheGroups.shared.enforce = true;
       }
@@ -77,6 +77,7 @@ module.exports = withBundleAnalyzer(
       REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN:
         process.env.REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN,
       REACT_APP_SHOPIFY_DOMAIN: process.env.REACT_APP_SHOPIFY_DOMAIN,
+      REACT_APP_SHOP_PRODUCT_LINK: process.env.REACT_APP_SHOP_PRODUCT_LINK,
       REACT_APP_GOOGLE_TAG_MANAGER: process.env.REACT_APP_GOOGLE_TAG_MANAGER,
       REACT_APP_MAILCHIMP_KEY: process.env.REACT_APP_MAILCHIMP_KEY,
       REACT_APP_MAILCHIMP_API: process.env.REACT_APP_MAILCHIMP_API,
