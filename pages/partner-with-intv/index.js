@@ -182,7 +182,7 @@ const PartnerWithIntv = () => {
               <Paragraph>
                 {`For the sake of clarity and ease, we’ve listed all the potential
                 partnership opportunities in one pack. You can find your way through
-                it via the "Go To Section" button.`}
+                it via the table of contents on the left.`}
               </Paragraph>
               <Paragraph>
                 {`For all partnership options, the funds and work we do together will
@@ -190,9 +190,12 @@ const PartnerWithIntv = () => {
                 It will allow for partnerships with curriculum designers to create
                 curriculum content for teachers to incorporate IN{TV} into their
                 daily lesson plans. It will allow us to have our best shot together
-                to get a mentor into every kid’s life every single day - the number
-                of kids affected by COVID-19 school closures stood at almost almost
-                1.5 billion as of 28 March.`}
+                to get a mentor into every kid’s life every single day - `}
+                {/* TODO this link is broken need to find replacement*/}
+                <a href="https://en.unesco.org/covid19/educationresponse" target="_blank">
+                  the number of kids affected by COVID-19 school closures stood
+                  at almost almost 1.5 billion as of 28 March.
+                </a>
               </Paragraph>
             </div>
           </div>
@@ -279,16 +282,20 @@ const PartnerWithIntv = () => {
               `}
               </Title>
               <Paragraph>
-                The show is broadcast live on YouTube daily, Monday to Friday,
-                5 days a week. Our studio is the virtual world. Feedback happens
-                live on Youtube.
+                The show is broadcast live on YouTube daily, Monday to Friday.
+              </Paragraph>
+              <Paragraph>
+                Our studio is the virtual world.
+              </Paragraph>
+              <Paragraph>
+                Feedback happens live on Youtube.
               </Paragraph>
               <List
                 type="ulList"
                 list={[
-                  "5 x 25 min daily episodes at least 21 weeks of content (based on AIME's 21 values).",
+                  "5 x 25-minute daily episodes at least 21 weeks of content (based on AIME's 21 values).",
                   'Audio and podcast in production.',
-                  'Impact production in progress, including education resources for teachers around the world to use',
+                  'Impact production in progress, including education resources for teachers around the world to use.',
                 ]}
               />
             </div>
@@ -302,19 +309,19 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  'Imagination [23rd March]',
-                  'Hope [30th March]',
-                  'Trust [6th April]',
-                  'Forgiveness [13th April]',
-                  'Empathy [20th April]',
-                  'Listening [27th April]',
-                  'Asking Questions [4th May]',
-                  'Flip the Script [11th May]',
-                  'Initiative [18th May]',
-                  'Know Yourself [25th May]',
-                  'Kindness [1st June]',
-                  'Rebelliousness [8th June]',
-                  'Change [15th June]',
+                  'Imagination',
+                  'Hope',
+                  'Trust',
+                  'Forgiveness',
+                  'Empathy',
+                  'Listening',
+                  'Asking Questions',
+                  'Flip the Script',
+                  'Initiative',
+                  'Know Yourself',
+                  'Kindness',
+                  'Rebelliousness',
+                  'Change',
                 ]}
               />
             </div>
@@ -350,7 +357,7 @@ const PartnerWithIntv = () => {
 
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
           <Title type="h3Title">
-            Our Guests & Mentors
+            Some of our guests
             <br />
             (So Far)
           </Title>
@@ -542,7 +549,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h4Title">AIME PROGRAM STATS</Title>
+              <Title type="h4Title">AIME PROGRAM STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -559,7 +566,7 @@ const PartnerWithIntv = () => {
                   '91 equivalent full time staff employed as of March 2020',
                 ]}
               />
-              <Title type="h4Title">AIME APPAREL STATS</Title>
+              <Title type="h4Title">AIME APPAREL STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -610,7 +617,7 @@ const PartnerWithIntv = () => {
                   alt="Production Partners"
                   className={styles.imgPartnerType}
                 />
-                <Title type="h3Title">Production Partners</Title>
+                <Title type="h3Title">Production partners</Title>
               </div>
               <div className={styles.panelTwoCol}>
                 <div className={`${styles.panelCol} ${styles.panelColContent}`}>
@@ -618,7 +625,7 @@ const PartnerWithIntv = () => {
                     {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
                   </Paragraph>
                   <Paragraph>
-                    So, are you intrigued? Do you want to become a Production Partner?
+                    So, are you intrigued? Do you want to become a production partner?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -642,29 +649,34 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily. For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020. '}
+                    {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily.'}
                   </Paragraph>
                   <Paragraph>
-                    {'And specifically for AIME IN{​TV} partner schools: '}
+                    {'For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020.'}
                   </Paragraph>
-                  <List
-                    type="ulList"
-                    list={[
-                      'AIME will give direct access to Imagination Curriculum resources for teachers to teach with IN{​TV}.',
-                      'AIME will ensure over 100 mentors are in the chat room for every live episode, providing a space for the students to engage during the show.',
-                      'AIME will provide access to AIMEs Social Network for Good - based on Slack - for every student to have access to registered AIME mentors for guidance, tutoring, and year 12 transition support',
-                      'Year 12 Special - all Year 12 students will be invited on the ‘Jobs of the Future’ IN{​TV} special which will feature corporate partners offering jobs to kids on the spot, live job interview coaching and a suite of resources to make the next step into employment or university.',
-                    ]}
-                  />
                   <Paragraph>
                     {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
                   </Paragraph>
                   <List
                     type="ulList"
                     list={[
-                      '1500 profile mentors (30 mentors a week across 50 weeks) directly into kids lives with over 250 hours of mentoring throughout the year',
-                      'Over 3000 university mentors available as mentors in the live tutoring session online with over 100 hours of free tutoring and mentoring available (based off 30 minute after each show per day, across 50 weeks)',
-                      'A stage for 300 kids to co-Host',
+                      '1,500 profile mentors (30 mentors a week across 50 weeks) directly into kids’ lives, with over 250 hours of mentoring throughout the year.',
+                      'Over 3,000 university mentors available in the live tutoring session online, with over 100 hours of free tutoring and mentoring available (based off 30 minutes after each show per day, across 50 weeks)',
+                      'A stage for 300 kids to co-host the show.',
+                      'A stage for over 300 kids in the Chaos Classroom.',
+                      'A stage for 150 President of Imagi-Nation speeches.',
+                      'A stage for 50 artists to be profiled.',
+                      'A focused Year 12 transition week to work on jobs and university opportunities, bringing some of the world’s biggest employers and universities direct to the students',
+                    ]}
+                  />
+                  <Paragraph>
+                    {'And specifically for AIME IN{​TV} partner schools:'}
+                  </Paragraph>
+                  <List
+                    type="ulList"
+                    list={[
+                      'AIME will give direct access to Imagination Curriculum resources for teachers to teach with IN{​TV}.',
+                      ''
                     ]}
                   />
                 </div>
