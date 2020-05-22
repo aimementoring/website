@@ -1,17 +1,15 @@
-import React from 'react';
-import dynamic from 'next/dynamic';
+import React, { useContext } from 'react';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
-import useDonate from '../../../hooks/useDonate';
+import DonationContext from '../../../context';
 
-const Logo = dynamic(() => import('./logo'));
-const MenuItem = dynamic(() => import('./menuItem'));
-const MobileMenu = dynamic(() => import('../mobileMenu'));
+import Logo from './logo';
+import MenuItem from './menuItem';
+import MobileMenu from '../mobileMenu';
 
 const StandardHeader = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
   return (
     <div>
       <div className={styles.siteHeaderContainer}>
@@ -37,7 +35,7 @@ const StandardHeader = () => {
               </a>
             </li>
             <li className={styles.inlineListItem}>
-              <div className={styles.navBtn} onClick={toggleDonateModal} onKeyPress={toggleDonateModal} role="presentation">
+              <div className={styles.navBtn} onClick={toggleDonationModal} onKeyPress={toggleDonationModal} role="presentation">
                 Donate
               </div>
             </li>
