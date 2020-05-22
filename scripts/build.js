@@ -35,7 +35,7 @@ async function addRedirectsFromContentful() {
             ({ src }) => src === redirect.src,
           );
           if (!redirectForThisSrcExists) {
-            return [...accum, redirect];
+            return [...accum, { ...redirect, fromContentful: true }];
           }
           return accum;
         }, []);
