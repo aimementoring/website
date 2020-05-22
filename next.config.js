@@ -30,6 +30,10 @@ module.exports = withBundleAnalyzer(
         }
         return entries;
       };
+      if (config.optimization.splitChunks) {
+        // eslint-disable-next-line no-param-reassign
+        config.optimization.splitChunks.cacheGroups.shared.enforce = true;
+      }
       return config;
     },
     poweredByHeader: false,
