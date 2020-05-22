@@ -671,28 +671,25 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                   <Paragraph>
-                    {'And specifically for AIME IN{​TV} partner schools:'}
+                    <strong>
+                      {'And specifically for AIME IN{​TV} partner schools:'}
+                    </strong>
                   </Paragraph>
                   <List
                     type="ulList"
                     list={[
                       'AIME will give direct access to Imagination Curriculum resources for teachers to teach with IN{​TV}.',
-                      ''
+                      'AIME will ensure over 100 mentors are in the chat room for every live episode, providing a space for the students to engage during the show.',
+                      'AIME will provide access to AIMEs Social Network for Good - based on Slack - for every student to have access to registered AIME mentors for guidance, tutoring, and year 12 transition support.',
+                      'Year 12 Special - all Year 12 students will be invited on the ‘Jobs of the Future’ IN{​TV} special which will feature corporate partners offering jobs to kids on the spot, live job interview coaching and a suite of resources to make the next step into employment or university.',
                     ]}
                   />
                 </div>
                 <div className={styles.panelCol}>
-                  <List
-                    type="ulList"
-                    list={[
-                      'A stage for over 300 number of kids in the IMAGI-NATION {Classroom}',
-                      'A stage for 150 number of president speeches',
-                      'A stage for 50 number of artists to be profiled',
-                      'A focused Year 12 transition week to work on jobs and university opportunities bringing some of the worlds biggest employers and universities direct to the students',
-                    ]}
-                  />
                   <Paragraph>
-                    School Partners will commit to:
+                    <strong>
+                      School partners will commit to:
+                    </strong>
                   </Paragraph>
                   <List
                     type="ulList"
@@ -701,15 +698,21 @@ const PartnerWithIntv = () => {
                       'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IN{​TV} to all students, staff and friends of the school.',
                       'Working with AIME on implementing IN{​TV} into the curriculum.',
                       'Working on how to feature IN{​TV} as a mentoring service for all their students in an ongoing fashion.',
-                      'For the show on which it is a featured partner, the school will ensure:',
-                      '10 students in live audience',
-                      '1 Student Co-Host',
-                      'Principal on the show for the 60 second challenge',
                     ]}
                   />
                   <Paragraph>
-                    So, are you intrigued? Do you want to become a School Partner?
+                    <strong>
+                      For the show on which it is a featured partner, the school will ensure:
+                    </strong>
                   </Paragraph>
+                  <List
+                    type="ulList"
+                    list={[
+                      '10 students in the live audience',
+                      '1 Student co-host',
+                      'Principal on the show for the 60-second challenge',
+                    ]}
+                  />
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
                   </div>
@@ -743,9 +746,11 @@ const PartnerWithIntv = () => {
                     lives through the year. The university partnership with IN{TV} is to provide guidance and 
                     motivation to its students during the times of COVID-19 and beyond. 
                     The university works with AIME to explore embedding IN{TV} into courses as 
-                    curriculum and publishing the opportunity for students far and wide. 
+                    curriculum and publishing the opportunity for students far and wide.`}
+                  </Paragraph>
+                  <Paragraph>
                     For existing AIME university partners and the first 100 new university partners that sign on, 
-                    the partnership will be for free for 2020.`}
+                    the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
                     AIME will provide:
@@ -830,11 +835,11 @@ const PartnerWithIntv = () => {
                     type="ulList"
                     list={[
                       'Create a set of ‘How to’ resources for teachers looking at how to go digital',
-                      'Create a daily TV show that puts a mentor in every kid’s life, every single day And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.',
+                      'Create a daily TV show that puts a mentor in every kid’s life, every single day',
                     ]}
                   />
                   <Paragraph>
-                    Does this sound good to you? Do you want to become a Global Partner?
+                    And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -942,27 +947,24 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    If you want to see a mentor in every kid’s life every single day,
-                    someone who teaches them how to think, not what to think, then invest
-                    in an Imagination Agenda to transform the world.
-                    If you believe that marginalised kids aren’t the problem but are the
-                    solution if given the stage; if you know the power of entrepreneurs to
-                    change the world; if you know imagination is critical to change the world,
-                    then this is the investor section that says: ‘Hey you guys - I’m here and on
-                    your team - let’s do this! Use this funding for anything you need to bring
-                    this show to life, to amplify it and light up kids’ minds. This is your untied
-                    Imagination Fund.’
+                    If you want to see a mentor in every kid's life every single day - someone who
+                    teaches them how to think, not what to think - then invest in an Imagination Agenda
+                    to transform the world. If you believe that marginalised kids are not the problem,
+                    but are the solution if given the stage; if you know the power of entrepreneurs to
+                    change the world; if you know imagination is critical to change the world, then this
+                    is the investor section that says:&nbsp;
+                    <em>
+                      ‘Hey you guys, I’m here and on your team. Let’s do this! Use this funding for anything
+                      you need to bring this show to life, to amplify it and light up kids’ minds. This is your
+                      untied Imagination Fund.’
+                    </em>
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    In this space we’d imagine philanthropists who have rocked
-                    the world would donate funds to work with us; this is for the investors who
-                    have made their way and who know that with a little rocket fuel, you can go to
-                    the moon.
-                  </Paragraph>
-                  <Paragraph>
-                    Are you keen to inspire? Do you want to become an Imagination Investor?
+                    In this space we imagine philanthropists who have rocked the world would donate funds to
+                    work with us; this is for the investors who have made their way and who know that with a
+                    little rocket fuel, you can go to the moon.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -984,19 +986,25 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    For organizations looking to reach youngsters, we are open to
-                    exploring classy content partnerships. Let’s get it out there.
-                    This is a form of advertising… and we’d wanna do it in a ballistically
-                    classy way. For example, we’d be up for having your smartest designer
-                    on our design show talking about the positive work you and your team
-                    are doing and then exploring a potential Q&A with one of our hosts/puppets.
+                    {`For organizations looking to reach youngsters, we are open to exploring classy
+                    content partnerships. Let’s get it out there. This is a form of advertising… and
+                    we’d wanna do it in a ballistically classy way. For example, we would love to provide
+                    the opportunity to invite one of your top designers onto our 'design-themed' episode
+                    of IN{TV}, and discuss the positive ways and good work that you and your organisation
+                    are contributing to the world. We could then also explore the potential for a further
+                    Q&A segment with one of IN{TV}'s hosts/puppets. `}
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    We can find classy ways to tell stories together around our 21 values.
-                    We can make videos together, write stories, and we may even, if it’s really
-                    classy, create a collab piece of AIME apparel together. Are you in?
+                    {`We can find sophisticated ways to tell
+                    stories together around our`}
+                    &nbsp;
+                    <a href="/about" target="_blank">21 values</a>
+                    &nbsp;
+                    {`. We can make
+                    videos together, write stories, and we may even, if it’s really high-class, create a
+                    collab piece of AIME apparel together.`}
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -1062,19 +1070,22 @@ const PartnerWithIntv = () => {
                     value of giving space for parents to have a moment during the day
                     with their kids to bring mentors into their lives. And to make it
                     part of the daily diet by scheduling it as a meeting invite for all
-                    staff to bring mentors into your teams’ lives every single day. Our
-                    core focus is imagination, and we’ve been in the game of behaviour
-                    change for marginalised kids and university students for 16 years.
+                    staff to bring mentors into your teams’ lives every single day. 
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {`With IMAGI-NATION{TV}, the focus is on our inner child, 
+                    {`Our core focus is imagination, and we’ve been in the game of behaviour
+                    change for marginalised kids and university students for 16 years. 
+                    With IMAGI-NATION{TV}, the focus is on our inner child, 
                     on unlocking that curiosity and joy to fuel hope, inspiration and 
                     action. Considering the challenges that many of us are facing 
                     with kids at home, IMAGI-NATION{TV} is a gift for all parents 
                     to sit down with their kids for an hour a day. 
-                    And if you don’t have kids, it’s a gift for the kid inside you! Check out `}
+                    And if you don’t have kids, it’s a gift for the kid inside you!`} 
+                  </Paragraph>
+                  <Paragraph>
+                    {`Check out `}
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1082,7 +1093,7 @@ const PartnerWithIntv = () => {
                     >
                       this article in Harvard Business Review
                     </a>
-                      &bsp;from 2 BCG thinkers explaining how imagination helps businesses
+                      &nbsp;from 2 BCG thinkers explaining how imagination helps businesses
                       succeed and why it’s even more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
