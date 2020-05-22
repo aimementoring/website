@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React from 'react';
-import useDonate from '../../hooks/useDonate';
+import React, { useContext } from 'react';
+import DonationContext from '../../context';
 import styles from './wavyDonateSection.module.scss';
 
 const WavyDonateSection = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
 
   return (
     <div
       role="link"
-      onClick={toggleDonateModal}
+      onClick={toggleDonationModal}
       className={styles.donateLink}
     >
       <svg className={styles.frameSvg} viewBox="0 0 108.6 14.8" preserveAspectRatio="xMinYMid meet">
