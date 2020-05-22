@@ -225,6 +225,7 @@
 }
 
 .borderedBadge {
+  display: inline-block;
   border: 1px solid $grey40;
   position: relative;
   display: inline-block;
