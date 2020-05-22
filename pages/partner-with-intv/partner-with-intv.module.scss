@@ -46,10 +46,11 @@
 .drawerToggle,
 .drawerToggleLabel {
   height: 1.5rem;
-  width: 9.5rem; 
-  left: -3.5em;
-  top: 12.5em; 
-  transform: rotate(-90deg);
+  width: 10.5rem; 
+  left: -4.1em;
+  top: 13.5em; 
+  transform: rotate(-90deg) ;
+  transform-origin: center;
   display: flex; 
   align-items: center;
   justify-content: center;
@@ -76,9 +77,9 @@
 
 .typeformToggleContainer .drawerToggleLabel{
   &.typeformAction {
-    top: 28.5em;
-    width: auto;
-    padding: 0 1.5em;
+    top: 30em;
+    width: 12.3rem;
+    padding: 0;
     left: -5.5em;
     background-color: $watermelon;
     border-radius: 3px;
@@ -135,8 +136,8 @@
   position: fixed; 
   opacity: 0; 
   z-index: 20;
-  left: -4.5em;
-  top: 15em;
+  left: -5.3em;
+  top: 16.5em;
 
   &:hover ~ .drawerToggleLabel { 
     color: $cyan;
@@ -145,11 +146,11 @@
   }
 
   &:checked {
-    right: -3em;
+    right: -3.8em;
     left: inherit;
 
     ~ .drawerToggleLabel { 
-      right: -2em;
+      right: -2.8em;
       left: inherit;
 
       &:before {
@@ -164,10 +165,10 @@
     }
 
     @media screen and (min-width: $md) {
-      left: 16em; 
+      left: 14.5em; 
       right: inherit;
       ~ .drawerToggleLabel { 
-        left: 13em; 
+        left: 12em; 
         right: inherit;
       } 
       ~ .sideDrawerNav { 
