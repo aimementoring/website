@@ -1093,7 +1093,7 @@ const PartnerWithIntv = () => {
                     >
                       this article in Harvard Business Review
                     </a>
-                      &nbsp;from 2 BCG thinkers explaining how imagination helps businesses
+                      &nbsp;from 2 BCG Henderson Institute thinkers explaining how imagination helps businesses
                       succeed and why it’s even more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
