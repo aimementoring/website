@@ -9,7 +9,7 @@ const Testimonials = dynamic(() => import('../../components/testimonials'));
 
 const TheMentor = () => (
   <Layout>
-    <div className={styles.fullWidthWrap}>
+    <div>
       <div className={styles.container}>
         <SimpleBanner
           title="The Mentor"
@@ -17,7 +17,7 @@ const TheMentor = () => (
           groovy
           bannerContainerClass={styles.fullWidthWrap}
           bannerWrapperClass={styles.container}
-          bannerContentWrapperClass={styles.componentSimpleBanner}
+          bannerContentWrapperClass={styles.banner}
           bannerContentClass={styles.bannerContent}
           copy="The Mentor, by AIME Founder and CEO Jack Manning Bancroft is the story of how
             it all started. Gain a real insight into contemporary Indigenous Australia.
