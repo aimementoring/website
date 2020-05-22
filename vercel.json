@@ -152,6 +152,276 @@
       "src": "/strategy2019",
       "dest": "https://aime-web-production.s3-ap-southeast-2.amazonaws.com/resources/AIME_Strategy_PR.pdf",
       "status": 302
+    },
+    {
+      "src": "/endorsements",
+      "dest": "/ambassadors",
+      "status": 302
+    },
+    {
+      "src": "/comingsoon",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/au/*",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/story",
+      "dest": "/stories",
+      "status": 302
+    },
+    {
+      "src": "/talent-scout",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/hoodie-day",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/us",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/sa",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/ug",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/za",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/au",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/media",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/schools",
+      "dest": "https://airtable.com/shrhq7iQDwiv4Ua92",
+      "status": 302
+    },
+    {
+      "src": "/contacts",
+      "dest": "https://airtable.com/shrrikN8mzF2wyK5P",
+      "status": 302
+    },
+    {
+      "src": "/tss",
+      "dest": "https://airtable.com/shrNA2qlyzpS6E9wT",
+      "status": 302
+    },
+    {
+      "src": "/pds",
+      "dest": "https://airtable.com/shrK4xl4aE9O50R6q",
+      "status": 302
+    },
+    {
+      "src": "/mentees",
+      "dest": "https://airtable.com/shryLjHLA0snUYwks",
+      "status": 302
+    },
+    {
+      "src": "/mentee-attendance",
+      "dest": "http://portal.aimementoring.com/attendance",
+      "status": 302
+    },
+    {
+      "src": "/xandintern",
+      "dest": "https://airtable.com/shrSL7HSjG7B9cQs7",
+      "status": 302
+    },
+    {
+      "src": "/worldtour",
+      "dest": "/be-a-friend",
+      "status": 302
+    },
+    {
+      "src": "/welcome",
+      "dest": "/",
+      "status": 302
+    },
+    {
+      "src": "/the-aime-classroom",
+      "dest": "case-studies",
+      "status": 302
+    },
+    {
+      "src": "/talent-scout/**",
+      "dest": "https://v2.aimementoring.com/talent-scout/",
+      "status": 302
+    },
+    {
+      "src": "/success",
+      "dest": "thanks",
+      "status": 302
+    },
+    {
+      "src": "/second-chances-beta",
+      "dest": "https://docs.google.com/forms/d/e/1FAIpQLScGqx_d8CuCX8ztNqzTmkC2A92eV2cm8ZWl377R7Jcgf1roUA/viewform?usp=sf_link",
+      "status": 302
+    },
+    {
+      "src": "/second-chances",
+      "dest": "https://v2.aimementoring.com/second-chances",
+      "status": 302
+    },
+    {
+      "src": "/jobs/casual",
+      "dest": "positions",
+      "status": 302
+    },
+    {
+      "src": "/involve/school",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/involve/partner",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/involve/hoodies",
+      "dest": "https://shop.aimementoring.com/",
+      "status": 302
+    },
+    {
+      "src": "/involve/friends",
+      "dest": "/be-a-friend",
+      "status": 302
+    },
+    {
+      "src": "/involve/events",
+      "dest": "/stories",
+      "status": 302
+    },
+    {
+      "src": "/global/the-film",
+      "dest": "https://v2.aimementoring.com/global/the-film",
+      "status": 302
+    },
+    {
+      "src": "/global/for-universities",
+      "dest": "https://v2.aimementoring.com/global/for-universities",
+      "status": 302
+    },
+    {
+      "src": "/global/be-a-friend",
+      "dest": "/be-a-friend",
+      "status": 302
+    },
+    {
+      "src": "/global/apply",
+      "dest": "https://v2.aimementoring.com/global/apply",
+      "status": 302
+    },
+    {
+      "src": "/global/ambassadors",
+      "dest": "https://v2.aimementoring.com/global/ambassadors",
+      "status": 302
+    },
+    {
+      "src": "/global/about",
+      "dest": "https://v2.aimementoring.com/global/about",
+      "status": 302
+    },
+    {
+      "src": "/global",
+      "dest": "https://v2.aimementoring.com/global",
+      "status": 302
+    },
+    {
+      "src": "/for-schools",
+      "dest": "contact",
+      "status": 302
+    },
+    {
+      "src": "/flywithus",
+      "dest": "https://drive.google.com/file/d/19ZHD32n9fCIggAddp-H2M8vYnv8POLxd/view",
+      "status": 302
+    },
+    {
+      "src": "/faq",
+      "dest": "/what-does-aime-mean",
+      "status": 302
+    },
+    {
+      "src": "/fam",
+      "dest": "https://d2ylaz7bdw65jx.cloudfront.net/resources/A-World-of-Mentors.pdf",
+      "status": 302
+    },
+    {
+      "src": "/hoodedscholar",
+      "dest": "/hooded-scholar",
+      "status": 302
+    },
+    {
+      "src": "/au/be-a-mentor/eoi",
+      "dest": "be-a-mentor/",
+      "status": 302
+    },
+    {
+      "src": "/about/reports",
+      "dest": "/reports",
+      "status": 302
+    },
+    {
+      "src": "/about/interim",
+      "dest": "/reports",
+      "status": 302
+    },
+    {
+      "src": "/schoolagreements2019",
+      "dest": "https://airtable.com/shr11NtlLiP13crcx",
+      "status": 302
+    },
+    {
+      "src": "/prt2018",
+      "dest": "https://airtable.com/shrvrXB3H4zHyzUEd",
+      "status": 302
+    },
+    {
+      "src": "/about/faqs",
+      "dest": "https://intercom.help/aime-faqs/en/",
+      "status": 302
+    },
+    {
+      "src": "/ug/be-a-mentor",
+      "dest": "/be-a-mentor",
+      "status": 302
+    },
+    {
+      "src": "/za/be-a-mentor",
+      "dest": "/be-a-mentor",
+      "status": 302
+    },
+    {
+      "src": "/au/be-a-mentor",
+      "dest": "/be-a-mentor",
+      "status": 302
+    },
+    {
+      "src": "/about/aime",
+      "dest": "/about",
+      "status": 302
     }
   ],
   "builds": [

@@ -30,16 +30,18 @@ async function addRedirectsFromContentful() {
       console.info(`Found ${redirects.length} redirects in Contentful.`);
       try {
         const configFile = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
-        const newRoutes = [];
-        for (let i = 0; i > redirects.length; i + 1) {
-          const redirectForThisSrcExists = configFile.routes.find(
-            ({ src }) => src === redirects[i].src,
+        const newRoutes = redirects.reduce((accum, redirect) => {
+          const redirectForThisSrcExists = configFile.routes.some(
+            ({ src }) => src === redirect.src,
           );
-          console.log(redirects[i].src);
-          if (!redirectForThisSrcExists) newRoutes.push(...redirects[i]);
-        }
-        configFile.routes.push(newRoutes);
-        fs.writeFile(CONFIG_FILE, prettier.format(configFile, { parser: 'json-stringify' }), (e) => reject(e));
+          if (!redirectForThisSrcExists) {
+            return [...accum, redirect];
+          }
+          return accum;
+        }, []);
+        configFile.routes = [...configFile.routes, ...newRoutes];
+        const formattedJSON = prettier.format(JSON.stringify(configFile), { parser: 'json-stringify' });
+        fs.writeFile(CONFIG_FILE, formattedJSON, (e) => reject(e));
         console.info(`Added ${newRoutes.length} redirects to ${CONFIG_FILE}.`);
         resolve();
       } catch (fileError) {
