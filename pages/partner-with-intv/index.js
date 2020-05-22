@@ -10,7 +10,6 @@ import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
-import useDonate from '../../hooks/useDonate';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
 import TypeformModal from '../../components/typeformModal';
@@ -27,7 +26,8 @@ const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 const PartnerWithIntv = () => {
   const [showModal, setModal] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [donateModalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
+
 
   const toggleModal = () => setModal(!showModal);
   const hostsRef = useRef(null);
@@ -1140,7 +1140,7 @@ const PartnerWithIntv = () => {
                   </Paragraph>
                   <Button
                     className={styles.sponsorBtn}
-                    onClickFunction={toggleDonateModal}
+                    onClickFunction={toggleDonationModal}
                     text="Donate"
                   />
                 </div>
