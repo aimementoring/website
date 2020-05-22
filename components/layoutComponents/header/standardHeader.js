@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
-import dynamic from 'next/dynamic';
 import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
 import DonationContext from '../../../context';
 
-const Logo = dynamic(() => import('./logo'));
-const MenuItem = dynamic(() => import('./menuItem'));
-const MobileMenu = dynamic(() => import('../mobileMenu'));
+import Logo from './logo';
+import MenuItem from './menuItem';
+import MobileMenu from '../mobileMenu';
 
 const StandardHeader = () => {
   const { toggleDonationModal } = useContext(DonationContext);
