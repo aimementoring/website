@@ -1,5 +1,18 @@
 @import "../../styles/global.module.scss";
 
+.banner {
+  composes: banner from '../../styles/patterns.module.scss';
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
+    #050301;
+  
+  @media screen and (min-width: $sm) {
+    height: 80vh;
+  }
+  
+}
+
 .fullWidthWrap {
   position: relative;
   width: 100%;
@@ -9,31 +22,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-}
-
-.componentSimpleBanner {
-  background-size: cover;
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 4em 1em;
-  height: auto;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
-    #050301;
-  
-  @media screen and (min-width: $sm) {
-    height: 80vh;
-  }
-
-  h1 {
-    color: $white;
-  }
-  
 }
 
 .bannerContent {
