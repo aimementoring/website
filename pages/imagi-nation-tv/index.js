@@ -9,7 +9,6 @@ import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import AboutImaginationTV from '../../components/aboutImaginationTV';
 import TypeformModal from '../../components/typeformModal';
-import IntercomChat from '../../components/intercom';
 import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './imagi-nation-tv.module.scss';
 
@@ -140,9 +139,15 @@ or a
                   we do together will be an investment in providing a stage to
                   elevate knowledge.
                 </Paragraph>
-                <div className={styles.becomeAPartnerBtn}>
-                  <IntercomChat label="Get in the game" classNames={styles.navBtn} />
-                </div>
+                <Button
+                  theme={process.env.REACT_APP_THEME}
+                  className={styles.becomeAPartnerBtn}
+                  url="/partner-with-intv"
+                  target="_blank"
+                  type="link"
+                >
+                  Get in the game
+                </Button>
               </div>
             </div>
             <div className={styles.puppetChatSmaller}>
@@ -150,10 +155,9 @@ or a
                 <Button
                   type="text"
                   className={`${styles.typeformAction} ${styles.puppetTitle}`}
+                  onClickFunction={toggleModal}
                 >
-                  Already a partner?
-                  <br />
-                  Talk soon :)
+                  Already a school or uni partner? Click here
                 </Button>
 
               </div>
