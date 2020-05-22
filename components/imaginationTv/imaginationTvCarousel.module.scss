@@ -40,7 +40,6 @@
   
   :global(.slick-slide) {
     .episodePanel .episodeContentInfo {
-      // display: none;
       visibility: hidden;
     }
   }
@@ -82,7 +81,6 @@
     .headingLockup {
       display: flex;
       flex-direction: column;
-      // max-width: calc(100% - 10em);
       position: relative;
       color: $black;
       transform: matrix(0.99, -0.12, 0.15, 0.99, 0, 0);
