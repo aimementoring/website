@@ -48,8 +48,14 @@ jobs:
           node-version: '12.x'
       - name: Install yarn dependencies
         run: yarn
-      - name: Lint
-        run: yarn lint
+      - name: Linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          prettier: true
+          stylelint: true
+          auto_fix: true
       - name: Build
         env:
             CI: ''
