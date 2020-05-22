@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Carousel from '../carousel';
-import IntercomChat from '../../components/intercom';
-import useDonate from '../../hooks/useDonate';
+import IntercomChat from '../intercom';
+import DonationContext from '../../context';
 import styles from './imagineCarousel.module.scss';
 
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
 
 const ImagineCarousel = () => {
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
   return (
     <Carousel type="multipleSlides" className={styles.imagineCarousel}>
       <ImaginationTvCard
@@ -28,7 +28,7 @@ const ImagineCarousel = () => {
         </Paragraph>
         <Paragraph>
           Producers are being invited to support the cost of the “This Hoodie is
-          a Film” creation and we'd like to hear from anyone else who can support us.
+          a Film” creation and we&apos;d like to hear from anyone else who can support us.
         </Paragraph>
         <div className={styles.intercomBtnWrap}>
           <IntercomChat label="Let's chat" />
@@ -42,9 +42,8 @@ const ImagineCarousel = () => {
           theme={process.env.REACT_APP_THEME}
           className={styles.imagineCTABtn}
           containerClassName={styles.secondaryBtn}
-          onClickFunction={toggleDonateModal}
+          onClickFunction={toggleDonationModal}
         />
-
       </ImaginationTvCard>
       <ImaginationTvCard
         day="Write it"
@@ -59,7 +58,6 @@ const ImagineCarousel = () => {
           experiment in making a feature film. We imagine something truly special
           coming from this. Jump on and add your ideas and voice to the script...
         </Paragraph>
-
         <Button
           theme={process.env.REACT_APP_THEME}
           className={styles.imagineCTABtn}
@@ -70,7 +68,6 @@ const ImagineCarousel = () => {
         >
           Write it
         </Button>
-        
       </ImaginationTvCard>
       <ImaginationTvCard
         day="Or do you wanna"
@@ -79,10 +76,10 @@ const ImagineCarousel = () => {
         color="orange"
       >
         <Paragraph>
-          We've created 500 creator grants in the form of a hoodie. Those who want to
+          We&apos;ve created 500 creator grants in the form of a hoodie. Those who want to
           create a scene for the film ‘IMAGINE’ can apply to secure themselves an official
           “This Hoodie is a Film” hoodie. This will be your key to submitting a
-          creation into ‘IMAGINE’. 
+          creation into ‘IMAGINE’.
         </Paragraph>
         <Button
           theme={process.env.REACT_APP_THEME}
@@ -98,7 +95,7 @@ const ImagineCarousel = () => {
 
       {/* Seems super hacky but have doubled the content below because the carousel broke
       with only having 3 options. The whole reason we're using this carousel is to get it
-      live asap so am doing still going for this hacky double up solution for now. 
+      live asap so am doing still going for this hacky double up solution for now.
       !! Remember, if you edit content above to repeat the edits below :( */}
 
       <ImaginationTvCard
@@ -116,7 +113,7 @@ const ImagineCarousel = () => {
         </Paragraph>
         <Paragraph>
           Producers are being invited to support the cost of the “This Hoodie is
-          a Film” creation and we'd like to hear from anyone else who can support us.
+          a Film” creation and we&apos;d like to hear from anyone else who can support us.
         </Paragraph>
         <div className={styles.intercomBtnWrap}>
           <IntercomChat label="Let's chat" />
@@ -130,7 +127,7 @@ const ImagineCarousel = () => {
           theme={process.env.REACT_APP_THEME}
           className={styles.imagineCTABtn}
           containerClassName={styles.secondaryBtn}
-          onClickFunction={toggleDonateModal}
+          onClickFunction={toggleDonationModal}
         />
       </ImaginationTvCard>
       <ImaginationTvCard
@@ -146,7 +143,6 @@ const ImagineCarousel = () => {
           experiment in making a feature film. We imagine something truly special
           coming from this. Jump on and add your ideas and voice to the script...
         </Paragraph>
-
         <Button
           theme={process.env.REACT_APP_THEME}
           className={styles.imagineCTABtn}
@@ -157,19 +153,18 @@ const ImagineCarousel = () => {
         >
           Write it
         </Button>
-
       </ImaginationTvCard>
       <ImaginationTvCard
         day="Or do you wanna"
         title="Film it?"
         image="filmcamera@2x"
         color="orange"
-        >
+      >
         <Paragraph>
-          We've created 500 creator grants in the form of a hoodie. Those who want to
+          We&apos;ve created 500 creator grants in the form of a hoodie. Those who want to
           create a scene for the film ‘IMAGINE’ can apply to secure themselves an official
           “This Hoodie is a Film” hoodie. This will be your key to submitting a
-          creation into ‘IMAGINE’. 
+          creation into ‘IMAGINE’.
         </Paragraph>
         <Button
           theme={process.env.REACT_APP_THEME}
@@ -182,7 +177,6 @@ const ImagineCarousel = () => {
           Apply now
         </Button>
       </ImaginationTvCard>
-    
     </Carousel>
   );
 };
