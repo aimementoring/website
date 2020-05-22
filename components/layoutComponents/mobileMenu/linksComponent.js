@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Anchor from '../../common/link';
-import useDonate from '../../../hooks/useDonate';
+import DonationContext from '../../../context';
 import IntercomChat from '../../intercom';
 import styles from './mobileMenu.module.scss';
 
-const LinksComponent = ({
-  links, handleLinkClicked, active,
-}) => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+const LinksComponent = ({ links, handleLinkClicked, active }) => {
+  const { toggleDonationModal } = useContext(DonationContext);
 
   const showDonate = ({ title }) => () => {
     handleLinkClicked(title)();
-    toggleDonateModal();
+    toggleDonationModal();
   };
 
   const renderLink = (link) => {
