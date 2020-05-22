@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
-import useDonate from '../../hooks/useDonate';
+import DonationContext from '../../context';
 
 import styles from './imagine.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const ImagiNationTV = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
 
   return (
     <Layout>
@@ -67,7 +66,7 @@ const ImagiNationTV = () => {
                 text="Fund"
                 className={`${styles.triBtn} ${styles.imagiHoodieBtn}`}
                 theme={process.env.REACT_APP_THEME}
-                onClickFunction={toggleDonateModal}
+                onClickFunction={toggleDonationModal}
               />
             </div>
             <Paragraph>
