@@ -15,9 +15,9 @@ const BeAMentorForm = () => (
       />
       <Title type="h5Title">Mentor applications are open again!</Title>
       <Paragraph>
-        {`We've created `}
+        {'We\'ve created '}
         <a href="/imagi-nation-tv" target="_blank" rel="noopener noreferrer">
-        {`IMAGI-NATION{TV}`}
+          {'IMAGI-NATION{TV}'}
         </a>
         {` & the IMAGI-NATION{CLASSROOM} experience to put a mentor in
         the home every day during the tough times of COVID-19 and beyond.
@@ -29,7 +29,7 @@ const BeAMentorForm = () => (
         <mark>
         we need mentors
         </mark>
-        &nbsp;more than ever! 
+        &nbsp;more than ever!
       </Paragraph>
     </div>
     <br />
@@ -45,7 +45,7 @@ const BeAMentorForm = () => (
       {' '}
       <strong>sign up</strong>
       &nbsp;below.&nbsp;
-      {`If you've mentored before, `}
+      {'If you\'ve mentored before, '}
       <strong>sign in</strong>
       &nbsp;
       {`to your AIME account below. Either way,
@@ -60,7 +60,6 @@ const BeAMentorForm = () => (
       target="_blank"
       url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
     >
-      {/* Apply now */}
       Start now
     </Button>
 
