@@ -31,11 +31,10 @@ async function addRedirectsFromContentful() {
       try {
         const configFile = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
         const newRoutes = [];
-        for (let i = 0; i > redirects.length; i + 1) {
+        for (let i = 0; i < redirects.length; i += 1) {
           const redirectForThisSrcExists = configFile.routes.find(
             ({ src }) => src === redirects[i].src,
           );
-          console.log(redirects[i].src);
           if (!redirectForThisSrcExists) newRoutes.push(...redirects[i]);
         }
         configFile.routes.push(newRoutes);
