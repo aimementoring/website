@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
 import styles from './mobileMenu.module.scss';
-
-const LinksComponent = dynamic(() => import('./linksComponent'));
+import LinksComponent from './linksComponent';
 
 const MENU_LINKS = {
   'going-global': [
