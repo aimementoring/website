@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import Anchor from '../../common/link';
-import MyContext from '../../../layouts/context';
+import MyContext from '../../../context';
 import styles from './header.module.scss';
 
 const Logo = dynamic(() => import('./logo'));
