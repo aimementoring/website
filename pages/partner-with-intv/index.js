@@ -182,7 +182,8 @@ const PartnerWithIntv = () => {
               </Paragraph>
               <Paragraph>
                 {`For the sake of clarity and ease, we’ve listed all the potential
-                partnership opportunities in one pack. You can find your way through
+                partnership opportunities in one pack. Click on "Go to section"
+                and can find your way through
                 it via the table of contents on the left.`}
               </Paragraph>
               <Paragraph>
