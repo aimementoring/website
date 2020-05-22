@@ -30,7 +30,7 @@ module.exports = withBundleAnalyzer(
         }
         return entries;
       };
-      if (config.optimization.splitChunks) {
+      if (config.optimization.splitChunks && config.optimization.splitChunks.cacheGroups.shared) {
         // eslint-disable-next-line no-param-reassign
         config.optimization.splitChunks.cacheGroups.shared.enforce = true;
       }
