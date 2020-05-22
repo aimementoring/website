@@ -93,7 +93,7 @@ const VideoPlayer = (props) => {
   return (
     <div>
       {!showModal && (
-        <div className={`${styles.containerClassName} ${styles.playerContainer}`}>
+        <div className={`${containerClassName} ${styles.playerContainer}`}>
           {withModal && (
             <CustomPlayIcon
               onClick={handleModal}
