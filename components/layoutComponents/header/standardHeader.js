@@ -4,10 +4,9 @@ import { HEADER_MENU_ITEMS } from '../../../constants';
 import styles from './header.module.scss';
 import IntercomChat from '../../intercom';
 import useDonate from '../../../hooks/useDonate';
-
-const Logo = dynamic(() => import('./logo'));
-const MenuItem = dynamic(() => import('./menuItem'));
-const MobileMenu = dynamic(() => import('../mobileMenu'));
+import Logo from './logo';
+import MenuItem from './menuItem';
+import MobileMenu from '../mobileMenu';
 
 const StandardHeader = () => {
   // eslint-disable-next-line no-unused-vars

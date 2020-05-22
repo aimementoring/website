@@ -47,6 +47,111 @@
       "src": "/reports/2016-annual-story",
       "dest": "https://assets.ctfassets.net/iz0aikshgysc/2YLYCOiaaIC4H8uGoGsepG/dbdae023080e739e97f152c8c6f5e223/2016-annual-story.pdf",
       "status": 302
+    },
+    {
+      "src": "/impact/global-letter",
+      "dest": "https://v4.aimementoring.com/global-letter/",
+      "status": 302
+    },
+    {
+      "src": "/global-letter/",
+      "dest": "https://v4.aimementoring.com/global-letter/",
+      "status": 302
+    },
+    {
+      "src": "/strategy",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/strategy/AIME_strat_19.02.pdf",
+      "status": 302
+    },
+    {
+      "src": "/harvard-case-study-b",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/portal/pdfs/harvard-case-studies/AIME+High+-+Harvard+B.PDF",
+      "status": 302
+    },
+    {
+      "src": "/harvard-case-study-a",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/portal/pdfs/harvard-case-studies/AIME+High+-+Harvard+A.PDF",
+      "status": 302
+    },
+    {
+      "src": "/be-a-ceo4good",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/campaigns/ceo-4-good/CEO-4-good_2204.pdf",
+      "status": 302
+    },
+    {
+      "src": "/fire-support",
+      "dest": "https://v4.aimementoring.com/fire-support/",
+      "status": 302
+    },
+    {
+      "src": "/founder",
+      "dest": "/jack-manning-bancroft",
+      "status": 301
+    },
+    {
+      "src": "/travelrequest",
+      "dest": "https://airtable.com/shrKAQbAS3bw8M8ux",
+      "status": 302
+    },
+    {
+      "src": "/theatre-of-education",
+      "dest": "https://aimetheatre.com",
+      "status": 302
+    },
+    {
+      "src": "/shop",
+      "dest": "https://shop.aimementoring.com",
+      "status": 302
+    },
+    {
+      "src": "/nextchapter",
+      "dest": "https://airtable.com/shrH2uPbQxmlWPlVt",
+      "status": 302
+    },
+    {
+      "src": "/mentor/eoi",
+      "dest": "/be-a-mentor/",
+      "status": 302
+    },
+    {
+      "src": "/mentor",
+      "dest": "/be-a-mentor",
+      "status": 302
+    },
+    {
+      "src": "/jobs/",
+      "dest": "/positions",
+      "status": 302
+    },
+    {
+      "src": "/jobs",
+      "dest": "/positions",
+      "status": 302
+    },
+    {
+      "src": "/be-a-partner",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/the-impact",
+      "dest": "/impact",
+      "status": 302
+    },
+    {
+      "src": "/download-the-mentor",
+      "dest": "https://www.dropbox.com/s/8r9w6bu6dupde4n/The%20Mentor%20by%20Jack%20Manning%20Bancroft.zip?dl=1",
+      "status": 302
+    },
+    {
+      "src": "/be-a-friend",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/strategy2019",
+      "dest": "https://aime-web-production.s3-ap-southeast-2.amazonaws.com/resources/AIME_Strategy_PR.pdf",
+      "status": 302
     }
   ],
   "builds": [
