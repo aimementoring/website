@@ -25,10 +25,6 @@ app.prepare().then(() => {
   const server = express();
   server.use(compression());
 
-  /**
-   * @todo testing todo's!
-   */
-
   server.get('/donate', (req, res) => res.redirect(301, '/?donate=true'));
 
   // // Offline mode - PWA
