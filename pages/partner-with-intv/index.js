@@ -4,6 +4,7 @@
 import React, { useState, useRef, useContext } from 'react';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
+import DonationContext from '../../context';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
