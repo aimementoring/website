@@ -205,7 +205,7 @@
     },
     {
       "src": "/the-aime-classroom",
-      "dest": "case-studies",
+      "dest": "/case-studies",
       "status": 302
     },
     {
@@ -215,7 +215,7 @@
     },
     {
       "src": "/success",
-      "dest": "thanks",
+      "dest": "/thanks",
       "status": 302
     },
     {
@@ -240,27 +240,27 @@
     },
     {
       "src": "/mentor/eoi",
-      "dest": "be-a-mentor/",
+      "dest": "/be-a-mentor/",
       "status": 302
     },
     {
       "src": "/mentor",
-      "dest": "be-a-mentor",
+      "dest": "/be-a-mentor",
       "status": 302
     },
     {
       "src": "/jobs/casual",
-      "dest": "positions",
+      "dest": "/positions",
       "status": 302
     },
     {
       "src": "/jobs/",
-      "dest": "positions",
+      "dest": "/positions",
       "status": 302
     },
     {
       "src": "/jobs",
-      "dest": "positions",
+      "dest": "/positions",
       "status": 302
     },
     {
@@ -330,7 +330,7 @@
     },
     {
       "src": "/be-a-partner",
-      "dest": "contact",
+      "dest": "/contact",
       "status": 302
     },
     {
