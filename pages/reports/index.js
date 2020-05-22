@@ -37,9 +37,12 @@ const Reports = ({ entries }) => {
   };
 
   const categoryLinks = categoryTypes.map((category) => (
-    <li className="block mr2" key={category}>
+    <li
+      className={classNames(styles.reportCategoryItem,
+        category === categorySelected ? styles.active : '')}
+      key={category}
+    >
       <div
-        className={classNames('filter-list', { active: category === categorySelected })}
         onClick={handleCategoryChange(category)}
         onKeyPress={handleCategoryChange(category)}
         role="presentation"
