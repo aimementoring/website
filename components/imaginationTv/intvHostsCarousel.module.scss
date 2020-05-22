@@ -21,7 +21,7 @@
   }
 
   .episodePanel {
-    opacity: 50%;
+    opacity: 0.5;
 
     .episodeHeader  {
       background-image: none !important;
@@ -51,7 +51,7 @@
 
   :global(.slick-center) {
     .episodePanel {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
@@ -61,7 +61,6 @@
 
   :global(.slick-slide) {
     .episodePanel .episodeContentInfo {
-      // display: none;
       visibility: hidden;
     }
   }
