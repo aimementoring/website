@@ -4,10 +4,10 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import isClientSide from '../../../utils/isClientSide';
 import styles from './header.module.scss';
+import StandardHeader from './standardHeader';
 
 const GoingGlobalHeader = dynamic(() => import('./goingGlobalHeader'));
 const ImaginationDeclarationHeader = dynamic(() => import('./imaginationDeclarationHeader'));
-const StandardHeader = dynamic(() => import('./standardHeader'));
 
 const getHeaderComponent = (pathname) => {
   let component = 'default';
