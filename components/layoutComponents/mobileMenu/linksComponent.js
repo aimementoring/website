@@ -1,31 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Anchor from '../../common/link';
-import useDonate from '../../../hooks/useDonate';
+import DonationContext from '../../../context';
 import IntercomChat from '../../intercom';
 import styles from './mobileMenu.module.scss';
 
-const LinksComponent = ({
-  links, handleLinkClicked, active,
-}) => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+const LinksComponent = ({ links, handleLinkClicked, active }) => {
+  const { toggleDonationModal } = useContext(DonationContext);
 
   const showDonate = ({ title }) => () => {
     handleLinkClicked(title)();
-    toggleDonateModal();
+    toggleDonationModal();
   };
 
   const renderLink = (link) => {
     const navLinkClassNames = classNames(styles.menuNavLink,
       link.class, (active === link.title ? styles.active : ''));
-    if (link.title === 'Get in touch') {
+    if (link.type === 'intercom') {
       return (
         <IntercomChat classNames={navLinkClassNames} />
       );
     }
-    if (link.url === 'donate') {
+    if (link.type === 'donate') {
       return (
         <div
           onClick={showDonate(link)}
@@ -35,6 +32,18 @@ const LinksComponent = ({
         >
           {link.title}
         </div>
+      );
+    }
+    if (link.type === 'external') {
+      return (
+        <Anchor
+          className={navLinkClassNames}
+          onClick={handleLinkClicked(link.title)}
+          href={link.url}
+          target="_blank"
+        >
+          {link.title}
+        </Anchor>
       );
     }
     return (
@@ -68,6 +77,7 @@ LinksComponent.propTypes = {
     url: PropTypes.string,
     class: PropTypes.string,
     action: PropTypes.func,
+    type: PropTypes.string,
   })).isRequired,
   handleLinkClicked: PropTypes.func.isRequired,
   active: PropTypes.string,

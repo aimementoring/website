@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .frameSvg {
   width: 108.6vw; 
@@ -11,14 +11,25 @@
   font-weight:800;
   cursor: pointer;
   max-width:1440px;
+
   @media screen and (max-width: $md) {
     transform: scale(1.6);
   }
 }
 
 .donateLink {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: $sm) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
 }
 
 .donateTitleText {

@@ -1,4 +1,4 @@
-@import "../../../styles/base/variables";
+@import "../../../styles/global.module.scss";
 
 .iconAimeLogo {
   color: $white;
@@ -299,6 +299,7 @@
 
   button.navBtn {
     padding: 0.15em 0;
+    line-height: 1.5;
   }
 
   .navBtn {
@@ -340,7 +341,6 @@
   .inlineListItem:hover .navBtn {
     border-bottom: 2px solid $purple;
   }
-
 }
 
 .navLink {

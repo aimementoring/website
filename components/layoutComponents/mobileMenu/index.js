@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import dynamic from 'next/dynamic';
 import styles from './mobileMenu.module.scss';
-
-const LinksComponent = dynamic(() => import('./linksComponent'));
+import LinksComponent from './linksComponent';
 
 const MENU_LINKS = {
   'going-global': [
@@ -23,9 +21,9 @@ const MENU_LINKS = {
     { url: '/imagi-nation-tv', title: 'IN{TV}' },
     { url: '/be-a-mentor', title: 'Be a mentor' },
     { url: '/positions', title: 'Work with us' },
-    { url: 'donate', title: 'Donate' },
-    // { url: 'https://shop.aimementoring.com/', title: 'Shop' },
-    { url: '', title: 'Get in touch' }, // Intercom link
+    { url: 'donate', title: 'Donate', type: 'donate' },
+    { url: 'https://shop.aimementoring.com/', title: 'Shop', type: 'external' },
+    { url: '', title: 'Get in touch', type: 'intercom' },
   ],
 };
 

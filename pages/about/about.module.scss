@@ -1,7 +1,11 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .aboutWrapper {
   background-color: $white;
+}
+
+.defaultImage {
+  max-width: 100%;
 }
 
 .sectionAbout {

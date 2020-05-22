@@ -1,4 +1,4 @@
-@import "../../../styles/base/variables";
+@import "../../../styles/global.module.scss";
 
 .storiesContainer {
   margin: 0 auto;
@@ -19,10 +19,7 @@
   }
 }
 
-
-
 .refineSearch {
-
   @media screen and (min-width: $sm) {
     width: 250px;
     margin-right: 5rem;
