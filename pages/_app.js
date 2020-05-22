@@ -1,11 +1,8 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import withRedux from 'next-redux-wrapper';
 import App from 'next/app';
 import TagManager from 'react-gtm-module';
 import MainAppComponent from '../components/mainAppComponent';
-import initStore from '../store';
-import isClientSide from '../utils/isClientSide';
+import DonationContext from '../context';
 import './_app.scss';
 
 // @TODO: Remove these imports when they fix this issue: https://github.com/zeit/next.js/issues/12079
@@ -20,21 +17,32 @@ const tagManagerArgs = {
 };
 
 class MyApp extends App {
+  constructor(props) {
+    super(props);
+
+    this.toggleDonationModal = () => {
+      this.setState((prevState) => ({ donationModal: !prevState.donationModal }));
+    };
+
+    this.state = {
+      donationModal: false,
+      toggleDonationModal: this.toggleDonationModal,
+    };
+  }
+
   componentDidMount() {
     TagManager.initialize(tagManagerArgs);
   }
 
   render() {
-    const {
-      Component, pageProps, store,
-    } = this.props;
+    const { Component, pageProps } = this.props;
     return (
-      <Provider store={store}>
+      <DonationContext.Provider value={this.state}>
         <MainAppComponent />
         <Component {...pageProps} />
-      </Provider>
+      </DonationContext.Provider>
     );
   }
 }
 
-export default withRedux(initStore, { debug: true })(MyApp);
+export default MyApp;
