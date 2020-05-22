@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import Title from 'aime-blueprint/lib/components/title';
@@ -100,7 +100,7 @@ const PartnerWithIntv = () => {
             <div className={styles.bannerWrapper}>
               <div className={`${styles.bannerContent} ${styles.bannerItem}`}>
                 <Title className={styles.welcomeTitle} type="headingLockup" theme={process.env.REACT_APP_THEME}>
-                Partnering with
+                  Partnering with
                   <strong className={styles.hiddenTitle}>Imagi-Nation TV</strong>
                   <img
                     src={`${ASSETS_URL}/assets/images/logos/logo_imagitv@2x.png`}
@@ -232,7 +232,7 @@ const PartnerWithIntv = () => {
                 <br />
                 <br />
                 <strong>
-                Jack Manning Bancroft
+                  Jack Manning Bancroft
                   <br />
                   {'IN{TV} EP & Founder, AIME CEO & Founder'}
                 </strong>
@@ -706,7 +706,7 @@ const PartnerWithIntv = () => {
                       className={styles.existingPartnerBtn}
                       onClickFunction={toggleModal}
                     >
-                    I&apos;m an existing partner school
+                      I&apos;m an existing partner school
                     </Button>
                   </div>
                 </div>
@@ -777,7 +777,7 @@ const PartnerWithIntv = () => {
                       className={styles.existingPartnerBtn}
                       onClickFunction={toggleModal}
                     >
-                    I&apos;m an existing partner university
+                      I&apos;m an existing partner university
                     </Button>
                   </div>
                 </div>
@@ -971,12 +971,12 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                  For organizations looking to reach youngsters, we are open to
-                  exploring classy content partnerships. Let’s get it out there.
-                  This is a form of advertising… and we’d wanna do it in a ballistically
-                  classy way. For example, we’d be up for having your smartest designer
-                  on our design show talking about the positive work you and your team
-                  are doing and then exploring a potential Q&A with one of our hosts/puppets.
+                    For organizations looking to reach youngsters, we are open to
+                    exploring classy content partnerships. Let’s get it out there.
+                    This is a form of advertising… and we’d wanna do it in a ballistically
+                    classy way. For example, we’d be up for having your smartest designer
+                    on our design show talking about the positive work you and your team
+                    are doing and then exploring a potential Q&A with one of our hosts/puppets.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -1014,8 +1014,8 @@ const PartnerWithIntv = () => {
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                   Surely you wanna create a puppet? Maybe we can look at something
-                   that’s important to you or your organisation and build a puppet around that?
+                    Surely you wanna create a puppet? Maybe we can look at something
+                    that’s important to you or your organisation and build a puppet around that?
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -1048,10 +1048,10 @@ const PartnerWithIntv = () => {
                     wellbeing. A chance to send your staff a message about the
                     value of giving space for parents to have a moment during the day
                     with their kids to bring mentors into their lives. And to make it
-                     part of the daily diet by scheduling it as a meeting invite for all
-                     staff to bring mentors into your teams’ lives every single day. Our
-                     core focus is imagination, and we’ve been in the game of behaviour
-                     change for marginalised kids and university students for 16 years.
+                    part of the daily diet by scheduling it as a meeting invite for all
+                    staff to bring mentors into your teams’ lives every single day. Our
+                    core focus is imagination, and we’ve been in the game of behaviour
+                    change for marginalised kids and university students for 16 years.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
