@@ -15,7 +15,7 @@ const CaseStudies = () => (
       title={(<strong>Case Studies</strong>)}
       titleType="headingLockup"
       titleStyleClass={styles.bannerHeadingAmbassadors}
-      bannerContainerClass={styles.bannerContainerClass}
+      bannerContainerClass={styles.banner}
       bannerWrapperClass={styles.bannerWrapperClass}
       groovy
     />
