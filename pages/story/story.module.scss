@@ -1,5 +1,7 @@
 @import "../../styles/global.module.scss";
 
+// @todo CSS: Refactor into banner componenet 
+
 .bannerInStory {
   background-position: 0% 25%;
   max-width: 100%;
@@ -66,6 +68,8 @@
     color: $grey;
     font-size: 13px;
   }
+
+  // @todo CSS: Refactor all article content styles into Blueprint componenets 
 
   .blogPostArticle {
     line-height: 26px;
