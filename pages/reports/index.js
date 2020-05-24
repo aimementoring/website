@@ -77,7 +77,8 @@ const Reports = ({ entries }) => {
       <SimpleBanner
         title={<strong>Reports</strong>}
         titleType="headingLockup"
-        bannerContainerClass={styles.heroBannerReports}
+        groovy
+        bannerContainerClass={styles.banner}
       />
       {reports && (
         <>
