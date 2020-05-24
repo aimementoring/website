@@ -22,7 +22,7 @@ const Impact = () => (
     <div className={styles.bannerWrap}>
       <MovingWaves />
       <div className={styles.titleWrapper}>
-        <div className={styles.titleContainer}>
+        <div className={styles.banner}>
           <Title
             type="headingLockup"
             className={styles.headerTitle}
