@@ -57,7 +57,7 @@ const PositionsEntry = () => {
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
-    // TODO this needs fixing to make filtering work again
+    // @todo fix positions filtering to make it work again
     const countryId = 'global';
     if (positionId) {
       try {
@@ -192,7 +192,7 @@ const PositionsEntry = () => {
         <div id="positions-entry">
           <Header />
           <div className={styles.positionsJobCategory}>
-            <div className={styles.jobCategory}>
+            <div className={styles.wrapper}>
               <JobsTitle {...job} />
               <JobsDetail {...job} location={location} />
               <JobVideoOpportunity
