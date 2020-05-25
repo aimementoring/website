@@ -4,11 +4,11 @@
 import React, { useState, useRef, useContext } from 'react';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
-import DonationContext from '../../context';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
+import DonationContext from '../../context';
 import Layout from '../../hocs/basicLayout';
 import VideoPlayer from '../../components/videoPlayer';
 import WavyDonateSection from '../../components/wavyDonateSection';
@@ -193,7 +193,7 @@ const PartnerWithIntv = () => {
                 curriculum content for teachers to incorporate IN{TV} into their
                 daily lesson plans. It will allow us to have our best shot together
                 to get a mentor into every kid’s life every single day - `}
-                {/* TODO this link is broken need to find replacement*/}
+                {/* TODO this link is broken need to find replacement */}
                 <a href="https://en.unesco.org/covid19/educationresponse" target="_blank">
                   the number of kids affected by COVID-19 school closures stood
                   at almost almost 1.5 billion as of 28 March.
@@ -651,10 +651,10 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily.'}
+                    Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily.
                   </Paragraph>
                   <Paragraph>
-                    {'For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020.'}
+                    For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
                     {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
@@ -750,7 +750,7 @@ const PartnerWithIntv = () => {
                     curriculum and publishing the opportunity for students far and wide.`}
                   </Paragraph>
                   <Paragraph>
-                    For existing AIME university partners and the first 100 new university partners that sign on, 
+                    For existing AIME university partners and the first 100 new university partners that sign on,
                     the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
@@ -1071,7 +1071,7 @@ const PartnerWithIntv = () => {
                     value of giving space for parents to have a moment during the day
                     with their kids to bring mentors into their lives. And to make it
                     part of the daily diet by scheduling it as a meeting invite for all
-                    staff to bring mentors into your teams’ lives every single day. 
+                    staff to bring mentors into your teams’ lives every single day.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -1083,10 +1083,10 @@ const PartnerWithIntv = () => {
                     action. Considering the challenges that many of us are facing 
                     with kids at home, IMAGI-NATION{TV} is a gift for all parents 
                     to sit down with their kids for an hour a day. 
-                    And if you don’t have kids, it’s a gift for the kid inside you!`} 
+                    And if you don’t have kids, it’s a gift for the kid inside you!`}
                   </Paragraph>
                   <Paragraph>
-                    {`Check out `}
+                    {'Check out '}
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
