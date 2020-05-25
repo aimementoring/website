@@ -8,6 +8,7 @@ import { SimpleBanner } from '../../components/banner/index';
 import IntercomChat from '../../components/intercom';
 import bugsnagClient from '../../utils/bugsnag';
 import isClientSide from '../../utils/isClientSide';
+import Layout from '../../hocs/basicLayout';
 import styles from './error.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -30,7 +31,7 @@ const ErrorPage = () => {
   }, []);
 
   return (
-    <div>
+    <Layout>
       <Helmet>
         <title>AIME | Error 404 </title>
         <meta name="description" content="Helmet application" />
@@ -72,7 +73,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
