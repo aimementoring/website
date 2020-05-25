@@ -116,7 +116,7 @@ There are two folders on AWS where we store all our assets - images, fonts, file
 
 # Create issues from github
 
-<img src="https://drive.google.com/open?id=1H_uMHonaOzO9uz1qRsmSExZtks3xRUlm" /> 
+<img src="https://lh4.googleusercontent.com/axJKw0MCkGzDgE6oJ5lVx266JOd3kMOLHc76TjP2eBj_xeuPU9IZbaqsZ9W7yPVOg8U5LH1hDCnw-7y6VThC=w3584-h1874-rw" /> 
 
 
 # Contentful
