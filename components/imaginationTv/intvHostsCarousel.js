@@ -31,7 +31,7 @@ const IntvHostsCarousel = () => (
       <Paragraph>
         {'Executive Producer & Founder of IN{TV}.'}
         <br />
-        {'CEO & Founder of AIME'}
+        CEO & Founder of AIME
       </Paragraph>
     </ImaginationTvCard>
     <ImaginationTvCard
