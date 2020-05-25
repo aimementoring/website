@@ -57,5 +57,8 @@ jobs:
           stylelint: true
           auto_fix: true
       - name: Build
+        run: yarn run export
+      - name: Performance Budgeting Regression Testing
+        uses: ModusCreateOrg/gimbal/action@master
         env:
-            CI: ''
+          GITHUB_AUTH_TOKEN: ${{ secrets.GIMBAL_GITHUB_TOKEN }}
