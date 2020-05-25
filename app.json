@@ -145,6 +145,10 @@
       "required": true,
       "value": "https://us12.api.mailchimp.com/3.0"
     },
+    "REACT_APP_SHOP_PRODUCT_LINK": {
+      "required": true,
+      "value": "https://shop.aimementoring.com/products"
+    },
     "NEXTJS_TARGET": {
       "required": true,
       "value": "serverless"
