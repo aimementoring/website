@@ -1,30 +1,23 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
-.heroBannerReports {
-  display: flex;
-  min-height: 71vh;
-  text-align: center;
-  margin-bottom: 2rem;
-  flex-direction: column;
-  justify-content: center;
+.banner {
+  composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
     no-repeat top center / cover #050301;
 }
 
 .filterListContainer {
   min-width: 280px;
-  margin-bottom: 2rem;
   padding: 2em 2em 0;
 
   ul {
     display: flex;
     flex-wrap: wrap;
-
-  li {
-    cursor: pointer;
   }
 }
-}
+
+// @todo: CSS: Refactor into a grid layout componenet 
+// Or at least into a CSS modules pattern to start
 
 .reportsGrid {
   display: grid;
@@ -37,24 +30,26 @@
   grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
 }
 
+.reportCategoryItem {
+  display: block;
+  cursor: pointer;
+  border: 1px solid $watermelon;
+  color: $watermelon;
+  border-radius: 3px;
+  padding: .5em 1em;
+  margin-right: .5em;
+  margin-top: 1em;
+  text-transform: uppercase;
+  font-family: $body-font-family-bold;
+
+  &.active {
+    background: $watermelon;
+    color: $white;
+  }
+}
+
 @media screen and (max-width: $lg) {
   .filterListContainer {
     padding: 0 2em 0;
-
-    ul, h5 {
-      display: none;
-      border: 1px solid $brand-primary;
-      margin-top: 0;
-      margin-right: 0;
-      border-radius: 0 0 6px 6px;
-
-      li {
-        cursor: pointer;
-      }
-    }
-
-    &.active ul {
-      display: block;
-    }
   }
 }
