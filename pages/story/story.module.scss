@@ -1,6 +1,6 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
-@import "../../styles/baseClasses/materialIcons";
+// @todo CSS: Refactor into banner componenet 
 
 .bannerInStory {
   background-position: 0% 25%;
@@ -68,6 +68,8 @@
     color: $grey;
     font-size: 13px;
   }
+
+  // @todo CSS: Refactor all article content styles into Blueprint componenets 
 
   .blogPostArticle {
     line-height: 26px;
@@ -227,6 +229,7 @@
 }
 
 .borderedBadge {
+  display: inline-block;
   border: 1px solid $grey40;
   position: relative;
   display: inline-block;
