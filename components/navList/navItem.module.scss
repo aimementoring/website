@@ -1,13 +1,17 @@
-@import '../../styles/base/variables';
+@import '../../styles/global.module.scss';
 
-.footerContent {
-  .listItem {
-    margin-bottom: 1rem;
+.listItem {
+  margin-bottom: 1rem;
 
-    &:nth-child(1){
-      margin-top: 1em;
-    }
+  &:nth-child(1) {
+    margin-top: 1em;
+    // @todo  From Rin: I don't know where this is used, but it should definitely
+    // NOT apply to the first nav link in the header …
   }
+}
+// … which is why I am putting this here.
+.siteHeaderContainer .listItem:nth-child(1) {
+  margin-top: 0;
 }
 
 .itemLink {
