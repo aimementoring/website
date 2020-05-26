@@ -20,7 +20,8 @@ import JobApplyAction from '../../../components/positions/jobApplyAction';
 import JobExpired from '../../../components/positions/jobExpired';
 import BackAction from '../../../components/positions/backAction';
 import JobForm from '../../../components/positions/jobForm';
-import './positionsEntry.scss';
+
+import styles from './positionsEntry.module.scss';
 
 
 const PositionsEntry = () => {
@@ -56,7 +57,7 @@ const PositionsEntry = () => {
   }, [isClient]);
 
   const findJobByIdAndCountry = async () => {
-    // TODO this needs fixing to make filtering work again
+    // @todo fix positions filtering to make it work again
     const countryId = 'global';
     if (positionId) {
       try {
@@ -190,38 +191,40 @@ const PositionsEntry = () => {
       <Layout>
         <div id="positions-entry">
           <Header />
-          <div className="job-description md-wrap mx-auto px3 pb3 pt3 js-job-application">
-            <JobsTitle {...job} />
-            <JobsDetail {...job} location={location} />
-            <JobVideoOpportunity
-              id={positionId}
-              embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
-              description={job ? job.description : ''}
-            />
-            <SupportingDocs jobPacks={job && job.jobPacks ? job.jobPacks : []} />
-            <JobApplyAction
-              showForm={showForm}
-              showApplicationForm={showApplicationForm}
-              job={job}
-            />
-            <JobExpired positionExpired={positionExpired} />
-            <JobForm
-              job={job}
-              onAddressSelected={onAddressSelected}
-              locationError={locationError}
-              showForm={showForm}
-              streetNumber={streetNumber}
-              streetName={streetName}
-              postCode={postCode}
-              territory={territory}
-              city={city}
-              handleFieldChange={handleFieldChange}
-              handleFormFieldChange={handleFormFieldChange}
-              countryAddress={countryAddress}
-              values={state.jobForm}
-              onSubmit={handleSubmit}
-            />
-            <BackAction />
+          <div className={styles.positionsJobCategory}>
+            <div className={styles.wrapper}>
+              <JobsTitle {...job} />
+              <JobsDetail {...job} location={location} />
+              <JobVideoOpportunity
+                id={positionId}
+                embedVideoId={Number.isNaN(job.embedVideo) ? false : job.embedVideo}
+                description={job ? job.description : ''}
+              />
+              <SupportingDocs jobPacks={job && job.jobPacks ? job.jobPacks : []} />
+              <JobApplyAction
+                showForm={showForm}
+                showApplicationForm={showApplicationForm}
+                job={job}
+              />
+              <JobExpired positionExpired={positionExpired} />
+              <JobForm
+                job={job}
+                onAddressSelected={onAddressSelected}
+                locationError={locationError}
+                showForm={showForm}
+                streetNumber={streetNumber}
+                streetName={streetName}
+                postCode={postCode}
+                territory={territory}
+                city={city}
+                handleFieldChange={handleFieldChange}
+                handleFormFieldChange={handleFormFieldChange}
+                countryAddress={countryAddress}
+                values={state.jobForm}
+                onSubmit={handleSubmit}
+              />
+              <BackAction />
+            </div>
           </div>
         </div>
       </Layout>
