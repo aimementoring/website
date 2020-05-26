@@ -341,7 +341,7 @@ $img-list: (
 		}
 		.listLink{
 			padding: 0em .5em .5em .5em;
-			background: url("https://svgshare.com/i/KJt.svg");
+			background: url($cdnRoot + 'assets/menu/waveUnderline.svg');
 			background-repeat: repeat;
 			background-position-x: 0%;
 			background-position-y: 0%;
@@ -358,7 +358,7 @@ $img-list: (
 		}
 		.listLinkScnd {
 			padding: 0em .5em 1em .5em;
-			background: url("https://svgshare.com/i/KJt.svg");
+			background: url($cdnRoot + 'assets/menu/waveUnderline.svg');
 			background-repeat: repeat;
 			background-position-x: 0%;
 			background-position-y: 0%;
