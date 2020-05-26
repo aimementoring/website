@@ -54,6 +54,15 @@ $img-list: (
 	}
 }
 
+@keyframes movesml {
+	0% {
+		background-position: 2px 15px;
+	}
+	100% {
+		background-position: 500px 15px;
+	}
+}
+
 * {
 	box-sizing: border-box;
 	font-family: "Luna Emu", "Poppins Black", "Arial Black", "sans serif", cursive;
@@ -75,7 +84,7 @@ $img-list: (
 	justify-content: center;
 	opacity:0;
 	transition: all 0s ease 5s;
-	z-index:3;
+	z-index:100;
 }
 
 .menuBg {
@@ -134,7 +143,7 @@ $img-list: (
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 99;
+	z-index: 103;
 	cursor: pointer;
 	width: 50px;
 	height: 50px;
@@ -182,7 +191,6 @@ $img-list: (
 		}
 		+ {
 			.hamburger {
-				z-index:6;
 				path {
 					stroke: #fff;
 				}
@@ -238,7 +246,7 @@ $img-list: (
   width:60px;
   height:60px;
   visibility: hidden;
-  z-index:99;
+  z-index:101;
   opacity:0;
   transition: all 0.4s ease;
   margin:1em;
@@ -247,7 +255,7 @@ $img-list: (
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 101;
 	width: 50px;
 	height: 50px;
 	padding: .5em .5em;
@@ -296,11 +304,22 @@ $img-list: (
 	overflow-y: hidden;
 	justify-content: center;
 	flex-wrap:wrap;
+
+	hr {
+		display: block;
+    height: 2px;
+    border-top: 2px solid #fff;
+    margin: 1em 0;
+    padding: 0;
+		width: 4em;
+		border-radius: 3px 3px 3px 3px;
+		opacity:0.6;
+	}
 }
 .listItem {
 	width: 100%;
 	padding: 0;
-	margin: 1.5em 0em 0em 0em;
+	margin: .75em 0em .75em 0em;
   font-size: 2rem;
   display: -webkit-box;
 	display: flex;
@@ -320,7 +339,7 @@ $img-list: (
 			transform: scale(1);
 			margin-bottom: -1em;
 		}
-		.listLink {
+		.listLink{
 			padding: 0em .5em .5em .5em;
 			background: url("https://svgshare.com/i/KJt.svg");
 			background-repeat: repeat;
@@ -332,6 +351,23 @@ $img-list: (
 			background-position: 5px 32px;
 			animation: move 15s linear infinite;
 			-webkit-animation: move 15s linear infinite;
+			animation-play-state: running;
+			text-decoration: none;
+			background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+		}
+		.listLinkScnd {
+			padding: 0em .5em 1em .5em;
+			background: url("https://svgshare.com/i/KJt.svg");
+			background-repeat: repeat;
+			background-position-x: 0%;
+			background-position-y: 0%;
+			background-size: auto auto;
+			background-repeat: repeat-x;
+			background-size: 15px 5px;
+			background-position: 5px 15px;
+			animation: movesml 15s linear infinite;
+			-webkit-animation: movesml 15s linear infinite;
 			animation-play-state: running;
 			text-decoration: none;
 			background-color: transparent;
@@ -373,6 +409,21 @@ $img-list: (
 		font-size:1.5rem;
 	}
 }
+
+.listLinkScnd {
+	flex-direction: column;
+	display: inline-flex;
+	align-items: center;
+	font-family: "GT Pressura Mono", "Univers Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 0.8rem;
+	background: none;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	font-weight:bold;
+}
+
 .subMenu {
 	width: 100%;
 	height: auto;
