@@ -154,6 +154,21 @@ const FullScreenMenu = () => {
                   Shop
                 </a>
               </li>
+              <hr />
+              <li className={styles.listItem}>
+                <IntercomChat classNames={`${styles.listLinkScnd} ${styles.getInTouchBtn}`} label="Get In Touch" />
+              </li>
+              <li className={styles.listItem}>
+                <button
+                  type="button"
+                  onClick={toggleDonateModal}
+                  onKeyPress={toggleDonateModal}
+                  role="link"
+                  className={`${styles.listLinkScnd} ${styles.donateToAimeBtn}`}
+                >
+                  Donate
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
