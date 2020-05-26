@@ -113,6 +113,12 @@ Now follow next steps:
 
 There are two folders on AWS where we store all our assets - images, fonts, files, etc. These are `aimementoring-staging` (`d2cl4o0mkg71rr`) and `aimementoring` (`d1muvgoqe3g8vw`).
 
+
+# Create issues from github
+
+<img src="https://lh4.googleusercontent.com/axJKw0MCkGzDgE6oJ5lVx266JOd3kMOLHc76TjP2eBj_xeuPU9IZbaqsZ9W7yPVOg8U5LH1hDCnw-7y6VThC=w3584-h1874-rw" /> 
+
+
 # Contentful
 
 To manage the content of reports, terms & conditions and stories we use Contentful.
