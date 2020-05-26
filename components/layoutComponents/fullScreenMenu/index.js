@@ -1,5 +1,5 @@
 import React from 'react';
-import Anchor from '../../common/link';
+import a from '../../common/link';
 import styles from './index.scss';
 import useDonate from '../../../hooks/useDonate';
 import IntercomChat from '../../intercom';
@@ -33,7 +33,7 @@ const FullScreenMenu = () => {
       </div>
 
       <div className={styles.fullScreenLogo}>
-        <Anchor to="/home" as="/">
+        <a href="/home" as="/">
           <svg id="icon-aime-logo" viewBox="0 0 63 32">
             <title>AIME Mentoring</title>
             <path d="M9.998 14.573c-1.551 1.043-2.461 1.667-2.833 1.286-0.46-0.474 0.814-2.805 1.976-6.136 1.158-3.333 1.691-5.507 2.169-5.513s0.332 6.321 0.436 7.882c0.108 1.557-0.197 1.437-1.748 2.481zM16.922 10.702c-0.433-0.218-1.935 0.928-2.631 1.49-0.391-6.043-0.223-10.173-1.054-11.208-0.883-1.096-1.697-1.757-2.919 1.288-1.224 3.045-4.462 9.634-6.422 16.135-1.356 4.503-4.7 12.325-3.718 13.185 0.721 0.629 2.512-0.381 2.968-2.124 0.458-1.741 1.801-6.957 1.928-7.487 0.129-0.532 0.427-1.096 2.062-2.025 1.636-0.93 4.814-3.329 4.959-1.799 0.14 1.53 0.478 11.086 1.917 11.283 1.702 0.233 2.476-0.317 2.277-1.583-0.32-2.037-1.124-6.345-1.663-11.636 0.027 0.053 0.043 0.083 0.043 0.083-0.051-0.791 0.888-1.407 1.952-2.136 1.066-0.729 0.87-3.184 0.301-3.467z" />
@@ -41,7 +41,7 @@ const FullScreenMenu = () => {
             <path d="M25.434 26.818c0.457 0.393 1.621 0.289 2.218-1.798 0.597-2.084 4.203-13.179 4.385-13.681 0.184-0.502 0.45-0.962 0.636 0.533 0.187 1.495 0.867 8.073 1.296 9.582 0.425 1.512 0.646 1.645 1.504 1.645s1.32-0.191 1.811-1.047c0.492-0.857 4.431-8.441 5.064-9.655 0.636-1.214 2.581-5.412 2.013-2.742-0.568 2.668-2.32 11.88-2.546 14.266-0.224 2.386-0.271 2.954 0.849 3.561s2.272 0.833 2.282-1.341c0.007-2.173 0.604-8.264 1.511-12.744 0.903-4.482 2.503-8.206 1.471-9.256-1.033-1.050-2.569-1.978-3.632-0.184-1.063 1.793-5.151 10.275-6.393 13.002-1.242 2.722-2.018 3.89-2.272 2.659s-1.428-9.878-1.687-11.475c-0.261-1.601-0.511-1.925-1.301-1.615-0.794 0.306-2.206 0.458-2.777 2.475-0.57 2.023-2.282 8.089-3.112 11.261-0.834 3.173-1.831 6.117-1.322 6.554z" />
             <path d="M53.941 9.216c-2.147 0.615-3.26 2.216-3.948 4.688-0.691 2.476-1.374 5.94-1.883 8.22-0.512 2.283-0.556 3.933 0.891 4.741 1.45 0.812 5.978 0.523 9.002-1.064 3.027-1.585 3.894-2.368 3.758-3.307-0.135-0.936-0.406-1.384-1.278-0.775-0.87 0.609-2.977 2.047-6.247 2.943-3.269 0.895-4.476 0.352-4.312-1.428 0.163-1.783 0.577-2.868 2.786-3.435 2.213-0.564 5.705-1.33 6.298-1.811 0.59-0.482 1.146-1.986 0.432-1.945-0.712 0.043-4.141 1.231-5.816 1.495-1.674 0.263-2.567 0.441-2.195-1.026 0.37-1.464 0.962-4.695 3.6-4.989s6.225-0.135 6.746-0.725c0.523-0.588 1.457-2.388 0.486-2.499-0.971-0.113-4.385-0.212-8.319 0.917z" />
           </svg>
-        </Anchor>
+        </a>
       </div>
 
       <div className={styles.menuContainer}>
@@ -59,9 +59,9 @@ const FullScreenMenu = () => {
           <nav className={styles.menuContent}>
             <ul className={styles.menuMain}>
               <li className={styles.listItem}>
-                <Anchor to="/home" as="/" className={styles.listLink}>
+                <a href="/home" className={styles.listLink}>
                   Home
-                </Anchor>
+                </a>
               </li>
               <li className={styles.listItem}>
                 <button type="button" className={styles.listLink}>
@@ -70,18 +70,24 @@ const FullScreenMenu = () => {
                 <div className={styles.subMenu}>
                   <ul>
                     <li>
-                      <Anchor to="/about" className={styles.subLink}>Overview</Anchor>
+                      <a href="/about" className={`${styles.subLink} ${styles.overviewBtn}`}>
+                        Overview
+                      </a>
                     </li>
                     <li>
-                      <Anchor to="/know-aime" className={styles.subLink}>Get to know AIME</Anchor>
+                      <a href="/know-aime" className={`${styles.subLink} ${styles.getToKnowAimeBtn}`}>
+                        Get to know AIME
+                      </a>
                     </li>
                     <li>
-                      <Anchor to="/impact" className={styles.subLink}>Our impact</Anchor>
+                      <a href="/impact" className={`${styles.subLink} ${styles.ourImpactBtn}`}>
+                        Our impact
+                      </a>
                     </li>
                     <li>
-                      <Anchor to="/jack-manning-bancroft" className={styles.subLink}>
+                      <a href="/jack-manning-bancroft" className={`${styles.subLink} ${styles.ceoAndFounderBtn}`}>
                         CEO & founder
-                      </Anchor>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -93,10 +99,14 @@ const FullScreenMenu = () => {
                 <div className={styles.subMenu}>
                   <ul>
                     <li>
-                      <Anchor to="/imagi-nation-tv" className={styles.subLink}>{'IN{TV}'}</Anchor>
+                      <a href="/imagi-nation-tv" className={`${styles.subLink} ${styles.intvBtn}`}>
+                        {'IN{TV}'}
+                      </a>
                     </li>
                     <li>
-                      <Anchor to="/stories" className={styles.subLink}>Stories</Anchor>
+                      <a href="/stories" className={`${styles.subLink} ${styles.storiesBtn}`}>
+                        Stories
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -108,13 +118,17 @@ const FullScreenMenu = () => {
                 <div className={styles.subMenu}>
                   <ul>
                     <li>
-                      <Anchor to="/be-a-mentor" className={styles.subLink}>Be a mentor</Anchor>
+                      <a href="/be-a-mentor" className={`${styles.subLink} ${styles.beAMentorBtn}`}>
+                        Be a mentor
+                      </a>
                     </li>
                     <li>
-                      <Anchor to="/positions" className={styles.subLink}>Work with us</Anchor>
+                      <a href="/positions" className={`${styles.subLink} ${styles.workWithUsBtn}`}>
+                        Work with us
+                      </a>
                     </li>
                     <li>
-                      <IntercomChat className={styles.subLink} />
+                      <IntercomChat classNames={`${styles.subLink} ${styles.getInTouchBtn}`} label="Get In Touch" />
                     </li>
                     <li>
                       <button
@@ -122,7 +136,7 @@ const FullScreenMenu = () => {
                         onClick={toggleDonateModal}
                         onKeyPress={toggleDonateModal}
                         role="link"
-                        className={styles.subLink}
+                        className={`${styles.subLink} ${styles.donateToAimeBtn}`}
                       >
                         Donate
                       </button>
