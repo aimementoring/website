@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroBannerHomepage {
   background:
@@ -44,6 +44,7 @@
       width: 17rem;
     }
   }
+
   .triBtnSet {
     .triBtn {
       margin-bottom: 1em;
@@ -67,6 +68,9 @@
     flex-direction: column;
     width: 100%;
     padding: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
 
     @media screen and (min-width: $sm) {
       display: flex;
@@ -162,6 +166,7 @@
 
       .videoCoverArt {
         border-radius: 3px;
+        max-width: 100%;
       }
 
       .textLinkChannel {

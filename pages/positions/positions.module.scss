@@ -1,0 +1,36 @@
+@import "../../styles/global.module.scss";
+
+.contentPanel {
+  padding: 4em;
+}
+
+.flexPanel {
+  @media screen and (min-width: $md) {
+    display: flex;
+    align-items: center;
+  }
+}  
+
+.containerTitle {
+
+  h1 {
+    color: $orange;
+  }
+
+}
+
+.containerTitle,
+.videoContainer {
+  @media (min-width: $md) {
+    width: 50%;
+  }
+}
+
+.videoCaption {
+  text-align: right;
+}
+
+.positionsList {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
