@@ -40,7 +40,7 @@ $img-list: (
 
 @keyframes movebg {
   100% {
-		transform: rotate(360deg);
+		transform: translate3d(0, 0, 1px) rotate(360deg);
 		z-index:1;
   }
 }
@@ -127,8 +127,8 @@ $img-list: (
 	@for $i from 1 through $amount {
 		&:nth-child(#{$i}) {
 			color: nth($colors, random(length($colors)));
-			top: random(100) * 1%;
-			left: random(100) * 1%;
+			// top: random(100) * 1%;
+			// left: random(100) * 1%;
 			animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
 			animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
 			transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
@@ -168,7 +168,7 @@ $img-list: (
 					transition: transform .75s ease 0s;
 					visibility: visible;
 					background:linear-gradient(to bottom right, rgba(145,53,240,1), rgba(255,152,53,1));
-					opacity:.97;
+					opacity:.98;
 					.menuContent{
 						opacity: 1;
 						transition: opacity 0.4s ease 0.4s;
