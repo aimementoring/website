@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
 import Anchor from '../common/link';
 import styles from './positionsRedirectMessage.module.scss';
 import IntercomChat from '../intercom';
@@ -7,7 +9,9 @@ import IntercomChat from '../intercom';
 const { REACT_APP_PITCH_YOURSELF_TO_AIME_ID } = process.env;
 
 const PositionsRedirectMessage = ({ jobTitle, handleRedirectHide, filteredJobs }) => {
-  const checkJobId = filteredJobs.some((job) => job.id === REACT_APP_PITCH_YOURSELF_TO_AIME_ID);
+  const pitchYourselfJobAvailable = filteredJobs.some(
+    (job) => job.id === REACT_APP_PITCH_YOURSELF_TO_AIME_ID,
+  );
 
   return (
     <div className={styles.redirectContainer}>
@@ -17,32 +21,30 @@ const PositionsRedirectMessage = ({ jobTitle, handleRedirectHide, filteredJobs }
         </svg>
       </div>
       <div className={styles.redirectMessage}>
-        <h2>
-          Sorry, it looks like
-          <span>
-            {jobTitle}
-          </span>
-          &nbsp; is no longer available.
-        </h2>
-        <p>
-          {`Perhaps there's another job you could see yourself nailing below?
-          Have a look through the current opportunities available!`}
-        </p>
-        <p>
-          {`If you want to talk to someone about ${jobTitle} specifically,`}
-          <IntercomChat label="reach out to us" />
-          {checkJobId && (
+        <Title type="h4Title" className={styles.redirectHeader} theme={process.env.REACT_APP_THEME}>
+          {'Sorry, it seems '}
+          <span className={styles.jobTitle}>{jobTitle}</span>
+          {' is no longer available.'}
+        </Title>
+        <Paragraph>
+          {`Perhaps there's another job below that you could see yourself nailing?
+          Have a look through the opportunities currently available!`}
+        </Paragraph>
+        <Paragraph>
+          {`If you want to talk to someone about the role ${jobTitle} specifically, `}
+          <IntercomChat classNames={styles.intercomButton} label="reach out to us" />
+          {pitchYourselfJobAvailable && (
             <em>
-              or
-              {' '}
+              {' or '}
               <Anchor
                 to={`${window.location.pathname}/${REACT_APP_PITCH_YOURSELF_TO_AIME_ID}/Pitch-yourself-into-AIME`}
               >
-                Pitch Yourself!
+                pitch yourself
               </Anchor>
+              !
             </em>
           )}
-        </p>
+        </Paragraph>
       </div>
     </div>
   );
