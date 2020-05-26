@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
 import SubscribePanel from '../../subscribePanel';
-import useDonate from '../../../hooks/useDonate';
+import DonationContext from '../../../context';
 import styles from './footer.module.scss';
 
 const Footer = ({ location }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
   const isTalentPage = (location.pathname.indexOf('/seatontheplane') > -1);
   const currentYear = moment().year();
   const FOOTER_LINKS = [
@@ -27,7 +26,7 @@ const Footer = ({ location }) => {
           label: 'Become a Partner',
         },
         {
-          action: toggleDonateModal,
+          action: toggleDonationModal,
           label: 'Make a Donation',
         },
       ],
