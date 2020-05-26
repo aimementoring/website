@@ -1,26 +1,26 @@
 import React, {
-  useEffect, useRef,
+  useEffect, useRef, useContext,
 } from 'react';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import HeroBannerAustralia from '../../components/heroBannerHomepage/heroBannerAustralia';
 import Layout from '../../hocs/basicLayout';
-import { CTA_AU_HOMEPAGE } from '../../constants';
+import { CTA_GRID_CAMPAIGNS } from '../../constants';
+import WavyDonateSection from '../../components/wavyDonateSection';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import useDonate from '../../hooks/useDonate';
+import DonationContext from '../../context';
 import scrollToComponent from '../../utils/scrollToComponent';
 
-const HeroBannerHomepage = dynamic(() => import('../../components/heroBannerHomepage'));
-const QuicklinksHomepage = dynamic(() => import('../../components/quicklinksHomepage'));
-const CtaGrid = dynamic(() => import('../../components/ctaGrid'));
-const AmbassadorsCarousel = dynamic(() => import('../../components/ambassadorsCarousel'));
-const FooterBanner = dynamic(() => import('../../components/footerBanner'));
+import DoubleCurvedLine from '../../components/imaginationTv/doubleCurvedLine';
+import QuicklinksHomepage from '../../components/quicklinksHomepage';
+import CtaGrid from '../../components/ctaGrid';
+import AmbassadorsCarousel from '../../components/ambassadorsCarousel';
+import FooterBanner from '../../components/footerBanner';
 
 const Home = () => {
   const partnerRef = useRef(null);
   const getInvolvedRef = useRef(null);
   const router = useRouter();
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
 
   useEffect(() => {
     if (!getFromStorage('home_first_visit')) {
@@ -30,7 +30,7 @@ const Home = () => {
 
   useEffect(() => {
     if (router.query && router.query.donate === 'true') {
-      toggleDonateModal();
+      toggleDonationModal();
       router.push('/', '/', { shallow: true });
     }
   }, [router.query]);
@@ -40,9 +40,12 @@ const Home = () => {
 
   return (
     <Layout>
-      <HeroBannerHomepage currentSite="au" scrollHandler={scrollToGetInvolved} />
+      <HeroBannerAustralia scrollHandler={scrollToGetInvolved} />
+      <CtaGrid elements={CTA_GRID_CAMPAIGNS} partnerRef={partnerRef} />
+      <br />
+      <DoubleCurvedLine />
       <QuicklinksHomepage scrollHandler={scrollToPartnerBanner} getInvolvedRef={getInvolvedRef} />
-      <CtaGrid elements={CTA_AU_HOMEPAGE} partnerRef={partnerRef} />
+      <WavyDonateSection />
       <AmbassadorsCarousel />
       <FooterBanner />
     </Layout>
