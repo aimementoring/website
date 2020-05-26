@@ -1,9 +1,7 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import styles from './header.module.scss';
-
-const Logo = dynamic(() => import('./logo'));
-const FullScreenMenu = dynamic(() => import('../fullScreenMenu'));
+import FullScreenMenu from '../fullScreenMenu';
+import Logo from './logo';
 
 const StandardHeader = () => (
   <div>
