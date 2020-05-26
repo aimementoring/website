@@ -1,6 +1,6 @@
 @import "../../styles/global.module.scss";
 
-.mentorEOIContainer {
+.container {
 
   @media only screen and (min-width: $md) {
     padding: 0 2em;
@@ -12,41 +12,11 @@
   }
 }
 
-.beAMentorContainer {
+// @todo CSS: Replace with global wrapper patern 
 
-  .fullWidthWrap {
-    position: relative;
-    max-width: 78em;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .beAMentorYearHeader {
-    padding-top: 2.5rem;
-    z-index: 14;
-    text-align: center;
-
-    @media only screen and (min-width: $md) {
-      grid-area: HEADER;
-    }
-
-    .yearWelcomeHeading {
-      strong {
-        left: initial;
-        line-height: inherit;
-        top: 0.1em;
-      }
-    }
-  }
-
-  .info-content-heading {
-    font-family: "PoppinsBlackItalic";
-    font-size: 2rem;
-    line-height: 2.5rem;
-  }
-
-  .section-intro-heading {
-    font-size: 4rem;
-    line-height: 5rem;
-  }
+.wrapper {
+  position: relative;
+  max-width: 78em;
+  width: 100%;
+  margin: 0 auto;
 }
