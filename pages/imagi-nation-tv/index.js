@@ -9,7 +9,6 @@ import FeaturedProduct from '../../components/featuredProduct';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import AboutImaginationTV from '../../components/aboutImaginationTV';
 import TypeformModal from '../../components/typeformModal';
-import IntercomChat from '../../components/intercom';
 import scrollToComponent from '../../utils/scrollToComponent';
 import styles from './imagi-nation-tv.module.scss';
 
@@ -57,8 +56,16 @@ const ImagiNationTV = () => {
             >
               Watch live
             </Button>
+            <Button
+              theme={process.env.REACT_APP_THEME}
+              className={`${styles.watchBtn} ${styles.imagineFilmBtn}`}
+              url="/imagine"
+              target="_blank"
+              type="link"
+            >
+              IMAGINE the film
+            </Button>
           </div>
-
           <div className={`${styles.bannerMediaFeature} ${styles.bannerItem} ${styles.welcomeVideoWrapper}`}>
             <VideoPlayer
               url="https://player.vimeo.com/external/410482407.m3u8?s=ba7787f5d791c00de586ebbe81529c8ad01b835f"
@@ -76,7 +83,6 @@ const ImagiNationTV = () => {
               </Paragraph>
             </VideoPlayer>
           </div>
-
         </div>
       </div>
       <AboutImaginationTV scrollHandler={scrollToPanel} />
@@ -133,9 +139,15 @@ or a
                   we do together will be an investment in providing a stage to
                   elevate knowledge.
                 </Paragraph>
-                <div className={styles.becomeAPartnerBtn}>
-                  <IntercomChat label="Get in the game" />
-                </div>
+                <Button
+                  theme={process.env.REACT_APP_THEME}
+                  className={styles.becomeAPartnerBtn}
+                  url="/partner-with-intv"
+                  target="_blank"
+                  type="link"
+                >
+                  Get in the game
+                </Button>
               </div>
             </div>
             <div className={styles.puppetChatSmaller}>
@@ -143,10 +155,9 @@ or a
                 <Button
                   type="text"
                   className={`${styles.typeformAction} ${styles.puppetTitle}`}
+                  onClickFunction={toggleModal}
                 >
-                  Already a partner?
-                  <br />
-                  Talk soon :)
+                  Already a school or uni partner? Click here
                 </Button>
 
               </div>
