@@ -15,10 +15,10 @@ const VIMEO_PLAYER = 'https://player.vimeo.com/external';
 
 const KnowAime = () => (
   <Layout>
-    <div className={styles.knowAime}>
+    <div className={styles.container}>
       <div className={styles.heroPanel}>
-        <div className={styles.knowAimeVideoContainer}>
-          <div className={styles.knowAimeVideoOverlay} />
+        <div className={styles.videoContainer}>
+          <div className={styles.videoOverlay} />
           <div className={styles.backgroundVideoContainer}>
             <video
               autoPlay
@@ -39,7 +39,7 @@ const KnowAime = () => (
           </div>
           <div className={styles.videoHeadline}>
             <div className={styles.headlineWrapper}>
-              <Title type="headingLockup" className={styles.knowAimeBannerHeader} theme={process.env.REACT_APP_THEME}>
+              <Title type="headingLockup" className={styles.bannerHeader} theme={process.env.REACT_APP_THEME}>
                 Get to know
                 <strong>
                   AIME
@@ -50,11 +50,10 @@ const KnowAime = () => (
         </div>
       </div>
       <MovingWaves />
-      <div className={styles.knowAimeGrid}>
+      <div className={styles.grid}>
         <div className={styles.sidebar}>
           <div>
-            <h2 className={styles.featureSidebarTitle}>An intro to AIME</h2>
-            <hr className={styles.purpleSidebarHr} />
+            <Title className={styles.featureSidebarTitle} type="h2Title">An intro to AIME</Title>
           </div>
           <Paragraph>
             The purpose of these resources is to provide a space for you to get to know AIME and
@@ -108,7 +107,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -205,7 +204,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -230,7 +229,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -256,7 +255,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -281,7 +280,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -357,7 +356,7 @@ const KnowAime = () => (
                     >
                       <img
                         alt="play-white"
-                        className={styles.knowAimeImage}
+                        className={styles.image}
                         src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                       />
                     </div>
@@ -416,7 +415,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -450,7 +449,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -473,7 +472,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -496,7 +495,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -521,7 +520,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -544,7 +543,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -567,7 +566,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -594,7 +593,7 @@ const KnowAime = () => (
                 >
                   <img
                     alt="Play"
-                    className={styles.knowAimeImage}
+                    className={styles.image}
                     src={`${ASSETS_URL}/assets/images/play-btn-white.svg`}
                   />
                 </div>
@@ -625,7 +624,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="Know AIME"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/link.svg`}
                     />
@@ -653,7 +652,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="shopping-cart"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/shopping-cart.svg`}
                     />
@@ -681,7 +680,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="shopping-cart"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/shopping-cart.svg`}
                     />
@@ -710,7 +709,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="Know AIME"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/link.svg`}
                     />
@@ -742,7 +741,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="download"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/Download.svg`}
                     />
@@ -775,7 +774,7 @@ const KnowAime = () => (
                   >
                     <img
                       alt="download"
-                      className={styles.knowAimeImage}
+                      className={styles.image}
                       style={{ width: '50px' }}
                       src={`${ASSETS_URL}/assets/images/Download.svg`}
                     />
