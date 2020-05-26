@@ -9,7 +9,7 @@ import styles from './termsOfService.module.scss';
 const TermsAndConditions = ({ entries }) => (
   <Layout>
     {entries && entries.map(({ fields, sys }) => (
-      <div key={sys.id} className={styles.termsAndConditions}>
+      <div key={sys.id}>
         <SimpleBanner
           title={(
             <strong>
@@ -21,7 +21,7 @@ const TermsAndConditions = ({ entries }) => (
           titleStyleClass={styles.bannerHeadingTermsOfService}
           bannerContainerClass={styles.termsOfServiceBanner}
           bannerWrapperClass={styles.bannerWrapper}
-          bannerContentWrapperClass={styles.bannerContentWrapper}
+          bannerContentWrapperClass={styles.contentWrapper}
         />
         <div className={styles.termsSection}>
           <TermPhraseCard contentCards={fields.contentCards} />
