@@ -1,10 +1,10 @@
-@import "../../../styles/base/variables";
+@import "../../../styles/global.module.scss";
 
 .carouselContainer {
   min-height: 71vh;
 }
 
-.carousel {
+.storyCarousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +12,10 @@
 
   @media screen and (min-width: $md) {
     margin-bottom: 4rem;
+  }
+
+  .storyHeaderCarousel :global(.slick-arrow) {
+    display: none !important;
   }
 
   :global(.slick-slider) {
@@ -28,18 +32,19 @@
     margin: 0;
     list-style: none;
     text-align: center;
-
+    
     li {
       cursor: pointer;
       height: 20px;
       margin: 0 2px;
       width: 20px;
       position: relative;
-      display: inline-block;
+      display: none; // @TODO: in staging is not visible but it seems like we wanted to make it visible
+      // display: inline-block;
       width: 20px;
       padding: 0;
 
-      &.slick-active button::before {
+      &:global(.slick-active > button::before) {
         opacity: .75;
       }
 
@@ -112,7 +117,7 @@
       margin: 0 auto;
     }
 
-    h3{
+    h3 {
       font-size: 2rem;
       margin-bottom: 1.2em;
 
@@ -121,7 +126,7 @@
       }
     }
 
-    p{
+    p {
       color: $white;
       display: none;
 
@@ -129,20 +134,6 @@
         display: block;
       }
     }
-
-    .productTitle {
-      color: $white;
-      font-family: $primary-font-family;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      font-weight: 400;
-      margin-top: 0.5rem;
-    }
   }
 }
-
-.carouselLink {
-  color: $white;
-  font-weight: 700;
-} 
 
