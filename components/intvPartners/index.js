@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import Carousel from '../carousel';
-import IntercomChat from '../intercom';
 import styles from './intvPartners.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -88,9 +88,15 @@ const IntvPartners = () => (
         <Title className={styles.subTitle} type="h3Title">
           Who’s already in the game
         </Title>
-        <div className={styles.becomeAPartnerBtn}>
-          <IntercomChat label="Become a partner" />
-        </div>
+        <Button
+          theme={process.env.REACT_APP_THEME}
+          className={styles.becomeAPartnerBtn}
+          url="/partner-with-intv"
+          target="_blank"
+          type="link"
+        >
+          Become a partner
+        </Button>
       </div>
       <Carousel
         type="multipleSlides"
