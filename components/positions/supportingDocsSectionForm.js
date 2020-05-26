@@ -72,7 +72,7 @@ const SupportingDocsSectionForm = ({ requiredDocuments, handleFormFieldChange, v
                 <div className={index < requiredDocuments.length < 1 ? styles.uploadFieldWithMargin : ''}>
                   <FileUploader
                     name={`job-${kebabCase(document)}`}
-                    folderInS3Name="jobs/kevin_test"
+                    folderInS3Name="jobs/applications"
                     maxNumberOfFiles={10}
                     height={500}
                     companionUrl="https://uppy-file-uploader.herokuapp.com/"
