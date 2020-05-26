@@ -37,39 +37,34 @@ const ErrorPage = () => {
         <meta name="description" content="Helmet application" />
         <meta name="prerender-status-code" content="404" />
       </Helmet>
-      <div id="404page" className={styles.errorBoundaryWrapper}>
-        <SimpleBanner
-          title={(
-            <strong>
-              Uh Oh
-            </strong>
-          )}
-          titleType="headingLockup"
-          titleStyleClass={styles.headingJobsSingle}
-          bannerContainerClass={styles.errorHeroBanner}
-          bannerWrapperClass={styles.bannerContainer}
-          bannerContentWrapperClass={styles.subpageBanner}
-          bannerContentClass={styles.subpageBanner}
-        />
-        <div className={styles.page404Container}>
-          <div className={styles.page404Content}>
-            <div>
-              <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
-                {'Oops, this wasn\'t meant to happen.'}
-              </Title>
-              <Paragraph>
-                Sorry for any inconvenience.
-              </Paragraph>
-              <div className={styles.errorInterComWrapper}>
-                <IntercomChat />
-              </div>
-              <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
-                Back to home
-              </Button>
+      <SimpleBanner
+        title={(
+          <strong>
+            Uh Oh
+          </strong>
+        )}
+        groovy
+        titleType="headingLockup"
+        bannerContainerClass={styles.banner}
+      />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div>
+            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+              {'Oops, this wasn\'t meant to happen.'}
+            </Title>
+            <Paragraph>
+              Sorry for any inconvenience.
+            </Paragraph>
+            <div className={styles.intercom}>
+              <IntercomChat />
             </div>
-            <div>
-              <img className={styles.sadFaceError} src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
-            </div>
+            <Button type="link" url="/" theme={process.env.REACT_APP_THEME}>
+              Back to home
+            </Button>
+          </div>
+          <div>
+            <img className={styles.sadFaceError} src={`${ASSETS_URL}/assets/images/illustrations/oops.gif`} alt="sad face error" />
           </div>
         </div>
       </div>
