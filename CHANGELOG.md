@@ -4,6 +4,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.3.1] 2020-05-22
+### Added
+- N/A
+
+### Changed
+- Updated copy on INTV Partnering
+- Linked typeform toggle & partnering page on INTV
+
+### Removed
+- N/A
+
+## [5.3.0] 2020-05-22
+### Added
+- Completed CSS Modules migration
+- Added todo comments
+- [Report to bugnsag when intercom is blocked](https://github.com/aimementoring/website/pull/459)
+- [Added Shop back to mobile menu](https://github.com/aimementoring/website/pull/460)
+- Copy and image updates to campaigns 
+
+### Changed
+- [Changed NextJS settings](https://github.com/aimementoring/website/pull/457)
+
+### Removed
+- [Removed global letter](https://github.com/aimementoring/website/pull/458)
+- [Removed unusued be a mentor form code](https://github.com/aimementoring/website/pull/461)
+
+## [hotfix] 2020-05-15
+### Removed
+- Service worker
+
+## [5.2.4] 2020-05-11
+### Added
+- New IMAGINE CTA on INTV
+
+### Changed
+- Homepage hero & CTAs focusing on IMAGINE the film
+
+### Removed
+
+## [5.2.3] 2020-05-11
+### Added
+- New Homepage CTAs
+
+### Changed
+- Imagine page simplified
+
+### Removed
+
+## [5.2.2] 2020-05-08
+### Added
+- Imagine Page
+
+### Changed
+- Migrating many files to CSS Modules
+
+### Removed
+
 ## [5.2.1] 2020-05-04
 ### Added
 - Intro info panel on INTV
