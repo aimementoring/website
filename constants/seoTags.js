@@ -632,63 +632,6 @@ export const SEO_TAGS = {
       },
     ],
   },
-  '/global-letter': {
-    title: 'Global Letter',
-    canonical: `${process.env.REACT_APP_CANONICAL}global-letter`,
-    languageAlternate: {
-      href: 'https://aimementoring.com/global-letter',
-      hrefLang: 'x-default',
-    },
-    openGraph: {
-      url: 'https://aimementoring.com/global-letter',
-      title: 'Global Letter',
-    },
-    twitter: {
-      title: 'Global Letter',
-    },
-    jsonLd: [
-      {
-        type: 'Article',
-        authorName: '#identity',
-        copyrightHolder: '#identity',
-        copyrightYear: '2018-02-19T18:31:49+11:00',
-        creatorName: '#creator',
-        dateModified: '2018-09-21T20:49:59+10:00',
-        datePublished: '2018-02-19T18:31:49+11:00',
-
-        title: 'Global Letter',
-        images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
-        additionalMetaTags: [
-          {
-            property: 'inLanguage',
-            content: 'en-001',
-          },
-          {
-            property: 'mainEntityOfPage',
-            content: 'https://aimementoring.com/global-letter',
-          },
-        ],
-        name: 'Global Letter',
-        publisherName: '#creator',
-        url: 'https://aimementoring.com/global-letter',
-      },
-      {
-        type: 'BreadcrumbList',
-        itemListElement: [
-          {
-            position: 1,
-            name: 'Home',
-            item: 'https://aimementoring.com/',
-          },
-          {
-            position: 2,
-            name: 'Global Letter',
-            item: 'https://aimementoring.com/global-letter',
-          },
-        ],
-      },
-    ],
-  },
   '/going-global': {
     title: 'AIME Mentoring',
     languageAlternate: {
