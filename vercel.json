@@ -1,0 +1,164 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "REACT_APP_BUGSNAG_KEY": "@react_app_bugsnag_key",
+      "REACT_APP_PRO_IP_KEY": "@react_app_pro_ip_key",
+      "REACT_APP_AIRTABLE_API_KEY": "@react_app_airtable_api_key",
+      "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": "@react_app_contentful_entry_key_redirects",
+      "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories",
+      "REACT_APP_CONTENTFUL_API_KEY": "@react_app_contentful_api_key",
+      "REACT_APP_CONTENTFUL_API_STAGING_key": "@react_app_contentful_api_staging_key",
+      "REACT_APP_CONTENTFUL_SPACE_ID": "@react_app_contentful_space_id",
+      "REACT_APP_FILE_UPLOADER_API_KEY": "@react_app_file_uploader_api_key",
+      "REACT_APP_MAILCHIMP_KEY": "@react_app_mailchimp_key",
+      "REACT_APP_ASSETS_URL": "https://d1muvgoqe3g8vw.cloudfront.net/website",
+      "REACT_APP_HOST_ENV": "staging",
+      "REACT_APP_PORTAL_API": "https://aime-portal-api-staging.herokuapp.com",
+      "REACT_APP_THEME": "rainbow",
+      "REACT_APP_INTERCOM_APP_ID": "g36n1wzq",
+      "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": "560dd7f8110349a17d6e96c46d02a0ce",
+      "REACT_APP_SHOPIFY_DOMAIN": "aimementoring.myshopify.com",
+      "REACT_APP_SHOP_PRODUCT_LINK": "https://shop.aimementoring.com/products",
+      "REACT_APP_DONATE_USERNAME": "website@aimementoring.com",
+      "REACT_APP_DONATE_PASSWORD": "Lgw4)zvb",
+      "REACT_APP_DONATE_ORGANISATION_UUID": "7eafc9b2-404f-11e7-bc97-06facaa3db7b",
+      "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE": "appiTNzrkMrckYbqk",
+      "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": "rec8N1DIykET8T9SF",
+      "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": "redirectEntries",
+      "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": "post",
+      "REACT_APP_GOOGLE_TAG_MANAGER": "GTM-NK5SFHW",
+      "REACT_APP_CDN_ROOT": "https://d2ylaz7bdw65jx.cloudfront.net",
+      "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "master",
+      "REACT_APP_HOST": "next",
+      "REACT_APP_MAILCHIMP_API": "https://us12.api.mailchimp.com/3.0",
+      "NEXTJS_TARGET": "serverless"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/service-worker.js$",
+      "dest": "/_next/static/service-worker.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    {
+      "src": "/reports/2016-annual-story",
+      "dest": "https://assets.ctfassets.net/iz0aikshgysc/2YLYCOiaaIC4H8uGoGsepG/dbdae023080e739e97f152c8c6f5e223/2016-annual-story.pdf",
+      "status": 302
+    },
+    {
+      "src": "/impact/global-letter",
+      "dest": "https://v4.aimementoring.com/global-letter/",
+      "status": 302
+    },
+    {
+      "src": "/global-letter/",
+      "dest": "https://v4.aimementoring.com/global-letter/",
+      "status": 302
+    },
+    {
+      "src": "/strategy",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/strategy/AIME_strat_19.02.pdf",
+      "status": 302
+    },
+    {
+      "src": "/harvard-case-study-b",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/portal/pdfs/harvard-case-studies/AIME+High+-+Harvard+B.PDF",
+      "status": 302
+    },
+    {
+      "src": "/harvard-case-study-a",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/portal/pdfs/harvard-case-studies/AIME+High+-+Harvard+A.PDF",
+      "status": 302
+    },
+    {
+      "src": "/be-a-ceo4good",
+      "dest": "https://d1muvgoqe3g8vw.cloudfront.net/website/assets/pdf/campaigns/ceo-4-good/CEO-4-good_2204.pdf",
+      "status": 302
+    },
+    {
+      "src": "/fire-support",
+      "dest": "https://v4.aimementoring.com/fire-support/",
+      "status": 302
+    },
+    {
+      "src": "/founder",
+      "dest": "/jack-manning-bancroft",
+      "status": 301
+    },
+    {
+      "src": "/travelrequest",
+      "dest": "https://airtable.com/shrKAQbAS3bw8M8ux",
+      "status": 302
+    },
+    {
+      "src": "/theatre-of-education",
+      "dest": "https://aimetheatre.com",
+      "status": 302
+    },
+    {
+      "src": "/shop",
+      "dest": "https://shop.aimementoring.com",
+      "status": 302
+    },
+    {
+      "src": "/nextchapter",
+      "dest": "https://airtable.com/shrH2uPbQxmlWPlVt",
+      "status": 302
+    },
+    {
+      "src": "/mentor/eoi",
+      "dest": "/be-a-mentor/",
+      "status": 302
+    },
+    {
+      "src": "/mentor",
+      "dest": "/be-a-mentor",
+      "status": 302
+    },
+    {
+      "src": "/jobs/",
+      "dest": "/positions",
+      "status": 302
+    },
+    {
+      "src": "/jobs",
+      "dest": "/positions",
+      "status": 302
+    },
+    {
+      "src": "/be-a-partner",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/the-impact",
+      "dest": "/impact",
+      "status": 302
+    },
+    {
+      "src": "/download-the-mentor",
+      "dest": "https://www.dropbox.com/s/8r9w6bu6dupde4n/The%20Mentor%20by%20Jack%20Manning%20Bancroft.zip?dl=1",
+      "status": 302
+    },
+    {
+      "src": "/be-a-friend",
+      "dest": "/contact",
+      "status": 302
+    },
+    {
+      "src": "/strategy2019",
+      "dest": "https://aime-web-production.s3-ap-southeast-2.amazonaws.com/resources/AIME_Strategy_PR.pdf",
+      "status": 302
+    }
+  ],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    }
+  ]
+}

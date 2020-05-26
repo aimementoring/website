@@ -1,4 +1,4 @@
-@import "../../styles/base/variables";
+@import "../../styles/global.module.scss";
 
 .heroPanelWrapper {
   position: relative;
@@ -395,6 +395,7 @@
 .sunset {
   background: linear-gradient(45deg, $magenta, #ff9835);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -499,11 +500,13 @@
     font-style: normal;
     background: linear-gradient(45deg, $magenta, $orange);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 
     &.greenGradient {
       background: linear-gradient(45deg, $cyan, $green);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 1.5em;
     }
@@ -701,7 +704,7 @@
   }
 }
 
-:global {
+:global() {
   .intl-tel-input {
     .selected-dial-code {
       text-align: left;
