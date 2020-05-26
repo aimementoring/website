@@ -1,6 +1,50 @@
 @import "../../../styles/base/variables";
 
 /* Toggle actions*/
+$particleSize: 30vmax;
+$animationDuration: 20s;
+$amount: 10;
+
+/* List of menu links */
+$overview: overview;
+$getToKnowAime: getToKnowAime;
+$ourImpact: ourImpact;
+$ceoAndFounder: ceoAndFounder;
+$intv: intv;
+$stories: stories;
+$beAMentor: beAMentor;
+$workWithUs: workWithUs;
+$getInTouch: getInTouch;
+$donateToAime: donateToAime;
+
+$Btn: Btn;
+
+$img-list: (
+  $overview    $Btn     'assets/menu/'    '.png',
+	$getToKnowAime    $Btn     'assets/menu/'    '.png',
+	$ourImpact    $Btn     'assets/menu/'    '.png',
+	$ceoAndFounder    $Btn     'assets/menu/'    '.png',
+	$intv    $Btn     'assets/menu/'    '.png',
+	$stories    $Btn     'assets/menu/'    '.png',
+	$beAMentor    $Btn     'assets/menu/'    '.png',
+	$workWithUs    $Btn     'assets/menu/'    '.png',
+	$getInTouch    $Btn     'assets/menu/'    '.png',
+  $donateToAime    $Btn     'assets/menu/'    '.png',
+);
+
+@each $value in $img-list {
+  .#{nth($value, 1)+ nth($value, 2)}:before {
+		background-image: url($cdnRoot + nth($value, 3) + nth($value, 1) + nth($value, 4));
+    }
+}
+
+@keyframes movebg {
+  100% {
+		transform: rotate(360deg);
+		z-index:1;
+  }
+}
+
 @keyframes move {
 	0% {
 		background-position: 2px 32px;
@@ -31,6 +75,7 @@
 	justify-content: center;
 	opacity:0;
 	transition: all 0s ease 5s;
+	z-index:3;
 }
 
 .menuBg {
@@ -52,7 +97,39 @@
 	justify-content: center;
 	opacity:0;
 }
-    
+
+.blur, .blur:hover {
+	width: $particleSize;
+	height: $particleSize;
+	border-radius:50%;
+	backface-visibility: hidden;
+	position: absolute;
+	animation-name: movebg;
+	animation-duration: $animationDuration;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	opacity:0;
+	z-index:1;
+	$colors: (
+		rgb(135, 60, 131),
+		#E45A84,
+		#FFACAC
+	);
+	@for $i from 1 through $amount {
+		&:nth-child(#{$i}) {
+			color: nth($colors, random(length($colors)));
+			top: random(100) * 1%;
+			left: random(100) * 1%;
+			animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+			animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+			transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+			$blurRadius: (random() + 0.5) * $particleSize * 0.5;
+			$x: if(random() > 0.5, -1, 1);
+			box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+		}
+	}
+}
+
 .checkboxToggle {
 	position: absolute;
 	top: 0;
@@ -82,11 +159,15 @@
 					transition: transform .75s ease 0s;
 					visibility: visible;
 					background:linear-gradient(to bottom right, rgba(145,53,240,1), rgba(255,152,53,1));
-					opacity:1;
+					opacity:.97;
 					.menuContent{
 						opacity: 1;
 						transition: opacity 0.4s ease 0.4s;
 						transition-delay: 1s;
+					}
+					.blur {
+						opacity:1;
+						transition: .75s ease .5s;
 					}
 				}
       }
@@ -101,6 +182,7 @@
 		}
 		+ {
 			.hamburger {
+				z-index:6;
 				path {
 					stroke: #fff;
 				}
@@ -185,8 +267,9 @@
 	overflow-y: auto;
 	display: flex;
 	position: absolute;
-	z-index: 3;
+	z-index: 103;
 	justify-content: center;
+	position:relative;
   a {
     color: rgba(255,255,255,1);
     text-decoration: none;
@@ -261,7 +344,7 @@
 	display: inline;
 	cursor: pointer;
 	transition: color 0.4s ease;
-	z-index: 5;
+	z-index: 104;
   padding-bottom: 15px;
 	font-weight: 100;
 	border: 0;
@@ -276,7 +359,7 @@
 	&:after {
 		content: '';
 		position: absolute;
-		z-index: 1;
+		z-index: 103;
 		bottom: -0.15em;
 		left: 0;
 		width: 100%;
@@ -296,7 +379,7 @@
 	max-height: 0em;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 3;
+	z-index: 104;
 	transform: scale(0);
 	transition: all .7s ease;
 	ul {
@@ -315,6 +398,9 @@
 					&:before {
 					display:none;
 					}
+					&:after {
+						opacity:0;
+						}
 				}
 			}
 		}
@@ -340,7 +426,6 @@
 
 			&:before {
 				content: '';
-				background: url("https://i.imgur.com/LroEqIP.png");
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
 				width: 5em;
@@ -393,44 +478,4 @@
 	stroke-linecap: round;
 	stroke-miterlimit: 10;
   transition: .5s ease;
-}
-
-
-$particleSize: 50vmin;
-$animationDuration: 20s;
-$amount: 10;
-.menuBg .blur {
-  width: $particleSize;
-  height: $particleSize;
-  border-radius: $particleSize;
-  backface-visibility: hidden;
-  position: absolute;
-  animation-name: movebg;
-  animation-duration: $animationDuration;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  $colors: (
-    rgb(135, 60, 131),
-    #E45A84,
-    #FFACAC
-  );
-  @for $i from 1 through $amount {
-    &:nth-child(#{$i}) {
-      color: nth($colors, random(length($colors)));
-      top: random(100) * 1%;
-      left: random(100) * 1%;
-      animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
-      animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
-      transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
-      $blurRadius: (random() + 0.5) * $particleSize * 0.5;
-      $x: if(random() > 0.5, -1, 1);
-      box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
-    }
-  }
-}
-
-@keyframes movebg {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
 }
