@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Button from 'aime-blueprint/lib/components/button';
 import Carousel from '../carousel';
 import styles from './imaginationTvCarousel.module.scss';
 
@@ -15,10 +16,19 @@ const ImaginationTvCarousel = () => (
       color="lightblue"
     >
       <Paragraph>
-            World-class teachers and knowledge holders, across our schools and
-            universities and further abroad; the philosophers & big picture thinkers
-            of the world.
+        Knowledge-holders, teachers, philosophers, and big picture
+        thinkers distill the complexity of today to help us imagine
+        and create tomorrow.
       </Paragraph>
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOSJwVsb3_aKwhQPI9Cw0w-o"
+        target="_blank"
+        type="link"
+        containerClassName={styles.btnPlaylist}
+      >
+        Take a look
+      </Button>
     </ImaginationTvCard>
     <ImaginationTvCard
       day="Tuesday"
@@ -27,31 +37,31 @@ const ImaginationTvCarousel = () => (
       color="aquamarine"
     >
       <Paragraph>
-        <strong>
-              Presidential Speech for IMAGI-NATION
-        </strong>
+        Youngsters from across the globe reflect on the world they see around them,
+        show they are the solution, and inspire us to imagine tomorrow. Includes:
       </Paragraph>
       <Paragraph>
-            Every week, students from across the world are given the stage to deliver a
-            3-minute speech as the President of IMAGI-NATION. They will focus on the topic
-            of the week, and use the space to inspire us all to make sense of the world
-            today so we can imagine the world tomorrow.
+        <strong>President of IMAGI-NATION speeches</strong>
+        : Students are given thestage to deliver a 3-minute presidential speech on
+        the topic of the week and use the space to inspire us all to imagine
+        the world tomorrow.
       </Paragraph>
       <Paragraph>
-        <strong>
-              CHAOS Classroom
-        </strong>
+        <strong>Failure Time</strong>
+        : Students take part in a virtual classroom where they
+        try new things and learn through failure.
       </Paragraph>
-      <Paragraph>
-            Join AIME Founder & CEO Jack Manning Bancroft and students from across
-            Australia and around the world who will take part in a 7 minute hyperdrive
-            lesson on the topic theme of the week. See a real life case study as to how
-            to run a classroom digitally amongst the chaos of today.
-      </Paragraph>
-      <Paragraph>
-            We’ll also be inviting boss human guest teachers take on the reins of
-            the CHAOS Classroom and run a session on any one of our 21 core values.
-      </Paragraph>
+
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOTLdpQpUi7bPpDD9jig94Q6"
+        target="_blank"
+        type="link"
+        containerClassName={styles.btnPlaylist}
+      >
+        Take a look
+      </Button>
+
     </ImaginationTvCard>
     <ImaginationTvCard
       day="Wednesday"
@@ -60,16 +70,20 @@ const ImaginationTvCarousel = () => (
       color="orange"
     >
       <Paragraph>
-            Those building the world today and tomorrow.
-            There’s no limit to what we believe is “design”.
+        Those building the world today and tomorrow explore the mindsets, processes,
+        philosophy and thinking patterns that help them create solutions.
       </Paragraph>
-      <Paragraph>
-            You’ll have the chance to dance around a big picture topic with 2
-            other panelists. We are elevating the knowledge of designers who have
-            got us here today, who have created the world we live in. We are
-            exploring the mindsets, processes, philosophy and thinking patterns
-            that have taken you to where you are now.
-      </Paragraph>
+
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOQ2sI2h2FOyR3bCATFcsnBv"
+        target="_blank"
+        type="link"
+        containerClassName={styles.btnPlaylist}
+      >
+        Take a look
+      </Button>
+
     </ImaginationTvCard>
     <ImaginationTvCard
       day="Thursday"
@@ -78,58 +92,20 @@ const ImaginationTvCarousel = () => (
       color="purple"
     >
       <Paragraph>
-        <strong>
-              &quot;Cancelled, not cancelled&quot;
-        </strong>
+        Giving the stage to people scheduled to speak or perform at now-cancelled
+        events to share their wisdom and knowledge with the world.
       </Paragraph>
-      <Paragraph>
-            Each week AIME gives the stage to a festival or conference that has been
-            cancelled to have some level of publicity and promotion.
-      </Paragraph>
-      <Paragraph>
-            To inspire marginalised kids to rise up and change their world.
-            To inspire us all to seek knowledge, to find inspiration in ideas, and
-            embrace the kindness of someone sharing what they know with us.
-      </Paragraph>
-    </ImaginationTvCard>
-    <ImaginationTvCard
-      day="Wednesday"
-      title="Designers"
-      image="designers_tv"
-      color="orange"
-    >
-      <Paragraph>
-            Those building the world today and tomorrow.
-            There’s no limit to what we believe is “design”.
-      </Paragraph>
-      <Paragraph>
-            You’ll have the chance to dance around a big picture topic with 2
-            other panelists. We are elevating the knowledge of designers who have
-            got us here today, who have created the world we live in. We are
-            exploring the mindsets, processes, philosophy and thinking patterns
-            that have taken you to where you are now.
-      </Paragraph>
-    </ImaginationTvCard>
-    <ImaginationTvCard
-      day="Thursday"
-      title="Keynote"
-      image="keynote_tablet"
-      color="purple"
-    >
-      <Paragraph>
-        <strong>
-              &quot;Cancelled, not cancelled&quot;
-        </strong>
-      </Paragraph>
-      <Paragraph>
-            Each week AIME gives the stage to a festival or conference that has been
-            cancelled to have some level of publicity and promotion.
-      </Paragraph>
-      <Paragraph>
-            To inspire marginalised kids to rise up and change their world.
-            To inspire us all to seek knowledge, to find inspiration in ideas, and
-            embrace the kindness of someone sharing what they know with us.
-      </Paragraph>
+
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOR8GKctCAnVKlAeXW3wn3lD"
+        target="_blank"
+        type="link"
+        containerClassName={styles.btnPlaylist}
+      >
+        Take a look
+      </Button>
+
     </ImaginationTvCard>
     <ImaginationTvCard
       day="Friday"
@@ -138,27 +114,21 @@ const ImaginationTvCarousel = () => (
       color="pink"
     >
       <Paragraph>
-        <strong>
-              What can we create in 25 minutes?
-        </strong>
+        Visual artists from all disciplines take us on a journey of live creation,
+        from blank space to work of art, to the accompanying sound of musicians
+        with a message.
       </Paragraph>
-      <Paragraph>
-            Up to 5 artists will join us for 25 minutes to set out on a creative
-            adventure. To make something from nothing. To show us that we all have
-            art in us, we can all create, if only we begin to imagine.
-      </Paragraph>
-      <Paragraph>
-        <strong>
-              Musician performance &quot;Let the music play&quot;
-        </strong>
-      </Paragraph>
-      <Paragraph>
-            Each week, AIME will profile musicians who will have the chance to play
-            a song live on IMAGI-NATION TV. We see the value of music to bring people
-            together, to inspire us in dark times, to give us love and hope. This
-            segment is to keep the music playing in the face of concerts, festivals
-            and gigs being cancelled worldwide.
-      </Paragraph>
+
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        url="https://www.youtube.com/playlist?list=PLjfNcXcq0TOSQ7S96SmNa5GItQdNjY_9d"
+        target="_blank"
+        type="link"
+        containerClassName={styles.btnPlaylist}
+      >
+        Take a look
+      </Button>
+
     </ImaginationTvCard>
   </Carousel>
 );
