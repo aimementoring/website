@@ -1,15 +1,15 @@
-import React from 'react';
-import a from '../../common/link';
-import styles from './index.scss';
-import useDonate from '../../../hooks/useDonate';
-import IntercomChat from '../../intercom';
+import React, { useContext } from 'react';
+import dynamic from 'next/dynamic';
+import styles from './fullScreenMenu.module.scss';
+import DonationContext from '../../../context';
+
+const IntercomChat = dynamic(() => import('../../intercom'));
 
 const FullScreenMenu = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <input className={styles.checkboxToggle} type="checkbox" />
       <div className={styles.hamburger}>
         <svg
@@ -133,8 +133,8 @@ const FullScreenMenu = () => {
                     <li>
                       <button
                         type="button"
-                        onClick={toggleDonateModal}
-                        onKeyPress={toggleDonateModal}
+                        onClick={toggleDonationModal}
+                        onKeyPress={toggleDonationModal}
                         role="link"
                         className={`${styles.subLink} ${styles.donateToAimeBtn}`}
                       >
@@ -161,8 +161,8 @@ const FullScreenMenu = () => {
               <li className={styles.listItem}>
                 <button
                   type="button"
-                  onClick={toggleDonateModal}
-                  onKeyPress={toggleDonateModal}
+                  onClick={toggleDonationModal}
+                  onKeyPress={toggleDonationModal}
                   role="link"
                   className={`${styles.listLinkScnd} ${styles.donateToAimeBtn}`}
                 >
@@ -173,7 +173,7 @@ const FullScreenMenu = () => {
           </nav>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default FullScreenMenu;
