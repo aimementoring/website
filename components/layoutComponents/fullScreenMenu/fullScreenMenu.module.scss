@@ -41,7 +41,7 @@ $img-list: (
 @keyframes movebg {
   100% {
 		transform: translate3d(0, 0, 1px) rotate(360deg);
-		z-index:1;
+		z-index:-99;
   }
 }
 
@@ -112,7 +112,6 @@ $img-list: (
 	height: $particleSize;
 	border-radius:50%;
 	backface-visibility: hidden;
-	position: absolute;
 	animation-name: movebg;
 	animation-duration: $animationDuration;
 	animation-timing-function: linear;
@@ -277,7 +276,8 @@ $img-list: (
 	position: absolute;
 	z-index: 103;
 	justify-content: center;
-	position:relative;
+	position:absolute;
+	transform:translate3d(0, 0, 1px);
   a {
     color: rgba(255,255,255,1);
     text-decoration: none;
