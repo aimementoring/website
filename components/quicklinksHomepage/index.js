@@ -1,18 +1,17 @@
 // @TODO: Replace anchor by an element as a Blueprint button
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import useDonate from '../../hooks/useDonate';
+import DonationContext from '../../context';
 import styles from './quicklinksHomepage.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 const QuicklinksHomepage = (props) => {
   const { scrollHandler, getInvolvedRef } = props;
-  // eslint-disable-next-line no-unused-vars
-  const [modalVisible, toggleDonateModal] = useDonate();
+  const { toggleDonationModal } = useContext(DonationContext);
 
   return (
     <div className={styles.quicklinksPanel} ref={getInvolvedRef}>
@@ -89,14 +88,14 @@ const QuicklinksHomepage = (props) => {
         </div>
 
         <div className={styles.quicklinkGridItem}>
-          <div onClick={toggleDonateModal} onKeyPress={toggleDonateModal} role="presentation" className={styles.quicklinkImage}>
+          <div onClick={toggleDonationModal} onKeyPress={toggleDonationModal} role="presentation" className={styles.quicklinkImage}>
             <img
               src={`${ASSETS_URL}/assets/images/illustrations/bunch-flowers.png`}
               alt="Bunch of Flowers"
             />
           </div>
           <Paragraph>
-            <div onClick={toggleDonateModal} onKeyPress={toggleDonateModal} role="presentation" className={styles.quicklinkTitle}>
+            <div onClick={toggleDonationModal} onKeyPress={toggleDonationModal} role="presentation" className={styles.quicklinkTitle}>
               Donate
             </div>
           </Paragraph>

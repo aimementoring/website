@@ -9,38 +9,36 @@ const Testimonials = dynamic(() => import('../../components/testimonials'));
 
 const TheMentor = () => (
   <Layout>
-    <div className={styles.theMentor}>
-      <div className={styles.fullWidthWrap}>
-        <div className={styles.containerTheMentor}>
-          <SimpleBanner
-            title="The Mentor"
-            titleType="headingLockup"
-            groovy
-            bannerContainerClass={styles.fullWidthWrap}
-            bannerWrapperClass={styles.containerTheMentor}
-            bannerContentWrapperClass={styles.componentSimpleBanner}
-            bannerContentClass={styles.mentorBannerContent}
-            copy="The Mentor, by AIME Founder and CEO Jack Manning Bancroft is the story of how
-              it all started. Gain a real insight into contemporary Indigenous Australia.
-              How from humble beginnings a young Indigenous man&apos;s journey through university
-              lead to starting a fire that tackles education inequality across Australia and
-              now the world."
-            button={(
-              <Button
-                theme={process.env.REACT_APP_THEME}
-                aria-label="buy-copy"
-                type="link"
-                target="_blank"
-                rel="noopener noreferrer"
-                url="https://shop.aimementoring.com/products/the-mentor"
-              >
-                Grab a copy
-              </Button>
-            )}
-          />
-          <div className={styles.testimonials}>
-            <Testimonials />
-          </div>
+    <div>
+      <div className={styles.container}>
+        <SimpleBanner
+          title="The Mentor"
+          titleType="headingLockup"
+          groovy
+          bannerContainerClass={styles.fullWidthWrap}
+          bannerWrapperClass={styles.container}
+          bannerContentWrapperClass={styles.banner}
+          bannerContentClass={styles.bannerContent}
+          copy="The Mentor, by AIME Founder and CEO Jack Manning Bancroft is the story of how
+            it all started. Gain a real insight into contemporary Indigenous Australia.
+            How from humble beginnings a young Indigenous man&apos;s journey through university
+            lead to starting a fire that tackles education inequality across Australia and
+            now the world."
+          button={(
+            <Button
+              theme={process.env.REACT_APP_THEME}
+              aria-label="buy-copy"
+              type="link"
+              target="_blank"
+              rel="noopener noreferrer"
+              url="https://shop.aimementoring.com/products/the-mentor"
+            >
+              Grab a copy
+            </Button>
+          )}
+        />
+        <div className={styles.testimonials}>
+          <Testimonials />
         </div>
       </div>
     </div>
