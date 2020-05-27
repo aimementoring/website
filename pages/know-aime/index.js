@@ -48,8 +48,8 @@ const KnowAime = () => (
             </div>
           </div>
         </div>
+        <MovingWaves />
       </div>
-      <MovingWaves />
       <div className={styles.grid}>
         <div className={styles.sidebar}>
           <div>
