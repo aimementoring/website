@@ -46,16 +46,6 @@ const FullScreenMenu = () => {
 
       <div className={styles.menuContainer}>
         <div className={styles.menuBg}>
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
-          <span className={styles.blur} />
           <nav className={styles.menuContent}>
             <ul className={styles.menuMain}>
               <li className={styles.listItem}>
