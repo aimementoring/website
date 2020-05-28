@@ -84,7 +84,7 @@ IntercomChat.propTypes = {
 };
 
 IntercomChat.defaultProps = {
-  label: 'Get in Touch',
+  label: 'Get in touch',
   classNames: styles.navBtn,
 };
 
