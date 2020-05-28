@@ -1,10 +1,10 @@
 @import "../../styles/global.module.scss";
 
 .banner {
-  composes: banner from '../../styles/patterns.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
 }
 
 .plainContentWrapper {
-  composes: wrapper from '../../styles/patterns.module.scss';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 }
