@@ -29,7 +29,7 @@ const WavyDonateSection = () => {
           <path id="donateBottomPath" d="M-45.4 12.3c13.9-.6 13.1-5.8 24.7-5.8s12.8 5.4 24.6 5.8c11.8.4 12.5-5.8 25.2-5.8s12.6 5.8 25 5.8 12.5-5.8 24.7-5.8 12.4 5.7 24.9 5.8h12.4" />
           <text className={styles.donateSvgText} width="100">
             <textPath href="#donateBottomPath" alignmentBaseline="top" startOffset="100%" textAnchor="left" clipPath="url(#svgShape)">
-              {'DONATE TO IN{TV}'}
+              {'DONATE TO IMAGI-NATION{TV}'}
               <animate attributeName="startOffset" from="100%" to="0%" begin="0s" dur="15s" repeatCount="indefinite" />
             </textPath>
           </text>
