@@ -62,12 +62,12 @@ export const HEADER_MENU_ITEMS = [
   }, {
     title: 'Get Inspired',
     subTitle: 'Visit Imagi-nation',
-    description: 'Read our stories, experience IN{TV} & more',
+    description: 'Read our stories, experience IMAGI-NATION{TV} & more',
     links: [
       {
         to: '/imagi-nation-tv',
         as: '/imagi-nation-tv',
-        linkText: 'IN{TV}',
+        linkText: 'IMAGI-NATION{TV}',
       },
       {
         to: '/stories/[categorySlug]',
@@ -140,7 +140,7 @@ export const CTA_GRID_CAMPAIGNS = [
     description: 'The home of the hoodie that changed the world',
   },
   {
-    title: 'IN{TV}',
+    title: 'IMAGI-NATION{TV}',
     link: '/imagi-nation-tv',
     button: 'Watch it',
     description: 'Putting a mentor in the home every day!',
