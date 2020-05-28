@@ -90,7 +90,7 @@ const FullScreenMenu = () => {
                   <ul>
                     <li>
                       <a href="/imagi-nation-tv" className={`${styles.subLink} ${styles.intvBtn}`}>
-                        {'IMAGINATION{TV}'}
+                        {'IMAGI-NATION{TV}'}
                       </a>
                     </li>
                     <li>
