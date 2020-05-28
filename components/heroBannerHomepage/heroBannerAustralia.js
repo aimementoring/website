@@ -39,7 +39,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           </Button>
           <Button
             type="link"
-            text="Learn about IN{TV}"
+            text="Visit IMAGI-NATION{TV}"
             url="/imagi-nation-tv"
             theme={process.env.REACT_APP_THEME}
             className={`${styles.triBtn} ${styles.imagiDonate}`}
@@ -81,7 +81,7 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           rel="noopener noreferrer"
           href="/imagi-nation-tv"
         >
-          {'See what IN{TV} is about'}
+          {'See what IMAGI-NATION{TV} is all about'}
         </a>
       </div>
     </div>
