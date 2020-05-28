@@ -96,14 +96,14 @@ const ImagiNationTV = () => {
             imageUrl={`${ASSETS_URL}/assets/images/apparel/hoodie-imagination.jpg`}
             pretitle="Check it out …"
             title="Imagi-Nation Hoodie"
-            text={'Support IN{TV}, checkout the Imagi-Nation Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
+            text={'Support IMAGI-NATION{TV}, checkout the IMAGI-NATION Hoodie for sale over at our apparel shop. Every sale from this hoodie goes towards keeping mentors in our global virtual classrooms!'}
             linkUrl={`${SHOP_PRODUCT_LINK}/imagi-nation-hoodie`}
             linkText="Buy a Hoodie"
           />
         </section>
         <DoubleCurvedLine />
         <section ref={scrollToThisRef} className={styles.partneringCTASection}>
-          <Title type="h3Title" className={styles.partneringHeading}>{'PARTNERING WITH IN{TV}'}</Title>
+          <Title type="h3Title" className={styles.partneringHeading}>{'PARTNERING WITH IMAGI-NATION{TV}'}</Title>
           <div className={styles.puppetsChatWrapper}>
             <TypeformModal visible={showModal} toggleModal={toggleModal} />
             <div className={styles.puppetChat}>
