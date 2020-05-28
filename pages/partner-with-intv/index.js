@@ -4,12 +4,12 @@
 import React, { useState, useRef, useContext } from 'react';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
-import DonationContext from '../../context';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
+import DonationContext from '../../context';
 import VideoPlayer from '../../components/videoPlayer';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
@@ -193,8 +193,12 @@ const PartnerWithIntv = () => {
                 curriculum content for teachers to incorporate IN{TV} into their
                 daily lesson plans. It will allow us to have our best shot together
                 to get a mentor into every kid’s life every single day - `}
-                {/* TODO this link is broken need to find replacement*/}
-                <a href="https://en.unesco.org/covid19/educationresponse" target="_blank">
+                {/* TODO this link is broken need to find replacement */}
+                <a
+                  href="https://en.unesco.org/covid19/educationresponse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   the number of kids affected by COVID-19 school closures stood
                   at almost almost 1.5 billion as of 28 March.
                 </a>
@@ -651,10 +655,16 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    {'Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily.'}
+                    Traditionally, AIME has been focused on marginalised kids but we can’t sit on
+                    the sidelines when all kids are struggling to make sense of what education
+                    means right now. We are here for parents, teachers and kids to bring mentors
+                    into the game to help motivate, coach, counsel and inspire us to make sense of
+                    today and imagine tomorrow. We want to make hope the virus that these kids
+                    catch daily.
                   </Paragraph>
                   <Paragraph>
-                    {'For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020.'}
+                    For existing AIME school partners and the first 300 new school partners that
+                    sign on, the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
                     {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
@@ -750,8 +760,8 @@ const PartnerWithIntv = () => {
                     curriculum and publishing the opportunity for students far and wide.`}
                   </Paragraph>
                   <Paragraph>
-                    For existing AIME university partners and the first 100 new university partners that sign on, 
-                    the partnership will be for free for 2020.
+                    For existing AIME university partners and the first 100 new university partners
+                    that sign on, the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
                     AIME will provide:
@@ -840,7 +850,8 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                   <Paragraph>
-                    And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.
+                    And we’ll work with you closely to help lift up a system that sees way too many
+                    kids left behind across the planet.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -948,24 +959,25 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    If you want to see a mentor in every kid's life every single day - someone who
-                    teaches them how to think, not what to think - then invest in an Imagination Agenda
-                    to transform the world. If you believe that marginalised kids are not the problem,
-                    but are the solution if given the stage; if you know the power of entrepreneurs to
-                    change the world; if you know imagination is critical to change the world, then this
-                    is the investor section that says:&nbsp;
+                    If you want to see a mentor in every kid&apos;s life every single day - someone
+                    who teaches them how to think, not what to think - then invest in an
+                    Imagination Agenda to transform the world. If you believe that marginalised
+                    kids are not the problem, but are the solution if given the stage; if you know
+                    the power of entrepreneurs to change the world; if you know imagination is
+                    critical to change the world, then this is the investor section that
+                    says:&nbsp;
                     <em>
-                      ‘Hey you guys, I’m here and on your team. Let’s do this! Use this funding for anything
-                      you need to bring this show to life, to amplify it and light up kids’ minds. This is your
-                      untied Imagination Fund.’
+                      ‘Hey you guys, I’m here and on your team. Let’s do this! Use this funding for
+                      anything you need to bring this show to life, to amplify it and light up
+                      kids’ minds. This is your untied Imagination Fund.’
                     </em>
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    In this space we imagine philanthropists who have rocked the world would donate funds to
-                    work with us; this is for the investors who have made their way and who know that with a
-                    little rocket fuel, you can go to the moon.
+                    In this space we imagine philanthropists who have rocked the world would donate
+                    funds to work with us; this is for the investors who have made their way and
+                    who know that with a little rocket fuel, you can go to the moon.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -1071,7 +1083,7 @@ const PartnerWithIntv = () => {
                     value of giving space for parents to have a moment during the day
                     with their kids to bring mentors into their lives. And to make it
                     part of the daily diet by scheduling it as a meeting invite for all
-                    staff to bring mentors into your teams’ lives every single day. 
+                    staff to bring mentors into your teams’ lives every single day.
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -1083,10 +1095,10 @@ const PartnerWithIntv = () => {
                     action. Considering the challenges that many of us are facing 
                     with kids at home, IMAGI-NATION{TV} is a gift for all parents 
                     to sit down with their kids for an hour a day. 
-                    And if you don’t have kids, it’s a gift for the kid inside you!`} 
+                    And if you don’t have kids, it’s a gift for the kid inside you!`}
                   </Paragraph>
                   <Paragraph>
-                    {`Check out `}
+                    Check out
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1094,8 +1106,8 @@ const PartnerWithIntv = () => {
                     >
                       this article in Harvard Business Review
                     </a>
-                      &nbsp;from 2 BCG Henderson Institute thinkers explaining how imagination helps businesses
-                      succeed and why it’s even more critical in the current climate.
+                      &nbsp;from 2 BCG Henderson Institute thinkers explaining how imagination helps
+                      businesses succeed and why it’s even more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
                     Do you care? Do you want to become a Corporate Wellbeing Partner?
