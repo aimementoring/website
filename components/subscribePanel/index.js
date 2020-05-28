@@ -42,7 +42,7 @@ const SubscribePanel = () => {
               BOARD THE AIME ROCKET SHIP
             </Title>
             <Paragraph className={styles.subscribeDetails} theme={process.env.REACT_APP_THEME}>
-              {'Receive IN{TV} latest, job offers, Hoodies, Sunday Kindness & more'}
+              {'Receive IMAGI-NATION{TV} latest, job offers, Hoodies, Sunday Kindness & more'}
             </Paragraph>
             <form
               acceptCharset="UTF-8"
