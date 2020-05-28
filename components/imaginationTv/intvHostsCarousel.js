@@ -29,7 +29,7 @@ const IntvHostsCarousel = () => (
       image="puppet-jmb"
     >
       <Paragraph>
-        {'Executive Producer & Founder of IN{TV}.'}
+        {'Executive Producer & Founder of IMAGINATION{TV}.'}
         <br />
         CEO & Founder of AIME
       </Paragraph>
