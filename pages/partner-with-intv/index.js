@@ -68,7 +68,7 @@ const PartnerWithIntv = () => {
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
-          <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
+          <li><Title type="h5Title">{'IMAGI-NATION{TV}'}</Title></li>
           <li><a onClick={() => scrollTo(hostsRef)}>Meet the hosts</a></li>
           <li><a onClick={() => scrollTo(formatRef)}>The format</a></li>
           <li><a onClick={() => scrollTo(mentorsRef)}>The mentors</a></li>
@@ -341,7 +341,7 @@ const PartnerWithIntv = () => {
             </Title>
             <img
               src={`${ASSETS_URL}/assets/images/imagi-nation-tv/Ingredients.png`}
-              alt="Imagi-Nation{TV} Ingredients"
+              alt="IMAGI-NATION{TV} Ingredients"
               className={styles.videoCoverArt}
             />
           </div>
