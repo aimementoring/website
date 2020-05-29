@@ -1,440 +1,419 @@
 @import "../../styles/global.module.scss";
 
-//Page specific layout styles
+.banner-wrapper .pre-text {
+  padding: 0;
+}
 
-.knowAime {
-  .heroPanel {
-    background: url($cdnRoot+"assets/images/know-aime/aimeshort.jpg") no-repeat
-      center center #050301;
+.banner-wrapper {
+  background-size: cover;
+}
+
+.full-height {
+  height: auto;
+
+  @media screen and (min-width: $sm) {
+    height: 100vh;
+  }
+}
+
+.bannerHeader {
+  color: $white;
+  strong {
+    left: initial
+  }
+}
+
+.heroPanel {
+  background: url($cdnRoot+"assets/images/know-aime/aimeshort.jpg") no-repeat
+    center center #050301;
+  height: auto;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  margin: 50px 1em 0em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: $sm) {
+    height: 65vh;
+  }
+}
+
+.videoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.videoOverlay {
+  background: url($cdnRoot+"assets/images/transparent-purple.png") repeat
+    center center;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+}
+
+.backgroundVideoContainer {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  overflow: hidden;
+
+  @media (max-width: $sm) {
+    background: url($cdnRoot+"assets/images/know-aime/aimeshort.jpg") center
+      center / cover no-repeat;
+  }
+}
+
+.bgVideo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  min-height: 50%;
+  min-width: 50%;
+
+  @media (max-width: $sm) {
+    display: none;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    height: 100%;
+  }
+
+  @media (max-aspect-ratio: 16/9) {
+    min-width: 100%;
+    min-height: 100%;
     height: auto;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+}
+
+.videoHeadline {
+  z-index: 7;
+  display: flex;
+  
+  @media screen and (max-width: $sm) {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+
+.video-button,
+.image-button {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.headlineWrapper {
+  padding-left: .5em;
+  padding-right: .5em;
+  text-align: center;
+  margin: 2em;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    grid-template-areas:
+      "sidebar"
+      "content";
 
     @media screen and (min-width: $sm) {
-      height: 100vh;
+      grid-template-columns: minmax(200px, 300px) 3fr;
+      grid-template-areas: "sidebar content";
     }
   }
+}
 
-  .knowAimeVideoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+.sidebar {
+  flex: 1;
+  padding: 2em 4em 2em 0;
+
+  @supports (display: grid) {
+    grid-area: sidebar;
   }
+}
 
-  .knowAimeVideoOverlay {
-    background: url($cdnRoot+"assets/images/transparent-purple.png") repeat
-      center center;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    position: absolute;
+.featureSidebarTitle {
+  font-size: 4em;
+  margin-bottom: .5em;
+}
+
+.sidebarButtons {
+  display: block;
+  padding-top: 4em;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+}
 
-  .backgroundVideoContainer {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    overflow: hidden;
-
-    @media (max-width: $sm) {
-      background: url($cdnRoot+"assets/images/know-aime/aimeshort.jpg") center
-        center / cover no-repeat;
-    }
+.sidebarButton {
+  color: #7602da;
+  text-align: left;
+  padding: 1em 1.5em;
+  background-color: transparent;
+  border: 1px solid;
+  transition: $hoverTransition;
+  text-align: center;
+  font-size: 14px;
+  font-family: $feature-font-family;
+  font-weight: 400;
+  border-radius: $border-radius-button;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  @media screen and (min-width: $md) { 
+    padding: 0.7em 2.2em;
   }
-
-  .bgVideo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    min-height: 50%;
-    min-width: 50%;
-
-    @media (max-width: $sm) {
-      display: none;
-    }
-
-    @media (min-aspect-ratio: 16/9) {
-      height: 100%;
-    }
-  
-    @media (max-aspect-ratio: 16/9) {
-      min-width: 100%;
-      min-height: 100%;
-      height: auto;
-    }
+  @media screen and (min-width: $lg) { 
+    padding: 1em 2.5em;
   }
-
-  .videoHeadline {
-    z-index: 7;
-    display: flex;
-    
-    @media screen and (max-width: $sm) {
-      padding-top: 4em;
-      padding-bottom: 4em;
-    }
-  }
-
-  .headlineWrapper {
-    padding-left: .5em;
-    padding-right: .5em;
-    text-align: center;
-    margin: 2em;
-  }
-
-  .knowAimeBannerHeader {
+  &:hover {
+    background-color: $magenta;
     color: $white;
-    strong {
-      left: initial
-    }
   }
+}
 
-  .knowAimeGrid {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2em;
+.downloadAction {
+  font-family: $feature-font-family;
+  font-weight: 900;
 
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 40px;
-      grid-template-areas:
-        "sidebar"
-        "content";
-
-      @media screen and (min-width: $sm) {
-        grid-template-columns: minmax(200px, 300px) 3fr;
-        grid-template-areas: "sidebar content";
-      }
-    }
-  }
-
-  .sidebar {
-    flex: 1;
-    padding: 2em 4em 2em 0;
-
-    @supports (display: grid) {
-      grid-area: sidebar;
-    }
-  }
-
-  .featureSidebarTitle {
-    font-size: 4em;
-    margin-bottom: .5em;
-  }
-
-
-  .sidebarButtons {
+  &::after {
+    content: "";
     display: block;
-    padding-top: 4em;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
+    background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat
+      center center;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 0 0 0 0.5em;
   }
 
-  .sidebarButton {
-    color: #7602da;
-    text-align: left;
-    padding: 1em 1.5em;
-    background-color: transparent;
-    border: 1px solid;
-    transition: $hoverTransition;
-    text-align: center;
-    font-size: 14px;
-    font-family: $feature-font-family;
-    font-weight: 400;
-    border-radius: $border-radius-button;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    @media screen and (min-width: $md) { 
-      padding: 0.7em 2.2em;
-    }
-    @media screen and (min-width: $lg) { 
-      padding: 1em 2.5em;
-    }
-    &:hover {
-      background-color: $magenta;
-      color: $white;
-    }
+}
+
+.mainContent {
+  flex: 3;
+
+  @supports (display: grid) {
+    grid-area: content;
   }
 
-
-  .downloadAction {
-    font-family: $feature-font-family;
-    font-weight: 900;
-  
-    &::after {
-      content: "";
-      display: block;
-      background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat
-        center center;
-      width: 20px;
-      height: 20px;
-      float: right;
-      margin: 0 0 0 0.5em;
-    }
-
-  }
-
-  .mainContent {
-    flex: 3;
-
-    @supports (display: grid) {
-      grid-area: content;
-    }
-
-    p,
-    ul {
-      margin-bottom: 1em;
-    }
-  }
-
-  .rowTitle > * {
-    margin-top: 2em;
-    border-bottom: 1px solid #9013fe;
-    font-size: 20px;
-  }
-
-  .mainGridRow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 20px;
-    }
-  }
-
-  .tileHalf {
-    display: block;
-    flex: 1;
-    min-width: 300px;
-    -ms-flex-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0.5em;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
-      grid-gap: 16px;
-      padding: 0;
-    }
-  }
-
-  .tile {
-    display: block;
-    flex: 1;
-    min-width: 300px;
-    -ms-flex-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0.5em;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 16px;
-      padding: 0;
-    }
-  }
-
-  .imageContainer {
-    display: flex;
-    align-items: center;
-    position: relative;
-    border-radius: 3px;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    cursor: pointer;
-
-    img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 70px;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .knowAimeImage {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  .singleTile {
-    display: block;
-    flex: 1;
-    align-items: center;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-areas:
-        "singlevideo"
-        "singlecopy";
-
-      @media screen and (min-width: $md) {
-        grid-column-gap: 20px;
-        grid-template-columns: minmax(250px, 2fr) minmax(auto, 1fr);
-        grid-template-areas: "singlevideo singlecopy";
-      }
-    }
-  }
-
-  .singleTileVideo {
-    grid-area: singlevideo;
-  }
-
-  .singleTileCopy {
-    grid-area: singlecopy;
-  }
-
-  .matrixVideoFriendly {
-    max-width: 580px;
-    margin: 0 auto;
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-
-    @media screen and (max-width: $md) {
-      display: none !important;
-    }
-  }
-
-  .tileTitle {
-    font-size: 15px;
-  }
-
-  .tileCopy {
-    font-size: 12px;
+  p,
+  ul {
     margin-bottom: 1em;
   }
+}
 
-  .extraTitle {
-    font-family: $feature-font-family;
+.rowTitle > * {
+  margin-top: 2em;
+  border-bottom: 1px solid #9013fe;
+  font-size: 20px;
+}
+
+.mainGridRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
   }
+}
 
+.tileHalf {
+  display: block;
+  flex: 1;
+  min-width: 300px;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.5em;
 
-
-
-  .cta-faq-container {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+    grid-gap: 16px;
     padding: 0;
-    background: transparent;
   }
+}
 
-  &-highlight-text {
-    padding: 0.9em 1em 0 0.1em;
-    font-size: 5.5rem;
+.tile {
+  display: block;
+  flex: 1;
+  min-width: 300px;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.5em;
 
-    @media screen and (min-width: $sm) {
-      font-size: 7.5rem;
-    }
-  }
-
-  .banner-wrapper .pre-text {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
     padding: 0;
   }
+}
 
-  .banner-wrapper {
-    background-size: cover;
+.imageContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 3px;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    transform: translate(-50%, -50%);
   }
+}
 
-  .full-height {
-    height: auto;
+.image {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
-    @media screen and (min-width: $sm) {
-      height: 100vh;
+.singleTile {
+  display: block;
+  flex: 1;
+  align-items: center;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "singlevideo"
+      "singlecopy";
+
+    @media screen and (min-width: $md) {
+      grid-column-gap: 20px;
+      grid-template-columns: minmax(250px, 2fr) minmax(auto, 1fr);
+      grid-template-areas: "singlevideo singlecopy";
     }
   }
+}
 
-  .scratch-overlay-wrapper.top-scratch {
-    position: relative;
+.singleTileVideo {
+  grid-area: singlevideo;
+}
+
+.singleTileCopy {
+  grid-area: singlecopy;
+}
+
+.matrixVideoFriendly {
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+
+  @media screen and (max-width: $md) {
+    display: none !important;
   }
+}
 
-  .main-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+.tileTitle {
+  font-size: 15px;
+}
 
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 20px;
+.tileCopy {
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+
+.extraTitle {
+  font-family: $feature-font-family;
+}
+
+.cta-faq-container {
+  padding: 0;
+  background: transparent;
+}
+
+.main-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+.single-tile {
+  display: block;
+  flex: 1;
+  align-items: center;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "singlevideo"
+      "singlecopy";
+
+    &-video {
+      grid-area: singlevideo;
+    }
+
+    &-copy {
+      grid-area: singlecopy;
+    }
+
+    @media screen and (min-width: $md) {
+      grid-column-gap: 20px;
+      grid-template-columns: minmax(250px, 2fr) minmax(auto, 1fr);
+      grid-template-areas: "singlevideo singlecopy";
     }
   }
+}
 
-  .single-tile {
-    display: block;
-    flex: 1;
-    align-items: center;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-gap: 20px;
-      grid-template-areas:
-        "singlevideo"
-        "singlecopy";
-
-      &-video {
-        grid-area: singlevideo;
-      }
-
-      &-copy {
-        grid-area: singlecopy;
-      }
-
-      @media screen and (min-width: $md) {
-        grid-column-gap: 20px;
-        grid-template-columns: minmax(250px, 2fr) minmax(auto, 1fr);
-        grid-template-areas: "singlevideo singlecopy";
-      }
-    }
-  }
-
-  .video-button,
-  .image-button {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    cursor: pointer;
-
-    img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .highlight-hr {
-    background: linear-gradient(to left, $accent-pink 0%, $accent-blue 100%);
-    height: 4px;
-    width: 7rem;
-    position: relative;
-  }
+.highlight-hr {
+  background: linear-gradient(to left, $accent-pink 0%, $accent-blue 100%);
+  height: 4px;
+  width: 7rem;
+  position: relative;
 }

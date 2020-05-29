@@ -5,7 +5,7 @@
   cursor: pointer;
   display: inline-block;
   fill: currentColor;
-  height: 53px;
+  height: 38px;
   stroke-width: 0;
   stroke: currentColor;
   transition: width 0.5s ease;
@@ -53,7 +53,7 @@
   .subtitle {
     font-family: $body-font-family;
     color: $black;
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 900;
     font-style: normal;
     text-transform: uppercase;
@@ -180,11 +180,8 @@
 .logoContainer {
   display: flex;
   vertical-align: middle;
-
-  @media (min-width: $sm) {
     box-sizing: border-box;
     float: left;
-  }
 }
 
 .submenuWrapper {
@@ -386,11 +383,11 @@
   display: flex;
   font-size: 100%;
   margin: 0 auto;
-  max-width: 1300px;
   outline: 0;
-  padding: 2rem;
+  padding: 0 .8rem 0;
   vertical-align: baseline;
   transition: $hoverTransition;
+  height:50px;
 }
 
 .logoLink {
@@ -415,14 +412,13 @@
 
   .iconAimeLogo {
     color: $black;
-    @media screen and (min-width: $md) {
-      width: 60px;
-    }
+    width: 60px;
   }
 }
 
 .standardLogo {
   color: $black;
+  width: 60px;
 }
 
 .microSiteLogo {

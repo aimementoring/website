@@ -1,13 +1,13 @@
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
 export const GLOBAL_TAGS = {
-  description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
+  description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
   facebook: {
     appId: 'profile_id',
   },
   openGraph: {
     type: 'website',
-    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
     locale: 'en_001',
     images: [{
       width: 1200,
@@ -18,7 +18,7 @@ export const GLOBAL_TAGS = {
   twitter: {
     site: '@aimementoring',
     cardType: 'summary_large_image',
-    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION {TV} into the homes.',
+    description: 'AIME is an Imagination Factory aiming to put a mentor in every kids life every day. Via direct deliver in 6 countries and IMAGI-NATION{TV} into the homes.',
     creator: '@aimementoring', // I think we cannot use this one
     image: {
       url: `${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`,
@@ -95,13 +95,13 @@ export const SEO_TAGS = {
     ],
   },
   '/imagi-nation-tv': {
-    title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+    title: 'IMAGI-NATION{TV} - a mentor in the home for every kid, every day',
     canonical: `${process.env.REACT_APP_CANONICAL}imagi-nation-tv`,
     languageAlternate: {
       href: 'https://aimementoring.com/imagi-nation-tv',
       hrefLang: 'x-default',
     },
-    description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+    description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
     openGraph: {
       url: 'https://aimementoring.com/imagi-nation-tv',
       title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
@@ -113,7 +113,7 @@ export const SEO_TAGS = {
     },
     twitter: {
       site: '@aimementoring',
-      title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+      title: 'IMAGI-NATION{TV} - a mentor in the home for every kid, every day',
       url: 'https://aimementoring.com/imagi-nation-tv',
       image: {
         url: `${ASSETS_URL}/resources/social_share/intv_social_share.jpg`,
@@ -130,8 +130,8 @@ export const SEO_TAGS = {
         creatorName: '#creator',
         dateModified: '2018-09-22T11:52:10+10:00',
         datePublished: '2018-02-15T16:13:50+11:00',
-        description: 'IMAGI-NATION {TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
-        title: 'IMAGI-NATION {TV} - a mentor in the home for every kid, every day',
+        description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
+        title: 'IMAGI-NATION{TV} - a mentor in the home for every kid, every day',
         images: [`${ASSETS_URL}/resources/social_share/intv_social_share.jpg`],
         additionalMetaTags: [
           {
@@ -1015,7 +1015,7 @@ export const SEO_TAGS = {
     ],
   },
   '/stories/intv': {
-    title: 'AIME IMAGINATION{TV} News',
+    title: 'AIME IMAGI-NATION{TV} News',
     canonical: `${process.env.REACT_APP_CANONICAL}stories/intv`,
     languageAlternate: {
       href: 'https://aimementoring.com/stories/intv',
@@ -1024,10 +1024,10 @@ export const SEO_TAGS = {
     description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
     openGraph: {
       url: 'https://aimementoring.com/stories/intv',
-      title: 'AIME IMAGINATION{TV} News',
+      title: 'AIME IMAGI-NATION{TV} News',
     },
     twitter: {
-      title: 'AIME IMAGINATION{TV} News',
+      title: 'AIME IMAGI-NATION{TV} News',
     },
     jsonLd: [
       {
@@ -1039,7 +1039,7 @@ export const SEO_TAGS = {
         dateModified: '2018-03-07T11:33:16+11:00',
         datePublished: '2018-02-21T11:56:33+11:00',
         description: 'IMAGI-NATION{TV} is for marginalised kids across the earth’s surface to have a daily mentor in their lives. It takes the magic of AIME’s Imagination Factory to laptops, phones, and homes across the world.',
-        title: 'AIME IMAGINATION{TV} News',
+        title: 'AIME IMAGI-NATION{TV} News',
         images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
           {
@@ -1051,7 +1051,7 @@ export const SEO_TAGS = {
             content: 'https://aimementoring.com/stories/intv',
           },
         ],
-        name: 'AIME IMAGINATION{TV} News',
+        name: 'AIME IMAGI-NATION{TV} News',
         publisherName: '#creator',
         url: 'https://aimementoring.com/stories/intv',
       },
@@ -1079,7 +1079,7 @@ export const SEO_TAGS = {
       href: 'https://aimementoring.com/stories/all',
       hrefLang: 'x-default',
     },
-    description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+    description: 'IMAGI-NATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
     openGraph: {
       url: 'https://aimementoring.com/stories/all',
       title: 'AIME Stories',
@@ -1096,7 +1096,7 @@ export const SEO_TAGS = {
         creatorName: '#creator',
         dateModified: '2018-03-07T11:33:16+11:00',
         datePublished: '2018-02-21T11:56:33+11:00',
-        description: 'IMAGINATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
+        description: 'IMAGI-NATION{TV} News, Sunday Kindness and Press Releases. With the force of imagination, mentoring and unlikely alliances, AIME is creating a fairer world through a worldwide movement of people that form our Social Network for Good.',
         title: 'AIME Stories',
         images: [`${ASSETS_URL}/resources/social_share/AIME_social_share.jpg`],
         additionalMetaTags: [
