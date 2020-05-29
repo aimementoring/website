@@ -1,10 +1,14 @@
 @import "../../styles/global.module.scss";
+@import "../../styles/patterns.module.scss";
 
 .banner {
   composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
 }
 
+.bannerWrap {
+  position:relative;
+}
 .introText {
   padding: 2rem;
   flex-wrap: wrap;
