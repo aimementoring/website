@@ -384,9 +384,10 @@
   font-size: 100%;
   margin: 0 auto;
   outline: 0;
-  padding: .8rem;
+  padding: 0 .8rem 0;
   vertical-align: baseline;
   transition: $hoverTransition;
+  height:50px;
 }
 
 .logoLink {
