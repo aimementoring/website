@@ -3,6 +3,8 @@
 .banner {
   composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
+  // fix for mobile safari https://stackoverflow.com/a/31445503
+  @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
 }
 
 .plainContentWrapper {
