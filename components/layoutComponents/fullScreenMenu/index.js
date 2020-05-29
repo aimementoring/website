@@ -71,12 +71,12 @@ const FullScreenMenu = () => {
                     </li>
                     <li>
                       <a href="/impact" className={`${styles.subLink} ${styles.ourImpactBtn}`}>
-                        Our impact
+                        Our Impact
                       </a>
                     </li>
                     <li>
                       <a href="/jack-manning-bancroft" className={`${styles.subLink} ${styles.ceoAndFounderBtn}`}>
-                        CEO & founder
+                        CEO & Founder
                       </a>
                     </li>
                   </ul>
@@ -109,7 +109,7 @@ const FullScreenMenu = () => {
                   <ul>
                     <li>
                       <a href="/be-a-mentor" className={`${styles.subLink} ${styles.beAMentorBtn}`}>
-                        Be a mentor
+                        Be a Mentor
                       </a>
                     </li>
                     <li>
