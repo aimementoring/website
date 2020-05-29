@@ -90,7 +90,7 @@ const FullScreenMenu = () => {
                   <ul>
                     <li>
                       <a href="/imagi-nation-tv" className={`${styles.subLink} ${styles.intvBtn}`}>
-                        {'IMAGINATION{TV}'}
+                        {'IMAGI-NATION{TV}'}
                       </a>
                     </li>
                     <li>
@@ -118,7 +118,7 @@ const FullScreenMenu = () => {
                       </a>
                     </li>
                     <li>
-                      <IntercomChat classNames={`${styles.subLink} ${styles.getInTouchBtn}`} label="Get In Touch" />
+                      <IntercomChat classNames={`${styles.subLink} ${styles.getInTouchBtn}`} label="Get in touch" />
                     </li>
                     <li>
                       <button
@@ -146,7 +146,7 @@ const FullScreenMenu = () => {
               </li>
               <hr />
               <li className={styles.listItem}>
-                <IntercomChat classNames={`${styles.listLinkScnd} ${styles.getInTouchBtn}`} label="Get In Touch" />
+                <IntercomChat classNames={`${styles.listLinkScnd} ${styles.getInTouchBtn}`} label="Get in touch" />
               </li>
               <li className={styles.listItem}>
                 <button
