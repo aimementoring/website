@@ -94,16 +94,7 @@
 }
 
 .articleDescription {
-  padding: 1.5em;
-  
-  h5 {
-  margin-bottom: 0.5em;
-  color:$black;
-  transition: $hoverTransition;
-  &:hover {
-    color: $purple;
-    }
-  }
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .postDate {
