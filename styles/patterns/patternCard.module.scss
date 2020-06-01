@@ -9,3 +9,16 @@
   opacity: 1;
   position: relative;
 }
+
+.cardContent {
+  padding: 1.5em;
+  
+  h5 {
+  margin-bottom: 0.5em;
+  color:$black;
+  transition: $hoverTransition;
+  &:hover {
+    color: $purple;
+    }
+  }
+}
