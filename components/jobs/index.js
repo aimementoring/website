@@ -186,7 +186,7 @@ const Jobs = ({
               />
             </div>
           </div>
-          <div className={styles.positionMessage}>
+          <div className={styles.jobGrid}>
             {isRedirect && (
               <PositionsRedirectMessage
                 jobTitle={jobTitle}
