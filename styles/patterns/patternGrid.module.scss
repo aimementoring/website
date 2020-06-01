@@ -1,0 +1,20 @@
+@import "../global.module.scss";
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+  grid-gap: 1em;
+  flex-wrap: wrap;
+}
+
+.grid1to2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
