@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
+import Input from 'aime-blueprint/lib/components/input';
 import PhoneInput from 'aime-blueprint/lib/components/phoneInput';
 import styles from './aboutYouSectionForm.module.scss';
 
 const AboutYouSectionForm = ({ handleChange, values }) => (
   <div className={styles.aboutYouSectionFormContainer}>
     <div className={styles.jobInputWrapper}>
-      <LabeledInput
+      <Input
         type="text"
         name="first_name"
         value={values.first_name || ''}
@@ -19,7 +19,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
       />
     </div>
     <div className={styles.jobInputWrapper}>
-      <LabeledInput
+      <Input
         type="text"
         name="last_name"
         value={values.last_name || ''}
@@ -31,7 +31,7 @@ const AboutYouSectionForm = ({ handleChange, values }) => (
       />
     </div>
     <div className={styles.jobInputWrapper}>
-      <LabeledInput
+      <Input
         type="email"
         name="email"
         value={values.email || ''}
