@@ -292,17 +292,9 @@
   align-items: center;
 }
 
-.positionMessage {
-  grid-template-columns: 1fr;
+.jobGrid {
+  composes: grid1to2 from '../../styles/patterns/patternGrid.module.scss';
   margin-bottom: 4em;
-  display: flex;
-  flex-wrap: wrap;
-  display: grid;
-  grid-gap: 1em;
-
-  @media screen and (min-width: $md) {
-    grid-template-columns: 1fr 1fr;
-  }
   
 }
 
