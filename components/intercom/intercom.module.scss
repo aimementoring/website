@@ -29,3 +29,24 @@
     border-bottom: 2px solid $white;
   }
 }
+
+.contactPopup {
+  min-height: 20em;
+  padding: 2em;
+  background: $white;
+  .popupTitle {
+    color: $black;
+  }
+  .emailLink {
+    color: $black;
+    font-family: $body-font-family;
+    font-weight: normal;
+    text-decoration: none;
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+  img { 
+    width: 20em;
+  }
+}
