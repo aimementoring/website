@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
+import dynamic from 'next/dynamic';
 import bugsnagClient from '../../utils/bugsnag';
 import styles from './intercom.module.scss';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
+const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+
+const Modal = dynamic(() => import('../modal'));
 
 const IntercomChat = (props) => {
   const { classNames, label } = props;
+  const [showModal, setShowModal] = useState(false);
 
   const intercomChat = () => {
     (() => {
@@ -58,11 +65,17 @@ const IntercomChat = (props) => {
     intercomChat();
   }, []);
 
+  const toggleModal = () => setShowModal(!showModal);
+
   const handleShowIntercom = () => {
     window.Intercom('showNewMessage');
     const intercomWasBlocked = document.getElementById('intercom-container') === null;
-    if (intercomWasBlocked) bugsnagClient.notify('Intercom was blocked', { severity: 'info' });
+    if (intercomWasBlocked) {
+      bugsnagClient.notify('Intercom was blocked', { severity: 'info' });
+      toggleModal();
+    }
   };
+
 
   return (
     <span>
@@ -73,6 +86,27 @@ const IntercomChat = (props) => {
         onClick={handleShowIntercom}
       >
         {label}
+        <Modal
+          showModal={showModal}
+          backgroundColor="rgba(82,82,82, 0.85)"
+          withCloseIcon
+          handleModal={toggleModal}
+        >
+          <div className={styles.contactPopup}>
+            <Title type="h4Title" className={styles.popupTitle}>
+              We&apos;d love to hear from you.
+            </Title>
+            <img src={`${ASSETS_URL}/assets/images/illustrations/letter-writing.png`} alt="Write us" />
+            <Paragraph>
+              Drop us a few lines at
+              {' ' }
+              <br />
+              <mark><a className={styles.emailLink} href="mailto:enquiries@aimementoring.com">enquiries@aimementoring.com</a></mark>
+              <br />
+              {" and we'll get back to you!"}
+            </Paragraph>
+          </div>
+        </Modal>
       </button>
     </span>
   );
