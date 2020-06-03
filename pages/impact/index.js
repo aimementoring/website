@@ -38,12 +38,12 @@ const Impact = () => (
     </div>
     <section>
       <div className={styles.introText}>
-        <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+        <Title type="h4Title" align="center" theme={process.env.REACT_APP_THEME}>
             We’ve got a story of change that’s lit up the world since 2005, one kid at a time.
             It’s a simple idea, mentoring.
         </Title>
         <br />
-        <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+        <Title type="h4Title" align="center" theme={process.env.REACT_APP_THEME}>
             It’s a proven model to end inequality and bring the
             powerful and powerless together, cost-effectively
             and at scale.
@@ -121,7 +121,7 @@ const Impact = () => (
         </section>
       </div>
       <div className={styles.mostImportantly}>
-        <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+        <Title type="h4Title" align="center" theme={process.env.REACT_APP_THEME}>
             And most importantly…
           <br />
             AIME CHANGES LIVES
@@ -287,9 +287,7 @@ const Impact = () => (
     </section>
     <section className={styles.partnerSection}>
       <div className={styles.partnerSectionContent}>
-        <h2>
-          <span className={styles.createChangeText}>Want to create change?</span>
-        </h2>
+        <Title type="h4Title" align="center">Want to create change?</Title>
         <div className={styles.intercomButtonWrap}>
           <IntercomChat label="Partner with us" />
         </div>
