@@ -1,8 +1,7 @@
 @import "../../styles/global.module.scss";
-@import "../../styles/patterns.module.scss";
 
 .banner {
-  composes: banner from '../../styles/patterns.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
   // fix for mobile safari https://stackoverflow.com/a/31445503
   @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
@@ -185,17 +184,9 @@
 }
 
 .impactGrid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  composes: grid from '../../styles/patterns/patternGrid.module.scss';
   justify-content: space-between;
   align-items: flex-start;
-
-  @supports (display: grid) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-  }
 }
 
 .tile {
