@@ -38,7 +38,7 @@ const SubscribePanel = () => {
         <MovingWaves className={styles.wavySubscribe} />
         <div className={styles.newsletterWrapper}>
           <div className={styles.formContainer}>
-            <Title type="h4Title" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
+            <Title type="h4Title" align="center" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
               BOARD THE AIME ROCKET SHIP
             </Title>
             <Paragraph className={styles.subscribeDetails} theme={process.env.REACT_APP_THEME}>
