@@ -368,9 +368,7 @@
   }
 
   .intercomButtonWrap {
-    text-align: center;
     padding-top: 1rem;
-
     button {
       background-color: $watermelon;
       border-radius: 3px;
@@ -382,6 +380,7 @@
       padding: 0.85em 1.85em;
       border: 0;
       outline: none;
+      margin: 0 auto;
       cursor: pointer;
       transition: $hoverTransition;
   
