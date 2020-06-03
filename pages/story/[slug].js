@@ -54,7 +54,7 @@ const Story = ({ content }) => {
             <div>
               <div className={styles.entriesContainer}>
                 <article className={styles.blogPost}>
-                  <Title type="h3Title" theme="rainbow" className={styles.blogPostTitle}>
+                  <Title align="center" type="h3Title" theme="rainbow" className={styles.blogPostTitle}>
                     {title}
                   </Title>
                   <BadgeList items={postCategories} itemClass={styles.borderedBadge} isLinked />
