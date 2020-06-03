@@ -17,37 +17,12 @@
   }
 }
 
-.anchorClass {
-  border-color: $accent-purple;
-  width: 100%;
-  transition: ease-in .1s all;
-  border-color: $blue-light;
-  padding: 0;
-  justify-content: left;
-  border-radius: $border-radius-large;
-  color: $black;
-  border-style: solid;
-  border-width: 1px;
-  flex-wrap: wrap;
-  margin-left: auto;
+.jobCard {
+  composes: card from '../../styles/patterns/patternCard.module.scss';
+
   display: flex;
-  margin-right: auto;
+  color: $black;
   text-decoration: none;
-
-  border: 1px solid $brand-primary;
-  opacity: 1;
-
-  @media screen and (max-width: $md) {
-    padding: 0.5em 0em;
-    .line {
-      margin-top: 1.5em;
-    }
-  }
-  
-  @media screen and (min-width: $md) {
-    flex-direction: row;
-    align-items: center;
-  }
 
   img {
     opacity: 0;
@@ -73,8 +48,7 @@
 }
 
 .containerDetails {
-  position: relative;
-  margin: 2em;
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .nameStyles {
@@ -292,17 +266,9 @@
   align-items: center;
 }
 
-.positionMessage {
-  grid-template-columns: 1fr;
+.jobGrid {
+  composes: grid1to2 from '../../styles/patterns/patternGrid.module.scss';
   margin-bottom: 4em;
-  display: flex;
-  flex-wrap: wrap;
-  display: grid;
-  grid-gap: 1em;
-
-  @media screen and (min-width: $md) {
-    grid-template-columns: 1fr 1fr;
-  }
   
 }
 
