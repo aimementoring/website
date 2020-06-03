@@ -1,12 +1,12 @@
 @import "../../styles/global.module.scss";
 
 .banner {
-  composes: banner from '../../styles/patterns.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
 }
 
 .container {
-  composes: wrapper from '../../styles/patterns.module.scss';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 }
 
 // same pattern used on thanks page so could compose styles 
