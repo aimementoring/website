@@ -48,10 +48,7 @@
 }
 
 .containerDetails {
-  position: relative;
-  margin: 2em;
-  // composes: cardContent from '../../styles/patterns/patternCard.module.scss';
-
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .nameStyles {
