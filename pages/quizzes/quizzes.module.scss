@@ -1,7 +1,7 @@
 @import "../../styles/global.module.scss";
 
 .quizzesBanner {
-  composes: banner from '../../styles/patterns.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
 
   p {
