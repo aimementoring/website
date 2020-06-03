@@ -15,7 +15,7 @@ const CtaGrid = ({ elements, partnerRef }) => (
         <div key={`${cta.title}-${cta.description}`} className={styles.ctaItem}>
           <div className={styles.itemContents}>
             <div className={styles.itemContentImage} />
-            <Title className={styles.ctaLockup} type="headingLockup">
+            <Title className={styles.ctaLockup} type="headingLockup" align="center">
               {cta.title}
             </Title>
             <div className={styles.subItemDetails}>
