@@ -264,7 +264,7 @@ const PartnerWithIntv = () => {
           {/* TODO: what's the best way for this thing... creating a new component
           every time... really? shouldn't we be able to use the one comp
           and replace the content... don't know if that will work though... tbc */}
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Meet some hosts
           </Title>
           <IntvHostsCarousel />
@@ -281,7 +281,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 How it works
               `}
@@ -305,7 +305,7 @@ const PartnerWithIntv = () => {
               />
             </div>
             <div className={`${styles.panelCol}`}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 Weekly themes
               `}
@@ -334,7 +334,7 @@ const PartnerWithIntv = () => {
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title">
+            <Title type="h3Title" align="center">
               {`
               Ingredients
             `}
@@ -348,7 +348,7 @@ const PartnerWithIntv = () => {
         </section>
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
-          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
+          <Title type="h3Title" align="center" className={styles.titleInTVPartnerPanel}>
             {`
             About Each Day
           `}
@@ -361,7 +361,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
 
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Some of our guests
             <br />
             (So Far)
@@ -554,7 +554,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h4Title">AIME PROGRAM STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME PROGRAM STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -571,7 +571,7 @@ const PartnerWithIntv = () => {
                   '91 equivalent full time staff employed as of March 2020',
                 ]}
               />
-              <Title type="h4Title">AIME APPAREL STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME APPAREL STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
