@@ -1,5 +1,4 @@
 @import "../../styles/global.module.scss";
-@import "../../styles/patterns.module.scss";
 
 .banner {
   composes: banner from '../../styles/patterns/patternBanner.module.scss';
