@@ -10,6 +10,8 @@ import { checkValidations } from 'aime-blueprint/lib/utils/validation';
 
 import styles from './fileUploader.module.scss';
 
+const UPLOAD_FOLDER = 'website/uploads';
+
 class FileUploader extends Component {
   constructor(props) {
     super(props);
@@ -117,7 +119,7 @@ class FileUploader extends Component {
     this.uppy.use(AwsS3, {
       companionUrl,
       serverHeaders: {
-        folderName: folderInS3Name,
+        folderName: UPLOAD_FOLDER + folderInS3Name,
       },
     });
     this.uppy.on('upload-success', (file, data) => this.handleUploadFiles(file, data));
