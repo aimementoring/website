@@ -118,9 +118,6 @@ const FullScreenMenu = () => {
                       </a>
                     </li>
                     <li>
-                      <IntercomChat classNames={`${styles.subLink} ${styles.getInTouchBtn}`} label="Get in touch" />
-                    </li>
-                    <li>
                       <button
                         type="button"
                         onClick={toggleDonationModal}
