@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import styles from './quicklinksHomepage.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
