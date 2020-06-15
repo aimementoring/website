@@ -5,6 +5,7 @@ import {
 } from 'next-seo';
 import SeoComponent from '../seoComponent';
 import DonateModal from '../donateModal';
+import ContactModal from '../contactModal';
 import { GLOBAL_TAGS } from '../../constants/seoTags';
 
 const TYPE_MAPPING = {
@@ -27,6 +28,7 @@ const MainAppContent = ({ router }) => (
       return null;
     })}
     <DonateModal />
+    <ContactModal />
   </>
 );
 
