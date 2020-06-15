@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
+import Input from 'aime-blueprint/lib/components/input';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import MovingWaves from '../movingWaves';
@@ -51,7 +51,7 @@ const SubscribePanel = () => {
               name="mc-embedded-subscribe-form"
               target="_blank"
             >
-              <LabeledInput
+              <Input
                 type="email"
                 name="EMAIL"
                 id="mce-EMAIL"
