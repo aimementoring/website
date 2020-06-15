@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './fullScreenMenu.module.scss';
-import DonationContext from '../../../context';
+import { DonationContext } from '../../../context';
 
 const IntercomChat = dynamic(() => import('../../intercom'));
 
