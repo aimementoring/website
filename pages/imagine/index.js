@@ -4,7 +4,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
 import IntercomChat from '../../components/intercom';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 
 import styles from './imagine.module.scss';
 
