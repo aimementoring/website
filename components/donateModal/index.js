@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Modal from '../modal';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import styles from './donateModal.module.scss';
 
 const DonateModal = () => {
