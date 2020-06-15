@@ -7,13 +7,10 @@ import styles from './header.module.scss';
 import StandardHeader from './standardHeader';
 
 const GoingGlobalHeader = dynamic(() => import('./goingGlobalHeader'));
-const ImaginationDeclarationHeader = dynamic(() => import('./imaginationDeclarationHeader'));
 
 const getHeaderComponent = (pathname) => {
   let component = 'default';
-  if (pathname.indexOf('/imagination-declaration') > -1 || pathname.indexOf('/imaginationDeclaration') > -1) {
-    component = 'imaginationDeclaration';
-  } else if (pathname.indexOf('/going-global') > -1 || pathname.indexOf('/goingGlobal') > -1) {
+  if (pathname.indexOf('/going-global') > -1 || pathname.indexOf('/goingGlobal') > -1) {
     component = 'goingGlobal';
   } else if (pathname.indexOf('/hooded-scholar') > -1 || pathname.indexOf('/hoodedScholar') > -1) {
     component = null;
@@ -23,7 +20,6 @@ const getHeaderComponent = (pathname) => {
 
 const HEADERS_MAP = {
   default: StandardHeader,
-  imaginationDeclaration: ImaginationDeclarationHeader,
   goingGlobal: GoingGlobalHeader,
 };
 
