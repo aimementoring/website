@@ -4,7 +4,7 @@ import moment from 'moment';
 import Anchor from '../../common/link';
 import NavList from '../../navList';
 import SubscribePanel from '../../subscribePanel';
-import DonationContext from '../../../context';
+import { DonationContext } from '../../../context';
 import styles from './footer.module.scss';
 
 const Footer = ({ location }) => {

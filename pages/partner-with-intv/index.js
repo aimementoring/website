@@ -9,7 +9,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import VideoPlayer from '../../components/videoPlayer';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
