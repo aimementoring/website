@@ -4,7 +4,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Button from 'aime-blueprint/lib/components/button';
 import Carousel from '../carousel';
 import IntercomChat from '../intercom';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import styles from './imagineCarousel.module.scss';
 
 const ImaginationTvCard = dynamic(() => import('../../components/imaginationTv/imaginationTvCard'));
