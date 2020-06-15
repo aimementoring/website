@@ -94,8 +94,10 @@ class FileUploader extends Component {
       setLoading,
     } = this.props;
     this.uppy = Uppy({
-      debug: true,
       id: uppyInstanceId,
+      debug: false,
+      disablePageScrollWhenModalOpen: true,
+      closeModalOnClickOutside: true,
       restrictions: {
         maxNumberOfFiles,
         allowMultipleUploads,
