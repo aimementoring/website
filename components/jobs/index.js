@@ -166,25 +166,6 @@ const Jobs = ({
             <h1 className={styles.titleJobs} id="opportunity-list">
               All aboard the AIME Train.
             </h1>
-            {state.countrySelected === 'US' ? (
-              <p>
-                {`If you would like to work with AIME in the US we are well 
-                  and truly in startup mode and are interested in everyone 
-                  from current and former CEO's of the biggest organisations 
-                  in the world, through to recent college grads who want to put 
-                  their minds to work. Flick through a cover letter, including 
-                  how much you'd be willing to work for as a salary, and CV and 
-                  we'll do our best to get back to you in the next few months. 
-                  Here's to changing lives and getting up every day pouring our 
-                  life's energy into it!`}
-              </p>
-            ) : (
-              <p className={styles.descriptionJobs}>
-                {`We are here to sprint the marathon, think of your time at AIME as 
-                  the hardest, fastest, longest sprint of your life. If you do 3 
-                  years here, flat chat, and pass the baton on, that is success.`}
-              </p>
-            )}
           </div>
           <div className={styles.componentJobFilter}>
             <JobFilter
@@ -205,7 +186,7 @@ const Jobs = ({
               />
             </div>
           </div>
-          <div className={styles.positionMessage}>
+          <div className={styles.jobGrid}>
             {isRedirect && (
               <PositionsRedirectMessage
                 jobTitle={jobTitle}
