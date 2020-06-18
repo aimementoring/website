@@ -1,29 +1,8 @@
 @import "../../styles/global.module.scss";
 
-.bannerHeadingAmbassadors {
-  text-align: center;
-  color: $white;
-}
-
-.bannerContainerClass {
+.banner {
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot+"assets/images/banner/banner-pattern-blue.jpg") no-repeat top center/cover fixed #24D1F6;
-  max-height: 50vh;
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-
-  @media screen and (min-width: $sm) {
-    padding: 0;
-    height: 62vh;
-  }
-}
-
-.bannerWrapperClass {
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 .mainSection {
