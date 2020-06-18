@@ -1,452 +1,410 @@
 @import "../../styles/global.module.scss";
 
-.impactPage {
-  .bannerWrap {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
+.banner {
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  // fix for mobile safari https://stackoverflow.com/a/31445503
+  @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
+}
+
+.bannerWrap {
+  position:relative;
+}
+.introText {
+  padding: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+
+.headerTitle {
+  margin-top: 4em;
+  @media screen and (min-width: $md) {
+    margin-top: 2em;
+  }
+  strong {
+    left: initial;
+  }
+}
+
+.factsContainer {
+  background-color: $watermelon;
+  margin: 1em;
+
+  @media screen and (max-width: $sm) {
+    padding-top: 2rem;
+  }
+}
+
+.sectionRow {
+  width: 100%;
+  max-width: 60em;
+  margin: 0 auto;
+
+  @media screen and (min-width: $sm) {
+    display: flex;
+    padding-top: 2em;
   }
 
-  .titleWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  @media screen and (min-width: $md) {
+    &:nth-child(even) .sectionColumn .sectionCopy {
+      text-align: right;
+    }
+
+    &:nth-child(odd) .sectionColumn {
+      align-items: flex-start;
+    }
   }
 
-  .titleContainer {
-    overflow: hidden;
-    background-size: cover;
-    position:relative;
-    width:100%;
-    display: flex;
-    align-items: center;
+  &:nth-child(2) .sectionColumn {
+    align-items: flex-end;
+  }
+
+  &:nth-child(1) .sectionColumn,
+  &:nth-child(3) .sectionColumn {
+    order: 2;
     justify-content: center;
-    height: 50vh;
-    background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-    padding: 35px 0;
-    h1 {
-      color: $white;
-      text-align: center;
-      strong {
-        left: initial;
-      }
-    }
-    @media screen and (min-width: $sm) {
-      padding: 0;
-      height: 62vh;
-    }
-    // Stop fixed on tablets & phones as it doesn't work
-    @media screen and (max-device-width: 1024px) {
-      background-attachment: scroll;
-    }
-  }
-
-  .introText {
-    padding: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-  }
-
-  .impactHeaderTitle {
-    margin-top: 4em;
-    @media screen and (min-width: $md) {
-      margin-top: 2em;
-    }
-    strong {
-      left: initial;
-    }
-  }
-
-  .impactFactsContainer {
-    background-color: $watermelon;
-    margin: 1em;
-
-    @media screen and (max-width: $sm) {
-      padding-top: 2rem;
-    }
-  }
-
-  .impactSectionRow {
-    width: 100%;
-    max-width: 60em;
-    margin: 0 auto;
-
-    @media screen and (min-width: $sm) {
-      display: flex;
-      padding-top: 2em;
-    }
-
-    @media screen and (min-width: $md) {
-      &:nth-child(even) .impactSectionColumn .impactSectionCopy {
-        text-align: right;
-      }
-
-      &:nth-child(odd) .impactSectionColumn {
-        align-items: flex-start;
-      }
-    }
-
-    &:nth-child(2) .impactSectionColumn {
+  
+    .sectionImageContainer {
       align-items: flex-end;
     }
-
-    &:nth-child(1) .impactSectionColumn,
-    &:nth-child(3) .impactSectionColumn {
-      order: 2;
-      justify-content: center;
-    
-      .impactSectionImageContainer {
-        align-items: flex-end;
-      }
-    
-      .impactSectionCopy {
-        @media screen and (min-width: $md) {
-          padding: 40px 0;
-        }
-      }
-    }
-
-    .impactSectionCopy {
-      @media screen and (min-width: $lg) {
-        width: 66.66667%;
-      }
-    }
-
-    .impactSectionColumn {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 0 2rem 1rem;
-      align-items: center;
-      justify-content: center;
-
+  
+    .sectionCopy {
       @media screen and (min-width: $md) {
-        padding: 1rem;
-
-        .impactSectionCopy {
-          padding: 0 0 4rem;
-        }
-      }
-
-      p {
-        color: $white;
+        padding: 40px 0;
       }
     }
   }
 
-  .impactSectionImageContainer {
+  .sectionCopy {
+    @media screen and (min-width: $lg) {
+      width: 66.66667%;
+    }
+  }
+
+  .sectionColumn {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     padding: 0 2rem 1rem;
+    align-items: center;
     justify-content: center;
-    @media screen and (max-width: $md) {
-      align-items: center;
-    }
-  }
-
-  .impactSectionImageContainer img {
-    max-width: 25em;
-    width: 100%;
-    object-fit: contain;
-    border-radius: 2px;
-    display: block;
-  }
-
-  .mostImportantly {
-    margin: 0 auto; 
-    max-width: 1120px; 
-    overflow: visible;
-    align-items: center;
-    text-align: center;
-
-    @media screen and (min-width: $sm) and (max-width: $md) {
-      padding: 2rem;
-    }
 
     @media screen and (min-width: $md) {
-      padding: 4rem;
-    }
-  }
-
-  .grid {
-    display: block;
-    display: flex;
-    flex-wrap: wrap;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 0;
-      grid-template-areas:
-        "sidebar"
-        "content";
-
-      @media screen and (min-width: $md) {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "sidebar content";
-      }
-    }
-  }
-
-  .sidebar {
-    flex: 1;
-    padding: 2rem;
-
-    @media screen and (min-width: $lg) {
-      padding: 5rem;
-    }
-
-    @supports (display: grid) {
-      grid-area: sidebar;
-    }
-
-    .sidebarTitle {
-      font-size: 3rem;
-      line-height: 1;
-
-      &-hr {
-        height: 3px;
-        width: 30px;
-      }
-    }
-  }
-
-  .impactGrid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-gap: 20px;
-    }
-  }
-
-
-  .tile {
-    display: block;
-    flex: 1;
-    min-width: 250px;
-    -ms-flex-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0.5rem;
-    margin-bottom: 2em;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-gap: 5px;
-      padding: 0;
-    }
-  }
-
-  .tileTitle {
-    font-size: .9em;
-    font-family: $body-font-family;
-    font-weight: 900;
-    font-style: normal;
-    margin-top: 1em;
-  }
-
-  .tileCopy {
-    font-size: 0.75em;
-    font-family: $body-font-family;
-    margin-top: 0.5em;
-  }
-
-  .impactGrid .imageButton {
-    display: flex;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 3px;
-    align-items: center;
-    background-size: cover;
-    width: 100%;
-
-    img {
-      opacity: 0.8;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      text-align: center;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    &:hover img {
-      opacity: 1;
-    }
-  }
-
-  .caseStudiesContainer {
-    margin: 0 auto;
-    max-width: 1120px;
-    overflow: visible;
-
-    @media screen and (min-width: $md) {
-      padding: 4rem;
-    }
-    @media screen and (min-width: $sm) and (max-width: $md) {
       padding: 1rem;
+
+      .sectionCopy {
+        padding: 0 0 4rem;
+      }
     }
-    @media screen and (max-width: $sm) {
-      padding: 2rem;
-    }
-  }
 
-  .caseStudiesContent {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-  }
-
-  .caseStudiesButtonContainer {
-    @media screen and (max-width: $sm) {
-      margin: 2rem auto;
-    }
-  }
-  .moreInfoTitleContainer {
-    margin-bottom: 1.5em;
-  }
-
-  .moreInfoContainer {
-    display: block;
-    padding-top: 1rem;
-
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-gap: 0.5rem;
-    }
-  }
-
-  .moreInfoButton {
-    color: #7602da;
-    text-align: left;
-    background-color: transparent;
-    border: 1px solid;
-    padding: 1rem 1.5rem;
-    &:hover {
+    p {
       color: $white;
-      background: $magenta;
     }
   }
+}
 
-  .moreInfoButtonText {
-    float: left;
-    font-family: $feature-font-family;
-    font-weight: 900;
-    width: 100%;
-    font-size: 14px;
+.sectionImageContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 2rem 1rem;
+  justify-content: center;
+  @media screen and (max-width: $md) {
+    align-items: center;
+  }
+}
+
+.sectionImageContainer img {
+  max-width: 25em;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  display: block;
+}
+
+.mostImportantly {
+  margin: 0 auto; 
+  max-width: 1120px; 
+  overflow: visible;
+  align-items: center;
+  text-align: center;
+
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding: 2rem;
   }
 
-  .moreInfoButtonText:after {
-    content: "";
-    display: block;
-    background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat center center;
-    width: 20px;
-    height: 20px;
-    float: right;
-    margin: 0 0 0 0.5rem;
+  @media screen and (min-width: $md) {
+    padding: 4rem;
+  }
+}
+
+.grid {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    grid-template-areas:
+      "sidebar"
+      "content";
 
     @media screen and (min-width: $md) {
-      margin: 0 0 0 1rem;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas: "sidebar content";
+    }
+  }
+}
+
+.sidebar {
+  flex: 1;
+  padding: 2rem;
+
+  @media screen and (min-width: $lg) {
+    padding: 5rem;
+  }
+
+  @supports (display: grid) {
+    grid-area: sidebar;
+  }
+
+  .sidebarTitle {
+    font-size: 3rem;
+    line-height: 1;
+
+    &-hr {
+      height: 3px;
+      width: 30px;
+    }
+  }
+}
+
+.impactGrid {
+  composes: grid from '../../styles/patterns/patternGrid.module.scss';
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tile {
+  display: block;
+  flex: 1;
+  min-width: 250px;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  margin-bottom: 2em;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 5px;
+    padding: 0;
+  }
+}
+
+.tileTitle {
+  font-size: .9em;
+  font-family: $body-font-family;
+  font-weight: 900;
+  font-style: normal;
+  margin-top: 1em;
+}
+
+.tileCopy {
+  font-size: 0.75em;
+  font-family: $body-font-family;
+  margin-top: 0.5em;
+}
+
+.impactGrid .imageButton {
+  display: flex;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 3px;
+  align-items: center;
+  background-size: cover;
+  width: 100%;
+
+  img {
+    opacity: 0.8;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+}
+
+.caseStudiesContainer {
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
+
+  @media screen and (min-width: $md) {
+    padding: 4rem;
+  }
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: $sm) {
+    padding: 2rem;
+  }
+}
+
+.caseStudiesContent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.caseStudiesButtonContainer {
+  @media screen and (max-width: $sm) {
+    margin: 2rem auto;
+  }
+}
+.moreInfoTitleContainer {
+  margin-bottom: 1.5em;
+}
+
+.moreInfoContainer {
+  display: block;
+  padding-top: 1rem;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 0.5rem;
+  }
+}
+
+.moreInfoButton {
+  color: #7602da;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid;
+  padding: 1rem 1.5rem;
+  &:hover {
+    color: $white;
+    background: $magenta;
+  }
+}
+
+.moreInfoButtonText {
+  float: left;
+  font-family: $feature-font-family;
+  font-weight: 900;
+  width: 100%;
+  font-size: 14px;
+}
+
+.moreInfoButtonText:after {
+  content: "";
+  display: block;
+  background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat center center;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin: 0 0 0 0.5rem;
+
+  @media screen and (min-width: $md) {
+    margin: 0 0 0 1rem;
+  }
+}
+
+.quoteContainer {
+  flex: 3;
+  grid-area: content;
+}
+
+.quoteWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: $orange;
+}
+
+.quoteContent {
+  @media screen and (min-width: $md) {
+    padding: 4rem; 
+  }
+  @media screen and (max-width: $md) {
+    padding: 1rem; 
+  }
+}
+
+.quoteText {
+  text-align: center;
+  h1 {
+    color: $white;
+  }
+}
+
+.partnerSection {
+  background-color: $lavender-light;
+
+  h2 {
+    text-align: center;
+  }
+
+  .intercomButtonWrap {
+    padding-top: 1rem;
+    button {
+      background-color: $watermelon;
+      border-radius: 3px;
+      font-family: $body-font-family-bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: $white;
+      letter-spacing: 0.13em;
+      padding: 0.85em 1.85em;
+      border: 0;
+      outline: none;
+      margin: 0 auto;
+      cursor: pointer;
+      transition: $hoverTransition;
+  
+      &:hover {
+        background-color: $orange;
+      }
     }
   }
 
-  .quoteContainer {
-    flex: 3;
-    grid-area: content;
-  }
-
-  .quoteWrapper {
-    display: flex;
+  .partnerSectionContent {
     flex-wrap: wrap;
     align-items: center;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: $orange;
-  }
 
-  .quoteContent {
-    @media screen and (min-width: $md) {
-      padding: 4rem; 
-    }
     @media screen and (max-width: $md) {
-      padding: 1rem; 
+      padding: 4rem 1rem;
+    }
+
+    @media screen and (min-width: $md) {
+      padding: 4rem;
     }
   }
 
-  .quoteText {
-    text-align: center;
-    h1 {
-      color: $white;
-    }
-  }
-
-  .partnerSection {
-    background-color: $lavender-light;
-
-    h2 {
-      text-align: center;
-    }
-
-    .intercomButtonWrap {
-      text-align: center;
-      padding-top: 1rem;
-
-      button {
-        background-color: $watermelon;
-        border-radius: 3px;
-        font-family: $body-font-family-bold;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        color: $white;
-        letter-spacing: 0.13em;
-        padding: 0.85em 1.85em;
-        border: 0;
-        outline: none;
-        cursor: pointer;
-        transition: $hoverTransition;
-    
-        &:hover {
-          background-color: $orange;
-        }
-      }
-    }
-
-    .partnerSectionContent {
-      flex-wrap: wrap;
-      align-items: center;
-
-      @media screen and (max-width: $md) {
-        padding: 4rem 1rem;
-      }
-
-      @media screen and (min-width: $md) {
-        padding: 4rem;
-      }
-    }
-
-    .createChangeText {
-      font-family: $feature-font-family;
-      font-size: 24px;
-    }
+  .createChangeText {
+    font-family: $feature-font-family;
+    font-size: 24px;
   }
 }

@@ -8,8 +8,8 @@ import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
-import DonationContext from '../../context';
 import Layout from '../../hocs/basicLayout';
+import DonationContext from '../../context';
 import VideoPlayer from '../../components/videoPlayer';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
@@ -68,7 +68,7 @@ const PartnerWithIntv = () => {
       <label htmlFor="drawerToggle" className={styles.drawerToggleLabel} />
       <nav className={styles.sideDrawerNav}>
         <ul className={styles.sideMenu}>
-          <li><Title type="h5Title">{'Imagination {TV}'}</Title></li>
+          <li><Title type="h5Title">{'IMAGI-NATION{TV}'}</Title></li>
           <li><a onClick={() => scrollTo(hostsRef)}>Meet the hosts</a></li>
           <li><a onClick={() => scrollTo(formatRef)}>The format</a></li>
           <li><a onClick={() => scrollTo(mentorsRef)}>The mentors</a></li>
@@ -190,11 +190,14 @@ const PartnerWithIntv = () => {
                 {`For all partnership options, the funds and work we do together will
                 be employing our team and creating the best and most engaging show.
                 It will allow for partnerships with curriculum designers to create
-                curriculum content for teachers to incorporate IN{TV} into their
+                curriculum content for teachers to incorporate IMAGI-NATION{TV} into their
                 daily lesson plans. It will allow us to have our best shot together
                 to get a mentor into every kid’s life every single day - `}
-                {/* TODO this link is broken need to find replacement */}
-                <a href="https://en.unesco.org/covid19/educationresponse" target="_blank">
+                <a
+                  href="https://en.unesco.org/covid19/educationresponse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   the number of kids affected by COVID-19 school closures stood
                   at almost almost 1.5 billion as of 28 March.
                 </a>
@@ -239,7 +242,7 @@ const PartnerWithIntv = () => {
                 <strong>
                   Jack Manning Bancroft
                   <br />
-                  {'IN{TV} EP & Founder, AIME CEO & Founder'}
+                  {'IMAGI-NATION{TV} EP & Founder, AIME CEO & Founder'}
                 </strong>
               </Paragraph>
             </div>
@@ -261,7 +264,7 @@ const PartnerWithIntv = () => {
           {/* TODO: what's the best way for this thing... creating a new component
           every time... really? shouldn't we be able to use the one comp
           and replace the content... don't know if that will work though... tbc */}
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Meet some hosts
           </Title>
           <IntvHostsCarousel />
@@ -278,7 +281,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 How it works
               `}
@@ -302,7 +305,7 @@ const PartnerWithIntv = () => {
               />
             </div>
             <div className={`${styles.panelCol}`}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 Weekly themes
               `}
@@ -331,21 +334,21 @@ const PartnerWithIntv = () => {
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title">
+            <Title type="h3Title" align="center">
               {`
               Ingredients
             `}
             </Title>
             <img
               src={`${ASSETS_URL}/assets/images/imagi-nation-tv/Ingredients.png`}
-              alt="Imagi-Nation{TV} Ingredients"
+              alt="IMAGI-NATION{TV} Ingredients"
               className={styles.videoCoverArt}
             />
           </div>
         </section>
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
-          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
+          <Title type="h3Title" align="center" className={styles.titleInTVPartnerPanel}>
             {`
             About Each Day
           `}
@@ -358,7 +361,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
 
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Some of our guests
             <br />
             (So Far)
@@ -453,7 +456,7 @@ const PartnerWithIntv = () => {
               className={`${styles.sectionHeading} ${styles.titleInTVPartnerPanel} ${styles.copyLeftAlign}`}
               theme={process.env.REACT_APP_THEME}
             >
-              {'IMAGI-NATION {CLASSROOM}'}
+              {'IMAGI-NATION{CLASSROOM}'}
             </Title>
             <div className={`${styles.copy} ${styles.copyLeftAlign}`}>
               <Paragraph>
@@ -483,7 +486,7 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  '5 minute reflection on what we learned from IN{TV}',
+                  '5 minute reflection on what we learned from IMAGI-NATION{TV}',
                   '5 minute meditation',
                   '5 minute school questions',
                   '5 minute life questions',
@@ -551,7 +554,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h4Title">AIME PROGRAM STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME PROGRAM STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -568,7 +571,7 @@ const PartnerWithIntv = () => {
                   '91 equivalent full time staff employed as of March 2020',
                 ]}
               />
-              <Title type="h4Title">AIME APPAREL STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME APPAREL STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -624,7 +627,7 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={`${styles.panelCol} ${styles.panelColContent}`}>
                   <Paragraph>
-                    {'Let’s produce a day together or the whole week and work relentlessly to get IN{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IN{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
+                    {'Let’s produce a day together or the whole week and work relentlessly to get IMAGI-NATION{TV} to 1.5 billion kids and put a mentor in the home every day. You can help suggest talent to be on the show and bring it to life. You promote IMAGI-NATION{TV} to your people and audiences once guests are in the game. Change the world, for kids and for yourselves, and give mentors in your orbit the stage to rise. '}
                   </Paragraph>
                   <Paragraph>
                     So, are you intrigued? Do you want to become a production partner?
@@ -651,10 +654,16 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    Traditionally, AIME has been focused on marginalised kids but we can’t sit on the sidelines when all kids are struggling to make sense of what education means right now. We are here for parents, teachers and kids to bring mentors into the game to help motivate, coach, counsel and inspire us to make sense of today and imagine tomorrow. We want to make hope the virus that these kids catch daily.
+                    {`Traditionally, AIME has been focused on marginalised kids but we
+                    can’t sit on the sidelines when all kids are struggling to make sense
+                    of what education means right now. We are here for parents, teachers
+                    and kids to bring mentors into the game to help motivate, coach,
+                    counsel and inspire us to make sense of today and imagine tomorrow.
+                    We want to make hope the virus that these kids catch daily.`}
                   </Paragraph>
                   <Paragraph>
-                    For existing AIME school partners and the first 300 new school partners that sign on, the partnership will be for free for 2020.
+                    {`For existing AIME school partners and the first 300 new school
+                    partners that sign on, the partnership will be for free for 2020.`}
                   </Paragraph>
                   <Paragraph>
                     {'AIME and IN{​TV} will over the course of the year deliver to schools around the world:'}
@@ -744,13 +753,14 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelCol}>
                   <Paragraph>
                     {`IMAGI-NATION{TV} is a live weekday show bringing over 1,500 world class mentors into people’s 
-                    lives through the year. The university partnership with IN{TV} is to provide guidance and 
+                    lives through the year. The university partnership with IMAGI-NATION{TV} is to provide guidance and 
                     motivation to its students during the times of COVID-19 and beyond. 
-                    The university works with AIME to explore embedding IN{TV} into courses as 
+                    The university works with AIME to explore embedding IMAGI-NATION{TV} into courses as 
                     curriculum and publishing the opportunity for students far and wide.`}
                   </Paragraph>
                   <Paragraph>
-                    For existing AIME university partners and the first 100 new university partners that sign on,
+                    For existing AIME university partners and the first
+                    100 new university partners that sign on,
                     the partnership will be for free for 2020.
                   </Paragraph>
                   <Paragraph>
@@ -759,7 +769,7 @@ const PartnerWithIntv = () => {
                   <List
                     type="ulList"
                     list={[
-                      'A space for university students to volunteer as mentors in the live audience during IN{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom',
+                      'A space for university students to volunteer as mentors in the live audience during IMAGI-NATION{TV} and to provide advice during the 30 minutes of live tutoring AIME provides daily in the post-show chatroom',
                       'The chance for education students to gain practicum experience through the show.',
                     ]}
                   />
@@ -770,7 +780,7 @@ const PartnerWithIntv = () => {
                     type="ulList"
                     list={[
                       'Sharing a press release when the partnership is formed to the university network, including all students and teachers.',
-                      'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IN{TV} to all students, staff and friends of the university.',
+                      'On the Monday of the week they are featured on the show, distributing an electronic newsletter about IMAGI-NATION{TV} to all students, staff and friends of the university.',
                     ]}
                   />
                 </div>
@@ -778,7 +788,7 @@ const PartnerWithIntv = () => {
                   <List
                     type="ulList"
                     list={[
-                      'Working with AIME on implementing IN{TV} into the curriculum.',
+                      'Working with AIME on implementing IMAGI-NATION{TV} into the curriculum.',
                       'Working with AIME to promote the opportunity for all students to become mentors on the show. For the show on which it is a featured partner, the university will ensure:',
                       'Vice-Chancellor available for 60-second challenge',
                       'One candidate available for the 180-second Wizard segment',
@@ -821,9 +831,9 @@ const PartnerWithIntv = () => {
                   <List
                     type="ulList"
                     list={[
-                      'Employ the staff working on IN{TV}',
-                      'Create partnerships with curriculum development organisations to give teachers the ability to teach with IN{TV}',
-                      'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
+                      'Employ the staff working on IMAGI-NATION{TV}',
+                      'Create partnerships with curriculum development organisations to give teachers the ability to teach with IMAGI-NATION{TV}',
+                      'Develop and deliver independent research and reporting tracking the impact of IMAGI-NATION{TV}',
                       'Develop our tech team and tech partners for the live stream',
                       'Develop puppets with localised values for different countries and localised voices',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions',
@@ -840,7 +850,8 @@ const PartnerWithIntv = () => {
                     ]}
                   />
                   <Paragraph>
-                    And we’ll work with you closely to help lift up a system that sees way too many kids left behind across the planet.
+                    And we’ll work with you closely to help lift up a system that sees
+                    way too many kids left behind across the planet.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
                     <IntercomChat label="Let's chat" classNames={styles.navBtn} />
@@ -867,9 +878,9 @@ const PartnerWithIntv = () => {
                   <List
                     type="ulList"
                     list={[
-                      'Develop a national curriculum alongside IN{TV} for all teachers across the country',
+                      'Develop a national curriculum alongside IMAGI-NATION{TV} for all teachers across the country',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions and develop curriculum resources for IMAGI-NATION{RADIO}',
-                      'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
+                      'Develop and deliver independent research and reporting tracking the impact of IMAGI-NATION{TV}',
                     ]}
                   />
                 </div>
@@ -912,7 +923,7 @@ const PartnerWithIntv = () => {
                     list={[
                       'Develop a curriculum for all teachers in your state/province',
                       'Create IMAGI-NATION{RADIO} for those who can’t access video due to Internet data restrictions and develop curriculum resources for IMAGI-NATION{RADIO}',
-                      'Develop and deliver independent research and reporting tracking the impact of IN{TV}',
+                      'Develop and deliver independent research and reporting tracking the impact of IMAGI-NATION{TV}',
                     ]}
                   />
                 </div>
@@ -948,23 +959,27 @@ const PartnerWithIntv = () => {
               <div className={styles.panelTwoCol}>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    If you want to see a mentor in every kid's life every single day - someone who
-                    teaches them how to think, not what to think - then invest in an Imagination Agenda
-                    to transform the world. If you believe that marginalised kids are not the problem,
-                    but are the solution if given the stage; if you know the power of entrepreneurs to
-                    change the world; if you know imagination is critical to change the world, then this
-                    is the investor section that says:&nbsp;
+                    {`If you want to see a mentor in every kid's life every single
+                    day -someone who teaches them how to think, not what to think - then
+                    invest in an Imagination Agenda to transform the world. If you
+                    believe that marginalised kids are not the problem,
+                    but are the solution if given the stage; if you know the
+                    power of entrepreneurs to change the world; if you know imagination
+                    is critical to change the world, then this
+                    is the investor section that says:`}
                     <em>
-                      ‘Hey you guys, I’m here and on your team. Let’s do this! Use this funding for anything
-                      you need to bring this show to life, to amplify it and light up kids’ minds. This is your
-                      untied Imagination Fund.’
+                      ‘Hey you guys, I’m here and on your team. Let’s do this! Use this
+                      funding for anything you need to bring this show to life, to
+                      amplify it and light up kids’ minds. This is your untied
+                      Imagination Fund.’
                     </em>
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
                   <Paragraph>
-                    In this space we imagine philanthropists who have rocked the world would donate funds to
-                    work with us; this is for the investors who have made their way and who know that with a
+                    In this space we imagine philanthropists who have rocked the world
+                    would donate funds to work with us; this is for the investors who have
+                    made their way and who know that with a
                     little rocket fuel, you can go to the moon.
                   </Paragraph>
                   <div className={`${styles.intercomBtnWrap} ${styles.btnPartnerOp}`}>
@@ -991,9 +1006,9 @@ const PartnerWithIntv = () => {
                     content partnerships. Let’s get it out there. This is a form of advertising… and
                     we’d wanna do it in a ballistically classy way. For example, we would love to provide
                     the opportunity to invite one of your top designers onto our 'design-themed' episode
-                    of IN{TV}, and discuss the positive ways and good work that you and your organisation
+                    of IMAGI-NATION{TV}, and discuss the positive ways and good work that you and your organisation
                     are contributing to the world. We could then also explore the potential for a further
-                    Q&A segment with one of IN{TV}'s hosts/puppets. `}
+                    Q&A segment with one of IMAGI-NATION{TV}'s hosts/puppets. `}
                   </Paragraph>
                 </div>
                 <div className={styles.panelCol}>
@@ -1063,7 +1078,7 @@ const PartnerWithIntv = () => {
                     medium organisations with donations welcome)
                   </Paragraph>
                   <Paragraph>
-                    {'To recognise the challenges of this current time, AIME is offering a subsidised corporate wellbeing package. This gives the chance for corporates to use IN{TV} as an official wellbeing offer for their staff and bring over 1,500 world class mentors into their lives per year. This package allows an organisation to provide guidance and motivation to its staff during the times of COVID-19 and beyond, with a commitment to give staff an official 30 minutes a day to recharge with their friends, family and colleagues by joining the mentors on IMAGI-NATION{TV}.'}
+                    {'To recognise the challenges of this current time, AIME is offering a subsidised corporate wellbeing package. This gives the chance for corporates to use IMAGI-NATION{TV} as an official wellbeing offer for their staff and bring over 1,500 world class mentors into their lives per year. This package allows an organisation to provide guidance and motivation to its staff during the times of COVID-19 and beyond, with a commitment to give staff an official 30 minutes a day to recharge with their friends, family and colleagues by joining the mentors on IMAGI-NATION{TV}.'}
                   </Paragraph>
                   <Paragraph>
                     This is your chance to act on your commitment to health and
@@ -1077,16 +1092,16 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelCol}>
                   <Paragraph>
                     {`Our core focus is imagination, and we’ve been in the game of behaviour
-                    change for marginalised kids and university students for 16 years. 
-                    With IMAGI-NATION{TV}, the focus is on our inner child, 
-                    on unlocking that curiosity and joy to fuel hope, inspiration and 
-                    action. Considering the challenges that many of us are facing 
-                    with kids at home, IMAGI-NATION{TV} is a gift for all parents 
-                    to sit down with their kids for an hour a day. 
+                    change for marginalised kids and university students for 16 years.
+                    With IMAGI-NATION{TV}, the focus is on our inner child,
+                    on unlocking that curiosity and joy to fuel hope, inspiration and
+                    action. Considering the challenges that many of us are facing
+                    with kids at home, IMAGI-NATION{TV} is a gift for all parents
+                    to sit down with their kids for an hour a day.
                     And if you don’t have kids, it’s a gift for the kid inside you!`}
                   </Paragraph>
                   <Paragraph>
-                    {'Check out '}
+                    Check out
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1094,7 +1109,8 @@ const PartnerWithIntv = () => {
                     >
                       this article in Harvard Business Review
                     </a>
-                      &nbsp;from 2 BCG Henderson Institute thinkers explaining how imagination helps businesses
+                      &nbsp;from 2 BCG Henderson Institute thinkers explaining how
+                      imagination helps businesses
                       succeed and why it’s even more critical in the current climate.
                   </Paragraph>
                   <Paragraph>
