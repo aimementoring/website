@@ -1,5 +1,9 @@
 @import "../styles/global.module.scss";
+// @todo CSS: find way to remove global videojs styles
 @import "../styles/videojs.scss";
+
+// @todo CSS: Refactor global href styles
+// we shouldn't be setting color here, but could have some smart global styles ...
 
 a {
   color: $purple;
@@ -10,6 +14,9 @@ a {
 img {
   max-width: 100%;
 }
+
+// @todo CSS: Review global body styles 
+// There are some extra rules here that probably aren't needed at all
 
 body {
   margin: 0;
