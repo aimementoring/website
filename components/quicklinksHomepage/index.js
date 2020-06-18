@@ -15,7 +15,7 @@ const QuicklinksHomepage = (props) => {
 
   return (
     <div className={styles.quicklinksPanel} ref={getInvolvedRef}>
-      <Title type="h3Title" className={styles.quicklinksHeader}>
+      <Title type="h3Title" align="center" className={styles.quicklinksHeader}>
         Get involved
       </Title>
       <div className={styles.quicklinksGrid}>
