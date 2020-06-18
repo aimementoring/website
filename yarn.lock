@@ -2642,10 +2642,10 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-aime-blueprint@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.2.3.tgz#9bb3943fa865e1cecb96afcd73bdea1fb5962adb"
-  integrity sha512-Qc+Nb37m4Eau9n/vpE/enKNdgb9+0G75Cm3lUiKojUFOQQOusYKl3v/c1zxTvtBZl62eCovH5YMJPXsMSzOv1w==
+aime-blueprint@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/aime-blueprint/-/aime-blueprint-2.2.13.tgz#80d785861dc1a16bf9fa9a749910080cb4250289"
+  integrity sha512-cFImisdW7K6h3hOqgeCwTKx7p1onpgCVnhfYCZMGbCJiVLyaTOt7Ncy36FnwnfzZ/zb711cSr90VJXMQBiqOSA==
   dependencies:
     "@bugsnag/js" "^6.2.0"
     "@bugsnag/plugin-react" "^6.2.0"
