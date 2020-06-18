@@ -1,9 +1,13 @@
 @import "../../styles/global.module.scss";
 
+// @todo CSS: Refactor into banner componenet 
+
 .bannerInStory {
   background-position: 0% 25%;
   max-width: 100%;
   height: 65vh;
+  width: 96%;
+  margin: 4.2em auto 0;
   background-size: cover;
   position: relative;
 
@@ -58,6 +62,14 @@
     padding: 30px 0 4rem 0;
   }
 
+  .blogPostTitle {
+    font-size: 2rem;
+
+    @media screen and (min-width: $md) {
+    font-size: 2.5rem;
+    }
+  }
+
   .blogPostTimestamp {
     display: block;
     margin-bottom: 4em;
@@ -66,6 +78,8 @@
     color: $grey;
     font-size: 13px;
   }
+
+  // @todo CSS: Refactor all article content styles into Blueprint componenets 
 
   .blogPostArticle {
     line-height: 26px;
