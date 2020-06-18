@@ -32,62 +32,56 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
 
   return (
     <Layout>
-      <div className={styles.containerPositions}>
-        <div className={styles.positions}>
-          <JobsBanner />
-          <section className={styles.relative}>
-            <div className={styles.contentPanel}>
-              <div className={styles.insideContentPanel}>
-                <div className={styles.flexPanel}>
-                  <div className={styles.containerTitle}>
-                    <Title type="headingLockup">
-                      <strong>
-                        Get&nbsp;
-                        <span>involved</span>
-                      </strong>
-                    </Title>
-                    <div>
-                      <Paragraph>
-                        Welcome to AIME. A group that is looking to transform education
-                        from the inside out, through imagination & mentoring in order to
-                        create more educational equality, access to opportunities
-                        and in turn a fairer world.
-                      </Paragraph>
-                      <Paragraph>
-                        If you get the chance to work with us -&nbsp;
-                        <mark>bring everything you have</mark>
-                        , embrace our 21 mentor values,
-                        and enter a world of imagining what’s possible.
-                      </Paragraph>
-                    </div>
-                  </div>
-                  <div className={styles.videoContainer}>
-                    <div>
-                      <VideoPlayer
-                        url="https://player.vimeo.com/external/390403643.m3u8?s=93f254baaef717dc9591e594f84a2367b3d1ce01"
-                        imageUrl={`${ASSETS_URL}/assets/images/media/vid-puppets.jpg`}
-                      >
-                        <Paragraph className={styles.videoCaption}>Welcome to AIME</Paragraph>
-                      </VideoPlayer>
-                    </div>
-                  </div>
-                </div>
+      <JobsBanner />
+      <section>
+        <div className={styles.contentPanel}>
+          <div className={styles.flexPanel}>
+            <div className={styles.containerTitle}>
+              <Title type="headingLockup">
+                <strong>
+                  Get&nbsp;
+                  <span>involved</span>
+                </strong>
+              </Title>
+              <div>
+                <Paragraph>
+                  Welcome to AIME. A group that is looking to transform education
+                  from the inside out, through imagination & mentoring in order to
+                  create more educational equality, access to opportunities
+                  and in turn a fairer world.
+                </Paragraph>
+                <Paragraph>
+                  If you get the chance to work with us -&nbsp;
+                  <mark>bring everything you have</mark>
+                  , embrace our 21 mentor values,
+                  and enter a world of imagining what’s possible.
+                </Paragraph>
               </div>
             </div>
-            <div className={styles.containerJobs}>
-              {!!countryId && (
-                <Jobs
-                  cdnUrl={ASSETS_URL}
-                  currentSite={countryId}
-                  jobTitle={jobTitle}
-                  isRedirect={isRedirect}
-                  handleRedirectHide={() => setIsRedirect(false)}
-                />
-              )}
+            <div className={styles.videoContainer}>
+              <div>
+                <VideoPlayer
+                  url="https://player.vimeo.com/external/390403643.m3u8?s=93f254baaef717dc9591e594f84a2367b3d1ce01"
+                  imageUrl={`${ASSETS_URL}/assets/images/media/vid-puppets.jpg`}
+                >
+                  <Paragraph className={styles.videoCaption}>Welcome to AIME</Paragraph>
+                </VideoPlayer>
+              </div>
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+        <div className={styles.positionsList}>
+          {!!countryId && (
+            <Jobs
+              cdnUrl={ASSETS_URL}
+              currentSite={countryId}
+              jobTitle={jobTitle}
+              isRedirect={isRedirect}
+              handleRedirectHide={() => setIsRedirect(false)}
+            />
+          )}
+        </div>
+      </section>
     </Layout>
   );
 };
