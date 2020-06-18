@@ -1,7 +1,9 @@
 @import "../../../styles/global.module.scss";
 
 .carouselContainer {
-  min-height: 71vh;
+  max-width: 81.25em;
+  max-height: 50em;
+  margin: 0 auto;
 }
 
 .storyCarousel {
@@ -9,10 +11,6 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
-
-  @media screen and (min-width: $md) {
-    margin-bottom: 4rem;
-  }
 
   .storyHeaderCarousel :global(.slick-arrow) {
     display: none !important;
