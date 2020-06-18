@@ -1,103 +1,38 @@
 @import "../../styles/global.module.scss";
 
-.containerPositions{
-    .positions {
-      .h1 {
-        color: $orange;
-      }
-    
-      .videoCaption {
-        text-align: right;
-      }
-    }
-    
-    .relative {
-      position: relative;
-    }
-    
-    
-    .contentPanel {
-      position: relative;
-      max-width: 100%;
-      width: 100%;
-      padding: 4em 1em 2em;
-    }
+.contentPanel {
+  padding: 4em;
+}
 
-    .insideContentPanel{
-      max-width: 1250px;
-      margin-right: auto;
-      margin-left: auto;
-
-      @media (min-width: 40em) {
-        width: 100%;
-      }
-      @media (min-width: 52em) {
-        width: 83.33333%;
-      }
-    }
-
-    .flexPanel{
-      @media screen and (min-width: $md) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }  
-
-  .containerTitle{
-    padding-right: 1rem;
-    h1 {
-      color: $orange;
-    }
-    @media (min-width: 40em) {
-      width: 100%;
-    }
-
-    @media (min-width: 40em) {
-      width: 50%;
-    }
-
+.flexPanel {
+  @media screen and (min-width: $md) {
+    display: flex;
+    align-items: center;
   }
+}  
 
-  .videoContainer{
-    @media (min-width: 40em) {
-      width: 100%;
+.containerTitle {
+  h1 {
+    color: $orange;
+    @media screen and (max-width: $md) {
+      margin-bottom: 1em;
     }
-
-    @media (min-width: 40em) {
-      width: 50%;
-    }
-  }
-
-  .videoCaption{
-    text-align: right;
-  }
-
-  .containerJobs{
-    margin: 0 auto; 
-    max-width: 1120px; 
-    overflow: visible;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
 }
-  
 
+.containerTitle,
+.videoContainer {
+  @media (min-width: $md) {
+    width: 50%;
+  }
+}
 
+.videoCaption {
+  text-align: right;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.positionsList {
+  margin: 0 auto;
+  padding: 0 2rem;
+}

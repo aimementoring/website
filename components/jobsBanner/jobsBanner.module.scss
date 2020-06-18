@@ -1,55 +1,6 @@
 @import "../../styles/global.module.scss";
 
-.bannerWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-}
-
-.bannerHeadingPositions {
-  strong {
-    left: initial;
-  }
-}
-
-.bannerContentWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  height: 100%;
-  align-items: center;
-  text-align: center;
-  padding-top: 2em;
-
-}
-
 .jobsBanner {
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
-  height: 60vh;
-  padding: 35px 0;
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-  }
-  @media screen and (min-width: $sm) {
-    padding: 0;
-    height: 62vh;
-  }
-  .highlight-text {
-    transform: rotate(-3deg);
-  }
-  h1 {
-    text-align: center;
-    color: $white;
-    strong {
-      left: initial;
-    }
-  }
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;    
 }
