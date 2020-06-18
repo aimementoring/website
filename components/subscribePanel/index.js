@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import LabeledInput from 'aime-blueprint/lib/components/labeledInput';
+import Input from 'aime-blueprint/lib/components/input';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import MovingWaves from '../movingWaves';
@@ -38,11 +38,11 @@ const SubscribePanel = () => {
         <MovingWaves className={styles.wavySubscribe} />
         <div className={styles.newsletterWrapper}>
           <div className={styles.formContainer}>
-            <Title type="h4Title" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
+            <Title type="h4Title" align="center" className={styles.subscribeTitle} theme={process.env.REACT_APP_THEME}>
               BOARD THE AIME ROCKET SHIP
             </Title>
             <Paragraph className={styles.subscribeDetails} theme={process.env.REACT_APP_THEME}>
-              {'Receive IN{TV} latest, job offers, Hoodies, Sunday Kindness & more'}
+              {'Receive IMAGI-NATION{TV} latest, job offers, Hoodies, Sunday Kindness & more'}
             </Paragraph>
             <form
               acceptCharset="UTF-8"
@@ -51,7 +51,7 @@ const SubscribePanel = () => {
               name="mc-embedded-subscribe-form"
               target="_blank"
             >
-              <LabeledInput
+              <Input
                 type="email"
                 name="EMAIL"
                 id="mce-EMAIL"

@@ -127,7 +127,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.fullWidthPanel}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          <Title type="headingLockup" align="center" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
             Our 21
             <strong>Values</strong>
           </Title>
@@ -148,7 +148,7 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.fullWidthPanelStrat}>
-          <Title type="h5Title" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          <Title type="h5Title" align="center" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
             <a
               target="_blank"
               rel="noopener noreferrer"
