@@ -20,12 +20,12 @@
     background-position: bottom;
     background-size: cover;
     display: flex;
-    height: 70vh;
+    height: 55vh;
     justify-content: center;
     position: relative;
     width: 100%;
     padding: 0;
-    margin:1em 1em 0em 1em;
+    margin: 50px 1em 0;
 
     @media screen and (max-device-width: 1024px) {
       background-attachment: scroll;
@@ -40,7 +40,6 @@
       color: $white;
       text-align: center;
       line-height: 1em;
-      margin-top: 2em;
 
       strong {
         top: inherit;

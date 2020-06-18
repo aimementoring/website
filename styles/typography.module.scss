@@ -57,8 +57,8 @@
   font-weight: 500;
 }
 
-// TODO: Can't we just have one reference to Poppins and then bring in various weights?
-// don't want to change right now in case it breaks all the headings across the site
+// @todo CSS: Review @font-face rules
+// Can't we just have one reference to Poppins and then bring in various weights? Maybe should look into variable fonts / combining just the glyphs we need 
 
 // Poppins
 @font-face {
@@ -101,15 +101,6 @@
   src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BoldItalic.ttf');
   font-style: normal;
   font-weight: 500;
-}
-
-@font-face {
-    font-family: 'blackhawk_italicregular';
-    src: url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff2') format('woff2'),
-         url($cdnRoot + 'assets/fonts/blackhawk/blackhawk_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
 }
 
 // Material Icons
