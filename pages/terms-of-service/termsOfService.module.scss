@@ -1,74 +1,18 @@
 @import "../../styles/global.module.scss";
 
-.termsAndConditions {
-  .termsOfServiceBanner {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-    height: 60vh;
-    padding: 35px 0;
-    // Stop fixed on tablets & phones as it doesn't work
-    @media screen and (max-device-width: 1024px){
-      background-attachment: scroll;
-    }
-
-    @media screen and (min-width: $sm) {
-      padding: 0;
-      height: 62vh;
-    }
-
-    h1 {
-      text-align: center;
-      color: $white;
-      strong {
-        left: initial;
-      }
-    }
-  }
-
-  .bannerWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .bannerContentWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    align-items: center;
-    text-align: center;
-    padding-top: 2em;
-  }
-
-  .bannerHeadingTermsOfService {
-    strong {
-      left: initial;
-    }
-  }
-
-  .termsSection {
-    max-width: 720px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    p {
-      line-height: 2;
-      font-weight: 300;
-      font-size: 16px;
-      padding-bottom: 1rem;
-      padding-top: .5rem;
-    }
-  }
+.termsOfServiceBanner {
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
 }
 
+.termsSection {
+  
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 
+  // @todo CSS: Terms of service headings should be styled from blueprint 
 
+  h2 {
+    margin: 0 0 1.5em 0;
+  }
 
+}
