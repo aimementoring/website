@@ -118,12 +118,14 @@ const IntvPartnersSlide = ({
         <div className={styles.titleContainer}>
           <Title
             type="h4Title"
+            align="center"
             className={styles.partnerName}
           >
             {title}
           </Title>
           <Title
             type="h5Title"
+            align="center"
             className={styles.partnerType}
           >
             {type}
