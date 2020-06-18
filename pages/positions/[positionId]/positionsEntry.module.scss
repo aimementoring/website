@@ -1,12 +1,5 @@
 @import "../../../styles/global.module.scss";
-.positionsJobCategory{
-  .jobCategory {
-    max-width: 720px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-  }
+
+.wrapper {
+  composes: wrapper from '../../../styles/patterns/patternWrapper.module.scss';
 }
