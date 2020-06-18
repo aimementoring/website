@@ -35,6 +35,8 @@
   text-decoration: none;
 }
 
+// @todo hey @kbardi, are we still using this spotlightArticle type? Cannot see it anywhere but dont want to delete your work...
+
 .spotlightArticleLink {
   margin: 0 1.5em;
   padding: 0;
@@ -92,16 +94,7 @@
 }
 
 .articleDescription {
-  padding: 1.5em;
-  
-  h5 {
-  margin-bottom: 0.5em;
-  color:$black;
-  transition: $hoverTransition;
-  &:hover {
-    color: $purple;
-    }
-  }
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .postDate {
