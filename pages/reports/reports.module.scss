@@ -1,15 +1,9 @@
 @import "../../styles/global.module.scss";
 
-.heroBannerReports {
-  display: flex;
-  min-height: 71vh;
-  text-align: center;
-  margin-bottom: 2rem;
-  flex-direction: column;
-  justify-content: center;
+.banner {
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
     no-repeat top center / cover #050301;
-  color: $white;
 }
 
 .filterListContainer {
@@ -21,6 +15,9 @@
     flex-wrap: wrap;
   }
 }
+
+// @todo: CSS: Refactor into a grid layout componenet 
+// Or at least into a CSS modules pattern to start
 
 .reportsGrid {
   display: grid;
