@@ -4,7 +4,7 @@ import styles from './yearHeader.module.scss';
 
 const YearHeader = () => (
   <div className={styles.beAMentorYearHeader}>
-    <Title type="headingLockup" className={styles.yearWelcomeHeading} theme={process.env.REACT_APP_THEME}>
+    <Title type="headingLockup" align="center" className={styles.yearWelcomeHeading} theme={process.env.REACT_APP_THEME}>
       {`Bring on ${new Date().getFullYear()},`}
       <strong>
         Change is
