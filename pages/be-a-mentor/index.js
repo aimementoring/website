@@ -10,16 +10,14 @@ const YearHeader = dynamic(() => import('../../components/beAMentor/yearHeader')
 
 const BeAMentor = () => (
   <Layout>
-    <div className={styles.beAMentorContainer}>
-      <HeroBanner />
-      <section className={styles.fullWidthWrap}>
-        <div className={styles.mentorEOIContainer}>
-          <YearHeader />
-          <WelcomeBox />
-          <BeAMentorForm />
-        </div>
-      </section>
-    </div>
+    <HeroBanner />
+    <section className={styles.wrapper}>
+      <div className={styles.container}>
+        <YearHeader />
+        <WelcomeBox />
+        <BeAMentorForm />
+      </div>
+    </section>
   </Layout>
 );
 
