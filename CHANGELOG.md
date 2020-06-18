@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.3.3] 2020-06-12
+### Added
+- Display email if intercom was blocked
+- Caption component for Jobs
+
+### Changed
+- Updated Blueprint version
+- Changed Title component (alignment)
+- Some refactors
+
+## [5.3.2] 2020-05-29
+### Added
+- New menu :)
+- Added Menu and Footer to 404 page
+
+### Changed
+- Banner updates on stories for new menu
+- Updates to Imagi-Nation{TV} and Partnering page. Buttons, copy etc. 
+
+### Removed
+- [lots of CSS :) ](https://github.com/aimementoring/website/pull/512)
+
 ## [5.3.1] 2020-05-22
 ### Added
 - N/A
