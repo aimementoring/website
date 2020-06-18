@@ -35,10 +35,8 @@ const Header = ({ location }) => {
 
   const handleScroll = () => {
     setHeaderClass(classNames({
-      [styles.headerTransparent]: window.scrollY === 0,
-      [styles.doNotDisplay]: window.scrollY === 0 && headerComponent === null,
-      [styles.headerFilled]: window.scrollY > 0,
-      [styles.micrositeHeader]: headerComponent !== StandardHeader,
+      [styles.headerTransparent]: window.scrollY < 1,
+      [styles.headerFilled]: window.scrollY > 1,
     }));
   };
 
