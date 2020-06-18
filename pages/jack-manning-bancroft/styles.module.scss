@@ -1,85 +1,12 @@
 @import "../../styles/global.module.scss";
 
-.heroBannerFounder {
+.banner {
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;  
-  padding: 0;
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  @media all and(min-width: $md) {
-    background-size: contain;
-  }
-
-  .founderBannerHeader {
-    margin-top: 2em;
-
-    strong {
-      left: initial;
-    }
-  }
-
-  // &:before {
-  //   position: absolute;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   background: rgba(0, 0, 0, 0.15);
-  // }
+  // fix for mobile safari https://stackoverflow.com/a/31445503
+  @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
 }
+
 .plainContentWrapper {
-  padding: 3em 1.5em;
-  margin: 0 auto;
-  max-width: 45em;
-
-  @media all and(min-width: $md) {
-    padding: 5em 3em;
-  }
-}
-
-.heroBannerDefault {
-  height: 50vh;
-  // background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  padding: 35px 0;
-
-  @media screen and (min-width: $sm) {
-    padding: 0;
-    height: 62vh;
-  }
-  // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
-    background-attachment: scroll;
-  }
-  
-  .highlight-text {
-    transform: rotate(-3deg);
-  }
-
-  h1 {
-    text-align: center;
-    strong {
-      left: initial;
-    }
-  }
-}
-
-.bannerContentWrapperClass {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-}
-
-.bannerWrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h1 {
-    color: $white;
-  }
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 }
