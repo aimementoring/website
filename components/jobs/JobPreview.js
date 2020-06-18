@@ -1,6 +1,9 @@
 import React from 'react';
 import PropType from 'prop-types';
 import compact from 'lodash/compact';
+import Title from 'aime-blueprint/lib/components/title';
+import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Caption from 'aime-blueprint/lib/components/caption';
 import Anchor from '../common/link';
 
 import styles from './jobs.module.scss';
@@ -62,11 +65,11 @@ const JobPreview = ({
       <Anchor
         to="/positions/[positionId]/[jobCategory]"
         as={`/positions/${id}/${nameAsLink}`}
-        className={styles.anchorClass}
+        className={styles.jobCard}
       >
         <div className={styles.containerDetails}>
-          <h4 className={styles.nameStyles}>{name}</h4>
-          <div className={styles.detailsStyles}>{details}</div>
+          <Title type="h5Title" className={styles.nameStyles}>{name}</Title>
+          <Caption>{details}</Caption>
           <div className={styles.expireStyles}>
             {expire && (
               <span>
@@ -76,7 +79,9 @@ const JobPreview = ({
               </span>
             )}
           </div>
-          <p className={styles.descriptionStyles}>{description}</p>
+          <Paragraph theme={process.env.REACT_APP_THEME} className={styles.descriptionStyles}>
+            {description}
+          </Paragraph>
           <span className={styles.lineStyle} />
           <img alt="Small arrow" src={`${cdnUrl}/assets/images/sm-arrow.svg`} />
         </div>
