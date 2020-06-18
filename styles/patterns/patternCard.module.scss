@@ -1,0 +1,25 @@
+@import "../global.module.scss";
+
+
+.card {
+  border: 1px solid $light-grey;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 1;
+  position: relative;
+}
+
+.cardContent {
+  position: relative;
+  margin: 1.5em;
+  
+  h5 {
+  margin-bottom: 0.5em;
+  color:$black;
+  transition: $hoverTransition;
+  &:hover {
+    color: $purple;
+    }
+  }
+}
