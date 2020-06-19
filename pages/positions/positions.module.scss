@@ -12,9 +12,11 @@
 }  
 
 .containerTitle {
-
   h1 {
     color: $orange;
+    @media screen and (max-width: $md) {
+      margin-bottom: 1em;
+    }
   }
 
 }

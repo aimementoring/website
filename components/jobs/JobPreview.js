@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import compact from 'lodash/compact';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-// import Caption from 'aime-blueprint/lib/components/caption';
+import Caption from 'aime-blueprint/lib/components/caption';
 import Anchor from '../common/link';
 
 import styles from './jobs.module.scss';
@@ -69,8 +69,7 @@ const JobPreview = ({
       >
         <div className={styles.containerDetails}>
           <Title type="h5Title" className={styles.nameStyles}>{name}</Title>
-          {/* @todo uncomment this once caption component PR is merged into blueprint master */}
-          {/* <Caption>{details}</Caption> */}
+          <Caption>{details}</Caption>
           <div className={styles.expireStyles}>
             {expire && (
               <span>
