@@ -1,14 +1,16 @@
 .waveForm {
-  width:100vw;
-  margin:0;
-  display:block;
+  bottom: 0;
+  display: block;
+  margin: 0;
   position: absolute;
-  bottom:0;
-  z-index:10;
+  width: 100vw;
+  z-index: 10;
 
 }
 
-.topLine, .bottomLine, .middleLine {
-  fill:rgba(255,255,255,.8);
-  stroke:none;
+.topLine,
+.bottomLine,
+.middleLine {
+  fill: rgba(255, 255, 255, 0.8);
+  stroke: none;
 }
