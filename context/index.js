@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DonationContext = React.createContext();
-
+export const DonationContext = React.createContext();
 export const DonationConsumer = DonationContext.Consumer;
 
-export default DonationContext;
+export const ContactContext = React.createContext();
+export const ContactConsumer = ContactContext.Consumer;
