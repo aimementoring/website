@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .ambassadorsGridTile {
   flex: 33.33%;
@@ -9,24 +9,24 @@
   }
 
   .campaignGridImage {
-    height: 17em;
-    clip-path: url(#svgScratchAmbassadorClipPath);
     // .circle
     border-radius: 50%;
-    margin-right: auto;
-    margin-left: auto;
+    clip-path: url(#svgScratchAmbassadorClipPath);
     // .block
     display: block;
     filter: grayscale(1);
+    height: 17em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .h4Title {
     color: $black;
-    margin: 1rem 0 .7rem 0;
+    font-family: $signature-font-family;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.3;
-    font-family: $signature-font-family;
+    margin: 1rem 0 0.7rem;
     margin-bottom: 0 !important;
   }
   
