@@ -1,25 +1,25 @@
 @import '../../styles/global.module.scss';
 
 .footerBannerContainer {
-  position: relative;
   max-width: 100%;
+  position: relative;
   width: 100%;
 
   .footerBannerWrapper {
     align-items: center;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
   }
 
   .bannerWrapper {
+    align-items: center;
     background: url($cdnRoot + 'assets/images/banner/bg-imagination@2x.jpg') no-repeat top center / cover $darkest-purple;
-    height: 520px;
     background-blend-mode: screen;
+    display: flex;
+    height: 520px;
+    justify-content: center;
     position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .headingLockup {
