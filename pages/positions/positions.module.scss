@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .contentPanel {
   padding: 4em;
@@ -6,8 +6,8 @@
 
 .flexPanel {
   @media screen and (min-width: $md) {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 }  
 
