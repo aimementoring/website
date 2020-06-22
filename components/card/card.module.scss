@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .bannerImage {
   border-radius: 3px 3px 0 0;
@@ -23,11 +23,11 @@
 }
 
 .videoIcon {
-  width: 70px;
+  left: 50%;
   position: absolute;
   top: 8.5em;
-  left: 50%;
   transform: translateX(-50%);
+  width: 70px;
 }
 
 .articleLink {
@@ -45,8 +45,8 @@
 
 .articleTileLink {
   display: block;
-  margin-bottom: 1.5rem;
   font-weight: 600;
+  margin-bottom: 1.5rem;
 
   @media screen and (min-width: $lg) {
     padding: 1rem 2.5rem;
