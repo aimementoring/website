@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .articleTile {
   border-color: $light-grey;
@@ -36,12 +36,13 @@
 .articleDescription {
   padding: 1.5em;
   
-  h5{
-  margin-bottom: 0.5em;
-  color:$black;
-  transition: $hoverTransition;
-  &:hover {
-    color: $purple;
+  h5 {
+    color: $black;
+    margin-bottom: 0.5em;
+    transition: $hoverTransition;
+
+    &:hover {
+      color: $purple;
     }
   }
 
@@ -54,17 +55,18 @@
 .slash {
   color: $light-grey;
 }
+
 .articleTileLabel {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 300;
   color: $grey;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .articleTileLink {
   display: block;
-  margin-bottom: 1.5rem;
   font-weight: 600;
+  margin-bottom: 1.5rem;
 
   @media screen and (min-width: $lg) {
     padding: 1rem 2.5rem;

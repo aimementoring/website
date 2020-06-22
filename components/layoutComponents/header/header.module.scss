@@ -1,4 +1,4 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module.scss';
 
 .iconAimeLogo {
   color: $white;
@@ -6,20 +6,20 @@
   display: inline-block;
   fill: currentColor;
   height: 38px;
-  stroke-width: 0;
   stroke: currentColor;
+  stroke-width: 0;
   transition: width 0.5s ease;
   width: 120px;
 }
 
 .navHiring {
-  color: $white;
   background: $magenta;
-  padding: 0.75em;
+  color: $white;
   display: block;
-  text-align: center;
-  font-size: 0.9em;
   font-family: $body-font-family;
+  font-size: 0.9em;
+  padding: 0.75em;
+  text-align: center;
 
   &:hover {
     color: $white;
@@ -31,7 +31,7 @@
   background: $white;
   border-color: $purple;
   border-left-style: solid;
-  border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0;
   border-top-style: solid;
   border-width: 1px;
   height: 12px;
@@ -47,24 +47,24 @@
 .menuTitle {
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem 1rem 2rem;
   font-family: $body-font-family;
+  padding: 2rem 2rem 1rem;
 
   .subtitle {
-    font-family: $body-font-family;
     color: $black;
+    font-family: $body-font-family;
     font-size: 1.4em;
-    font-weight: 900;
     font-style: normal;
-    text-transform: uppercase;
+    font-weight: 900;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
   }
 
   .description {
+    color: $black;
     font-size: 0.85em;
     font-weight: 400;
     margin-bottom: 0.5rem;
-    color: $black;
 
     @media (min-width: $sm) {
       width: 83.33333%;
@@ -81,12 +81,12 @@
 }
 
 .hoodedScholarHeaderTitle {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
-  min-height: 55px;
-  max-width: 1300px;
   margin: 0 auto;
+  max-width: 1300px;
+  min-height: 55px;
 
   &.isHidden {
     display: none;
@@ -95,10 +95,10 @@
 
 .donateBtn {
   background-color: $brand-primary;
+  border: none;
   border-radius: $border-radius-button;
   border-style: solid;
   border-width: 1px;
-  border: none;
   color: $white;
   display: block;
   font-family: $feature-font-family;
@@ -129,12 +129,12 @@
 .secondHeader {
   align-items: center;
   display: flex;
-  max-width: 1300px;
   margin: 0 auto;
+  max-width: 1300px;
 
   &::after,
   &::before {
-    content: " ";
+    content: ' ';
     display: table;
   }
 
@@ -144,9 +144,9 @@
 }
 
 .submenuLink {
-  display: block;
-  border-top: 1px solid $purple;
   border-bottom: none !important;
+  border-top: 1px solid $purple;
+  display: block;
   font-family: $body-font-family;
   font-size: 0.85em;
   font-weight: bold;
@@ -156,19 +156,19 @@
 
   &:hover {
     background-color: $purple;
-    color: $white !important;
     box-shadow: none;
+    color: $white !important;
   }
 }
 
 .navMicrosite {
-  padding: 0.1em 0.6em;
   align-items: center;
   display: flex;
+  padding: 0.1em 0.6em;
 
   &::after,
   &::before {
-    content: " ";
+    content: ' ';
     display: table;
   }
 
@@ -178,27 +178,27 @@
 }
 
 .logoContainer {
+  box-sizing: border-box;
   display: flex;
+  float: left;
   vertical-align: middle;
-    box-sizing: border-box;
-    float: left;
 }
 
 .submenuWrapper {
   background: $white;
   border: 1px solid $purple;
-  position: absolute;
+  border-radius: 4px;
+  font-family: $primary-font-family;
   left: 50%;
+  margin-left: -1rem;
+  min-width: 18em;
+  opacity: 0;
+  position: absolute;
   top: 100%;
   transform: translateX(-50%) translateY(-5%);
-  visibility: hidden;
-  opacity: 0;
-  min-width: 18em;
-  border-radius: 4px;
-  margin-left: -1rem;
   transition: ease-in 0.1s all;
+  visibility: hidden;
   z-index: 100;
-  font-family: $primary-font-family;
 
   h3 {
     font-weight: 500;
@@ -209,22 +209,21 @@
   }
 
   a {
-    text-decoration: none;
     color: $black;
+    text-decoration: none;
 
     &.active {
-      font-family: $feature-font-family;
-      font-weight: 400;
       color: $brand-primary;
+      font-family: $feature-font-family;
       font-size: 13px;
+      font-weight: 400;
     }
   }
 
   &.countryOptions {
-
     a {
-      text-decoration: none;
       color: $white;
+      text-decoration: none;
 
       &:hover {
         color: $white;
@@ -234,23 +233,23 @@
   }
 
   &.active {
-    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
 .navTalent {
+  display: block;
   position: absolute;
   right: 112px;
-  display: block;
 
   @media screen and (min-width: $lg) {
     display: block;
   }
 
   @media screen and (min-width: $sm) {
-    float: right;
     box-sizing: border-box;
+    float: right;
   }
 }
 
@@ -284,8 +283,8 @@
     position: relative;
 
     &:hover .submenuWrapper {
-      transform: translateX(-50%) translateY(0);
       opacity: 1;
+      transform: translateX(-50%) translateY(0);
       visibility: visible;
     }
 
@@ -295,12 +294,18 @@
   }
 
   button.navBtn {
-    padding: 0.15em 0;
     line-height: 1.5;
+    padding: 0.15em 0;
   }
 
   .navBtn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    box-sizing: border-box;
     color: $black;
+    cursor: pointer;
     display: block;
     font-family: $body-font-family;
     font-size: 0.9em;
@@ -309,12 +314,6 @@
     margin-right: 1.5rem;
     margin-top: 1rem;
     text-decoration: none;
-    background: none;
-    border: none;
-    box-sizing: border-box;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
-    cursor: pointer;
     
     &.active {
       border-bottom: 2px solid $white;
@@ -322,7 +321,8 @@
       font-weight: 500;
     }
 
-    &.activeItem, 
+    &.activeItem,
+ 
     &:hover {
       border-bottom: 2px solid $white;
     }
@@ -334,6 +334,7 @@
   .intercom-button-nav {
     color: $black;
   }
+
   .listItem:hover .navBtn,
   .inlineListItem:hover .navBtn {
     border-bottom: 2px solid $purple;
@@ -343,12 +344,12 @@
 .navLink {
   background: transparent;
   background-color: #9135f0;
-  border-radius: 3px;
   border: none;
+  border-radius: 3px;
   color: $white;
   cursor: pointer;
   display: inline-block;
-  font-family: "PoppinsBold";
+  font-family: 'PoppinsBold';
   font-size: 0.8rem;
   font-style: normal;
   letter-spacing: 0.1em;
@@ -367,10 +368,10 @@
 
 .headerTransparent {
   background: transparent;
-  z-index: 50;
+  position: fixed;
   top: 0;
   width: 100%;
-  position: fixed;
+  z-index: 50;
 }
 
 .doNotDisplay {
@@ -382,12 +383,12 @@
   border: 0;
   display: flex;
   font-size: 100%;
+  height: 50px;
   margin: 0 auto;
   outline: 0;
-  padding: 0 .8rem 0;
-  vertical-align: baseline;
+  padding: 0 0.8rem;
   transition: $hoverTransition;
-  height:50px;
+  vertical-align: baseline;
 }
 
 .logoLink {
@@ -406,8 +407,8 @@
 
   .container,
   .siteHeaderContainer {
-    padding: 0.4rem 1rem;
     max-width: 100%;
+    padding: 0.4rem 1rem;
   }
 
   .iconAimeLogo {
