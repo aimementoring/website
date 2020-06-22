@@ -1,12 +1,12 @@
 @import '../../../styles/global.module.scss';
 
 .navMicrositeWrapper {
-  z-index: 50;
-  top: 0;
-  width: 100%;
-  transition: $hoverTransition;
   // position: fixed;
   background-color: $white;
+  top: 0;
+  transition: $hoverTransition;
+  width: 100%;
+  z-index: 50;
 }
 
 // :global(.headerFilled) {
@@ -17,20 +17,20 @@
 // }
 
 .navMicrosite {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 .navMenuLinks {
-  display: flex;
   align-items: center;
+  display: flex;
   font-family: $body-font-family-bold;
   font-size: 1rem;
-  letter-spacing: .002em;
-  line-height: 1.5;
   font-weight: 400;
+  letter-spacing: 0.002em;
+  line-height: 1.5;
 
   @media screen and (max-width: $md) {
     display: none !important;
@@ -64,8 +64,8 @@
     position: relative;
 
     &:hover .submenuWrapper {
-      transform: translateX(-50%) translateY(0);
       opacity: 1;
+      transform: translateX(-50%) translateY(0);
       visibility: visible;
     }
   }
@@ -74,12 +74,12 @@
 .navLink {
   background: transparent;
   background-color: $color-primary;
-  border-radius: 3px;
   border: none;
+  border-radius: 3px;
   color: $white;
   cursor: pointer;
   display: inline-block;
-  font-family: "PoppinsBold";
+  font-family: 'PoppinsBold';
   font-size: 0.8rem;
   font-style: normal;
   letter-spacing: 0.1em;
@@ -96,7 +96,7 @@
   }
 
   &:hover {
-    color: $white;
     background-color: $orange;
+    color: $white;
   }
 }
