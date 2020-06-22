@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Anchor from '../../common/link';
-import DonationContext from '../../../context';
+import { DonationContext } from '../../../context';
 import IntercomChat from '../../intercom';
 import styles from './mobileMenu.module.scss';
 
