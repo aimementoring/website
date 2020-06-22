@@ -15,10 +15,10 @@
 }
 
 .fileLabelList {
+  display: inline-block;
   font-family: $body-font-family;
   font-weight: bold;
   margin-bottom: 1em;
-  display: inline-block;
   vertical-align: text-bottom;
 }
 
@@ -35,29 +35,31 @@
 }
 
 .fileLabel .fileLink {
-  font-size: 0.9rem;
-  margin: .5em 0;
   background: $green;
   border: none;
-  padding: .5em;
-  border-radius: .25em;
-  font-family: $body-font-family;
+  border-radius: 0.25em;
   color: $white;
-  max-width: 10em;
-  text-overflow: ellipsis;
-  display: inline-block;
-  direction: rtl;
-  overflow: hidden;
-  white-space: nowrap;
   cursor: pointer;
+  direction: rtl;
+  display: inline-block;
+  font-family: $body-font-family;
+  font-size: 0.9rem;
+  margin: 0.5em 0;
+  max-width: 10em;
+  overflow: hidden;
+  padding: 0.5em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   &:hover {
     background: $brand-secondary;
     color: $white;
   }
+
   &::before {
-    content: '×';  
+    content: '×';
     font-weight: bold;
-    margin-left: .25em;
+    margin-left: 0.25em;
     padding: 0 3px;
     vertical-align: middle;
   }
