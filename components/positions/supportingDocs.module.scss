@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .supportingDocsContainer {
   display: block;
@@ -18,22 +18,22 @@
   }
 
   .jobDownloadLink {
-    display: flex;
-    font-weight: 700;
     color: $grey;
+    display: flex;
     font-family: $feature-font-family;
-    text-decoration: none;
+    font-weight: 700;
     margin-bottom: 1rem;
     margin-right: 4rem;
     max-width: 100%;
     overflow: hidden;
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .fileDownloadIcon {
-    margin-right: 1rem;
     @extend %materialIcons;
+    margin-right: 1rem;
   }
 
   .truncateFileName {
