@@ -1,47 +1,48 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .modalOverlay {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  position: fixed;
-  cursor: pointer;
-  text-align: center;
   animation: fadein 2s ease;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .modalBody {
-  top: 50%;
   left: 50%;
-  z-index: 1100;
   position: fixed;
+  top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1100;
 
   .close {
+    border-radius: 5px;
+    cursor: pointer;
     float: right;
     font-size: 40px;
-    cursor: pointer;
     padding: 20px;
-    border-radius: 5px;
   }
 }
 
 .modalDrawerBody {
-  top: 0;
-  left: 100%;
-  width: 75%;
-  bottom: 0;
-  z-index: 1100;
-  position: fixed;
-  transition: 1s transform;
   animation: slideIn 1s forwards;
+  bottom: 0;
+  left: 100%;
+  position: fixed;
+  top: 0;
+  transition: 1s transform;
+  width: 75%;
+  z-index: 1100;
+
   .closeModalIcon {
-    cursor: pointer;
-    right: .5em;
-    top: .5em;
     color: grey;
+    cursor: pointer;
+    right: 0.5em;
+    top: 0.5em;
   }
   @media screen and (max-width: $sm) {
     width: 100%;
@@ -49,35 +50,35 @@
 }
 
 .closeModalIcon {
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 32px;
   cursor: pointer;
-  font-family: 'Material Icons' !important;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
   direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  font-family: 'Material Icons' !important;
   font-feature-settings: 'liga';
+  font-size: 32px;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  position: absolute;
+  right: -2rem;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  top: -2rem;
+  white-space: nowrap;
+  word-wrap: normal;
 
   @media screen and (min-width: $lg) {
     display: block;
   }
 
   @media screen and (max-width: $sm) {
+    color: rgba(0, 0, 0, 0.8);
     display: block;
     padding: 1rem;
-    top: 0;
     right: 0;
-    color: rgba(0,0,0,0.8);
+    top: 0;
   }
 }
 
@@ -85,6 +86,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
