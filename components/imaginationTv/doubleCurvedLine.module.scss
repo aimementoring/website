@@ -1,20 +1,21 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
-.doubleline {
-  width: 100vw; 
+.doubleline { 
   height: 8vw;
+  width: 100vw;
 }
 
-.top, .bottom {
-  fill:none;
-  stroke-width:2px;
+.top,
+.bottom {
+  fill: none;
+  stroke-width: 2px;
   vector-effect: non-scaling-stroke;
 }
 
 .top {
-  stroke:#9135F0;
+  stroke: #9135f0;
 }
 
 .bottom {
-  stroke:#FF91C5;
+  stroke: #ff91c5;
 }

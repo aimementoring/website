@@ -1,13 +1,13 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .intvHostsCarousel {
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   position: relative;
 
   @media screen and (min-width: 100em) {
-    max-width: 100em;
     margin: auto;
+    max-width: 100em;
   }
 
   @media screen and (max-width: 100em) {
@@ -23,18 +23,18 @@
   .episodePanel {
     opacity: 0.5;
 
-    .episodeHeader  {
-      background-image: none !important;
+    .episodeHeader {
       background-color: transparent;
+      background-image: none !important;
       flex-direction: column;
-      padding-bottom: 0;
       height: auto;
+      padding-bottom: 0;
 
       .headingLockup {
-        transform: none;
         font-size: 1.6rem;
-        text-transform: uppercase;
         margin-top: 0.5em;
+        text-transform: uppercase;
+        transform: none;
         
         strong {
           color: $black;
