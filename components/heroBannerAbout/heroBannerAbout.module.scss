@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .heroBannerAbout {
   max-width: 100%;
@@ -22,30 +22,30 @@
     display: flex;
     height: 55vh;
     justify-content: center;
+    margin: 50px 1em 0;
+    padding: 0;
     position: relative;
     width: 100%;
-    padding: 0;
-    margin: 50px 1em 0;
 
     @media screen and (max-device-width: 1024px) {
       background-attachment: scroll;
     }
 
     .bannerContent {
-      z-index: 1;
       text-align: center;
+      z-index: 1;
     }
 
     .bannerHeader {
       color: $white;
-      text-align: center;
       line-height: 1em;
+      text-align: center;
 
       strong {
-        top: inherit;
         left: inherit;
         line-height: 0.8em;
         margin-bottom: 0.1em;
+        top: inherit;
       }
     }
   }

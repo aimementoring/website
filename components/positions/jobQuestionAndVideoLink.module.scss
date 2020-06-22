@@ -1,12 +1,12 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .textAreaContainer {
-  padding-right: 0.7rem;
   padding-bottom: 0.7rem;
+  padding-right: 0.7rem;
 
   @media (min-width: $sm) {
-    float: left;
     box-sizing: border-box;
+    float: left;
     width: 100%;
   }
 }
