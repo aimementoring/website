@@ -59,6 +59,7 @@
     "next-seo": "^4.5.0",
     "nextjs-sitemap-generator": "^1.0.0",
     "node-sass": "^4.13.0",
+    "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
