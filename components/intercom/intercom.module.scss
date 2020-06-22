@@ -1,8 +1,13 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .navBtn {
-  padding: 0.15em 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  box-sizing: border-box;
   color: $black;
+  cursor: pointer;
   display: block;
   font-family: $body-font-family;
   font-size: 0.9em;
@@ -10,13 +15,8 @@
   margin-bottom: 1rem;
   margin-right: 1.5rem;
   margin-top: 1rem;
+  padding: 0.15em 0;
   text-decoration: none;
-  background: none;
-  border: none;
-  box-sizing: border-box;
-  border-bottom: 2px solid transparent;
-  border-top: 2px solid transparent;
-  cursor: pointer;
   
   &.active {
     border-bottom: 2px solid $white;
@@ -24,7 +24,8 @@
     font-weight: 500;
   }
 
-  &.activeItem, 
+  &.activeItem,
+ 
   &:hover {
     border-bottom: 2px solid $white;
   }
