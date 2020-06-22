@@ -53,7 +53,7 @@ const Positions = ({ redirected, redirectJobTitle, countryId }) => {
                 <Paragraph>
                   If you get the chance to work with us -&nbsp;
                   <mark>bring everything you have</mark>
-                  , embrace our 21 mentor values,
+                  , embrace our 22 mentor values,
                   and enter a world of imagining what’s possible.
                 </Paragraph>
               </div>
