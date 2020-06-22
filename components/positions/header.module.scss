@@ -1,49 +1,49 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .positionsBannerContainer {
-  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat bottom center / cover fixed $cyan;  
+  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat bottom center / cover fixed $cyan;
   height: 60vh;
+  max-width: 100%;
   padding: 35px 0;
   position: relative;
-  max-width: 100%;
   width: 100%;
 
   @media screen and (min-width: $sm) {
-    padding: 0;
     height: 62vh;
+    padding: 0;
   }
 
   // Stop fixed on tablets & phones as it doesn't work
-  @media screen and (max-device-width: 1024px){
+  @media screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
   
   .headingJobsSingle {
     color: $white;
-    text-align: center;
     letter-spacing: -0.15em;
-    margin-top: 3em;
     line-height: 3rem;
+    margin-top: 3em;
+    text-align: center;
 
     strong {
-      top: initial;
       left: initial;
+      top: initial;
     }
   }
 
   .positionsBannerWrapper {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     height: 100%;
   }
 
   .positionsBannerContentWrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+    position: relative;
     text-align: center;
+    width: 100%;
   }
 }

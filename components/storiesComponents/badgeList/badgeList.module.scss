@@ -1,25 +1,26 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module.scss';
 
 .badge {
-  position: absolute;
+  align-items: center;
   background: $white;
   border-radius: 1em;
-  margin: .5em; 
   display: inline-block;
   justify-content: center;
-  align-items: center;
+  margin: 0.5em;
   padding: 0.5em;
+  position: absolute;
   vertical-align: middle;
 }
 
 .badgeLabel {
   font-family: $body-font-family;
-  font-size: .65em; 
+  font-size: 0.65em;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+
   a {
     font-weight: normal;
-    text-decoration: none;
     letter-spacing: 1.75px;
+    text-decoration: none;
   }
 }
