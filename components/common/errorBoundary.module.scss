@@ -1,48 +1,48 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .errorBoundaryWrapper {
-  position: relative;
   max-width: 100%;
+  position: relative;
   width: 100%;
 
   .errorHeroBanner {
-    height: 50vh;
     background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+    height: 50vh;
+    max-width: 100%;
     padding: 35px 0;
     position: relative;
-    max-width: 100%;
     width: 100%;
 
     @media screen and (min-width: $sm) {
-      padding: 0;
       height: 62vh;
+      padding: 0;
     }
 
-    @media screen and (max-device-width: 1024px){
+    @media screen and (max-device-width: 1024px) {
       background-attachment: scroll;
     }
   }
 
   .bannerContainer {
     align-items: center;
-    height: 100%;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
+    height: 100%;
   }
 
   .subpageBanner {
-    position: relative;
-    width: 100%;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+    position: relative;
     text-align: center;
+    width: 100%;
   }
 
   .headingJobsSingle {
+    color: $white;
     line-height: 3rem;
     text-align: center;
-    color: $white;
 
     strong {
       left: initial;
@@ -50,15 +50,15 @@
   }
 
   .page404Container {
-    max-width: 720px;
-    padding: 2rem;
     margin-left: auto;
     margin-right: auto;
+    max-width: 720px;
+    padding: 2rem;
   }
 
   .page404Content {
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     @media screen and (min-width: $sm) {
       display: flex;
@@ -68,11 +68,11 @@
   .errorInterComWrapper {
     button {
       border: none;
-      outline: none;
-      font-family: $body-font-family-bold;
       color: $brand-primary;
-      font-size: 1em;
       cursor: pointer;
+      font-family: $body-font-family-bold;
+      font-size: 1em;
+      outline: none;
       padding: 0 0 2em;
   
       &:hover {
