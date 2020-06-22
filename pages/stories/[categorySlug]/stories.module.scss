@@ -1,10 +1,10 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module.scss';
 
 .storiesContainer {
   margin: 0 auto;
-  padding-top: 0;
   max-width: 81.25em;
   padding: 2em 2em 4em;
+  padding-top: 0;
 }
 
 .storiesParagraph {
@@ -14,6 +14,7 @@
 .loadMore {
   margin-top: 3em;
   text-align: center;
+
   button.loadMoreButton {
     background-color: $magenta;
   }
@@ -21,8 +22,8 @@
 
 .refineSearch {
   @media screen and (min-width: $sm) {
-    width: 250px;
-    margin-right: 5rem;
     float: left;
+    margin-right: 5rem;
+    width: 250px;
   }
 }
