@@ -1,22 +1,22 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .carouselComponent {
-  position: relative;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  box-sizing: border-box;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
   -webkit-touch-callout: none;
   user-select: none;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
 
   :global(.slick-list) {
-    position: relative;
-    overflow: hidden;
     display: block;
     margin: 0;
+    overflow: hidden;
     padding: 0;
+    position: relative;
     transform: translate3d(0, 0, 0);
   
     &:focus {
@@ -30,21 +30,21 @@
   }
 
   :global(.slick-track) {
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    left: 0;
-    top: 0;
     display: block;
+    left: 0;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: 0;
+    transform: translate3d(0, 0, 0);
   
-    &:before,
-    &:after {
-      content: "";
+    &::before,
+    &::after {
+      content: '';
       display: table;
     }
   
-    &:after {
+    &::after {
       clear: both;
     }
   
@@ -58,7 +58,7 @@
     height: 100%;
     min-height: 1px;
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       float: right;
     }
 
@@ -87,9 +87,9 @@
     }
   
     .slick-vertical & {
+      border: 1px solid transparent;
       display: block;
       height: auto;
-      border: 1px solid transparent;
     }
   }
 
@@ -98,27 +98,27 @@
   }
 
   :global(.slick-arrow) {
-    color: $white;
     background-color: transparent;
     border: 0;
-    width: 50px;
-    height: 50px;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    padding: 0;
-    transform: translateY(-50%);
-    cursor: pointer;
     border: none;
-    stroke-width: 0;
-    stroke: currentColor;
+    color: $white;
+    cursor: pointer;
+    display: block;
     fill: currentColor;
-    overflow: hidden;
+    font-size: 0;
+    height: 50px;
+    line-height: 0;
     margin: 0;
-    z-index: 10;
     outline: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    stroke: currentColor;
+    stroke-width: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    z-index: 10;
   }
 
   :global(.slick-prev) {
