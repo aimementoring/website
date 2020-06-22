@@ -1,22 +1,22 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .container {
 
   @media only screen and (min-width: $md) {
-    padding: 0 2em;
     display: grid;
     grid: 15% 85% / 46% 54%;
     grid-template-areas:
-      "HEADER        HEADER"
-      "WELCOME-AREA  FORM-AREA";
+      'HEADER        HEADER'
+      'WELCOME-AREA  FORM-AREA';
+    padding: 0 2em;
   }
 }
 
 // @todo CSS: Replace with global wrapper patern 
 
 .wrapper {
-  position: relative;
-  max-width: 78em;
-  width: 100%;
   margin: 0 auto;
+  max-width: 78em;
+  position: relative;
+  width: 100%;
 }
