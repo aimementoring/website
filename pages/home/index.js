@@ -7,7 +7,7 @@ import Layout from '../../hocs/basicLayout';
 import { CTA_GRID_CAMPAIGNS } from '../../constants';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import { setOnStorage, getFromStorage } from '../../utils/localStorage';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import scrollToComponent from '../../utils/scrollToComponent';
 
 import DoubleCurvedLine from '../../components/imaginationTv/doubleCurvedLine';
