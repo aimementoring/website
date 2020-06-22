@@ -1,10 +1,10 @@
-@import "../global.module.scss";
+@import '../global.module.scss';
 
 .wrapper {
-
-  padding: 3em 1.5em;
   margin: 0 auto;
   max-width: 45em;
+
+  padding: 3em 1.5em;
 
   @media all and(min-width: $md) {
     padding: 5em 3em;

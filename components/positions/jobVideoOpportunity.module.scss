@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .jobVideoContainer {
   margin-bottom: 4rem;
@@ -8,11 +8,11 @@
   }
 
   .videoContainer {
-    position: relative;
+    height: 0;
+    overflow: hidden;
     padding-bottom: 45%;
     padding-top: 0;
-    height: 0;
+    position: relative;
     width: 100%;
-    overflow: hidden;
   }
 }
