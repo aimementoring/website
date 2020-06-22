@@ -1101,7 +1101,7 @@ const PartnerWithIntv = () => {
                     And if you don’t have kids, it’s a gift for the kid inside you!`}
                   </Paragraph>
                   <Paragraph>
-                    Check out
+                    {'Check out '}
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
