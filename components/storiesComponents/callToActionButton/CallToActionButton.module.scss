@@ -1,4 +1,4 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module.scss';
 
 .buttonContainer {
   display: flex;
@@ -9,11 +9,11 @@
 
   &::after,
   &::before {
-    content: " ";
+    content: ' ';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
