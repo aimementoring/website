@@ -1,9 +1,9 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
-.hiddenFieldsAndSubmitActionContainer{
+.hiddenFieldsAndSubmitActionContainer {
   @media (min-width: $sm) {
-    float: left;
     box-sizing: border-box;
+    float: left;
     width: 100%;
   }
 }
