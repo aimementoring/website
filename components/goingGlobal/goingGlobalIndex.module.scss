@@ -1,17 +1,17 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .heroPanelWrapper {
-  position: relative;
-  background: url($cdnRoot+"assets/images/going-global/herobg.jpg") no-repeat top center / cover #f04cc4;
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 15em;
-  margin: 7em 1.5em 0;
+  background: url($cdnRoot+"assets/images/going-global/herobg.jpg") no-repeat top center / cover #f04cc4;
+  background-attachment: fixed;
+  background-size: cover;
   box-sizing: border-box;
+  display: flex;
+  height: 15em;
+  justify-content: center;
+  margin: 7em 1.5em 0;
   max-width: $micrositePageWidth;
+  position: relative;
 
   @media screen and (min-width: $md) {
     height: 25em;
@@ -23,16 +23,16 @@
 }
 
 .pageHeroHeader {
-  position: relative;
-  text-transform: uppercase;
-  font-family: $body-font-family-bold;
-  font-weight: 900;
   color: $white;
-  font-style: normal;
+  font-family: $body-font-family-bold;
   font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 900;
   line-height: 1em;
-  text-align: center;
   padding: 0 1em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
 
   @media screen and (min-width: $md) {
     font-size: 3.5rem;
@@ -46,14 +46,14 @@
 
 .caseStudiesSection {
   margin: 0 auto;
-  padding: 4em 0;
   max-width: $micrositePageWidth;
+  padding: 4em 0;
 }
 
 .centeredcontent {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
 
   h2,
@@ -63,10 +63,10 @@
 }
 
 .colwrap {
-  max-width: 960px;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   margin: 0 auto;
+  max-width: 960px;
 
   @media screen and (min-width: $md) {
     display: flex;
@@ -74,11 +74,11 @@
 }
 
 .layout2col {
+  align-items: center;
   background: linear-gradient(45deg, rgba(255, 218, 21, 0.1), rgba(255, 152, 53, 0.1));
 
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
 
   p {
@@ -88,37 +88,39 @@
 
 .microSite {
   .bgVideocontainer {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    overflow: hidden;
     background: url($cdnRoot+"assets/images/imagination_dec/PURPLE_BACKGROUND-min.jpg") no-repeat top center / cover
       #f04cc4;
+    height: 200%;
+    left: -50%;
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    width: 200%;
   }
 
   p,
   h3 {
     &::selection {
-      color: $black;
       background: #ffda15;
+      color: $black;
     }
   }
+
   em,
   h1,
   h2,
   h4,
   td {
     &::selection {
-      color: $white;
       background: $magenta;
+      color: $white;
     }
   }
+
   strong {
     &::selection {
-      color: $white;
       background: #1fb3ff;
+      color: $white;
     }
   }
 }
@@ -132,9 +134,9 @@
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
-    text-align: center;
-    max-width: 40em;
     margin: 0 auto 2em;
+    max-width: 40em;
+    text-align: center;
 
     &:last-child {
       margin: 0 auto;
@@ -167,8 +169,8 @@
 
 .btn {
   background-color: $color-primary;
-  border-radius: 3px;
   border: none;
+  border-radius: 3px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -192,8 +194,8 @@
 .resultsSection {
   .panel {
     background-color: $watermelon;
-    text-align: center;
     padding: 6em 0 3em;
+    text-align: center;
 
     &:nth-child(2) {
       background-color: $white;
@@ -211,7 +213,8 @@
         line-height: 1em;
       }
 
-      p, a {
+      p,
+      a {
         color: $white;
       }
 
@@ -226,38 +229,38 @@
   }
 
   h2 {
-    font-family: $body-font-family-bold;
-    font-weight: 900;
-    text-transform: uppercase;
     color: $white;
+    font-family: $body-font-family-bold;
     font-size: 1.5rem;
-    line-height: 1em;
     font-style: normal;
-    max-width: 30em;
+    font-weight: 900;
+    line-height: 1em;
     margin: 1em auto;
+    max-width: 30em;
     padding: 0 1em;
+    text-transform: uppercase;
   }
 
   .resultImages {
     @media screen and (min-width: $md) {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
-      max-width: $micrositePageWidth;
       margin: 0 auto;
+      max-width: $micrositePageWidth;
     }
   }
 
   p {
+    box-sizing: border-box;
     font-family: $body-font-family;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
-    text-align: center;
-    max-width: 40em;
     margin: 0 auto 2em;
+    max-width: 40em;
     padding: 0 6em;
-    box-sizing: border-box;
+    text-align: center;
   }
 
   .descPara {
@@ -266,10 +269,10 @@
 }
 
 .pppWrapper {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 6em 1.5em 3em;
   text-align: center;
 
@@ -282,15 +285,15 @@
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
-    text-align: center;
-    max-width: 40em;
     margin: 0 auto 2em;
+    max-width: 40em;
+    text-align: center;
   }
 }
 
 .resourcesSection {
-  border-top: 1px solid $light-grey;
   border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
   padding: 3em 0 0;
 
   @media screen and (min-width: $md) {
@@ -303,31 +306,31 @@
   }
 
   h3 {
-    font-family: $body-font-family-bold;
-    font-weight: 900;
-    text-transform: uppercase;
     color: $color-primary;
+    font-family: $body-font-family-bold;
     font-size: 1.5rem;
-    line-height: 1em;
     font-style: normal;
-    max-width: 30em;
+    font-weight: 900;
+    line-height: 1em;
     margin: 1em auto 2em;
+    max-width: 30em;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .videoThumb {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    cursor: pointer;
-    display: flex;
     align-items: center;
     border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
 
     img {
-      position: absolute;
       left: 50%;
+      position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
     }
@@ -337,14 +340,14 @@
     padding: 0 1.5em;
 
     @media screen and (min-width: $md) {
-      padding: 2em 0;
-      display: flex;
       align-items: flex-start;
+      display: flex;
       justify-content: center;
+      padding: 2em 0;
 
       .visual {
-        min-width: 25em;
         margin-right: 1.5em;
+        min-width: 25em;
       }
 
       .textcol {
@@ -355,15 +358,15 @@
         flex-direction: row-reverse;
 
         .visual {
-          min-width: 25em;
           margin-left: 1.5em;
           margin-right: 0;
+          min-width: 25em;
         }
 
         h2,
         p {
-          text-align: right;
           float: right;
+          text-align: right;
         }
 
         .btn {
@@ -374,18 +377,20 @@
 
     h2,
     p {
+      clear: both;
       font-family: $body-font-family;
       font-size: 0.9rem;
+      font-style: normal;
       font-weight: 400;
       line-height: 1.8;
-      font-style: normal;
       margin-bottom: 1.5em;
-      clear: both;
     }
+
     h2 {
       font-weight: 900;
       margin-bottom: 0.5em;
     }
+
     p {
       max-width: 70%;
     }
@@ -407,12 +412,12 @@
 
 .section-dec-form {
   h3 {
+    font-family: 'PoppinsBold';
     font-size: 4rem;
-    line-height: 1;
-    text-align: center;
-    font-family: "PoppinsBold";
     font-style: normal;
+    line-height: 1;
     margin-bottom: 0.5em;
+    text-align: center;
 
     @media screen and (min-width: $md) {
       font-size: 6rem;
@@ -422,9 +427,9 @@
 
 .section-dec-signatures {
   background-color: rgba(145, 53, 240, 0.1);
-  padding: 4em 0;
   margin: 2em;
   max-width: $lg;
+  padding: 4em 0;
 
   @media screen and (min-width: $md) {
     padding: 6em 0;
@@ -436,32 +441,32 @@
 }
 
 .eoiSection {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
   padding: 6em 0 3em;
 
   .formWrapper {
-    text-align: center;
-    max-width: 50em;
     margin: 0 auto;
+    max-width: 50em;
+    text-align: center;
   }
 
   .availResourcesWrapper {
-    display: flex;
     align-content: stretch;
-    list-style: none;
+    display: flex;
     flex-flow: row wrap;
+    list-style: none;
     margin-bottom: 5em;
 
     li {
-      padding: 2em;
+      align-self: center;
       border: 1px solid $watermelon;
       flex: 1 0;
-      min-width: 10em;
       margin: 0.5em;
-      align-self: center;
+      min-width: 10em;
+      padding: 2em;
       @media screen and (min-width: $md) {
         padding: 3em;
       }
@@ -470,17 +475,21 @@
     li:nth-child(1) {
       border-color: $green;
     }
+
     li:nth-child(2) {
       border-color: $magenta;
     }
+
     li:nth-child(3) {
       border-color: $orange;
     }
+
     li:nth-child(4) {
       border-color: $purple;
     }
+
     li:nth-child(5) {
-      border-color: #24D1F6;
+      border-color: #24d1f6;
     }
 
     li:nth-child(4),
@@ -491,44 +500,44 @@
   }
 
   h1 {
-    font-size: 3.4rem;
-    margin-bottom: 0.8em;
-    line-height: 1.3;
-    max-width: 960px;
-    text-align: center;
-    font-family: PoppinsBold;
-    font-style: normal;
     background: linear-gradient(45deg, $magenta, $orange);
     -webkit-background-clip: text;
     background-clip: text;
+    font-family: PoppinsBold;
+    font-size: 3.4rem;
+    font-style: normal;
+    line-height: 1.3;
+    margin-bottom: 0.8em;
+    max-width: 960px;
+    text-align: center;
     -webkit-text-fill-color: transparent;
 
     &.greenGradient {
       background: linear-gradient(45deg, $cyan, $green);
       -webkit-background-clip: text;
       background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-top: 1.5em;
+      -webkit-text-fill-color: transparent;
     }
   }
 
   h2 {
-    font-family: $body-font-family;
-    font-weight: 900;
-    text-transform: uppercase;
     color: $watermelon;
+    font-family: $body-font-family;
     font-size: 2rem;
-    line-height: 1em;
     font-style: normal;
-    max-width: 30em;
+    font-weight: 900;
+    line-height: 1em;
     margin: 1em auto;
+    max-width: 30em;
+    text-transform: uppercase;
   }
 
   h4 {
-    font-family: $body-font-family;
-    font-weight: 900;
     color: $black;
+    font-family: $body-font-family;
     font-size: 1.4rem;
+    font-weight: 900;
     margin: 1em auto 1.5em;
     padding: 0 3em;
     @media screen and (min-width: $md) {
@@ -537,20 +546,21 @@
   }
 
   hr {
-    margin: 4em 0 5em;
     border: none;
-    border-top: 2px dashed #FFA235;
+    border-top: 2px dashed #ffa235;
+    margin: 4em 0 5em;
   }
 
-  p, li {
+  p,
+  li {
     font-family: $body-font-family;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.8;
-    text-align: center;
-    max-width: 40em;
     margin: 0 auto 3em;
+    max-width: 40em;
     padding: 0 1em;
+    text-align: center;
 
     @media screen and (min-width: $md) {
       padding: 0;
@@ -558,88 +568,92 @@
   }
 
   ol {
-    background-color: #FCC606;
+    background-color: #fcc606;
     border-radius: 3px;
     list-style-type: lower-alpha;
     margin: 0 auto 5em;
     padding: 3em 3em 1em;
 
     @media screen and (min-width: $md) {
-      padding: 5em 8em 2em;
-      max-width: 30em;
       margin: 4em auto 5em;
+      max-width: 30em;
+      padding: 5em 8em 2em;
     }
 
     p {
       font-family: $body-font-family;
       font-style: normal;
-      text-align: left;
-      margin: 0 0 2em -1em;
       font-weight: 900;
+      margin: 0 0 2em -1em;
+      text-align: left;
     }
 
     ol {
-      padding: 0;
       background-color: transparent;
       margin: 0 auto;
+      padding: 0;
     }
 
     li {
-      text-align: left;
       font-weight: 400;
+      text-align: left;
+
       li {
         font-weight: 400;
       }
     }
   }
+
   .resourcePannel {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
     background: url($cdnRoot+"assets/images/going-global/patternbg.jpg") no-repeat top center;
     background-size: cover;
-    text-align: center;
+    margin-left: 50%;
     margin-top: 4em;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 100vw;
     @media screen and (min-width: $lg) {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
     }
 
     .resourcePannelContainer {
-      text-align: center;
-      display: flex;
-      align-items: center;
       align-content: space-between;
-      justify-content: space-around;
+      align-items: center;
+      display: flex;
       flex-direction: column;
-      max-width: 100em;
+      justify-content: space-around;
       margin: 5em auto;
+      max-width: 100em;
+      text-align: center;
       @media screen and (min-width: $lg) {
         flex-direction: row;
       }
       
     }
   }
+
   .impactContainer {
-    text-align: center;
-    padding: 3em;
     background-color: $white;
-    margin: 3em 1em;
     border-radius: 3px;
+    margin: 3em 1em;
+    padding: 3em;
+    text-align: center;
     @media screen and (min-width: $lg) {
       margin: 3em;
       min-height: 27em;
     }
     @media screen and (min-width: 1603px) {
-      width: 21.75em;
       height: 29.25em;
+      width: 21.75em;
     }
+
     .title {
       color: $black;
       font-family: $body-font-family;
-      font-style: normal;
       font-size: 2rem;
+      font-style: normal;
     }
   }
 }
@@ -655,13 +669,13 @@
   }
 
   h2 {
-    font-family: $body-font-family;
-    font-weight: 900;
     color: $black;
+    font-family: $body-font-family;
     font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
     margin: 1em auto 1.5em;
     padding: 0 1em;
-    font-style: normal;
     @media screen and (min-width: $md) {
       padding: 0 5em;
     }
@@ -671,33 +685,34 @@
     padding: 2em 0;
 
     @media screen and (min-width: $md) {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
       text-align: left;
     }
 
     .colWrap {
-        display: block;
-        img {
-          min-width: 15em;
-          width: 30%;
-          @media screen and (min-width: $md) {
-            margin-right: 2.5em;
-          }
+      display: block;
 
+      img {
+        min-width: 15em;
+        width: 30%;
+        @media screen and (min-width: $md) {
+          margin-right: 2.5em;
         }
+
+      }
     }
 
     p {
       font-family: $body-font-family;
       font-style: normal;
-      text-align: left;
       font-weight: 100;
-      padding: 1em;
       line-height: 1.6;
+      padding: 1em;
+      text-align: left;
       @media screen and (min-width: $md) {
-        margin: 0 0 1.5em 0;
+        margin: 0 0 1.5em;
         padding: 0;
       }
     }

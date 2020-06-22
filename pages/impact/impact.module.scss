@@ -1,19 +1,20 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .banner {
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   // fix for mobile safari https://stackoverflow.com/a/31445503
   @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
 }
 
 .bannerWrap {
-  position:relative;
+  position: relative;
 }
+
 .introText {
-  padding: 2rem;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -22,6 +23,7 @@
   @media screen and (min-width: $md) {
     margin-top: 2em;
   }
+
   strong {
     left: initial;
   }
@@ -37,9 +39,9 @@
 }
 
 .sectionRow {
-  width: 100%;
-  max-width: 60em;
   margin: 0 auto;
+  max-width: 60em;
+  width: 100%;
 
   @media screen and (min-width: $sm) {
     display: flex;
@@ -62,8 +64,8 @@
 
   &:nth-child(1) .sectionColumn,
   &:nth-child(3) .sectionColumn {
-    order: 2;
     justify-content: center;
+    order: 2;
   
     .sectionImageContainer {
       align-items: flex-end;
@@ -83,12 +85,12 @@
   }
 
   .sectionColumn {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2rem 1rem;
     align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
+    padding: 0 2rem 1rem;
 
     @media screen and (min-width: $md) {
       padding: 1rem;
@@ -105,30 +107,30 @@
 }
 
 .sectionImageContainer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: flex-end;
-  padding: 0 2rem 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   justify-content: center;
+  padding: 0 2rem 1rem;
   @media screen and (max-width: $md) {
     align-items: center;
   }
 }
 
 .sectionImageContainer img {
-  max-width: 25em;
-  width: 100%;
-  object-fit: contain;
   border-radius: 2px;
   display: block;
+  max-width: 25em;
+  object-fit: contain;
+  width: 100%;
 }
 
 .mostImportantly {
-  margin: 0 auto; 
-  max-width: 1120px; 
-  overflow: visible;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: visible;
   text-align: center;
 
   @media screen and (min-width: $sm) and (max-width: $md) {
@@ -147,15 +149,15 @@
 
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: 0;
     grid-template-areas:
-      "sidebar"
-      "content";
+      'sidebar'
+      'content';
+    grid-template-columns: 1fr;
 
     @media screen and (min-width: $md) {
+      grid-template-areas: 'sidebar content';
       grid-template-columns: 1fr 2fr;
-      grid-template-areas: "sidebar content";
     }
   }
 }
@@ -184,65 +186,65 @@
 }
 
 .impactGrid {
+  align-items: flex-start;
   composes: grid from '../../styles/patterns/patternGrid.module.scss';
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .tile {
-  display: block;
-  flex: 1;
-  min-width: 250px;
-  -ms-flex-align: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 0.5rem;
+  display: block;
+  flex: 1;
+  -ms-flex-align: center;
   margin-bottom: 2em;
+  min-width: 250px;
+  padding: 0.5rem;
 
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     padding: 0;
   }
 }
 
 .tileTitle {
-  font-size: .9em;
   font-family: $body-font-family;
-  font-weight: 900;
+  font-size: 0.9em;
   font-style: normal;
+  font-weight: 900;
   margin-top: 1em;
 }
 
 .tileCopy {
-  font-size: 0.75em;
   font-family: $body-font-family;
+  font-size: 0.75em;
   margin-top: 0.5em;
 }
 
 .impactGrid .imageButton {
-  display: flex;
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 3px;
   align-items: center;
   background-size: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
   width: 100%;
 
   img {
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 0.8;
     position: absolute;
-    left: 50%;
+    text-align: center;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   &:hover img {
@@ -268,8 +270,8 @@
 
 .caseStudiesContent {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 1rem;
 }
@@ -279,6 +281,7 @@
     margin: 2rem auto;
   }
 }
+
 .moreInfoTitleContainer {
   margin-bottom: 1.5em;
 }
@@ -289,39 +292,40 @@
 
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
 .moreInfoButton {
-  color: #7602da;
-  text-align: left;
   background-color: transparent;
   border: 1px solid;
+  color: #7602da;
   padding: 1rem 1.5rem;
+  text-align: left;
+
   &:hover {
-    color: $white;
     background: $magenta;
+    color: $white;
   }
 }
 
 .moreInfoButtonText {
   float: left;
   font-family: $feature-font-family;
+  font-size: 14px;
   font-weight: 900;
   width: 100%;
-  font-size: 14px;
 }
 
-.moreInfoButtonText:after {
-  content: "";
-  display: block;
+.moreInfoButtonText::after {
   background: url($cdnRoot+"assets/images/know-aime/Arrow.svg") no-repeat center center;
-  width: 20px;
-  height: 20px;
+  content: '';
+  display: block;
   float: right;
+  height: 20px;
   margin: 0 0 0 0.5rem;
+  width: 20px;
 
   @media screen and (min-width: $md) {
     margin: 0 0 0 1rem;
@@ -334,14 +338,14 @@
 }
 
 .quoteWrapper {
+  align-items: center;
+  background-color: $orange;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  position: relative;
-  max-width: 100%;
-  width: 100%;
   height: 100%;
-  background-color: $orange;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .quoteContent {
@@ -355,6 +359,7 @@
 
 .quoteText {
   text-align: center;
+
   h1 {
     color: $white;
   }
@@ -368,21 +373,22 @@
   }
 
   .intercomButtonWrap {
-    text-align: center;
     padding-top: 1rem;
+    text-align: center;
+
     button {
       background-color: $watermelon;
+      border: 0;
       border-radius: 3px;
+      color: $white;
+      cursor: pointer;
       font-family: $body-font-family-bold;
       font-size: 0.9rem;
-      text-transform: uppercase;
-      color: $white;
       letter-spacing: 0.13em;
-      padding: 0.85em 1.85em;
-      border: 0;
-      outline: none;
       margin: 0 auto;
-      cursor: pointer;
+      outline: none;
+      padding: 0.85em 1.85em;
+      text-transform: uppercase;
       transition: $hoverTransition;
   
       &:hover {
@@ -392,8 +398,8 @@
   }
 
   .partnerSectionContent {
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
 
     @media screen and (max-width: $md) {
       padding: 4rem 1rem;
