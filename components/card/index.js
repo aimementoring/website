@@ -27,11 +27,10 @@ const Card = (props) => {
     contentCreator,
     contentPreview,
     categories,
-    type,
   } = props;
   const datePublished = publishDate && formatDate(publishDate, 'short');
   const anchorProps = {
-    className: type === 'spotlight' ? styles.spotlightArticleLink : styles.articleLink,
+    className: styles.articleLink,
     as: urlAs || 'banner-image',
     to: href || urlTo,
   };
@@ -96,7 +95,7 @@ const Card = (props) => {
             </Paragraph>
           )}
           <div className={withVideo && styles.rightButton}>
-            <Button theme={process.env.REACT_APP_THEME} type="button" className={type === 'spotlight' ? styles.spotlightButton : styles.articleTileLink}>
+            <Button theme={process.env.REACT_APP_THEME} type="button" className={styles.articleTileLink}>
               {buttonText}
             </Button>
           </div>
@@ -119,7 +118,6 @@ Card.defaultProps = {
   publishDate: '',
   contentCreator: '',
   contentPreview: [] || '',
-  type: '',
 };
 
 Card.propTypes = {
@@ -138,7 +136,6 @@ Card.propTypes = {
     PropTypes.array,
     PropTypes.string,
   ]),
-  type: PropTypes.string,
 };
 
 export default Card;
