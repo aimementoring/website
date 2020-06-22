@@ -72,6 +72,7 @@
     "react-slick": "^0.25.2",
     "shopify-buy": "^2.8.1",
     "spdy": "^4.0.1",
+    "stylelint": "^13.6.1",
     "video.js": "7.0.5",
     "videojs-contrib-hls": "5.14.1"
   },
