@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module.scss';
 
 .aboutWrapper {
   background-color: $white;
@@ -10,10 +10,10 @@
 
 .sectionAbout {
   display: block;
-  width: 100%;
-  padding: 1em;
-  max-width: 90em;
   margin: 0 auto;
+  max-width: 90em;
+  padding: 1em;
+  width: 100%;
 
   @media screen and (min-width: $md) { 
     padding-top: 3em;
@@ -31,19 +31,19 @@
   }
 
   .column {
-    flex: 1;
-    display: flex;
     align-items: right;
-    justify-content: center;
+    display: flex;
+    flex: 1;
     flex-direction: column;
+    justify-content: center;
     
     @media screen and (min-width: $md) { 
       padding: 0 2rem 1rem;
     }
 
     &:first-child {
-      padding: 1em;
       margin-bottom: 0;
+      padding: 1em;
     }
 
     @media screen and (min-width: $md) { 
@@ -54,8 +54,8 @@
       margin: 1.5em 0 0.8em;
 
       strong {
-        top: 0;
         left: -0.2em;
+        top: 0;
       } 
     }
   }
@@ -65,11 +65,11 @@
     line-height: 1.3rem;
 
     @media screen and (min-width: 47em) { 
-      padding:0 3em 3em;
+      padding: 0 3em 3em;
     }
 
     @media screen and (min-width: $md) { 
-      padding:0 0 4rem;
+      padding: 0 0 4rem;
     }
 
     @media screen and (min-width: $lg) {
@@ -84,9 +84,9 @@
 
     ul li {
       font-size: 0.875rem;
+      font-weight: 100;
       line-height: 1.5em;
       margin-bottom: 1.5em;
-      font-weight: 100;
     }
   }
 
@@ -102,8 +102,8 @@
         padding: 2em 0;
   
         h3 {
-          position: relative;
           left: 0%;
+          position: relative;
         }
       }
     }
@@ -137,8 +137,8 @@
         }
 
         img {
-          padding-bottom: 4em;
           max-width: 20em;
+          padding-bottom: 4em;
         }
       }
     }
@@ -163,8 +163,8 @@
 
     .copy {
       margin: 0 auto;
-      padding: 0;
       max-width: 40em;
+      padding: 0;
     }
   }
 
@@ -174,15 +174,15 @@
 }
 
 .fullWidthPanelStrat {
-  padding: 2em;
   background-color: $pink;
+  padding: 2em;
   width: 100%;
 
-  h5 a{
+  h5 a {
     color: $purple;
+    display: block;
     font-size: 1.8rem;
     text-decoration: none;
-    display: block;
     transition: $hoverTransition;
 
     &:hover {
