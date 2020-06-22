@@ -1,13 +1,13 @@
 @import '../../styles/global.module.scss';
 
 .quicklinksPanel {
-  max-width: 60em;
-  margin: 0 auto;
-  padding: 2em 1em;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  margin: 0 auto;
+  max-width: 60em;
+  padding: 2em 1em;
   text-align: center;
 
   .quicklinksHeader {
@@ -21,8 +21,8 @@
     justify-content: space-around;
   
     @media screen and (min-width: $md) {
-      flex-wrap: nowrap;
       align-items: stretch;
+      flex-wrap: nowrap;
     }
   }
 
@@ -39,17 +39,17 @@
     }
 
     .quicklinkImage {
-      width: 8em;
-      height: 8em;
+      align-items: center;
+      border: 2px solid $purple;
+      border-radius: 50%;
+      box-shadow: 2px 2px 0 $purple;
+      cursor: pointer;
       display: block;
       display: flex;
-      cursor: pointer;
-      align-items: center;
-      border-radius: 50%;
-      border: 2px solid $purple;
-      box-shadow: 2px 2px 0 $purple;
+      height: 8em;
       margin-bottom: 1em;
       transition: $hoverTransition;
+      width: 8em;
   
       &:hover {
         // border-color: $watermelon;
@@ -59,8 +59,8 @@
   
       img {
         display: block;
-        padding: 1em;
         max-width: 100%;
+        padding: 1em;
       }
     }
 
@@ -74,12 +74,12 @@
   }
 
   .quicklinkTitle {
-    text-decoration: none;
-    display: block;
-    margin: 0 auto;
     color: $purple;
+    cursor: pointer;
+    display: block;
     font-weight: bold;
     letter-spacing: 0.001em;
-    cursor: pointer;
+    margin: 0 auto;
+    text-decoration: none;
   }
 }
