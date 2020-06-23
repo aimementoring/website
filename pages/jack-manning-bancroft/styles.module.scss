@@ -1,12 +1,12 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .banner {
   background: url($cdnRoot + 'assets/images/banner/JMB-min.jpg') no-repeat top center / cover fixed $purple;
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';  
+  composes: banner from '../../styles/patterns/patternBanner.module';  
   // fix for mobile safari https://stackoverflow.com/a/31445503
   @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
 }
 
 .plainContentWrapper {
-  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module';
 }
