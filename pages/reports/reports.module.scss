@@ -1,9 +1,9 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .banner {
   background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
     no-repeat top center / cover #050301;
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module';
 }
 
 .filterListContainer {
