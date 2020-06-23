@@ -2,7 +2,7 @@
 
 .banner {
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  composes: banner from '../../styles/patterns/patternBanner.module';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   // fix for mobile safari https://stackoverflow.com/a/31445503
   @supports (-webkit-overflow-scrolling: touch) { background-attachment: scroll; }
 }
@@ -187,7 +187,7 @@
 
 .impactGrid {
   align-items: flex-start;
-  composes: grid from '../../styles/patterns/patternGrid.module';
+  composes: grid from '../../styles/patterns/patternGrid.module.scss';
   justify-content: space-between;
 }
 
