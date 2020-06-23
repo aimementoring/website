@@ -1,4 +1,4 @@
-@import '../../../styles/global.module.scss';
+@import '../../../styles/global.module';
 
 .storiesGrid {
   display: grid;
@@ -8,7 +8,7 @@
 }
 
 .articleTile {
-  composes: card from '../../../styles/patterns/patternCard.module.scss';
+  composes: card from '../../../styles/patterns/patternCard.module';
 }
 
 .articleTileLabel {
