@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .redirectContainer {
   background: $lilac;
@@ -23,7 +23,7 @@
 
 .intercomButton {
   background: none;
-  border: none;
+  border: 0;
   color: $brand-primary;
   cursor: pointer;
   display: inline;
