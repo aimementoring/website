@@ -19,7 +19,7 @@
 
 .jobCard {
   color: $black;
-  composes: card from '../../styles/patterns/patternCard.module';
+  composes: card from '../../styles/patterns/patternCard.module.scss';
 
   display: flex;
   text-decoration: none;
@@ -48,7 +48,7 @@
 }
 
 .containerDetails {
-  composes: cardContent from '../../styles/patterns/patternCard.module';
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .nameStyles {
@@ -268,7 +268,7 @@
 }
 
 .jobGrid {
-  composes: grid1to2 from '../../styles/patterns/patternGrid.module';
+  composes: grid1to2 from '../../styles/patterns/patternGrid.module.scss';
   margin-bottom: 4em;
   
 }
