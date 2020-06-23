@@ -641,8 +641,6 @@ body.vjs-full-window {
   background-color: #2b333f;
   background-color: rgba(43, 51, 63, 0.7);
   border: 0.06666em solid #fff;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
   border-radius: 0.3em;
   cursor: pointer;
   display: block;
@@ -654,10 +652,6 @@ body.vjs-full-window {
   padding: 0;
   position: absolute;
   top: 10px;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
   transition: all 0.4s;
   width: 3em;
 }
@@ -674,10 +668,6 @@ body.vjs-full-window {
   background-color: #73859f;
   background-color: rgba(115, 133, 159, 0.5);
   border-color: #fff;
-  -webkit-transition: all 0s;
-  -moz-transition: all 0s;
-  -ms-transition: all 0s;
-  -o-transition: all 0s;
   transition: all 0s;
 }
 
@@ -693,8 +683,6 @@ body.vjs-full-window {
 }
 
 .vjs-v7 button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background: none;
   border: 0;
@@ -828,10 +816,6 @@ body.vjs-full-window {
 
 .vjs-v7 .vjs-menu-button-inline {
   overflow: hidden;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
   transition: all 0.4s;
 }
 
@@ -854,10 +838,6 @@ body.vjs-full-window {
   padding: 0;
   position: absolute;
   top: 0;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
   transition: all 0.4s;
   width: auto;
 }
@@ -907,20 +887,12 @@ body.vjs-full-window {
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
-  -webkit-transition: visibility 0.1s, opacity 0.1s;
-  -moz-transition: visibility 0.1s, opacity 0.1s;
-  -ms-transition: visibility 0.1s, opacity 0.1s;
-  -o-transition: visibility 0.1s, opacity 0.1s;
   transition: visibility 0.1s, opacity 0.1s;
   visibility: visible;
 }
 
 .vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   opacity: 0;
-  -webkit-transition: visibility 1s, opacity 1s;
-  -moz-transition: visibility 1s, opacity 1s;
-  -ms-transition: visibility 1s, opacity 1s;
-  -o-transition: visibility 1s, opacity 1s;
   transition: visibility 1s, opacity 1s;
   visibility: visible;
 }
@@ -941,10 +913,6 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-control {
-  -webkit-box-flex: none;
-  -moz-box-flex: none;
-  -webkit-flex: none;
-  -ms-flex: none;
   flex: none;
   height: 100%;
   margin: 0;
@@ -985,20 +953,10 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-progress-control {
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-flex: auto;
-  -moz-box-flex: auto;
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: auto;
-  -ms-flex: auto;
   flex: auto;
-  -ms-flex-align: center;
   min-width: 4em;
   touch-action: none;
 }
@@ -1016,16 +974,8 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-progress-holder {
-  -webkit-box-flex: auto;
-  -moz-box-flex: auto;
-  -webkit-flex: auto;
-  -ms-flex: auto;
   flex: auto;
   height: 0.3em;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -1075,8 +1025,6 @@ body.vjs-full-window {
 .vjs-v7 .vjs-time-tooltip {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.8);
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
   border-radius: 0.3em;
   color: #000;
   float: right;
@@ -1124,10 +1072,6 @@ body.vjs-full-window {
 
 .vjs-v7.vjs-user-inactive .vjs-progress-control .vjs-mouse-display {
   opacity: 0;
-  -webkit-transition: visibility 1s, opacity 1s;
-  -moz-transition: visibility 1s, opacity 1s;
-  -ms-transition: visibility 1s, opacity 1s;
-  -o-transition: visibility 1s, opacity 1s;
   transition: visibility 1s, opacity 1s;
   visibility: hidden;
 }
@@ -1153,18 +1097,6 @@ body.vjs-full-window {
   /* iOS Safari */
   -webkit-touch-callout: none;
 
-  /* Safari */
-  -webkit-user-select: none;
-
-  /* Konqueror HTML */
-  -khtml-user-select: none;
-
-  /* Firefox */
-  -moz-user-select: none;
-
-  /* Internet Explorer/Edge */
-  -ms-user-select: none;
-
   /* Non-prefixed version, currently supported by Chrome and Opera */
   user-select: none;
 }
@@ -1174,26 +1106,17 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-slider:focus {
-  -webkit-box-shadow: 0 0 1em #fff;
-  -moz-box-shadow: 0 0 1em #fff;
   box-shadow: 0 0 1em #fff;
   text-shadow: 0 0 1em white;
 }
 
 .vjs-v7 .vjs-mute-control {
-  -webkit-box-flex: none;
-  -moz-box-flex: none;
   cursor: pointer;
-  -webkit-flex: none;
-  -ms-flex: none;
   flex: none;
 }
 
 .vjs-v7 .vjs-volume-control {
   cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 1em;
 }
@@ -1211,10 +1134,6 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-volume-panel {
-  -webkit-transition: width 1s;
-  -moz-transition: width 1s;
-  -ms-transition: width 1s;
-  -o-transition: width 1s;
   transition: width 1s;
 }
 
@@ -1227,10 +1146,6 @@ body.vjs-full-window {
 .vjs-v7 .vjs-volume-panel .vjs-volume-control.vjs-slider-active {
   opacity: 1;
   position: relative;
-  -webkit-transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top 0s;
-  -moz-transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top 0s;
-  -ms-transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top 0s;
-  -o-transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top 0s;
   transition: visibility 0.1s, opacity 0.1s, height 0.1s, width 0.1s, left 0s, top 0s;
   visibility: visible;
 }
@@ -1249,10 +1164,6 @@ body.vjs-full-window {
 .vjs-v7 .vjs-volume-panel.vjs-volume-panel-horizontal:hover,
 .vjs-v7 .vjs-volume-panel.vjs-volume-panel-horizontal:active,
 .vjs-v7 .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-slider-active {
-  -webkit-transition: width 0.1s;
-  -moz-transition: width 0.1s;
-  -ms-transition: width 0.1s;
-  -o-transition: width 0.1s;
   transition: width 0.1s;
   width: 9em;
 }
@@ -1260,19 +1171,11 @@ body.vjs-full-window {
 .vjs-v7 .vjs-volume-panel .vjs-volume-control.vjs-volume-vertical {
   height: 8em;
   left: -3.5em;
-  -webkit-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s;
-  -moz-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s;
-  -ms-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s;
-  -o-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s;
   transition: visibility 1s, opacity 1s, height 1s 1s, width 1s 1s, left 1s 1s, top 1s 1s;
   width: 3em;
 }
 
 .vjs-v7 .vjs-volume-panel .vjs-volume-control.vjs-volume-horizontal {
-  -webkit-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
-  -moz-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
-  -ms-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
-  -o-transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
   transition: visibility 1s, opacity 1s, height 1s 1s, width 1s, left 1s 1s, top 1s 1s;
 }
 
@@ -1280,10 +1183,6 @@ body.vjs-full-window {
   height: 3em;
   opacity: 1;
   position: relative;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
   transition: none;
   visibility: visible;
   width: 5em;
@@ -1403,19 +1302,9 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-live-control {
-  -webkit-align-items: flex-start;
   align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -webkit-box-flex: auto;
-  -moz-box-flex: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex: auto;
-  -ms-flex: auto;
   flex: auto;
-  -ms-flex-align: flex-start;
   font-size: 1em;
   line-height: 3em;
 }
@@ -1427,10 +1316,6 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-time-control {
-  -webkit-box-flex: none;
-  -moz-box-flex: none;
-  -webkit-flex: none;
-  -ms-flex: none;
   flex: none;
   font-size: 1em;
   line-height: 3em;
@@ -1464,11 +1349,7 @@ body.vjs-full-window {
 }
 
 .vjs-v7 .vjs-play-control .vjs-icon-placeholder {
-  -webkit-box-flex: none;
-  -moz-box-flex: none;
   cursor: pointer;
-  -webkit-flex: none;
-  -ms-flex: none;
   flex: none;
 }
 
@@ -1504,27 +1385,15 @@ body.vjs-full-window {
 }
 
 video::-webkit-media-text-track-display {
-  -moz-transform: translateY(-3em);
-  -ms-transform: translateY(-3em);
-  -o-transform: translateY(-3em);
-  -webkit-transform: translateY(-3em);
   transform: translateY(-3em);
 }
 
 .vjs-v7.vjs-user-inactive.vjs-playing video::-webkit-media-text-track-display {
-  -moz-transform: translateY(-1.5em);
-  -ms-transform: translateY(-1.5em);
-  -o-transform: translateY(-1.5em);
-  -webkit-transform: translateY(-1.5em);
   transform: translateY(-1.5em);
 }
 
 .vjs-v7 .vjs-fullscreen-control {
-  -webkit-box-flex: none;
-  -moz-box-flex: none;
   cursor: pointer;
-  -webkit-flex: none;
-  -ms-flex: none;
   flex: none;
 }
 
@@ -1714,10 +1583,6 @@ video::-webkit-media-text-track-display {
 }
 
 .vjs-v7.vjs-layout-tiny:not(.vjs-fullscreen) .vjs-custom-control-spacer {
-  -webkit-box-flex: auto;
-  -moz-box-flex: auto;
-  -webkit-flex: auto;
-  -ms-flex: auto;
   flex: auto;
 }
 
