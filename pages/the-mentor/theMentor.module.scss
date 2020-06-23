@@ -1,11 +1,11 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .banner {
   background:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url($cdnRoot+"assets/images/banner/mentor_banner.jpg") no-repeat 50%
     #050301;
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module';
   width: 100%;
   
   @media screen and (min-width: $sm) {
