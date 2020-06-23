@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .intercomBtnWrap {
   text-align: center;
@@ -656,7 +656,7 @@
 
       &:hover {
         background-color: $orange;
-        border: none;
+        border: 0;
         color: $white;
       }
     }
