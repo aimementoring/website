@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .carouselComponent {
   box-sizing: border-box;
@@ -100,7 +100,7 @@
   :global(.slick-arrow) {
     background-color: transparent;
     border: 0;
-    border: none;
+    border: 0;
     color: $white;
     cursor: pointer;
     display: block;
