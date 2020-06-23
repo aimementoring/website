@@ -1,12 +1,12 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .banner {
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
+  composes: banner from '../../styles/patterns/patternBanner.module';
 }
 
 .container {
-  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module';
 }
 
 // same pattern used on thanks page so could compose styles 
@@ -26,7 +26,7 @@
 
 .intercom {
   button {
-    border: none;
+    border: 0;
     color: $brand-primary;
     cursor: pointer;
     font-family: $body-font-family-bold;
