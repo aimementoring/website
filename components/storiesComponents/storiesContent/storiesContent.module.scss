@@ -8,7 +8,7 @@
 }
 
 .articleTile {
-  composes: card from '../../../styles/patterns/patternCard.module';
+  composes: card from '../../../styles/patterns/patternCard.module.scss';
 }
 
 .articleTileLabel {
