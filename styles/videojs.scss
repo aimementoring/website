@@ -697,7 +697,7 @@ body.vjs-full-window {
   -moz-appearance: none;
   appearance: none;
   background: none;
-  border: none;
+  border: 0;
   color: inherit;
   display: inline-block;
   font-size: inherit;
@@ -1821,7 +1821,7 @@ video::-webkit-media-text-track-display {
 }
 
 .vjs-text-track-settings fieldset {
-  border: none;
+  border: 0;
   margin: 5px;
   padding: 3px;
 }
@@ -1878,7 +1878,7 @@ video::-webkit-media-text-track-display {
 }
 
 .vjs-resize-manager {
-  border: none;
+  border: 0;
   height: 100%;
   left: 0;
   position: absolute;
