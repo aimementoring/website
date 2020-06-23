@@ -1,6 +1,6 @@
-@import '../styles/global.module.scss';
+@import '../styles/global.module';
 // @todo CSS: find way to remove global videojs styles
-@import '../styles/videojs.scss';
+@import '../styles/videojs';
 
 // @todo CSS: Refactor global href styles
 // we shouldn't be setting color here, but could have some smart global styles ...
