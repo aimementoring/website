@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .errorBoundaryWrapper {
   max-width: 100%;
@@ -67,7 +67,7 @@
 
   .errorInterComWrapper {
     button {
-      border: none;
+      border: 0;
       color: $brand-primary;
       cursor: pointer;
       font-family: $body-font-family-bold;
