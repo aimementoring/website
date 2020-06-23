@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .heroPanelWrapper {
   align-items: center;
@@ -169,7 +169,7 @@
 
 .btn {
   background-color: $color-primary;
-  border: none;
+  border: 0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -546,7 +546,7 @@
   }
 
   hr {
-    border: none;
+    border: 0;
     border-top: 2px dashed #ffa235;
     margin: 4em 0 5em;
   }
