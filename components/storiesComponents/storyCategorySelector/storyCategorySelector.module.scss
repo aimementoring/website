@@ -1,4 +1,4 @@
-@import '../../../styles/global.module.scss';
+@import '../../../styles/global.module';
 
 .storyCategorySelectorContainer {
   .tabContainer {
@@ -30,7 +30,7 @@
         }
       }
       
-      span.tabText {
+      .tabText {
         align-items: center;
         font-family: $body-font-family;
         font-size: 14px;
@@ -44,8 +44,4 @@
       }
     }
   }
-
-
-
-
 }
