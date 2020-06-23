@@ -1,8 +1,8 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .navBtn {
   background: none;
-  border: none;
+  border: 0;
   border-bottom: 2px solid transparent;
   border-top: 2px solid transparent;
   box-sizing: border-box;
