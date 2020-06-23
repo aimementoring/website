@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .absolutelyHide {
   left: -5000px;
@@ -68,7 +68,7 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: 1em;
-    border: none;
+    border: 0;
     border-bottom-right-radius: 3px;
     border-color: $magenta;
     border-top-right-radius: 3px;
