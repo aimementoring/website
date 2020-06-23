@@ -1,6 +1,6 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .jobsBanner {
   background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';    
+  composes: banner from '../../styles/patterns/patternBanner.module';    
 }
