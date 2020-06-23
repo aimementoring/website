@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 // popup styles
 
@@ -40,7 +40,7 @@
 
     .btn {
       background-color: $color-primary;
-      border: none;
+      border: 0;
       border-radius: 3px;
       color: #fff;
       cursor: pointer;
