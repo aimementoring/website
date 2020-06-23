@@ -1,5 +1,5 @@
-@import '../../../styles/global.module.scss';
+@import '../../../styles/global.module';
 
 .storiesGrid {
-  composes: grid from '../../../styles/patterns/patternGrid.module.scss';
+  composes: grid from '../../../styles/patterns/patternGrid.module';
 }
