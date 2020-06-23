@@ -2,12 +2,12 @@
 
 .termsOfServiceBanner {
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  composes: banner from '../../styles/patterns/patternBanner.module';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
 
 .termsSection {
   
-  composes: wrapper from '../../styles/patterns/patternWrapper.module';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 
   // @todo CSS: Terms of service headings should be styled from blueprint 
 
