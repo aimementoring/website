@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .bannerImage {
   border-radius: 3px 3px 0 0;
@@ -36,7 +36,7 @@
 }
 
 .articleDescription {
-  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
+  composes: cardContent from '../../styles/patterns/patternCard.module';
 }
 
 .postDate {
