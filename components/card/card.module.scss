@@ -36,7 +36,7 @@
 }
 
 .articleDescription {
-  composes: cardContent from '../../styles/patterns/patternCard.module';
+  composes: cardContent from '../../styles/patterns/patternCard.module.scss';
 }
 
 .postDate {
