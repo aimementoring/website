@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .uppyUploadContainer {
   :global(.uppy-Dashboard-innerWrap) {
@@ -36,7 +36,7 @@
 
 .fileLabel .fileLink {
   background: $green;
-  border: none;
+  border: 0;
   border-radius: 0.25em;
   color: $white;
   cursor: pointer;
