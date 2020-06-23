@@ -2,11 +2,11 @@
 
 .banner {
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
-  composes: banner from '../../styles/patterns/patternBanner.module';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
 
 .container {
-  composes: wrapper from '../../styles/patterns/patternWrapper.module';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 }
 
 // same pattern used on thanks page so could compose styles 
