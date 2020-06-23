@@ -2,5 +2,5 @@
 
 .heroBannerMentor {
   background-image: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
-  composes: banner from '../../styles/patterns/patternBanner.module';
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
