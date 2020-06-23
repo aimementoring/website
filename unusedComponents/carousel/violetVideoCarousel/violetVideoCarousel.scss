@@ -1,4 +1,4 @@
-@import '../../../styles/global.module.scss';
+@import '../../../styles/global.module';
 
 .aimeVideos {
   .carousel {
@@ -46,7 +46,7 @@
 
   .icon-arrow-prev,
   .icon-arrow-next {
-    border: none;
+    border: 0;
     cursor: pointer;
     display: block;
     font-size: 0;
@@ -55,7 +55,6 @@
     padding: 0;
     position: absolute;
     top: 50%;
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 50px;
 
