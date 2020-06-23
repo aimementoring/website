@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 //Page specific layout styles
 
@@ -442,7 +442,7 @@
 
     .friend-modal-container-btn {
       background: transparent;
-      border: none;
+      border: 0;
       color: #fff;
       color: #fff;
       cursor: pointer;
