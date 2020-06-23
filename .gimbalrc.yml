@@ -21,9 +21,9 @@ configs:
       Frames: 5
       JSHeapTotalSize: 21889024
       JSHeapUsedSize: 13685832
-      Nodes: 1196
+      Nodes: 1250
       RecalcStyleCount: 129
-      LayoutCount: 25
+      LayoutCount: 35
 
   # Lighthouse settings
   lighthouse:
@@ -43,13 +43,13 @@ configs:
   # File and directory size settings
   size:
     - path: out/
-      maxSize: 60 MB
+      maxSize: 70 MB
     - path: .next/service-worker.js
-      maxSize: 5 KB
+      maxSize: 15 KB
     - path:  out/index.html
       maxSize: 80 KB
     - path: out/service-worker.js   
-      maxSize: 8 KB
+      maxSize: 15 KB
 
 # Locations of reports. Useful for storing artifacts in CI
 outputs:
