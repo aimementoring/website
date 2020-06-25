@@ -1,26 +1,26 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 // @todo CSS: Refactor into banner componenet 
 
 .bannerInStory {
   background-position: 0% 25%;
-  max-width: 100%;
-  height: 65vh;
-  width: 96%;
-  margin: 4.2em auto 0;
   background-size: cover;
+  height: 65vh;
+  margin: 4.2em auto 0;
+  max-width: 100%;
   position: relative;
+  width: 96%;
 
   @media screen and (max-width: $sm) {
     height: 180px;
   }
 
-  &:after {
-    position: absolute;
-    content: "";
-    width: 100%;
+  &::after {
+    background: rgba(000, 000, 000, 0.3);
+    content: '';
     height: 100%;
-    background: rgba(000,000,000,0.3);
+    position: absolute;
+    width: 100%;
   }
 
 }
@@ -38,12 +38,12 @@
 }
 
 .blogPost {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 4rem 0;
   display: block;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 4rem 0;
   text-align: center;
+  width: 100%;
 
   @media screen and (min-width: $lg) {
     padding-bottom: 2rem;
@@ -59,24 +59,24 @@
 
   @media screen and (max-width: $sm) {
     margin: 0;
-    padding: 30px 0 4rem 0;
+    padding: 30px 0 4rem;
   }
 
   .blogPostTitle {
     font-size: 2rem;
 
     @media screen and (min-width: $md) {
-    font-size: 2.5rem;
+      font-size: 2.5rem;
     }
   }
 
   .blogPostTimestamp {
-    display: block;
-    margin-bottom: 4em;
-    font-family: $feature-font-family;
-    font-weight: regular;
     color: $grey;
+    display: block;
+    font-family: $feature-font-family;
     font-size: 13px;
+    font-weight: regular;
+    margin-bottom: 4em;
   }
 
   // @todo CSS: Refactor all article content styles into Blueprint componenets 
@@ -86,15 +86,15 @@
     text-align: left;
 
     h4 {
-      font-size: 15px;
-      line-height: 25px;
-      letter-spacing: -0.7px;
       color: $black;
+      font-size: 15px;
+      letter-spacing: -0.7px;
+      line-height: 25px;
     }
 
     p {
-      margin-bottom: 1rem;
       letter-spacing: -0.3px;
+      margin-bottom: 1rem;
     }
 
     p + h4 {
@@ -102,68 +102,68 @@
     }
 
     ul {
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-      padding-left: 1rem;
       list-style: none;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      padding-left: 1rem;
     }
 
     li {
-      position: relative;
-      margin-bottom: 0.5rem;
       line-height: 29px;
+      margin-bottom: 0.5rem;
+      position: relative;
 
-      &:before {
-        content: "•";
-        position: absolute;
+      &::before {
+        content: '•';
         left: -1.5rem;
+        position: absolute;
       }
     }
 
     ul ul li::before {
-      content: "◦";
+      content: '◦';
     }
 
     blockquote {
+      margin: 3rem 0;
       padding-left: 2rem;
       position: relative;
-      margin: 3rem 0;
 
-      &:before {
-        content: "";
+      &::before {
+        background-color: $blue-medium;
+        content: '';
         display: block;
+        height: 100%;
+        left: 0;
         position: absolute;
         top: 0;
-        left: 0;
-        height: 100%;
         width: 1.2px;
-        background-color: $blue-medium;
       }
 
       span {
-        position: relative;
-        display: block;
-        margin-left: 1.5rem;
-        letter-spacing: 0;
         color: $grey;
+        display: block;
+        letter-spacing: 0;
+        margin-left: 1.5rem;
+        position: relative;
 
-        &:before {
-          content: "–";
-          position: absolute;
+        &::before {
+          content: '–';
           left: -1.5rem;
+          position: absolute;
         }
       }
 
       p {
-        margin-bottom: 1rem;
         font-family: $feature-font-family;
+        margin-bottom: 1rem;
       }
     }
 
     figure,
     img {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     img {
@@ -171,12 +171,11 @@
     }
 
     figcaption {
-      text-align: center;
       font-size: 14px;
+      text-align: center;
     }
 
     @media screen and (min-width: $lg) {
-
       p {
         margin-bottom: 1.5rem;
       }
@@ -194,9 +193,10 @@
       }
     }
   }
+
   .signature {
-    font-size: 24px;
     font-family: $signature-font-family;
+    font-size: 24px;
   }
 }
 
@@ -224,8 +224,8 @@
 
   .materialIcons {
     @extend %materialIcons;
-    vertical-align: middle;
     font-size: 15px;
+    vertical-align: middle;
   }
 
   @media screen and (min-width: $lg) {
@@ -239,10 +239,10 @@
 }
 
 .borderedBadge {
-  display: inline-block;
   border: 1px solid $grey40;
-  position: relative;
+  color: $watermelon;
+  display: inline-block;
   display: inline-block;
   margin: 1.5em 0;
-  color: $watermelon;
+  position: relative;
 }
