@@ -3,8 +3,8 @@
 /* monotone colours */
 $black: #000;
 $grey: #666;
-$grey40: #C6CACC;
-$grey90: #3E4345;
+$grey40: #c6cacc;
+$grey90: #3e4345;
 $medium-grey: #a3a3a3;
 $light-grey: #e8e8e8;
 $white: #fff;
@@ -36,16 +36,16 @@ $eggplant: #380249;
 $vibrant-purple: #9d60ec;
 
 /* imagination rainbow colours */
-$purple: #9135F0;
-$magenta: #E82A9E;
-$watermelon: #FF6187;
-$pink: #FF91C5;
-$orange: #FFA235;
-$yellow: #FCC606;
-$green: #09CD7B;
-$cyan: #24D1F6;
+$purple: #9135f0;
+$magenta: #e82a9e;
+$watermelon: #ff6187;
+$pink: #ff91c5;
+$orange: #ffa235;
+$yellow: #fcc606;
+$green: #09cd7b;
+$cyan: #24d1f6;
 
-$error-color: #ff0000;
+$error-color: #f00;
 
 $color-primary: $purple;
 
@@ -58,7 +58,7 @@ $default-input-bg: #fef6ff;
 $active-input-bg: #fff;
 $default-input-border: #550d94;
 $active-input-border: #9013fe;
-$placeholder-text: unquote("#410048c4");
+$placeholder-text: unquote('#410048c4');
 
 $loading-black: rgba(0, 0, 0, 0.3);
 $translucent-black: rgba(0, 0, 0, 0.65);
@@ -69,18 +69,18 @@ $brand-primary-hover: $brand-secondary;
 $aime-shop-color-counter: #f1be59;
 
 /* Typography */
-$feature-font-family: "Poppins", Helvetica, Arial, sans-serif;
+$feature-font-family: 'Poppins', Helvetica, Arial, sans-serif;
 
 $feature-font-family-bold: 'PoppinsBold', Helvetica, Arial, sans-serif;
 
-$feature-font-black-italic: "PoppinsBlackItalic", Helvetica, Arial, sans-serif;
-$body-font-family: "GT Pressura Mono", "Univers", Helvetica, Arial, sans-serif;
-$body-font-family-bold: "GT Pressura Mono Bold", "Univers", Helvetica, Arial,
+$feature-font-black-italic: 'PoppinsBlackItalic', Helvetica, Arial, sans-serif;
+$body-font-family: 'GT Pressura Mono', 'Univers', Helvetica, Arial, sans-serif;
+$body-font-family-bold: 'GT Pressura Mono Bold', 'Univers', Helvetica, Arial,
   sans-serif;
-$primary-font-family: "Univers", Helvetica, Arial, sans-serif;
-$serif-font-family: Georgia, "Times New Roman", Times, serif;
-$icon-font-family: "Material Icons";
-$signature-font-family: "Indie Flower", Helvetica, Arial, sans-serif;
+$primary-font-family: 'Univers', Helvetica, Arial, sans-serif;
+$serif-font-family: Georgia, 'Times New Roman', Times, serif;
+$icon-font-family: 'Material Icons';
+$signature-font-family: 'Indie Flower', Helvetica, Arial, sans-serif;
 $base-font-size: 1rem;
 $highlight-text-font-size: 3.5rem;
 
@@ -105,10 +105,10 @@ $lg: 64em;
 
 $hoverTransition: all 100ms linear;
 
-$cdnRoot: "https://d1muvgoqe3g8vw.cloudfront.net/website/"; //Production Cloudfront
+$cdnRoot: 'https://d1muvgoqe3g8vw.cloudfront.net/website/'; //Production Cloudfront
 
 %svgIcon {
-  stroke-width: 0;
-  stroke: currentColor;
   fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0;
 }
