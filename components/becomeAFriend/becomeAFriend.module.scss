@@ -1,61 +1,61 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .absolutelyHide {
-  position: absolute;
   left: -5000px;
+  position: absolute;
 }
 
 .beAFriendContainer {
-  position: fixed;
-  bottom: 0em;
-  left: 0em;
-  z-index: 30;
 
   $beAFriendSize: 3.8em;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 30;
 
   .beAFriendPopper {
-    position: relative;
-    border: 1px solid $grey40;
     background-color: $white;
+    border: 1px solid $grey40;
     border-radius: 100px;
-    height: $beAFriendSize;
-    width: $beAFriendSize;
-    display: inline-block;
-    margin: 2em 1.5em;
     cursor: pointer;
+    display: inline-block;
+    height: $beAFriendSize;
+    margin: 2em 1.5em;
+    position: relative;
     transition: width 1s ease,
-                display 1s linear;
+      display 1s linear;
+    width: $beAFriendSize;
 
     .spinnyWrapper {
-      position: absolute;
-      z-index: 2;
-      height: $beAFriendSize;
-      width: $beAFriendSize;
-      display: flex;
-      justify-content: center;
       align-items: center;
+      display: flex;
+      height: $beAFriendSize;
+      justify-content: center;
       margin: -0.1em 0 0;
+      position: absolute;
+      width: $beAFriendSize;
+      z-index: 2;
 
       img {
         position: absolute;
-        width: 2.5rem;
         transform: rotate(0deg);
+        width: 2.5rem;
 
       }
     }
 
     .beAFriendPopOut {
+      align-items: center;
       border-radius: 100px;
-      height: $beAFriendSize;
-      z-index: 1;
       
       display: flex;
-      align-items: center;
-      padding-left: 4.3em;
+      height: $beAFriendSize;
 
       overflow: hidden;
+      padding-left: 4.3em;
       transition: width 1s ease,
-                  left 1s linear;
+        left 1s linear;
+      z-index: 1;
 
       .beAFriendPopOutWrapper {
         overflow: hidden;
@@ -63,37 +63,37 @@
       }
 
       .beAFriendPopOutContent {
+        margin-left: -16em;
+        opacity: 0;
         overflow: hidden;
         position: relative;
         transition: all 1s ease;
-        opacity: 0;
         visibility: hidden;
-        margin-left: -16em;
       }
 
       .popOutTitle {
-        display:inline-block;
-        display: flex;
         align-items: center;
+        display: inline-block;
+        display: flex;
         float: left;
       }
 
       h5 {
         color: $orange;
-        display:inline-block;
+        display: inline-block;
         position: relative;
       }
 
       .friendArrowRight {
-        display: block;
-        float: left;
         clip-path: url(#icon-arrow);
+        display: block;
         fill: $orange;
-        width: 0.98em;
+        float: left;
         height: 0.98em;
+        padding-left: 0.75em;
         position: relative;
-        padding-left: 0.75em;;
         top: 0.22em;
+        width: 0.98em;
       }
     }
 
@@ -102,26 +102,27 @@
       font-weight: 900;
     }
 
-    @keyframes spinno {
-      to {
-        transform:rotate(360deg);
-      }
-    }
-
-    &:not(:active) img{
-      animation:spinno 3s forwards;
+    &:not(:active) img {
+      animation: spinno 3s forwards;
     }
 
     &:hover { 
       width: 20em;
+
       .beAFriendPopOut {
         width: 20em;
         
         .beAFriendPopOutContent {
-          visibility: visible;
-          opacity: 1;
           margin-left: initial;
+          opacity: 1;
+          visibility: visible;
         }
+      }
+    }
+
+    @keyframes spinno {
+      to {
+        transform: rotate(360deg);
       }
     }
     
@@ -136,24 +137,24 @@
   }
 
   .submitButton {
-    height: 3em;
-    width: 3em;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1.2em;
+    align-items: center;
     background-color: $purple;
-    border-color: $purple;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
     background-image: url($cdnRoot+"assets/images/arrow.svg");
-    font-size: 1em;
+    background-position: 50%;
     background-repeat: no-repeat;
     background-size: 1em;
-    background-position: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-bottom-right-radius: 3px;
+    border-color: $purple;
+    border-top-right-radius: 3px;
     cursor: pointer;
+    display: flex;
+    font-size: 1em;
+    height: 3em;
+    justify-content: center;
+    padding: 0 1.2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3em;
   }
 }
