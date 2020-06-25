@@ -1,22 +1,26 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .contactPopup {
-  text-align: center;
+  background: $white;
   min-height: 20em;
   padding: 2em;
-  background: $white;
+  text-align: center;
+
   .popupTitle {
     color: $black;
   }
+
   .emailLink {
     color: $black;
     font-family: $body-font-family;
     font-weight: normal;
     text-decoration: none;
+
     &:hover {
       color: $brand-primary;
     }
   }
+
   img { 
     width: 20em;
   }
