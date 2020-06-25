@@ -1,60 +1,60 @@
 @font-face {
   font-family: 'Luna Emu';
+  font-style: normal;
+  font-weight: normal;
   src: url($cdnRoot+"assets/fonts/luna-emu/LunaEmu-Regular.woff2") format('woff2'),
     url($cdnRoot+"assets/fonts/luna-emu/LunaEmu-Regular.woff") format('woff');
-  font-weight: normal;
-  font-style: normal;
 }
 
 // GT Pressura Mono
 @font-face {
-  font-family: "GT Pressura Mono";
+  font-family: 'GT Pressura Mono';
+  font-style: normal;
+  font-weight: 400;
   src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-webfont.woff2");
-  font-style: normal;
-  font-weight: 400;
 }
 
 @font-face {
-  font-family: "GT Pressura Mono Italic";
+  font-family: 'GT Pressura Mono Italic';
+  font-style: normal;
+  font-weight: 400;
   src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-regular-italic-webfont.woff2");
-  font-style: normal;
-  font-weight: 400;
 }
 
 @font-face {
-  font-family: "GT Pressura Mono Bold";
+  font-family: 'GT Pressura Mono Bold';
+  font-style: normal;
+  font-weight: 600;
   src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-webfont.woff2");
-  font-style: normal;
-  font-weight: 600;
 }
 
 @font-face {
-  font-family: "GT Pressura Mono Bold Italic";
-  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff2");
+  font-family: 'GT Pressura Mono Bold Italic';
   font-style: normal;
   font-weight: 600;
+  src: url($cdnRoot+"assets/fonts/gt-pressura/gt-pressura-mono-bold-italic-webfont.woff2");
 }
 
 // Univers
 @font-face {
   font-family: 'Univers';
-  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd.otf');
   font-style: normal;
   font-weight: 400;
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd.otf');
 }
 
 @font-face {
   font-family: 'Univers';
-  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Light.otf');
   font-style: normal;
   font-weight: 300;
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Light.otf');
 }
 
 @font-face {
   font-family: 'Univers';
-  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Bold.otf');
   font-style: normal;
   font-weight: 500;
+  src: url($cdnRoot + 'assets/fonts/universal/UniversLTStd-Bold.otf');
 }
 
 // @todo CSS: Review @font-face rules
@@ -63,44 +63,44 @@
 // Poppins
 @font-face {
   font-family: 'PoppinsLight';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Light.ttf');
   font-style: normal;
   font-weight: 100;
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Light.ttf');
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Medium.ttf');
   font-style: normal;
   font-weight: 300;
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Medium.ttf');
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: local(), url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
   font-style: normal;
   font-weight: 400;
+  src: local(), url($cdnRoot + 'assets/fonts/poppins/Poppins-SemiBold.ttf');
 }
 
 @font-face {
   font-family: 'PoppinsBlackItalic';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BlackItalic.ttf');
   font-style: normal;
   font-weight: 900;
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BlackItalic.ttf');
 }
 
 @font-face {
   font-family: 'PoppinsBold';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Bold.ttf');
   font-style: normal;
   font-weight: 500;
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-Bold.ttf');
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BoldItalic.ttf');
   font-style: normal;
   font-weight: 500;
+  src: url($cdnRoot + 'assets/fonts/poppins/Poppins-BoldItalic.ttf');
 }
 
 // Material Icons
@@ -119,26 +119,26 @@
 // Indie Flower
 @font-face {
   font-family: 'Indie Flower';
-  src: url($cdnRoot + 'assets/fonts/indie-flower/IndieFlower.ttf');
   font-style: normal;
   font-weight: 400;
+  src: url($cdnRoot + 'assets/fonts/indie-flower/IndieFlower.ttf');
 }
 
 %materialIcons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
   direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';       // Support for IE.
+  font-size: 24px;  /* Preferred icon size */
 
   -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
-  text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
   -moz-osx-font-smoothing: grayscale;  // Support for Firefox.
-  font-feature-settings: 'liga';       // Support for IE.
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-rendering: optimizeLegibility;  // Support for Safari and Chrome.
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
 }
