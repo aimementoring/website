@@ -1,4 +1,4 @@
-@import "../global.module.scss";
+@import '../global.module';
 
 
 .card {
@@ -11,15 +11,16 @@
 }
 
 .cardContent {
-  position: relative;
   margin: 1.5em;
+  position: relative;
   
   h5 {
-  margin-bottom: 0.5em;
-  color:$black;
-  transition: $hoverTransition;
-  &:hover {
-    color: $purple;
+    color: $black;
+    margin-bottom: 0.5em;
+    transition: $hoverTransition;
+
+    &:hover {
+      color: $purple;
     }
   }
 }
