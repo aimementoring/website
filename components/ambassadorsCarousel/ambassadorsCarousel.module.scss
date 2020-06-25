@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .fullWidthWrap {
   max-width: 100%;
@@ -7,8 +7,8 @@
 }
 
 .paragraph {
-  font-size: 14px;
   color: $black;
+  font-size: 14px;
 }
 
 .linkButton {
@@ -44,9 +44,9 @@
 
 .mentorsSection {
   background-color: $white;
+  max-width: 100%;
   padding: 60px 0 0;
   position: relative;
-  max-width: 100%;
   width: 100%;
 
   @media all and(min-width: $md) {
@@ -54,8 +54,8 @@
   }
 
   .mentorsSectionWrapper {
-    max-width: 960px;
     margin: 60px auto 0;
+    max-width: 960px;
     overflow: visible;
 
     @media all and(min-width: $md) {
@@ -64,44 +64,44 @@
 
     .mentorSlideWrapper {
       align-items: center;
+      display: inline-block;
       margin: 0 auto;
       max-width: 1120px;
       overflow: visible;
-      display: inline-block;
 
       @media (min-width: $sm) {
         width: 100%;
       }
 
       @media all and(min-width: $md) {
-        padding: 20px 20px 50px;
         max-height: 430px;
+        padding: 20px 20px 50px;
       }
     }
   }
 
   .carouselTitle {
-    font-weight: normal;
-    position: relative;
-    z-index: 2;
     color: $orange;
-    text-align: center;
-    margin: 0 auto;
     display: block;
+    font-weight: normal;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    z-index: 2;
 
     @media all and(min-width: $md) {
       display: inline-block;
-      text-align: left;
       margin: 0 0 0 2em;
+      text-align: left;
     }
 
     strong {
       color: $purple;
-      position: relative;
-      z-index: 1;
-      letter-spacing: -0.05em;
       left: initial;
+      letter-spacing: -0.05em;
+      position: relative;
       top: initial;
+      z-index: 1;
       @media all and(max-width: $md) {
         font-size: 3.5rem;
       }
@@ -113,33 +113,33 @@
 
   .mentorImageWrapper {
     align-items: center;
+    float: none;
+    justify-content: center;
     position: relative;
     z-index: 3;
-    justify-content: center;
-    float: none;
 
     @media (min-width: $sm) {
-      width: 100%;
-      float: left;
       box-sizing: border-box;
+      float: left;
+      width: 100%;
     }
 
     @media all and(min-width: $md) {
-      overflow: visible;
       display: initial;
+      overflow: visible;
       width: 50%;
     }
 
     .homepageMentorsImage {
-      transition: ease-in 0.1s transform;
-      clip-path: url(#svgScratchAmbassadorClipPath);
-      display: block;
-      position: relative;
-      width: 260px;
-      height: 260px;
       background-blend-mode: overlay;
       background-size: cover;
+      clip-path: url(#svgScratchAmbassadorClipPath);
+      display: block;
+      height: 260px;
       margin: 0 auto;
+      position: relative;
+      transition: ease-in 0.1s transform;
+      width: 260px;
 
       &:hover {
         opacity: 1;
@@ -147,16 +147,16 @@
       }
 
       @media all and(min-width: $md) {
-        width: 430px;
-        height: 430px;
         display: inline-block;
-        margin: 0;
+        height: 430px;
         left: 2.5em;
+        margin: 0;
+        width: 430px;
       }
 
       @media all and(min-width: $lg) {
-        width: 450px;
         height: 450px;
+        width: 450px;
       }
     }
   }
@@ -170,70 +170,57 @@
   .mentorMakhale {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/people-makhale.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorSherice {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/people-sherice.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorUzo {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/uzo_aduba.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorPatrick {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/patrick_j_adams.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorDarcy {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/people-darcy.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
+
   .mentorJade {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/people-jade.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorIan {
     background-image:
       url($cdnRoot+"assets/images/ambassadors/ian_thorpe.jpg"),
-      linear-gradient(
-        135deg,
-        rgba(49, 233, 255, 0.5) 0%,
-        rgba(220, 10, 255, 0.5) 100%
-      );
+      linear-gradient(135deg,
+      rgba(49, 233, 255, 0.5) 0%,
+      rgba(220, 10, 255, 0.5) 100%);
   }
 
   .mentorContent {
@@ -263,17 +250,17 @@
     }
 
     @media all and(min-width: $lg) {
-      width: 83.3%;
-      padding: 70px;
       margin-right: 0;
+      padding: 70px;
+      width: 83.3%;
     }
 
     .mentorContentWrapper {
       text-align: center;
 
       @media all and(min-width: $md) {
-        text-align: initial;
         float: right;
+        text-align: initial;
         width: 58.33333%;
       }
 
@@ -292,11 +279,11 @@
 }
 
 .carousel {
+  background-color: $white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background-color: $white;
   position: relative;
 
   @media all and(min-width: $md) {
@@ -311,11 +298,11 @@
     display: none;
 
     li {
-      visibility: hidden;
-      position: relative;
       display: inline-block;
-      margin: 0px 5px;
-      padding: 0px;
+      margin: 0 5px;
+      padding: 0;
+      position: relative;
+      visibility: hidden;
     }
   }
 }
