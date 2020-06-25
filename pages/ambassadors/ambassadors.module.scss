@@ -1,41 +1,41 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .heroBanner {
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
-  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
+  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';  
 }
 
 .container {
-  padding: 2rem 0;
-  margin: 0 auto; 
-  max-width: 1120px; 
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 2rem 0; 
 }
 
 .intro {
+  display: flex;
   margin-bottom: 1rem;
   margin-top: 0;
-  display: flex;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 
   @media screen and (min-width: $md) and (max-width: $lg) {
-    padding-top: 2rem;
     margin-top: 4rem;
+    padding-top: 2rem;
   }
 
   @media screen and (min-width: $lg) {
-    padding-top: 2rem;
     margin-top: 4rem;
+    padding-top: 2rem;
   }
 
   .emptySpan {
-    width: 9%;
-    height: 3px;
-    border-radius: 3px;
-    transition: .2s ease all;
-    margin-top: 1em;
     background-color: $brand-tertiary;
+    border-radius: 3px;
     display: inline-block;
+    height: 3px;
     margin-right: 1rem;
+    margin-top: 1em;
+    transition: 0.2s ease all;
+    width: 9%;
     @media screen and (min-width: $md) and (max-width: $lg) {
       margin-right: 2rem;
     }
@@ -53,8 +53,8 @@
     }
   
     p {
-      max-width: 48em;
       margin-bottom: 3em;
+      max-width: 48em;
     } 
   }
 
@@ -62,7 +62,7 @@
 
 .grid {
   display: grid;
-  grid-gap: 1rem;
   flex-wrap: wrap;
+  grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }

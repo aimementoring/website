@@ -1,16 +1,16 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .frameSvg {
-  width: 108.6vw; 
-  height: 14.8vw;
-  margin:0;
-  transition:all .5s;
-  font-size:.12rem;
-  letter-spacing:0.05rem;
-  font-family:"GT Pressura Mono";
-  font-weight:800;
   cursor: pointer;
-  max-width:1440px;
+  font-family: 'GT Pressura Mono';
+  font-size: 0.12rem;
+  font-weight: 800;
+  height: 14.8vw;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  max-width: 1440px;
+  transition: all 0.5s;
+  width: 108.6vw;
 
   @media screen and (max-width: $md) {
     transform: scale(1.6);
@@ -22,70 +22,71 @@
   justify-content: center;
 
   @media screen and (max-width: $sm) {
-    margin-top: 1em;
     margin-bottom: 1em;
+    margin-top: 1em;
   }
 
   @media screen and (min-width: $sm) and (max-width: $md) {
-    margin-top: 1em;
     margin-bottom: 2em;
+    margin-top: 1em;
   }
 }
 
 .donateTitleText {
-  text-align:center;
-  font-size:.08rem;
-  letter-spacing:0.05rem;
-  font-family:"GT Pressura Mono";
-  font-weight:800;
-  fill:#FFA235;
+  fill: #ffa235;
+  font-family: 'GT Pressura Mono';
+  font-size: 0.08rem;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  text-align: center;
   @media screen and (max-width: $md) {
-    font-size: .12rem;
+    font-size: 0.12rem;
   }
 }
 
 .donateSvgShape {
-fill:#FFF;
-stroke:#9135F0;
-stroke-width:2px;
-vector-effect:non-scaling-stroke;
-transition:all .5s;
-filter:url(#dropshadow);
-@media screen and (max-width: $md) {
-  stroke-width:1px;
-}
+  fill: #fff;
+  filter: url(#dropshadow);
+  stroke: #9135f0;
+  stroke-width: 2px;
+  transition: all 0.5s;
+  vector-effect: non-scaling-stroke;
+  @media screen and (max-width: $md) {
+    stroke-width: 1px;
+  }
 }
 
-#donateBottomPath, #donateTopPath {
-fill:none;
-stroke:none;
-stroke-width:1px;
-font-size:0.5em;
+#donateBottomPath,
+#donateTopPath {
+  fill: none;
+  font-size: 0.5em;
+  stroke: none;
+  stroke-width: 1px;
  
 }
 
 #donateBottomPath {
-  transform:translate(0px, 7%);
+  transform: translate(0, 7%);
 }
 
 .donateSvgText {
-  fill:#9135F0;
-  transform:translateZ(0);
+  fill: #9135f0;
+  transform: translateZ(0);
 }
 
 .donateSvgGroup {
-  fill:transparent;
+  fill: transparent;
 }
 
 .donateSvgGroup:hover .donateSvgShape {
-  fill:#9135F0;
+  fill: #9135f0;
 }
 
 .donateSvgGroup:hover .donateSvgText {
-  fill:#FFF;
+  fill: #fff;
 }
 
 .donateSvgGroup:hover .donateTitleText {
-  fill:#FFF;
+  fill: #fff;
 }
 
