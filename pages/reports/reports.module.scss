@@ -1,9 +1,9 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .banner {
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot+"assets/images/banner/bg-pattern-purple@2x.jpg")
     no-repeat top center / cover #050301;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
 
 .filterListContainer {
@@ -21,26 +21,26 @@
 
 .reportsGrid {
   display: grid;
-  grid-gap: 1em;
-  margin: 0 auto;
-  padding-top: 0;
   flex-wrap: wrap;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+  margin: 0 auto;
   max-width: 81.25em;
   padding: 2em 2em 4em;
-  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
+  padding-top: 0;
 }
 
 .reportCategoryItem {
-  display: block;
-  cursor: pointer;
   border: 1px solid $watermelon;
-  color: $watermelon;
   border-radius: 3px;
-  padding: .5em 1em;
-  margin-right: .5em;
-  margin-top: 1em;
-  text-transform: uppercase;
+  color: $watermelon;
+  cursor: pointer;
+  display: block;
   font-family: $body-font-family-bold;
+  margin-right: 0.5em;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
 
   &.active {
     background: $watermelon;
@@ -50,6 +50,6 @@
 
 @media screen and (max-width: $lg) {
   .filterListContainer {
-    padding: 0 2em 0;
+    padding: 0 2em;
   }
 }
