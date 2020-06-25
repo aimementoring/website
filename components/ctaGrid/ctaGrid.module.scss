@@ -1,8 +1,8 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .ctaGridContainer {
-  position: relative;
   max-width: 100%;
+  position: relative;
   width: 100%;
 }
 
@@ -10,29 +10,29 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  z-index: 1;
   transition: 1s;
+  z-index: 1;
 
   @media all and(min-width: $lg) {
     flex-wrap: nowrap;
   }
 
   .ctaItem {
-    flex-wrap: nowrap;
-    flex-grow: 1;
-    max-width: 100%;
-    background-color: $purple;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    color: $white;
-    margin: 0.65em;
-    padding: 2em;
-    background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-purple@2x.jpg');
-    justify-content: center;
     align-items: center;
+    background-color: $purple;
+    background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-purple@2x.jpg');
+    background-position: center;
+    background-size: cover;
+    color: $white;
     display: flex;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0.65em;
+    max-width: 100%;
     max-width: calc(25% - 1.3em);
+    padding: 2em;
+    text-align: center;
 
     @media all and(min-width: $sm) {
       height: 30em;
@@ -44,16 +44,16 @@
 
     .itemContentImage {
       background-image: url($cdnRoot + 'assets/images/homepage-grid/cta-logo1.png');
-      margin-bottom: 2rem;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
       height: 100px;
+      margin-bottom: 2rem;
     }
 
     &:hover {
-      background-color: rgba(118, 3, 219, 0.8);
       background-blend-mode: lighten;
+      background-color: rgba(118, 3, 219, 0.8);
       // opacity: 0.5;
 
       .subItemDetails {
@@ -102,8 +102,8 @@
     }
 
     .subItemDetails {
-      margin-top: 25px;
       display: block;
+      margin-top: 25px;
 
       @media all and(min-width: $md) {
         display: none;
@@ -112,8 +112,8 @@
 
     h3 {
       font-family: $feature-font-family;
-      font-weight: 900;
       font-style: italic;
+      font-weight: 900;
     }
 
     p {
@@ -122,27 +122,27 @@
 
     .basic-btn {
       background-color: $brand-primary;
-      border-radius: 25px;
-      padding: 10px 40px;
-      margin-top: 20px;
       border: 2px solid #fff;
+      border-radius: 25px;
       color: #fff;
-      text-decoration: none;
       font-family: $feature-font-family;
-      font-weight: 900;
-      font-style: italic;
       font-size: 0.8rem;
+      font-style: italic;
+      font-weight: 900;
       letter-spacing: 0.04rem;
+      margin-top: 20px;
+      padding: 10px 40px;
+      text-decoration: none;
     }
   }
 
   .ctaLockup {
+    color: $white;
+    font-size: 2rem;
     font-style: normal;
     font-weight: normal;
-    font-size: 2rem;
-    color: $white;
-    padding: 0 0.5em;
     line-height: 1em;
+    padding: 0 0.5em;
   }
 
   // Left the above styles as is if we want to revert bck to using the CTA Grid for important web pages. 
@@ -155,8 +155,8 @@
           background-image: url($cdnRoot + 'assets/images/illustrations/filmcamera@2x.png');
         }
       }
-      &:nth-child(2) {
 
+      &:nth-child(2) {
         .itemContentImage {
           background-image: url($cdnRoot + 'assets/images/illustrations/hoodie-grey.png');
         }
@@ -184,9 +184,9 @@
 }
 
 .partnerPanelWrap {
+  background: url($cdnRoot + 'assets/images/homepage-grid/partnerships@2x.jpg') no-repeat top center / cover $orange;
   margin: 0.65em auto;
   padding: 2em;
-  background: url($cdnRoot + 'assets/images/homepage-grid/partnerships@2x.jpg') no-repeat top center / cover $orange;
 
   @media all and(min-width: $md) {
     padding: 7em 0;
@@ -194,26 +194,27 @@
 
   .contentWrap {
     background-color: $white;
-    max-width: 43em;
     margin: 1em;
+    max-width: 43em;
     padding: 2em;
     text-align: center;
     @media all and(min-width: $md) {
-      padding: 3em 6em;
       margin: 0 auto;
+      padding: 3em 6em;
     }
   }
 
   .partnerPanelIcon {
-    width: 6em;
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
+    width: 6em;
   }
 
   .partnerTitle {
     color: $grey90;
-    text-align: center;
     display: block;
+    text-align: center;
+
     strong {
       color: $orange;
       left: initial;
@@ -223,17 +224,17 @@
   .intercomBtnWrap {
     button.navBtn {
       background-color: $watermelon;
+      border: 0;
       border-radius: 3px;
+      color: $white;
+      cursor: pointer;
       font-family: $body-font-family-bold;
       font-size: 0.9rem;
       font-weight: bold;
-      text-transform: uppercase;
-      color: $white;
       letter-spacing: 0.13em;
-      padding: 0.85em 1.85em;
-      border: 0;
       outline: none;
-      cursor: pointer;
+      padding: 0.85em 1.85em;
+      text-transform: uppercase;
       transition: $hoverTransition;
 
       &:hover {

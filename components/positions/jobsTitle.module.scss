@@ -1,9 +1,9 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .headingJobContent {
   margin: 1.5em 0 0.5em;
 
-  .headingJobRole{
+  .headingJobRole {
     color: $accent-purple;
   }
 }
