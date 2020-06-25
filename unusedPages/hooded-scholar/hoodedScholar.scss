@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 //Page specific layout styles
 
@@ -42,8 +42,8 @@
     &.section-background-hoodie {
       background: url($cdnRoot+"assets/images/banner/home_banner.jpg") no-repeat
         center center #050301;
-      background-size: cover;
       background-attachment: fixed;
+      background-size: cover;
       // height: 100vh;
       // Stop fixed on tablets & phones as it doesn't work
 
@@ -76,18 +76,18 @@
   }
 
   &-highlight-text {
+    font-size: $highlight-text-font-size;
     margin: 0 auto;
     padding: 16px 16px 8px 20px;
-    font-size: $highlight-text-font-size;
 
     @media screen and (min-width: $sm) {
-      padding: 16px 16px 8px 20px;
       font-size: calc(#{$highlight-text-font-size} + 1.5rem);
+      padding: 16px 16px 8px 20px;
     }
 
     @media screen and (min-width: $md) {
-      padding: 16px 16px 8px 42px;
       font-size: calc(#{$highlight-text-font-size} + 2.5rem);
+      padding: 16px 16px 8px 42px;
     }
 
     @media all and(min-width: $lg) {
@@ -95,8 +95,8 @@
     }
 
     &-heropanel {
-      margin: 0 auto;
       font-size: calc(#{$highlight-text-font-size} + 2rem);
+      margin: 0 auto;
 
       @media screen and (min-width: $sm) {
         font-size: calc(#{$highlight-text-font-size} + 7rem);
@@ -155,10 +155,10 @@
   //TODO: I think these can be components
 
   .icon-ArrowDown {
-    width: 60px;
     height: 60px;
     position: relative;
     top: 10px;
+    width: 60px;
   }
 
   .arrowDown-label {
@@ -167,20 +167,20 @@
   }
 
   .icon-container {
-    display: flex;
     align-items: flex-start;
+    display: flex;
 
     .icon {
-      margin-top: 4px;
-      margin-right: 16px;
-      width: 100%;
-      max-width: 2rem;
       height: 2rem;
+      margin-right: 16px;
+      margin-top: 4px;
+      max-width: 2rem;
+      width: 100%;
     }
   }
 
   .download-btn {
-    padding: 1rem 1rem;
+    padding: 1rem;
 
     @media screen and (min-width: $md) {
       padding: 1rem 2rem;
@@ -191,15 +191,15 @@
     float: left;
   }
 
-  .download-btn-text:after {
-    content: "";
-    display: block;
+  .download-btn-text::after {
     background: url($cdnRoot+"assets/images/Download.svg") no-repeat center
       center;
-    width: 20px;
-    height: 20px;
+    content: '';
+    display: block;
     float: right;
+    height: 20px;
     margin: 0 0 0 0.5rem;
+    width: 20px;
 
     @media screen and (min-width: $md) {
       margin: 0 0 0 1rem;
@@ -210,8 +210,8 @@
 
   .pre-text.center,
   .post-text.center {
-    padding-left: 0;
     display: block;
+    padding-left: 0;
 
     @media screen and (max-width: $md) {
       font-size: 1rem;
@@ -219,17 +219,17 @@
   }
 
   .video-banner {
-    transition: $hoverTransition;
-    background-image: url($cdnRoot+"assets/images/campaigns/hooded-scholar/hs-video-image-dark.jpg");
-    clip-path: none;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
+    background-image: url($cdnRoot+"assets/images/campaigns/hooded-scholar/hs-video-image-dark.jpg");
     background-position: -50px 15%;
     background-size: inherit;
-    width: 100%;
+    clip-path: none;
+    cursor: pointer;
+    flex-direction: column;
     height: 17em;
+    justify-content: center;
+    transition: $hoverTransition;
+    width: 100%;
 
     &:hover {
       background-image: url($cdnRoot+"assets/images/campaigns/hooded-scholar/hs-video-image.jpg");
@@ -237,11 +237,11 @@
   }
 
   .vid-container {
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 100%;
     justify-content: center;
     width: 100%;
-    height: 100%;
   }
 
   .vid-headline {
@@ -255,30 +255,30 @@
   .video-overlay {
     background: url($cdnRoot+"assets/images/transparent.png") repeat center
       center;
-    width: 100%;
     height: 100%;
-    z-index: 5;
     position: absolute;
+    width: 100%;
+    z-index: 5;
   }
 
   .bgVideo-container {
+    height: 200%;
+    left: -50%;
+    overflow: hidden;
     position: absolute;
     top: -50%;
-    left: -50%;
     width: 200%;
-    height: 200%;
-    overflow: hidden;
   }
 
   #bgVideo {
-    position: absolute;
-    top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
     margin: auto;
     min-height: 50%;
     min-width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   @media (min-aspect-ratio: 16/9) {
@@ -289,9 +289,9 @@
 
   @media (max-aspect-ratio: 16/9) {
     #bgVideo {
-      min-width: 100%;
-      min-height: 100%;
       height: auto;
+      min-height: 100%;
+      min-width: 100%;
     }
   }
 
@@ -307,10 +307,10 @@
   }
 
   .absolute-wrapper {
-    width: 40px;
+    background: #18001d;
     height: 20px;
     margin-bottom: -4.7rem;
-    background: #18001d;
+    width: 40px;
   }
 
   .absolute-text {
@@ -332,21 +332,21 @@
   }
 
   .countdown {
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
     justify-content: center;
   }
 
   .countdown-number {
-    font-family: $feature-font-family;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 2.5rem;
-    color: #343434;
     background: #fff;
+    border-radius: 8px;
+    color: #343434;
+    font-family: $feature-font-family;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
     padding: 8px 0;
     text-align: center;
-    border-radius: 8px;
     width: 64px;
 
     @media screen and (max-width: $md) {
@@ -357,12 +357,12 @@
 
   .countdown-label {
     font-family: $feature-font-family;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
     font-size: 1.2rem;
-    text-align: center;
+    font-style: italic;
+    font-weight: 900;
     margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
 
     @media screen and (max-width: $md) {
       font-size: 1rem;
@@ -371,23 +371,23 @@
 }
 
 .countDown-container-inline {
-  right: 1rem;
   position: absolute;
+  right: 1rem;
 
   .countdown-col-element {
     padding: 0 2px;
   }
 
   .countdown-col::after {
-    padding: 0 2px;
-    content: ":";
-    font-family: $feature-font-family;
     color: #fff;
+    content: ':';
+    font-family: $feature-font-family;
     font-weight: 900;
+    padding: 0 2px;
   }
 
   .countdown-col:last-child::after {
-    content: " ";
+    content: ' ';
   }
 
   .countdown-label {
@@ -404,10 +404,10 @@
 
 .extra-questions {
   .extra-question-btn {
-    font-family: $feature-font-family;
-    font-weight: 900;
     background: $white;
     color: $brand-primary;
+    font-family: $feature-font-family;
+    font-weight: 900;
     min-width: 150px;
 
     &:hover {
@@ -441,16 +441,16 @@
     border-left: 1px solid #fff;
 
     .friend-modal-container-btn {
-      color: #fff;
-      font-family: $feature-font-family;
-      font-weight: 900;
-      font-size: 14px;
-      width: 100%;
-      min-height: 100%;
       background: transparent;
-      border: none;
+      border: 0;
+      color: #fff;
       color: #fff;
       cursor: pointer;
+      font-family: $feature-font-family;
+      font-size: 14px;
+      font-weight: 900;
+      min-height: 100%;
+      width: 100%;
     }
   }
 }
@@ -467,8 +467,8 @@
 
 @media (max-width: $sm) {
   .js-hoodedScholar-tabs {
-    padding: 0;
     margin: 32px -16px;
+    padding: 0;
   }
 }
 
@@ -485,15 +485,15 @@
 }
 
 .challenge-of-a-lifetime-title {
-  transform: inherit;
   padding-bottom: 0;
+  transform: inherit;
 }
 
 .highlight-text {
   &.numbered {
+    display: inline-block;
     font-size: 5rem;
     padding: 0.55em 0.2em;
-    display: inline-block;
   }
 
   &.sml-rotate {
@@ -511,22 +511,22 @@
     //repeat(2, 1fr);
 
     .area-heading {
-      order: 2;
       grid-column: 10 / span 5;
       grid-row: 1 / span 3;
+      order: 2;
     }
 
     .area-info {
-      order: 1;
       grid-column: 1 / span 8;
       grid-row: 3 / span 5;
+      order: 1;
       z-index: 2;
     }
 
     .intro-video-wrap {
-      order: 3;
       grid-column: 8 / span 10;
       grid-row: 5 / span 1;
+      order: 3;
       z-index: 1;
     }
   }
@@ -539,21 +539,21 @@
 }
 
 .section-intro-heading {
-  font-family: "PoppinsLight";
+  font-family: 'PoppinsLight';
   font-size: 5.3rem;
+  font-style: normal;
+  font-weight: 100;
   line-height: 5rem;
   text-transform: uppercase;
-  font-weight: 100;
-  font-style: normal;
 
   strong {
-    font-family: "PoppinsBold";
+    font-family: 'PoppinsBold';
     font-weight: 800;
   }
 }
 
 .info-content-heading {
-  font-family: "PoppinsBlackItalic";
+  font-family: 'PoppinsBlackItalic';
   font-size: 2rem;
   line-height: 2.5rem;
 }
