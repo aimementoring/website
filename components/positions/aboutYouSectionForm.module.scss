@@ -1,58 +1,60 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .aboutYouSectionFormContainer {
-  &:after,
-  &:before {
-    content: " ";
+  &::after,
+  &::before {
+    content: ' ';
     display: table;
   }
-  &:after {
+
+  &::after {
     clear: both;
   }
 
   .jobInputWrapper {
-    display: inline-block;
     box-sizing: border-box;
+    display: inline-block;
+    padding: 0 0 0.5em;
     width: 100%;
-    padding: 0 0 0.5em 0; 
 
     @media screen and (min-width: $md) {
-      width: 50%;
-      padding: 0 0.7em 0.4em 0; 
+      padding: 0 0.7em 0.4em 0;
+      width: 50%; 
     }
+
     div {
       float: none;
     }
   }
 
   .inputJobApplication {
-    width: 100%;
-    height: auto;
     box-sizing: border-box;
     display: inline-block;
+    height: auto;
+    width: 100%;
   }
   
   .phoneJobInputWrapper {
-    display: inline-block;
     box-sizing: border-box;
-    width: 100%;
-    padding: 0 0 0.5em 0;
+    display: inline-block;
+    padding: 0 0 0.5em;
     vertical-align: top;
+    width: 100%;
 
     @media screen and (min-width: $md) {
-      width: 50%;
-      padding: 0 0.7em 0.4em 0; 
+      padding: 0 0.7em 0.4em 0;
+      width: 50%; 
     }
 
     div {
       float: none;
     }
 
-    input[type="tel"] {
-      width: 100%;
-      height: auto;
+    input[type='tel'] {
       box-sizing: border-box;
       display: inline-block;
+      height: auto;
+      width: 100%;
     }
   }
 }

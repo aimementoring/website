@@ -1,9 +1,9 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module';
 
 .carouselContainer {
-  max-width: 81.25em;
-  max-height: 50em;
   margin: 0 auto;
+  max-height: 50em;
+  max-width: 81.25em;
 }
 
 .storyCarousel {
@@ -24,54 +24,54 @@
 
   :global(.slick-dots) {
     bottom: 0;
-    padding: 1rem 0;
-    width: 35%;
-    position: absolute;
-    margin: 0;
     list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    position: absolute;
     text-align: center;
+    width: 35%;
     
     li {
       cursor: pointer;
+      display: none; // @TODO: in staging is not visible but it seems like we wanted to make it visible
       height: 20px;
       margin: 0 2px;
-      width: 20px;
+      padding: 0;
       position: relative;
-      display: none; // @TODO: in staging is not visible but it seems like we wanted to make it visible
+      width: 20px;
       // display: inline-block;
       width: 20px;
-      padding: 0;
 
       &:global(.slick-active > button::before) {
-        opacity: .75;
+        opacity: 0.75;
       }
 
       button {
-        font-size: 0;
-        line-height: 0;
-        display: block;
-        width: 20px;
-        height: 20px;
-        padding: 5px;
-        cursor: pointer;
-        color: transparent;
-        border: 0;
-        outline: none;
         background: transparent;
+        border: 0;
+        color: transparent;
+        cursor: pointer;
+        display: block;
+        font-size: 0;
+        height: 20px;
+        line-height: 0;
+        outline: none;
+        padding: 5px;
+        width: 20px;
 
         &::before {
           color: $white;
-          font-size: 1.5rem;
-          font-family: 'slick';
-          line-height: 20px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 20px;
-          height: 20px;
           content: '•';
+          font-family: 'slick';
+          font-size: 1.5rem;
+          height: 20px;
+          left: 0;
+          line-height: 20px;
+          opacity: 0.25;
+          position: absolute;
           text-align: center;
-          opacity: .25;
+          top: 0;
+          width: 20px;
         }
       }
     }
@@ -87,10 +87,10 @@
   position: relative;
   width: 100%;
 
-  &:before {
+  &::before {
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
-    content: "";
+    content: '';
     display: block;
     left: 0;
     position: absolute;
@@ -100,19 +100,19 @@
 
   .featuredStory {
     color: $white;
-    width: 1330px;
     margin-left: auto;
-    max-width: 1330px;
     margin-right: auto;
+    max-width: 1330px;
     padding-left: 2rem;
-    position: relative;
-    padding-top: 8rem;
     padding-right: 2rem;
+    padding-top: 8rem;
+    position: relative;
     text-align: center;
+    width: 1330px;
     
     .textWrap {
-      max-width: 45em;
       margin: 0 auto;
+      max-width: 45em;
     }
 
     h3 {
@@ -120,7 +120,7 @@
       margin-bottom: 1.2em;
 
       @media screen and (min-width: $md) {
-      margin: 0.7em 0;
+        margin: 0.7em 0;
       }
     }
 
