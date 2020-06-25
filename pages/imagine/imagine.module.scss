@@ -1,14 +1,13 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .heroBannerImagine {
-  background:
-    url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
+  background: url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
   background-size: 100%;
-  position: relative;
-  max-width: 75em;
-  width: 100%;
-  padding: 1em;
   margin: 6em auto 0;
+  max-width: 75em;
+  padding: 1em;
+  position: relative;
+  width: 100%;
 
   @media screen and (min-width: $sm) {
     background-size: 75%;
@@ -24,29 +23,29 @@
   }
 
   .bannerWrapper {
-    position: relative;
     box-sizing: border-box;
     flex-direction: column;
-    width: 100%;
     padding: 0 0.5em;
+    position: relative;
+    width: 100%;
   
     @media screen and (min-width: $sm) {
       display: flex;
     }
   
     @media screen and (min-width: $lg) {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
       padding: 2em;
     }
   
     .bannerItem {
       box-sizing: border-box;
-      flex-grow: 1;
-      flex-basis: auto;
       clear: both;
       display: flex;
+      flex-basis: auto;
       flex-direction: column;
+      flex-grow: 1;
       @media screen and (min-width: $sm) {
         width: 70%;
       }
@@ -57,9 +56,9 @@
     }
   
     .bannerContent {
-      z-index: 1;
-      justify-content: flex-end;
       align-self: flex-start;
+      justify-content: flex-end;
+      z-index: 1;
 
 
       @media screen and (min-width: $lg) {
@@ -68,28 +67,30 @@
   
       p {
         color: $black;
-        max-width: 30em;
         margin: 2em 0;
+        max-width: 30em;
         padding-right: 1em;
 
         button.navBtn {
           background-color: transparent;
+          border: 0;
           border-radius: 0;
+          color: $black;
+          cursor: pointer;
+          display: inline-block;
           font-family: $body-font-family-bold;
           font-size: 0.875rem;
           line-height: 1.5em;
-          color: $black;
-          border: 0;
           outline: none;
-          cursor: pointer;
-          transition: $hoverTransition;
           padding: 0;
-          display: inline-block;
+          transition: $hoverTransition;
+
           &:hover {
-            box-shadow: inset 0 -5px 0px -1px $yellow;
+            box-shadow: inset 0 -5px 0 -1px $yellow;
           }
         }
       }
+
       .triBtnSet {
         .triBtn {
           margin-bottom: 1em;
@@ -103,12 +104,15 @@
             background-color: $watermelon;
           }
         }
+
         .watchBtn {
           background-color: $orange;
         }
+
         .imagiDonate {
           background-color: $purple;
         }
+
         .imagiHoodieBtn {
           background-color: $cyan;
         }
@@ -117,11 +121,11 @@
     }
   
     .bannerMediaFeature {
-      position: relative;
       align-self: flex-end;
-      text-align: right;
       font-family: $body-font-family;
       min-width: 100%;
+      position: relative;
+      text-align: right;
   
       @media screen and (min-width: $sm) {
         margin-top: 0;
@@ -134,10 +138,10 @@
       }
 
       .bannerImageRotate {
-        width: 100%;
+        display: block;
         height: 100%;
         position: relative;
-        display: block;
+        width: 100%;
         @media screen and (min-width: $md) {
           min-height: 35em;
         }
@@ -147,13 +151,13 @@
 
   .welcomeTitle {
     color: $black;
-    text-align: left;
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
     padding: 0 0.5em;
-    z-index: 10;
     position: relative;
+    text-align: left;
+    z-index: 10;
 
     @media screen and (min-width: $md) {
       font-size: 1.8rem;
@@ -161,16 +165,16 @@
   }
 
   .logoImagiTV {
+    left: -1em;
     position: relative;
     width: 13rem;
-    left: -1em;
     @media screen and (min-width: $md) {
       width: 17rem;
     }
   }
 
   .hiddenTitle {
-    position: absolute;
     left: -9999px;
+    position: absolute;
   }
 }
