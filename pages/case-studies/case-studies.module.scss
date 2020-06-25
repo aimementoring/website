@@ -1,14 +1,14 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .banner {
+  background: url($cdnRoot+"assets/images/banner/banner-pattern-blue.jpg") no-repeat top center/cover fixed #24d1f6;
   composes: banner from '../../styles/patterns/patternBanner.module.scss';
-  background: url($cdnRoot+"assets/images/banner/banner-pattern-blue.jpg") no-repeat top center/cover fixed #24D1F6;
 }
 
 .mainSection {
-  position: relative;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  position: relative;
 }
 
 .mainSectionWrapper {
@@ -18,19 +18,19 @@
 }
 
 .flexWrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1em;
 }
 
 .videoContainer {
-  position: relative;
+  overflow: hidden;
   padding-bottom: 3rem;
   padding-top: 1rem;
+  position: relative;
   width: 100%;
-  overflow: hidden;
 
   iframe {
     width: 100%;
@@ -43,8 +43,8 @@
 }
 
 .aboutGrid {
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   display: grid;
-  grid-gap: 1rem;
   flex-wrap: wrap;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
