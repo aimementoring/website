@@ -1,33 +1,33 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 // popup styles
 
 .caseStudiesWrapper {
-  display: flex;
-  align-items: center;
   align-content: space-between;
-  justify-content: space-around;
+  align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin-bottom: 3em;
 
   @media screen and (min-width: $md) {
-    margin-top: 5em;
     flex-direction: row;
     margin-bottom: 0;
+    margin-top: 5em;
   }
 
   .caseStudy {
-    text-align: center;
+    cursor: pointer;
     padding: 3em;
     pointer-events: auto;
-    cursor: pointer;
-    transition: $hoverTransition;
     position: relative;
+    text-align: center;
+    transition: $hoverTransition;
 
     h5 {
       font-family: $body-font-family-bold;
-      font-style: normal;
       font-size: 6rem;
+      font-style: normal;
       line-height: 1em;
     }
 
@@ -40,8 +40,8 @@
 
     .btn {
       background-color: $color-primary;
+      border: 0;
       border-radius: 3px;
-      border: none;
       color: #fff;
       cursor: pointer;
       display: inline-block;
@@ -52,10 +52,10 @@
       margin: 0;
       opacity: 1;
       padding: 0.8em 1.5em;
+      pointer-events: auto;
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.1s linear;
-      pointer-events: auto;
     }
 
     &:nth-child(1) {
@@ -119,49 +119,49 @@
 
 .popUp {
   box-sizing: border-box;
-  margin: 0 auto;
   height: 100%;
+  margin: 0 auto;
   width: 100%;
 
   .closeIcon {
+    cursor: pointer;
+    direction: ltr;
+    display: inline-block;
+    float: right;
+    font-family: 'Material Icons';
+    font-feature-settings: 'liga'; // Support for IE.
+    font-size: 24px; /* Preferred icon size */
+    -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
+    -moz-osx-font-smoothing: grayscale; // Support for Firefox.
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
     position: fixed;
     right: 1em;
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px; /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    float: right;
-    cursor: pointer;
-    -webkit-font-smoothing: antialiased; // Support for all WebKit browsers.
     text-rendering: optimizeLegibility; // Support for Safari and Chrome.
-    -moz-osx-font-smoothing: grayscale; // Support for Firefox.
-    font-feature-settings: "liga"; // Support for IE.
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
   }
 
   .popContentWrapper {
-    text-align: center;
-    padding: 5em 2em;
-    max-width: 40em;
     margin: 0 auto;
+    max-width: 40em;
+    padding: 5em 2em;
+    text-align: center;
   }
 
   h1,
   h2,
   h3 {
     font-family: $body-font-family-bold;
-    text-transform: uppercase;
     font-size: 3rem;
-    line-height: 1.5;
-    font-weight: 900;
     font-style: normal;
+    font-weight: 900;
+    line-height: 1.5;
     margin: 0;
+    text-transform: uppercase;
   }
 
   .module2017 h2 {
@@ -188,30 +188,30 @@
   p {
     font-family: $body-font-family;
     font-size: 0.9rem;
-    line-height: 1.5em;
     font-weight: 400;
+    line-height: 1.5em;
     margin: 0 0 3em;
   }
 
   .popFooter {
     border-top: 1px solid $watermelon;
-    width: 100%;
     margin-top: 4em;
+    width: 100%;
   }
 
   .nextLink {
+    color: $color-primary;
+    cursor: pointer;
     display: block;
     font-family: $body-font-family-bold;
-    text-transform: uppercase;
     font-size: 2rem;
-    line-height: 1em;
-    font-weight: 900;
     font-style: normal;
-    text-decoration: none;
-    color: $color-primary;
+    font-weight: 900;
+    line-height: 1em;
     margin-top: 2em;
+    text-decoration: none;
+    text-transform: uppercase;
     transition: $hoverTransition;
-    cursor: pointer;
 
     &:hover {
       color: $watermelon;
@@ -224,39 +224,39 @@
 
   iframe {
     @media screen and (min-width: $md) {
-      width: 100%;
       min-height: 20em;
+      width: 100%;
     }
   }
 }
 
 .imgTextLayout {
   @media screen and (min-width: $md) {
-    display: flex;
     align-items: flex-start;
+    display: flex;
     justify-content: center;
-    text-align: left;
     padding: 2em 0;
+    text-align: left;
 
     .col {
       width: 50%;
     }
 
     .imgWrap {
-      min-width: 18em;
       margin-right: 1.5em;
+      min-width: 18em;
     }
 
     caption {
+      color: $grey;
+      display: block;
       font-family: $body-font-family;
       font-size: 0.8rem;
-      line-height: 1.1em;
       font-weight: 400;
+      line-height: 1.1em;
       margin: 0 0 3em;
-      display: block;
-      text-align: left;
       padding-right: 2em;
-      color: $grey;
+      text-align: left;
     }
   }
 }
@@ -268,16 +268,16 @@
   flex-direction: column;
 
   h2 {
+    color: $watermelon;
 
     font-family: $body-font-family;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: $watermelon;
     font-size: 1.5rem;
-    line-height: 1em;
     font-style: normal;
-    max-width: 30em;
+    font-weight: 900;
+    line-height: 1em;
     margin: 1em auto;
+    max-width: 30em;
+    text-transform: uppercase;
   }
 }
 
@@ -293,19 +293,19 @@
 
 .tab {
   cursor: pointer;
-  margin: 1em 0.5em;
   font-family: $body-font-family;
   font-size: 1rem;
-  text-transform: uppercase;
   font-weight: 400;
+  margin: 1em 0.5em;
   padding: 0.8em;
+  text-transform: uppercase;
 
   &:hover,
   &.activeTab {
+    border-bottom: 2px solid $watermelon;
+    color: $watermelon;
     font-family: $body-font-family-bold;
     font-weight: 900;
-    color: $watermelon;
-    border-bottom: 2px solid $watermelon;
   }
 
   @media screen and (min-width: $md) {
@@ -318,22 +318,22 @@
 }
 
 .mainGrid {
+  align-items: flex-start;
+  box-sizing: border-box;
   display: block;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
-  max-width: $micrositePageWidth;
   margin: 0 auto;
-  box-sizing: border-box;
+  max-width: $micrositePageWidth;
 
   @media screen and (min-width: $lg) {
     padding: 0 5em;
     @supports (display: grid) {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
       grid-gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
     }
   }
   @media screen and (min-width: 90em) {
@@ -342,26 +342,27 @@
 }
 
 .tile {
-  display: block;
-  flex: 1;
-  min-width: 18em;
-  -ms-flex-align: center;
   align-items: center;
   box-sizing: border-box;
+  display: block;
+  flex: 1;
+  -ms-flex-align: center;
+  min-width: 18em;
   text-align: left;
 
   @supports (display: grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
     grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
     margin-bottom: 2em;
   }
 
-  h3, p {
+  h3,
+  p {
     font-family: $body-font-family;
-    font-weight: 900;
     font-size: 0.9rem;
     font-style: normal;
+    font-weight: 900;
     margin-top: 1em;
   }
 
@@ -371,30 +372,30 @@
   }
 
   img {
-    width: 80%;
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
+    width: 80%;
   }
   
   .vidImg {
-    width: 100%;
     border-radius: 3px;
+    width: 100%;
   }
 }
 
 .videoThumb {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
   align-items: center;
   border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 
   img {
-    position: absolute;
     left: 50%;
+    position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
   }
