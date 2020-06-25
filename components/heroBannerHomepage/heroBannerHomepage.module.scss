@@ -1,14 +1,13 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .heroBannerHomepage {
-  background:
-    url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
+  background: url($cdnRoot+"assets/images/decorative/dotties@2x.jpg") no-repeat 100% 100% transparent;
   background-size: 100%;
-  position: relative;
-  max-width: 75em;
-  width: 100%;
-  padding: 1em;
   margin: 6em auto 0;
+  max-width: 75em;
+  padding: 1em;
+  position: relative;
+  width: 100%;
 
   @media screen and (min-width: $sm) {
     background-size: 75%;
@@ -25,20 +24,20 @@
   
   .welcomeTitle {
     color: $black;
-    text-align: left;
     display: flex;
     flex-direction: column;
     font-size: 1.3rem;
+    text-align: left;
     @media screen and (min-width: $md) {
       font-size: 1.8rem;
     }
   }
 
   .logoImagiTV {
-    position: relative;
-    width: 10rem;
     left: -0.5em;
     margin-top: -0.5em;
+    position: relative;
+    width: 10rem;
 
     @media screen and (min-width: $md) {
       width: 17rem;
@@ -49,54 +48,58 @@
     .triBtn {
       margin-bottom: 1em;
     }
+
     .watchBtn {
-      padding: 1.1em 5em;
       background-color: $orange;
+      padding: 1.1em 5em;
     }
+
     .imagiDonate {
       background-color: $purple;
     }
+
     .imagiHoodieBtn {
       background-color: $cyan;
     }
   }
 }
+
 .heroBannerHomepage {
   .bannerWrapper {
-    position: relative;
     box-sizing: border-box;
     flex-direction: column;
-    width: 100%;
-    padding: 1em;
-    justify-content: center;
     flex-wrap: wrap;
     height: 100%;
+    justify-content: center;
+    padding: 1em;
+    position: relative;
+    width: 100%;
 
     @media screen and (min-width: $sm) {
       display: flex;
     }
 
     @media screen and (min-width: $lg) {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
       padding: 2em;
     }
 
     .bannerItem {
       box-sizing: border-box;
-      flex-grow: 1;
-      flex-basis: auto;
       clear: both;
       display: flex;
+      flex-basis: auto;
       flex-direction: column;
+      flex-grow: 1;
       @media screen and (min-width: $sm) {
         width: 50%;
       }
     }
 
     .bannerContent {
-      z-index: 1;
       justify-content: flex-end;
+      z-index: 1;
 
       @media screen and (min-width: $sm) {
         padding-right: 3em;
@@ -104,8 +107,8 @@
 
       p {
         color: $black;
-        max-width: 30em;
         margin: 2em 0;
+        max-width: 30em;
       }
 
       &.bannerItem {
@@ -114,16 +117,16 @@
     }
 
     .bannerMediaFeature {
-      position: relative;
-      padding-top: 1.5em;
       align-self: flex-end;
-      text-align: right;
       font-family: $body-font-family;
+      padding-top: 1.5em;
+      position: relative;
+      text-align: right;
 
       @media screen and (min-width: $sm) {
-        padding: 2em;
         margin-top: -5em;
         min-width: 28em;
+        padding: 2em;
       }
 
       @media screen and (min-width: $md) {
@@ -137,26 +140,26 @@
       }
 
       .dancingIllo {
-        width: 7em;
         position: absolute;
-        top: -2em;
         right: 0;
+        top: -2em;
+        width: 7em;
 
         @media screen and (min-width: $sm) {
           right: 2em;
         }
 
         @media screen and (min-width: $md) {
-          width: 13em;
-          top: -5em;
           right: 1em;
+          top: -5em;
+          width: 13em;
         }
 
         &.dancingIlloBtm {
-          top: initial;
           bottom: 0;
-          right: initial;
           left: -4em;
+          right: initial;
+          top: initial;
 
           @media screen and (min-width: $md) {
             left: -7em;
@@ -170,12 +173,12 @@
       }
 
       .textLinkChannel {
-        text-decoration: none;
-        font-size: 0.85rem;
         color: $black;
-        margin-top: 0.5em;
-        transition: $hoverTransition;
         cursor: pointer;
+        font-size: 0.85rem;
+        margin-top: 0.5em;
+        text-decoration: none;
+        transition: $hoverTransition;
 
         &:hover {
           color: $magenta;
@@ -189,8 +192,8 @@
   background:
     url($cdnRoot+"assets/images/banner/banner-us.jpg") no-repeat top
     center #050301;
-  background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
   display: block;
 
   @media screen and (max-device-width: 1024px) {
@@ -198,9 +201,9 @@
   }
 
   @media screen and (min-width: $md) {
-    height: 100vh;
     align-items: center;
     display: flex;
+    height: 100vh;
   }
 }
 
@@ -208,15 +211,15 @@
   flex-direction: column;
 
   &:first-child {
+    margin-bottom: 30%;
     padding-top: 10rem;
     text-align: center;
-    margin-bottom: 30%;
 
     @media screen and (min-width: $md) {
-      padding-top: 0;
-      text-align: left;
       margin-bottom: 0;
       padding-right: 10%;
+      padding-top: 0;
+      text-align: left;
     }
   }
 }
@@ -240,10 +243,10 @@
 }
 
 .hoodedScholarTitle {
-  font-size: 20px;
   color: $white;
-  margin-bottom: 1rem;
+  font-size: 20px;
   line-height: 1.375;
+  margin-bottom: 1rem;
 }
 
 .linkBtn {
@@ -274,30 +277,30 @@
 }
 
 .videoBtn {
-  width: 100%;
-  display: flex;
+  align-items: center;
   border-radius: 3px;
+  display: flex;
   margin-top: 0.5rem;
   padding-bottom: 4rem;
   padding-top: 1rem;
-  align-items: center;
+  width: 100%;
 
   .iconPlay {
     display: inline-block;
     fill: currentColor;
     height: 50px;
     margin: 0 auto;
-    stroke-width: 0;
     stroke: currentColor;
+    stroke-width: 0;
     width: 50px;
   }
 }
 
 .founder {
-  text-align: center;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding: 1rem;
+  text-align: center;
 }
 
 .founderParagraph {
@@ -324,8 +327,8 @@
   }
 
   img {
+    display: block;
     height: auto;
     width: auto;
-    display: block;
   }
 }

@@ -1,9 +1,9 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .beAMentorYearHeader {
   padding-top: 2.5rem;
-  z-index: 14;
   text-align: center;
+  z-index: 14;
 
   @media only screen and (min-width: $md) {
     grid-area: HEADER;
