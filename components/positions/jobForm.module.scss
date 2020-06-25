@@ -1,14 +1,14 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .jobApplicationReveal {
-  display: flex;
-  flex-direction: column;
+  border-color: $blue-light;
   border-top-style: solid;
   border-top-width: 1px;
-  border-color: $blue-light;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
   padding-top: 4rem;
   visibility: visible;
-  opacity: 1;
 
   h5 {
     margin-bottom: 1em;
