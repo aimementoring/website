@@ -1,130 +1,133 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .intercomBtnWrap {
   text-align: center;
   
   button.navBtn {
-    position: fixed;
-    z-index: 11;
-    bottom: 1em;
-    right: 1em;
     background-color: $purple;
+    border: 0;
     border-radius: 3px;
+    bottom: 1em;
+    color: $white;
+    cursor: pointer;
     font-family: $body-font-family-bold;
     font-size: 0.85rem;
     font-weight: 600;
-    text-transform: uppercase;
-    color: $white;
-    letter-spacing: 0.13em;
     height: 1.5rem;
-    padding: 0 1.2em;
-    border: 0;
+    letter-spacing: 0.13em;
     outline: none;
-    cursor: pointer;
+    padding: 0 1.2em;
+    position: fixed;
+    right: 1em;
+    text-transform: uppercase;
     transition: $hoverTransition;
+    z-index: 11;
 
     &:hover {
       background-color: $white;
-      color: $purple;
       border: 1px solid $purple;
+      color: $purple;
     }
   }
 }
 
 .drawerToggleLabel,
 .sideDrawerNav,
-.mainSectionWrapper {
-  transition: .25s ease-in-out; 
-  box-sizing: border-box; 
+.mainSectionWrapper { 
+  box-sizing: border-box;
+  transition: 0.25s ease-in-out; 
 }
 
 .mainSectionWrapper {
-  position: relative;
   left: 0;
+  position: relative;
 }
 
 .drawerToggle,
-.drawerToggleLabel {
-  height: 1.5rem;
-  width: 10.5rem; 
-  left: -4.1em;
-  top: 13.5em; 
-  transform: rotate(-90deg) ;
-  transform-origin: center;
-  display: flex; 
+.drawerToggleLabel { 
   align-items: center;
-  justify-content: center;
   cursor: pointer;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  left: -4.1em;
+  top: 13.5em;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  width: 10.5rem;
 }
 
-.drawerToggleLabel { 
-  -webkit-touch-callout: none; 
-  user-select: none; 
-  position: fixed; 
-  z-index: 18; 
-  font-family: $body-font-family;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.13em;
-  font-weight: 600;
+.drawerToggleLabel {
+  background-color: $cyan;
   border-radius: 3px;
   cursor: pointer;
-  background-color: $cyan; 
-  &:before {
-    content: "Go to section";
+  font-family: $body-font-family;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  position: fixed;
+  text-transform: uppercase;
+  -webkit-touch-callout: none;
+  user-select: none;
+  z-index: 18;
+
+  &::before {
+    content: 'Go to section';
   }  
 }
 
-.typeformToggleContainer .drawerToggleLabel{
+.typeformToggleContainer .drawerToggleLabel {
   &.typeformAction {
-    top: 30em;
-    width: 12.3rem;
-    padding: 0;
-    left: -5.5em;
     background-color: $watermelon;
     border-radius: 3px;
+    left: -5.5em;
+    padding: 0;
+    top: 30em;
+    width: 12.3rem;
     z-index: 11;
-    &:before {
+
+    &::before {
       content: none;
     }
+
     &:hover {
       background-color: $white;
-      color: $watermelon;
       border: 1px solid $watermelon;
+      color: $watermelon;
     }
   }
 }
 
-.sideDrawerNav { 
-  z-index: 15;
-  position: fixed; 
-  overflow-x: hidden; 
-  overflow-y: scroll; 
-  -webkit-overflow-scrolling: touch; 
-  top: 6em; 
-  left: -101%; 
-  width: 90%; 
-  height: 80%; 
-  padding: 2em 1em; 
-  border: 1px solid $purple;
-  box-shadow: 2px 2px 0 0 $purple;
+.sideDrawerNav {
   background-color: $white;
+  border: 1px solid $purple;
   border-radius: 3px;
+  box-shadow: 2px 2px 0 0 $purple;
+  height: 80%;
+  left: -101%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 2em 1em;
+  position: fixed;
+  top: 6em;
+  width: 90%;
+  z-index: 15;
   @media screen and (min-width: $md) {
-    left: -18em; 
+    left: -18em;
     width: 16em; 
   }
 
   .sideMenu li a {
-    width: 85%;
-    font-family: $body-font-family;
-    text-decoration: none;
     color: $grey90;
-    font-size: 0.85rem;;
+    cursor: pointer;
+    display: block;
+    font-family: $body-font-family;
+    font-size: 0.85rem;
     font-weight: 100;
     margin: 1em 0;
-    display: block;
-    cursor: pointer;
+    text-decoration: none;
+    width: 85%;
 
     &:hover {
       color: $magenta;
@@ -132,51 +135,57 @@
   }
 } 
 
-.drawerToggle { 
-  position: fixed; 
-  opacity: 0; 
-  z-index: 20;
+.drawerToggle {
   left: -5.3em;
+  opacity: 0;
+  position: fixed;
   top: 16.5em;
+  z-index: 20;
 
-  &:hover ~ .drawerToggleLabel { 
-    color: $cyan;
+  &:hover ~ .drawerToggleLabel {
     background-color: $white;
     border: 1px solid $cyan;
+    color: $cyan;
   }
 
   &:checked {
-    right: -3.8em;
     left: inherit;
+    right: -3.8em;
 
-    ~ .drawerToggleLabel { 
-      right: -2.8em;
+    ~ .drawerToggleLabel {
       left: inherit;
+      right: -2.8em;
 
-      &:before {
-        content: "Close this menu";
+      &::before {
+        content: 'Close this menu';
       }
     }
+
     ~ .sideDrawerNav { 
       left: 5%; 
     } 
+
     ~ .mainSectionWrapper { 
       left: 0; 
     }
 
     @media screen and (min-width: $md) {
-      left: 14.5em; 
+      left: 14.5em;
       right: inherit;
+
       ~ .drawerToggleLabel { 
-        left: 12em; 
+        left: 12em;
         right: inherit;
       } 
+
       ~ .sideDrawerNav { 
         left: 1em; 
       } 
+
       ~ .mainSectionWrapper { 
         left: 0; 
       }
+
       ~ .mainSectionWrapper section {
         padding-left: 18em;
       }
@@ -185,45 +194,45 @@
 }
 
 .bannerBottom {
-  position: relative;
   margin-top: -2.2vw;
+  position: relative;
 }
 
 .heroBannerPartnerIntv {
-  background-color: $pink;
   background: url($cdnRoot + 'assets/images/brushstrokes-background@2x.png') no-repeat top center / cover fixed $pink;
+  background-color: $pink;
+  margin: 0 auto;
+  padding: 7em 1em 1em 3em;
   position: relative;
   width: 100%;
-  padding: 7em 1em 1em 3em;
-  margin: 0 auto;
 
   @media screen and (min-width: $md) {
     padding: 6em 1em 1em;
   }
 
   .bannerWrapper {
-    position: relative;
+    align-items: flex-end;
     box-sizing: border-box;
     display: flex;
-    align-items: flex-end;
     justify-content: space-around;
-    max-width: 75em;
     margin: 0 auto;
+    max-width: 75em;
     padding: 0 0.5em;
+    position: relative;
   
     .bannerItem {
-      flex-basis: auto;
       clear: both;
       display: flex;
+      flex-basis: auto;
       flex-direction: column;
     }
   
     .bannerMediaFeature {
       position: relative;
   
-      img {
-        width: 10em; 
+      img { 
         margin-bottom: -1em;
+        width: 10em;
         @media screen and (min-width: $md) {
           width: 20em;
         }
@@ -234,13 +243,13 @@
   
   .welcomeTitle {
     color: $black;
-    text-align: left;
     display: flex;
     flex-direction: column;
     font-size: 1rem;
     padding: 0 0.5em;
-    z-index: 1;
     position: relative;
+    text-align: left;
+    z-index: 1;
 
     @media screen and (min-width: $md) {
       font-size: 1.8rem;
@@ -248,17 +257,17 @@
   }
 
   .logoImagiTV {
+    left: -1em;
     position: relative;
     width: 13rem;
-    left: -1em;
     @media screen and (min-width: $md) {
       width: 17rem;
     }
   }
 
   .hiddenTitle {
-    position: absolute;
     left: -9999px;
+    position: absolute;
   }
 }
 
@@ -277,30 +286,30 @@
 }
 
 .sectionPanel {
-  position: relative;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  box-sizing: border-box;
+  position: relative;
 
   .sectionWrapper {
-    max-width: $lg;
     margin: 0 auto;
+    max-width: $lg;
   }
 
   &.sectionWithBg {
-   max-width: none; 
-   width: 100%;
+    max-width: none;
+    width: 100%;
 
-   .sectionWrapper {
-      max-width: $lg;
-      margin: 0 auto;
+    .sectionWrapper {
       display: flex;
       flex-direction: column;
+      margin: 0 auto;
+      max-width: $lg;
       @media screen and (min-width: $md) {
         flex-direction: row;
       }
-   }
+    }
   }
 
   @media screen and (min-width: $md) {
@@ -317,6 +326,7 @@
   flex-direction: column;
   text-align: center;
 }
+
 .panelTwoCol {
   box-sizing: border-box;
 
@@ -325,10 +335,10 @@
   }
 
   .panelCol {
+    align-self: center;
     box-sizing: border-box;
     flex: 1 1 0;
     padding: 1em;
-    align-self: center;
 
     ul li {
       font-size: 0.875rem;
@@ -339,11 +349,12 @@
   }
 }
 
-.whiteWaveTop, 
-.whiteWaveBottom {
-  position: absolute;
-  width:100%; 
+.whiteWaveTop,
+ 
+.whiteWaveBottom { 
   left: 0;
+  position: absolute;
+  width: 100%;
 
   @media screen and (max-width: $md) {
     transform: scaleY(0.5);
@@ -355,8 +366,8 @@
 }
 
 .whiteWaveBottom {
-  transform: rotate(180deg) scaleY(0.5);
   bottom: -3em;
+  transform: rotate(180deg) scaleY(0.5);
 
   @media screen and (min-width: $md) {
     transform: rotate(180deg);
@@ -372,6 +383,7 @@
 
 .sectionWelcomPanel {
   padding: 0 3.5em;
+
   .panelCol {
     padding: 0;
   }
@@ -382,13 +394,15 @@
   max-width: 90em;
 
   .storyFirstPanel {
-    max-width: 20em;
     margin: 0 auto;
+    max-width: 20em;
     width: 100%;
+
     img {
       max-width: 20em;
     }
   }
+
   .panelTwoCol {
     display: block;
     @media screen and (min-width: $lg) {
@@ -399,20 +413,20 @@
 
 
 .detailListsPanel {
-  text-align: center;
   background: url($cdnRoot + 'assets/images/pink-scribbly-background@2x.png') no-repeat top center / cover fixed $magenta;
+  text-align: center;
 
   .panelCol {
-    margin: 2em;
-    padding: 1em;
+    align-self: stretch;
     background-color: $white;
     border-radius: 3px;
-    align-self: stretch;
+    margin: 2em;
+    padding: 1em;
   }
 
   &.sectionProgramStats {
     h4 {
-      margin: 1.5em 0 1em
+      margin: 1.5em 0 1em;
     }
   }
 }
@@ -420,12 +434,12 @@
 .flexGridLayout {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
   justify-content: center;
+  margin: 0 auto;
 
   .flexGridItem {
-    max-width: 12em;
     margin: 0.5em;
+    max-width: 12em;
   }
 }
 
@@ -435,20 +449,21 @@
   justify-content: space-around;
 
   img {
-  max-width: 15em;
+    max-width: 15em;
 
     &:nth-child(even) {
       align-self: flex-end;
     }
   }
 }
+
 .sectionImageParaFlow {
   display: block;
-  width: 100%;
-  padding: 1em;
-  margin: 0 auto;
   justify-content: center;
+  margin: 0 auto;
+  padding: 1em;
   padding-left: 3.5em;
+  width: 100%;
   @media screen and (min-width: $lg) {
     padding-left: inherit;
     
@@ -468,11 +483,11 @@
   }
 
   .column {
-    flex: 0 1 auto;
-    display: flex;
     align-items: right;
-    justify-content: center;
+    display: flex;
+    flex: 0 1 auto;
     flex-direction: column;
+    justify-content: center;
 
     @media screen and (min-width: $md) { 
       padding: 1em;
@@ -488,8 +503,8 @@
       }
 
       strong {
-        top: 0;
         left: -0.2em;
+        top: 0;
       } 
     }
   }
@@ -499,15 +514,15 @@
     line-height: 1.3rem;
 
     @media screen and (min-width: $lg) {
-      width: 90%;
       max-width: 33em;
+      width: 90%;
     }
 
     ul li {
       font-size: 0.875rem;
+      font-weight: 100;
       line-height: 1.5em;
       margin-bottom: 1.5em;
-      font-weight: 100;
     }
   }
 
@@ -523,8 +538,8 @@
         padding: 2em 0;
   
         h3 {
-          position: relative;
           left: 0%;
+          position: relative;
         }
       }
     }
@@ -549,10 +564,11 @@
           text-align: right;
 
         }
+
         .copyLeftAlign,
         &.copyLeftAlign {
-          text-align: left;
           align-items: flex-start;
+          text-align: left;
         }
       }
     }
@@ -604,14 +620,14 @@
   }
 
   .btnPartnerOp .existingPartnerBtn {
-    border-radius: 3px;
     background-color: $cyan;
+    border-radius: 3px;
   }
 
   .panelCol {
-    text-align: left;
     align-self: flex-start;
     padding-left: 2em;
+    text-align: left;
 
     @media screen and (max-width: $md) {
       padding: 0 1em 0 3.3em;
@@ -629,29 +645,29 @@
     text-align: left;
 
     button.navBtn {
-      position: relative;
-      right: inherit;
+      background-color: $magenta;
       bottom: inherit;
+      height: auto;
       margin-bottom: 2em;
       padding: 0.75em 2em;
-      height: auto;
-      background-color: $magenta;
+      position: relative;
+      right: inherit;
       z-index: 8;
 
       &:hover {
         background-color: $orange;
+        border: 0;
         color: $white;
-        border: none;
       }
     }
   } 
 
   .titleLockup {
+    align-items: center;
+    display: flex;
     // this padding is to make sure that scrolling goes to the right position
     // it basically "balances out" the height of the menu bar
     padding: 5em 0 1em;
-    display: flex;
-    align-items: center;
   
     @media screen and (max-width: $md) {
       padding: 3em 0 1em;
@@ -665,8 +681,8 @@
 }
 
 .sponsoring .panelPartneringOption .sponsorBtn {
-  border-radius: 3px;
   background-color: $watermelon;
+  border-radius: 3px;
 }
 
 
