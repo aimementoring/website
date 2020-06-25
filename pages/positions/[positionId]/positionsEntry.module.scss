@@ -1,4 +1,4 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module';
 
 .wrapper {
   composes: wrapper from '../../../styles/patterns/patternWrapper.module.scss';
