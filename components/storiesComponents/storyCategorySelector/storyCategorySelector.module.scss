@@ -1,16 +1,16 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module';
 
 .storyCategorySelectorContainer {
   .tabContainer {
     display: inline-block;
     
-    .tab  {
-      background-color: $white; 
+    .tab {
+      background-color: $white;
+      border: 1px solid $watermelon;
+      border-radius: 3px;
+      box-sizing: border-box; 
       /* Secondary/AIME Watermelon */
       color: $watermelon;
-      border: 1px solid $watermelon;
-      box-sizing: border-box;
-      border-radius: 3px;
       margin: 0 1em 1em 0;
       
       @media screen and (min-width: $md) {
@@ -24,27 +24,24 @@
       &.activeTab {
         background-color: $watermelon;
         color: $white;
+
         .tabText {
           font-weight: bold;
         }
       }
       
-      span.tabText {
-        width: 100%;
+      .tabText {
+        align-items: center;
         font-family: $body-font-family;
+        font-size: 14px;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        align-items: center;
-        text-align: center;
         letter-spacing: 2px;
+        line-height: 16px;
+        text-align: center;
         text-transform: uppercase;
+        width: 100%;
       }
     }
   }
-
-
-
-
 }
