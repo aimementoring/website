@@ -1,8 +1,8 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .banner {
-  composes: banner from '../../styles/patterns/patternBanner.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
 
 .container {
@@ -26,14 +26,14 @@
 
 .intercom {
   button {
-    border: none;
-    outline: none;
-    font-family: $body-font-family-bold;
+    border: 0;
     color: $brand-primary;
-    font-size: 1em;
     cursor: pointer;
-    padding: 0 0 2em;
+    font-family: $body-font-family-bold;
+    font-size: 1em;
     margin: 0 auto;
+    outline: none;
+    padding: 0 0 2em;
 
     &:hover {
       color: $brand-secondary;
