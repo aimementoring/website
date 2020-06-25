@@ -15,6 +15,7 @@
     "gimbal-audit": "gimbal audit --config ./.gimbalrc.yml",
     "precommit": "lint-staged",
     "lint": "eslint --ext .js .",
+    "stylelint": "stylelint \"**/*.scss\"",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
@@ -58,6 +59,7 @@
     "next-seo": "^4.5.0",
     "nextjs-sitemap-generator": "^1.0.0",
     "node-sass": "^4.13.0",
+    "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
@@ -73,6 +75,8 @@
     "shopify-buy": "^2.8.1",
     "spdy": "^4.0.1",
     "stylelint": "^13.6.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "video.js": "7.0.5",
     "videojs-contrib-hls": "5.14.1"
   },
@@ -91,7 +95,8 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^3.0.9",
     "lighthouse": "^5.4.0",
-    "lint-staged": "^10.0.0-1"
+    "lint-staged": "^10.0.0-1",
+    "stylelint-config-css-modules": "^2.2.0"
   },
   "lint-staged": {
     "**/*.{js,jsx}": "eslint --ext .js"
