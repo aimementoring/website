@@ -1,7 +1,6 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .testimonials {
-
   .testimonialsContainer {
     @media screen and (max-width: $sm) {
       padding-left: 1rem;
@@ -21,13 +20,13 @@
   }
 
   .carouselContainer {
-    position: relative;
-    margin-top: initial;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-    margin: 0 0 1rem 0;
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 1rem;
+    margin-top: initial;
+    position: relative;
 
     @media screen and (max-width: $sm) {
       padding-left: 2rem;
@@ -44,25 +43,25 @@
   }
 
   .testimonialsCarousel {
+    display: block;
     margin: 0 auto;
     max-width: 700px;
-    width: 100%;
-    display: block;
     position: relative;
+    width: 100%;
   }
 
   .carouselCardContainer {
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     display: inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
   }
 
   .carouselCard {
-    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 
     @media screen and (min-width: $sm) {
       width: 50%;
@@ -70,13 +69,13 @@
   }
 
   .carouselContent {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .signatureText {
-    margin-top: 1rem;
-    font-size: 20px;
     font-family: $signature-font-family;
+    font-size: 20px;
+    margin-top: 1rem;
     max-width: 30em;
   }
 
