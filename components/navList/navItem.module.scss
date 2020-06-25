@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '../../styles/global.module';
 
 .listItem {
   margin-bottom: 1rem;
@@ -15,17 +15,17 @@
 }
 
 .itemLink {
-  color: $black;
-  font-family: $body-font-family;
-  font-weight: 300;
   background: none;
+  border: 0;
+  color: $black;
+  cursor: pointer;
+  font-family: $body-font-family;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1em;
   margin: 0;
-  border: none;
   padding: 0;
   text-decoration: underline;
-  font-size: 0.85rem;
-  line-height: 1em;
-  cursor: pointer;
 
   &:hover {
     color: #c700ff;
