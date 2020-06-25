@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .bannerImage {
   border-radius: 3px 3px 0 0;
@@ -23,74 +23,16 @@
 }
 
 .videoIcon {
-  width: 70px;
+  left: 50%;
   position: absolute;
   top: 8.5em;
-  left: 50%;
   transform: translateX(-50%);
+  width: 70px;
 }
 
 .articleLink {
   padding: 0;
   text-decoration: none;
-}
-
-// @todo hey @kbardi, are we still using this spotlightArticle type? Cannot see it anywhere but dont want to delete your work...
-
-.spotlightArticleLink {
-  margin: 0 1.5em;
-  padding: 0;
-  text-decoration: none;
-  box-shadow: 0px 24px 32px rgba(8, 35, 48, 0.12);
-
-  > div:first-of-type {
-    height: 100%;
-    position: relative;
-  }
-
-  .articleDescription {
-    border: 1px solid #C6CACC;
-    border-top: 0;
-    margin-top: -2px;
-    box-sizing: border-box;
-    border-radius: 0 0 3px 3px;
-    height: calc(100% - 10.5em);
-    position: relative;
-
-    p {
-      word-break: break-all;
-    }
-
-    &.withVideo {
-      height: calc(100% - 21.75em);
-    }
-
-    .contentPreview {
-      color: $black;
-    }
-
-    .rightButton {
-      position: relative;
-      float: right;
-      margin-top: -3.5em;
-    }
-
-    .spotlightButton {
-      color: $watermelon;
-      text-transform: uppercase;
-      border: 1px solid $watermelon;
-      border-radius: 3px;
-      box-sizing: border-box;
-      background-color: transparent;
-      @media screen and (min-width: $lg) {
-        padding: 1rem 2.5rem;
-      }
-    
-      @media screen and (min-width: $md) {
-        padding: 0.7rem 2.2rem;
-      }
-    }
-  }
 }
 
 .articleDescription {
@@ -103,8 +45,8 @@
 
 .articleTileLink {
   display: block;
-  margin-bottom: 1.5rem;
   font-weight: 600;
+  margin-bottom: 1.5rem;
 
   @media screen and (min-width: $lg) {
     padding: 1rem 2.5rem;
