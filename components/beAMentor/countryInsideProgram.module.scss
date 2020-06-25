@@ -1,10 +1,10 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .countryEmojisWrapper {
-  position: relative;
-  font-size: 1.5rem;
-  transform: rotate(-9deg);
   display: inline-block;
-  margin-top: 1em;
+  font-size: 1.5rem;
   left: -0.8em;
+  margin-top: 1em;
+  position: relative;
+  transform: rotate(-9deg);
 }
