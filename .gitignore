@@ -34,3 +34,5 @@ gimbal-artifacts/**
 gimbal.db
 
 .history
+
+bfg.jar
