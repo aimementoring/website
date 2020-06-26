@@ -6,6 +6,7 @@ import { ContactContext } from '../../context';
 import styles from './contactModal.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
+export const CONTACT_POPUP_ID = 'contactPopup';
 
 const Modal = dynamic(() => import('../modal'));
 
@@ -18,7 +19,7 @@ const ContactModal = () => {
       backgroundColor="rgba(82,82,82, 0.85)"
       withCloseIcon
     >
-      <div className={styles.contactPopup}>
+      <div id={CONTACT_POPUP_ID} className={styles.contactPopup}>
         <Title type="h4Title" className={styles.popupTitle}>
               We&apos;d love to hear from you.
         </Title>

@@ -2,9 +2,11 @@ import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import bugsnagClient from '../../utils/bugsnag';
 import { ContactContext } from '../../context';
+import { CONTACT_POPUP_ID } from '../contactModal';
 import styles from './intercom.module.scss';
 
 const APP_ID = process.env.REACT_APP_INTERCOM_APP_ID;
+const INTERCOM_CONTAINER_ID = 'intercom-container';
 
 const IntercomChat = (props) => {
   const { classNames, label } = props;
@@ -60,16 +62,26 @@ const IntercomChat = (props) => {
     intercomChat();
   }, []);
 
+  const wasIntercomBlocked = () => !document.getElementById(INTERCOM_CONTAINER_ID);
+
   const handleShowIntercom = () => {
     window.Intercom('showNewMessage');
     setTimeout(() => {
-      // waiting half a second to make sure intercom has been loaded if it wasnt blocked
-      const intercomWasBlocked = document.getElementById('intercom-container') === null;
-      if (intercomWasBlocked) {
+      // waiting for a second to make sure intercom has been loaded if it wasnt blocked
+      if (wasIntercomBlocked()) {
         bugsnagClient.notify('Intercom was blocked', { severity: 'info' });
         toggleContactModal();
       }
-    }, 0.5 * 1000);
+    }, 1 * 1000);
+    // if it has loaded another second later, hide the contact popup again
+    // note: you would think checking the boolean "contactModal" returned by
+    // the useContext hook was enough, but unfortunately, that does not work
+    setTimeout(() => {
+      const contactPopupWasLoaded = document.getElementById(CONTACT_POPUP_ID);
+      if (contactPopupWasLoaded && !wasIntercomBlocked()) {
+        toggleContactModal();
+      }
+    }, 1.5 * 1000);
   };
 
   return (
