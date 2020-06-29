@@ -1,0 +1,27 @@
+@import '../../styles/global.module';
+
+.contactPopup {
+  background: $white;
+  min-height: 20em;
+  padding: 2em;
+  text-align: center;
+
+  .popupTitle {
+    color: $black;
+  }
+
+  .emailLink {
+    color: $black;
+    font-family: $body-font-family;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
+  img { 
+    width: 20em;
+  }
+}

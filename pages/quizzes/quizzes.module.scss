@@ -1,8 +1,8 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .quizzesBanner {
-  composes: banner from '../../styles/patterns.module.scss';
-  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;  
+  background: url($cdnRoot + 'assets/images/banner/banner-pattern-blue.jpg') no-repeat top center / cover fixed $cyan;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 
   p {
     color: $white !important;

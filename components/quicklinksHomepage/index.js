@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import styles from './quicklinksHomepage.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
@@ -15,7 +15,7 @@ const QuicklinksHomepage = (props) => {
 
   return (
     <div className={styles.quicklinksPanel} ref={getInvolvedRef}>
-      <Title type="h3Title" className={styles.quicklinksHeader}>
+      <Title type="h3Title" align="center" className={styles.quicklinksHeader}>
         Get involved
       </Title>
       <div className={styles.quicklinksGrid}>

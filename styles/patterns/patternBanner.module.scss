@@ -1,0 +1,57 @@
+@import '../global.module';
+
+.banner {
+  align-items: center;
+  background-size: cover;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  margin: 50px 1em 0;
+  max-width: 100%;
+  padding: 0;
+  padding: 35px 0;
+  position: relative;
+
+  @media screen and (min-width: $sm) {
+    height: 62vh;
+    padding: 0;
+  }
+
+  // Stop fixed on tablets & phones as it doesn't work
+  @media screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+  
+  .highlight-text {
+    transform: rotate(-3deg);
+  }
+
+  h1 {
+    color: $white;
+    text-align: center;
+
+    strong {
+      left: initial;
+    }
+  }
+
+  .bannerWrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .contentWrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding-top: 2em;
+    text-align: center;
+  }
+
+}

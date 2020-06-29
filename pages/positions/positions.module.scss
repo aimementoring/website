@@ -1,4 +1,4 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .contentPanel {
   padding: 4em;
@@ -6,15 +6,17 @@
 
 .flexPanel {
   @media screen and (min-width: $md) {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 }  
 
 .containerTitle {
-
   h1 {
     color: $orange;
+    @media screen and (max-width: $md) {
+      margin-bottom: 1em;
+    }
   }
 
 }

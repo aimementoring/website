@@ -1,32 +1,19 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module';
 
 .storiesGrid {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   display: grid;
-  grid-gap: 1rem;
   flex-wrap: wrap;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .articleTile {
-  border-color: $light-grey;
-  border-radius: $border-radius;
-  border-style: solid;
-  border-width: 1px;
-  box-sizing: border-box;
-  cursor: pointer;
-  flex: 33.33%;
-  margin: 0.5rem 0.5rem 1rem;
-  opacity: 1;
-  position: relative;
-
-  @supports (display: grid) {
-    margin: 0;
-  }
+  composes: card from '../../../styles/patterns/patternCard.module.scss';
 }
 
 .articleTileLabel {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 300;
   color: $grey;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
 }

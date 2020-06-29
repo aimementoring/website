@@ -93,7 +93,7 @@ const About = () => (
               AIME’s commitment is to keep building its Social Network for Good,
               a worldwide movement of people who want to create a fairer world and
               build bridges between those with power and those without, and to use
-              the Imagination Curriculum and its 21 mentoring values, featured below,
+              the Imagination Curriculum and its 22 mentoring values, featured below,
               to change the world. The organisation has set out to do this by:
             </Paragraph>
             <List
@@ -127,13 +127,13 @@ const About = () => (
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.fullWidthPanel}>
-          <Title type="headingLockup" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
-            Our 21
+          <Title type="headingLockup" align="center" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+            Our 22
             <strong>Values</strong>
           </Title>
           <div className={styles.copy}>
             <Paragraph>
-              We have distilled the essence of our model of mentoring into 21
+              We have distilled the essence of our model of mentoring into 22
               core values and used these values to develop a suite of training
               tools to get a generation of mentors ready to light the spark
               of marginalised youth worldwide.
@@ -141,14 +141,14 @@ const About = () => (
           </div>
           <img
             className={styles.defaultImage}
-            alt="AIME's 21 Values"
-            src={`${ASSETS_URL}/assets/images/illustrations/21Values%402x+(1).jpg`}
+            alt="AIME's 22 Values"
+            src={`${ASSETS_URL}/assets/images/illustrations/22-values.jpg`}
           />
         </div>
       </section>
       <section className={styles.sectionAbout}>
         <div className={styles.fullWidthPanelStrat}>
-          <Title type="h5Title" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
+          <Title type="h5Title" align="center" className={styles.sectionHeading} theme={process.env.REACT_APP_THEME}>
             <a
               target="_blank"
               rel="noopener noreferrer"

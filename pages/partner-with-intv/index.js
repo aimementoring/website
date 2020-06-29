@@ -9,7 +9,7 @@ import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Button from 'aime-blueprint/lib/components/button';
 import Layout from '../../hocs/basicLayout';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import VideoPlayer from '../../components/videoPlayer';
 import WavyDonateSection from '../../components/wavyDonateSection';
 import IntercomChat from '../../components/intercom';
@@ -264,7 +264,7 @@ const PartnerWithIntv = () => {
           {/* TODO: what's the best way for this thing... creating a new component
           every time... really? shouldn't we be able to use the one comp
           and replace the content... don't know if that will work though... tbc */}
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Meet some hosts
           </Title>
           <IntvHostsCarousel />
@@ -281,7 +281,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 How it works
               `}
@@ -298,14 +298,14 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  "5 x 25-minute daily episodes at least 21 weeks of content (based on AIME's 21 values).",
+                  "5 x 25-minute daily episodes at least 22 weeks of content (based on AIME's 22 values).",
                   'Audio and podcast in production.',
                   'Impact production in progress, including education resources for teachers around the world to use.',
                 ]}
               />
             </div>
             <div className={`${styles.panelCol}`}>
-              <Title type="h3Title">
+              <Title type="h3Title" align="center">
                 {`
                 Weekly themes
               `}
@@ -334,7 +334,7 @@ const PartnerWithIntv = () => {
         </section>
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.panelFullImage}`}>
           <div className={styles.panelCol}>
-            <Title type="h3Title">
+            <Title type="h3Title" align="center">
               {`
               Ingredients
             `}
@@ -348,7 +348,7 @@ const PartnerWithIntv = () => {
         </section>
 
         <section className={`${styles.sectionPanel} ${styles.panelOneCol} ${styles.inTVEpisodesWrapper}`}>
-          <Title type="h3Title" className={styles.titleInTVPartnerPanel}>
+          <Title type="h3Title" align="center" className={styles.titleInTVPartnerPanel}>
             {`
             About Each Day
           `}
@@ -361,7 +361,7 @@ const PartnerWithIntv = () => {
         <DoubleCurvedLine />
 
         <section ref={mentorsRef} className={`${styles.sectionPanel} ${styles.panelOneCol}`}>
-          <Title type="h3Title">
+          <Title type="h3Title" align="center">
             Some of our guests
             <br />
             (So Far)
@@ -554,7 +554,7 @@ const PartnerWithIntv = () => {
           </svg>
           <div className={styles.sectionWrapper}>
             <div className={styles.panelCol}>
-              <Title type="h4Title">AIME PROGRAM STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME PROGRAM STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -571,7 +571,7 @@ const PartnerWithIntv = () => {
                   '91 equivalent full time staff employed as of March 2020',
                 ]}
               />
-              <Title type="h4Title">AIME APPAREL STATS 2019</Title>
+              <Title type="h4Title" align="center">AIME APPAREL STATS 2019</Title>
               <List
                 type="ulList"
                 list={[
@@ -1016,7 +1016,7 @@ const PartnerWithIntv = () => {
                     {`We can find sophisticated ways to tell
                     stories together around our`}
                     &nbsp;
-                    <a href="/about" target="_blank">21 values</a>
+                    <a href="/about" target="_blank">22 values</a>
                     &nbsp;
                     {`. We can make
                     videos together, write stories, and we may even, if it’s really high-class, create a
@@ -1043,7 +1043,7 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelCol}>
                   <Paragraph>
                     Invest in the development of our puppets for the show. We want to develop
-                    puppets that have all the characteristics of our 21 values. This funding will
+                    puppets that have all the characteristics of our 22 values. This funding will
                     support employment of our puppet maker and puppeteers. It will allow us to
                     employ writers to work on the puppets and help produce scripts for the show
                     every day.
@@ -1101,7 +1101,7 @@ const PartnerWithIntv = () => {
                     And if you don’t have kids, it’s a gift for the kid inside you!`}
                   </Paragraph>
                   <Paragraph>
-                    Check out
+                    {'Check out '}
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
