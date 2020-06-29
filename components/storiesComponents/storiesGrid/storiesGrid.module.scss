@@ -1,8 +1,5 @@
-@import "../../../styles/global.module.scss";
+@import '../../../styles/global.module';
 
 .storiesGrid {
-  grid-template-columns: repeat(auto-fill, minmax(15.5em, 1fr));
-  display: grid;
-  grid-gap: 1em;
-  flex-wrap: wrap;
+  composes: grid from '../../../styles/patterns/patternGrid.module.scss';
 }

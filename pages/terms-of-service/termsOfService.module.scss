@@ -1,18 +1,18 @@
-@import "../../styles/global.module.scss";
+@import '../../styles/global.module';
 
 .termsOfServiceBanner {
-  composes: banner from '../../styles/patterns.module.scss';
   background: url($cdnRoot + 'assets/images/going-global/patternbg.jpg') no-repeat top center / cover fixed $magenta;
+  composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }
 
 .termsSection {
   
-  composes: wrapper from '../../styles/patterns.module.scss';
+  composes: wrapper from '../../styles/patterns/patternWrapper.module.scss';
 
   // @todo CSS: Terms of service headings should be styled from blueprint 
 
   h2 {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 1.5em;
   }
 
 }

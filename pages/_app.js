@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import TagManager from 'react-gtm-module';
 import MainAppComponent from '../components/mainAppComponent';
-import DonationContext from '../context';
+import { DonationContext, ContactContext } from '../context';
 import './_app.scss';
 
 // @TODO: Remove these imports when they fix this issue: https://github.com/zeit/next.js/issues/12079
@@ -21,12 +21,18 @@ class MyApp extends App {
     super(props);
 
     this.toggleDonationModal = () => {
-      this.setState((prevState) => ({ donationModal: !prevState.donationModal }));
+      this.setState((prevState) => ({ ...prevState, donationModal: !prevState.donationModal }));
+    };
+
+    this.toggleContactModal = () => {
+      this.setState((prevState) => ({ ...prevState, contactModal: !prevState.contactModal }));
     };
 
     this.state = {
       donationModal: false,
       toggleDonationModal: this.toggleDonationModal,
+      contactModal: false,
+      toggleContactModal: this.toggleContactModal,
     };
   }
 
@@ -38,8 +44,10 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <DonationContext.Provider value={this.state}>
-        <MainAppComponent />
-        <Component {...pageProps} />
+        <ContactContext.Provider value={this.state}>
+          <MainAppComponent />
+          <Component {...pageProps} />
+        </ContactContext.Provider>
       </DonationContext.Provider>
     );
   }

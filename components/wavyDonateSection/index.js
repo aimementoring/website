@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useContext } from 'react';
-import DonationContext from '../../context';
+import { DonationContext } from '../../context';
 import styles from './wavyDonateSection.module.scss';
 
 const WavyDonateSection = () => {

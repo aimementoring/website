@@ -1,0 +1,13 @@
+@import '../global.module';
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 45em;
+
+  padding: 3em 1.5em;
+
+  @media all and(min-width: $md) {
+    padding: 5em 3em;
+  }
+
+}
