@@ -1,13 +1,11 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Title from 'aime-blueprint/lib/components/title';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import List from 'aime-blueprint/lib/components/list';
 import Anchor from '../../components/common/link';
 import Layout from '../../hocs/basicLayout';
+import HeroBannerAbout from '../../components/heroBannerAbout';
 import styles from './about.module.scss';
-
-const HeroBannerAbout = dynamic(() => import('../../components/heroBannerAbout'));
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
 
