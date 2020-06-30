@@ -1,12 +1,10 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Layout from '../../hocs/basicLayout';
 import styles from './be-a-mentor.module.scss';
-
-const BeAMentorForm = dynamic(() => import('../../components/beAMentor/beAMentorForm'));
-const WelcomeBox = dynamic(() => import('../../components/beAMentor/welcomeBox'));
-const HeroBanner = dynamic(() => import('../../components/beAMentor/heroBanner'));
-const YearHeader = dynamic(() => import('../../components/beAMentor/yearHeader'));
+import BeAMentorForm from '../../components/beAMentor/beAMentorForm';
+import WelcomeBox from '../../components/beAMentor/welcomeBox';
+import HeroBanner from '../../components/beAMentor/heroBanner';
+import YearHeader from '../../components/beAMentor/yearHeader';
 
 const BeAMentor = () => (
   <Layout>
