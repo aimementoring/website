@@ -78,6 +78,15 @@ const CAROUSEL_SLIDES = [
     and passion to achieve what she has and will continue to do despite the
     recent postponement of the 2020 Paralympic Games is inspiration to us all.”
     - Peter Conde, CEO, AIS`,
+  }, {
+    image: `${ASSETS_URL}/assets/images/partners/logo_bloomberg.jpg`,
+    title: 'Bloomberg',
+    type: 'Cancelled not Cancelled Partner',
+    paragraph: `“At Bloomberg, innovation and bold thinking are central to
+    the way we work. We're delighted to support AIME's IMAGI-NATION{TV},
+    which will help mentors and students showcase their talents and empower
+    them to tackle today's biggest challenges.”
+    - Bloomberg L. P.`,
   },
 ];
 
