@@ -31,6 +31,15 @@ const CAROUSEL_SLIDES = [
     imagination let loose in every home, and for the
     youth and fresh ideas this will support.” - Margaret Zhang, Co-Founder`,
   }, {
+    image: `${ASSETS_URL}/assets/images/partners/logo_bloomberg.jpg`,
+    title: 'Bloomberg',
+    type: 'Corporate Partner',
+    paragraph: `“At Bloomberg, innovation and bold thinking are central to
+    the way we work. We're delighted to support AIME's IMAGI-NATION{TV},
+    which will help mentors and students showcase their talents and empower
+    them to tackle today's biggest challenges.”
+    - Bloomberg L. P.`,
+  }, {
     image: `${ASSETS_URL}/assets/images/partners/logo-melbcomedyfest@2x.jpg`,
     title: 'Melbourne International Comedy Festival',
     type: 'Cancelled not Cancelled Partner',
