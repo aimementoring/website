@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
 import Title from 'aime-blueprint/lib/components/title';
-import dynamic from 'next/dynamic';
+import Modal from '../modal';
 import { ContactContext } from '../../context';
 import styles from './contactModal.module.scss';
 
 const ASSETS_URL = process.env.REACT_APP_ASSETS_URL;
-
-const Modal = dynamic(() => import('../modal'));
 
 const ContactModal = () => {
   const { contactModal, toggleContactModal } = useContext(ContactContext);
