@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Paragraph from 'aime-blueprint/lib/components/paragraph';
+import Title from 'aime-blueprint/lib/components/title';
 import Modal from '../modal';
 import { ContactContext } from '../../context';
 import styles from './contactModal.module.scss';
