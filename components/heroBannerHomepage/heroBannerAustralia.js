@@ -65,13 +65,13 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           className={`${styles.dancingIllo} ${styles.dancingIlloBtm}`}
         />
         <a
-          href="/imagine"
+          href="https://shop.aimementoring.com/collections/hoodies/products/we-imagine"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src={`${ASSETS_URL}/assets/images/banner/IMAGINE.gif`}
-            alt="IMAGINE the film"
+            src={`${ASSETS_URL}/assets/images/banner/imagine-hoodie.gif`}
+            alt="We IMAGINE hoodie"
             className={styles.videoCoverArt}
           />
         </a>
@@ -79,9 +79,10 @@ const HeroBannerAustralia = ({ scrollHandler }) => (
           className={styles.textLinkChannel}
           target="_blank"
           rel="noopener noreferrer"
-          href="/imagi-nation-tv"
+          href="https://shop.aimementoring.com/collections/hoodies/products/we-imagine"
         >
-          {'See what IMAGI-NATION{TV} is all about'}
+          BUY NOW
+          &nbsp;
         </a>
       </div>
     </div>
