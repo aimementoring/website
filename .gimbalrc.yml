@@ -4,7 +4,7 @@ audits:
     - size
     - lighthouse
     - heap-snapshot
-    - unused-source
+    # - unused-source
 
 configs:
   logger:
@@ -36,8 +36,8 @@ configs:
     threshold:
       accessibility: 80
       "best-practices": 80
-      performance: 40
-      pwa: 52
+      performance: 80
+      pwa: 60
       seo: 85
 
   # File and directory size settings
@@ -68,6 +68,7 @@ plugins:
       aria-allowed-attr: critical
       aria-hidden-focus: serious
       color-contrast: serious
+      duplicated-id: minor
       landmark-one-main: moderate
       landmark-complementary-is-top-level: moderate
       meta-viewport: critical
