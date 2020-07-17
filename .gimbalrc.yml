@@ -68,7 +68,7 @@ plugins:
       aria-allowed-attr: critical
       aria-hidden-focus: serious
       color-contrast: serious
-      duplicated-id: minor
+      duplicate-id: minor
       landmark-one-main: moderate
       landmark-complementary-is-top-level: moderate
       meta-viewport: critical

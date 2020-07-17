@@ -1,24 +1,24 @@
-# This is a basic workflow to help you get started with Actions
+# # This is a basic workflow to help you get started with Actions
 
-name: TODO's to issues
+# name: TODO's to issues
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on: [push]
+# # Controls when the action will run. Triggers the workflow on push or pull request
+# # events but only for the master branch
+# on: [push]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  build:
-    runs-on: "ubuntu-latest"
-    steps:
-      - uses: "actions/checkout@master"
-      - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@master"
-        with:
-          REPO: ${{ github.repository }}
-          BEFORE: ${{ github.event.before }}
-          SHA: ${{ github.sha }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LABEL: "@todo"
-          COMMENT_MARKER: "@"
-        id: "todo"
+# # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# jobs:
+#   build:
+#     runs-on: "ubuntu-latest"
+#     steps:
+#       - uses: "actions/checkout@master"
+#       - name: "TODO to Issue"
+#         uses: "alstr/todo-to-issue-action@master"
+#         with:
+#           REPO: ${{ github.repository }}
+#           BEFORE: ${{ github.event.before }}
+#           SHA: ${{ github.sha }}
+#           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           LABEL: "@todo"
+#           COMMENT_MARKER: "@"
+#         id: "todo"
