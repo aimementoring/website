@@ -1,38 +1,6 @@
 {
   "version": 2,
-  "build": {
-    "env": {
-      "REACT_APP_BUGSNAG_KEY": "@react_app_bugsnag_key",
-      "REACT_APP_PRO_IP_KEY": "@react_app_pro_ip_key",
-      "REACT_APP_AIRTABLE_API_KEY": "@react_app_airtable_api_key",
-      "REACT_APP_CONTENTFUL_ENTRY_KEY_REDIRECTS": "@react_app_contentful_entry_key_redirects",
-      "REACT_APP_CONTENTFUL_ENTRY_KEY_STORIES": "@react_app_contentful_entry_key_stories",
-      "REACT_APP_CONTENTFUL_API_KEY": "@react_app_contentful_api_key",
-      "REACT_APP_CONTENTFUL_API_STAGING_key": "@react_app_contentful_api_staging_key",
-      "REACT_APP_CONTENTFUL_SPACE_ID": "@react_app_contentful_space_id",
-      "REACT_APP_FILE_UPLOADER_API_KEY": "@react_app_file_uploader_api_key",
-      "REACT_APP_MAILCHIMP_KEY": "@react_app_mailchimp_key",
-      "REACT_APP_ASSETS_URL": "https://d1muvgoqe3g8vw.cloudfront.net/website",
-      "REACT_APP_HOST_ENV": "@react_app_host_env",
-      "REACT_APP_PORTAL_API": "@react_app_portal_api",
-      "REACT_APP_THEME": "rainbow",
-      "REACT_APP_INTERCOM_APP_ID": "g36n1wzq",
-      "REACT_APP_SHOPIFY_STORE_FRONT_ACCESS_TOKEN": "560dd7f8110349a17d6e96c46d02a0ce",
-      "REACT_APP_SHOPIFY_DOMAIN": "aimementoring.myshopify.com",
-      "REACT_APP_SHOP_PRODUCT_LINK": "https://shop.aimementoring.com/products",
-      "REACT_APP_DONATE_ORGANISATION_UUID": "7eafc9b2-404f-11e7-bc97-06facaa3db7b",
-      "REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE": "@react_app_airtable_staff_recruitment_base",
-      "REACT_APP_PITCH_YOURSELF_TO_AIME_ID": "@react_app_pitch_yourself_to_aime_id",
-      "REACT_APP_CONTENTFUL_CONTENT_TYPE_REDIRECTS": "redirectEntries",
-      "REACT_APP_CONTENTFUL_CONTENT_TYPE_STORIES": "post",
-      "REACT_APP_GOOGLE_TAG_MANAGER": "GTM-NK5SFHW",
-      "REACT_APP_CDN_ROOT": "https://d2ylaz7bdw65jx.cloudfront.net",
-      "REACT_APP_CONTENTFUL_API_ENVIRONMENT": "master",
-      "REACT_APP_HOST": "next",
-      "REACT_APP_MAILCHIMP_API": "https://us12.api.mailchimp.com/3.0",
-      "NEXTJS_TARGET": "serverless"
-    }
-  },
+  "scope": "aimementoring",
   "routes": [
     {
       "src": "^/service-worker.js$",
@@ -151,12 +119,6 @@
       "src": "/strategy2019",
       "dest": "https://aime-web-production.s3-ap-southeast-2.amazonaws.com/resources/AIME_Strategy_PR.pdf",
       "status": 302
-    }
-  ],
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@now/next"
     }
   ]
 }
