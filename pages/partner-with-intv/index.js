@@ -298,7 +298,7 @@ const PartnerWithIntv = () => {
               <List
                 type="ulList"
                 list={[
-                  "5 x 25-minute daily episodes at least 22 weeks of content (based on AIME's 22 values).",
+                  "5 x 25-minute daily episodes at least 21 weeks of content (based on AIME's 21 values).",
                   'Audio and podcast in production.',
                   'Impact production in progress, including education resources for teachers around the world to use.',
                 ]}
@@ -1016,7 +1016,7 @@ const PartnerWithIntv = () => {
                     {`We can find sophisticated ways to tell
                     stories together around our`}
                     &nbsp;
-                    <a href="/about" target="_blank">22 values</a>
+                    <a href="/about" target="_blank">21 values</a>
                     &nbsp;
                     {`. We can make
                     videos together, write stories, and we may even, if it’s really high-class, create a
@@ -1043,7 +1043,7 @@ const PartnerWithIntv = () => {
                 <div className={styles.panelCol}>
                   <Paragraph>
                     Invest in the development of our puppets for the show. We want to develop
-                    puppets that have all the characteristics of our 22 values. This funding will
+                    puppets that have all the characteristics of our 21 values. This funding will
                     support employment of our puppet maker and puppeteers. It will allow us to
                     employ writers to work on the puppets and help produce scripts for the show
                     every day.
