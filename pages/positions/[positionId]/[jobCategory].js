@@ -10,7 +10,6 @@ import {
 import isClientSide from '../../../utils/isClientSide';
 import handleError from '../../../utils/errorHandler';
 import request from '../../../utils/request';
-import { findJob } from '../../../services/positions';
 import Header from '../../../components/positions/header';
 import JobsTitle from '../../../components/positions/jobsTitle';
 import JobsDetail from '../../../components/positions/jobsDetail';
@@ -61,7 +60,7 @@ const PositionsEntry = () => {
     const countryId = 'global';
     if (positionId) {
       try {
-        const job = await findJob(positionId, countryId);
+        const job = await fetch(`/api/position/${positionId}`).then((res) => res.json());
         const location = compact([job.city.trim(), job.state.trim(), job.country.trim()]).join(', ');
         setState({
           ...state,
