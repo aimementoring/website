@@ -1,6 +1,6 @@
-import { airtableFetchRecords, airtableFetchRecord } from './airtableAPI';
-import { formatJobs  } from '../utils/positions';
 import compact from 'lodash/compact';
+import { airtableFetchRecords, airtableFetchRecord } from './airtableAPI';
+import { formatJobs } from '../utils/positions';
 
 const config = {
   baseName: process.env.REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE,
@@ -58,13 +58,13 @@ const fetchPositions = async () => {
   ]);
 
   return formatJobs(loadedJobs);
-}
+};
 
 export default async (req, res) => {
   const positions = await fetchPositions();
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify(positions));
-}
+};
 
 export const loadPositions = async (filter, fields) => airtableFetchRecords(config, filter, fields);

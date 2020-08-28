@@ -28,13 +28,13 @@ const config = {
   }),
 };
 
-export default async ({ query: { id }}, res) => {
+export default async ({ query: { id } }, res) => {
   console.log(id);
   const position = await findJob(id);
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify(position));
-}
+};
 
 export const findJob = async (id, currentSite = 'global') => {
   const configPosition = config;

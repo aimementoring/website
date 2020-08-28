@@ -1,7 +1,7 @@
 const Airtable = require('airtable');
 
 export default function handler(req, res) {
-  res.status(200).json()
+  res.status(200).json();
 }
 
 export const airtableFetchRecords = async (config, filter = null, fields = null) => {

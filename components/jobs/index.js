@@ -105,22 +105,22 @@ const Jobs = ({
           </div>
         </div>
       ) : (
-          <div className={styles.noJobContainer}>
-            <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
+        <div className={styles.noJobContainer}>
+          <Title type="h4Title" theme={process.env.REACT_APP_THEME}>
               We are not hiring.
           </Title>
-            <span className={styles.titleNoJobContainer} />
-            <Paragraph className={styles.paragraphNoJobContainer}>
+          <span className={styles.titleNoJobContainer} />
+          <Paragraph className={styles.paragraphNoJobContainer}>
               Sorry, there are no positions available at the moment.
           </Paragraph>
-            <Paragraph>
-              {`You can sign up to be an AIME Friend at the bottom of this page though – 
+          <Paragraph>
+            {`You can sign up to be an AIME Friend at the bottom of this page though – 
             you'll receive updates about everything that's happening.`}
-            </Paragraph>
-            <br />
-            <br />
-          </div>
-        )}
+          </Paragraph>
+          <br />
+          <br />
+        </div>
+      )}
     </div>
   );
 };

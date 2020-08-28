@@ -35,4 +35,3 @@ export const formatJobs = (jobs) => (
     .filter((job) => !!job.name)
     .map((job) => ({ ...job, expire: getFormattedDate(job.expire) }))
 );
-
