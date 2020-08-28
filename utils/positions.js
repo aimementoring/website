@@ -30,8 +30,4 @@ export const getFormattedDate = (jobDate) => {
   return jobDate;
 };
 
-export const formatJobs = (jobs) => (
-  jobs
-    .filter((job) => !!job.name)
-    .map((job) => ({ ...job, expire: getFormattedDate(job.expire) }))
-);
+
