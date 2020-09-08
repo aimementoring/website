@@ -1,5 +1,9 @@
 const Airtable = require('airtable');
 
+export default function handler(req, res) {
+  res.status(200).json();
+}
+
 export const airtableFetchRecords = async (config, filter = null, fields = null) => {
   Airtable.configure({
     endpointUrl: 'https://api.airtable.com',

@@ -1,4 +1,4 @@
-import { airtableFetchRecords, airtableFetchRecord } from '../utils/airtableLoader';
+import { airtableFetchRecord } from '../airtableAPI';
 
 const config = {
   baseName: process.env.REACT_APP_AIRTABLE_STAFF_RECRUITMENT_BASE,
@@ -28,18 +28,13 @@ const config = {
   }),
 };
 
-const sitesConfig = {
-  baseName: 'app0cOinHqPnUCxv8',
-  table: 'Sites',
-  gridView: 'Grid view',
-  recordBuilder: (record) => (
-    {
-      text: record.get('Name'),
-      value: record.get('Name'),
-    }),
+export default async ({ query: { id } }, res) => {
+  console.log(id);
+  const position = await findJob(id);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(position));
 };
-
-export const loadPositions = async (filter, fields) => airtableFetchRecords(config, filter, fields);
 
 export const findJob = async (id, currentSite = 'global') => {
   const configPosition = config;
@@ -50,10 +45,9 @@ export const findJob = async (id, currentSite = 'global') => {
 
   if (today < job.publish) throw new Error('This position is not available');
 
-  if (!job.availableIn.find((site) => site === currentSite.toLowerCase())) {
-    throw new Error('This position is not available in this location');
-  }
+  // Recruiting globally
+  // if (!job.availableIn.find((site) => site === currentSite.toLowerCase())) {
+  //   throw new Error('This position is not available in this location');
+  // }
   return job;
 };
-
-export const loadUniversities = () => airtableFetchRecords(sitesConfig).then((options) => options);
