@@ -1,6 +1,7 @@
 @import '../../styles/global.module';
 
 .heroBannerMentor {
+  margin: 0;
   background-image: linear-gradient(($watermelon + cc), ($watermelon + cc)), url($cdnRoot + 'assets/images/banner/banner-mentors@2x.jpg');
   composes: banner from '../../styles/patterns/patternBanner.module.scss';
 }

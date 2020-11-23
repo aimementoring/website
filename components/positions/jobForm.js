@@ -26,7 +26,6 @@ const JobForm = ({
         <form
           className="job-application"
           acceptCharset="UTF-8"
-          action="https://formkeep.com/f/50e5b258d8a7"
           method="POST"
         >
           <AboutYouSectionForm handleChange={handleFormFieldChange} values={values} />

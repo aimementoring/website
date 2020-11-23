@@ -13,34 +13,15 @@ const BeAMentorForm = () => (
         src={`${ASSETS_URL}/assets/images/illustrations/speakr@2x.png`}
         alt="Listen up"
       />
-      <Title type="h5Title">Mentor applications are open again!</Title>
+      <Title type="h5Title">Hey you! So you wanna be a mentor?</Title>
       <Paragraph>
-        {'We\'ve created '}
-        <a href="/imagi-nation-tv" target="_blank" rel="noopener noreferrer">
-          {'IMAGI-NATION{TV}'}
-        </a>
-        {` & the IMAGI-NATION{CLASSROOM} experience to put a mentor in
-        the home every day during the tough times of COVID-19 and beyond.
-        It’s a daily TV show broadcast live on the internet, and it’s a
-        gift for teachers, parents and kids to help make sense of today
-        & imagine tomorrow. Mentoring will naturally be a little different
-        in this environment but
-        `}
-        <mark>
-        we need mentors
-        </mark>
-        &nbsp;more than ever!
+        Mentor applications aren&apos;t open just yet as we&apos;re
+        updating our processes. However, you should get a head-start by&nbsp;
+      <strong>registering your details</strong> and creating an AIME account.
+      Once they&apos;re open, we&apos;ll notify you so you can complete
+      your application.
       </Paragraph>
-    </div>
-    <br />
-    <Paragraph>
-      Trust us when we say,&nbsp;
-      <mark>
-        the opportunities when you mentor at AIME are extensive
-      </mark>
-      &nbsp;and go further than you would think.
-    </Paragraph>
-    <Paragraph>
+      <Paragraph>
       {'If you\'re new to mentoring with us,'}
       {' '}
       <strong>sign up</strong>
@@ -53,16 +34,23 @@ const BeAMentorForm = () => (
       we'll guide you through your mentor application process.
       Good luck!`}
     </Paragraph>
-    <br />
-    <Button
-      theme={process.env.REACT_APP_THEME}
-      type="link"
-      target="_blank"
-      url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
-    >
-      Start now
+      <Button
+        theme={process.env.REACT_APP_THEME}
+        type="link"
+        target="_blank"
+        url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
+      >
+        Sign up
     </Button>
-
+    </div>
+    <br />
+    <Paragraph>
+      <mark> And here's another opportunity!</mark> We want to give you the stage to lead AIME on your campus as a student chapter.
+      We’ll provide you with all the necessary training and tools, and connect you to a global network of change makers,
+      and dedicated mentors and coaches from AIME via <mark>{`IMAGI-NATION {University}`}</mark> throughout 2021. 
+      We’ll give you the title of <mark>{`IMAGI-NATION {President}`}</mark>. 
+      Learn more <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>.
+    </Paragraph>
   </div>
 );
 
