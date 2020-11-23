@@ -49,18 +49,13 @@ and creating an AIME account.
     <Paragraph>
       <mark> And here's another opportunity!</mark>
       {' '}
-We want to give you the stage to lead AIME on your campus as a student chapter.
+      We want to give you the stage to lead AIME on your campus as a student chapter.
       We’ll provide you with all the necessary training and tools, and connect you to a global network of change makers,
       and dedicated mentors and coaches from AIME via
       <mark>{'IMAGI-NATION {University}'}</mark>
-      {' '}
-throughout 2021.
-      We’ll give you the title of
-      <mark>{'IMAGI-NATION {President}'}</mark>
-.
-      Learn more
-      <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>
-.
+      {' '} throughout 2021.
+      We’ll give you the title of <mark>{'IMAGI-NATION {President}'}</mark>.
+      Learn more <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>.
     </Paragraph>
   </div>
 );
