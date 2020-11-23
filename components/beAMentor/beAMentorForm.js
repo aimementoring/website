@@ -17,23 +17,25 @@ const BeAMentorForm = () => (
       <Paragraph>
         Mentor applications aren&apos;t open just yet as we&apos;re
         updating our processes. However, you should get a head-start by&nbsp;
-      <strong>registering your details</strong> and creating an AIME account.
+        <strong>registering your details</strong>
+        {' '}
+and creating an AIME account.
       Once they&apos;re open, we&apos;ll notify you so you can complete
       your application.
       </Paragraph>
       <Paragraph>
-      {'If you\'re new to mentoring with us,'}
-      {' '}
-      <strong>sign up</strong>
+        {'If you\'re new to mentoring with us,'}
+        {' '}
+        <strong>sign up</strong>
       &nbsp;below.&nbsp;
-      {'If you\'ve mentored before, '}
-      <strong>sign in</strong>
+        {'If you\'ve mentored before, '}
+        <strong>sign in</strong>
       &nbsp;
-      {`to your AIME account below. Either way,
+        {`to your AIME account below. Either way,
       enter the AIME Universe through the button below and
       we'll guide you through your mentor application process.
       Good luck!`}
-    </Paragraph>
+      </Paragraph>
       <Button
         theme={process.env.REACT_APP_THEME}
         type="link"
@@ -41,15 +43,24 @@ const BeAMentorForm = () => (
         url="https://portal.aimementoring.com/login?eoi-table=Be-a-Mentor"
       >
         Sign up
-    </Button>
+      </Button>
     </div>
     <br />
     <Paragraph>
-      <mark> And here's another opportunity!</mark> We want to give you the stage to lead AIME on your campus as a student chapter.
+      <mark> And here's another opportunity!</mark>
+      {' '}
+We want to give you the stage to lead AIME on your campus as a student chapter.
       We’ll provide you with all the necessary training and tools, and connect you to a global network of change makers,
-      and dedicated mentors and coaches from AIME via <mark>{`IMAGI-NATION {University}`}</mark> throughout 2021. 
-      We’ll give you the title of <mark>{`IMAGI-NATION {President}`}</mark>. 
-      Learn more <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>.
+      and dedicated mentors and coaches from AIME via
+      <mark>{'IMAGI-NATION {University}'}</mark>
+      {' '}
+throughout 2021.
+      We’ll give you the title of
+      <mark>{'IMAGI-NATION {President}'}</mark>
+.
+      Learn more
+      <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>
+.
     </Paragraph>
   </div>
 );

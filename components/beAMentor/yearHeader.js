@@ -6,7 +6,7 @@ const YearHeader = () => (
   <div className={styles.beAMentorYearHeader}>
     <Title type="headingLockup" align="center" className={styles.yearWelcomeHeading} theme={process.env.REACT_APP_THEME}>
       {/* {`Bring on ${new Date().getFullYear()},`} */}
-      {`Bring on 2021`}
+      {'Bring on 2021'}
       <strong>
         Change is
         <br />
