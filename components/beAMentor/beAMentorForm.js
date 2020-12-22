@@ -60,7 +60,7 @@ throughout 2021.
       <mark>{'IMAGI-NATION {President}'}</mark>
 .
       Learn more
-      <a href="https://imagination.aimementoring.com/university" target="_blank">here</a>
+      <a href="https://imagination.aimementoring.com/university" target="_blank"> here</a>
 .
     </Paragraph>
   </div>
