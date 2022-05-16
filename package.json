@@ -53,7 +53,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "mux.js": "^5.5.1",
-    "next": "^9.4.2",
+    "next": "^12.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-offline": "^5.0.2",
     "next-seo": "^4.5.0",
